@@ -157,58 +157,83 @@
     </section>
 
     <section class="section testimonials-section" aria-labelledby="testimonials-title">
-      <div class="section-heading">
-        <p class="eyebrow">User stories</p>
-        <h2 id="testimonials-title">Real-life food decisions feel calmer.</h2>
+      <div class="testimonial-heading">
+        <div>
+          <p class="eyebrow">Everyday moments</p>
+          <h2 id="testimonials-title">Food decisions, explained in context.</h2>
+        </div>
         <p>
-          A few early-user style notes from the moments EatOrNot is designed for: restaurants, snacks, workouts, and busy weekdays.
+          Swipe through common eating moments and see how EatOrNot turns them into a clear next step.
         </p>
       </div>
 
-      <div class="testimonial-grid">
-        <article class="testimonial-card">
-          <img src="./assets/images/testimonial-1.jpg" alt="User eating at a restaurant" />
+      <div class="testimonial-carousel" aria-label="Feature story carousel">
+        <article class="testimonial-card" id="moment-photo">
+          <div class="testimonial-photo">
+            <img src="./assets/images/testimonial-1.jpg" alt="Restaurant meal moment" />
+          </div>
           <div class="testimonial-body">
-            <p>"I eat out a lot, so I needed something faster than searching a food database. Taking one photo and getting a portion suggestion feels way more natural."</p>
+            <span class="story-tag">Restaurant lunch</span>
+            <h3>Take one photo instead of searching a food database.</h3>
+            <p>EatOrNot estimates calories and macros from the meal image, then gives a portion-aware recommendation for today.</p>
             <div>
-              <strong>Mia</strong>
-              <span>Office lunch regular</span>
+              <strong>Photo food analysis</strong>
+              <span>Fast meal estimates</span>
             </div>
           </div>
         </article>
 
-        <article class="testimonial-card">
-          <img src="./assets/images/testimonial-2.jpg" alt="User having a casual meal" />
+        <article class="testimonial-card" id="moment-decision">
+          <div class="testimonial-photo">
+            <img src="./assets/images/testimonial-2.jpg" alt="Casual restaurant meal moment" />
+          </div>
           <div class="testimonial-body">
-            <p>"The best part is the decision language. It does not shame me for wanting the food. It just tells me if today is a good day for it."</p>
+            <span class="story-tag">Eat or adjust</span>
+            <h3>Get a decision without guilt-based language.</h3>
+            <p>The app translates nutrition numbers into SAFE, WARNING, or OVER BUDGET, with practical guidance for portion or timing.</p>
             <div>
-              <strong>Leo</strong>
-              <span>Weekend foodie</span>
+              <strong>EatOrNot decision</strong>
+              <span>SAFE / WARNING / OVER BUDGET</span>
             </div>
           </div>
         </article>
 
-        <article class="testimonial-card">
-          <img src="./assets/images/testimonial-3.jpg" alt="User enjoying dessert" />
+        <article class="testimonial-card" id="moment-snack">
+          <div class="testimonial-photo">
+            <img src="./assets/images/testimonial-3.jpg" alt="Dessert and snack moment" />
+          </div>
           <div class="testimonial-body">
-            <p>"Dessert used to be all-or-nothing for me. EatOrNot helps me see when a small treat still fits, and when I should adjust dinner."</p>
+            <span class="story-tag">Dessert timing</span>
+            <h3>See when a snack still fits your day.</h3>
+            <p>Remaining budget, protein, fiber, carbs, and fat context help explain whether the better move is eat, reduce, or save it for later.</p>
             <div>
-              <strong>Ava</strong>
-              <span>Sweet tooth, smarter timing</span>
+              <strong>Macro-aware coaching</strong>
+              <span>Calories plus nutrition context</span>
             </div>
           </div>
         </article>
 
-        <article class="testimonial-card featured-testimonial">
-          <img src="./assets/images/testimonial-4.jpg" alt="User eating after a workout" />
+        <article class="testimonial-card featured-testimonial" id="moment-health">
+          <div class="testimonial-photo">
+            <img src="./assets/images/testimonial-4.jpg" alt="Post-workout eating moment" />
+          </div>
           <div class="testimonial-body">
-            <p>"Because it reads my activity context, the same meal can get a different answer after a workout day. That makes the coaching feel personal."</p>
+            <span class="story-tag">Workout day</span>
+            <h3>Let activity change the answer.</h3>
+            <p>With permission, Apple Health activity data helps adjust your daily energy budget, so the same meal can receive different guidance on different days.</p>
             <div>
-              <strong>Marcus</strong>
-              <span>Training-day planner</span>
+              <strong>HealthKit-aware budget</strong>
+              <span>Activity-informed recommendations</span>
             </div>
           </div>
         </article>
+      </div>
+
+      <div class="carousel-hint" aria-hidden="true">
+        <a href="#moment-photo"></a>
+        <a href="#moment-decision"></a>
+        <a href="#moment-snack"></a>
+        <a href="#moment-health"></a>
       </div>
     </section>
 
