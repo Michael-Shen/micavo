@@ -1,116 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Micavo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Micavo — AI Products for Better Decisions</title>
+  <meta name="description" content="Micavo builds AI products that help people make better everyday decisions." />
 
   <style>
+    * { box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #ffffff;
-      color: #111827;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 24px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 56px;
-      margin-bottom: 12px;
-    }
-
-    .subtitle {
-      font-size: 22px;
-      color: #6b7280;
-      margin-bottom: 60px;
-    }
-
-    .products {
-      text-align: left;
-      margin-top: 40px;
-    }
-
-    .card {
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 20px;
-    }
-
-    .card h2 {
-      margin: 0 0 10px 0;
-    }
-
-    .card p {
-      color: #6b7280;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
     }
 
     a {
-      color: #2563eb;
+      color: inherit;
       text-decoration: none;
     }
 
-    footer {
-      margin-top: 80px;
-      color: #9ca3af;
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 88px 24px 64px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 86px);
+      line-height: 0.95;
+      letter-spacing: -0.08em;
+      margin: 0;
+    }
+
+    .subtitle {
+      max-width: 680px;
+      margin: 28px auto 0;
+      font-size: 22px;
+      line-height: 1.5;
+      color: #64748b;
+    }
+
+    .cta-row {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 800;
+      border: 1px solid #cbd5e1;
+      background: white;
+    }
+
+    .button.primary {
+      background: #0f172a;
+      color: white;
+      border-color: #0f172a;
+    }
+
+    .section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    .section-title {
+      font-size: 34px;
+      letter-spacing: -0.04em;
+      margin: 0 0 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.04);
+    }
+
+    .card .tag {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 800;
+      color: #2563eb;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 26px;
+      margin: 0 0 12px;
+      letter-spacing: -0.04em;
+    }
+
+    .card p {
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      color: #94a3b8;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
       font-size: 14px;
     }
 
+    .footer a {
+      color: #64748b;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 64px; }
+    }
   </style>
 </head>
+
 <body>
-
-<div class="container">
-
-  <h1>Micavo</h1>
-
-  <p class="subtitle">
-    Building AI products that help people make better decisions.
-  </p>
-
-  <div class="products">
-
-    <div class="card">
-      <h2>EatOrNot</h2>
-      <p>
-        AI calorie coach powered by Apple Health.
-      </p>
-      <a href="/eatornot">
-        Learn More →
-      </a>
+  <nav class="nav">
+    <a class="logo" href="/">Micavo</a>
+    <div class="nav-links">
+      <a href="/eatornot/">EatOrNot</a>
+      <a href="/critical-choice/">Critical Choice</a>
+      <a href="mailto:hello@micavo.app">Contact</a>
     </div>
+  </nav>
 
-    <div class="card">
-      <h2>Critical Choice</h2>
-      <p>
-        Decision-making assistant.
+  <main>
+    <section class="hero">
+      <div class="badge">AI product studio</div>
+      <h1>AI products for better decisions.</h1>
+      <p class="subtitle">
+        Micavo builds focused AI applications that help people make smarter everyday choices — from food decisions to productivity and future AI agent tools.
       </p>
-      <a href="/critical-choice">
-        Learn More →
-      </a>
+
+      <div class="cta-row">
+        <a class="button primary" href="/eatornot/">View EatOrNot</a>
+        <a class="button" href="mailto:hello@micavo.app">Contact Micavo</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Products</h2>
+
+      <div class="grid">
+        <div class="card">
+          <span class="tag">Featured</span>
+          <h3>EatOrNot</h3>
+          <p>
+            An AI calorie coach powered by Apple Health. Take a photo, understand your calorie budget, and know whether today is a good day to eat it.
+          </p>
+          <a class="button primary" href="/eatornot/">Learn More →</a>
+        </div>
+
+        <div class="card">
+          <span class="tag">Live</span>
+          <h3>Critical Choice</h3>
+          <p>
+            A decision-making assistant that helps users think through difficult choices with structured reasoning and AI support.
+          </p>
+          <a class="button" href="/critical-choice/">Learn More →</a>
+        </div>
+
+        <div class="card">
+          <span class="tag">Coming Soon</span>
+          <h3>Agent Marketplace</h3>
+          <p>
+            A future platform for discovering, buying, and exchanging useful AI agents for everyday work and life.
+          </p>
+          <a class="button" href="mailto:hello@micavo.app">Get Updates</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© 2026 Micavo. All rights reserved.</div>
+    <div>
+      <a href="mailto:hello@micavo.app">hello@micavo.app</a>
     </div>
-
-    <div class="card">
-      <h2>Agent Marketplace</h2>
-      <p>
-        Coming soon.
-      </p>
-    </div>
-
-  </div>
-
-  <footer>
-    © 2026 Micavo
   </footer>
-
-</div>
-
 </body>
 </html>
