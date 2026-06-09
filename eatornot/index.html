@@ -167,73 +167,84 @@
         </p>
       </div>
 
-      <div class="testimonial-carousel" aria-label="Feature story carousel">
-        <article class="testimonial-card" id="moment-photo">
-          <div class="testimonial-photo">
-            <img src="./assets/images/testimonial-1.jpg" alt="Restaurant meal moment" />
-          </div>
-          <div class="testimonial-body">
-            <span class="story-tag">Restaurant lunch</span>
-            <h3>Take one photo instead of searching a food database.</h3>
-            <p>EatOrNot estimates calories and macros from the meal image, then gives a portion-aware recommendation for today.</p>
-            <div>
-              <strong>Photo food analysis</strong>
-              <span>Fast meal estimates</span>
-            </div>
-          </div>
-        </article>
+      <div class="testimonial-slider" data-carousel>
+        <div class="testimonial-viewport">
+          <div class="testimonial-carousel" aria-label="Feature story carousel">
+            <article class="testimonial-card is-active" id="moment-photo">
+              <div class="testimonial-photo">
+                <img src="./assets/images/testimonial-1.jpg" alt="Restaurant meal moment" />
+              </div>
+              <div class="testimonial-body">
+                <span class="story-tag">Restaurant lunch</span>
+                <h3>Take one photo instead of searching a food database.</h3>
+                <p>EatOrNot estimates calories and macros from the meal image, then gives a portion-aware recommendation for today.</p>
+                <div>
+                  <strong>Photo food analysis</strong>
+                  <span>Fast meal estimates</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="testimonial-card" id="moment-decision">
-          <div class="testimonial-photo">
-            <img src="./assets/images/testimonial-2.jpg" alt="Casual restaurant meal moment" />
-          </div>
-          <div class="testimonial-body">
-            <span class="story-tag">Eat or adjust</span>
-            <h3>Get a decision without guilt-based language.</h3>
-            <p>The app translates nutrition numbers into SAFE, WARNING, or OVER BUDGET, with practical guidance for portion or timing.</p>
-            <div>
-              <strong>EatOrNot decision</strong>
-              <span>SAFE / WARNING / OVER BUDGET</span>
-            </div>
-          </div>
-        </article>
+            <article class="testimonial-card" id="moment-decision">
+              <div class="testimonial-photo">
+                <img src="./assets/images/testimonial-2.jpg" alt="Casual restaurant meal moment" />
+              </div>
+              <div class="testimonial-body">
+                <span class="story-tag">Eat or adjust</span>
+                <h3>Get a decision without guilt-based language.</h3>
+                <p>The app translates nutrition numbers into SAFE, WARNING, or OVER BUDGET, with practical guidance for portion or timing.</p>
+                <div>
+                  <strong>EatOrNot decision</strong>
+                  <span>SAFE / WARNING / OVER BUDGET</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="testimonial-card" id="moment-snack">
-          <div class="testimonial-photo">
-            <img src="./assets/images/testimonial-3.jpg" alt="Dessert and snack moment" />
-          </div>
-          <div class="testimonial-body">
-            <span class="story-tag">Dessert timing</span>
-            <h3>See when a snack still fits your day.</h3>
-            <p>Remaining budget, protein, fiber, carbs, and fat context help explain whether the better move is eat, reduce, or save it for later.</p>
-            <div>
-              <strong>Macro-aware coaching</strong>
-              <span>Calories plus nutrition context</span>
-            </div>
-          </div>
-        </article>
+            <article class="testimonial-card" id="moment-snack">
+              <div class="testimonial-photo">
+                <img src="./assets/images/testimonial-3.jpg" alt="Dessert and snack moment" />
+              </div>
+              <div class="testimonial-body">
+                <span class="story-tag">Dessert timing</span>
+                <h3>See when a snack still fits your day.</h3>
+                <p>Remaining budget, protein, fiber, carbs, and fat context help explain whether the better move is eat, reduce, or save it for later.</p>
+                <div>
+                  <strong>Macro-aware coaching</strong>
+                  <span>Calories plus nutrition context</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="testimonial-card featured-testimonial" id="moment-health">
-          <div class="testimonial-photo">
-            <img src="./assets/images/testimonial-4.jpg" alt="Post-workout eating moment" />
+            <article class="testimonial-card featured-testimonial" id="moment-health">
+              <div class="testimonial-photo">
+                <img src="./assets/images/testimonial-4.jpg" alt="Post-workout eating moment" />
+              </div>
+              <div class="testimonial-body">
+                <span class="story-tag">Workout day</span>
+                <h3>Let activity change the answer.</h3>
+                <p>With permission, Apple Health activity data helps adjust your daily energy budget, so the same meal can receive different guidance on different days.</p>
+                <div>
+                  <strong>HealthKit-aware budget</strong>
+                  <span>Activity-informed recommendations</span>
+                </div>
+              </div>
+            </article>
           </div>
-          <div class="testimonial-body">
-            <span class="story-tag">Workout day</span>
-            <h3>Let activity change the answer.</h3>
-            <p>With permission, Apple Health activity data helps adjust your daily energy budget, so the same meal can receive different guidance on different days.</p>
-            <div>
-              <strong>HealthKit-aware budget</strong>
-              <span>Activity-informed recommendations</span>
-            </div>
-          </div>
-        </article>
-      </div>
 
-      <div class="carousel-hint" aria-hidden="true">
-        <a href="#moment-photo"></a>
-        <a href="#moment-decision"></a>
-        <a href="#moment-snack"></a>
-        <a href="#moment-health"></a>
+          <button class="carousel-control carousel-control-prev" type="button" data-carousel-prev aria-label="Previous story">
+            <span aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control carousel-control-next" type="button" data-carousel-next aria-label="Next story">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div class="carousel-indicators" aria-label="Choose feature story">
+          <button class="is-active" type="button" data-carousel-indicator="0" aria-label="Show restaurant lunch story" aria-current="true"></button>
+          <button type="button" data-carousel-indicator="1" aria-label="Show EatOrNot decision story"></button>
+          <button type="button" data-carousel-indicator="2" aria-label="Show dessert timing story"></button>
+          <button type="button" data-carousel-indicator="3" aria-label="Show workout day story"></button>
+        </div>
       </div>
     </section>
 
@@ -366,5 +377,6 @@
       <a href="mailto:hello@micavo.app">hello@micavo.app</a>
     </div>
   </footer>
+  <script src="./carousel.js"></script>
 </body>
 </html>

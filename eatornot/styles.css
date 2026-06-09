@@ -613,36 +613,25 @@ h1 {
   line-height: 1.6;
 }
 
-.testimonial-carousel {
-  margin-left: max(0px, calc((100vw - 1160px) / -2));
-  margin-right: max(0px, calc((100vw - 1160px) / -2));
-  padding: 8px max(20px, calc((100vw - 1160px) / 2)) 24px;
-  display: flex;
+.testimonial-slider {
+  display: grid;
   gap: 18px;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: max(20px, calc((100vw - 1160px) / 2));
-  -webkit-overflow-scrolling: touch;
-  scrollbar-color: rgba(66, 103, 151, 0.36) transparent;
-  scrollbar-width: thin;
 }
 
-.testimonial-carousel::-webkit-scrollbar {
-  height: 8px;
+.testimonial-viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-.testimonial-carousel::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.testimonial-carousel::-webkit-scrollbar-thumb {
-  background: rgba(66, 103, 151, 0.36);
-  border-radius: 999px;
+.testimonial-carousel {
+  display: flex;
+  transition: transform 420ms ease;
+  will-change: transform;
 }
 
 .testimonial-card {
-  flex: 0 0 min(760px, 78vw);
+  flex: 0 0 100%;
   min-height: 420px;
   overflow: hidden;
   border: 1px solid rgba(217, 225, 234, 0.9);
@@ -652,7 +641,6 @@ h1 {
   box-shadow: 0 22px 60px rgba(72, 101, 132, 0.12);
   display: grid;
   grid-template-columns: 0.82fr 1fr;
-  scroll-snap-align: center;
 }
 
 .testimonial-photo {
@@ -723,21 +711,67 @@ h1 {
   font-weight: 900;
 }
 
-.carousel-hint {
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 30px rgba(66, 103, 151, 0.18);
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.carousel-control:hover {
+  background: #ffffff;
+}
+
+.carousel-control span {
+  width: 13px;
+  height: 13px;
+  border-left: 3px solid var(--blue-deep);
+  border-bottom: 3px solid var(--blue-deep);
+}
+
+.carousel-control-prev {
+  left: 18px;
+}
+
+.carousel-control-prev span {
+  transform: rotate(45deg);
+}
+
+.carousel-control-next {
+  right: 18px;
+}
+
+.carousel-control-next span {
+  transform: rotate(-135deg);
+}
+
+.carousel-indicators {
   display: flex;
   justify-content: center;
   gap: 8px;
 }
 
-.carousel-hint a {
-  width: 8px;
-  height: 8px;
+.carousel-indicators button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
   border-radius: 50%;
   background: rgba(66, 103, 151, 0.3);
+  cursor: pointer;
 }
 
-.carousel-hint a:first-child {
-  width: 28px;
+.carousel-indicators button.is-active {
+  width: 30px;
   border-radius: 999px;
   background: var(--blue-deep);
 }
@@ -1018,10 +1052,6 @@ h1 {
     font-size: 44px;
   }
 
-  .testimonial-card {
-    flex-basis: min(680px, 82vw);
-  }
-
   .plan-copy {
     display: block;
   }
@@ -1114,18 +1144,22 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .testimonial-carousel {
-    margin-left: -14px;
-    margin-right: -14px;
-    padding-left: 14px;
-    padding-right: 14px;
-    scroll-padding-inline: 14px;
-  }
-
   .testimonial-card {
-    flex-basis: 88vw;
     min-height: auto;
     grid-template-columns: 1fr;
+  }
+
+  .carousel-control {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-control-prev {
+    left: 10px;
+  }
+
+  .carousel-control-next {
+    right: 10px;
   }
 
   .testimonial-photo img {
