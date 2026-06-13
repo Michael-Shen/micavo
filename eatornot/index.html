@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EatOrNot AI - AI Nutrition Coach</title>
-  <meta name="description" content="EatOrNot AI uses AI food analysis and Apple Health context to help you decide whether a meal fits your day." />
-  <meta property="og:image" content="./assets/images/app_icon_final.png" />
-  <meta name="twitter:image" content="./assets/images/app_icon_final.png" />
+  <meta name="description" content="EatOrNot AI analyzes meals from photos or voice, checks your daily nutrition budget, and gives clear coaching powered by Apple Health context." />
+  <meta property="og:title" content="EatOrNot AI" />
+  <meta property="og:description" content="Know before you eat with AI food analysis, calorie budgets, macro tracking, and personalized nutrition coaching." />
+  <meta property="og:image" content="./assets/images/hero-picnic.png" />
+  <meta name="twitter:image" content="./assets/images/hero-picnic.png" />
   <link rel="icon" type="image/png" href="./assets/images/app_icon_final.png" />
   <link rel="apple-touch-icon" href="./assets/images/app_icon_final.png" />
   <link rel="stylesheet" href="./styles.css" />
@@ -23,336 +25,234 @@
       </a>
 
       <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#premium">Premium</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
-        <a href="mailto:support@micavo.app">Contact</a>
+        <a href="#screenshots" data-i18n="nav.screenshots">Screenshots</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#plans" data-i18n="nav.plans">Plans</a>
+        <a href="./privacy.html" data-i18n="nav.privacy">Privacy</a>
+        <a href="./terms.html" data-i18n="nav.terms">Terms</a>
+        <a href="mailto:support@micavo.app" data-i18n="nav.contact">Contact</a>
+      </div>
+
+      <div class="language-switcher" aria-label="Language switcher">
+        <button class="lang-button" type="button" data-lang-switch="zh-Hant">繁中</button>
+        <button class="lang-button" type="button" data-lang-switch="ja">日本語</button>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media" aria-label="EatOrNot AI picnic brand image">
-        <img src="./assets/images/hero-picnic.png" alt="EatOrNot AI picnic scene with healthy food and blue sky" />
+    <section class="hero app-hero" aria-labelledby="hero-title">
+      <div class="hero-media hero-poster" aria-label="EatOrNot AI brand poster">
+        <img src="./assets/images/hero-picnic.png" alt="EatOrNot AI picnic scene showing the app brand" />
       </div>
 
       <div class="hero-copy">
-        <p class="eyebrow">AI + Apple Health nutrition coach</p>
-        <h1 id="hero-title">Can this meal fit today?</h1>
-        <p class="hero-subtitle">
-          Take a photo or describe your food. EatOrNot AI estimates nutrition, checks your HealthKit-aware daily budget, and gives a clear SAFE, WARNING, or OVER BUDGET decision.
+        <p class="eyebrow" data-i18n="hero.eyebrow">AI nutrition coach for iPhone</p>
+        <h1 id="hero-title" data-i18n="hero.title">Know before you eat.</h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
+          Take a photo or describe your meal. EatOrNot AI estimates nutrition, checks your calorie and macro context, and gives a clear eat-or-adjust recommendation.
         </p>
 
-        <div class="store-row" aria-label="App availability">
-          <a class="store-button" href="mailto:hello@micavo.app?subject=EatOrNot%20AI%20Beta%20Access">
-            <span>Join TestFlight Beta</span>
+        <div class="status-panel" aria-label="App availability status">
+          <strong data-i18n="hero.statusTitle">Submitted to Apple for review</strong>
+          <span data-i18n="hero.statusText">EatOrNot AI is being prepared for App Store release.</span>
+        </div>
+
+        <div class="store-row" aria-label="Primary actions">
+          <a class="store-button" href="#screenshots">
+            <span data-i18n="hero.screenshotsCta">View App Screenshots</span>
           </a>
-          <a class="store-button light" href="#how">
-            <span>See How It Works</span>
+          <a class="store-button light" href="./privacy.html">
+            <span data-i18n="hero.privacyCta">Privacy Policy</span>
           </a>
         </div>
 
-        <p class="small-note">
-          Designed for people who want a quick food decision without manually logging every gram.
+        <p class="small-note" data-i18n="hero.note">
+          Built for quick food decisions, daily progress, and personalized coaching with permission-based Apple Health integration.
         </p>
       </div>
     </section>
 
-    <section class="section" id="how" aria-labelledby="how-title">
+    <section class="section screenshot-section" id="screenshots" aria-labelledby="screenshots-title">
       <div class="section-heading">
-        <p class="eyebrow">The product loop</p>
-        <h2 id="how-title">Scan, understand, then decide.</h2>
-        <p>
-          EatOrNot AI turns your daily calorie budget, activity, and food logs into one practical recommendation.
+        <p class="eyebrow" data-i18n="screens.eyebrow">App Store preview</p>
+        <h2 id="screenshots-title" data-i18n="screens.title">The product, exactly as presented for review.</h2>
+        <p data-i18n="screens.subtitle">
+          The app experience centers on fast meal input, clear nutrition verdicts, HealthKit-aware context, and practical daily coaching.
         </p>
       </div>
 
-      <div class="showcase-grid">
-        <article class="phone-card">
-          <div class="phone-shell">
-            <div class="phone-screen">
-              <div class="app-header">
-                <span>EatOrNot AI</span>
-                <span class="gear-icon" aria-hidden="true"></span>
-              </div>
-
-              <div class="energy-card">
-                <div class="card-title">
-                  <span class="fork-icon" aria-hidden="true"></span>
-                  <span>Today Energy Budget</span>
-                </div>
-                <strong>409 kcal</strong>
-                <span>remaining</span>
-                <div class="progress-track"><i class="progress-blue"></i></div>
-                <p>Consumed: 2350 kcal &middot; Burned: 1241 kcal from iOS Health</p>
-              </div>
-
-              <div class="scan-card">
-                <div class="pill">AI + Health</div>
-                <h3>Take a photo. Then decide Eat or Not.</h3>
-                <p>Photo and voice inputs both return the same clear nutrition decision.</p>
-              </div>
-            </div>
+      <div class="screenshot-grid">
+        <article class="screenshot-card screenshot-card-wide">
+          <img src="./assets/images/s1_english.png" alt="EatOrNot AI App Store screenshot showing photo input, voice input, and AI verdict workflow" />
+          <div>
+            <span class="story-tag" data-i18n="screen1.tag">Meal analysis</span>
+            <h3 data-i18n="screen1.title">Photo or voice in, nutrition verdict out.</h3>
+            <p data-i18n="screen1.text">Use the camera, choose from your library, or describe food naturally to receive calories, macros, and an eat-or-not decision.</p>
           </div>
         </article>
 
-        <div class="process-list">
-          <article>
-            <span class="step">01</span>
-            <h3>Photo or voice food input</h3>
-            <p>Analyze a meal from a photo or a spoken description, with one clear result for calories, macros, and coaching.</p>
-          </article>
-          <article>
-            <span class="step">02</span>
-            <h3>HealthKit-aware budget</h3>
-            <p>Activity burn, basal burn, steps, sleep, HRV, walking speed, and personal profile context help shape the daily budget.</p>
-          </article>
-          <article>
-            <span class="step">03</span>
-            <h3>EatOrNot AI decision</h3>
-            <p>Each result returns estimated calories, macros, remaining budget, and a SAFE / WARNING / OVER BUDGET recommendation.</p>
-          </article>
-        </div>
+        <article class="screenshot-card">
+          <img src="./assets/images/s2_english.png" alt="EatOrNot AI screenshot showing personalized AI nutrition coach advice" />
+          <div>
+            <span class="story-tag orange" data-i18n="screen2.tag">Personal coach</span>
+            <h3 data-i18n="screen2.title">Advice that fits your day.</h3>
+            <p data-i18n="screen2.text">Recommendations highlight protein, fiber, calorie balance, and recent meals in plain language.</p>
+          </div>
+        </article>
+
+        <article class="screenshot-card">
+          <img src="./assets/images/screenshot3_english.png" alt="EatOrNot AI screenshot showing Apple Health integration and synced health data categories" />
+          <div>
+            <span class="story-tag blue" data-i18n="screen3.tag">Apple Health</span>
+            <h3 data-i18n="screen3.title">Permission-based health context.</h3>
+            <p data-i18n="screen3.text">Health data is used only after authorization to personalize calorie needs and recommendations.</p>
+          </div>
+        </article>
+
+        <article class="screenshot-card">
+          <img src="./assets/images/s4_english.png" alt="EatOrNot AI screenshot showing progress tracking for calories, protein, carbohydrates, fat, and fiber" />
+          <div>
+            <span class="story-tag orange" data-i18n="screen4.tag">Progress</span>
+            <h3 data-i18n="screen4.title">Calories and macros in one place.</h3>
+            <p data-i18n="screen4.text">Track remaining budget, nutrient progress, meals, and AI daily insights without manual database searching.</p>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="section soft-section" id="features" aria-labelledby="features-title">
       <div class="section-heading">
-        <p class="eyebrow">Everything behind the answer</p>
-        <h2 id="features-title">Built around your real day.</h2>
+        <p class="eyebrow" data-i18n="features.eyebrow">What EatOrNot AI does</p>
+        <h2 id="features-title" data-i18n="features.title">Built for small food decisions that add up.</h2>
       </div>
 
       <div class="feature-grid">
         <article class="feature-card">
           <div class="feature-icon camera-icon" aria-hidden="true"></div>
-          <h3>AI food analysis</h3>
-          <p>Estimate calories, protein, carbs, fat, fiber, and ingredient components from a food photo or text input.</p>
+          <h3 data-i18n="feature1.title">AI food analysis</h3>
+          <p data-i18n="feature1.text">Estimate calories, protein, carbs, fat, fiber, and meal components from a food photo or text description.</p>
         </article>
 
         <article class="feature-card">
           <div class="feature-icon budget-icon" aria-hidden="true"></div>
-          <h3>Dynamic calorie budget</h3>
-          <p>Remaining budget is calculated from baseline target, active burn, and calories already logged today.</p>
+          <h3 data-i18n="feature2.title">Daily calorie budget</h3>
+          <p data-i18n="feature2.text">See whether a meal fits your remaining budget based on goals, logged meals, and allowed health context.</p>
         </article>
 
         <article class="feature-card">
           <div class="feature-icon coach-icon" aria-hidden="true"></div>
-          <h3>Personal coach tone</h3>
-          <p>Advice can adapt by persona, diet style, locale, gender, and health context for more useful coaching.</p>
+          <h3 data-i18n="feature3.title">Personalized coaching</h3>
+          <p data-i18n="feature3.text">Receive practical nutrition suggestions around protein, fiber, calories, meal timing, and habit patterns.</p>
         </article>
 
         <article class="feature-card">
           <div class="feature-icon log-icon" aria-hidden="true"></div>
-          <h3>Confirm before logging</h3>
-          <p>Analysis does not automatically write to your food log. You choose Eat before the meal is saved.</p>
+          <h3 data-i18n="feature4.title">Confirm before logging</h3>
+          <p data-i18n="feature4.text">Analysis stays under your control. You choose when a meal should be saved to your daily timeline.</p>
         </article>
 
         <article class="feature-card">
           <div class="feature-icon quota-icon" aria-hidden="true"></div>
-          <h3>Daily analysis limits</h3>
-          <p>Free includes 3 analyses per day. Pro unlocks up to 100 daily AI meal analyses.</p>
+          <h3 data-i18n="feature5.title">Flexible usage</h3>
+          <p data-i18n="feature5.text">Free daily analysis supports casual use, while paid plans unlock higher AI analysis limits and deeper insights.</p>
         </article>
 
         <article class="feature-card">
           <div class="feature-icon weekly-icon" aria-hidden="true"></div>
-          <h3>7-day progress</h3>
-          <p>Progress shows weekly trends for calories and macros, plus nutrition coaching based on recent logs.</p>
+          <h3 data-i18n="feature6.title">Weekly progress</h3>
+          <p data-i18n="feature6.text">Pro and Premium coaching turn recent meals into summaries, scores, risks, and action items.</p>
         </article>
       </div>
     </section>
 
-    <section class="section testimonials-section" aria-labelledby="testimonials-title">
-      <div class="testimonial-heading">
-        <div>
-          <p class="eyebrow">Everyday moments</p>
-          <h2 id="testimonials-title">Food decisions, explained in context.</h2>
-        </div>
-        <p>
-          Swipe through common eating moments and see how EatOrNot AI turns them into a clear next step.
+    <section class="section" id="plans" aria-labelledby="plans-title">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="plans.eyebrow">Plans</p>
+        <h2 id="plans-title" data-i18n="plans.title">More coaching when you want more depth.</h2>
+        <p data-i18n="plans.subtitle">
+          Paid tiers focus on higher analysis limits and weekly nutrition coaching, while the core meal decision flow stays simple.
         </p>
       </div>
 
-      <div class="testimonial-slider" data-carousel>
-        <div class="testimonial-viewport">
-          <div class="testimonial-carousel" aria-label="Feature story carousel">
-            <article class="testimonial-card is-active" id="moment-photo">
-              <div class="testimonial-photo">
-                <img src="./assets/images/testimonial-1.jpg" alt="Restaurant meal moment" />
-              </div>
-              <div class="testimonial-body">
-                <span class="story-tag">Restaurant lunch</span>
-                <h3>Take one photo instead of searching a food database.</h3>
-                <p>EatOrNot AI estimates calories and macros from the meal image, then gives a portion-aware recommendation for today.</p>
-                <div>
-                  <strong>Photo food analysis</strong>
-                  <span>Fast meal estimates</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="testimonial-card" id="moment-decision">
-              <div class="testimonial-photo">
-                <img src="./assets/images/testimonial-2.jpg" alt="Casual restaurant meal moment" />
-              </div>
-              <div class="testimonial-body">
-                <span class="story-tag">Eat or adjust</span>
-                <h3>Get a decision without guilt-based language.</h3>
-                <p>The app translates nutrition numbers into SAFE, WARNING, or OVER BUDGET, with practical guidance for portion or timing.</p>
-                <div>
-                  <strong>EatOrNot AI decision</strong>
-                  <span>SAFE / WARNING / OVER BUDGET</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="testimonial-card" id="moment-snack">
-              <div class="testimonial-photo">
-                <img src="./assets/images/testimonial-3.jpg" alt="Dessert and snack moment" />
-              </div>
-              <div class="testimonial-body">
-                <span class="story-tag">Dessert timing</span>
-                <h3>See when a snack still fits your day.</h3>
-                <p>Remaining budget, protein, fiber, carbs, and fat context help explain whether the better move is eat, reduce, or save it for later.</p>
-                <div>
-                  <strong>Macro-aware coaching</strong>
-                  <span>Calories plus nutrition context</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="testimonial-card featured-testimonial" id="moment-health">
-              <div class="testimonial-photo">
-                <img src="./assets/images/testimonial-4.jpg" alt="Post-workout eating moment" />
-              </div>
-              <div class="testimonial-body">
-                <span class="story-tag">Workout day</span>
-                <h3>Let activity change the answer.</h3>
-                <p>With permission, Apple Health activity data helps adjust your daily energy budget, so the same meal can receive different guidance on different days.</p>
-                <div>
-                  <strong>HealthKit-aware budget</strong>
-                  <span>Activity-informed recommendations</span>
-                </div>
-              </div>
-            </article>
+      <div class="plan-screens">
+        <article class="plan-shot">
+          <img src="./assets/images/pro.png" alt="EatOrNot AI Pro Coaching App Store screenshot showing weekly coaching features" />
+          <div>
+            <span class="story-tag blue">Pro</span>
+            <h3 data-i18n="pro.title">Weekly coaching and more analyses.</h3>
+            <p data-i18n="pro.text">Designed for users who want consistent AI meal analysis and personalized guidance every week.</p>
           </div>
+        </article>
 
-          <button class="carousel-control carousel-control-prev" type="button" data-carousel-prev aria-label="Previous story">
-            <span aria-hidden="true"></span>
-          </button>
-          <button class="carousel-control carousel-control-next" type="button" data-carousel-next aria-label="Next story">
-            <span aria-hidden="true"></span>
-          </button>
-        </div>
-
-        <div class="carousel-indicators" aria-label="Choose feature story">
-          <button class="is-active" type="button" data-carousel-indicator="0" aria-label="Show restaurant lunch story" aria-current="true"></button>
-          <button type="button" data-carousel-indicator="1" aria-label="Show EatOrNot AI decision story"></button>
-          <button type="button" data-carousel-indicator="2" aria-label="Show dessert timing story"></button>
-          <button type="button" data-carousel-indicator="3" aria-label="Show workout day story"></button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="premium" aria-labelledby="premium-title">
-      <div class="premium-layout">
-        <div class="premium-copy">
-          <p class="eyebrow">Premium coaching</p>
-          <h2 id="premium-title">From one meal decisions to weekly pattern change.</h2>
-          <p>
-            Pro answers "Can I eat this now?" Premium answers "What pattern am I repeating, and what should I change next?"
-          </p>
-        </div>
-
-        <div class="premium-panels">
-          <article class="score-panel">
-            <span>Weekly Nutrition Score</span>
-            <strong>82 / 100</strong>
-            <p>Calendar week score compared with the same period last week.</p>
-            <div class="mini-bars" aria-hidden="true">
-              <i></i><i></i><i></i><i></i>
-            </div>
-          </article>
-
-          <article class="insight-panel">
-            <span>Premium 7-Day AI Insight</span>
-            <p>Rolling seven-day pattern review with risk moments, protein gaps, sleep links, and next-week action items.</p>
-            <a class="button dark-button" href="mailto:hello@micavo.app?subject=EatOrNot%20AI%20Premium%20Access">Request Premium Access</a>
-          </article>
-        </div>
+        <article class="plan-shot premium-shot">
+          <img src="./assets/images/premium.png" alt="EatOrNot AI Premium Features App Store screenshot showing premium weekly score and 7-day AI insights" />
+          <div>
+            <span class="story-tag purple">Premium</span>
+            <h3 data-i18n="premium.title">Deeper 7-day insight and pattern analysis.</h3>
+            <p data-i18n="premium.text">Premium adds weekly nutrition score, risk moments, goal-tailored pattern analysis, and action items.</p>
+          </div>
+        </article>
       </div>
 
-      <div class="plan-compare" aria-labelledby="plan-title">
+      <div class="plan-compare" aria-labelledby="plan-table-title">
         <div class="plan-copy">
-          <p class="eyebrow">Plans</p>
-          <h3 id="plan-title">Choose the coaching depth you need.</h3>
+          <p class="eyebrow" data-i18n="compare.eyebrow">Comparison</p>
+          <h3 id="plan-table-title" data-i18n="compare.title">Choose the coaching depth you need.</h3>
         </div>
 
         <div class="plan-table-wrap">
           <table class="plan-table">
             <thead>
               <tr>
-                <th scope="col">Feature</th>
-                <th scope="col">Free</th>
+                <th scope="col" data-i18n="table.feature">Feature</th>
+                <th scope="col" data-i18n="table.free">Free</th>
                 <th scope="col">Pro</th>
                 <th scope="col" class="premium-col">Premium</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">AI meal analyses</th>
-                <td>3 / day</td>
-                <td>100 / day</td>
-                <td class="premium-col">100 / day</td>
+                <th scope="row" data-i18n="table.analysis">AI meal analyses</th>
+                <td data-i18n="table.threeDay">3 / day</td>
+                <td data-i18n="table.hundredDay">100 / day</td>
+                <td class="premium-col" data-i18n="table.hundredDay">100 / day</td>
               </tr>
               <tr>
-                <th scope="row">Photo food analysis</th>
-                <td><span class="yes">Included</span></td>
-                <td><span class="yes">Included</span></td>
-                <td class="premium-col"><span class="yes">Included</span></td>
+                <th scope="row" data-i18n="table.photoVoice">Photo and voice food input</th>
+                <td><span class="yes" data-i18n="table.included">Included</span></td>
+                <td><span class="yes" data-i18n="table.included">Included</span></td>
+                <td class="premium-col"><span class="yes" data-i18n="table.included">Included</span></td>
               </tr>
               <tr>
-                <th scope="row">Voice food input</th>
-                <td><span class="yes">Included</span></td>
-                <td><span class="yes">Included</span></td>
-                <td class="premium-col"><span class="yes">Included</span></td>
+                <th scope="row" data-i18n="table.recommendation">Eat-or-adjust recommendation</th>
+                <td><span class="yes" data-i18n="table.included">Included</span></td>
+                <td><span class="yes" data-i18n="table.included">Included</span></td>
+                <td class="premium-col"><span class="yes" data-i18n="table.included">Included</span></td>
               </tr>
               <tr>
-                <th scope="row">iOS Health daily budget</th>
-                <td><span class="yes">Included</span></td>
-                <td><span class="yes">Included</span></td>
-                <td class="premium-col"><span class="yes">Included</span></td>
+                <th scope="row" data-i18n="table.health">Apple Health context</th>
+                <td><span class="yes" data-i18n="table.included">Included</span></td>
+                <td><span class="yes" data-i18n="table.included">Included</span></td>
+                <td class="premium-col"><span class="yes" data-i18n="table.included">Included</span></td>
               </tr>
               <tr>
-                <th scope="row">Eat / warning / over-budget decision</th>
-                <td><span class="yes">Included</span></td>
-                <td><span class="yes">Included</span></td>
-                <td class="premium-col"><span class="yes">Included</span></td>
+                <th scope="row" data-i18n="table.weeklyCoach">Weekly Nutrition Coach</th>
+                <td><span class="no" data-i18n="table.locked">Locked</span></td>
+                <td><span class="yes" data-i18n="table.included">Included</span></td>
+                <td class="premium-col"><span class="yes" data-i18n="table.included">Included</span></td>
               </tr>
               <tr>
-                <th scope="row">7-Day Nutrition Coach</th>
-                <td><span class="no">Locked</span></td>
-                <td><span class="yes">Included</span></td>
-                <td class="premium-col"><span class="yes">Included</span></td>
+                <th scope="row" data-i18n="table.weeklyScore">Weekly Nutrition Score</th>
+                <td><span class="no" data-i18n="table.locked">Locked</span></td>
+                <td><span class="no" data-i18n="table.locked">Locked</span></td>
+                <td class="premium-col"><span class="yes" data-i18n="table.included">Included</span></td>
               </tr>
               <tr>
-                <th scope="row">Weekly Nutrition Score</th>
-                <td><span class="no">Locked</span></td>
-                <td><span class="no">Locked</span></td>
-                <td class="premium-col"><span class="yes">Included</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Premium 7-Day AI Insight</th>
-                <td><span class="no">Locked</span></td>
-                <td><span class="no">Locked</span></td>
-                <td class="premium-col"><span class="yes">Included</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Goal-tailored pattern analysis</th>
-                <td><span class="no">Locked</span></td>
-                <td><span class="no">Locked</span></td>
-                <td class="premium-col"><span class="yes">Included</span></td>
+                <th scope="row" data-i18n="table.premiumInsight">Premium 7-Day AI Insight</th>
+                <td><span class="no" data-i18n="table.locked">Locked</span></td>
+                <td><span class="no" data-i18n="table.locked">Locked</span></td>
+                <td class="premium-col"><span class="yes" data-i18n="table.included">Included</span></td>
               </tr>
             </tbody>
           </table>
@@ -362,29 +262,289 @@
 
     <section class="section trust-section" aria-labelledby="trust-title">
       <div class="section-heading">
-        <p class="eyebrow">Privacy for App Review</p>
-        <h2 id="trust-title">Health data stays permission-based.</h2>
-        <p>
-          EatOrNot AI requests health permissions only to calculate budgets and coaching context. See the privacy page for App Store review details.
+        <p class="eyebrow" data-i18n="trust.eyebrow">Privacy and support</p>
+        <h2 id="trust-title" data-i18n="trust.title">Health data stays permission-based.</h2>
+        <p data-i18n="trust.text">
+          EatOrNot AI requests health permissions only to calculate budgets and personalize nutrition coaching. You stay in control of what is shared.
         </p>
       </div>
 
       <div class="cta-row centered">
-        <a class="button primary-button" href="./privacy.html">Read Privacy Policy</a>
-        <a class="button secondary-button" href="mailto:support@micavo.app">Contact Support</a>
+        <a class="button primary-button" href="./privacy.html" data-i18n="trust.privacyCta">Read Privacy Policy</a>
+        <a class="button secondary-button" href="./terms.html" data-i18n="trust.termsCta">Read Terms</a>
+        <a class="button secondary-button" href="mailto:support@micavo.app" data-i18n="trust.supportCta">Contact Support</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div>© 2026 Micavo. EatOrNot AI is a product by Micavo.</div>
+    <div data-i18n="footer.copy">© 2026 Micavo. EatOrNot AI is a product by Micavo.</div>
     <div class="footer-links">
       <a href="/">Micavo</a>
-      <a href="./privacy.html">Privacy Policy</a>
-      <a href="./terms.html">Terms of Service</a>
+      <a href="./privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="./terms.html" data-i18n="footer.terms">Terms of Service</a>
       <a href="mailto:hello@micavo.app">hello@micavo.app</a>
     </div>
   </footer>
-  <script src="./carousel.js"></script>
+  <script>
+    const translations = {
+      en: {
+        "nav.screenshots": "Screenshots",
+        "nav.features": "Features",
+        "nav.plans": "Plans",
+        "nav.privacy": "Privacy",
+        "nav.terms": "Terms",
+        "nav.contact": "Contact",
+        "hero.eyebrow": "AI nutrition coach for iPhone",
+        "hero.title": "Know before you eat.",
+        "hero.subtitle": "Take a photo or describe your meal. EatOrNot AI estimates nutrition, checks your calorie and macro context, and gives a clear eat-or-adjust recommendation.",
+        "hero.statusTitle": "Submitted to Apple for review",
+        "hero.statusText": "EatOrNot AI is being prepared for App Store release.",
+        "hero.screenshotsCta": "View App Screenshots",
+        "hero.privacyCta": "Privacy Policy",
+        "hero.note": "Built for quick food decisions, daily progress, and personalized coaching with permission-based Apple Health integration.",
+        "screens.eyebrow": "App Store preview",
+        "screens.title": "The product, exactly as presented for review.",
+        "screens.subtitle": "The app experience centers on fast meal input, clear nutrition verdicts, HealthKit-aware context, and practical daily coaching.",
+        "screen1.tag": "Meal analysis",
+        "screen1.title": "Photo or voice in, nutrition verdict out.",
+        "screen1.text": "Use the camera, choose from your library, or describe food naturally to receive calories, macros, and an eat-or-not decision.",
+        "screen2.tag": "Personal coach",
+        "screen2.title": "Advice that fits your day.",
+        "screen2.text": "Recommendations highlight protein, fiber, calorie balance, and recent meals in plain language.",
+        "screen3.tag": "Apple Health",
+        "screen3.title": "Permission-based health context.",
+        "screen3.text": "Health data is used only after authorization to personalize calorie needs and recommendations.",
+        "screen4.tag": "Progress",
+        "screen4.title": "Calories and macros in one place.",
+        "screen4.text": "Track remaining budget, nutrient progress, meals, and AI daily insights without manual database searching.",
+        "features.eyebrow": "What EatOrNot AI does",
+        "features.title": "Built for small food decisions that add up.",
+        "feature1.title": "AI food analysis",
+        "feature1.text": "Estimate calories, protein, carbs, fat, fiber, and meal components from a food photo or text description.",
+        "feature2.title": "Daily calorie budget",
+        "feature2.text": "See whether a meal fits your remaining budget based on goals, logged meals, and allowed health context.",
+        "feature3.title": "Personalized coaching",
+        "feature3.text": "Receive practical nutrition suggestions around protein, fiber, calories, meal timing, and habit patterns.",
+        "feature4.title": "Confirm before logging",
+        "feature4.text": "Analysis stays under your control. You choose when a meal should be saved to your daily timeline.",
+        "feature5.title": "Flexible usage",
+        "feature5.text": "Free daily analysis supports casual use, while paid plans unlock higher AI analysis limits and deeper insights.",
+        "feature6.title": "Weekly progress",
+        "feature6.text": "Pro and Premium coaching turn recent meals into summaries, scores, risks, and action items.",
+        "plans.eyebrow": "Plans",
+        "plans.title": "More coaching when you want more depth.",
+        "plans.subtitle": "Paid tiers focus on higher analysis limits and weekly nutrition coaching, while the core meal decision flow stays simple.",
+        "pro.title": "Weekly coaching and more analyses.",
+        "pro.text": "Designed for users who want consistent AI meal analysis and personalized guidance every week.",
+        "premium.title": "Deeper 7-day insight and pattern analysis.",
+        "premium.text": "Premium adds weekly nutrition score, risk moments, goal-tailored pattern analysis, and action items.",
+        "compare.eyebrow": "Comparison",
+        "compare.title": "Choose the coaching depth you need.",
+        "table.feature": "Feature",
+        "table.free": "Free",
+        "table.analysis": "AI meal analyses",
+        "table.threeDay": "3 / day",
+        "table.hundredDay": "100 / day",
+        "table.photoVoice": "Photo and voice food input",
+        "table.recommendation": "Eat-or-adjust recommendation",
+        "table.health": "Apple Health context",
+        "table.weeklyCoach": "Weekly Nutrition Coach",
+        "table.weeklyScore": "Weekly Nutrition Score",
+        "table.premiumInsight": "Premium 7-Day AI Insight",
+        "table.included": "Included",
+        "table.locked": "Locked",
+        "trust.eyebrow": "Privacy and support",
+        "trust.title": "Health data stays permission-based.",
+        "trust.text": "EatOrNot AI requests health permissions only to calculate budgets and personalize nutrition coaching. You stay in control of what is shared.",
+        "trust.privacyCta": "Read Privacy Policy",
+        "trust.termsCta": "Read Terms",
+        "trust.supportCta": "Contact Support",
+        "footer.copy": "© 2026 Micavo. EatOrNot AI is a product by Micavo.",
+        "footer.privacy": "Privacy Policy",
+        "footer.terms": "Terms of Service"
+      },
+      "zh-Hant": {
+        "nav.screenshots": "截圖",
+        "nav.features": "功能",
+        "nav.plans": "方案",
+        "nav.privacy": "隱私",
+        "nav.terms": "條款",
+        "nav.contact": "聯絡",
+        "hero.eyebrow": "iPhone 上的 AI 營養教練",
+        "hero.title": "吃之前，先知道。",
+        "hero.subtitle": "拍照或描述你的餐點。EatOrNot AI 會估算營養、檢查熱量與宏量營養素情境，並給出清楚的吃或調整建議。",
+        "hero.statusTitle": "已提交 Apple 審核",
+        "hero.statusText": "EatOrNot AI 正在準備於 App Store 上架。",
+        "hero.screenshotsCta": "查看 App 截圖",
+        "hero.privacyCta": "隱私權政策",
+        "hero.note": "為快速飲食決策、每日進度與個人化教練而設計，Apple Health 整合皆以授權為前提。",
+        "screens.eyebrow": "App Store 預覽",
+        "screens.title": "這就是送審中的產品畫面。",
+        "screens.subtitle": "App 體驗聚焦於快速輸入餐點、清楚的營養判斷、HealthKit 情境，以及實用的每日教練建議。",
+        "screen1.tag": "餐點分析",
+        "screen1.title": "照片或語音輸入，立即得到營養判斷。",
+        "screen1.text": "使用相機、從相簿選取，或自然描述餐點，即可取得熱量、宏量營養素與吃不吃建議。",
+        "screen2.tag": "個人教練",
+        "screen2.title": "貼合你當天狀態的建議。",
+        "screen2.text": "用好懂的語言提醒蛋白質、纖維、熱量平衡與近期餐點狀況。",
+        "screen3.tag": "Apple Health",
+        "screen3.title": "以授權為前提的健康資料情境。",
+        "screen3.text": "只有在你授權後，健康資料才會用於個人化熱量需求與營養建議。",
+        "screen4.tag": "進度",
+        "screen4.title": "熱量與宏量營養素集中管理。",
+        "screen4.text": "追蹤剩餘預算、營養進度、餐點紀錄與 AI 每日洞察，不必手動搜尋食物資料庫。",
+        "features.eyebrow": "EatOrNot AI 的功能",
+        "features.title": "為每天累積的小型飲食決策而生。",
+        "feature1.title": "AI 食物分析",
+        "feature1.text": "從食物照片或文字描述估算熱量、蛋白質、碳水、脂肪、纖維與餐點組成。",
+        "feature2.title": "每日熱量預算",
+        "feature2.text": "依照目標、已記錄餐點與授權的健康情境，判斷這餐是否符合剩餘預算。",
+        "feature3.title": "個人化教練",
+        "feature3.text": "圍繞蛋白質、纖維、熱量、用餐時間與習慣模式，給出實用營養建議。",
+        "feature4.title": "確認後再記錄",
+        "feature4.text": "分析結果由你掌控。你可以選擇何時把餐點存進每日時間軸。",
+        "feature5.title": "彈性使用",
+        "feature5.text": "免費每日分析支援輕量使用，付費方案解鎖更高 AI 分析額度與更深入洞察。",
+        "feature6.title": "每週進度",
+        "feature6.text": "Pro 與 Premium 教練會把近期餐點整理成摘要、分數、風險與行動項目。",
+        "plans.eyebrow": "方案",
+        "plans.title": "需要更深入時，就升級更多教練功能。",
+        "plans.subtitle": "付費方案聚焦於更高分析額度與每週營養教練，而核心餐點判斷流程依然簡單。",
+        "pro.title": "每週教練與更多分析額度。",
+        "pro.text": "適合想要穩定使用 AI 餐點分析，並每週獲得個人化指引的使用者。",
+        "premium.title": "更深入的 7 日洞察與模式分析。",
+        "premium.text": "Premium 加入每週營養分數、風險時刻、目標導向模式分析與行動項目。",
+        "compare.eyebrow": "比較",
+        "compare.title": "選擇你需要的教練深度。",
+        "table.feature": "功能",
+        "table.free": "免費",
+        "table.analysis": "AI 餐點分析",
+        "table.threeDay": "每日 3 次",
+        "table.hundredDay": "每日 100 次",
+        "table.photoVoice": "照片與語音食物輸入",
+        "table.recommendation": "吃或調整建議",
+        "table.health": "Apple Health 情境",
+        "table.weeklyCoach": "每週營養教練",
+        "table.weeklyScore": "每週營養分數",
+        "table.premiumInsight": "Premium 7 日 AI 洞察",
+        "table.included": "包含",
+        "table.locked": "未解鎖",
+        "trust.eyebrow": "隱私與支援",
+        "trust.title": "健康資料皆以授權為前提。",
+        "trust.text": "EatOrNot AI 只會為了計算預算與個人化營養教練而要求健康權限。你永遠掌控分享內容。",
+        "trust.privacyCta": "閱讀隱私權政策",
+        "trust.termsCta": "閱讀條款",
+        "trust.supportCta": "聯絡支援",
+        "footer.copy": "© 2026 Micavo。EatOrNot AI 是 Micavo 的產品。",
+        "footer.privacy": "隱私權政策",
+        "footer.terms": "服務條款"
+      },
+      ja: {
+        "nav.screenshots": "スクリーンショット",
+        "nav.features": "機能",
+        "nav.plans": "プラン",
+        "nav.privacy": "プライバシー",
+        "nav.terms": "利用規約",
+        "nav.contact": "お問い合わせ",
+        "hero.eyebrow": "iPhone 向け AI 栄養コーチ",
+        "hero.title": "食べる前に、わかる。",
+        "hero.subtitle": "食事を撮影するか、内容を説明するだけ。EatOrNot AI が栄養を推定し、カロリーとマクロの状況を確認して、食べるか調整するかをわかりやすく提案します。",
+        "hero.statusTitle": "Apple の審査に提出済み",
+        "hero.statusText": "EatOrNot AI は App Store 公開に向けて準備中です。",
+        "hero.screenshotsCta": "アプリ画面を見る",
+        "hero.privacyCta": "プライバシーポリシー",
+        "hero.note": "素早い食事判断、毎日の進捗、許可ベースの Apple Health 連携によるパーソナルコーチングのために作られています。",
+        "screens.eyebrow": "App Store プレビュー",
+        "screens.title": "審査に提出している実際のプロダクト画面です。",
+        "screens.subtitle": "アプリ体験は、素早い食事入力、明確な栄養判断、HealthKit に基づく文脈、実用的な毎日のコーチングを中心に設計されています。",
+        "screen1.tag": "食事分析",
+        "screen1.title": "写真や音声から、栄養判断まで。",
+        "screen1.text": "カメラ、ライブラリ、自然な食事説明から、カロリー、マクロ、食べるかどうかの判断を受け取れます。",
+        "screen2.tag": "パーソナルコーチ",
+        "screen2.title": "その日のあなたに合うアドバイス。",
+        "screen2.text": "タンパク質、食物繊維、カロリーバランス、最近の食事をわかりやすく整理します。",
+        "screen3.tag": "Apple Health",
+        "screen3.title": "許可ベースの健康データ活用。",
+        "screen3.text": "健康データは、許可後にのみカロリー目標やおすすめのパーソナライズに使われます。",
+        "screen4.tag": "進捗",
+        "screen4.title": "カロリーとマクロを一か所で管理。",
+        "screen4.text": "残り予算、栄養の進捗、食事記録、AI の毎日インサイトを、食品データベース検索なしで確認できます。",
+        "features.eyebrow": "EatOrNot AI の機能",
+        "features.title": "小さな食事判断の積み重ねを支えます。",
+        "feature1.title": "AI 食事分析",
+        "feature1.text": "食事写真やテキスト説明から、カロリー、タンパク質、炭水化物、脂質、食物繊維、食事構成を推定します。",
+        "feature2.title": "毎日のカロリー予算",
+        "feature2.text": "目標、記録済みの食事、許可された健康データに基づき、その食事が残り予算に合うか確認できます。",
+        "feature3.title": "パーソナルコーチング",
+        "feature3.text": "タンパク質、食物繊維、カロリー、食事タイミング、習慣パターンに沿った実用的な提案を届けます。",
+        "feature4.title": "記録前に確認",
+        "feature4.text": "分析結果はあなたの管理下にあります。食事を毎日のタイムラインに保存するタイミングを選べます。",
+        "feature5.title": "柔軟な利用",
+        "feature5.text": "無料の毎日分析は気軽な利用に対応し、有料プランではより多くの AI 分析と深いインサイトを利用できます。",
+        "feature6.title": "週間の進捗",
+        "feature6.text": "Pro と Premium のコーチングは、最近の食事を要約、スコア、リスク、アクション項目に整理します。",
+        "plans.eyebrow": "プラン",
+        "plans.title": "もっと深く知りたい時の追加コーチング。",
+        "plans.subtitle": "有料プランは分析回数の拡張と週間栄養コーチングに重点を置き、基本の食事判断フローはシンプルなままです。",
+        "pro.title": "週間コーチングとより多くの分析。",
+        "pro.text": "継続的な AI 食事分析と、毎週のパーソナルガイダンスを求めるユーザー向けです。",
+        "premium.title": "より深い 7 日間インサイトとパターン分析。",
+        "premium.text": "Premium では週間栄養スコア、リスク場面、目標に合わせたパターン分析、アクション項目を利用できます。",
+        "compare.eyebrow": "比較",
+        "compare.title": "必要なコーチングの深さを選べます。",
+        "table.feature": "機能",
+        "table.free": "無料",
+        "table.analysis": "AI 食事分析",
+        "table.threeDay": "1日 3 回",
+        "table.hundredDay": "1日 100 回",
+        "table.photoVoice": "写真・音声の食事入力",
+        "table.recommendation": "食べる・調整の提案",
+        "table.health": "Apple Health の文脈",
+        "table.weeklyCoach": "週間栄養コーチ",
+        "table.weeklyScore": "週間栄養スコア",
+        "table.premiumInsight": "Premium 7 日間 AI インサイト",
+        "table.included": "利用可",
+        "table.locked": "ロック中",
+        "trust.eyebrow": "プライバシーとサポート",
+        "trust.title": "健康データは許可ベースです。",
+        "trust.text": "EatOrNot AI は、予算計算と栄養コーチングのパーソナライズに必要な場合のみ健康権限を求めます。共有内容はあなたが管理できます。",
+        "trust.privacyCta": "プライバシーポリシー",
+        "trust.termsCta": "利用規約",
+        "trust.supportCta": "サポートへ連絡",
+        "footer.copy": "© 2026 Micavo。EatOrNot AI は Micavo のプロダクトです。",
+        "footer.privacy": "プライバシーポリシー",
+        "footer.terms": "利用規約"
+      }
+    };
+
+    const applyLanguage = (language) => {
+      const activeLanguage = translations[language] ? language : "en";
+      document.documentElement.lang = activeLanguage;
+      document.documentElement.dataset.lang = activeLanguage;
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const value = translations[activeLanguage][element.dataset.i18n];
+
+        if (value) {
+          element.textContent = value;
+        }
+      });
+
+      document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+        const isActive = button.dataset.langSwitch === activeLanguage;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+
+      localStorage.setItem("eatornot-language", activeLanguage);
+    };
+
+    document.querySelectorAll("[data-lang-switch]").forEach((button) => {
+      button.addEventListener("click", () => applyLanguage(button.dataset.langSwitch));
+    });
+
+    applyLanguage(localStorage.getItem("eatornot-language") || "en");
+  </script>
 </body>
 </html>

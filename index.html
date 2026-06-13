@@ -3,17 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Micavo — AI Products for Better Decisions</title>
-  <meta name="description" content="Micavo builds AI products that help people make better everyday decisions." />
+  <title>Micavo - Decision Intelligence Products</title>
+  <meta name="description" content="Micavo builds focused AI products for everyday decision intelligence, including EatOrNot AI and Critical Choice." />
+  <meta property="og:title" content="Micavo" />
+  <meta property="og:description" content="Decision intelligence products for nutrition, productivity, and personal operating systems." />
+  <meta property="og:image" content="/eatornot/assets/images/hero-picnic.png" />
 
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --ink: #101624;
+      --muted: #5d6b82;
+      --line: #dce3ec;
+      --panel: rgba(255, 255, 255, 0.86);
+      --blue: #2563eb;
+      --blue-soft: #eaf3ff;
+      --green: #16815f;
+      --green-soft: #e8f7f0;
+      --amber: #d97706;
+      --amber-soft: #fff3d6;
+      --purple: #6d45d8;
+      --purple-soft: #f0eaff;
+      --shadow: 0 24px 70px rgba(24, 38, 61, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
-      background: #f8fafc;
-      color: #0f172a;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #eef6ff 0, #fbfcff 520px, #ffffff 100%);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     a {
@@ -21,215 +52,742 @@
       text-decoration: none;
     }
 
-    .nav {
-      max-width: 1120px;
+    .nav,
+    .hero,
+    .section,
+    .footer {
+      width: min(1160px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 24px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.78);
+      background: rgba(239, 247, 255, 0.84);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.04em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--ink);
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1;
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
-      color: #64748b;
+      align-items: center;
+      gap: 22px;
+      color: #4d5f76;
       font-size: 15px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover,
+    .footer a:hover {
+      color: var(--blue);
     }
 
     .hero {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 88px 24px 64px;
-      text-align: center;
+      min-height: calc(100vh - 76px);
+      padding: 56px 0 76px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
+      gap: 52px;
+      align-items: center;
     }
 
-    .badge {
-      display: inline-flex;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #e0f2fe;
-      color: #0369a1;
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 24px;
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      overflow-wrap: anywhere;
     }
 
     h1 {
-      font-size: clamp(48px, 8vw, 86px);
-      line-height: 0.95;
-      letter-spacing: -0.08em;
       margin: 0;
+      max-width: 760px;
+      font-size: 72px;
+      line-height: 0.98;
+      letter-spacing: 0;
     }
 
-    .subtitle {
-      max-width: 680px;
-      margin: 28px auto 0;
-      font-size: 22px;
-      line-height: 1.5;
-      color: #64748b;
+    .hero-copy {
+      max-width: 720px;
+    }
+
+    .hero-copy p:not(.eyebrow) {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.58;
     }
 
     .cta-row {
-      margin-top: 40px;
+      margin-top: 34px;
       display: flex;
-      justify-content: center;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 12px;
     }
 
     .button {
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-weight: 800;
-      border: 1px solid #cbd5e1;
-      background: white;
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--ink);
+      font-weight: 900;
+      line-height: 1.1;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(24, 38, 61, 0.1);
     }
 
     .button.primary {
-      background: #0f172a;
-      color: white;
-      border-color: #0f172a;
+      border-color: var(--ink);
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    .hero-board {
+      display: grid;
+      gap: 16px;
+    }
+
+    .product-preview {
+      overflow: hidden;
+      border: 1px solid rgba(220, 227, 236, 0.92);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .product-preview.featured {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.64fr) minmax(0, 1fr);
+      align-items: center;
+    }
+
+    .preview-image {
+      height: 100%;
+      min-height: 330px;
+      background: var(--blue-soft);
+    }
+
+    .preview-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .preview-body {
+      padding: 26px;
+    }
+
+    .status {
+      width: fit-content;
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .status.green {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .status.purple {
+      background: var(--purple-soft);
+      color: var(--purple);
+    }
+
+    .product-preview h2,
+    .matrix-card h2 {
+      margin: 16px 0 10px;
+      font-size: 32px;
+      line-height: 1.08;
+    }
+
+    .product-preview p,
+    .matrix-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .preview-link {
+      display: inline-flex;
+      margin-top: 20px;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .matrix-card {
+      padding: 24px;
+    }
+
+    .mini-matrix {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .mini-matrix div {
+      min-height: 88px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .mini-matrix strong,
+    .mini-matrix span {
+      display: block;
+    }
+
+    .mini-matrix strong {
+      font-size: 13px;
+    }
+
+    .mini-matrix span {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
     }
 
     .section {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 56px 24px;
+      padding: 82px 0;
     }
 
-    .section-title {
-      font-size: 34px;
-      letter-spacing: -0.04em;
-      margin: 0 0 24px;
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 34px;
     }
 
-    .grid {
+    .section-heading.centered {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 52px;
+      line-height: 1.06;
+    }
+
+    .section-heading p:not(.eyebrow) {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
     }
 
-    .card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.04);
+    .product-card,
+    .principle-card,
+    .contact-panel {
+      border: 1px solid rgba(220, 227, 236, 0.92);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 18px 48px rgba(24, 38, 61, 0.08);
     }
 
-    .card .tag {
-      display: inline-block;
+    .product-card {
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .product-media {
+      min-height: 290px;
+      background: #f4f8fc;
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .matrix-visual {
+      min-height: 290px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 24px;
+      background:
+        linear-gradient(135deg, rgba(234, 243, 255, 0.92), rgba(240, 234, 255, 0.84));
+    }
+
+    .matrix-visual div {
+      min-height: 120px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 12px 28px rgba(24, 38, 61, 0.08);
+    }
+
+    .matrix-visual strong,
+    .matrix-visual span {
+      display: block;
+    }
+
+    .matrix-visual strong {
+      font-size: 15px;
+    }
+
+    .matrix-visual span {
+      margin-top: 8px;
+      color: var(--muted);
       font-size: 13px;
-      font-weight: 800;
-      color: #2563eb;
-      margin-bottom: 16px;
+      line-height: 1.4;
     }
 
-    .card h3 {
-      font-size: 26px;
+    .product-body {
+      padding: 28px;
+    }
+
+    .product-body h3 {
+      margin: 14px 0 10px;
+      font-size: 34px;
+      line-height: 1.08;
+    }
+
+    .product-body p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .feature-list {
+      margin: 22px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .feature-list li {
+      padding-left: 18px;
+      position: relative;
+      color: #314157;
+      line-height: 1.48;
+    }
+
+    .feature-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .product-actions {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .principle-card {
+      min-height: 230px;
+      padding: 26px;
+    }
+
+    .principle-card span {
+      display: inline-flex;
+      margin-bottom: 18px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .principle-card h3 {
       margin: 0 0 12px;
-      letter-spacing: -0.04em;
+      font-size: 25px;
+      line-height: 1.16;
     }
 
-    .card p {
-      color: #64748b;
+    .principle-card p {
+      margin: 0;
+      color: var(--muted);
       line-height: 1.6;
-      margin-bottom: 24px;
+    }
+
+    .contact-panel {
+      padding: 34px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      background:
+        linear-gradient(135deg, rgba(16, 22, 36, 0.96), rgba(37, 99, 235, 0.88));
+      color: #ffffff;
+    }
+
+    .contact-panel h2 {
+      margin: 0;
+      font-size: 38px;
+      line-height: 1.1;
+    }
+
+    .contact-panel p {
+      max-width: 680px;
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.6;
+    }
+
+    .contact-panel .button {
+      border-color: rgba(255, 255, 255, 0.34);
+      background: #ffffff;
+      color: var(--ink);
     }
 
     .footer {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 48px 24px;
-      color: #94a3b8;
+      padding: 42px 0;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 16px;
+      color: #778399;
       font-size: 14px;
     }
 
-    .footer a {
-      color: #64748b;
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    @media (max-width: 800px) {
-      .nav-links { display: none; }
-      .grid { grid-template-columns: 1fr; }
-      .hero { padding-top: 64px; }
+    @media (max-width: 980px) {
+      .hero,
+      .product-preview.featured,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      h1 {
+        font-size: 58px;
+      }
+
+      .product-grid,
+      .principles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav,
+      .hero,
+      .section,
+      .footer {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .logo {
+        font-size: 23px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .hero-copy p:not(.eyebrow) {
+        font-size: 18px;
+      }
+
+      .cta-row,
+      .button {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .section {
+        padding: 62px 0;
+      }
+
+      .section-heading h2 {
+        font-size: 36px;
+      }
+
+      .product-body {
+        padding: 22px;
+      }
+
+      .product-body h3 {
+        font-size: 30px;
+      }
+
+      .matrix-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel {
+        padding: 24px;
+      }
+
+      .contact-panel h2 {
+        font-size: 30px;
+      }
+
+      .footer,
+      .footer-links {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 
 <body>
-  <nav class="nav">
-    <a class="logo" href="/">Micavo</a>
-    <div class="nav-links">
-      <a href="/eatornot/">EatOrNot</a>
-      <a href="/critical-choice/">Critical Choice</a>
-      <a href="mailto:hello@micavo.app">Contact</a>
-    </div>
-  </nav>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="logo" href="/" aria-label="Micavo home">
+        <span class="logo-mark" aria-hidden="true">M</span>
+        Micavo
+      </a>
+
+      <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#approach">Approach</a>
+        <a href="/eatornot/">EatOrNot AI</a>
+        <a href="https://michael-shen.github.io/critical-choice/">Critical Choice</a>
+        <a href="mailto:hello@micavo.app">Contact</a>
+      </div>
+    </nav>
+  </header>
 
   <main>
-    <section class="hero">
-      <div class="badge">AI product studio</div>
-      <h1>AI products for better decisions.</h1>
-      <p class="subtitle">
-        Micavo builds focused AI applications that help people make smarter everyday choices — from food decisions to productivity and future AI agent tools.
-      </p>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Decision intelligence product studio</p>
+        <h1 id="hero-title">AI products for the choices people make every day.</h1>
+        <p>
+          Micavo builds focused, privacy-conscious software that turns personal context into practical recommendations. Our products help people decide what to eat, what to prioritize, and what to do next.
+        </p>
 
-      <div class="cta-row">
-        <a class="button primary" href="/eatornot/">View EatOrNot</a>
-        <a class="button" href="mailto:hello@micavo.app">Contact Micavo</a>
+        <div class="cta-row">
+          <a class="button primary" href="#products">Explore Products</a>
+          <a class="button" href="mailto:hello@micavo.app">Work With Micavo</a>
+        </div>
+      </div>
+
+      <div class="hero-board" aria-label="Micavo product preview">
+        <article class="product-preview featured">
+          <div class="preview-image">
+            <img src="/eatornot/assets/images/s1_english.png" alt="EatOrNot AI App Store preview showing food photo analysis and an AI verdict" />
+          </div>
+          <div class="preview-body">
+            <span class="status">Under Apple review</span>
+            <h2>EatOrNot AI</h2>
+            <p>Nutrition decisions powered by meal analysis, calorie budgets, macro context, and permission-based Apple Health data.</p>
+            <a class="preview-link" href="/eatornot/">View product</a>
+          </div>
+        </article>
+
+        <article class="product-preview matrix-card">
+          <span class="status green">Live on App Store</span>
+          <h2>Critical Choice</h2>
+          <p>A productivity app built around the Eisenhower Matrix, helping users separate urgent noise from important work.</p>
+          <div class="mini-matrix" aria-hidden="true">
+            <div><strong>Do First</strong><span>Urgent and important</span></div>
+            <div><strong>Schedule</strong><span>Important, not urgent</span></div>
+            <div><strong>Delegate</strong><span>Urgent, not important</span></div>
+            <div><strong>Eliminate</strong><span>Low-value work</span></div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="section">
-      <h2 class="section-title">Products</h2>
+    <section class="section" id="products" aria-labelledby="products-title">
+      <div class="section-heading centered">
+        <p class="eyebrow">Products</p>
+        <h2 id="products-title">Built around real decision moments.</h2>
+        <p>
+          Each Micavo product focuses on one high-friction question, then makes the next step clearer through thoughtful UX and AI-assisted reasoning.
+        </p>
+      </div>
 
-      <div class="grid">
-        <div class="card">
-          <span class="tag">Featured</span>
-          <h3>EatOrNot</h3>
-          <p>
-            An AI calorie coach powered by Apple Health. Take a photo, understand your calorie budget, and know whether today is a good day to eat it.
-          </p>
-          <a class="button primary" href="/eatornot/">Learn More →</a>
-        </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-media">
+            <img src="/eatornot/assets/images/hero-picnic.png" alt="EatOrNot AI brand image with picnic food and blue sky" />
+          </div>
+          <div class="product-body">
+            <span class="status">AI nutrition coach</span>
+            <h3>EatOrNot AI</h3>
+            <p>
+              EatOrNot AI helps people decide whether a meal fits their day. It supports photo and voice food input, estimates calories and macros, tracks daily nutrition progress, and uses authorized Apple Health context for personalized coaching.
+            </p>
+            <ul class="feature-list">
+              <li>Photo and voice meal analysis with clear eat-or-adjust guidance.</li>
+              <li>Daily calorie and macro tracking designed for quick decisions.</li>
+              <li>Pro and Premium coaching for weekly insights and habit patterns.</li>
+            </ul>
+            <div class="product-actions">
+              <a class="button primary" href="/eatornot/">Open EatOrNot AI</a>
+              <a class="button" href="/eatornot/privacy.html">Privacy Policy</a>
+            </div>
+          </div>
+        </article>
 
-        <div class="card">
-          <span class="tag">Live</span>
-          <h3>Critical Choice</h3>
-          <p>
-            A decision-making assistant that helps users think through difficult choices with structured reasoning and AI support.
-          </p>
-          <a class="button" href="/critical-choice/">Learn More →</a>
-        </div>
+        <article class="product-card">
+          <div class="matrix-visual" aria-label="Critical Choice Eisenhower Matrix preview">
+            <div><strong>Q1</strong><span>Crises, deadlines, emergencies.</span></div>
+            <div><strong>Q2</strong><span>Planning, growth, meaningful work.</span></div>
+            <div><strong>Q3</strong><span>Interruptions and other people's priorities.</span></div>
+            <div><strong>Q4</strong><span>Busywork and time wasters.</span></div>
+          </div>
+          <div class="product-body">
+            <span class="status green">Productivity system</span>
+            <h3>Critical Choice</h3>
+            <p>
+              Critical Choice brings the Eisenhower Matrix into a modern task manager. It helps users sort work by urgency and importance, focus on high-leverage tasks, sync calendar events, and collaborate through cloud projects.
+            </p>
+            <ul class="feature-list">
+              <li>Visual quadrant organization for urgent and important work.</li>
+              <li>Daily task view, achievements, calendar sync, and cloud sync.</li>
+              <li>Premium features for teams, custom tags, assignments, and collaboration.</li>
+            </ul>
+            <div class="product-actions">
+              <a class="button primary" href="https://michael-shen.github.io/critical-choice/">Open Critical Choice</a>
+              <a class="button" href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644">App Store</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        <div class="card">
-          <span class="tag">Coming Soon</span>
-          <h3>Agent Marketplace</h3>
+    <section class="section" id="approach" aria-labelledby="approach-title">
+      <div class="section-heading">
+        <p class="eyebrow">Approach</p>
+        <h2 id="approach-title">Small products, serious product thinking.</h2>
+        <p>
+          Micavo favors narrow, useful products over broad AI demos. The goal is software that feels calm, actionable, and trustworthy in daily life.
+        </p>
+      </div>
+
+      <div class="principles-grid">
+        <article class="principle-card">
+          <span>01</span>
+          <h3>Decision-first design</h3>
+          <p>Each product begins with a concrete decision: eat or adjust, do now or schedule, focus or ignore.</p>
+        </article>
+
+        <article class="principle-card">
+          <span>02</span>
+          <h3>Context with consent</h3>
+          <p>Personal data should make recommendations better only when users understand the purpose and grant permission.</p>
+        </article>
+
+        <article class="principle-card">
+          <span>03</span>
+          <h3>Action over novelty</h3>
+          <p>AI should reduce ambiguity and help users move, not bury them in dashboards or generic advice.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact-title">
+      <div class="contact-panel">
+        <div>
+          <h2 id="contact-title">Building practical AI for personal operating systems.</h2>
           <p>
-            A future platform for discovering, buying, and exchanging useful AI agents for everyday work and life.
+            For product questions, support, partnerships, or media inquiries, reach Micavo directly.
           </p>
-          <a class="button" href="mailto:hello@micavo.app">Get Updates</a>
         </div>
+        <a class="button" href="mailto:hello@micavo.app">hello@micavo.app</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div>© 2026 Micavo. All rights reserved.</div>
-    <div>
-      <a href="mailto:hello@micavo.app">hello@micavo.app</a>
+    <div class="footer-links">
+      <a href="/eatornot/">EatOrNot AI</a>
+      <a href="https://michael-shen.github.io/critical-choice/">Critical Choice</a>
+      <a href="mailto:hello@micavo.app">Contact</a>
     </div>
   </footer>
 </body>
