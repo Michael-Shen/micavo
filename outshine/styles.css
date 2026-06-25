@@ -81,10 +81,15 @@ p {
   height: 36px;
   display: grid;
   place-items: center;
-  border-radius: 8px;
-  background: var(--ink);
-  color: #ffffff;
-  font-size: 17px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--gold) 100%);
+  box-shadow: 0 8px 22px rgba(15, 139, 141, 0.32);
+}
+
+.brand-mark svg {
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
 }
 
 .nav-links {
@@ -509,6 +514,11 @@ small {
   gap: 16px;
 }
 
+.pricing-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 760px;
+}
+
 .price-card {
   min-height: 280px;
   padding: 28px;
@@ -578,10 +588,18 @@ small {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 18px;
   color: var(--muted);
   font-size: 14px;
   font-weight: 800;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 
 @media (max-width: 900px) {
