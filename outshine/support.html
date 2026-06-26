@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outshine Support</title>
+  <meta name="description" content="Support page for Outshine, an AI career copilot by Micavo." />
+  <style>
+    :root {
+      --ink: #14172b;
+      --muted: #5b6178;
+      --indigo: #426397;
+      --accent-blue: #617bff;
+      --accent-purple: #b665ff;
+      --line: #dfe2ec;
+      --panel: rgba(255, 255, 255, 0.86);
+      --shadow: 0 18px 48px rgba(53, 60, 110, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #eef1ff 0, #f8f9ff 28rem, #ffffff 60rem);
+      color: var(--ink);
+    }
+
+    a {
+      color: var(--indigo);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(238, 241, 255, 0.86);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0;
+      color: var(--ink);
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+      box-shadow: 0 8px 22px rgba(97, 123, 255, 0.32);
+    }
+
+    .brand-mark svg {
+      width: 16px;
+      height: 16px;
+      fill: #ffffff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    main {
+      width: min(820px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .support-hero {
+      padding: 64px 0 30px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--indigo);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .support-hero h1 {
+      margin: 0;
+      font-size: 40px;
+      line-height: 1.15;
+    }
+
+    .support-hero p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .support-layout {
+      padding: 8px 0 80px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .support-card {
+      padding: 26px 28px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .support-card h2 {
+      margin: 0 0 12px;
+      font-size: 21px;
+      line-height: 1.25;
+    }
+
+    .support-card p,
+    .support-card li {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15.5px;
+    }
+
+    .support-card p {
+      margin: 0 0 14px;
+    }
+
+    .support-card ul {
+      margin: 0 0 14px;
+      padding-left: 20px;
+    }
+
+    .support-card p:last-child,
+    .support-card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .support-card strong {
+      color: var(--ink);
+    }
+
+    .footer {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 32px 0 48px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 13.5px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 560px) {
+      .support-hero h1 {
+        font-size: 32px;
+      }
+
+      .support-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="/outshine/" aria-label="Outshine home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>
+        </span>
+        Outshine
+      </a>
+      <div class="nav-links">
+        <a href="/outshine/privacy.html">Privacy</a>
+        <a href="/outshine/terms.html">Terms</a>
+        <a href="mailto:support@micavo.app">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="support-hero">
+      <p class="eyebrow">Support</p>
+      <h1>How can we help?</h1>
+      <p>
+        Get help with Outshine, your AI Career Copilot for meetings.
+      </p>
+    </section>
+
+    <section class="support-layout">
+      <article class="support-card">
+        <h2>Contact support</h2>
+        <p>
+          For product questions, account help, billing issues, or privacy requests, email us at
+          <a href="mailto:support@micavo.app">support@micavo.app</a>.
+        </p>
+        <p>
+          Please include the email address connected to your Outshine account and a short description
+          of the issue so we can help you faster.
+        </p>
+      </article>
+
+      <article class="support-card">
+        <h2>Subscriptions and billing</h2>
+        <p>
+          Outshine subscriptions are managed through Apple. You can view, cancel, or change your
+          subscription in your Apple ID settings.
+        </p>
+        <ul>
+          <li>Open the Settings app on your iPhone.</li>
+          <li>Tap your Apple ID.</li>
+          <li>Tap Subscriptions.</li>
+          <li>Select Outshine.</li>
+        </ul>
+      </article>
+
+      <article class="support-card">
+        <h2>Account deletion</h2>
+        <p>
+          You can delete your account from inside the Outshine app. Deleting your account removes
+          account data associated with your Outshine profile, but it does not cancel an active App
+          Store subscription. Subscriptions must be managed through Apple.
+        </p>
+      </article>
+
+      <article class="support-card">
+        <h2>Meeting audio and summaries</h2>
+        <p>
+          Outshine uses meeting audio to generate coaching, smart questions, and summaries. Meeting
+          audio is processed for the product experience and may be removed after analysis as described
+          in our Privacy Policy.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Micavo. All rights reserved.</span>
+    <span class="footer-links">
+      <a href="/outshine/privacy.html">Privacy Policy</a>
+      <a href="/outshine/terms.html">Terms of Service</a>
+      <a href="mailto:support@micavo.app">support@micavo.app</a>
+    </span>
+  </footer>
+</body>
+</html>
