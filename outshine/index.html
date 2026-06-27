@@ -4,218 +4,337 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Outshine - Your AI Career Copilot</title>
-  <meta name="description" content="Outshine helps professionals know what to say next in meetings with live intelligence, smart suggestions, and career growth coaching." />
+  <meta name="description" content="Outshine helps professionals know what to say next in meetings with live AI coaching, persona-aware suggestions, and instant meeting summaries." />
   <meta property="og:title" content="Outshine" />
-  <meta property="og:description" content="Never run out of smart things to say. Turn every meeting into a career advantage." />
+  <meta property="og:description" content="Get seen. Outshine every meeting and turn it into a career advantage." />
   <meta property="og:image" content="./assets/outshine-hero.png" />
-  <link rel="stylesheet" href="./styles.css?v=2" />
+  <link rel="icon" type="image/png" href="./assets/AppIcon@3x.png" />
+  <link rel="apple-touch-icon" href="./assets/AppIcon@3x.png" />
+  <link rel="stylesheet" href="./styles.css?v=3" />
 </head>
 
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="/outshine/" aria-label="Outshine home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>
-        </span>
+        <img class="brand-mark" src="./assets/AppIcon@3x.png" alt="" aria-hidden="true" />
         <span>Outshine</span>
       </a>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#career">Career Intelligence</a>
-        <a href="#pricing">Pricing</a>
-        <a href="mailto:support@micavo.app">Contact</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#live-coaching" data-i18n="nav.features">Live Coaching</a>
+          <a href="#personas" data-i18n="nav.personas">Personas</a>
+          <a href="#summary" data-i18n="nav.summary">Summary</a>
+          <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+          <a href="mailto:support@micavo.app" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button type="button" data-lang-btn="en">EN</button>
+          <button type="button" data-lang-btn="zh">中文</button>
+          <button type="button" data-lang-btn="ja">日本語</button>
+        </div>
       </div>
     </nav>
   </header>
 
   <main>
+    <!-- Hero -->
     <section class="hero" aria-labelledby="hero-title">
-      <img class="hero-image" src="./assets/outshine-hero.png" alt="Professionals in a modern meeting with an AI meeting intelligence dashboard on a laptop" />
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="eyebrow">AI Career Copilot</p>
-        <h1 id="hero-title">Never run out of smart things to say.</h1>
-        <p class="hero-subtitle">
-          Outshine gives professionals live meeting intelligence, strategic suggestion cards, and career growth coaching so every conversation becomes an advantage.
-        </p>
-        <div class="cta-row">
-          <a class="button primary" href="mailto:support@micavo.app?subject=Outshine%20early%20access">Request Early Access</a>
-          <a class="button secondary" href="#features">See How It Works</a>
+      <img class="hero-bg-photo" src="./assets/outshine-hero.png" alt="Professionals collaborating in a meeting room" />
+      <div class="hero-bg-overlay" aria-hidden="true"></div>
+      <div class="section">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">AI Career Copilot</p>
+          <h1 id="hero-title" data-i18n="hero.title_html" data-i18n-html>Get seen. <span class="accent">Outshine</span> every meeting.</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Your AI Career Copilot for every meeting — live coaching, persona-aware suggestions, and instant summaries.</p>
+          <div class="cta-row">
+            <a class="button primary" href="mailto:support@micavo.app?subject=Outshine%20early%20access" data-i18n="hero.cta1">Request Early Access</a>
+            <a class="button secondary" href="#live-coaching" data-i18n="hero.cta2">See How It Works</a>
+          </div>
+        </div>
+        <div class="phone-wrap">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="status-bar">
+                <span>9:41</span>
+                <div class="dynamic-island"></div>
+                <div class="status-icons"><span></span><span></span><span></span></div>
+              </div>
+              <div class="app-status-row">
+                <span class="dot-live"></span>
+                <span data-i18n="hero.status">AI Coach Listening</span>
+                <span>00:01:24</span>
+              </div>
+              <div class="waveform">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <p class="app-section-title" data-i18n="nav.features">Live AI Coaching</p>
+              <div class="coach-card">
+                <small data-i18n="live.c1_label">Strategic Question</small>
+                <strong data-i18n="live.c1_title">How will we measure success?</strong>
+                <p data-i18n="live.c1_body">Ask the question that moves the discussion forward.</p>
+              </div>
+              <div class="coach-card blue">
+                <small data-i18n="live.c2_label">Risk Alert</small>
+                <strong data-i18n="live.c2_title">What could be the biggest risk?</strong>
+                <p data-i18n="live.c2_body">Surface potential risks before they become problems.</p>
+              </div>
+              <p class="app-footnote" data-i18n="hero.building">Building context… 3/5 min</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section proof-strip" aria-label="Product positioning">
-      <div>
-        <strong>Meeting tools answer</strong>
-        <span>What happened?</span>
+    <!-- Live coaching -->
+    <section class="section split-section reverse section-light" id="live-coaching" aria-labelledby="live-title">
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-screen light">
+            <div class="status-bar">
+              <span>9:41</span>
+              <div class="dynamic-island"></div>
+              <div class="status-icons"><span></span><span></span><span></span></div>
+            </div>
+            <div class="app-status-row">
+              <span class="dot-live"></span>
+              <span data-i18n="hero.status">AI Coach Listening</span>
+              <span>00:07:24</span>
+            </div>
+            <div class="waveform">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p class="app-section-title" data-i18n="nav.features">Live AI Coaching</p>
+            <div class="coach-card">
+              <small data-i18n="live.c1_label">Strategic Question</small>
+              <strong data-i18n="live.c1_title">How will we measure success?</strong>
+              <p data-i18n="live.c1_body">Ask the question that moves the discussion forward.</p>
+            </div>
+            <div class="coach-card blue">
+              <small data-i18n="live.c2_label">Risk Alert</small>
+              <strong data-i18n="live.c2_title">What could be the biggest risk?</strong>
+              <p data-i18n="live.c2_body">Surface potential risks before they become problems.</p>
+            </div>
+            <div class="coach-card green">
+              <small data-i18n="live.c3_label">What to Say Next</small>
+              <strong data-i18n="live.c3_title">Should we clarify who owns this decision?</strong>
+              <p data-i18n="live.c3_body">Drive clarity and accountability.</p>
+            </div>
+            <p class="app-footnote" data-i18n="live.updated">With you for the whole meeting</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <strong>Outshine answers</strong>
-        <span>What should I say next?</span>
-      </div>
-      <div>
-        <strong>Long term</strong>
-        <span>How do I become more influential?</span>
-      </div>
-    </section>
-
-    <section class="section split-section" id="features" aria-labelledby="features-title">
       <div class="section-copy">
-        <p class="eyebrow">Live Meeting Intelligence</p>
-        <h2 id="features-title">Understand the room before the moment passes.</h2>
-        <p>
-          Outshine listens to your meeting in rolling audio chunks, then turns the latest context into three coaching cards: quality over frequency, context over latency.
-        </p>
+        <p class="eyebrow" data-i18n="live.eyebrow">Context-Aware Coaching</p>
+        <h2 id="live-title" data-i18n="live.title_html" data-i18n-html>Live AI <span class="accent">coaching</span> during meetings.</h2>
+        <p data-i18n="live.subtitle">Get context-aware suggestions tailored to the conversation, every step of the way.</p>
       </div>
-      <div class="meeting-panel" aria-label="Example live briefing">
-        <div class="panel-header">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="topic-card">
-          <small>Current Topic</small>
-          <strong>Enterprise rollout timing</strong>
-          <p>Stakeholders are weighing customer urgency against engineering capacity.</p>
-        </div>
-        <div class="brief-grid">
-          <div>
-            <small>Strategic Question</small>
-            <span>Ask about phased rollout</span>
-          </div>
-          <div>
-            <small>Career Signal</small>
-            <span>Owning the timeline call</span>
-          </div>
-          <div>
-            <small>Say Next</small>
-            <span>"I can lead the phased plan."</span>
+    </section>
+
+    <!-- Personas -->
+    <section class="section split-section section-tinted" id="personas" aria-labelledby="personas-title">
+      <div class="section-copy">
+        <p class="eyebrow" data-i18n="personas.eyebrow">Persona Coach</p>
+        <h2 id="personas-title" data-i18n="personas.title_html" data-i18n-html>Coaching tailored to <span class="accent">your role</span>.</h2>
+        <p data-i18n="personas.subtitle">Different roles. Different priorities. Better advice for you.</p>
+      </div>
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="status-bar">
+              <span>9:41</span>
+              <div class="dynamic-island"></div>
+              <div class="status-icons"><span></span><span></span><span></span></div>
+            </div>
+            <p class="app-section-title" data-i18n="personas.eyebrow">Persona Coach</p>
+            <div class="persona-tabs">
+              <button type="button" class="persona-tab active" data-role-key="founder"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span data-i18n="personas.roles.founder">Founder</span></button>
+              <button type="button" class="persona-tab" data-role-key="pm"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span><span data-i18n="personas.roles.pm">PM</span></button>
+              <button type="button" class="persona-tab" data-role-key="em"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></span><span data-i18n="personas.roles.em">Eng Manager</span></button>
+              <button type="button" class="persona-tab" data-role-key="sales"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg></span><span data-i18n="personas.roles.sales">Sales</span></button>
+              <button type="button" class="persona-tab" data-role-key="exec"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></span><span data-i18n="personas.roles.exec">Executive</span></button>
+              <button type="button" class="persona-tab" data-role-key="consultant"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span data-i18n="personas.roles.consultant">Consultant</span></button>
+            </div>
+            <p class="focus-heading"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span data-focus-for>Coaching focus for Founder</span></p>
+            <div class="coach-card">
+              <small data-i18n="personas.f1_title">Revenue Impact</small>
+              <p data-i18n="personas.f1_body" style="margin-top:0;color:#c8cce6;font-size:13px;">Questions that connect discussions to growth, monetization, and ROI.</p>
+            </div>
+            <div class="coach-card blue">
+              <small data-i18n="personas.f2_title">Customer Impact</small>
+              <p data-i18n="personas.f2_body" style="margin-top:0;color:#c8cce6;font-size:13px;">Surface customer problems, value and long-term differentiation.</p>
+            </div>
+            <div class="coach-card green">
+              <small data-i18n="personas.f3_title">Strategic Tradeoffs</small>
+              <p data-i18n="personas.f3_body" style="margin-top:0;color:#c8cce6;font-size:13px;">Evaluate tradeoffs, focus on what really moves the needle.</p>
+            </div>
+            <p class="app-footnote" data-i18n="personas.footnote">Outshine adapts to your role as the conversation unfolds, so you can contribute with confidence.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section card-grid" aria-label="Core features">
-      <article class="feature-card">
-        <span class="icon">?</span>
-        <h3>Smart Suggestion Cards</h3>
-        <p>Every cycle delivers a strategic question, a career signal, and a sentence you can say next.</p>
-      </article>
-      <article class="feature-card">
-        <span class="icon">↗</span>
-        <h3>One-Tap Copy</h3>
-        <p>Move polished contributions into Zoom, Teams, Slack, or Google Meet quickly.</p>
-      </article>
-      <article class="feature-card">
-        <span class="icon">✓</span>
-        <h3>Meeting Summary</h3>
-        <p>Get a clear meeting summary generated from the full transcript once a meeting ends.</p>
-      </article>
-      <article class="feature-card">
-        <span class="icon">◎</span>
-        <h3>Persona Modes</h3>
-        <p>Adapt coaching for engineers, PMs, sales, founders, and leadership.</p>
-      </article>
+    <!-- Meeting summary -->
+    <section class="section split-section reverse section-light" id="summary" aria-labelledby="summary-title">
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-screen light">
+            <div class="status-bar">
+              <span>9:41</span>
+              <div class="dynamic-island"></div>
+              <div class="status-icons"><span></span><span></span><span></span></div>
+            </div>
+            <p class="app-section-title" data-i18n="summary.heading">Meeting Summary</p>
+            <div class="summary-card-head">
+              <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span>
+              <div>
+                <strong data-i18n="summary.meeting_title" style="display:block;font-size:14px;">Product Roadmap Review</strong>
+                <span class="summary-meta" data-i18n="summary.meeting_meta">May 15, 2024 · 45:32 · 8 participants</span>
+              </div>
+            </div>
+            <div class="summary-block">
+              <div class="summary-block-head" style="color:#c9b6ff;"><span class="dot" style="background:rgba(139,92,246,.2);color:var(--purple);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></span><span data-i18n="summary.summary_label">Summary</span></div>
+              <p class="summary-block-body" data-i18n="summary.summary_body">The team reviewed Q3 roadmap priorities, aligned on the MVP scope for Project Aurora, and discussed resource allocation and launch timeline.</p>
+            </div>
+            <div class="summary-block col-blue">
+              <div class="summary-block-head" style="color:var(--blue);"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span><span data-i18n="summary.decisions_label">Key Decisions</span></div>
+              <ul>
+                <li data-i18n="summary.d1">Focus on Aurora MVP for Q3 launch</li>
+                <li data-i18n="summary.d2">Defer integration with System X to Q4</li>
+                <li data-i18n="summary.d3">Allocate 2 additional engineers to backend</li>
+              </ul>
+            </div>
+            <div class="summary-block col-green">
+              <div class="summary-block-head" style="color:var(--green);"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></span><span data-i18n="summary.actions_label">Action Items</span></div>
+              <ul>
+                <li data-i18n="summary.a1">Finalize Aurora PRD</li>
+                <li data-i18n="summary.a2">Confirm design scope</li>
+                <li data-i18n="summary.a3">Update resource plan</li>
+              </ul>
+            </div>
+            <div class="summary-block col-orange">
+              <div class="summary-block-head" style="color:var(--orange);"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><span data-i18n="summary.questions_label">Open Questions</span></div>
+              <ul>
+                <li data-i18n="summary.q1">What is the long-term plan for System X integration?</li>
+                <li data-i18n="summary.q2">Do we have customer data for use case #3?</li>
+              </ul>
+            </div>
+            <div class="summary-block col-pink">
+              <div class="summary-block-head" style="color:#f472b6;"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span><span data-i18n="summary.risks_label">Risks</span></div>
+              <ul>
+                <li data-i18n="summary.r1">Launch delay due to backend dependencies</li>
+                <li data-i18n="summary.r2">Limited bandwidth from design team in June</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-copy">
+        <p class="eyebrow" data-i18n="summary.eyebrow">After The Meeting</p>
+        <h2 id="summary-title" data-i18n="summary.title_html" data-i18n-html>Leave every meeting with <span class="accent">total clarity</span>.</h2>
+        <p data-i18n="summary.subtitle">AI summaries, key decisions, action items, open questions, and risks — automatically.</p>
+      </div>
     </section>
 
-    <section class="section suggestion-section" aria-labelledby="suggestions-title">
+    <!-- How it works -->
+    <section class="section section-tinted" aria-labelledby="how-title">
       <div class="section-heading">
-        <p class="eyebrow">Real-Time Career Coaching</p>
-        <h2 id="suggestions-title">Say the thing that moves the meeting forward.</h2>
+        <p class="eyebrow" data-i18n="how.eyebrow">How It Works</p>
+        <h2 id="how-title" data-i18n="how.title_html" data-i18n-html>Coaching cards while <span class="accent">you talk</span>.</h2>
+        <p data-i18n="how.subtitle">Get AI-powered suggestions throughout the meeting, so you always know what to say next.</p>
       </div>
-      <div class="suggestion-row">
-        <article>
-          <small>Strategic Question</small>
-          <p>What would success look like in six months?</p>
+      <div class="steps-grid">
+        <article class="step-card">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+          <h3 data-i18n="how.s1_title">You speak</h3>
+          <p data-i18n="how.s1_body">We listen in the background and capture key points.</p>
         </article>
-        <article>
-          <small>Career Signal</small>
-          <p>Reinforce that you're driving the rollout decision.</p>
+        <article class="step-card">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M9 2v2"/><path d="M15 20v2"/><path d="M9 20v2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M2 15h2"/><path d="M2 9h2"/></svg></span>
+          <h3 data-i18n="how.s2_title">AI analyzes</h3>
+          <p data-i18n="how.s2_body">Outshine transcribes and understands the context as the meeting progresses.</p>
         </article>
-        <article>
-          <small>Say Next</small>
-          <p>I can own the phased rollout plan and report back Friday.</p>
+        <article class="step-card">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span>
+          <h3 data-i18n="how.s3_title">Get coaching</h3>
+          <p data-i18n="how.s3_body">Receive 3 types of coaching cards throughout the conversation.</p>
         </article>
+        <article class="step-card">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+          <h3 data-i18n="how.s4_title">Contribute with confidence</h3>
+          <p data-i18n="how.s4_body">Use AI-suggested questions and insights to guide the conversation.</p>
+        </article>
+      </div>
+      <div class="privacy-note">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div>
+          <strong data-i18n="how.privacy_title">Your conversations stay private and secure.</strong>
+          <span data-i18n="how.privacy_body">We never share your data.</span>
+        </div>
       </div>
     </section>
 
-    <section class="section career-section" id="career" aria-labelledby="career-title">
-      <div class="score-board">
-        <div class="score-card main-score">
-          <small>Meeting IQ</small>
-          <strong>84</strong>
-          <span>Strategic contributor</span>
+    <!-- Final CTA -->
+    <section class="final-cta section-light" aria-labelledby="cta-title">
+      <div class="section">
+        <h2 id="cta-title" data-i18n="final.title_html" data-i18n-html>Don't Just Attend Meetings.<br><span class="accent">Outshine</span> Them.</h2>
+        <p data-i18n="final.subtitle">Every meeting is an opportunity to grow your career.</p>
+        <a class="button primary" href="mailto:support@micavo.app?subject=Outshine%20early%20access" data-i18n="final.cta">Request Early Access</a>
+
+        <div class="feature-trio">
+          <article>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></span>
+            <h3 data-i18n="final.f1_title">Ask Smarter</h3>
+            <p data-i18n="final.f1_body">Get strategic questions that move conversations forward.</p>
+          </article>
+          <article>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.236l3.29-1.065a2 2 0 0 1 1.167.094 8.5 8.5 0 1 0-4.722-4.722Z"/></svg></span>
+            <h3 data-i18n="final.f2_title">Speak with Confidence</h3>
+            <p data-i18n="final.f2_body">Know what to say, even in tough moments.</p>
+          </article>
+          <article>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg></span>
+            <h3 data-i18n="final.f3_title">Grow Your Career</h3>
+            <p data-i18n="final.f3_body">More impact. More visibility. More opportunities.</p>
+          </article>
         </div>
-        <div class="score-card">
-          <small>Visibility Score</small>
-          <strong>42</strong>
-          <span>Speak in the first 10 minutes.</span>
-        </div>
-        <div class="score-card">
-          <small>Question Quality</small>
-          <strong>76</strong>
-          <span>Improve business impact framing.</span>
-        </div>
-      </div>
-      <div class="section-copy">
-        <p class="eyebrow">Coming with Career Intelligence</p>
-        <h2 id="career-title">Every meeting will build your career profile.</h2>
-        <p>
-          Once the live coach is dependable, Outshine layers on Career Intelligence: accumulating evidence across meetings to help you build promotion-ready habits.
-        </p>
-        <ul class="check-list">
-          <li>Meeting IQ and Visibility Score</li>
-          <li>Promotion evidence and a Promotion Coach</li>
-          <li>Communication and influence pattern tracking</li>
-          <li>Executive communication coaching</li>
-        </ul>
       </div>
     </section>
 
+    <!-- Pricing -->
     <section class="section pricing-section" id="pricing" aria-labelledby="pricing-title">
       <div class="section-heading">
-        <p class="eyebrow">Pricing</p>
-        <h2 id="pricing-title">Try it free for 3 days, then go all in.</h2>
-        <p>
-          Outshine starts by helping you answer the question that matters in the moment: what should I say next?
-        </p>
+        <p class="eyebrow" data-i18n="pricing.eyebrow">Pricing</p>
+        <h2 id="pricing-title" data-i18n="pricing.title">Try it free for 3 days, then go all in.</h2>
+        <p data-i18n="pricing.subtitle">Outshine starts by helping you answer the question that matters in the moment: what should I say next?</p>
       </div>
-      <div class="pricing-grid pricing-grid-2">
+      <div class="pricing-grid">
         <article class="price-card featured">
-          <span class="plan-badge">3-day free trial</span>
-          <h3>Pro</h3>
+          <span class="plan-badge" data-i18n="pricing.trial_badge">3-day free trial</span>
+          <h3 data-i18n="pricing.pro_title">Pro</h3>
           <p class="price">$99.99<span>/year</span></p>
-          <p>400 meeting minutes a month with live coaching, smart suggestion cards, strategic prompts, meeting summaries, and persona modes.</p>
+          <p data-i18n="pricing.pro_body">400 meeting minutes a month with live coaching, smart suggestion cards, strategic prompts, meeting summaries, and persona modes.</p>
         </article>
-        <article class="price-card muted-card">
-          <span class="plan-badge muted">Coming soon</span>
-          <h3>Premium</h3>
-          <p class="price">Pricing TBA</p>
-          <p>Everything in Pro, plus 1,000 monthly minutes and Career Intelligence: Meeting IQ, Visibility Score, Promotion Coach, and executive communication coaching.</p>
+        <article class="price-card">
+          <span class="plan-badge muted" data-i18n="pricing.soon_badge">Coming soon</span>
+          <h3 data-i18n="pricing.premium_title">Premium</h3>
+          <p class="price" data-i18n="pricing.premium_price">Pricing TBA</p>
+          <p data-i18n="pricing.premium_body">Everything in Pro, plus 1,000 monthly minutes and Career Intelligence: Meeting IQ, Visibility Score, Promotion Coach, and executive communication coaching.</p>
         </article>
-      </div>
-    </section>
-
-    <section class="final-cta" aria-labelledby="cta-title">
-      <div class="section">
-        <p class="eyebrow">North Star</p>
-        <h2 id="cta-title">Your AI Career Operating System.</h2>
-        <p>Built by Micavo for people who want to sound smarter, become more influential, and turn meetings into momentum.</p>
-        <a class="button primary" href="mailto:support@micavo.app?subject=Outshine%20early%20access">Request Early Access</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <span>© 2026 Micavo</span>
+    <span data-i18n="footer.copy">© 2026 Micavo</span>
     <div class="footer-links">
-      <a href="/">Micavo</a>
-      <a href="./privacy.html">Privacy Policy</a>
-      <a href="./terms.html">Terms of Service</a>
+      <a href="/" data-i18n="footer.home">Micavo</a>
+      <a href="./privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="./terms.html" data-i18n="footer.terms">Terms of Service</a>
       <a href="mailto:support@micavo.app">support@micavo.app</a>
     </div>
   </footer>
+
+  <script src="./i18n.js?v=1"></script>
 </body>
 </html>
