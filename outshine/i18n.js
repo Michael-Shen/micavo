@@ -92,15 +92,17 @@
       },
       pricing: {
         eyebrow: "Pricing",
-        title: "Try it free for 3 days, then go all in.",
+        title: "Start free. Upgrade when you're ready.",
         subtitle: "Outshine starts by helping you answer the question that matters in the moment: what should I say next?",
-        trial_badge: "3-day free trial",
-        soon_badge: "Coming soon",
+        free_badge: "One-time free credit",
+        free_title: "Free",
+        free_body: "60 minutes, once — experience a full recording, live coaching, and summary cycle before you pay anything.",
+        pro_badge: "Most popular",
         pro_title: "Pro",
         pro_body: "400 meeting minutes a month with live coaching, smart suggestion cards, strategic prompts, meeting summaries, and persona modes.",
+        premium_badge: "New",
         premium_title: "Premium",
-        premium_price: "Pricing TBA",
-        premium_body: "Everything in Pro, plus 1,000 monthly minutes and Career Intelligence: Meeting IQ, Visibility Score, Promotion Coach, and executive communication coaching."
+        premium_body: "800 meeting minutes a month, plus AI Memory that carries context across meetings and an after-meeting AI conversation for deeper, more personalized coaching over time."
       },
       footer: {
         copy: "© 2026 Micavo",
@@ -202,15 +204,17 @@
       },
       pricing: {
         eyebrow: "訂價",
-        title: "免費試用 3 天，準備好就升級專業版。",
+        title: "免費開始，準備好再升級。",
         subtitle: "Outshine 從解決你當下最關心的問題開始：接下來該說什麼？",
-        trial_badge: "3 天免費試用",
-        soon_badge: "即將推出",
+        free_badge: "一次性免費額度",
+        free_title: "免費版",
+        free_body: "一次性 60 分鐘，免費體驗完整的錄音、即時教練與會議摘要流程，無需先付費。",
+        pro_badge: "最受歡迎",
         pro_title: "專業版",
         pro_body: "每月 400 分鐘會議時間，含即時教練、智慧建議卡、策略提示、會議摘要與角色模式。",
+        premium_badge: "新功能",
         premium_title: "進階版",
-        premium_price: "敬請期待",
-        premium_body: "包含專業版所有功能，外加每月 1,000 分鐘與職涯智慧：會議 IQ、能見度分數、升遷教練與高階溝通教練。"
+        premium_body: "每月 800 分鐘會議時間，外加跨會議的 AI 記憶與會後 AI 對話，讓教練建議隨著時間更貼合你。"
       },
       footer: {
         copy: "© 2026 Micavo",
@@ -312,15 +316,17 @@
       },
       pricing: {
         eyebrow: "料金",
-        title: "3日間無料トライアル、その後はProにアップグレード。",
+        title: "無料で始めて、準備ができたらアップグレード。",
         subtitle: "Outshineは、今この瞬間に大事な問いに応えることから始まります：次に何を言うべきか？",
-        trial_badge: "3日間無料トライアル",
-        soon_badge: "近日公開",
+        free_badge: "一度限りの無料クレジット",
+        free_title: "Free",
+        free_body: "一度だけ60分間、録音・ライブコーチング・要約までの全体験を無料で。お支払いの前にお試しいただけます。",
+        pro_badge: "人気No.1",
         pro_title: "Pro",
         pro_body: "月400分の会議時間、ライブコーチング、スマート提案カード、戦略的プロンプト、会議の要約、ペルソナモード付き。",
+        premium_badge: "New",
         premium_title: "Premium",
-        premium_price: "価格未定",
-        premium_body: "Proの全機能に加え、月1,000分とキャリアインテリジェンス：会議IQ、可視性スコア、プロモーションコーチ、エグゼクティブコミュニケーションコーチング。"
+        premium_body: "月800分の会議時間に加え、会議をまたいで記憶するAIメモリーと会議後のAI対話で、コーチングが時間とともにより個人に最適化されます。"
       },
       footer: {
         copy: "© 2026 Micavo",
