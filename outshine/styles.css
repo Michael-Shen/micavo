@@ -62,7 +62,7 @@ h1, h2, h3, p {
 }
 
 .nav, .section, .footer {
-  width: min(1160px, calc(100% - 40px));
+  width: min(1160px, calc(100% - 80px));
   margin: 0 auto;
 }
 
@@ -437,7 +437,7 @@ h1 {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.75fr);
   gap: 56px;
-  align-items: center;
+  align-items: start;
 }
 
 .split-section.reverse {
@@ -457,6 +457,10 @@ h1 {
 .section-heading.left {
   margin: 0 0 48px;
   text-align: left;
+}
+
+.section-copy {
+  padding-left: 20px;
 }
 
 .section-copy h2,
