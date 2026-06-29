@@ -456,6 +456,30 @@ h1 {
   box-shadow: none;
 }
 
+.appstore-badge-btn {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  min-height: auto;
+}
+
+.appstore-badge-btn:hover {
+  transform: translateY(-1px);
+}
+
+.store-badge {
+  display: block;
+  width: auto;
+}
+
+.store-badge.lg {
+  height: 48px;
+}
+
+.store-badge.sm {
+  height: 36px;
+}
+
 .button {
   padding: 13px 20px;
 }
@@ -1660,5 +1684,12 @@ h1 {
     font-weight: 900;
     white-space: nowrap;
     box-shadow: var(--cta-shadow);
+  }
+
+  .mobile-download-bar a.appstore-badge-btn {
+    min-height: auto;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
   }
 }

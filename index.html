@@ -8,6 +8,28 @@
   <meta property="og:title" content="Micavo" />
   <meta property="og:description" content="Decision intelligence products for nutrition, productivity, and personal operating systems." />
   <meta property="og:image" content="/eatornot/assets/images/hero-picnic.png" />
+  <link rel="canonical" href="https://micavo.app/" />
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PF5PE9BXFT');
+
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('[data-ga-event]');
+      if (!el) return;
+      var params = {};
+      Array.prototype.forEach.call(el.attributes, function (attr) {
+        if (attr.name.indexOf('data-ga-param-') === 0) {
+          params[attr.name.slice('data-ga-param-'.length)] = attr.value;
+        }
+      });
+      gtag('event', el.getAttribute('data-ga-event'), params);
+    });
+  </script>
 
   <style>
     :root {
@@ -269,6 +291,32 @@
       margin-top: 20px;
       color: var(--blue);
       font-weight: 900;
+    }
+
+    .preview-actions {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .preview-actions .preview-link {
+      margin-top: 0;
+    }
+
+    .store-badge {
+      display: block;
+      height: 40px;
+      width: auto;
+    }
+
+    .appstore-badge-btn {
+      padding: 0;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      min-height: auto;
     }
 
     .matrix-card {
@@ -634,7 +682,7 @@
         <a href="/outshine/">Outshine</a>
         <a href="/eatornot/">EatOrNot AI</a>
         <a href="https://michael-shen.github.io/critical-choice/">Critical Choice</a>
-        <a href="mailto:hello@micavo.app">Contact</a>
+        <a href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo">Contact</a>
       </div>
     </nav>
   </header>
@@ -650,7 +698,7 @@
 
         <div class="cta-row">
           <a class="button primary" href="#products">Explore Products</a>
-          <a class="button" href="mailto:hello@micavo.app">Work With Micavo</a>
+          <a class="button" href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo">Work With Micavo</a>
         </div>
       </div>
 
@@ -660,10 +708,15 @@
             <img src="/eatornot/assets/images/s1_english.png" alt="EatOrNot AI App Store preview showing food photo analysis and an AI verdict" />
           </div>
           <div class="preview-body">
-            <span class="status">Under Apple review</span>
+            <span class="status green">Live on App Store</span>
             <h2>EatOrNot AI</h2>
             <p>Nutrition decisions powered by meal analysis, calorie budgets, macro context, and permission-based Apple Health data.</p>
-            <a class="preview-link" href="/eatornot/">View product</a>
+            <div class="preview-actions">
+              <a class="preview-link" href="/eatornot/">View product</a>
+              <a href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot">
+                <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
+              </a>
+            </div>
           </div>
         </article>
 
@@ -715,6 +768,9 @@
             </ul>
             <div class="product-actions">
               <a class="button primary" href="/eatornot/">Open EatOrNot AI</a>
+              <a class="button appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot">
+                <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
+              </a>
               <a class="button" href="/eatornot/privacy.html">Privacy Policy</a>
             </div>
           </div>
@@ -728,16 +784,16 @@
             <span class="status purple">AI career copilot</span>
             <h3>Outshine</h3>
             <p>
-              Outshine helps professionals stand out in meetings with live intelligence, smart suggestion cards, strategic prompts, and career growth coaching.
+              Outshine is an AI Career Copilot for meetings: live coaching cards that help users ask sharper questions and know what to say next, plus an after-meeting summary.
             </p>
             <ul class="feature-list">
-              <li>Live meeting briefings that surface topics, decisions, questions, and risks.</li>
-              <li>Smart prompts that help users ask better clarification, strategic, and risk questions.</li>
-              <li>Career intelligence for Meeting IQ, visibility, promotion readiness, and executive communication.</li>
+              <li>Live coaching cards: a strategic question, a career signal, and what to say next.</li>
+              <li>One-time free 60-minute credit, then Pro (400 min/month) or Premium (800 min/month, cross-meeting AI memory, post-meeting AI conversation).</li>
+              <li>Automatic meeting summaries with decisions, action items, open questions, and risks.</li>
             </ul>
             <div class="product-actions">
               <a class="button primary" href="/outshine/">Open Outshine</a>
-              <a class="button" href="mailto:hello@micavo.app?subject=Outshine%20early%20access">Early Access</a>
+              <a class="button" href="mailto:hello@micavo.app?subject=Outshine%20early%20access" data-ga-event="waitlist_signup" data-ga-param-product="Outshine">Early Access</a>
             </div>
           </div>
         </article>
@@ -762,7 +818,9 @@
             </ul>
             <div class="product-actions">
               <a class="button primary" href="https://michael-shen.github.io/critical-choice/">Open Critical Choice</a>
-              <a class="button" href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644">App Store</a>
+              <a class="button appstore-badge-btn" href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice">
+                <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
+              </a>
             </div>
           </div>
         </article>
@@ -807,7 +865,7 @@
             For product questions, support, partnerships, or media inquiries, reach Micavo directly.
           </p>
         </div>
-        <a class="button" href="mailto:hello@micavo.app">hello@micavo.app</a>
+        <a class="button" href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo">hello@micavo.app</a>
       </div>
     </section>
   </main>
@@ -818,7 +876,7 @@
       <a href="/eatornot/">EatOrNot AI</a>
       <a href="/outshine/">Outshine</a>
       <a href="https://michael-shen.github.io/critical-choice/">Critical Choice</a>
-      <a href="mailto:hello@micavo.app">Contact</a>
+      <a href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo">Contact</a>
     </div>
   </footer>
 </body>
