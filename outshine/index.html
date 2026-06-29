@@ -20,19 +20,8 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-PF5PE9BXFT');
-
-    document.addEventListener('click', function (e) {
-      var el = e.target.closest('[data-ga-event]');
-      if (!el) return;
-      var params = {};
-      Array.prototype.forEach.call(el.attributes, function (attr) {
-        if (attr.name.indexOf('data-ga-param-') === 0) {
-          params[attr.name.slice('data-ga-param-'.length)] = attr.value;
-        }
-      });
-      gtag('event', el.getAttribute('data-ga-event'), params);
-    });
   </script>
+  <script src="/assets/js/analytics.js"></script>
 </head>
 
 <body>
@@ -44,11 +33,11 @@
       </a>
       <div class="nav-right">
         <div class="nav-links">
-          <a href="#live-coaching" data-i18n="nav.features">Live Coaching</a>
-          <a href="#personas" data-i18n="nav.personas">Personas</a>
-          <a href="#summary" data-i18n="nav.summary">Summary</a>
-          <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
-          <a href="mailto:support@micavo.app" data-i18n="nav.contact" data-ga-event="contact_clicked" data-ga-param-product="Outshine">Contact</a>
+          <a href="#live-coaching" data-i18n="nav.features" data-ga-event="section_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header" data-ga-param-section="live-coaching">Live Coaching</a>
+          <a href="#personas" data-i18n="nav.personas" data-ga-event="section_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header" data-ga-param-section="personas">Personas</a>
+          <a href="#summary" data-i18n="nav.summary" data-ga-event="section_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header" data-ga-param-section="summary">Summary</a>
+          <a href="#pricing" data-i18n="nav.pricing" data-ga-event="section_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header" data-ga-param-section="pricing">Pricing</a>
+          <a href="mailto:support@micavo.app" data-i18n="nav.contact" data-ga-event="contact_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header">Contact</a>
         </div>
         <div class="lang-switch" role="group" aria-label="Language switcher">
           <button type="button" data-lang-btn="en">EN</button>
@@ -70,8 +59,8 @@
           <h1 id="hero-title" data-i18n="hero.title_html" data-i18n-html>Get seen. <span class="accent">Outshine</span> every meeting.</h1>
           <p class="hero-subtitle" data-i18n="hero.subtitle">Your AI Career Copilot for every meeting — live coaching, persona-aware suggestions, and instant summaries.</p>
           <div class="cta-row">
-            <a class="button primary" href="mailto:support@micavo.app?subject=Outshine%20early%20access" data-i18n="hero.cta1" data-ga-event="waitlist_signup" data-ga-param-product="Outshine">Request Early Access</a>
-            <a class="button secondary" href="#live-coaching" data-i18n="hero.cta2">See How It Works</a>
+            <a class="button primary" href="mailto:support@micavo.app?subject=Outshine%20early%20access" data-i18n="hero.cta1" data-ga-event="waitlist_signup" data-ga-param-product="Outshine" data-ga-param-cta-location="hero" data-ga-param-cta-label="Request Early Access">Request Early Access</a>
+            <a class="button secondary" href="#live-coaching" data-i18n="hero.cta2" data-ga-event="section_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="hero" data-ga-param-section="live-coaching">See How It Works</a>
           </div>
         </div>
         <div class="phone-wrap">
@@ -301,7 +290,7 @@
       <div class="section">
         <h2 id="cta-title" data-i18n="final.title_html" data-i18n-html>Don't Just Attend Meetings.<br><span class="accent">Outshine</span> Them.</h2>
         <p data-i18n="final.subtitle">Every meeting is an opportunity to grow your career.</p>
-        <a class="button primary" href="mailto:support@micavo.app?subject=Outshine%20early%20access" data-i18n="final.cta" data-ga-event="waitlist_signup" data-ga-param-product="Outshine">Request Early Access</a>
+        <a class="button primary" href="mailto:support@micavo.app?subject=Outshine%20early%20access" data-i18n="final.cta" data-ga-event="waitlist_signup" data-ga-param-product="Outshine" data-ga-param-cta-location="final_cta" data-ga-param-cta-label="Request Early Access">Request Early Access</a>
 
         <div class="feature-trio">
           <article>
@@ -356,10 +345,10 @@
   <footer class="footer">
     <span data-i18n="footer.copy">© 2026 Micavo</span>
     <div class="footer-links">
-      <a href="/" data-i18n="footer.home">Micavo</a>
-      <a href="./privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
-      <a href="./terms.html" data-i18n="footer.terms">Terms of Service</a>
-      <a href="mailto:support@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Outshine">support@micavo.app</a>
+      <a href="/" data-i18n="footer.home" data-ga-event="product_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Micavo</a>
+      <a href="./privacy.html" data-i18n="footer.privacy" data-ga-event="legal_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="footer">Privacy Policy</a>
+      <a href="./terms.html" data-i18n="footer.terms" data-ga-event="legal_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="footer">Terms of Service</a>
+      <a href="mailto:support@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="footer">support@micavo.app</a>
     </div>
   </footer>
 

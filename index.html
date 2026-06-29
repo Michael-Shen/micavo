@@ -17,19 +17,8 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-PF5PE9BXFT');
-
-    document.addEventListener('click', function (e) {
-      var el = e.target.closest('[data-ga-event]');
-      if (!el) return;
-      var params = {};
-      Array.prototype.forEach.call(el.attributes, function (attr) {
-        if (attr.name.indexOf('data-ga-param-') === 0) {
-          params[attr.name.slice('data-ga-param-'.length)] = attr.value;
-        }
-      });
-      gtag('event', el.getAttribute('data-ga-event'), params);
-    });
   </script>
+  <script src="/assets/js/analytics.js"></script>
 
   <style>
     :root {
@@ -682,12 +671,12 @@
       </a>
 
       <div class="nav-links">
-        <a href="#products">Products</a>
-        <a href="#approach">Approach</a>
-        <a href="/outshine/">Outshine</a>
-        <a href="/eatornot/">EatOrNot AI</a>
-        <a href="https://michael-shen.github.io/critical-choice/">Critical Choice</a>
-        <a href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo">Contact</a>
+        <a href="#products" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header" data-ga-param-section="products">Products</a>
+        <a href="#approach" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header" data-ga-param-section="approach">Approach</a>
+        <a href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header">Outshine</a>
+        <a href="/eatornot/" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="header">EatOrNot AI</a>
+        <a href="https://michael-shen.github.io/critical-choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="header">Critical Choice</a>
+        <a href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header">Contact</a>
       </div>
     </nav>
   </header>
@@ -702,8 +691,8 @@
         </p>
 
         <div class="cta-row">
-          <a class="button primary" href="#products">Explore Products</a>
-          <a class="button" href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo">Work With Micavo</a>
+          <a class="button primary" href="#products" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero" data-ga-param-section="products">Explore Products</a>
+          <a class="button" href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero">Work With Micavo</a>
         </div>
       </div>
 
@@ -717,8 +706,8 @@
             <h2>EatOrNot AI</h2>
             <p>Nutrition decisions powered by meal analysis, calorie budgets, macro context, and permission-based Apple Health data.</p>
             <div class="preview-actions">
-              <a class="preview-link" href="/eatornot/">View product</a>
-              <a href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot">
+              <a class="preview-link" href="/eatornot/" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="featured_card">View product</a>
+              <a href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="featured_card">
                 <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
               </a>
             </div>
@@ -729,7 +718,7 @@
           <span class="status purple">Career accelerator</span>
           <h2>Outshine</h2>
           <p>An AI Career Copilot that helps professionals know what to say next in meetings and become more influential over time.</p>
-          <a class="preview-link" href="/outshine/">View product</a>
+          <a class="preview-link" href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="featured_card">View product</a>
         </article>
 
         <article class="product-preview matrix-card">
@@ -743,8 +732,8 @@
             <div><strong>Eliminate</strong><span>Low-value work</span></div>
           </div>
           <div class="preview-actions">
-            <a class="preview-link" href="https://michael-shen.github.io/critical-choice/">View product</a>
-            <a href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice">
+            <a class="preview-link" href="https://michael-shen.github.io/critical-choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="featured_card">View product</a>
+            <a href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="featured_card">
               <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
             </a>
           </div>
@@ -778,11 +767,11 @@
               <li>Pro and Premium coaching for weekly insights and habit patterns.</li>
             </ul>
             <div class="product-actions">
-              <a class="button primary" href="/eatornot/">Open EatOrNot AI</a>
-              <a class="button appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot">
+              <a class="button primary" href="/eatornot/" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="product_card">Open EatOrNot AI</a>
+              <a class="button appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="product_card">
                 <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
               </a>
-              <a class="button" href="/eatornot/privacy.html">Privacy Policy</a>
+              <a class="button" href="/eatornot/privacy.html" data-ga-event="legal_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="product_card">Privacy Policy</a>
             </div>
           </div>
         </article>
@@ -803,8 +792,8 @@
               <li>Automatic meeting summaries with decisions, action items, open questions, and risks.</li>
             </ul>
             <div class="product-actions">
-              <a class="button primary" href="/outshine/">Open Outshine</a>
-              <a class="button" href="mailto:hello@micavo.app?subject=Outshine%20early%20access" data-ga-event="waitlist_signup" data-ga-param-product="Outshine">Early Access</a>
+              <a class="button primary" href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="product_card">Open Outshine</a>
+              <a class="button" href="mailto:hello@micavo.app?subject=Outshine%20early%20access" data-ga-event="waitlist_signup" data-ga-param-product="Outshine" data-ga-param-cta-location="product_card" data-ga-param-cta-label="Early Access">Early Access</a>
             </div>
           </div>
         </article>
@@ -828,8 +817,8 @@
               <li>Premium features for teams, custom tags, assignments, and collaboration.</li>
             </ul>
             <div class="product-actions">
-              <a class="button primary" href="https://michael-shen.github.io/critical-choice/">Open Critical Choice</a>
-              <a class="button appstore-badge-btn" href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice">
+              <a class="button primary" href="https://michael-shen.github.io/critical-choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="product_card">Open Critical Choice</a>
+              <a class="button appstore-badge-btn" href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="product_card">
                 <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
               </a>
             </div>
@@ -876,7 +865,7 @@
             For product questions, support, partnerships, or media inquiries, reach Micavo directly.
           </p>
         </div>
-        <a class="button" href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo">hello@micavo.app</a>
+        <a class="button" href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="final_cta">hello@micavo.app</a>
       </div>
     </section>
   </main>
@@ -884,10 +873,10 @@
   <footer class="footer">
     <div>© 2026 Micavo. All rights reserved.</div>
     <div class="footer-links">
-      <a href="/eatornot/">EatOrNot AI</a>
-      <a href="/outshine/">Outshine</a>
-      <a href="https://michael-shen.github.io/critical-choice/">Critical Choice</a>
-      <a href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo">Contact</a>
+      <a href="/eatornot/" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="footer">EatOrNot AI</a>
+      <a href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="footer">Outshine</a>
+      <a href="https://michael-shen.github.io/critical-choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer">Critical Choice</a>
+      <a href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Contact</a>
     </div>
   </footer>
 </body>

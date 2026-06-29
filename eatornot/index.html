@@ -22,19 +22,8 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-PF5PE9BXFT');
-
-    document.addEventListener('click', function (e) {
-      var el = e.target.closest('[data-ga-event]');
-      if (!el) return;
-      var params = {};
-      Array.prototype.forEach.call(el.attributes, function (attr) {
-        if (attr.name.indexOf('data-ga-param-') === 0) {
-          params[attr.name.slice('data-ga-param-'.length)] = attr.value;
-        }
-      });
-      gtag('event', el.getAttribute('data-ga-event'), params);
-    });
   </script>
+  <script src="/assets/js/analytics.js"></script>
 </head>
 
 <body>
@@ -48,7 +37,7 @@
       </a>
 
       <div class="nav-links">
-        <a class="nav-download appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot">
+        <a class="nav-download appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="header">
           <img class="store-badge sm" src="./assets/images/app-store-badge.svg" alt="Download on the App Store" />
         </a>
       </div>
@@ -103,10 +92,10 @@
         </div>
 
         <div class="store-row" aria-label="Primary actions">
-          <a class="store-button appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot">
+          <a class="store-button appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="hero">
             <img class="store-badge lg" src="./assets/images/app-store-badge.svg" alt="Download free on the App Store" />
           </a>
-          <a class="store-button light" href="#screenshots">
+          <a class="store-button light" href="#screenshots" data-ga-event="section_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="hero" data-ga-param-section="screenshots">
             <span data-i18n="hero.screenshotsCta">See the app</span>
           </a>
         </div>
@@ -328,13 +317,13 @@
   <footer class="footer">
     <div data-i18n="footer.copy">© 2026 Micavo. EatOrNot AI is a product by Micavo.</div>
     <div class="footer-links">
-      <a href="/">Micavo</a>
-      <a class="appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="appstore_clicked" data-ga-param-product="EatOrNot">
+      <a href="/" data-ga-event="product_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Micavo</a>
+      <a class="appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="appstore_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="footer">
         <img class="store-badge sm" src="./assets/images/app-store-badge.svg" alt="Download on the App Store" />
       </a>
-      <a href="./privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
-      <a href="./terms.html" data-i18n="footer.terms">Terms of Service</a>
-      <a href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="EatOrNot">hello@micavo.app</a>
+      <a href="./privacy.html" data-i18n="footer.privacy" data-ga-event="legal_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="footer">Privacy Policy</a>
+      <a href="./terms.html" data-i18n="footer.terms" data-ga-event="legal_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="footer">Terms of Service</a>
+      <a href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="footer">hello@micavo.app</a>
     </div>
   </footer>
 
@@ -343,7 +332,7 @@
       <strong>EatOrNot AI</strong>
       <span data-i18n="mobileBar.text">Can I eat this right now?</span>
     </div>
-    <a class="appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot">
+    <a class="appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="mobile_bar">
       <img class="store-badge sm" src="./assets/images/app-store-badge.svg" alt="Download on the App Store" />
     </a>
   </div>
