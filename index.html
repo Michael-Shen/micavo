@@ -206,8 +206,8 @@
     }
 
     .button.primary {
-      border-color: var(--ink);
-      background: var(--ink);
+      border-color: var(--blue);
+      background: var(--blue);
       color: #ffffff;
     }
 
@@ -317,6 +317,10 @@
       background: transparent;
       box-shadow: none;
       min-height: auto;
+    }
+
+    .product-actions .store-badge {
+      height: 50px;
     }
 
     .matrix-card {
@@ -496,6 +500,7 @@
     .product-actions {
       margin-top: 24px;
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
       gap: 10px;
     }
@@ -736,6 +741,12 @@
             <div><strong>Schedule</strong><span>Important, not urgent</span></div>
             <div><strong>Delegate</strong><span>Urgent, not important</span></div>
             <div><strong>Eliminate</strong><span>Low-value work</span></div>
+          </div>
+          <div class="preview-actions">
+            <a class="preview-link" href="https://michael-shen.github.io/critical-choice/">View product</a>
+            <a href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice">
+              <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
+            </a>
           </div>
         </article>
       </div>
