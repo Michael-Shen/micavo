@@ -201,8 +201,51 @@
     }
 
     .hero-board {
-      display: grid;
+      display: flex;
+      flex-direction: column;
       gap: 16px;
+    }
+
+    .carousel-track {
+      display: grid;
+      grid-template-areas: "slide";
+    }
+
+    .carousel-slide {
+      grid-area: slide;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 320ms ease;
+    }
+
+    .carousel-slide.is-active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .carousel-dot {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border: none;
+      border-radius: 999px;
+      background: var(--line);
+      cursor: pointer;
+      transition: background 160ms ease, width 160ms ease;
+    }
+
+    .carousel-dot.is-active {
+      width: 22px;
+      border-radius: 5px;
+      background: var(--blue);
     }
 
     .product-preview {
@@ -261,15 +304,13 @@
       color: var(--purple);
     }
 
-    .product-preview h2,
-    .matrix-card h2 {
+    .product-preview h2 {
       margin: 16px 0 10px;
       font-size: 32px;
       line-height: 1.08;
     }
 
-    .product-preview p,
-    .matrix-card p {
+    .product-preview p {
       margin: 0;
       color: var(--muted);
       line-height: 1.6;
@@ -310,41 +351,6 @@
 
     .product-actions .store-badge {
       height: 50px;
-    }
-
-    .matrix-card {
-      padding: 24px;
-    }
-
-    .mini-matrix {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-
-    .mini-matrix div {
-      min-height: 88px;
-      padding: 12px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #ffffff;
-    }
-
-    .mini-matrix strong,
-    .mini-matrix span {
-      display: block;
-    }
-
-    .mini-matrix strong {
-      font-size: 13px;
-    }
-
-    .mini-matrix span {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.35;
     }
 
     .section {
@@ -697,47 +703,61 @@
       </div>
 
       <div class="hero-board" aria-label="Micavo product preview">
-        <article class="product-preview featured">
-          <div class="preview-image">
-            <img src="/eatornot/assets/images/s1_english.png" alt="EatOrNot AI App Store preview showing food photo analysis and an AI verdict" />
-          </div>
-          <div class="preview-body">
-            <span class="status green">Live on App Store</span>
-            <h2>EatOrNot AI</h2>
-            <p>Nutrition decisions powered by meal analysis, calorie budgets, macro context, and permission-based Apple Health data.</p>
-            <div class="preview-actions">
-              <a class="preview-link" href="/eatornot/" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="featured_card">View product</a>
-              <a href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="featured_card">
-                <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
-              </a>
+        <div class="carousel-track">
+          <article class="product-preview featured carousel-slide is-active">
+            <div class="preview-image">
+              <img src="/eatornot/assets/images/s1_english.png" alt="EatOrNot AI App Store preview showing food photo analysis and an AI verdict" />
             </div>
-          </div>
-        </article>
+            <div class="preview-body">
+              <span class="status green">Live on App Store</span>
+              <h2>EatOrNot AI</h2>
+              <p>Nutrition decisions powered by meal analysis, calorie budgets, macro context, and permission-based Apple Health data.</p>
+              <div class="preview-actions">
+                <a class="preview-link" href="/eatornot/" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="featured_card">View product</a>
+                <a href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="featured_card">
+                  <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
+                </a>
+              </div>
+            </div>
+          </article>
 
-        <article class="product-preview matrix-card">
-          <span class="status purple">Career accelerator</span>
-          <h2>Outshine</h2>
-          <p>An AI Career Copilot that helps professionals know what to say next in meetings and become more influential over time.</p>
-          <a class="preview-link" href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="featured_card">View product</a>
-        </article>
+          <article class="product-preview featured carousel-slide">
+            <div class="preview-image">
+              <img src="/outshine/assets/outshine-app-screenshot.png" alt="Outshine live AI coaching screen showing strategic question, risk alert, and what-to-say-next cards" />
+            </div>
+            <div class="preview-body">
+              <span class="status purple">Career accelerator</span>
+              <h2>Outshine</h2>
+              <p>An AI Career Copilot that helps professionals know what to say next in meetings and become more influential over time.</p>
+              <div class="preview-actions">
+                <a class="preview-link" href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="featured_card">View product</a>
+              </div>
+            </div>
+          </article>
 
-        <article class="product-preview matrix-card">
-          <span class="status green">Live on App Store</span>
-          <h2>Critical Choice</h2>
-          <p>A productivity app built around the Eisenhower Matrix, helping users separate urgent noise from important work.</p>
-          <div class="mini-matrix" aria-hidden="true">
-            <div><strong>Do First</strong><span>Urgent and important</span></div>
-            <div><strong>Schedule</strong><span>Important, not urgent</span></div>
-            <div><strong>Delegate</strong><span>Urgent, not important</span></div>
-            <div><strong>Eliminate</strong><span>Low-value work</span></div>
-          </div>
-          <div class="preview-actions">
-            <a class="preview-link" href="/critical_choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="featured_card">View product</a>
-            <a href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" target="_blank" rel="noopener noreferrer" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="featured_card">
-              <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
-            </a>
-          </div>
-        </article>
+          <article class="product-preview featured carousel-slide">
+            <div class="preview-image">
+              <img src="/critical_choice/assets/critical-choice-screenshot.png" alt="Critical Choice quadrant view showing tasks organized by the Eisenhower Matrix" />
+            </div>
+            <div class="preview-body">
+              <span class="status green">Live on App Store</span>
+              <h2>Critical Choice</h2>
+              <p>A productivity app built around the Eisenhower Matrix, helping users separate urgent noise from important work.</p>
+              <div class="preview-actions">
+                <a class="preview-link" href="/critical_choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="featured_card">View product</a>
+                <a href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" target="_blank" rel="noopener noreferrer" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="featured_card">
+                  <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="carousel-dots" role="tablist" aria-label="Choose a product to preview">
+          <button type="button" class="carousel-dot is-active" data-slide-to="0" role="tab" aria-selected="true" aria-label="EatOrNot AI"></button>
+          <button type="button" class="carousel-dot" data-slide-to="1" role="tab" aria-selected="false" aria-label="Outshine"></button>
+          <button type="button" class="carousel-dot" data-slide-to="2" role="tab" aria-selected="false" aria-label="Critical Choice"></button>
+        </div>
       </div>
     </section>
 
@@ -879,5 +899,26 @@
       <a href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Contact</a>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var track = document.querySelector('.carousel-track');
+      if (!track) return;
+      var slides = Array.prototype.slice.call(track.querySelectorAll('.carousel-slide'));
+      var dots = Array.prototype.slice.call(document.querySelectorAll('.carousel-dot'));
+
+      function show(index) {
+        slides.forEach(function (slide, i) { slide.classList.toggle('is-active', i === index); });
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('is-active', i === index);
+          dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+        });
+      }
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { show(i); });
+      });
+    })();
+  </script>
 </body>
 </html>
