@@ -127,7 +127,7 @@
       min-height: calc(100vh - 76px);
       padding: 56px 0 76px;
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
+      grid-template-columns: minmax(0, 0.74fr) minmax(420px, 1.26fr);
       gap: 52px;
       align-items: center;
     }
@@ -207,8 +207,46 @@
     }
 
     .carousel-track {
+      position: relative;
       display: grid;
       grid-template-areas: "slide";
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: 1px solid rgba(220, 227, 236, 0.92);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--ink);
+      box-shadow: 0 12px 28px rgba(24, 38, 61, 0.14);
+      cursor: pointer;
+      transform: translateY(-50%);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .carousel-arrow:hover {
+      box-shadow: 0 16px 34px rgba(24, 38, 61, 0.2);
+    }
+
+    .carousel-arrow svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .carousel-arrow.prev {
+      left: -20px;
+    }
+
+    .carousel-arrow.next {
+      right: -20px;
     }
 
     .carousel-slide {
@@ -264,20 +302,20 @@
 
     .preview-image {
       height: 100%;
-      min-height: 330px;
+      min-height: 460px;
       background: var(--blue-soft);
     }
 
     .preview-image img {
       width: 100%;
       height: 100%;
-      min-height: 330px;
+      min-height: 460px;
       object-fit: cover;
       object-position: center;
     }
 
     .preview-body {
-      padding: 26px;
+      padding: 36px;
     }
 
     .status {
@@ -305,14 +343,15 @@
     }
 
     .product-preview h2 {
-      margin: 16px 0 10px;
-      font-size: 32px;
+      margin: 18px 0 12px;
+      font-size: 38px;
       line-height: 1.08;
     }
 
     .product-preview p {
       margin: 0;
       color: var(--muted);
+      font-size: 17px;
       line-height: 1.6;
     }
 
@@ -337,7 +376,7 @@
 
     .store-badge {
       display: block;
-      height: 40px;
+      height: 46px;
       width: auto;
     }
 
@@ -615,6 +654,19 @@
         font-size: 23px;
       }
 
+      .carousel-arrow {
+        width: 36px;
+        height: 36px;
+      }
+
+      .carousel-arrow.prev {
+        left: 6px;
+      }
+
+      .carousel-arrow.next {
+        right: 6px;
+      }
+
       h1 {
         font-size: 44px;
       }
@@ -751,6 +803,13 @@
               </div>
             </div>
           </article>
+
+          <button type="button" class="carousel-arrow prev" aria-label="Previous product">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button type="button" class="carousel-arrow next" aria-label="Next product">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
         </div>
 
         <div class="carousel-dots" role="tablist" aria-label="Choose a product to preview">
@@ -906,18 +965,25 @@
       if (!track) return;
       var slides = Array.prototype.slice.call(track.querySelectorAll('.carousel-slide'));
       var dots = Array.prototype.slice.call(document.querySelectorAll('.carousel-dot'));
+      var prevBtn = track.querySelector('.carousel-arrow.prev');
+      var nextBtn = track.querySelector('.carousel-arrow.next');
+      var current = 0;
 
       function show(index) {
-        slides.forEach(function (slide, i) { slide.classList.toggle('is-active', i === index); });
+        current = (index + slides.length) % slides.length;
+        slides.forEach(function (slide, i) { slide.classList.toggle('is-active', i === current); });
         dots.forEach(function (dot, i) {
-          dot.classList.toggle('is-active', i === index);
-          dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+          dot.classList.toggle('is-active', i === current);
+          dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
         });
       }
 
       dots.forEach(function (dot, i) {
         dot.addEventListener('click', function () { show(i); });
       });
+
+      if (prevBtn) prevBtn.addEventListener('click', function () { show(current - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { show(current + 1); });
     })();
   </script>
 </body>
