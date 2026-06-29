@@ -3,15 +3,17 @@
     var path = window.location.pathname;
     if (path.indexOf('/eatornot') === 0) return 'EatOrNot';
     if (path.indexOf('/outshine') === 0) return 'Outshine';
+    if (path.indexOf('/critical_choice') === 0) return 'Critical Choice';
     return 'Micavo';
   }
 
   function detectPageType() {
     var path = window.location.pathname;
     if (path === '/' || path === '/index.html') return 'home';
-    if (/\/(privacy|terms|support)\.html$/.test(path)) return 'legal';
+    if (/\/(privacy|terms|support|privacy-policy)\.html$/.test(path)) return 'legal';
     if (path === '/eatornot/' || path === '/eatornot/index.html' ||
-        path === '/outshine/' || path === '/outshine/index.html') return 'product_landing';
+        path === '/outshine/' || path === '/outshine/index.html' ||
+        path === '/critical_choice/' || path === '/critical_choice/index.html') return 'product_landing';
     return 'unknown';
   }
 
@@ -67,12 +69,15 @@
     trackEvent(el.getAttribute('data-ga-event'), params);
   });
 
-  // Language switcher tracking. Supports both data-lang-btn (Outshine) and
-  // data-lang-switch (EatOrNot) attribute names.
+  // Language switcher tracking. Supports data-lang-btn (Outshine),
+  // data-lang-switch (EatOrNot), and .lang-btn[data-lang] (Critical Choice).
+  // Note: scoped to .lang-btn specifically (not a bare [data-lang] selector)
+  // because EatOrNot's <html> tag also carries its own data-lang attribute,
+  // which closest() would otherwise match on every single click.
   document.addEventListener('click', function (e) {
-    var btn = e.target.closest('[data-lang-btn], [data-lang-switch]');
+    var btn = e.target.closest('[data-lang-btn], [data-lang-switch], .lang-btn[data-lang]');
     if (!btn) return;
-    var lang = btn.getAttribute('data-lang-btn') || btn.getAttribute('data-lang-switch');
+    var lang = btn.getAttribute('data-lang-btn') || btn.getAttribute('data-lang-switch') || btn.getAttribute('data-lang');
     trackEvent('language_changed', { language: lang, cta_location: 'header' });
   });
 })();

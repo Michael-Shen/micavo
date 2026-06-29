@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Critical Choice</title>
+    <link rel="canonical" href="https://micavo.app/critical_choice/privacy-policy.html">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PF5PE9BXFT');
+    </script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f7;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1d1d1f;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #1d1d1f;
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #007aff;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #424245;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            color: #424245;
+        }
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 8px;
+            color: #424245;
+        }
+        .last-updated {
+            color: #86868b;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .contact {
+            background-color: #f5f5f7;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        a {
+            color: #007aff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .app-name {
+            font-weight: 600;
+            color: #007aff;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated"><strong>Last Updated:</strong> January 1, 2026</p>
+        
+        <p>Welcome to <span class="app-name">Critical Choice</span> (formerly known as "Todo 4Q"). This privacy policy explains how we collect, use, store, and protect your personal information when you use our mobile application.</p>
+        
+        <p>By using Critical Choice, you agree to the collection and use of information in accordance with this policy. If you do not agree with this policy, please do not use our app.</p>
+
+        <h2>1. Information We Collect</h2>
+        
+        <h3>1.1 Personal Information You Provide</h3>
+        <p>When you create an account or use our app, we collect the following information:</p>
+        <ul>
+            <li><strong>Email Address:</strong> Used for account authentication and communication</li>
+            <li><strong>Profile Photo:</strong> Your profile picture from Apple Sign-In or Google Sign-In (if provided)</li>
+            <li><strong>User ID:</strong> A unique identifier assigned to your account</li>
+        </ul>
+
+        <h3>1.2 Authentication Information</h3>
+        <p>We support multiple sign-in methods:</p>
+        <ul>
+            <li><strong>Apple Sign-In:</strong> We receive your Apple ID and email (which may be private relay)</li>
+            <li><strong>Google Sign-In:</strong> We receive your Google account email and profile picture</li>
+        </ul>
+
+        <h3>1.3 Task and Project Data</h3>
+        <p><strong>For Local Projects:</strong> The following data is stored locally on your device only:</p>
+        <ul>
+            <li>Tasks (title, description, deadline, quadrant assignment, tags, assignee)</li>
+            <li>Local projects (name, color, mission statement)</li>
+            <li>Task completion status and timestamps</li>
+            <li>Achievement progress and statistics</li>
+            <li>App preferences and settings</li>
+        </ul>
+        <p><strong>For Cloud/Team Projects (Premium Feature):</strong> If you create or join team projects, the following data is stored on Firebase Firestore:</p>
+        <ul>
+            <li>Team project name, color, mission statement, and metadata</li>
+            <li>Tasks within team projects (title, description, deadline, quadrant, tags, assignee ID, creator ID)</li>
+            <li>Project membership information (host user ID, member user IDs)</li>
+            <li>Task completion status for team tasks</li>
+        </ul>
+        <p><strong>Important:</strong> Local project data remains only on your device. Cloud/team project data is synchronized in real-time across all team members' devices via Firebase. Local data will be lost if you uninstall the app without backing up.</p>
+
+        <h3>1.4 Subscription and Payment Data</h3>
+        <p>If you purchase a premium subscription:</p>
+        <ul>
+            <li><strong>RevenueCat Customer ID:</strong> A unique identifier for your subscription status</li>
+            <li><strong>Subscription status:</strong> Whether you have an active premium subscription</li>
+            <li><strong>Entitlements:</strong> Which premium features you have access to</li>
+            <li><strong>Transaction information:</strong> Processed by Apple App Store or Google Play Store (we do not store payment card details)</li>
+        </ul>
+        <p><strong>Note:</strong> All payment processing is handled by Apple or Google. We do not have access to your payment card information.</p>
+
+        <h3>1.5 Usage Information</h3>
+        <p>We automatically collect certain information about your device and how you use the app:</p>
+        <ul>
+            <li>Device type and operating system version</li>
+            <li>App version and language preferences</li>
+            <li>Feature usage statistics (anonymous)</li>
+            <li>Crash reports and error logs</li>
+        </ul>
+
+        <h3>1.6 Google Calendar Data (Optional)</h3>
+        <p>If you choose to enable Google Calendar integration:</p>
+        <ul>
+            <li>We access your Google Calendar events to import them as tasks</li>
+            <li>This data is only used within the app and not shared with third parties</li>
+            <li>You can revoke this permission at any time through the app settings or your Google account settings</li>
+        </ul>
+
+        <h3>1.7 Voice Input Data (Optional)</h3>
+        <p>If you use the voice input feature to create tasks:</p>
+        <ul>
+            <li>Your voice is processed by your device's speech-to-text system (iOS Speech Recognition)</li>
+            <li>Audio is processed locally on your device or by Apple's servers (depending on device capabilities)</li>
+            <li>We do not store or have access to your voice recordings</li>
+            <li>Only the transcribed text is used to create tasks</li>
+            <li>You can disable microphone access through your device settings</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+        
+        <p>We use the collected information for the following purposes:</p>
+        
+        <h3>2.1 To Provide App Services</h3>
+        <ul>
+            <li>Create and manage your user account</li>
+            <li>Authenticate your identity securely</li>
+            <li>Display your profile information</li>
+            <li>Enable Google Calendar integration features</li>
+            <li>Facilitate team collaboration on cloud projects (Premium feature)</li>
+            <li>Synchronize tasks and projects across your devices via cloud storage</li>
+            <li>Process subscription purchases and manage premium entitlements</li>
+            <li>Enable voice-to-text task creation</li>
+        </ul>
+
+        <h3>2.2 To Improve the App</h3>
+        <ul>
+            <li>Analyze usage patterns to improve features</li>
+            <li>Identify and fix bugs and technical issues</li>
+            <li>Develop new features based on user needs</li>
+            <li>Optimize app performance</li>
+        </ul>
+
+        <h3>2.3 To Communicate with You</h3>
+        <ul>
+            <li>Send important app updates and announcements</li>
+            <li>Respond to your support requests</li>
+            <li>Notify you about changes to our policies</li>
+        </ul>
+
+        <h3>2.4 For Security and Fraud Prevention</h3>
+        <ul>
+            <li>Protect against unauthorized access</li>
+            <li>Detect and prevent fraudulent activities</li>
+            <li>Maintain the security of our services</li>
+        </ul>
+
+        <h2>3. Data Storage and Security</h2>
+        
+        <h3>3.1 Where Your Data is Stored</h3>
+        <p>Your data is stored in multiple locations depending on the features you use:</p>
+        <ul>
+            <li><strong>Firebase Authentication:</strong> Stores your authentication credentials (email, user ID, profile photo)</li>
+            <li><strong>Firebase Firestore:</strong> Stores cloud/team project data including tasks, project details, and membership information (only for team projects)</li>
+            <li><strong>Your Device Storage:</strong> Local projects, achievements, app preferences, and settings are stored on your device</li>
+            <li><strong>RevenueCat:</strong> Stores your subscription status and entitlements (anonymous customer ID)</li>
+        </ul>
+        
+        <p>All cloud data is stored on Firebase servers (Google Cloud Platform) located in secure data centers. Google Firebase complies with industry-standard security practices and certifications including SOC 2, ISO 27001, and GDPR.</p>
+        
+        <p><strong>Important:</strong> Local project data is not backed up to the cloud. Only team/cloud projects are synchronized. We recommend backing up your device regularly to prevent loss of local data.</p>
+
+        <h3>3.2 How We Protect Your Data</h3>
+        <ul>
+            <li><strong>Encryption in Transit:</strong> All data transmitted between your device and our servers is encrypted using TLS/SSL</li>
+            <li><strong>Encryption at Rest:</strong> Data stored in Firebase is encrypted at rest</li>
+            <li><strong>Access Control:</strong> Only you can access your personal data through authentication</li>
+            <li><strong>Secure Authentication:</strong> We use industry-standard OAuth 2.0 for Apple and Google sign-in</li>
+            <li><strong>Regular Security Audits:</strong> We rely on Firebase's security infrastructure which undergoes regular third-party audits</li>
+        </ul>
+
+        <div class="highlight">
+            <strong>Important:</strong> While we implement industry-standard security measures, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security of your data.
+        </div>
+
+        <h2>4. Third-Party Services</h2>
+        
+        <p>We use the following third-party services that may collect information about you:</p>
+
+        <h3>4.1 Firebase Authentication & Firestore (Google Cloud Platform)</h3>
+        <ul>
+            <li><strong>Purpose:</strong> User authentication and cloud data storage for team projects</li>
+            <li><strong>Data Collected:</strong> 
+                <ul>
+                    <li>Authentication: Email, user ID, profile photo</li>
+                    <li>Firestore: Team project data, tasks, member lists, project metadata (only for cloud/team projects)</li>
+                </ul>
+            </li>
+            <li><strong>Privacy Policy:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></li>
+        </ul>
+
+        <h3>4.2 Google Sign-In</h3>
+        <ul>
+            <li><strong>Purpose:</strong> User authentication</li>
+            <li><strong>Data Collected:</strong> Email, profile picture</li>
+            <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+        </ul>
+
+        <h3>4.3 Apple Sign-In</h3>
+        <ul>
+            <li><strong>Purpose:</strong> User authentication</li>
+            <li><strong>Data Collected:</strong> Apple ID, email (may be private relay)</li>
+            <li><strong>Privacy Policy:</strong> <a href="https://www.apple.com/legal/privacy/" target="_blank">https://www.apple.com/legal/privacy/</a></li>
+        </ul>
+
+        <h3>4.4 Google Calendar API (Optional)</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Import calendar events as tasks (only if you enable this feature)</li>
+            <li><strong>Data Collected:</strong> Calendar event titles, dates, times, descriptions</li>
+            <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+            <li><strong>Permissions:</strong> Read-only access to your calendar events</li>
+        </ul>
+
+        <h3>4.5 Google Calendar API - Limited Use Disclosure</h3>
+        <p>Critical Choice's use of information received from Google APIs adheres to <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Google API Services User Data Policy</a>, including the Limited Use requirements. Specifically:</p>
+        <ul>
+            <li>We only request access to Google Calendar data when you explicitly enable calendar sync</li>
+            <li>Calendar data is only used to display events within the app as tasks</li>
+            <li>We do not transfer calendar data to third parties</li>
+            <li>Calendar data is not used for serving advertisements</li>
+            <li>You can revoke access at any time through app settings or your Google account</li>
+        </ul>
+
+        <h3>4.6 RevenueCat</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Subscription management and payment processing</li>
+            <li><strong>Data Collected:</strong> Anonymous customer ID, subscription status, purchase receipts, device identifiers</li>
+            <li><strong>Privacy Policy:</strong> <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a></li>
+            <li><strong>Note:</strong> RevenueCat does not have access to your payment card details; all payments are processed by Apple or Google</li>
+        </ul>
+
+        <h3>4.7 iOS Speech Recognition (Apple)</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Voice-to-text for task creation (optional feature)</li>
+            <li><strong>Data Collected:</strong> Voice audio for transcription (processed by Apple)</li>
+            <li><strong>Privacy Policy:</strong> <a href="https://www.apple.com/legal/privacy/" target="_blank">https://www.apple.com/legal/privacy/</a></li>
+            <li><strong>Note:</strong> We do not store voice recordings; only the transcribed text is used</li>
+        </ul>
+
+        <h2>5. Data Sharing and Disclosure</h2>
+        
+        <h3>5.1 We Do NOT Sell Your Data</h3>
+        <p>We do not sell, rent, or trade your personal information to third parties for marketing purposes.</p>
+
+        <h3>5.2 When We May Share Your Data</h3>
+        <p>We may share your information only in the following limited circumstances:</p>
+        <ul>
+            <li><strong>With Your Consent:</strong> When you explicitly give us permission to share specific information</li>
+            <li><strong>Team Collaboration (Premium):</strong> When you create or join a team project, your user ID and tasks you create are visible to all project members</li>
+            <li><strong>Service Providers:</strong> With trusted third-party services (Firebase, RevenueCat) that help us operate the app</li>
+            <li><strong>Legal Requirements:</strong> When required by law, court order, or government request</li>
+            <li><strong>Business Transfers:</strong> If we are involved in a merger, acquisition, or sale of assets, your data may be transferred (you will be notified)</li>
+            <li><strong>Protection of Rights:</strong> To protect our rights, privacy, safety, or property, and that of our users</li>
+        </ul>
+
+        <h3>5.3 Team Project Data Sharing</h3>
+        <p>When you participate in team projects (Premium feature):</p>
+        <ul>
+            <li><strong>Visible to Team Members:</strong> Your user ID, tasks you create, and task updates are visible to all project members</li>
+            <li><strong>Project Host Controls:</strong> The project creator (host) can invite or remove members</li>
+            <li><strong>Real-Time Sync:</strong> Changes to team projects are synchronized in real-time across all members' devices</li>
+            <li><strong>Leaving Projects:</strong> You can leave team projects at any time, which removes your access to that project's data</li>
+        </ul>
+        <p><strong>Note:</strong> Team collaboration is optional. You can use the app entirely with local projects if you prefer to keep all data on your device.</p>
+
+        <h2>6. Your Rights and Choices</h2>
+        
+        <p>You have the following rights regarding your personal data:</p>
+
+        <h3>6.1 Access Your Data</h3>
+        <ul>
+            <li>View your profile information in the app settings</li>
+            <li>Access all your tasks and projects within the app (stored locally on your device)</li>
+            <li>Request a copy of your authentication data by contacting us</li>
+        </ul>
+
+        <h3>6.2 Update Your Data</h3>
+        <ul>
+            <li>Edit your profile information through app settings</li>
+            <li>Modify or delete tasks and projects at any time</li>
+            <li>Update your email through your Apple or Google account settings</li>
+        </ul>
+
+        <h3>6.3 Export Your Data</h3>
+        <ul>
+            <li>Your local tasks and projects are stored on your device and can be backed up via device backup</li>
+            <li>Team project data is stored in Firebase Firestore and visible within the app</li>
+            <li>You can request an export of your authentication data and cloud project data by contacting us</li>
+            <li>We will provide your data in a portable format (JSON or CSV) within 30 days of request</li>
+        </ul>
+
+        <h3>6.4 Delete Your Data</h3>
+        <ul>
+            <li>Delete individual tasks and projects directly in the app (local deletion from your device)</li>
+            <li>Uninstall the app to remove all local data from your device</li>
+            <li>Delete your account through app settings - your data is immediately removed from our systems (see section 7.2 for details)</li>
+            <li>Account deletion is immediate and irreversible - you cannot recover your data once deleted</li>
+        </ul>
+
+        <h3>6.5 Manage Google Calendar Access</h3>
+        <ul>
+            <li>Disconnect Google Calendar sync through app settings</li>
+            <li>Revoke access through your <a href="https://myaccount.google.com/permissions" target="_blank">Google Account Permissions</a> page</li>
+        </ul>
+
+        <h3>6.6 Opt-Out of Communications</h3>
+        <ul>
+            <li>Disable notifications through your device settings</li>
+            <li>Unsubscribe from emails using the link in any email we send</li>
+        </ul>
+
+        <h2>7. Data Retention</h2>
+        
+        <p>We retain your personal information for as long as necessary to provide our services and fulfill the purposes outlined in this privacy policy.</p>
+
+        <h3>7.1 Active Accounts</h3>
+        <ul>
+            <li>Your authentication data is retained in Firebase as long as your account is active</li>
+            <li>Local tasks and projects remain on your device until you delete them or uninstall the app</li>
+            <li>Cloud/team project data is retained in Firestore as long as you're a member of the project</li>
+            <li>Subscription data is retained by RevenueCat as long as you have an active or expired subscription</li>
+            <li>You can delete your account at any time through app settings</li>
+        </ul>
+
+        <h3>7.2 Deleted Accounts</h3>
+        <p>When you delete your account, the following happens:</p>
+        <ul>
+            <li><strong>Immediately deleted from our systems:</strong>
+                <ul>
+                    <li>Your account data (email, user ID, profile photo) is removed from Firebase Authentication</li>
+                    <li>All your cloud/team project data is permanently deleted from Firestore</li>
+                    <li>Team projects you hosted are deleted (members will be notified)</li>
+                    <li>You are removed from all team projects you joined</li>
+                    <li>Your account cannot be recovered after deletion</li>
+                </ul>
+            </li>
+            <li><strong>Third-party service provider data:</strong>
+                <ul>
+                    <li>Firebase/Google backup systems may retain copies for up to 30-90 days for disaster recovery purposes (this is managed by Firebase, not by our app)</li>
+                    <li>RevenueCat subscription data is marked as deleted</li>
+                </ul>
+            </li>
+            <li><strong>Your device:</strong> Local project data remains on your device until you uninstall the app</li>
+        </ul>
+        <p><strong>Important:</strong> From your perspective, account deletion is immediate and irreversible. You will lose access instantly and cannot recover your data. However, Firebase's internal backup systems (beyond our control) may retain copies for disaster recovery for up to 90 days.</p>
+
+        <h3>7.3 Inactive Accounts</h3>
+        <ul>
+            <li>We may delete accounts that have been inactive for an extended period (e.g., 3+ years)</li>
+            <li>You will receive advance notice before deletion via email</li>
+        </ul>
+
+       
+        <h2>8. App Age Rating</h2>
+        <p><strong>App Store Age Rating: 4+ (Suitable for All Ages)</strong></p>
+        <p>Critical Choice is designed for users of all ages and does <strong>not</strong> contain any objectionable content, violence, gambling, mature themes, or inappropriate material. The app is rated <strong>4+</strong> on the Apple App Store, meaning it is suitable for children and adults.</p>
+        <p><strong>Children's Privacy:</strong> While Critical Choice is rated 4+ and suitable for all ages, we do <strong>not</strong> knowingly collect personal information from children under the age of 13 (or the minimum age in your jurisdiction) in accordance with privacy laws such as COPPA. If you are a parent or guardian and believe your child under 13 has provided us with personal information, please contact us immediately. We will take steps to delete such information from our systems.</p>
+
+        <h2>9. International Data Transfers</h2>
+        
+        <p>Your information may be transferred to and stored on servers located outside of your country of residence. These countries may have different data protection laws than your country.</p>
+        
+        <p>By using Critical Choice, you consent to the transfer of your information to countries outside of your country of residence, including the United States where Firebase servers are located.</p>
+        
+        <p>We ensure appropriate safeguards are in place to protect your data in accordance with this privacy policy and applicable laws, including:</p>
+        <ul>
+            <li>GDPR compliance for European users</li>
+            <li>Standard contractual clauses for international transfers</li>
+            <li>Adherence to the EU-US and Swiss-US Privacy Shield frameworks (where applicable)</li>
+        </ul>
+
+        <h2>10. Your California Privacy Rights (CCPA)</h2>
+        
+        <p>If you are a California resident, you have specific rights under the California Consumer Privacy Act (CCPA):</p>
+
+        <h3>Right to Know</h3>
+        <p>You have the right to request information about the personal data we collect, use, and disclose.</p>
+
+        <h3>Right to Delete</h3>
+        <p>You have the right to request deletion of your personal information, subject to certain exceptions.</p>
+
+        <h3>Right to Opt-Out</h3>
+        <p>You have the right to opt-out of the sale of your personal information. <strong>Note: We do not sell personal information.</strong></p>
+
+        <h3>Right to Non-Discrimination</h3>
+        <p>We will not discriminate against you for exercising your CCPA rights.</p>
+
+        <p>To exercise these rights, please contact us using the information in the Contact section below.</p>
+
+        <h2>11. European Users (GDPR)</h2>
+        
+        <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, you have additional rights under the General Data Protection Regulation (GDPR):</p>
+
+        <h3>Legal Basis for Processing</h3>
+        <p>We process your personal data based on:</p>
+        <ul>
+            <li><strong>Consent:</strong> When you agree to use our services</li>
+            <li><strong>Contract:</strong> To provide the services you've requested</li>
+            <li><strong>Legitimate Interests:</strong> To improve our services and ensure security</li>
+            <li><strong>Legal Obligations:</strong> To comply with applicable laws</li>
+        </ul>
+
+        <h3>Your GDPR Rights</h3>
+        <ul>
+            <li><strong>Right of Access:</strong> Request a copy of your personal data</li>
+            <li><strong>Right to Rectification:</strong> Correct inaccurate personal data</li>
+            <li><strong>Right to Erasure:</strong> Request deletion of your personal data</li>
+            <li><strong>Right to Restrict Processing:</strong> Limit how we use your data</li>
+            <li><strong>Right to Data Portability:</strong> Receive your data in a structured format</li>
+            <li><strong>Right to Object:</strong> Object to certain types of processing</li>
+            <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time</li>
+            <li><strong>Right to Lodge a Complaint:</strong> File a complaint with your local data protection authority</li>
+        </ul>
+
+        <p>To exercise these rights, please contact us using the information below.</p>
+
+        <h2>12. Changes to This Privacy Policy</h2>
+        
+        <p>We may update this privacy policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors.</p>
+        
+        <p>When we make significant changes, we will:</p>
+        <ul>
+            <li>Update the "Last Updated" date at the top of this policy</li>
+            <li>Notify you through the app or via email</li>
+            <li>Request your consent if required by law</li>
+        </ul>
+        
+        <p>We encourage you to review this privacy policy periodically. Your continued use of the app after changes are posted constitutes your acceptance of the updated policy.</p>
+
+        <h2>13. Contact Us</h2>
+        
+        <div class="contact">
+            <p>If you have any questions, concerns, or requests regarding this privacy policy or our data practices, please contact us:</p>
+            
+            <p><strong>App Name:</strong> Critical Choice (Todo 4Q)<br>
+            <strong>Developer:</strong> Michael Shen<br>
+            <strong>Email:</strong> <a href="mailto:webmic1209@gmail.com">webmic1209@gmail.com</a><br>
+            <strong>Website:</strong> <a href="https://micavo.app/critical_choice/" target="_blank">https://micavo.app/critical_choice/</a><br>
+            <strong>GitHub:</strong> <a href="https://github.com/Michael-Shen" target="_blank">https://github.com/Michael-Shen</a></p>
+            
+            <p>We will respond to your inquiry within 30 days.</p>
+        </div>
+
+        <h2>14. Consent</h2>
+        
+        <p>By using Critical Choice, you acknowledge that you have read and understood this privacy policy and agree to the collection, use, and disclosure of your personal information as described herein.</p>
+        
+        <p>If you do not agree with this privacy policy, please do not use our app.</p>
+
+        <hr style="margin: 40px 0; border: none; border-top: 1px solid #d2d2d7;">
+        
+        <p style="text-align: center; color: #86868b; font-size: 14px;">
+            © 2026 Michael Shen. All rights reserved.<br>
+            <a href="https://github.com/Michael-Shen/critical-choice" target="_blank">GitHub Repository</a>
+        </p>
+    </div>
+</body>
+</html>

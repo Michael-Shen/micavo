@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Critical Choice - Master your productivity with the Eisenhower Matrix. Focus on what truly matters with our intelligent task management app.">
+    <meta name="keywords" content="productivity, task manager, eisenhower matrix, time management, todo app, GTD, focus, priority">
+    <meta property="og:title" content="Critical Choice - Master the Eisenhower Matrix">
+    <meta property="og:description" content="The only task manager built around the proven Eisenhower Matrix framework. Focus on what truly matters.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://micavo.app/critical_choice/">
+    <meta property="og:image" content="./assets/images/icon.png">
+    <link rel="icon" type="image/png" href="./assets/images/icon.png">
+    <link rel="apple-touch-icon" href="./assets/images/icon.png">
+    <link rel="canonical" href="https://micavo.app/critical_choice/">
+    <title>Critical Choice - Master the Eisenhower Matrix</title>
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PF5PE9BXFT');
+    </script>
+    <script src="/assets/js/analytics.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007aff;
+            --secondary-color: #5856d6;
+            --success-color: #34c759;
+            --warning-color: #ff9500;
+            --danger-color: #ff3b30;
+            --text-dark: #1d1d1f;
+            --text-light: #86868b;
+            --background: #ffffff;
+            --background-secondary: #f5f5f7;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background);
+            overflow-x: hidden;
+        }
+
+        /* Header / Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: transparent;
+            border: 2px solid var(--text-light);
+            color: var(--text-dark);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .lang-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 100px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" fill="white" opacity="0.1"/></svg>') repeat;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        /* Matrix Section */
+        .matrix-section {
+            padding: 100px 30px;
+            background: var(--background-secondary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .quadrant-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quadrant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .quadrant-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+        }
+
+        .q1::before { background: var(--danger-color); }
+        .q2::before { background: var(--success-color); }
+        .q3::before { background: var(--warning-color); }
+        .q4::before { background: var(--text-light); }
+
+        .quadrant-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .quadrant-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .q1 .quadrant-icon { background: rgba(255, 59, 48, 0.1); }
+        .q2 .quadrant-icon { background: rgba(52, 199, 89, 0.1); }
+        .q3 .quadrant-icon { background: rgba(255, 149, 0, 0.1); }
+        .q4 .quadrant-icon { background: rgba(134, 134, 139, 0.1); }
+
+        .quadrant-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .quadrant-label {
+            font-size: 14px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .quadrant-description {
+            color: var(--text-light);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 30px;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .feature-description {
+            color: var(--text-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Screenshots Section */
+        .screenshots-section {
+            padding: 100px 30px;
+            background: var(--background-secondary);
+        }
+
+        .screenshots-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .screenshots-container {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 30px 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+        }
+
+        .screenshots-container::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .screenshot {
+            flex: 0 0 300px;
+            scroll-snap-align: center;
+            text-align: center;
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-color);
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .scroll-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .scroll-btn:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .scroll-btn.left {
+            left: -25px;
+        }
+
+        .scroll-btn.right {
+            right: -25px;
+        }
+
+        .scroll-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .scroll-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--text-light);
+            opacity: 0.3;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .scroll-indicator.active {
+            background: var(--primary-color);
+            opacity: 1;
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        .screenshot {
+            flex: 0 0 300px;
+            scroll-snap-align: center;
+            text-align: center;
+        }
+
+        .screenshot img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            margin-bottom: 15px;
+        }
+
+        .screenshot-caption {
+            color: var(--text-dark);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .screenshot-description {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
+        .screenshot-placeholder {
+            width: 100%;
+            aspect-ratio: 9/19.5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 30px;
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: var(--background-secondary);
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 48px;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .author-role {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 30px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .matrix-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .scroll-btn {
+                display: none;
+            }
+
+            .screenshot {
+                flex: 0 0 250px;
+            }
+
+            .language-switcher {
+                margin-top: 10px;
+            }
+
+            .nav-container > div {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px !important;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><img src="./assets/images/icon.png" alt="Critical Choice Icon"></div>
+                Critical Choice
+            </a>
+            <div style="display: flex; align-items: center; gap: 30px;">
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#features" data-i18n="nav-features" data-ga-event="section_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="header" data-ga-param-section="features">Features</a></li>
+                        <li><a href="#matrix" data-i18n="nav-matrix" data-ga-event="section_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="header" data-ga-param-section="matrix">Eisenhower Matrix</a></li>
+                        <li><a href="#screenshots" data-i18n="nav-screenshots" data-ga-event="section_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="header" data-ga-param-section="screenshots">Screenshots</a></li>
+                        <li><a href="privacy-policy.html" data-i18n="nav-privacy" data-ga-event="legal_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="header">Privacy</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="zh">繁中</button>
+                    <button class="lang-btn" data-lang="zh-cn">簡中</button>
+                    <button class="lang-btn" data-lang="ja">JP</button>
+                     
+                    <button class="lang-btn" data-lang="ko">한국어</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content animate-fade-in">
+            <h1 data-i18n="hero-title">Master Your Productivity<br>with the Eisenhower Matrix</h1>
+            <p data-i18n="hero-subtitle">Stop reacting. Start prioritizing. Focus on what truly matters.</p>
+            <div class="cta-buttons">
+                <a href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="hero">
+                    <span>📱</span>
+                    <span data-i18n="btn-download">Download on App Store</span>
+                </a>
+                <a href="#features" class="btn btn-secondary" data-ga-event="section_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="hero" data-ga-param-section="features">
+                    <span>✨</span>
+                    <span data-i18n="btn-learn">Learn More</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eisenhower Matrix Section -->
+    <section id="matrix" class="matrix-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="matrix-title">The Eisenhower Matrix</h2>
+            <p class="section-subtitle" data-i18n="matrix-subtitle">
+                Used by presidents, CEOs, and productivity experts worldwide. Distinguish between urgent and important tasks to work smarter, not harder.
+            </p>
+
+            <div class="matrix-grid">
+                <!-- Q1: Urgent & Important -->
+                <div class="quadrant-card q1">
+                    <div class="quadrant-header">
+                        <div class="quadrant-icon">🔥</div>
+                        <div>
+                            <div class="quadrant-label" data-i18n="q1-label">Quadrant 1</div>
+                            <div class="quadrant-title" data-i18n="q1-title">Urgent & Important</div>
+                        </div>
+                    </div>
+                    <p class="quadrant-description" data-i18n="q1-desc">
+                        <strong>Do First:</strong> Crises, deadlines, emergencies. Handle these immediately to prevent fires, but don't live here—it leads to burnout.
+                    </p>
+                </div>
+
+                <!-- Q2: Not Urgent & Important -->
+                <div class="quadrant-card q2">
+                    <div class="quadrant-header">
+                        <div class="quadrant-icon">⭐</div>
+                        <div>
+                            <div class="quadrant-label" data-i18n="q2-label">Quadrant 2</div>
+                            <div class="quadrant-title" data-i18n="q2-title">Important, Not Urgent</div>
+                        </div>
+                    </div>
+                    <p class="quadrant-description" data-i18n="q2-desc">
+                        <strong>Schedule & Focus:</strong> Strategic planning, skill development, relationships. This is where success happens. Spend most of your time here.
+                    </p>
+                </div>
+
+                <!-- Q3: Urgent & Not Important -->
+                <div class="quadrant-card q3">
+                    <div class="quadrant-header">
+                        <div class="quadrant-icon">📞</div>
+                        <div>
+                            <div class="quadrant-label" data-i18n="q3-label">Quadrant 3</div>
+                            <div class="quadrant-title" data-i18n="q3-title">Urgent, Not Important</div>
+                        </div>
+                    </div>
+                    <p class="quadrant-description" data-i18n="q3-desc">
+                        <strong>Delegate:</strong> Interruptions, some emails, other people's priorities. These feel urgent but don't contribute to your goals. Minimize or delegate.
+                    </p>
+                </div>
+
+                <!-- Q4: Not Urgent & Not Important -->
+                <div class="quadrant-card q4">
+                    <div class="quadrant-header">
+                        <div class="quadrant-icon">📺</div>
+                        <div>
+                            <div class="quadrant-label" data-i18n="q4-label">Quadrant 4</div>
+                            <div class="quadrant-title" data-i18n="q4-title">Not Urgent & Not Important</div>
+                        </div>
+                    </div>
+                    <p class="quadrant-description" data-i18n="q4-desc">
+                        <strong>Eliminate:</strong> Time wasters, busywork, trivial tasks. These offer little value. Remove them from your list and reclaim your time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="features-title">Powerful Features</h2>
+            <p class="section-subtitle" data-i18n="features-subtitle">
+                Everything you need to master productivity, all in one beautifully designed app
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title" data-i18n="feature1-title">Smart Quadrant Organization</h3>
+                    <p class="feature-description" data-i18n="feature1-desc">
+                        Automatic task sorting by priority with visual color-coded quadrants. Know exactly what to work on next.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title" data-i18n="feature2-title">Achievement System</h3>
+                    <p class="feature-description" data-i18n="feature2-desc">
+                        Track your productivity with 6 achievement levels and motivational insights. Watch your progress grow.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3 class="feature-title" data-i18n="feature3-title">Google Calendar Sync</h3>
+                    <p class="feature-description" data-i18n="feature3-desc">
+                        Import calendar events as tasks with one tap. Never miss a meeting or deadline again.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3 class="feature-title" data-i18n="feature4-title">Cloud Sync</h3>
+                    <p class="feature-description" data-i18n="feature4-desc">
+                        Seamless sync across all your devices. Your tasks are always up-to-date, everywhere.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3 class="feature-title" data-i18n="feature5-title">Project Management</h3>
+                    <p class="feature-description" data-i18n="feature5-desc">
+                        Free: 5 local projects. Premium: 11 local + 5 cloud projects. Organize work, personal, and family tasks with color-coded tags.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="feature-title" data-i18n="feature10-title">Team Collaboration</h3>
+                    <p class="feature-description" data-i18n="feature10-desc">
+                        Pro users can create team projects, invite members, and assign tasks. Real-time cloud sync across all devices.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3 class="feature-title" data-i18n="feature11-title">Custom Tags</h3>
+                    <p class="feature-description" data-i18n="feature11-desc">
+                        Pro feature: Create color-coded tags to categorize and filter tasks. Stay organized with visual labels.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h3 class="feature-title" data-i18n="feature12-title">Voice Input</h3>
+                    <p class="feature-description" data-i18n="feature12-desc">
+                        Create tasks hands-free with voice commands. Speech-to-text in multiple languages for quick task entry.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title" data-i18n="feature6-title">Multi-Language Support</h3>
+                    <p class="feature-description" data-i18n="feature6-desc">
+                        Available in English, Simplified Chinese, and Traditional Chinese. Productivity speaks your language.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌅</div>
+                    <h3 class="feature-title" data-i18n="feature7-title">Daily Task View</h3>
+                    <p class="feature-description" data-i18n="feature7-desc">
+                        Start each day knowing exactly what to do. Tasks sorted by optimal order: Q2 → Q1 → Q3 → Q4.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title" data-i18n="feature8-title">Beautiful Design</h3>
+                    <p class="feature-description" data-i18n="feature8-desc">
+                        Modern, clean interface with gradient themes and intuitive navigation. Productivity can be beautiful.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3 class="feature-title" data-i18n="feature9-title">Secure Authentication</h3>
+                    <p class="feature-description" data-i18n="feature9-desc">
+                        Sign in with Apple or Google. Your data is private, encrypted, and always secure with Firebase.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Premium Features Highlight -->
+            <div style="margin-top: 80px; padding: 60px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 30px; color: white; text-align: center;">
+                <h3 style="font-size: 32px; font-weight: 700; margin-bottom: 20px;" data-i18n="premium-title">✨ Unlock Premium Features</h3>
+                <p style="font-size: 18px; opacity: 0.95; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;" data-i18n="premium-desc">
+                    Upgrade to Premium for 11 local projects, 5 cloud projects with team collaboration, custom tags, task assignment, and real-time sync. Perfect for professionals and teams.
+                </p>
+                <div style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 48px; font-weight: 700; margin-bottom: 5px;">11</div>
+                        <div style="font-size: 16px; opacity: 0.9;" data-i18n="premium-local">Local Projects</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 48px; font-weight: 700; margin-bottom: 5px;">5</div>
+                        <div style="font-size: 16px; opacity: 0.9;" data-i18n="premium-cloud">Cloud Projects</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 48px; font-weight: 700; margin-bottom: 5px;">👥</div>
+                        <div style="font-size: 16px; opacity: 0.9;" data-i18n="premium-team">Team Collaboration</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 48px; font-weight: 700; margin-bottom: 5px;">🏷️</div>
+                        <div style="font-size: 16px; opacity: 0.9;" data-i18n="premium-tags">Custom Tags</div>
+                    </div>
+                </div>
+                <div style="margin-top: 40px; font-size: 14px; opacity: 0.85;" data-i18n="premium-price">
+                    $3.99/month or $29.99/year
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="screenshots-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="screenshots-title">See It In Action</h2>
+            <p class="section-subtitle" data-i18n="screenshots-subtitle">
+                Beautiful, intuitive design meets powerful productivity features
+            </p>
+
+            <div class="screenshots-wrapper">
+                <button class="scroll-btn left" onclick="scrollScreenshots(-1)" aria-label="Previous screenshot">‹</button>
+                <button class="scroll-btn right" onclick="scrollScreenshots(1)" aria-label="Next screenshot">›</button>
+                
+                <div class="screenshots-container" id="screenshotsContainer">
+                <div class="screenshot">
+                    <img src="./assets/images/screenshot-quadrant-view.png" alt="Quadrant View - Eisenhower Matrix interface">
+                    <div class="screenshot-caption" data-i18n="screenshot1-title">📊 Quadrant View</div>
+                    <div class="screenshot-description" data-i18n="screenshot1-desc">Visualize all tasks organized by the 4 quadrants with color-coded priorities</div>
+                </div>
+                <div class="screenshot">
+                    <img src="./assets/images/screenshot-daily-tasks.png" alt="Daily Tasks view with prioritized task list">
+                    <div class="screenshot-caption" data-i18n="screenshot2-title">✅ Daily Tasks</div>
+                    <div class="screenshot-description" data-i18n="screenshot2-desc">Focus on today's priorities sorted optimally: Q2 → Q1 → Q3 → Q4</div>
+                </div>
+                <div class="screenshot">
+                    <img src="./assets/images/screenshot-statistics.png" alt="Statistics and achievement tracking">
+                    <div class="screenshot-caption" data-i18n="screenshot3-title">📈 Progress & Stats</div>
+                    <div class="screenshot-description" data-i18n="screenshot3-desc">Track your productivity journey with achievement levels and insights</div>
+                </div>
+                <div class="screenshot">
+                    <img src="./assets/images/screenshot-calendar-sync.png" alt="Google Calendar synchronization">
+                    <div class="screenshot-caption" data-i18n="screenshot4-title">📅 Calendar Sync</div>
+                    <div class="screenshot-description" data-i18n="screenshot4-desc">Import Google Calendar events as tasks with one tap integration</div>
+                </div>
+                <div class="screenshot">
+                    <img src="./assets/images/screenshot-team-collaboration.png" alt="Team collaboration features">
+                    <div class="screenshot-caption" data-i18n="screenshot5-title">👥 Team Projects</div>
+                    <div class="screenshot-description" data-i18n="screenshot5-desc">Collaborate with teams on cloud projects and assign tasks (Premium)</div>
+                </div>
+                </div>
+
+                <div class="scroll-indicators" id="scrollIndicators">
+                    <div class="scroll-indicator active" onclick="scrollToScreenshot(0)"></div>
+                    <div class="scroll-indicator" onclick="scrollToScreenshot(1)"></div>
+                    <div class="scroll-indicator" onclick="scrollToScreenshot(2)"></div>
+                    <div class="scroll-indicator" onclick="scrollToScreenshot(3)"></div>
+                    <div class="scroll-indicator" onclick="scrollToScreenshot(4)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="testimonials-title">What Users Say</h2>
+            <p class="section-subtitle" data-i18n="testimonials-subtitle">
+                Join thousands who've transformed their productivity
+            </p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text" data-i18n="testimonial1-text">
+                        "Finally, a task manager that actually helps me focus on what matters! The Q2 emphasis changed how I work. I'm more strategic and less stressed."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah M.</div>
+                            <div class="author-role" data-i18n="testimonial1-role">Product Manager</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text" data-i18n="testimonial2-text">
+                        "The Eisenhower Matrix approach is brilliant. I used to drown in urgent but unimportant tasks. Now I'm productive, not just busy. Game changer!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JC</div>
+                        <div class="author-info">
+                            <div class="author-name">James Chen</div>
+                            <div class="author-role" data-i18n="testimonial2-role">Entrepreneur</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text" data-i18n="testimonial3-text">
+                        "Beautiful design, powerful features. The calendar sync and achievement system keep me motivated. Best productivity app I've used!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EL</div>
+                        <div class="author-info">
+                            <div class="author-name">Emma Liu</div>
+                            <div class="author-role" data-i18n="testimonial3-role">Designer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-i18n="cta-title">Ready to Master Your Productivity?</h2>
+            <p data-i18n="cta-subtitle">Download Critical Choice today and start working on what truly matters.</p>
+            <div class="cta-buttons">
+                <a href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="final_cta">
+                    <span>📱</span>
+                    <span data-i18n="btn-download">Download on App Store</span>
+                </a>
+            </div>
+            <p style="margin-top: 20px; font-size: 16px; opacity: 0.8;" data-i18n="cta-note">
+                Free to download • No ads • Focus on what's important
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Critical Choice</h3>
+                <p style="color: rgba(255, 255, 255, 0.7); margin-top: 15px;">
+                    Master your productivity with the proven Eisenhower Matrix framework. Focus on what truly matters.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Product</h3>
+                <ul class="footer-links">
+                    <li><a href="#features" data-ga-event="section_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer" data-ga-param-section="features">Features</a></li>
+                    <li><a href="#matrix" data-ga-event="section_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer" data-ga-param-section="matrix">Eisenhower Matrix</a></li>
+                    <li><a href="#screenshots" data-ga-event="section_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer" data-ga-param-section="screenshots">Screenshots</a></li>
+                    <li><a href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" target="_blank" rel="noopener noreferrer" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer">Download</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="privacy-policy.html" data-ga-event="legal_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="mailto:michael.shen.dev@gmail.com" data-ga-event="contact_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/Michael-Shen" target="_blank" rel="noopener noreferrer" data-ga-event="external_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer">GitHub</a></li>
+                    <li><a href="mailto:michael.shen.dev@gmail.com" data-ga-event="contact_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer">Email Support</a></li>
+                    <li><a href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" target="_blank" rel="noopener noreferrer" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer">App Store</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Michael Shen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Language translations
+        const translations = {
+            en: {
+                'nav-features': 'Features',
+                'nav-matrix': 'Eisenhower Matrix',
+                'nav-screenshots': 'Screenshots',
+                'nav-privacy': 'Privacy',
+                'hero-title': 'Master Your Productivity<br>with the Eisenhower Matrix',
+                'hero-subtitle': 'Stop reacting. Start prioritizing. Focus on what truly matters.',
+                'btn-download': 'Download on App Store',
+                'btn-learn': 'Learn More',
+                'matrix-title': 'The Eisenhower Matrix',
+                'matrix-subtitle': 'Used by presidents, CEOs, and productivity experts worldwide. Distinguish between urgent and important tasks to work smarter, not harder.',
+                'q1-label': 'Quadrant 1',
+                'q1-title': 'Urgent & Important',
+                'q1-desc': '<strong>Do First:</strong> Crises, deadlines, emergencies. Handle these immediately to prevent fires, but don\'t live here—it leads to burnout.',
+                'q2-label': 'Quadrant 2',
+                'q2-title': 'Important, Not Urgent',
+                'q2-desc': '<strong>Schedule & Focus:</strong> Strategic planning, skill development, relationships. This is where success happens. Spend most of your time here.',
+                'q3-label': 'Quadrant 3',
+                'q3-title': 'Urgent, Not Important',
+                'q3-desc': '<strong>Delegate:</strong> Interruptions, some emails, other people\'s priorities. These feel urgent but don\'t contribute to your goals. Minimize or delegate.',
+                'q4-label': 'Quadrant 4',
+                'q4-title': 'Not Urgent & Not Important',
+                'q4-desc': '<strong>Eliminate:</strong> Time wasters, busywork, trivial tasks. These offer little value. Remove them from your list and reclaim your time.',
+                'features-title': 'Powerful Features',
+                'features-subtitle': 'Everything you need to master productivity, all in one beautifully designed app',
+                'feature1-title': 'Smart Quadrant Organization',
+                'feature1-desc': 'Automatic task sorting by priority with visual color-coded quadrants. Know exactly what to work on next.',
+                'feature2-title': 'Achievement System',
+                'feature2-desc': 'Track your productivity with 6 achievement levels and motivational insights. Watch your progress grow.',
+                'feature3-title': 'Google Calendar Sync',
+                'feature3-desc': 'Import calendar events as tasks with one tap. Never miss a meeting or deadline again.',
+                'feature4-title': 'Cloud Sync',
+                'feature4-desc': 'Seamless sync across all your devices. Your tasks are always up-to-date, everywhere.',
+                'feature5-title': 'Project Management',
+                'feature5-desc': 'Free: 5 local projects. Premium: 11 local + 5 cloud projects. Organize work, personal, and family tasks with color-coded tags.',
+                'feature6-title': 'Multi-Language Support',
+                'feature6-desc': 'Available in English, Simplified Chinese, and Traditional Chinese. Productivity speaks your language.',
+                'feature7-title': 'Daily Task View',
+                'feature7-desc': 'Start each day knowing exactly what to do. Tasks sorted by optimal order: Q2 → Q1 → Q3 → Q4.',
+                'feature8-title': 'Beautiful Design',
+                'feature8-desc': 'Modern, clean interface with gradient themes and intuitive navigation. Productivity can be beautiful.',
+                'feature9-title': 'Secure Authentication',
+                'feature9-desc': 'Sign in with Apple or Google. Your data is private, encrypted, and always secure with Firebase.',
+                'feature10-title': 'Team Collaboration',
+                'feature10-desc': 'Premium users can create up to 5 cloud projects, invite team members, and assign tasks. Real-time sync across all devices.',
+                'feature11-title': 'Custom Tags',
+                'feature11-desc': 'Premium feature: Create color-coded tags to categorize and filter tasks. Stay organized with visual labels.',
+                'feature12-title': 'Voice Input',
+                'feature12-desc': 'Create tasks hands-free with voice commands. Speech-to-text in multiple languages for quick task entry.',
+                'screenshots-title': 'See It In Action',
+                'screenshots-subtitle': 'Beautiful, intuitive design meets powerful productivity features',
+                'screenshot1-title': '📊 Quadrant View',
+                'screenshot1-desc': 'Visualize all tasks organized by the 4 quadrants with color-coded priorities',
+                'screenshot2-title': '✅ Daily Tasks',
+                'screenshot2-desc': 'Focus on today\'s priorities sorted optimally: Q2 → Q1 → Q3 → Q4',
+                'screenshot3-title': '📈 Progress & Stats',
+                'screenshot3-desc': 'Track your productivity journey with achievement levels and insights',
+                'screenshot4-title': '📅 Calendar Sync',
+                'screenshot4-desc': 'Import Google Calendar events as tasks with one tap integration',
+                'screenshot5-title': '👥 Team Projects',
+                'screenshot5-desc': 'Collaborate with teams on cloud projects and assign tasks (Premium)',
+                'testimonials-title': 'What Users Say',
+                'testimonials-subtitle': 'Join thousands who\'ve transformed their productivity',
+                'testimonial1-text': '"Finally, a task manager that actually helps me focus on what matters! The Q2 emphasis changed how I work. I\'m more strategic and less stressed."',
+                'testimonial1-role': 'Product Manager',
+                'testimonial2-text': '"The Eisenhower Matrix approach is brilliant. I used to drown in urgent but unimportant tasks. Now I\'m productive, not just busy. Game changer!"',
+                'testimonial2-role': 'Entrepreneur',
+                'testimonial3-text': '"Beautiful design, powerful features. The calendar sync and achievement system keep me motivated. Best productivity app I\'ve used!"',
+                'testimonial3-role': 'Designer',
+                'cta-title': 'Ready to Master Your Productivity?',
+                'cta-subtitle': 'Download Critical Choice today and start working on what truly matters.',
+                'cta-note': 'Free to download • No ads • Focus on what\'s important',
+                'premium-title': '✨ Unlock Premium Features',
+                'premium-desc': 'Upgrade to Premium for 11 local projects, 5 cloud projects with team collaboration, custom tags, task assignment, and real-time sync. Perfect for professionals and teams.',
+                'premium-local': 'Local Projects',
+                'premium-cloud': 'Cloud Projects',
+                'premium-team': 'Team Collaboration',
+                'premium-tags': 'Custom Tags',
+                'premium-price': '$3.99/month or $29.99/year'
+            },
+            zh: {
+                'nav-features': '功能特色',
+                'nav-matrix': '艾森豪矩陣',
+                'nav-screenshots': '應用截圖',
+                'nav-privacy': '隱私政策',
+                'hero-title': '掌握艾森豪矩陣<br>提升你的生產力',
+                'hero-subtitle': '停止被動反應，開始主動規劃。專注於真正重要的事情。',
+                'btn-download': '從 App Store 下載',
+                'btn-learn': '了解更多',
+                'matrix-title': '艾森豪矩陣',
+                'matrix-subtitle': '被總統、CEO 和全球生產力專家廣泛使用。區分緊急和重要的任務，更聰明地工作。',
+                'q1-label': '第一象限',
+                'q1-title': '緊急且重要',
+                'q1-desc': '<strong>立即執行：</strong>危機、截止期限、緊急情況。立即處理這些事項以防止問題惡化，但不要一直待在這個象限——這會導致倦怠。',
+                'q2-label': '第二象限',
+                'q2-title': '重要但不緊急',
+                'q2-desc': '<strong>規劃與專注：</strong>戰略規劃、技能發展、人際關係。這是成功發生的地方。花最多時間在這裡。',
+                'q3-label': '第三象限',
+                'q3-title': '緊急但不重要',
+                'q3-desc': '<strong>委派他人：</strong>干擾、部分郵件、他人的優先事項。這些事情感覺緊急但不能幫助你達成目標。盡量減少或委派。',
+                'q4-label': '第四象限',
+                'q4-title': '不緊急也不重要',
+                'q4-desc': '<strong>消除：</strong>浪費時間的事、繁忙工作、瑣碎任務。這些提供很少價值。從你的清單中刪除它們，奪回你的時間。',
+                'features-title': '強大功能',
+                'features-subtitle': '一個設計精美的應用程式，包含你掌握生產力所需的一切',
+                'feature1-title': '智能象限分類',
+                'feature1-desc': '按優先級自動排序任務，使用視覺化色彩編碼象限。精確知道接下來該做什麼。',
+                'feature2-title': '成就系統',
+                'feature2-desc': '使用 6 個成就等級和激勵性洞察追蹤你的生產力。看著你的進步成長。',
+                'feature3-title': 'Google 日曆同步',
+                'feature3-desc': '一鍵匯入日曆事件為任務。再也不會錯過會議或截止日期。',
+                'feature4-title': '雲端同步',
+                'feature4-desc': '所有裝置間無縫同步。你的任務隨時隨地保持最新狀態。',
+                'feature5-title': '專案管理',
+                'feature5-desc': '免費版：5 個本地專案。專業版：11 個本地 + 5 個雲端專案。使用色彩編碼標籤分別管理工作、個人和家庭任務。',
+                'feature6-title': '多語言支援',
+                'feature6-desc': '提供英文、簡體中文和繁體中文。生產力說你的語言。',
+                'feature7-title': '每日任務視圖',
+                'feature7-desc': '每天開始時就知道該做什麼。任務按最佳順序排序：Q2 → Q1 → Q3 → Q4。',
+                'feature8-title': '精美設計',
+                'feature8-desc': '現代簡潔的介面，搭配漸層主題和直覺導航。生產力也可以很美。',
+                'feature9-title': '安全認證',
+                'feature9-desc': '使用 Apple 或 Google 登入。你的資料透過 Firebase 私密、加密且始終安全。',
+                'feature10-title': '團隊協作',
+                'feature10-desc': '專業版使用者可建立最多 5 個雲端專案、邀請團隊成員並分配任務。所有裝置即時同步。',
+                'feature11-title': '自訂標籤',
+                'feature11-desc': '專業版功能：建立色彩編碼標籤來分類和篩選任務。使用視覺標籤保持井然有序。',
+                'feature12-title': '語音輸入',
+                'feature12-desc': '使用語音命令免手動建立任務。支援多語言語音轉文字，快速輸入任務。',
+                'screenshots-title': '實際使用展示',
+                'screenshots-subtitle': '精美直覺的設計結合強大的生產力功能',
+                'screenshot1-title': '📊 象限視圖',
+                'screenshot1-desc': '將所有任務按 4 個象限視覺化呈現，使用色彩編碼優先級',
+                'screenshot2-title': '✅ 每日任務',
+                'screenshot2-desc': '專注於今天的優先事項，按最佳順序排序：Q2 → Q1 → Q3 → Q4',
+                'screenshot3-title': '📈 進度與統計',
+                'screenshot3-desc': '使用成就等級和洞察追蹤你的生產力旅程',
+                'screenshot4-title': '📅 日曆同步',
+                'screenshot4-desc': '一鍵將 Google 日曆事件匯入為任務',
+                'screenshot5-title': '👥 團隊專案',
+                'screenshot5-desc': '在雲端專案中與團隊協作並分配任務（專業版）',
+                'testimonials-title': '用戶評價',
+                'testimonials-subtitle': '加入數千位已轉變生產力的用戶',
+                'testimonial1-text': '「終於有一個真正幫助我專注於重要事項的任務管理器！Q2 的重視改變了我的工作方式。我更有策略性，壓力也更小。」',
+                'testimonial1-role': '產品經理',
+                'testimonial2-text': '「艾森豪矩陣方法非常出色。我過去被緊急但不重要的任務淹沒。現在我很有生產力，而不只是忙碌。改變遊戲規則！」',
+                'testimonial2-role': '企業家',
+                'testimonial3-text': '「精美的設計，強大的功能。日曆同步和成就系統讓我保持動力。我用過最好的生產力應用程式！」',
+                'testimonial3-role': '設計師',
+                'cta-title': '準備好掌握你的生產力了嗎？',
+                'cta-subtitle': '立即下載 Critical Choice，開始專注於真正重要的事情。',
+                'cta-note': '免費下載 • 無廣告 • 專注於重要的事',
+                'premium-title': '✨ 解鎖專業版功能',
+                'premium-desc': '升級至專業版，享有 11 個本地專案、5 個雲端專案，支援團隊協作、自訂標籤、任務分配及即時同步。專為專業人士和團隊打造。',
+                'premium-local': '本地專案',
+                'premium-cloud': '雲端專案',
+                'premium-team': '團隊協作',
+                'premium-tags': '自訂標籤',
+                'premium-price': '每月 $3.99 或 每年 $29.99'
+            },
+            'zh-cn': {
+                'nav-features': '功能特色',
+                'nav-matrix': '艾森豪矩阵',
+                'nav-screenshots': '应用截图',
+                'nav-privacy': '隐私政策',
+                'hero-title': '掌握艾森豪矩阵<br>提升你的生产力',
+                'hero-subtitle': '停止被动反应，开始主动规划。专注于真正重要的事情。',
+                'btn-download': '从 App Store 下载',
+                'btn-learn': '了解更多',
+                'matrix-title': '艾森豪矩阵',
+                'matrix-subtitle': '被总统、CEO 和全球生产力专家广泛使用。区分紧急和重要的任务，更聪明地工作。',
+                'q1-label': '第一象限',
+                'q1-title': '紧急且重要',
+                'q1-desc': '<strong>立即执行：</strong>危机、截止期限、紧急情况。立即处理这些事项以防止问题恶化，但不要一直待在这个象限——这会导致倦怠。',
+                'q2-label': '第二象限',
+                'q2-title': '重要但不紧急',
+                'q2-desc': '<strong>规划与专注：</strong>战略规划、技能发展、人际关系。这是成功发生的地方。花最多时间在这里。',
+                'q3-label': '第三象限',
+                'q3-title': '紧急但不重要',
+                'q3-desc': '<strong>委派他人：</strong>干扰、部分邮件、他人的优先事项。这些事情感觉紧急但不能帮助你达成目标。尽量减少或委派。',
+                'q4-label': '第四象限',
+                'q4-title': '不紧急也不重要',
+                'q4-desc': '<strong>消除：</strong>浪费时间的事、繁忙工作、琐碎任务。这些提供很少价值。从你的清单中删除它们，夺回你的时间。',
+                'features-title': '强大功能',
+                'features-subtitle': '一个设计精美的应用程序，包含你掌握生产力所需的一切',
+                'feature1-title': '智能象限分类',
+                'feature1-desc': '按优先级自动排序任务，使用可视化色彩编码象限。精确知道接下来该做什么。',
+                'feature2-title': '成就系统',
+                'feature2-desc': '使用 6 个成就等级和激励性洞察追踪你的生产力。看着你的进步成长。',
+                'feature3-title': 'Google 日历同步',
+                'feature3-desc': '一键导入日历事件为任务。再也不会错过会议或截止日期。',
+                'feature4-title': '云端同步',
+                'feature4-desc': '所有设备间无缝同步。你的任务随时随地保持最新状态。',
+                'feature5-title': '项目管理',
+                'feature5-desc': '免费版：5 个本地项目。专业版：11 个本地 + 5 个云端项目。使用色彩编码标签分别管理工作、个人和家庭任务。',
+                'feature6-title': '多语言支持',
+                'feature6-desc': '提供英文、简体中文和繁体中文。生产力说你的语言。',
+                'feature7-title': '每日任务视图',
+                'feature7-desc': '每天开始时就知道该做什么。任务按最佳顺序排序：Q2 → Q1 → Q3 → Q4。',
+                'feature8-title': '精美设计',
+                'feature8-desc': '现代简洁的界面，搭配渐变主题和直觉导航。生产力也可以很美。',
+                'feature9-title': '安全认证',
+                'feature9-desc': '使用 Apple 或 Google 登录。你的资料通过 Firebase 私密、加密且始终安全。',
+                'feature10-title': '团队协作',
+                'feature10-desc': '专业版用户可建立最多 5 个云端项目、邀请团队成员并分配任务。所有设备即时同步。',
+                'feature11-title': '自定义标签',
+                'feature11-desc': '专业版功能：建立色彩编码标签来分类和筛选任务。使用视觉标签保持井然有序。',
+                'feature12-title': '语音输入',
+                'feature12-desc': '使用语音命令免手动建立任务。支持多语言语音转文字，快速输入任务。',
+                'screenshots-title': '实际使用展示',
+                'screenshots-subtitle': '精美直觉的设计结合强大的生产力功能',
+                'screenshot1-title': '📊 象限视图',
+                'screenshot1-desc': '将所有任务按 4 个象限可视化呈现，使用色彩编码优先级',
+                'screenshot2-title': '✅ 每日任务',
+                'screenshot2-desc': '专注于今天的优先事项，按最佳顺序排序：Q2 → Q1 → Q3 → Q4',
+                'screenshot3-title': '📈 进度与统计',
+                'screenshot3-desc': '使用成就等级和洞察追踪你的生产力旅程',
+                'screenshot4-title': '📅 日历同步',
+                'screenshot4-desc': '一键将 Google 日历事件导入为任务',
+                'screenshot5-title': '👥 团队项目',
+                'screenshot5-desc': '在云端项目中与团队协作并分配任务（专业版）',
+                'testimonials-title': '用户评价',
+                'testimonials-subtitle': '加入数千位已转变生产力的用户',
+                'testimonial1-text': '「终于有一个真正帮助我专注于重要事项的任务管理器！Q2 的重视改变了我的工作方式。我更有策略性，压力也更小。」',
+                'testimonial1-role': '产品经理',
+                'testimonial2-text': '「艾森豪矩阵方法非常出色。我过去被紧急但不重要的任务淹没。现在我很有生产力，而不只是忙碌。改变游戏规则！」',
+                'testimonial2-role': '企业家',
+                'testimonial3-text': '「精美的设计，强大的功能。日历同步和成就系统让我保持动力。我用过最好的生产力应用程序！」',
+                'testimonial3-role': '设计师',
+                'cta-title': '准备好掌握你的生产力了吗？',
+                'cta-subtitle': '立即下载 Critical Choice，开始专注于真正重要的事情。',
+                'cta-note': '免费下载 • 无广告 • 专注于重要的事',
+                'premium-title': '✨ 解锁专业版功能',
+                'premium-desc': '升级至专业版，享有 11 个本地项目、5 个云端项目，支持团队协作、自定义标签、任务分配及实时同步。专为专业人士和团队打造。',
+                'premium-local': '本地项目',
+                'premium-cloud': '云端项目',
+                'premium-team': '团队协作',
+                'premium-tags': '自定义标签',
+                'premium-price': '每月 $3.99 或 每年 $29.99'
+            },
+            ja: {
+                'nav-features': '機能',
+                'nav-matrix': 'アイゼンハワーマトリクス',
+                'nav-screenshots': 'スクリーンショット',
+                'nav-privacy': 'プライバシー',
+                'hero-title': 'アイゼンハワーマトリクスで<br>生産性をマスターする',
+                'hero-subtitle': '反応するのをやめ、優先順位をつけ始めましょう。本当に重要なことに集中しましょう。',
+                'btn-download': 'App Storeでダウンロード',
+                'btn-learn': '詳しく見る',
+                'matrix-title': 'アイゼンハワーマトリクス',
+                'matrix-subtitle': '世界中の大統領、CEO、生産性の専門家に使用されています。緊急なタスクと重要なタスクを区別して、より賢く働きましょう。',
+                'q1-label': '第1象限',
+                'q1-title': '緊急かつ重要',
+                'q1-desc': '<strong>最初に実行：</strong>危機、締切、緊急事態。すぐに対処して火災を防ぎますが、ここにずっといると燃え尽き症候群につながります。',
+                'q2-label': '第2象限',
+                'q2-title': '重要だが緊急ではない',
+                'q2-desc': '<strong>スケジュールと集中：</strong>戦略的計画、スキル開発、人間関係。ここが成功の場所です。ほとんどの時間をここに費やしましょう。',
+                'q3-label': '第3象限',
+                'q3-title': '緊急だが重要ではない',
+                'q3-desc': '<strong>委任：</strong>中断、一部のメール、他人の優先事項。これらは緊急に感じますが、目標に貢献しません。最小化または委任します。',
+                'q4-label': '第4象限',
+                'q4-title': '緊急でも重要でもない',
+                'q4-desc': '<strong>排除：</strong>時間の無駄、忙しい仕事、些細なタスク。これらはほとんど価値を提供しません。リストから削除して時間を取り戻しましょう。',
+                'features-title': '強力な機能',
+                'features-subtitle': '生産性をマスターするために必要なすべてを、美しくデザインされたアプリに',
+                'feature1-title': 'スマート象限整理',
+                'feature1-desc': '優先度による自動タスク並べ替えと視覚的なカラーコード象限。次に何をすべきか正確に把握できます。',
+                'feature2-title': '達成システム',
+                'feature2-desc': '6つの達成レベルとモチベーションを高める洞察で生産性を追跡。進歩の成長を見守りましょう。',
+                'feature3-title': 'Googleカレンダー同期',
+                'feature3-desc': 'ワンタップでカレンダーイベントをタスクとしてインポート。会議や締切を二度と逃しません。',
+                'feature4-title': 'クラウド同期',
+                'feature4-desc': 'すべてのデバイス間でシームレスに同期。タスクは常に最新の状態です。',
+                'feature5-title': 'プロジェクト管理',
+                'feature5-desc': '無料版：5個のローカルプロジェクト。プレミアム版：11個のローカル + 5個のクラウドプロジェクト。カラーコードタグで仕事、個人、家族のタスクを別々に整理します。',
+                'feature6-title': '多言語サポート',
+                'feature6-desc': '英語、簡体字中国語、繁体字中国語で利用可能。生産性があなたの言語を話します。',
+                'feature7-title': '毎日のタスクビュー',
+                'feature7-desc': '毎日、何をすべきか正確に知って始めましょう。タスクは最適な順序で並べ替えられます：Q2 → Q1 → Q3 → Q4。',
+                'feature8-title': '美しいデザイン',
+                'feature8-desc': 'グラデーションテーマと直感的なナビゲーションを備えたモダンでクリーンなインターフェース。生産性は美しくあることができます。',
+                'feature9-title': '安全な認証',
+                'feature9-desc': 'AppleまたはGoogleでサインイン。データはFirebaseでプライベート、暗号化され、常に安全です。',
+                'feature10-title': 'チームコラボレーション',
+                'feature10-desc': 'プレミアムユーザーは最大5つのクラウドプロジェクトを作成し、チームメンバーを招待し、タスクを割り当てることができます。すべてのデバイスでリアルタイム同期。',
+                'feature11-title': 'カスタムタグ',
+                'feature11-desc': 'プレミアム機能：カラーコードタグを作成してタスクを分類およびフィルタリング。視覚的なラベルで整理を保ちます。',
+                'feature12-title': '音声入力',
+                'feature12-desc': '音声コマンドでハンズフリーでタスクを作成。複数言語の音声テキスト変換で素早いタスク入力。',
+                'screenshots-title': '実際の使用例',
+                'screenshots-subtitle': '美しく直感的なデザインと強力な生産性機能の組み合わせ',
+                'screenshot1-title': '📊 象限ビュー',
+                'screenshot1-desc': '4つの象限でタスクを可視化し、色分けされた優先順位で整理',
+                'screenshot2-title': '✅ 毎日のタスク',
+                'screenshot2-desc': '最適な順序で並べられた今日の優先事項に集中：Q2 → Q1 → Q3 → Q4',
+                'screenshot3-title': '📈 進捗と統計',
+                'screenshot3-desc': '達成レベルと洞察で生産性の旅を追跡',
+                'screenshot4-title': '📅 カレンダー同期',
+                'screenshot4-desc': 'ワンタップでGoogleカレンダーイベントをタスクとしてインポート',
+                'screenshot5-title': '👥 チームプロジェクト',
+                'screenshot5-desc': 'クラウドプロジェクトでチームと協力してタスクを割り当て（プレミアム）',
+                'testimonials-title': 'ユーザーレビュー',
+                'testimonials-subtitle': '生産性を変革した何千人ものユーザーに参加',
+                'testimonial1-text': '「ついに、重要なことに集中するのを本当に助けてくれるタスクマネージャー！Q2の重視が私の働き方を変えました。より戦略的で、ストレスも少なくなりました。」',
+                'testimonial1-role': 'プロダクトマネージャー',
+                'testimonial2-text': '「アイゼンハワーマトリクスのアプローチは素晴らしいです。以前は緊急だが重要でないタスクに溺れていました。今は生産的で、ただ忙しいだけではありません。ゲームチェンジャー！」',
+                'testimonial2-role': '起業家',
+                'testimonial3-text': '「美しいデザイン、強力な機能。カレンダー同期と達成システムがモチベーションを保ってくれます。使った中で最高の生産性アプリ！」',
+                'testimonial3-role': 'デザイナー',
+                'cta-title': '生産性をマスターする準備はできましたか？',
+                'cta-subtitle': '今すぐCritical Choiceをダウンロードして、本当に重要なことに取り組み始めましょう。',
+                'cta-note': '無料ダウンロード • 広告なし • 重要なことに集中',
+                'premium-title': '✨ プレミアム機能のロック解除',
+                'premium-desc': 'プレミアムにアップグレードして、11個のローカルプロジェクト、チームコラボレーション付き5個のクラウドプロジェクト、カスタムタグ、タスク割り当て、リアルタイム同期を利用できます。プロフェッショナルやチームに最適です。',
+                'premium-local': 'ローカルプロジェクト',
+                'premium-cloud': 'クラウドプロジェクト',
+                'premium-team': 'チームコラボレーション',
+                'premium-tags': 'カスタムタグ',
+                'premium-price': '月額$3.99または年額$29.99'
+            },
+            ko: {
+                'nav-features': '기능',
+                'nav-matrix': '아이젠하워 매트릭스',
+                'nav-screenshots': '스크린샷',
+                'nav-privacy': '개인정보',
+                'hero-title': '아이젠하워 매트릭스로<br>생산성을 마스터하세요',
+                'hero-subtitle': '반응하는 것을 멈추고 우선순위를 정하세요. 진정으로 중요한 것에 집중하세요.',
+                'btn-download': 'App Store에서 다운로드',
+                'btn-learn': '더 알아보기',
+                'matrix-title': '아이젠하워 매트릭스',
+                'matrix-subtitle': '전 세계 대통령, CEO, 생산성 전문가들이 사용합니다. 긴급한 작업과 중요한 작업을 구분하여 더 똑똑하게 일하세요.',
+                'q1-label': '1사분면',
+                'q1-title': '긴급하고 중요함',
+                'q1-desc': '<strong>먼저 실행:</strong> 위기, 마감일, 긴급 상황. 화재를 예방하기 위해 즉시 처리하되, 여기에 계속 머물지 마세요—번아웃으로 이어집니다.',
+                'q2-label': '2사분면',
+                'q2-title': '중요하지만 긴급하지 않음',
+                'q2-desc': '<strong>계획 및 집중:</strong> 전략적 계획, 기술 개발, 관계. 여기가 성공이 일어나는 곳입니다. 대부분의 시간을 여기에 보내세요.',
+                'q3-label': '3사분면',
+                'q3-title': '긴급하지만 중요하지 않음',
+                'q3-desc': '<strong>위임:</strong> 중단, 일부 이메일, 다른 사람의 우선순위. 긴급하게 느껴지지만 목표에 기여하지 않습니다. 최소화하거나 위임하세요.',
+                'q4-label': '4사분면',
+                'q4-title': '긴급하지도 중요하지도 않음',
+                'q4-desc': '<strong>제거:</strong> 시간 낭비, 바쁜 일, 사소한 작업. 가치가 거의 없습니다. 목록에서 제거하고 시간을 되찾으세요.',
+                'features-title': '강력한 기능',
+                'features-subtitle': '아름답게 디자인된 하나의 앱에서 생산성을 마스터하는 데 필요한 모든 것',
+                'feature1-title': '스마트 사분면 정리',
+                'feature1-desc': '우선순위별 자동 작업 정렬 및 시각적 색상 코드 사분면. 다음에 무엇을 할지 정확히 알 수 있습니다.',
+                'feature2-title': '성취 시스템',
+                'feature2-desc': '6개의 성취 레벨과 동기 부여 인사이트로 생산성을 추적하세요. 진행 상황이 성장하는 것을 지켜보세요.',
+                'feature3-title': 'Google 캘린더 동기화',
+                'feature3-desc': '한 번의 탭으로 캘린더 이벤트를 작업으로 가져오기. 회의나 마감일을 다시는 놓치지 마세요.',
+                'feature4-title': '클라우드 동기화',
+                'feature4-desc': '모든 기기에서 원활하게 동기화. 작업이 항상 최신 상태로 유지됩니다.',
+                'feature5-title': '프로젝트 관리',
+                'feature5-desc': '무료: 5개 로컬 프로젝트. 프리미엄: 11개 로컬 + 5개 클라우드 프로젝트. 색상 코드 태그로 업무, 개인 및 가족 작업을 별도로 정리하세요.',
+                'feature6-title': '다국어 지원',
+                'feature6-desc': '영어, 간체 중국어, 번체 중국어로 제공. 생산성이 당신의 언어로 말합니다.',
+                'feature7-title': '일일 작업 보기',
+                'feature7-desc': '매일 무엇을 해야 하는지 정확히 알고 시작하세요. 작업은 최적의 순서로 정렬됩니다: Q2 → Q1 → Q3 → Q4.',
+                'feature8-title': '아름다운 디자인',
+                'feature8-desc': '그라디언트 테마와 직관적인 탐색이 있는 현대적이고 깨끗한 인터페이스. 생산성은 아름다울 수 있습니다.',
+                'feature9-title': '안전한 인증',
+                'feature9-desc': 'Apple 또는 Google로 로그인. 데이터는 Firebase로 비공개, 암호화되며 항상 안전합니다.',
+                'feature10-title': '팀 협업',
+                'feature10-desc': '프리미엄 사용자는 최대 5개의 클라우드 프로젝트를 만들고, 팀 구성원을 초대하고, 작업을 할당할 수 있습니다. 모든 기기에서 실시간 동기화.',
+                'feature11-title': '사용자 정의 태그',
+                'feature11-desc': '프리미엄 기능: 작업을 분류하고 필터링하기 위한 색상 코드 태그 생성. 시각적 레이블로 정리를 유지하세요.',
+                'feature12-title': '음성 입력',
+                'feature12-desc': '음성 명령으로 핸즈프리로 작업 생성. 여러 언어로 빠른 작업 입력을 위한 음성-텍스트 변환.',
+                'screenshots-title': '실제 사용 모습',
+                'screenshots-subtitle': '아름답고 직관적인 디자인과 강력한 생산성 기능의 결합',
+                'screenshot1-title': '📊 사분면 보기',
+                'screenshot1-desc': '4개 사분면으로 모든 작업을 시각화하고 색상 코드 우선순위로 정리',
+                'screenshot2-title': '✅ 일일 작업',
+                'screenshot2-desc': '최적 순서로 정렬된 오늘의 우선순위에 집중：Q2 → Q1 → Q3 → Q4',
+                'screenshot3-title': '📈 진행 상황 및 통계',
+                'screenshot3-desc': '성취 레벨과 인사이트로 생산성 여정 추적',
+                'screenshot4-title': '📅 캘린더 동기화',
+                'screenshot4-desc': '한 번의 탭으로 Google 캘린더 이벤트를 작업으로 가져오기',
+                'screenshot5-title': '👥 팀 프로젝트',
+                'screenshot5-desc': '클라우드 프로젝트에서 팀과 협업하고 작업 할당 (프리미엄)',
+                'testimonials-title': '사용자 리뷰',
+                'testimonials-subtitle': '생산성을 변화시킨 수천 명의 사용자와 함께하세요',
+                'testimonial1-text': '「드디어 중요한 것에 집중하는 데 실제로 도움이 되는 작업 관리자! Q2 강조가 제 일하는 방식을 바꿨습니다. 더 전략적이고 스트레스도 덜 받습니다.」',
+                'testimonial1-role': '제품 관리자',
+                'testimonial2-text': '「아이젠하워 매트릭스 접근 방식은 훌륭합니다. 저는 긴급하지만 중요하지 않은 작업에 빠져 있었습니다. 이제 저는 생산적이지 단순히 바쁜 것이 아닙니다. 게임 체인저!」',
+                'testimonial2-role': '기업가',
+                'testimonial3-text': '「아름다운 디자인, 강력한 기능. 캘린더 동기화와 성취 시스템이 동기를 유지시켜 줍니다. 제가 사용한 최고의 생산성 앱!」',
+                'testimonial3-role': '디자이너',
+                'cta-title': '생산성을 마스터할 준비가 되셨나요?',
+                'cta-subtitle': '오늘 Critical Choice를 다운로드하고 진정으로 중요한 것에 집중하기 시작하세요.',
+                'cta-note': '무료 다운로드 • 광고 없음 • 중요한 것에 집중',
+                'premium-title': '✨ 프리미엄 기능 잠금 해제',
+                'premium-desc': '프리미엄으로 업그레이드하여 11개의 로컬 프로젝트, 팀 협업이 가능한 5개의 클라우드 프로젝트, 사용자 정의 태그, 작업 할당, 실시간 동기화를 이용하세요. 전문가와 팀에 완벽합니다.',
+                'premium-local': '로컬 프로젝트',
+                'premium-cloud': '클라우드 프로젝트',
+                'premium-team': '팀 협업',
+                'premium-tags': '사용자 정의 태그',
+                'premium-price': '월 $3.99 또는 연 $29.99'
+            }
+        };
+
+        // Language switcher functionality
+        let currentLang = 'en';
+        
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            
+            // Update active button state
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Initialize language switcher
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                switchLanguage(lang);
+            });
+        });
+        
+        // Load saved language preference
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang && translations[savedLang]) {
+            switchLanguage(savedLang);
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.feature-card, .quadrant-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Screenshots swipeable functionality
+        const screenshotsContainer = document.getElementById('screenshotsContainer');
+        const scrollIndicators = document.querySelectorAll('.scroll-indicator');
+
+        function scrollScreenshots(direction) {
+            const scrollAmount = 330; // screenshot width + gap
+            screenshotsContainer.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        function scrollToScreenshot(index) {
+            const scrollAmount = 330; // screenshot width + gap
+            screenshotsContainer.scrollTo({
+                left: index * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Update active indicator on scroll
+        screenshotsContainer.addEventListener('scroll', () => {
+            const scrollPosition = screenshotsContainer.scrollLeft;
+            const scrollAmount = 330;
+            const activeIndex = Math.round(scrollPosition / scrollAmount);
+            
+            scrollIndicators.forEach((indicator, index) => {
+                if (index === activeIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        });
+
+        // Touch swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        screenshotsContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        screenshotsContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchStartX - touchEndX > swipeThreshold) {
+                // Swiped left
+                scrollScreenshots(1);
+            } else if (touchEndX - touchStartX > swipeThreshold) {
+                // Swiped right
+                scrollScreenshots(-1);
+            }
+        }
+    </script>
+</body>
+</html>
