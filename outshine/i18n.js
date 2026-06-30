@@ -79,6 +79,11 @@
         privacy_title: "Your conversations stay private and secure.",
         privacy_body: "We never share your data."
       },
+      demo: {
+        eyebrow: "See It In Action",
+        title_html: "Watch Outshine <span class=\"accent\">coach a real meeting</span>.",
+        subtitle: "From meeting setup to live coaching cards to hidden insights — see the full flow in under a minute."
+      },
       final: {
         title_html: "Don't Just Attend Meetings.<br><span class=\"accent\">Outshine</span> Them.",
         subtitle: "Every meeting is an opportunity to grow your career.",
@@ -191,6 +196,11 @@
         privacy_title: "你的對話內容保持私密與安全。",
         privacy_body: "我們絕不分享你的資料。"
       },
+      demo: {
+        eyebrow: "實際操作",
+        title_html: "看 Outshine 如何<span class=\"accent\">即時指導一場會議</span>。",
+        subtitle: "從設定會議、即時教練卡，到挖掘隱藏洞察——一分鐘內看完完整流程。"
+      },
       final: {
         title_html: "別只是<span class=\"accent\">出席</span>會議，<br>要<span class=\"accent\">脫穎而出</span>。",
         subtitle: "每場會議都是成長職涯的機會。",
@@ -302,6 +312,11 @@
         s4_body: "AIが提案する質問や視点を活用して議論を導きます。",
         privacy_title: "あなたの会話は常にプライベートかつ安全です。",
         privacy_body: "データを共有することはありません。"
+      },
+      demo: {
+        eyebrow: "実際の動作",
+        title_html: "Outshineが<span class=\"accent\">実際の会議をコーチング</span>する様子。",
+        subtitle: "会議の設定からライブコーチングカード、隠れたインサイトまで——1分足らずで全体の流れをご覧いただけます。"
       },
       final: {
         title_html: "会議に<span class=\"accent\">参加するだけ</span>じゃない。<br><span class=\"accent\">Outshine</span>しよう。",

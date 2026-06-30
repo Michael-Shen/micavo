@@ -65,32 +65,11 @@
         </div>
         <div class="phone-wrap">
           <div class="phone">
-            <div class="phone-screen">
-              <div class="status-bar">
-                <span>9:41</span>
-                <div class="dynamic-island"></div>
-                <div class="status-icons"><span></span><span></span><span></span></div>
-              </div>
-              <div class="app-status-row">
-                <span class="dot-live"></span>
-                <span data-i18n="hero.status">AI Coach Listening</span>
-                <span>00:01:24</span>
-              </div>
-              <div class="waveform">
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-              </div>
-              <p class="app-section-title" data-i18n="nav.features">Live AI Coaching</p>
-              <div class="coach-card">
-                <small data-i18n="live.c1_label">Strategic Question</small>
-                <strong data-i18n="live.c1_title">How will we measure success?</strong>
-                <p data-i18n="live.c1_body">Ask the question that moves the discussion forward.</p>
-              </div>
-              <div class="coach-card blue">
-                <small data-i18n="live.c2_label">Risk Alert</small>
-                <strong data-i18n="live.c2_title">What could be the biggest risk?</strong>
-                <p data-i18n="live.c2_body">Surface potential risks before they become problems.</p>
-              </div>
-              <p class="app-footnote" data-i18n="hero.building">Building context… 3/5 min</p>
+            <div class="phone-screen phone-screen-video">
+              <video class="phone-video" autoplay muted loop playsinline poster="./assets/outshine-hero-phone-poster.jpg" aria-label="Outshine live AI coaching demo">
+                <source src="./assets/outshine-hero-phone.webm" type="video/webm" />
+                <source src="./assets/outshine-hero-phone.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
@@ -282,6 +261,21 @@
           <strong data-i18n="how.privacy_title">Your conversations stay private and secure.</strong>
           <span data-i18n="how.privacy_body">We never share your data.</span>
         </div>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="section demo-section" id="demo" aria-labelledby="demo-title">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="demo.eyebrow">See It In Action</p>
+        <h2 id="demo-title" data-i18n="demo.title_html" data-i18n-html>Watch Outshine <span class="accent">coach a real meeting</span>.</h2>
+        <p data-i18n="demo.subtitle">From meeting setup to live coaching cards to hidden insights — see the full flow in under a minute.</p>
+      </div>
+      <div class="demo-video-wrap">
+        <video class="demo-video" autoplay muted loop playsinline poster="./assets/outshine-demo-poster.jpg" aria-label="Outshine product demo">
+          <source src="./assets/outshine-demo.webm" type="video/webm" />
+          <source src="./assets/outshine-demo.mp4" type="video/mp4" />
+        </video>
       </div>
     </section>
 
