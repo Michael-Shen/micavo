@@ -6,7 +6,7 @@
         eyebrow: "AI Career Copilot",
         title_html: "Get seen. <span class=\"accent\">Outshine</span> every meeting.",
         subtitle: "Your AI Career Copilot for every meeting — live coaching, persona-aware suggestions, and instant summaries.",
-        cta1: "Request Early Access",
+        cta1: "Download on the App Store",
         cta2: "See How It Works",
         status: "AI Coach Listening",
         building: "Building context… 3/5 min"
@@ -93,7 +93,7 @@
         f2_body: "Know what to say, even in tough moments.",
         f3_title: "Grow Your Career",
         f3_body: "More impact. More visibility. More opportunities.",
-        cta: "Request Early Access"
+        cta: "Download on the App Store"
       },
       pricing: {
         eyebrow: "Pricing",
@@ -123,7 +123,7 @@
         eyebrow: "AI 職場副駕駛",
         title_html: "讓自己被看見，在職場<span class=\"accent\">發光發熱</span>。",
         subtitle: "Outshine 是你的 AI 職場副駕駛，陪你度過每一場會議——即時教練、角色化建議與即時摘要。",
-        cta1: "申請搶先體驗",
+        cta1: "前往 App Store 下載",
         cta2: "看看怎麼運作",
         status: "AI 教練聆聽中",
         building: "正在建立脈絡… 3/5 分鐘"
@@ -210,7 +210,7 @@
         f2_body: "知道該說什麼，即使在艱難時刻。",
         f3_title: "加速職涯成長",
         f3_body: "更多影響力、更多曝光、更多機會。",
-        cta: "申請搶先體驗"
+        cta: "前往 App Store 下載"
       },
       pricing: {
         eyebrow: "訂價",
@@ -240,7 +240,7 @@
         eyebrow: "AIキャリアコパイロット",
         title_html: "見られる存在になり、職場で<span class=\"accent\">輝く</span>。",
         subtitle: "Outshineは、あらゆる会議に対応するあなたのAIキャリアコパイロットです。ライブコーチング、ペルソナに応じた提案、即座の要約を提供します。",
-        cta1: "早期アクセスを申し込む",
+        cta1: "App Storeでダウンロード",
         cta2: "仕組みを見る",
         status: "AIコーチが聞いています",
         building: "コンテキストを構築中… 3/5分"
@@ -327,7 +327,7 @@
         f2_body: "難しい場面でも、何を言うべきか分かる。",
         f3_title: "キャリアを成長させる",
         f3_body: "より大きなインパクト、可視性、チャンス。",
-        cta: "早期アクセスを申し込む"
+        cta: "App Storeでダウンロード"
       },
       pricing: {
         eyebrow: "料金",
