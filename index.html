@@ -109,6 +109,12 @@
       line-height: 1;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -116,6 +122,38 @@
       color: #4d5f76;
       font-size: 15px;
       font-weight: 800;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+    .lang-switch button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 7px 11px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 160ms ease, color 160ms ease;
+      font-family: inherit;
+    }
+
+    .lang-switch button:hover {
+      color: var(--ink);
+    }
+
+    .lang-switch button.active {
+      background: var(--blue);
+      color: #ffffff;
     }
 
     .nav-links a:hover,
@@ -732,13 +770,20 @@
         Micavo
       </a>
 
-      <div class="nav-links">
-        <a href="#products" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header" data-ga-param-section="products">Products</a>
-        <a href="#approach" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header" data-ga-param-section="approach">Approach</a>
-        <a href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header">Outshine</a>
-        <a href="/eatornot/" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="header">EatOrNot AI</a>
-        <a href="/critical_choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="header">Critical Choice</a>
-        <a href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header">Contact</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#products" data-i18n="nav.products" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header" data-ga-param-section="products">Products</a>
+          <a href="#approach" data-i18n="nav.approach" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header" data-ga-param-section="approach">Approach</a>
+          <a href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header">Outshine</a>
+          <a href="/eatornot/" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="header">EatOrNot AI</a>
+          <a href="/critical_choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="header">Critical Choice</a>
+          <a href="mailto:hello@micavo.app" data-i18n="nav.contact" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header">Contact</a>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button type="button" data-lang-btn="en">EN</button>
+          <button type="button" data-lang-btn="zh">中文</button>
+          <button type="button" data-lang-btn="ja">日本語</button>
+        </div>
       </div>
     </nav>
   </header>
@@ -746,15 +791,15 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">Decision intelligence product studio</p>
-        <h1 id="hero-title">AI products for the choices people make every day.</h1>
-        <p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Decision intelligence product studio</p>
+        <h1 id="hero-title" data-i18n="hero.title">AI products for the choices people make every day.</h1>
+        <p data-i18n="hero.subtitle">
           Micavo builds focused, privacy-conscious software that turns personal context into practical recommendations. Our products help people decide what to eat, what to prioritize, and what to do next.
         </p>
 
         <div class="cta-row">
-          <a class="button primary" href="#products" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero" data-ga-param-section="products">Explore Products</a>
-          <a class="button" href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero">Work With Micavo</a>
+          <a class="button primary" href="#products" data-i18n="hero.cta_explore" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero" data-ga-param-section="products">Explore Products</a>
+          <a class="button" href="mailto:hello@micavo.app" data-i18n="hero.cta_work" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero">Work With Micavo</a>
         </div>
       </div>
 
@@ -765,11 +810,11 @@
               <img src="/eatornot/assets/images/s1_english.png" alt="EatOrNot AI App Store preview showing food photo analysis and an AI verdict" />
             </div>
             <div class="preview-body">
-              <span class="status green">Live on App Store</span>
+              <span class="status green" data-i18n="status.live">Live on App Store</span>
               <h2>EatOrNot AI</h2>
-              <p>Nutrition decisions powered by meal analysis, calorie budgets, macro context, and permission-based Apple Health data.</p>
+              <p data-i18n="carousel.eatornot.desc">Nutrition decisions powered by meal analysis, calorie budgets, macro context, and permission-based Apple Health data.</p>
               <div class="preview-actions">
-                <a class="preview-link" href="/eatornot/" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="featured_card">View product</a>
+                <a class="preview-link" href="/eatornot/" data-i18n="common.view_product" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="featured_card">View product</a>
                 <a href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="featured_card">
                   <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
                 </a>
@@ -782,11 +827,11 @@
               <img src="/outshine/assets/outshine-app-screenshot.png" alt="Outshine live AI coaching screen showing strategic question, risk alert, and what-to-say-next cards" />
             </div>
             <div class="preview-body">
-              <span class="status green">Live on App Store</span>
+              <span class="status green" data-i18n="status.live">Live on App Store</span>
               <h2>Outshine</h2>
-              <p>An AI Career Copilot that helps professionals know what to say next in meetings and become more influential over time.</p>
+              <p data-i18n="carousel.outshine.desc">An AI Career Copilot that helps professionals know what to say next in meetings and become more influential over time.</p>
               <div class="preview-actions">
-                <a class="preview-link" href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="featured_card">View product</a>
+                <a class="preview-link" href="/outshine/" data-i18n="common.view_product" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="featured_card">View product</a>
                 <a href="https://apps.apple.com/us/app/outshine/id6782229641" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="featured_card">
                   <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
                 </a>
@@ -799,11 +844,11 @@
               <img src="/critical_choice/assets/critical-choice-screenshot.png" alt="Critical Choice quadrant view showing tasks organized by the Eisenhower Matrix" />
             </div>
             <div class="preview-body">
-              <span class="status green">Live on App Store</span>
+              <span class="status green" data-i18n="status.live">Live on App Store</span>
               <h2>Critical Choice</h2>
-              <p>A productivity app built around the Eisenhower Matrix, helping users separate urgent noise from important work.</p>
+              <p data-i18n="carousel.critical_choice.desc">A productivity app built around the Eisenhower Matrix, helping users separate urgent noise from important work.</p>
               <div class="preview-actions">
-                <a class="preview-link" href="/critical_choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="featured_card">View product</a>
+                <a class="preview-link" href="/critical_choice/" data-i18n="common.view_product" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="featured_card">View product</a>
                 <a href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" target="_blank" rel="noopener noreferrer" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="featured_card">
                   <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
                 </a>
@@ -829,9 +874,9 @@
 
     <section class="section" id="products" aria-labelledby="products-title">
       <div class="section-heading centered">
-        <p class="eyebrow">Products</p>
-        <h2 id="products-title">Built around real decision moments.</h2>
-        <p>
+        <p class="eyebrow" data-i18n="products_section.eyebrow">Products</p>
+        <h2 id="products-title" data-i18n="products_section.title">Built around real decision moments.</h2>
+        <p data-i18n="products_section.subtitle">
           Each Micavo product focuses on one high-friction question, then makes the next step clearer through thoughtful UX and AI-assisted reasoning.
         </p>
       </div>
@@ -842,18 +887,18 @@
             <img src="/eatornot/assets/images/hero-picnic.png" alt="EatOrNot AI brand image with picnic food and blue sky" />
           </div>
           <div class="product-body">
-            <span class="status">AI nutrition coach</span>
+            <span class="status" data-i18n="product_eatornot.status">AI nutrition coach</span>
             <h3>EatOrNot AI</h3>
-            <p>
+            <p data-i18n="product_eatornot.desc">
               EatOrNot AI helps people decide whether a meal fits their day. It supports photo and voice food input, estimates calories and macros, tracks daily nutrition progress, and uses authorized Apple Health context for personalized coaching.
             </p>
             <ul class="feature-list">
-              <li>Photo and voice meal analysis with clear eat-or-adjust guidance.</li>
-              <li>Daily calorie and macro tracking designed for quick decisions.</li>
-              <li>Pro and Premium coaching for weekly insights and habit patterns.</li>
+              <li data-i18n="product_eatornot.f1">Photo and voice meal analysis with clear eat-or-adjust guidance.</li>
+              <li data-i18n="product_eatornot.f2">Daily calorie and macro tracking designed for quick decisions.</li>
+              <li data-i18n="product_eatornot.f3">Pro and Premium coaching for weekly insights and habit patterns.</li>
             </ul>
             <div class="product-actions">
-              <a class="button primary" href="/eatornot/" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="product_card">Open EatOrNot AI</a>
+              <a class="button primary" href="/eatornot/" data-i18n="product_eatornot.open" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="product_card">Open EatOrNot AI</a>
               <a class="button appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="product_card">
                 <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
               </a>
@@ -866,18 +911,18 @@
             <img src="/outshine/assets/outshine-hero.png" alt="Outshine AI Career Copilot meeting intelligence preview" />
           </div>
           <div class="product-body">
-            <span class="status green">Live on App Store</span>
+            <span class="status green" data-i18n="status.live">Live on App Store</span>
             <h3>Outshine</h3>
-            <p>
+            <p data-i18n="product_outshine.desc">
               Outshine is an AI Career Copilot for meetings: live coaching cards that help users ask sharper questions and know what to say next, plus an after-meeting summary.
             </p>
             <ul class="feature-list">
-              <li>Live coaching cards: a strategic question, a career signal, and what to say next.</li>
-              <li>One-time free 60-minute credit, then Pro (400 min/month) or Premium (800 min/month, cross-meeting AI memory, post-meeting AI conversation).</li>
-              <li>Automatic meeting summaries with decisions, action items, open questions, and risks.</li>
+              <li data-i18n="product_outshine.f1">Live coaching cards: a strategic question, a career signal, and what to say next.</li>
+              <li data-i18n="product_outshine.f2">One-time free 60-minute credit, then Pro (400 min/month) or Premium (800 min/month, cross-meeting AI memory, post-meeting AI conversation).</li>
+              <li data-i18n="product_outshine.f3">Automatic meeting summaries with decisions, action items, open questions, and risks.</li>
             </ul>
             <div class="product-actions">
-              <a class="button primary" href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="product_card">Open Outshine</a>
+              <a class="button primary" href="/outshine/" data-i18n="product_outshine.open" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="product_card">Open Outshine</a>
               <a class="button appstore-badge-btn" href="https://apps.apple.com/us/app/outshine/id6782229641" target="_blank" rel="noopener noreferrer" data-ga-event="download_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="product_card">
                 <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
               </a>
@@ -887,24 +932,24 @@
 
         <article class="product-card">
           <div class="matrix-visual" aria-label="Critical Choice Eisenhower Matrix preview">
-            <div><strong>Q1</strong><span>Crises, deadlines, emergencies.</span></div>
-            <div><strong>Q2</strong><span>Planning, growth, meaningful work.</span></div>
-            <div><strong>Q3</strong><span>Interruptions and other people's priorities.</span></div>
-            <div><strong>Q4</strong><span>Busywork and time wasters.</span></div>
+            <div><strong>Q1</strong><span data-i18n="matrix.q1">Crises, deadlines, emergencies.</span></div>
+            <div><strong>Q2</strong><span data-i18n="matrix.q2">Planning, growth, meaningful work.</span></div>
+            <div><strong>Q3</strong><span data-i18n="matrix.q3">Interruptions and other people's priorities.</span></div>
+            <div><strong>Q4</strong><span data-i18n="matrix.q4">Busywork and time wasters.</span></div>
           </div>
           <div class="product-body">
-            <span class="status green">Productivity system</span>
+            <span class="status green" data-i18n="product_critical.status">Productivity system</span>
             <h3>Critical Choice</h3>
-            <p>
+            <p data-i18n="product_critical.desc">
               Critical Choice brings the Eisenhower Matrix into a modern task manager. It helps users sort work by urgency and importance, focus on high-leverage tasks, sync calendar events, and collaborate through cloud projects.
             </p>
             <ul class="feature-list">
-              <li>Visual quadrant organization for urgent and important work.</li>
-              <li>Daily task view, achievements, calendar sync, and cloud sync.</li>
-              <li>Premium features for teams, custom tags, assignments, and collaboration.</li>
+              <li data-i18n="product_critical.f1">Visual quadrant organization for urgent and important work.</li>
+              <li data-i18n="product_critical.f2">Daily task view, achievements, calendar sync, and cloud sync.</li>
+              <li data-i18n="product_critical.f3">Premium features for teams, custom tags, assignments, and collaboration.</li>
             </ul>
             <div class="product-actions">
-              <a class="button primary" href="/critical_choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="product_card">Open Critical Choice</a>
+              <a class="button primary" href="/critical_choice/" data-i18n="product_critical.open" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="product_card">Open Critical Choice</a>
               <a class="button appstore-badge-btn" href="https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644" target="_blank" rel="noopener noreferrer" data-ga-event="appstore_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="product_card">
                 <img class="store-badge" src="/assets/images/app-store-badge.svg" alt="Download on the App Store" />
               </a>
@@ -916,9 +961,9 @@
 
     <section class="section" id="approach" aria-labelledby="approach-title">
       <div class="section-heading">
-        <p class="eyebrow">Approach</p>
-        <h2 id="approach-title">Small products, serious product thinking.</h2>
-        <p>
+        <p class="eyebrow" data-i18n="approach_section.eyebrow">Approach</p>
+        <h2 id="approach-title" data-i18n="approach_section.title">Small products, serious product thinking.</h2>
+        <p data-i18n="approach_section.subtitle">
           Micavo favors narrow, useful products over broad AI demos. The goal is software that feels calm, actionable, and trustworthy in daily life.
         </p>
       </div>
@@ -926,20 +971,20 @@
       <div class="principles-grid">
         <article class="principle-card">
           <span>01</span>
-          <h3>Decision-first design</h3>
-          <p>Each product begins with a concrete decision: eat or adjust, do now or schedule, focus or ignore.</p>
+          <h3 data-i18n="principles.p1_title">Decision-first design</h3>
+          <p data-i18n="principles.p1_desc">Each product begins with a concrete decision: eat or adjust, do now or schedule, focus or ignore.</p>
         </article>
 
         <article class="principle-card">
           <span>02</span>
-          <h3>Context with consent</h3>
-          <p>Personal data should make recommendations better only when users understand the purpose and grant permission.</p>
+          <h3 data-i18n="principles.p2_title">Context with consent</h3>
+          <p data-i18n="principles.p2_desc">Personal data should make recommendations better only when users understand the purpose and grant permission.</p>
         </article>
 
         <article class="principle-card">
           <span>03</span>
-          <h3>Action over novelty</h3>
-          <p>AI should reduce ambiguity and help users move, not bury them in dashboards or generic advice.</p>
+          <h3 data-i18n="principles.p3_title">Action over novelty</h3>
+          <p data-i18n="principles.p3_desc">AI should reduce ambiguity and help users move, not bury them in dashboards or generic advice.</p>
         </article>
       </div>
     </section>
@@ -947,8 +992,8 @@
     <section class="section" aria-labelledby="contact-title">
       <div class="contact-panel">
         <div>
-          <h2 id="contact-title">Building practical AI for personal operating systems.</h2>
-          <p>
+          <h2 id="contact-title" data-i18n="contact.title">Building practical AI for personal operating systems.</h2>
+          <p data-i18n="contact.subtitle">
             For product questions, support, partnerships, or media inquiries, reach Micavo directly.
           </p>
         </div>
@@ -958,12 +1003,12 @@
   </main>
 
   <footer class="footer">
-    <div>© 2026 Micavo. All rights reserved.</div>
+    <div data-i18n="footer.copy">© 2026 Micavo. All rights reserved.</div>
     <div class="footer-links">
       <a href="/eatornot/" data-ga-event="product_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="footer">EatOrNot AI</a>
       <a href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="footer">Outshine</a>
       <a href="/critical_choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer">Critical Choice</a>
-      <a href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Contact</a>
+      <a href="mailto:hello@micavo.app" data-i18n="footer.contact" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Contact</a>
     </div>
   </footer>
 
@@ -994,5 +1039,6 @@
       if (nextBtn) nextBtn.addEventListener('click', function () { show(current + 1); });
     })();
   </script>
+  <script src="/assets/js/i18n.js"></script>
 </body>
 </html>
