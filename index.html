@@ -24,17 +24,13 @@
     :root {
       --ink: #101624;
       --muted: #5d6b82;
-      --line: #dce3ec;
-      --panel: rgba(255, 255, 255, 0.86);
+      --line: #e5e9ef;
+      --panel: #ffffff;
       --blue: #2563eb;
       --blue-soft: #eaf3ff;
       --green: #16815f;
-      --green-soft: #e8f7f0;
-      --amber: #d97706;
-      --amber-soft: #fff3d6;
-      --purple: #6d45d8;
-      --purple-soft: #f0eaff;
-      --shadow: 0 24px 70px rgba(24, 38, 61, 0.12);
+      --green-soft: #eaf3ff;
+      --shadow: 0 1px 2px rgba(16, 22, 36, 0.04);
     }
 
     * {
@@ -49,8 +45,7 @@
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
       color: var(--ink);
-      background:
-        linear-gradient(180deg, #eef6ff 0, #fbfcff 520px, #ffffff 100%);
+      background: #ffffff;
     }
 
     img {
@@ -162,8 +157,7 @@
     }
 
     .hero {
-      min-height: calc(100vh - 76px);
-      padding: 56px 0 76px;
+      padding: 96px 0 100px;
       display: grid;
       grid-template-columns: minmax(0, 0.74fr) minmax(420px, 1.26fr);
       gap: 52px;
@@ -189,9 +183,10 @@
     h1 {
       margin: 0;
       max-width: 760px;
-      font-size: 72px;
-      line-height: 0.98;
-      letter-spacing: 0;
+      font-size: 92px;
+      font-weight: 800;
+      line-height: 0.96;
+      letter-spacing: -0.02em;
     }
 
     .hero-copy {
@@ -217,9 +212,9 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 13px 20px;
+      padding: 13px 24px;
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 999px;
       background: #ffffff;
       color: var(--ink);
       font-weight: 900;
@@ -326,8 +321,8 @@
 
     .product-preview {
       overflow: hidden;
-      border: 1px solid rgba(220, 227, 236, 0.92);
-      border-radius: 8px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
       background: var(--panel);
       box-shadow: var(--shadow);
     }
@@ -373,11 +368,6 @@
     .status.green {
       background: var(--green-soft);
       color: var(--green);
-    }
-
-    .status.purple {
-      background: var(--purple-soft);
-      color: var(--purple);
     }
 
     .product-preview h2 {
@@ -431,12 +421,12 @@
     }
 
     .section {
-      padding: 82px 0;
+      padding: 130px 0;
     }
 
     .section-heading {
       max-width: 760px;
-      margin-bottom: 34px;
+      margin-bottom: 48px;
     }
 
     .section-heading.centered {
@@ -447,8 +437,10 @@
 
     .section-heading h2 {
       margin: 0;
-      font-size: 52px;
-      line-height: 1.06;
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.04;
     }
 
     .section-heading p:not(.eyebrow) {
@@ -467,10 +459,10 @@
     .product-card,
     .principle-card,
     .contact-panel {
-      border: 1px solid rgba(220, 227, 236, 0.92);
-      border-radius: 8px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
       background: var(--panel);
-      box-shadow: 0 18px 48px rgba(24, 38, 61, 0.08);
+      box-shadow: var(--shadow);
     }
 
     .product-card {
@@ -480,51 +472,15 @@
     }
 
     .product-media {
-      min-height: 290px;
+      height: 300px;
       background: #f4f8fc;
     }
 
     .product-media img {
       width: 100%;
       height: 100%;
-      max-height: 380px;
       object-fit: cover;
       object-position: top center;
-    }
-
-    .matrix-visual {
-      min-height: 290px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      padding: 24px;
-      background:
-        linear-gradient(135deg, rgba(234, 243, 255, 0.92), rgba(240, 234, 255, 0.84));
-    }
-
-    .matrix-visual div {
-      min-height: 120px;
-      padding: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.72);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: 0 12px 28px rgba(24, 38, 61, 0.08);
-    }
-
-    .matrix-visual strong,
-    .matrix-visual span {
-      display: block;
-    }
-
-    .matrix-visual strong {
-      font-size: 15px;
-    }
-
-    .matrix-visual span {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.4;
     }
 
     .product-body {
@@ -666,12 +622,8 @@
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        min-height: auto;
-      }
-
       h1 {
-        font-size: 58px;
+        font-size: 64px;
       }
 
       .product-grid,
@@ -710,7 +662,7 @@
       }
 
       h1 {
-        font-size: 44px;
+        font-size: 48px;
       }
 
       .hero-copy p:not(.eyebrow) {
@@ -740,10 +692,6 @@
 
       .product-body h3 {
         font-size: 30px;
-      }
-
-      .matrix-visual {
-        grid-template-columns: 1fr;
       }
 
       .contact-panel {
@@ -931,11 +879,8 @@
         </article>
 
         <article class="product-card">
-          <div class="matrix-visual" aria-label="Critical Choice Eisenhower Matrix preview">
-            <div><strong>Q1</strong><span data-i18n="matrix.q1">Crises, deadlines, emergencies.</span></div>
-            <div><strong>Q2</strong><span data-i18n="matrix.q2">Planning, growth, meaningful work.</span></div>
-            <div><strong>Q3</strong><span data-i18n="matrix.q3">Interruptions and other people's priorities.</span></div>
-            <div><strong>Q4</strong><span data-i18n="matrix.q4">Busywork and time wasters.</span></div>
+          <div class="product-media">
+            <img src="/critical_choice/assets/images/quadrant-crop.png" alt="Critical Choice quadrant view showing tasks organized by the Eisenhower Matrix" />
           </div>
           <div class="product-body">
             <span class="status green" data-i18n="product_critical.status">Productivity system</span>
