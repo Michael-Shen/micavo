@@ -1,7 +1,7 @@
 (function () {
   var translations = {
     en: {
-      nav: { products: "Products", approach: "Approach", contact: "Contact" },
+      nav: { products: "Products", contact: "Contact" },
       hero: {
         eyebrow: "Decision intelligence product studio",
         title: "AI products for the choices people make every day.",
@@ -57,11 +57,11 @@
       },
       principles: {
         p1_title: "Decision-first design",
-        p1_desc: "Each product begins with a concrete decision: eat or adjust, do now or schedule, focus or ignore.",
+        p1_desc: "EatOrNot doesn't show a calorie dashboard. Every meal gets one verdict: eat it, or adjust it.",
         p2_title: "Context with consent",
-        p2_desc: "Personal data should make recommendations better only when users understand the purpose and grant permission.",
+        p2_desc: "Critical Choice only pulls from your Google Calendar once you connect it — nothing synced until you turn it on.",
         p3_title: "Action over novelty",
-        p3_desc: "AI should reduce ambiguity and help users move, not bury them in dashboards or generic advice."
+        p3_desc: "Outshine doesn't wait until the meeting ends to summarize. Mid-call, it surfaces one strategic question, one risk, and one line to say next — not a dashboard."
       },
       contact: {
         title: "Building practical AI for personal operating systems.",
@@ -73,7 +73,7 @@
       }
     },
     zh: {
-      nav: { products: "產品", approach: "理念", contact: "聯絡我們" },
+      nav: { products: "產品", contact: "聯絡我們" },
       hero: {
         eyebrow: "決策智慧產品工作室",
         title: "為日常生活中的每個抉擇打造 AI 產品。",
@@ -129,11 +129,11 @@
       },
       principles: {
         p1_title: "決策優先的設計",
-        p1_desc: "每個產品都從一個具體的決策出發：吃或調整、現在做或排程、專注或忽略。",
+        p1_desc: "EatOrNot 不會給你卡路里儀表板，每一餐只給一個判斷：吃，或調整。",
         p2_title: "在同意下運用情境資料",
-        p2_desc: "唯有在使用者理解目的並授權的情況下，個人資料才應用來讓建議更精準。",
+        p2_desc: "Critical Choice 只有在你主動連接 Google 日曆後才會同步，未經授權不會拉取任何資料。",
         p3_title: "重視行動勝於新奇",
-        p3_desc: "AI 應該降低模糊性、協助使用者採取行動，而不是把他們埋在儀表板或通用建議之中。"
+        p3_desc: "Outshine 不會等會議結束才給摘要。會議進行中，它就直接給出一個策略性問題、一個風險提醒，以及接下來該說的一句話——不是儀表板。"
       },
       contact: {
         title: "為個人作業系統打造實用的 AI。",
@@ -145,7 +145,7 @@
       }
     },
     ja: {
-      nav: { products: "プロダクト", approach: "アプローチ", contact: "お問い合わせ" },
+      nav: { products: "プロダクト", contact: "お問い合わせ" },
       hero: {
         eyebrow: "意思決定インテリジェンス・プロダクトスタジオ",
         title: "日々の選択のためのAIプロダクト。",
@@ -201,11 +201,11 @@
       },
       principles: {
         p1_title: "意思決定を起点にした設計",
-        p1_desc: "各プロダクトは、具体的な意思決定から始まります：食べるか調整するか、今やるか予定を組むか、集中するか無視するか。",
+        p1_desc: "EatOrNotはカロリーダッシュボードを見せません。各食事に出す判断は一つだけ：食べるか、調整するか。",
         p2_title: "同意の上に成り立つコンテキスト",
-        p2_desc: "個人データは、ユーザーが目的を理解し、許可した場合にのみ、提案をより良くするために使われるべきです。",
+        p2_desc: "Critical Choiceは、Googleカレンダーを接続した場合にのみ同期します。接続するまでは何も取得しません。",
         p3_title: "目新しさより行動を",
-        p3_desc: "AIは曖昧さを減らし、ユーザーが前に進む手助けをするべきであり、ダッシュボードや一般論の中に埋もれさせるべきではありません。"
+        p3_desc: "Outshineは会議後にまとめて要約しません。会議中に、戦略的な質問、リスク、次に言うべき一言をその場で提示します——ダッシュボードではありません。"
       },
       contact: {
         title: "パーソナルOSのための実用的なAIを構築する。",
