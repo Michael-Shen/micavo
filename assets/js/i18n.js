@@ -56,12 +56,12 @@
         subtitle: "Micavo favors narrow, useful products over broad AI demos. The goal is software that feels calm, actionable, and trustworthy in daily life."
       },
       principles: {
-        p1_title: "Decision-first design",
-        p1_desc: "EatOrNot doesn't show a calorie dashboard. Every meal gets one verdict: eat it, or adjust it.",
-        p2_title: "Context with consent",
-        p2_desc: "Critical Choice only pulls from your Google Calendar once you connect it — nothing synced until you turn it on.",
-        p3_title: "Action over novelty",
-        p3_desc: "Outshine doesn't wait until the meeting ends to summarize. Mid-call, it surfaces one strategic question, one risk, and one line to say next — not a dashboard."
+        p1_title: "Decisions, not dashboards",
+        p1_desc: "EatOrNot never shows a calorie dashboard. Every meal gets one verdict: eat it, or adjust it.",
+        p2_title: "Context, not guesswork",
+        p2_desc: "Critical Choice syncs your calendar so the quadrant view reflects your actual day — not a task list you have to update by hand every time your schedule changes.",
+        p3_title: "Action, not novelty",
+        p3_desc: "Outshine doesn't wait for the meeting to end. Mid-call, it hands you one sharp question, one risk, and one line to say next — not a dashboard."
       },
       contact: {
         title: "Building practical AI for personal operating systems.",
@@ -128,12 +128,12 @@
         subtitle: "Micavo 偏好專注、實用的產品，而非廣泛的 AI 展示。目標是讓軟體在日常生活中感覺沉穩、可行且值得信賴。"
       },
       principles: {
-        p1_title: "決策優先的設計",
-        p1_desc: "EatOrNot 不會給你卡路里儀表板，每一餐只給一個判斷：吃，或調整。",
-        p2_title: "在同意下運用情境資料",
-        p2_desc: "Critical Choice 只有在你主動連接 Google 日曆後才會同步，未經授權不會拉取任何資料。",
-        p3_title: "重視行動勝於新奇",
-        p3_desc: "Outshine 不會等會議結束才給摘要。會議進行中，它就直接給出一個策略性問題、一個風險提醒，以及接下來該說的一句話——不是儀表板。"
+        p1_title: "決策，而非儀表板",
+        p1_desc: "EatOrNot 從不秀出卡路里儀表板。每一餐只給一個判斷：吃，或調整。",
+        p2_title: "情境，而非猜測",
+        p2_desc: "Critical Choice 同步你的行事曆，讓象限視圖反映你今天實際的行程——不是一份要你手動維護、行程一變就得重新調整的清單。",
+        p3_title: "行動，而非新奇",
+        p3_desc: "Outshine 不會等到會議結束才給摘要。會議進行中，它就直接給你一個尖銳的問題、一個風險提醒，以及接下來該說的一句話——不是儀表板。"
       },
       contact: {
         title: "為個人作業系統打造實用的 AI。",
@@ -200,12 +200,12 @@
         subtitle: "Micavoは、広範なAIデモよりも、狭く実用的なプロダクトを重視します。目指すのは、日常生活の中で落ち着いていて、行動につながり、信頼できるソフトウェアです。"
       },
       principles: {
-        p1_title: "意思決定を起点にした設計",
+        p1_title: "意思決定を、ダッシュボードではなく",
         p1_desc: "EatOrNotはカロリーダッシュボードを見せません。各食事に出す判断は一つだけ：食べるか、調整するか。",
-        p2_title: "同意の上に成り立つコンテキスト",
-        p2_desc: "Critical Choiceは、Googleカレンダーを接続した場合にのみ同期します。接続するまでは何も取得しません。",
-        p3_title: "目新しさより行動を",
-        p3_desc: "Outshineは会議後にまとめて要約しません。会議中に、戦略的な質問、リスク、次に言うべき一言をその場で提示します——ダッシュボードではありません。"
+        p2_title: "コンテキストを、当て推量ではなく",
+        p2_desc: "Critical Choiceはカレンダーを同期し、象限ビューがあなたの実際の一日を反映します——予定が変わるたびに手動で更新しなければならないタスクリストではありません。",
+        p3_title: "行動を、目新しさではなく",
+        p3_desc: "Outshineは会議後にまとめて要約しません。会議中に、鋭い質問、リスク、次に言うべき一言をその場で提示します——ダッシュボードではありません。"
       },
       contact: {
         title: "パーソナルOSのための実用的なAIを構築する。",
