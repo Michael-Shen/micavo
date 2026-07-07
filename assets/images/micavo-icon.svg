@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Micavo icon</title>
+  <desc id="desc">A rounded square Micavo brand icon with a clean M monogram and a decision-path route from bottom-left to a gold-marked top-right destination.</desc>
+  <defs>
+    <linearGradient id="bg" x1="162" y1="110" x2="862" y2="914" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7FBFF"/>
+      <stop offset="0.55" stop-color="#EEF7F6"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="274" y1="712" x2="750" y2="324" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="22" stdDeviation="28" flood-color="#16324A" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="#FFFFFF"/>
+  <rect x="76" y="76" width="872" height="872" rx="218" fill="url(#bg)" filter="url(#softShadow)"/>
+  <rect x="76" y="76" width="872" height="872" rx="218" fill="none" stroke="#DCE9EF" stroke-width="10"/>
+
+  <path
+    d="M 274 712 L 274 324 L 512 626 L 750 324 L 750 712"
+    fill="none"
+    stroke="#1F2A37"
+    stroke-width="86"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+
+  <path
+    d="M 274 712 L 274 324 L 512 626 L 750 324"
+    fill="none"
+    stroke="url(#accent)"
+    stroke-width="22"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.95"/>
+
+  <circle cx="274" cy="712" r="22" fill="#2563EB"/>
+  <circle cx="512" cy="626" r="24" fill="#0F766E"/>
+  <circle cx="750" cy="324" r="22" fill="#F2A93B"/>
+  <circle cx="750" cy="324" r="42" fill="none" stroke="#F2A93B" stroke-width="8" opacity="0.24"/>
+</svg>
