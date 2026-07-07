@@ -57,11 +57,11 @@
       },
       principles: {
         p1_title: "Decisions, not dashboards",
-        p1_desc: "EatOrNot never shows a calorie dashboard. Every meal gets one verdict: eat it, or adjust it.",
+        p1_desc: "It's 11pm. You're standing in front of the open fridge, leftover pizza in one hand, phone in the other, and you already know how this goes — open a calorie app, guess the portion size, do the math, feel guilty either way. EatOrNot skips all of that. No spreadsheet, no macros to reverse-engineer at midnight. Just one verdict: eat it, or adjust it. Then you close the fridge and go to bed.",
         p2_title: "Context, not guesswork",
-        p2_desc: "Critical Choice syncs your calendar so the quadrant view reflects your actual day — not a task list you have to update by hand every time your schedule changes.",
+        p2_desc: "It's 2:40pm and your to-do list has eleven tasks that all look exactly the same size on the screen — same font, same checkbox, same weight. Somewhere in your calendar, a call starts in twenty minutes that makes three of those eleven matter a lot more than the other eight. Your to-do list has no idea that call exists. Critical Choice does — it reads your calendar first, so by the time you open the app, the quadrant already reflects the day you're actually having, not the day you imagined when you wrote the list this morning.",
         p3_title: "Action, not novelty",
-        p3_desc: "Outshine doesn't wait for the meeting to end. Mid-call, it hands you one sharp question, one risk, and one line to say next — not a dashboard."
+        p3_desc: "Twelve minutes into the call, someone asks a question that wasn't on the agenda, and the whole conversation quietly changes direction. You're supposed to have an answer, and you're supposed to have it now — not tomorrow, in a neatly formatted summary email. Outshine doesn't wait for the meeting to end to be useful. It hands you the sharp question to ask back, the risk worth flagging, and the one line to say next, while you're still in the room and it still matters."
       },
       contact: {
         title: "Building practical AI for personal operating systems.",
@@ -129,11 +129,11 @@
       },
       principles: {
         p1_title: "決策，而非儀表板",
-        p1_desc: "EatOrNot 從不秀出卡路里儀表板。每一餐只給一個判斷：吃，或調整。",
+        p1_desc: "晚上11點，你站在打開的冰箱前，一手拿著剩披薩，一手拿著手機，而你已經知道接下來會發生什麼——打開熱量 App、猜份量、算數學，不管算出什麼結果都覺得有點罪惡感。EatOrNot 跳過這一切。沒有試算表，不用在半夜逆推巨量營養素。它只給一個判斷：吃，或調整。然後你就可以關上冰箱去睡覺了。",
         p2_title: "情境，而非猜測",
-        p2_desc: "Critical Choice 同步你的行事曆，讓象限視圖反映你今天實際的行程——不是一份要你手動維護、行程一變就得重新調整的清單。",
+        p2_desc: "下午2點40分，你的待辦清單上有十一個任務，螢幕上看起來大小完全一樣——同樣的字體、同樣的勾選框、同樣的份量感。而你的行事曆裡，二十分鐘後有一通電話，會讓這十一個任務裡的三個，重要程度瞬間超過另外八個。待辦清單完全不知道那通電話的存在。Critical Choice 知道——它會先讀你的行事曆，所以當你打開 App 的時候，象限反映的已經是你今天實際在過的這一天，而不是你早上寫清單時想像的那一天。",
         p3_title: "行動，而非新奇",
-        p3_desc: "Outshine 不會等到會議結束才給摘要。會議進行中，它就直接給你一個尖銳的問題、一個風險提醒，以及接下來該說的一句話——不是儀表板。"
+        p3_desc: "會議進行到第12分鐘，有人問了一個議程上沒有的問題，整場對話的方向悄悄變了。你被期待要有答案，而且是現在就要——不是明天一封排版整齊的摘要信裡。Outshine 不會等會議結束才派上用場。它會在你還坐在會議室裡、這個時機還有意義的時候，直接給你該反問的尖銳問題、值得提出的風險，以及接下來該說的那句話。"
       },
       contact: {
         title: "為個人作業系統打造實用的 AI。",
@@ -201,11 +201,11 @@
       },
       principles: {
         p1_title: "意思決定を、ダッシュボードではなく",
-        p1_desc: "EatOrNotはカロリーダッシュボードを見せません。各食事に出す判断は一つだけ：食べるか、調整するか。",
+        p1_desc: "夜11時、開いた冷蔵庫の前に立ち、片手には残り物のピザ、もう片方にはスマホ。この先の展開はもう分かっています——カロリーアプリを開いて、量を推測し、計算して、どんな結果でも少し罪悪感を覚える。EatOrNotはそのすべてを省きます。表計算も、真夜中にマクロ栄養素を逆算する必要もありません。出す判断はただ一つ：食べるか、調整するか。それだけで、冷蔵庫を閉じて眠りにつけます。",
         p2_title: "コンテキストを、当て推量ではなく",
-        p2_desc: "Critical Choiceはカレンダーを同期し、象限ビューがあなたの実際の一日を反映します——予定が変わるたびに手動で更新しなければならないタスクリストではありません。",
+        p2_desc: "午後2時40分、To-Doリストには11個のタスクが並び、画面上ではすべて同じ大きさに見えます——同じフォント、同じチェックボックス、同じ重み。カレンダーの中では、20分後に始まる通話が、その11個のうち3つを残り8個よりずっと重要にしています。To-Doリストはその通話の存在を知りません。Critical Choiceは知っています——先にカレンダーを読み込むので、アプリを開いた瞬間には、象限はあなたが今朝リストを書いたときに想像した一日ではなく、実際に過ごしているその日を反映しています。",
         p3_title: "行動を、目新しさではなく",
-        p3_desc: "Outshineは会議後にまとめて要約しません。会議中に、鋭い質問、リスク、次に言うべき一言をその場で提示します——ダッシュボードではありません。"
+        p3_desc: "通話が始まって12分、誰かが議題になかった質問を投げかけ、会話の方向が静かに変わります。あなたには今すぐ答えが求められています——明日届く、きれいに整形された要約メールの中ではなく。Outshineは会議が終わるのを待ちません。あなたがまだその場にいて、まだ意味のあるタイミングで、問い返すべき鋭い質問、指摘すべきリスク、次に言うべき言葉を渡します。"
       },
       contact: {
         title: "パーソナルOSのための実用的なAIを構築する。",
