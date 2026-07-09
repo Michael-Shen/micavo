@@ -655,20 +655,91 @@
 
     .founder-section {
       padding: 60px 0 90px;
-      text-align: center;
     }
 
-    .founder-section h2 {
-      margin: 0 0 12px;
-      font-size: 28px;
+    .founder-panel {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .founder-photo img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center 20%;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .founder-content .eyebrow {
+      margin: 0 0 8px;
+    }
+
+    .founder-content h2 {
+      margin: 0;
+      font-size: 32px;
       font-weight: 800;
       letter-spacing: -0.01em;
     }
 
-    .founder-section p {
-      margin: 0;
+    .founder-role {
+      margin: 4px 0 20px;
       color: var(--muted);
       font-size: 17px;
+      font-weight: 700;
+    }
+
+    .founder-content p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .founder-building-label,
+    .founder-follow-label {
+      margin: 24px 0 10px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .founder-building-list {
+      margin: 0 0 14px;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .founder-building-list li::before {
+      content: "• ";
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .founder-social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .founder-social-links .social-link {
+      padding: 10px 18px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .founder-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-photo {
+        max-width: 200px;
+      }
     }
 
     .footer {
@@ -1028,8 +1099,49 @@
     </section>
 
     <section class="founder-section" aria-labelledby="founder-title">
-      <h2 id="founder-title" data-i18n="founder.title">Founder</h2>
-      <p data-i18n="founder.name">Michael Shen</p>
+      <div class="founder-panel">
+        <div class="founder-photo">
+          <img src="/assets/images/founder.jpg" alt="Michael Shen, Founder of Micavo" loading="lazy" />
+        </div>
+        <div class="founder-content">
+          <p class="eyebrow" data-i18n="founder.eyebrow">Founder</p>
+          <h2 id="founder-title" data-i18n="founder.name">Michael Shen</h2>
+          <p class="founder-role" data-i18n="founder.role">Founder of Micavo</p>
+          <p data-i18n="founder.bio1">I build AI products in public.</p>
+          <p data-i18n="founder.bio2">I'm building products that help people make better decisions at work and in life.</p>
+
+          <p class="founder-building-label" data-i18n="founder.building_label">Currently building:</p>
+          <ul class="founder-building-list">
+            <li data-i18n="founder.building_outshine">Outshine</li>
+            <li data-i18n="founder.building_eatornot">EatOrNot AI</li>
+            <li data-i18n="founder.building_critical">Critical Choice</li>
+          </ul>
+
+          <p class="founder-follow-label" data-i18n="founder.follow_label">Follow my journey</p>
+          <div class="founder-social-links">
+            <a class="social-link" href="https://www.facebook.com/people/Micavo/61591584159827/" target="_blank" rel="noopener noreferrer" data-ga-event="social_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="founder">
+              <span class="icon" aria-hidden="true">📘</span>
+              <span data-i18n="follow.facebook">Facebook</span>
+            </a>
+            <span class="social-link is-disabled" aria-disabled="true" title="Coming soon">
+              <span class="icon" aria-hidden="true">▶️</span>
+              <span data-i18n="follow.youtube">YouTube</span>
+            </span>
+            <span class="social-link is-disabled" aria-disabled="true" title="Coming soon">
+              <span class="icon" aria-hidden="true">💼</span>
+              <span data-i18n="follow.linkedin">LinkedIn</span>
+            </span>
+            <span class="social-link is-disabled" aria-disabled="true" title="Coming soon">
+              <span class="icon" aria-hidden="true">🚀</span>
+              <span data-i18n="follow.producthunt">Product Hunt</span>
+            </span>
+            <span class="social-link is-disabled" aria-disabled="true" title="Coming soon">
+              <span class="icon" aria-hidden="true">🧵</span>
+              <span data-i18n="follow.threads">Threads</span>
+            </span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section" aria-labelledby="contact-title">

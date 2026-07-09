@@ -72,11 +72,21 @@
         facebook: "Facebook",
         youtube: "YouTube",
         linkedin: "LinkedIn",
-        producthunt: "Product Hunt"
+        producthunt: "Product Hunt",
+        threads: "Threads"
       },
       founder: {
         title: "Founder",
-        name: "Michael Shen"
+        eyebrow: "Founder",
+        name: "Michael Shen",
+        role: "Founder of Micavo",
+        bio1: "I build AI products in public.",
+        bio2: "I'm building products that help people make better decisions at work and in life.",
+        building_label: "Currently building:",
+        building_outshine: "Outshine",
+        building_eatornot: "EatOrNot AI",
+        building_critical: "Critical Choice",
+        follow_label: "Follow my journey"
       },
       footer: {
         copy: "© 2026 Micavo. All rights reserved.",
@@ -155,11 +165,21 @@
         facebook: "Facebook",
         youtube: "YouTube",
         linkedin: "LinkedIn",
-        producthunt: "Product Hunt"
+        producthunt: "Product Hunt",
+        threads: "Threads"
       },
       founder: {
         title: "創辦人",
-        name: "Michael Shen"
+        eyebrow: "創辦人",
+        name: "Michael Shen",
+        role: "Micavo 創辦人",
+        bio1: "我公開打造 AI 產品。",
+        bio2: "我正在打造能幫助人們在工作與生活中做出更好決策的產品。",
+        building_label: "目前正在開發：",
+        building_outshine: "Outshine",
+        building_eatornot: "EatOrNot AI",
+        building_critical: "Critical Choice",
+        follow_label: "追蹤我的旅程"
       },
       footer: {
         copy: "© 2026 Micavo. 版權所有。",
@@ -238,11 +258,21 @@
         facebook: "Facebook",
         youtube: "YouTube",
         linkedin: "LinkedIn",
-        producthunt: "Product Hunt"
+        producthunt: "Product Hunt",
+        threads: "Threads"
       },
       founder: {
         title: "創業者",
-        name: "Michael Shen"
+        eyebrow: "創業者",
+        name: "Michael Shen",
+        role: "Micavo 創業者",
+        bio1: "私は公開の場でAIプロダクトを作っています。",
+        bio2: "仕事と生活の中でより良い意思決定をする手助けとなるプロダクトを作っています。",
+        building_label: "現在開発中：",
+        building_outshine: "Outshine",
+        building_eatornot: "EatOrNot AI",
+        building_critical: "Critical Choice",
+        follow_label: "私の歩みをフォローする"
       },
       footer: {
         copy: "© 2026 Micavo. All rights reserved.",
