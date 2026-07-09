@@ -603,6 +603,74 @@
       color: var(--ink);
     }
 
+    .follow-section {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .follow-section h2 {
+      margin: 0 0 20px;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 24px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--ink);
+      font-weight: 900;
+      font-size: 16px;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(24, 38, 61, 0.1);
+    }
+
+    .social-link .icon {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .social-link.is-disabled {
+      color: #9aa4b2;
+      background: transparent;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .founder-section {
+      padding: 60px 0 90px;
+      text-align: center;
+    }
+
+    .founder-section h2 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .founder-section p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
     .footer {
       padding: 42px 0;
       display: flex;
@@ -823,6 +891,28 @@
       </div>
     </section>
 
+    <section class="follow-section" aria-labelledby="follow-title">
+      <h2 id="follow-title" data-i18n="follow.title">Follow Micavo</h2>
+      <div class="social-links">
+        <a class="social-link" href="https://www.facebook.com/people/Micavo/61591584159827/" target="_blank" rel="noopener noreferrer" data-ga-event="social_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="follow_hero">
+          <span class="icon" aria-hidden="true">📘</span>
+          <span data-i18n="follow.facebook">Facebook</span>
+        </a>
+        <span class="social-link is-disabled" aria-disabled="true" title="Coming soon">
+          <span class="icon" aria-hidden="true">▶️</span>
+          <span data-i18n="follow.youtube">YouTube</span>
+        </span>
+        <span class="social-link is-disabled" aria-disabled="true" title="Coming soon">
+          <span class="icon" aria-hidden="true">💼</span>
+          <span data-i18n="follow.linkedin">LinkedIn</span>
+        </span>
+        <span class="social-link is-disabled" aria-disabled="true" title="Coming soon">
+          <span class="icon" aria-hidden="true">🚀</span>
+          <span data-i18n="follow.producthunt">Product Hunt</span>
+        </span>
+      </div>
+    </section>
+
     <section class="section" id="products" aria-labelledby="products-title">
       <div class="section-heading centered">
         <p class="eyebrow" data-i18n="products_section.eyebrow">Products</p>
@@ -937,6 +1027,11 @@
       </div>
     </section>
 
+    <section class="founder-section" aria-labelledby="founder-title">
+      <h2 id="founder-title" data-i18n="founder.title">Founder</h2>
+      <p data-i18n="founder.name">Michael Shen</p>
+    </section>
+
     <section class="section" aria-labelledby="contact-title">
       <div class="contact-panel">
         <div>
@@ -948,6 +1043,7 @@
         <a class="button" href="mailto:hello@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="final_cta">hello@micavo.app</a>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
@@ -957,6 +1053,7 @@
       <a href="/outshine/" data-ga-event="product_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="footer">Outshine</a>
       <a href="/critical_choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer">Critical Choice</a>
       <a href="mailto:hello@micavo.app" data-i18n="footer.contact" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Contact</a>
+      <a href="https://www.facebook.com/people/Micavo/61591584159827/" target="_blank" rel="noopener noreferrer" data-i18n="follow.facebook" data-ga-event="social_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Facebook</a>
     </div>
   </footer>
 

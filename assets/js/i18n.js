@@ -67,6 +67,17 @@
         title: "Building practical AI for personal operating systems.",
         subtitle: "For product questions, support, partnerships, or media inquiries, reach Micavo directly."
       },
+      follow: {
+        title: "Follow Micavo",
+        facebook: "Facebook",
+        youtube: "YouTube",
+        linkedin: "LinkedIn",
+        producthunt: "Product Hunt"
+      },
+      founder: {
+        title: "Founder",
+        name: "Michael Shen"
+      },
       footer: {
         copy: "© 2026 Micavo. All rights reserved.",
         contact: "Contact"
@@ -139,6 +150,17 @@
         title: "為個人作業系統打造實用的 AI。",
         subtitle: "如有產品問題、支援需求、合作機會或媒體詢問，歡迎直接聯絡 Micavo。"
       },
+      follow: {
+        title: "追蹤 Micavo",
+        facebook: "Facebook",
+        youtube: "YouTube",
+        linkedin: "LinkedIn",
+        producthunt: "Product Hunt"
+      },
+      founder: {
+        title: "創辦人",
+        name: "Michael Shen"
+      },
       footer: {
         copy: "© 2026 Micavo. 版權所有。",
         contact: "聯絡我們"
@@ -210,6 +232,17 @@
       contact: {
         title: "パーソナルOSのための実用的なAIを構築する。",
         subtitle: "プロダクトに関するご質問、サポート、パートナーシップ、取材のお問い合わせは、Micavoまで直接ご連絡ください。"
+      },
+      follow: {
+        title: "Micavoをフォローする",
+        facebook: "Facebook",
+        youtube: "YouTube",
+        linkedin: "LinkedIn",
+        producthunt: "Product Hunt"
+      },
+      founder: {
+        title: "創業者",
+        name: "Michael Shen"
       },
       footer: {
         copy: "© 2026 Micavo. All rights reserved.",
