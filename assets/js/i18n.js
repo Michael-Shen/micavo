@@ -281,6 +281,24 @@
     }
   };
 
+  var appStoreLinks = {
+    eatornot: {
+      en: "https://apps.apple.com/us/app/eatornot-ai/id6771192711",
+      zh: "https://apps.apple.com/us/app/eatornot-ai-%E7%86%B1%E9%87%8F%E6%95%99%E7%B7%B4/id6771192711?l=zh-Hant-TW",
+      ja: "https://apps.apple.com/jp/app/eatornot-ai/id6771192711?l=ja"
+    },
+    outshine: {
+      en: "https://apps.apple.com/us/app/outshine/id6782229641",
+      zh: "https://apps.apple.com/tw/app/outshine/id6782229641?l=zh-Hant-TW",
+      ja: "https://apps.apple.com/jp/app/outshine/id6782229641"
+    },
+    critical_choice: {
+      en: "https://apps.apple.com/tw/app/critical-choice/id6756776644?l=en-GB",
+      zh: "https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644",
+      ja: "https://apps.apple.com/jp/app/critical-choice/id6756776644?l=ja"
+    }
+  };
+
   function get(obj, path) {
     return path.split(".").reduce(function (o, k) { return o && o[k] !== undefined ? o[k] : undefined; }, obj);
   }
@@ -298,6 +316,13 @@
       } else {
         el.textContent = val;
       }
+    });
+
+    document.querySelectorAll("[data-app]").forEach(function (link) {
+      var app = link.getAttribute("data-app");
+      var urls = appStoreLinks[app];
+      if (!urls) return;
+      link.href = urls[lang] || urls.en;
     });
 
     document.querySelectorAll("[data-lang-btn]").forEach(function (btn) {

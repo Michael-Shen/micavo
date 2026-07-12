@@ -611,6 +611,12 @@
       }
     };
 
+    const appStoreLinks = {
+      en: "https://apps.apple.com/us/app/eatornot-ai/id6771192711",
+      "zh-Hant": "https://apps.apple.com/us/app/eatornot-ai-%E7%86%B1%E9%87%8F%E6%95%99%E7%B7%B4/id6771192711?l=zh-Hant-TW",
+      ja: "https://apps.apple.com/jp/app/eatornot-ai/id6771192711?l=ja"
+    };
+
     const applyLanguage = (language) => {
       const activeLanguage = translations[language] ? language : "en";
       document.documentElement.lang = activeLanguage;
@@ -622,6 +628,11 @@
         if (value) {
           element.textContent = value;
         }
+      });
+
+      const appStoreUrl = appStoreLinks[activeLanguage] || appStoreLinks.en;
+      document.querySelectorAll(".appstore-badge-btn").forEach((link) => {
+        link.href = appStoreUrl;
       });
 
       document.querySelectorAll("[data-lang-switch]").forEach((button) => {
