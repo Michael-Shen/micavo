@@ -1693,3 +1693,27 @@ h1 {
     box-shadow: none;
   }
 }
+
+/* Georgia/Times has no CJK glyphs, so zh/ja headings fall back to the
+   browser's default serif CJK font, breaking brand consistency with the
+   sans-serif Chinese/Japanese used on micavo.app and outshine. Match it. */
+:root[data-lang="zh-Hant"] .brand,
+:root[data-lang="zh-Hant"] h1,
+:root[data-lang="zh-Hant"] .screenshot-card-wide h3,
+:root[data-lang="zh-Hant"] .lifestyle-heading h2,
+:root[data-lang="zh-Hant"] .section-heading h2,
+:root[data-lang="zh-Hant"] .premium-copy h2,
+:root[data-lang="zh-Hant"] .legal-hero h1,
+:root[data-lang="zh-Hant"] .app-header,
+:root[data-lang="zh-Hant"] .plan-copy h3,
+:root[data-lang="ja"] .brand,
+:root[data-lang="ja"] h1,
+:root[data-lang="ja"] .screenshot-card-wide h3,
+:root[data-lang="ja"] .lifestyle-heading h2,
+:root[data-lang="ja"] .section-heading h2,
+:root[data-lang="ja"] .premium-copy h2,
+:root[data-lang="ja"] .legal-hero h1,
+:root[data-lang="ja"] .app-header,
+:root[data-lang="ja"] .plan-copy h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+}
