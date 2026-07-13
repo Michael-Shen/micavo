@@ -648,7 +648,16 @@
       button.addEventListener("click", () => applyLanguage(button.dataset.langSwitch));
     });
 
-    applyLanguage(localStorage.getItem("eatornot-language") || "en");
+    const langParam = new URLSearchParams(window.location.search).get("lang");
+    const langParamMap = { en: "en", zh: "zh-Hant", ja: "ja" };
+    const initialLanguage = (langParam && langParamMap[langParam]) || localStorage.getItem("eatornot-language") || "en";
+    applyLanguage(initialLanguage);
+
+    if (langParam) {
+      const cleanUrl = new URL(window.location.href);
+      cleanUrl.searchParams.delete("lang");
+      window.history.replaceState({}, "", cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
+    }
   </script>
 </body>
 </html>

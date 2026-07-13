@@ -325,6 +325,14 @@
       link.href = urls[lang] || urls.en;
     });
 
+    var internalProductPaths = ["/eatornot/", "/outshine/", "/critical_choice/"];
+    document.querySelectorAll("a[href]").forEach(function (link) {
+      var href = link.getAttribute("href");
+      var base = internalProductPaths.filter(function (p) { return href && href.indexOf(p) === 0; })[0];
+      if (!base) return;
+      link.setAttribute("href", base + "?lang=" + lang);
+    });
+
     document.querySelectorAll("[data-lang-btn]").forEach(function (btn) {
       btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === lang);
     });

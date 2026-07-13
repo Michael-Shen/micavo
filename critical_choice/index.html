@@ -1578,10 +1578,18 @@
             });
         });
         
-        // Load saved language preference
+        // Load language preference: URL param (carried over from micavo.app) takes priority, then saved preference
+        const langParam = new URLSearchParams(window.location.search).get('lang');
         const savedLang = localStorage.getItem('preferredLanguage');
-        if (savedLang && translations[savedLang]) {
-            switchLanguage(savedLang);
+        const initialLang = (langParam && translations[langParam]) ? langParam : savedLang;
+        if (initialLang && translations[initialLang]) {
+            switchLanguage(initialLang);
+        }
+
+        if (langParam) {
+            const cleanUrl = new URL(window.location.href);
+            cleanUrl.searchParams.delete('lang');
+            window.history.replaceState({}, '', cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
         }
 
         // Smooth scroll for navigation links

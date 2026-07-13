@@ -352,6 +352,12 @@
     }
   };
 
+  var appStoreLinks = {
+    en: "https://apps.apple.com/us/app/outshine/id6782229641",
+    zh: "https://apps.apple.com/tw/app/outshine/id6782229641?l=zh-Hant-TW",
+    ja: "https://apps.apple.com/jp/app/outshine/id6782229641"
+  };
+
   function get(obj, path) {
     return path.split(".").reduce(function (o, k) { return o && o[k] !== undefined ? o[k] : undefined; }, obj);
   }
@@ -359,6 +365,10 @@
   function applyLanguage(lang) {
     var dict = translations[lang] || translations.en;
     document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-app-store-link]").forEach(function (link) {
+      link.href = appStoreLinks[lang] || appStoreLinks.en;
+    });
 
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
@@ -391,6 +401,10 @@
 
   function detectLanguage() {
     try {
+      var param = new URLSearchParams(window.location.search).get("lang");
+      if (param && translations[param]) return param;
+    } catch (e) {}
+    try {
       var saved = localStorage.getItem("outshine-lang");
       if (saved && translations[saved]) return saved;
     } catch (e) {}
@@ -416,5 +430,15 @@
     });
 
     applyLanguage(detectLanguage());
+
+    try {
+      var params = new URLSearchParams(window.location.search);
+      if (params.has("lang")) {
+        params.delete("lang");
+        var query = params.toString();
+        var cleanUrl = window.location.pathname + (query ? "?" + query : "") + window.location.hash;
+        window.history.replaceState({}, "", cleanUrl);
+      }
+    } catch (e) {}
   });
 })();
