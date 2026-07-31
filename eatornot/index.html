@@ -107,6 +107,23 @@
       </div>
     </section>
 
+    <!-- Temporary feedback-survey banner. Not tied to the site's data-i18n
+         system on purpose: this is a short-lived stopgap linked from a push
+         notification while the in-app survey button (ctaUrl) is still
+         waiting on an App Store release, and it needs to work the same
+         regardless of the visitor's detected site language (the JS
+         translations object above only has en/ja, no zh dictionary yet).
+         Safe to delete this whole <section> once the app update ships. -->
+    <section id="survey" aria-labelledby="survey-title" style="margin:0 auto;max-width:760px;padding:24px 20px;">
+      <div style="border:1px solid #e5e0f5;background:linear-gradient(135deg,#f3f0ff,#eef7f2);border-radius:16px;padding:24px;text-align:center;">
+        <h2 id="survey-title" data-i18n="survey.title" style="margin:0 0 8px;font-size:1.15rem;">📝 Help us make EatOrNot better</h2>
+        <p data-i18n="survey.subtitle" style="margin:0 0 18px;color:#555;font-size:0.95rem;">Take our 1-minute survey below. Leave your email and we'll manually reset your free analysis count once as a thank-you.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+          <a class="survey-link-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeq5c_n97F_gm7wN5ob34M0nRQLpv2QJPQM2YfLYAz0PeHFcA/viewform" target="_blank" rel="noopener noreferrer" data-i18n="survey.cta" style="padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #cfc7ea;text-decoration:none;color:#333;font-weight:600;">Take the survey</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section screenshot-section" id="screenshots" aria-labelledby="screenshots-title">
       <div class="section-heading">
         <p class="eyebrow" data-i18n="screens.eyebrow">Product preview</p>
@@ -454,7 +471,10 @@
         "footer.privacy": "Privacy Policy",
         "footer.terms": "Terms of Service",
         "mobileBar.text": "Can I eat this right now?",
-        "mobileBar.cta": "Download"
+        "mobileBar.cta": "Download",
+        "survey.title": "📝 Help us make EatOrNot better",
+        "survey.subtitle": "Take our 1-minute survey below. Leave your email and we'll manually reset your free analysis count once as a thank-you.",
+        "survey.cta": "Take the survey"
       },
       "zh-Hant": {
         "nav.screenshots": "截圖",
@@ -551,7 +571,10 @@
         "footer.privacy": "隱私權政策",
         "footer.terms": "服務條款",
         "mobileBar.text": "這個現在能不能吃？",
-        "mobileBar.cta": "下載"
+        "mobileBar.cta": "下載",
+        "survey.title": "📝 填問卷，幫我們把 EatOrNot 做得更好",
+        "survey.subtitle": "花 1 分鐘填寫下方問卷，留下 email 我們會手動幫你重置一次免費分析次數，當作一點感謝。",
+        "survey.cta": "填寫問卷"
       },
       ja: {
         "nav.screenshots": "スクリーンショット",
@@ -648,7 +671,10 @@
         "footer.privacy": "プライバシーポリシー",
         "footer.terms": "利用規約",
         "mobileBar.text": "これは今食べてもいい？",
-        "mobileBar.cta": "ダウンロード"
+        "mobileBar.cta": "ダウンロード",
+        "survey.title": "📝 EatOrNot をより良くするために、ご協力ください",
+        "survey.subtitle": "下のアンケートは約1分で完了します。メールアドレスをご記入いただいた方には、感謝の気持ちとして無料分析回数を手動で1回リセットします。",
+        "survey.cta": "アンケートに回答する"
       }
     };
 
@@ -656,6 +682,16 @@
       en: "https://apps.apple.com/us/app/eatornot-ai/id6771192711",
       "zh-Hant": "https://apps.apple.com/us/app/eatornot-ai-%E7%86%B1%E9%87%8F%E6%95%99%E7%B7%B4/id6771192711?l=zh-Hant-TW",
       ja: "https://apps.apple.com/jp/app/eatornot-ai/id6771192711?l=ja"
+    };
+
+    // Temporary — remove alongside the #survey section once the app update
+    // with the in-app survey button ships. zh-Hant and zh-Hans share one
+    // form (same as the campaign's ctaUrl); the site has no zh-Hans variant
+    // to detect, so zh-Hant covers both.
+    const surveyLinks = {
+      en: "https://docs.google.com/forms/d/e/1FAIpQLSeq5c_n97F_gm7wN5ob34M0nRQLpv2QJPQM2YfLYAz0PeHFcA/viewform",
+      "zh-Hant": "https://docs.google.com/forms/d/e/1FAIpQLSf4OhsGLLlQL-IEWLRzKHDU75vskTS8tIcQApV2s-0ejFV5tQ/viewform",
+      ja: "https://docs.google.com/forms/d/e/1FAIpQLScEgVNP1Kr4sf5nJCsWLfH4imv4JkCTOqCmukWMXSFwnRJ-OA/viewform"
     };
 
     const applyLanguage = (language) => {
@@ -674,6 +710,11 @@
       const appStoreUrl = appStoreLinks[activeLanguage] || appStoreLinks.en;
       document.querySelectorAll(".appstore-badge-btn").forEach((link) => {
         link.href = appStoreUrl;
+      });
+
+      const surveyUrl = surveyLinks[activeLanguage] || surveyLinks.en;
+      document.querySelectorAll(".survey-link-btn").forEach((link) => {
+        link.href = surveyUrl;
       });
 
       document.querySelectorAll("[data-lang-switch]").forEach((button) => {
