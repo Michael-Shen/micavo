@@ -1,6 +1,7 @@
 (function () {
   function detectProduct() {
     var path = window.location.pathname;
+    if (path.indexOf('/tallcenter') === 0) return 'TallCenter';
     if (path.indexOf('/eatornot') === 0) return 'EatOrNot';
     if (path.indexOf('/outshine') === 0) return 'Outshine';
     if (path.indexOf('/critical_choice') === 0) return 'Critical Choice';
@@ -13,12 +14,38 @@
     if (/\/(privacy|terms|support|privacy-policy)\.html$/.test(path)) return 'legal';
     if (path === '/eatornot/' || path === '/eatornot/index.html' ||
         path === '/outshine/' || path === '/outshine/index.html' ||
-        path === '/critical_choice/' || path === '/critical_choice/index.html') return 'product_landing';
+        path === '/critical_choice/' || path === '/critical_choice/index.html' ||
+        path === '/tallcenter/' || path === '/tallcenter/index.html') return 'product_landing';
     return 'unknown';
   }
 
   var PRODUCT = detectProduct();
   var PAGE_TYPE = detectPageType();
+
+  function readCampaign() {
+    var query = new URLSearchParams(window.location.search);
+    var campaign = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id'].forEach(function (key) {
+      var value = query.get(key);
+      if (value) campaign[key] = value.slice(0, 100);
+    });
+    return campaign;
+  }
+
+  var CAMPAIGN = readCampaign();
+
+  // Keep first-touch values so later CTA events retain their original source.
+  // GA4 also reads the UTM query parameters automatically.
+  try {
+    var storedCampaign = window.localStorage.getItem('micavo_first_touch_campaign');
+    if (Object.keys(CAMPAIGN).length && !storedCampaign) {
+      window.localStorage.setItem('micavo_first_touch_campaign', JSON.stringify(CAMPAIGN));
+    } else if (!Object.keys(CAMPAIGN).length && storedCampaign) {
+      CAMPAIGN = JSON.parse(storedCampaign) || {};
+    }
+  } catch (_) {
+    // Continue without persistence when storage is unavailable.
+  }
 
   function toSnakeCase(str) {
     return str.replace(/-/g, '_');
@@ -36,6 +63,9 @@
       page_path: window.location.pathname,
       page_title: document.title
     };
+    Object.keys(CAMPAIGN).forEach(function (key) {
+      params[key] = CAMPAIGN[key];
+    });
     Object.keys(extraParams).forEach(function (key) {
       params[key] = extraParams[key];
     });
@@ -45,6 +75,10 @@
   }
 
   window.trackEvent = trackEvent;
+
+  if (PAGE_TYPE === 'product_landing') {
+    trackEvent('landing_view');
+  }
 
   // Generic CTA click tracking: any element with data-ga-event="..." gets
   // tracked automatically. data-ga-param-foo-bar="x" becomes { foo_bar: "x" }.
