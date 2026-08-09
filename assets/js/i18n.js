@@ -13,6 +13,7 @@
       carousel: {
         eatornot: { desc: "Nutrition decisions powered by meal analysis, calorie budgets, macro context, and permission-based Apple Health data." },
         outshine: { desc: "An AI Career Copilot that helps professionals know what to say next in meetings and become more influential over time." },
+        tallcenter: { desc: "An educational family-height estimate and a simple daily plan with general sleep, nutrition, and activity guidance." },
         critical_choice: { desc: "A productivity app built around the Eisenhower Matrix, helping users separate urgent noise from important work." }
       },
       common: { view_product: "View product" },
@@ -28,6 +29,14 @@
         f2: "Daily calorie and macro tracking designed for quick decisions.",
         f3: "Pro and Premium coaching for weekly insights and habit patterns.",
         open: "Open EatOrNot AI"
+      },
+      product_tallcenter: {
+        status: "Growth & wellness",
+        desc: "TallCenter helps ages 10–20 understand an educational family-height range, then turn that insight into healthy daily routines—without guarantees or miracle claims.",
+        f1: "Transparent family-height estimate with uncertainty and method shown.",
+        f2: "Personalized sleep, nutrition, and activity guidance.",
+        f3: "Measurement history, weekly summaries, reminders, and share cards.",
+        open: "Open TallCenter"
       },
       product_outshine: {
         desc: "Outshine is an AI Career Copilot for meetings: live coaching cards that help users ask sharper questions and know what to say next, plus an after-meeting summary.",
@@ -86,6 +95,7 @@
         building_outshine: "Outshine",
         building_eatornot: "EatOrNot AI",
         building_critical: "Critical Choice",
+        building_tallcenter: "TallCenter",
         follow_label: "Follow my journey"
       },
       footer: {
@@ -106,6 +116,7 @@
       carousel: {
         eatornot: { desc: "透過餐點分析、卡路里預算、營養素情境，以及經授權的 Apple Health 資料，做出更聰明的飲食決策。" },
         outshine: { desc: "AI 職場教練，協助專業人士在會議中知道接下來該說什麼，並隨時間累積更大的影響力。" },
+        tallcenter: { desc: "提供教育用途的家族身高範圍估算，以及睡眠、營養與活動的一般日常指引。" },
         critical_choice: { desc: "以艾森豪矩陣為核心的生產力應用，協助使用者從緊急雜訊中分辨出真正重要的工作。" }
       },
       common: { view_product: "查看產品" },
@@ -121,6 +132,14 @@
         f2: "每日卡路里與營養素追蹤，協助快速決策。",
         f3: "Pro 與 Premium 教練功能，提供每週洞察與習慣分析。",
         open: "開啟 EatOrNot AI"
+      },
+      product_tallcenter: {
+        status: "成長與健康",
+        desc: "TallCenter 協助 10–20 歲使用者了解教育用途的家族身高範圍，並將洞察轉化為健康日常習慣，不做身高保證或奇蹟式宣稱。",
+        f1: "透明呈現家族身高估算、使用方法與不確定性。",
+        f2: "個人化的一般睡眠、營養與活動指引。",
+        f3: "身高量測紀錄、每週摘要、提醒與分享卡片。",
+        open: "開啟 TallCenter"
       },
       product_outshine: {
         desc: "Outshine 是會議專用的 AI 職場教練：即時教練卡片協助使用者提出更精準的問題、知道接下來該說什麼，並提供會後摘要。",
@@ -179,6 +198,7 @@
         building_outshine: "Outshine",
         building_eatornot: "EatOrNot AI",
         building_critical: "Critical Choice",
+        building_tallcenter: "TallCenter",
         follow_label: "追蹤我的旅程"
       },
       footer: {
@@ -199,6 +219,7 @@
       carousel: {
         eatornot: { desc: "食事分析、カロリー予算、栄養素のコンテキスト、許可制のApple Healthデータを活用した栄養に関する意思決定。" },
         outshine: { desc: "会議で次に何を話すべきかを教えてくれるAIキャリアコパイロット。プロフェッショナルの影響力を時間とともに高めます。" },
+        tallcenter: { desc: "家族の身長に基づく教育目的の推定範囲と、睡眠・栄養・活動に関する一般的なデイリーガイド。" },
         critical_choice: { desc: "アイゼンハワー・マトリクスを軸にした生産性アプリ。緊急な雑音と本当に重要な仕事を見分けるお手伝いをします。" }
       },
       common: { view_product: "プロダクトを見る" },
@@ -214,6 +235,14 @@
         f2: "素早い判断のための日々のカロリー・栄養素トラッキング。",
         f3: "週次インサイトと習慣パターンのためのProおよびPremiumコーチング。",
         open: "EatOrNot AIを開く"
+      },
+      product_tallcenter: {
+        status: "成長とウェルネス",
+        desc: "TallCenterは10〜20歳向けに、家族の身長に基づく教育目的の推定範囲を示し、その気づきを健康的な日常習慣につなげます。身長の保証や誇大な主張は行いません。",
+        f1: "方法と不確実性を明示した透明性のある家族身長推定。",
+        f2: "睡眠・栄養・活動に関する個別の一般ガイダンス。",
+        f3: "測定履歴、週次サマリー、リマインダー、共有カード。",
+        open: "TallCenterを開く"
       },
       product_outshine: {
         desc: "Outshineは会議のためのAIキャリアコパイロットです。ライブコーチングカードが、より鋭い質問や次の発言を考える手助けをし、会議後には要約も提供します。",
@@ -272,6 +301,7 @@
         building_outshine: "Outshine",
         building_eatornot: "EatOrNot AI",
         building_critical: "Critical Choice",
+        building_tallcenter: "TallCenter",
         follow_label: "私の歩みをフォローする"
       },
       footer: {
@@ -325,7 +355,7 @@
       link.href = urls[lang] || urls.en;
     });
 
-    var internalProductPaths = ["/eatornot/", "/outshine/", "/critical_choice/"];
+    var internalProductPaths = ["/eatornot/", "/outshine/", "/critical_choice/", "/tallcenter/"];
     document.querySelectorAll("a[href]").forEach(function (link) {
       var href = link.getAttribute("href");
       var base = internalProductPaths.filter(function (p) { return href && href.indexOf(p) === 0; })[0];
