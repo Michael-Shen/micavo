@@ -78,6 +78,86 @@
     }
   };
 
+  Object.assign(translations['zh-Hant'], {
+    '01 · Check in': '01 · 每日打卡',
+    'Make today’s healthy actions obvious.': '讓今天的健康行動一目了然。',
+    'Turn sleep, nutrition, and movement guidance into small daily tasks, then build momentum with streaks and XP.': '把睡眠、營養與活動指引轉化成每日小任務，再用連續紀錄與 XP 累積動力。',
+    '02 · Follow your plan': '02 · 跟著你的計畫',
+    'Keep your whole routine in one place.': '把完整日常計畫放在同一個地方。',
+    'See personalized movement, sleep, and nutrition guidance shaped by your assessment and designed to support general wellbeing.': '根據你的評估查看個人化的活動、睡眠與營養指引，支持整體健康。',
+    '03 · Move well': '03 · 好好活動',
+    'Choose a guided session you can finish.': '選擇你能完成的引導式活動。',
+    'Follow short, age-appropriate movement, mobility, posture, and weight-bearing routines with clear timing and steps.': '跟著簡短、適齡的活動、靈活度、姿勢與負重運動流程，每個時間與步驟都清楚呈現。',
+    'Height predictor & worldwide comparison': '身高預測與世界各地比較',
+    'Estimate your educational adult-height range from family-height inputs, then see how that same height compares across countries. Track your growth and build healthier sleep, nutrition, and activity routines along the way.': '根據家族身高資料預估教育用途的成年身高範圍，再看同一個身高在不同國家的相對排名。同時追蹤成長，建立更健康的睡眠、營養與活動習慣。',
+    'See worldwide comparison': '看世界各地身高比較',
+    'Compare 12+ regions': '比較 12+ 個國家與地區',
+    'How tall around the world?': '你在世界各地，算高嗎？',
+    'Compare relative percentiles by country.': '比較不同國家的相對百分位。',
+    'Compare across countries': '比較世界各國',
+    'Share your Height Passport': '分享你的身高國際護照',
+    'Adult height estimate, worldwide comparison, and daily tracking': '成年身高預估、世界各地比較與每日追蹤',
+    'From “how tall?” to “where do I rank?”': '從「我會長多高？」到「我在哪個國家算高？」',
+    'Understand your educational adult-height estimate, explore how it compares across countries, and turn the insight into healthier daily actions—without pretending an app can guarantee extra height.': '了解教育用途的成年身高預估，探索在各國的相對百分位，再把結果轉化成更健康的日常行動；我們不會假裝 App 能保證增加身高。',
+    'Your height, a different story in every country': '同一個身高，換個國家就有不同結果',
+    'See how tall you rank around the world.': '看看你在世界各地算多高。',
+    'Use the same predicted adult height to explore your estimated relative percentile across 12+ countries and regions. A height that feels average in one place may stand out in another.': '用同一個預測成年身高，探索在 12+ 個國家與地區的估計相對百分位。在一個地方很普通的身高，到另一個國家可能很顯眼。',
+    'Compare country-specific relative percentiles': '比較各國的相對身高百分位',
+    'Choose your country—no GPS required': '自行選擇國家，不需讀取 GPS',
+    'Create a shareable Height Passport': '產生可分享的身高國際護照',
+    'Educational statistical comparison only. Percentiles are population estimates, not a live global leaderboard or health assessment.': '僅供教育用途的統計比較。百分位是族群估計，不是即時全球排行榜，也不代表健康評估。',
+    'Find my worldwide rank ↗': '看我在世界各地的排名 ↗',
+    'Compare worldwide': '比較世界各地',
+    'See how your predicted adult height maps to estimated relative percentiles across countries.': '查看你的預測成年身高，在不同國家對應的估計相對百分位。',
+    'Build and track': '建立習慣並追蹤',
+    'Follow healthy routine guidance, log measurements and check-ins, and celebrate consistency.': '參考健康習慣指引、記錄量測與每日完成狀況，為持續行動喝采。',
+    'Questions about height prediction and worldwide comparison': '關於身高預測與世界各地比較的問題',
+    'Straight answers about what TallCenter estimates, how country comparisons work, and what healthy routines can realistically do.': '清楚說明 TallCenter 會預估什麼、各國比較如何運作，以及健康習慣實際能做到什麼。',
+    'What does my worldwide height rank mean?': '我的世界各地身高排名代表什麼？',
+    'TallCenter compares your predicted adult height with published country-level reference distributions and estimates the percentage of people you may be taller than. It is an educational statistical comparison—not a census, live leaderboard, health score, or guarantee.': 'TallCenter 將你的預測成年身高與公開的各國參考分布比較，估算你可能高過多少比例的人。這是教育用途的統計比較，不是人口普查、即時排行榜、健康分數或保證。',
+    'You can compare your predicted adult height across countries, record height measurements, complete daily routine check-ins, follow activity routines, review summaries, enable reminders, and create shareable Height Passport cards. TallCenter also provides general nutrition guidance; it does not record meals or nutrient intake.': '你可以比較預測成年身高在不同國家的相對位置、記錄身高量測、完成每日習慣、跟著活動流程、查看摘要、設定提醒，並建立可分享的身高國際護照。TallCenter 也提供一般營養指引，但不會記錄餐點或營養素攝取。'
+  });
+
+  Object.assign(translations.ja, {
+    '01 · Check in': '01 · 毎日のチェック',
+    'Make today’s healthy actions obvious.': '今日の健康行動をわかりやすく。',
+    'Turn sleep, nutrition, and movement guidance into small daily tasks, then build momentum with streaks and XP.': '睡眠・栄養・活動のガイダンスを毎日の小さなタスクにし、連続記録とXPで継続の弾みをつけます。',
+    '02 · Follow your plan': '02 · プランを実行',
+    'Keep your whole routine in one place.': 'すべての習慣を1か所で管理。',
+    'See personalized movement, sleep, and nutrition guidance shaped by your assessment and designed to support general wellbeing.': '評価に基づいた個別の活動・睡眠・栄養ガイダンスで、全体的な健康を支えます。',
+    '03 · Move well': '03 · 健やかに動く',
+    'Choose a guided session you can finish.': '無理なく完了できるガイド付きセッションを選択。',
+    'Follow short, age-appropriate movement, mobility, posture, and weight-bearing routines with clear timing and steps.': '短く年齢に合った運動、モビリティ、姿勢、荷重運動を、明確な時間と手順で行えます。',
+    'Height predictor & worldwide comparison': '身長予測・世界比較',
+    'Estimate your educational adult-height range from family-height inputs, then see how that same height compares across countries. Track your growth and build healthier sleep, nutrition, and activity routines along the way.': '家族の身長から教育目的の成人身長範囲を推定し、同じ身長が各国でどの位置になるか比較できます。成長を記録しながら、より健康的な睡眠・栄養・活動習慣をつくりましょう。',
+    'See worldwide comparison': '世界の身長比較を見る',
+    'Compare 12+ regions': '12以上の国・地域を比較',
+    'How tall around the world?': '世界ではどれくらい高い？',
+    'Compare relative percentiles by country.': '国ごとの相対パーセンタイルを比較。',
+    'Compare across countries': '世界の国々と比較',
+    'Share your Height Passport': 'ハイトパスポートをシェア',
+    'Adult height estimate, worldwide comparison, and daily tracking': '成人身長推定・世界比較・毎日の記録',
+    'From “how tall?” to “where do I rank?”': '「何cmになる？」から「どの国で高い？」へ',
+    'Understand your educational adult-height estimate, explore how it compares across countries, and turn the insight into healthier daily actions—without pretending an app can guarantee extra height.': '教育目的の成人身長推定を理解し、各国での相対パーセンタイルを探り、より健康的な毎日の行動へつなげます。アプリが身長の増加を保証できるとは主張しません。',
+    'Your height, a different story in every country': '同じ身長でも、国が変われば見え方が変わる',
+    'See how tall you rank around the world.': '世界での相対的な身長ランクを見てみよう。',
+    'Use the same predicted adult height to explore your estimated relative percentile across 12+ countries and regions. A height that feels average in one place may stand out in another.': '同じ予測成人身長を使って、12以上の国・地域での推定相対パーセンタイルを確認できます。ある国では平均的な身長が、別の国では目立つこともあります。',
+    'Compare country-specific relative percentiles': '国ごとの相対身長パーセンタイルを比較',
+    'Choose your country—no GPS required': '国は自分で選択。GPSは不要',
+    'Create a shareable Height Passport': 'シェアできるハイトパスポートを作成',
+    'Educational statistical comparison only. Percentiles are population estimates, not a live global leaderboard or health assessment.': '教育目的の統計比較です。パーセンタイルは集団推定であり、リアルタイムの世界ランキングや健康評価ではありません。',
+    'Find my worldwide rank ↗': '世界でのランクを見る ↗',
+    'Compare worldwide': '世界と比較',
+    'See how your predicted adult height maps to estimated relative percentiles across countries.': '予測成人身長が各国の推定相対パーセンタイルでどの位置になるか確認します。',
+    'Build and track': '習慣をつくり、記録',
+    'Follow healthy routine guidance, log measurements and check-ins, and celebrate consistency.': '健康習慣のガイダンスに従い、測定とチェックインを記録し、継続を称えましょう。',
+    'Questions about height prediction and worldwide comparison': '身長予測と世界比較について',
+    'Straight answers about what TallCenter estimates, how country comparisons work, and what healthy routines can realistically do.': 'TallCenterが何を推定し、国別比較がどう機能し、健康習慣に現実的に何ができるかを明確に説明します。',
+    'What does my worldwide height rank mean?': '世界での身長ランクは何を意味しますか？',
+    'TallCenter compares your predicted adult height with published country-level reference distributions and estimates the percentage of people you may be taller than. It is an educational statistical comparison—not a census, live leaderboard, health score, or guarantee.': 'TallCenterは予測成人身長を公開された国別参考分布と比較し、何％の人より高い可能性があるかを推定します。教育目的の統計比較であり、国勢調査、リアルタイムランキング、健康スコア、保証ではありません。',
+    'You can compare your predicted adult height across countries, record height measurements, complete daily routine check-ins, follow activity routines, review summaries, enable reminders, and create shareable Height Passport cards. TallCenter also provides general nutrition guidance; it does not record meals or nutrient intake.': '予測成人身長の国別比較、身長測定の記録、毎日の習慣チェック、活動ルーティン、サマリー、リマインダー、シェアできるハイトパスポートを利用できます。一般的な栄養ガイダンスも提供しますが、食事や栄養摂取量は記録しません。'
+  });
+
   const textNodes = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
     acceptNode(node) {
@@ -104,6 +184,20 @@
     ja: {
       src: './assets/JP.png',
       alt: 'TallCenter 成人身長予測シェアカード'
+    }
+  };
+  const localizedCompareScreenshots = {
+    en: {
+      src: './assets/english_compare.png',
+      alt: 'TallCenter worldwide adult-height comparison passport'
+    },
+    'zh-Hant': {
+      src: './assets/chinese_comapre.png',
+      alt: 'TallCenter 世界各地成年身高比較護照'
+    },
+    ja: {
+      src: './assets/jp_compare.png',
+      alt: 'TallCenter 世界の成人身長比較パスポート'
     }
   };
 
@@ -133,12 +227,17 @@
       image.src = screenshot.src;
       image.alt = screenshot.alt;
     });
+    const compareScreenshot = localizedCompareScreenshots[lang];
+    document.querySelectorAll('[data-localized-compare]').forEach((image) => {
+      image.src = compareScreenshot.src;
+      image.alt = compareScreenshot.alt;
+    });
     document.title = lang === 'en' ? originalTitle : (dictionary[originalTitle] || originalTitle);
     if (metaDescription) {
       metaDescription.content = lang === 'zh-Hant'
-        ? 'TallCenter 根據家族身高預估成年身高範圍，協助記錄量測，並提供一般睡眠、營養與活動指引。適合 10–20 歲。'
+        ? 'TallCenter 根據家族身高預估成年身高範圍，比較世界各國的相對身高百分位，並協助建立健康習慣。適合 10–20 歲。'
         : lang === 'ja'
-          ? 'TallCenterは家族の身長から成人身長範囲を推定し、測定記録と睡眠・栄養・活動の一般的なガイダンスを提供します。10〜20歳向け。'
+          ? 'TallCenterは家族の身長から成人身長範囲を推定し、世界各国の相対身長パーセンタイルを比較し、健康習慣の形成を支えます。10〜20歳向け。'
           : originalDescription;
     }
     document.querySelectorAll('[data-lang-switch]').forEach((button) => {
