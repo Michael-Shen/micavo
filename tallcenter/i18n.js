@@ -307,6 +307,20 @@
         alt: 'TallCenter guided movement and posture routines'
       }
     ],
+    'zh-Hant': [
+      {
+        src: './assets/today_check_chinese.png',
+        alt: 'TallCenter 今日計畫、每日打卡、連續紀錄與健康任務'
+      },
+      {
+        src: './assets/today_myPlan_chinese.png',
+        alt: 'TallCenter 個人化成長計畫與活動、睡眠指引'
+      },
+      {
+        src: './assets/today_exercise_chinese.png',
+        alt: 'TallCenter 活動與姿勢引導課程'
+      }
+    ],
     ja: [
       {
         src: './assets/plan_today_ja.png',
