@@ -33,13 +33,14 @@
   }
 
   var CAMPAIGN = readCampaign();
+  var FIRST_TOUCH_KEY = 'micavo_first_touch_campaign_' + PRODUCT.toLowerCase().replace(/\s+/g, '_');
 
   // Keep first-touch values so later CTA events retain their original source.
   // GA4 also reads the UTM query parameters automatically.
   try {
-    var storedCampaign = window.localStorage.getItem('micavo_first_touch_campaign');
+    var storedCampaign = window.localStorage.getItem(FIRST_TOUCH_KEY);
     if (Object.keys(CAMPAIGN).length && !storedCampaign) {
-      window.localStorage.setItem('micavo_first_touch_campaign', JSON.stringify(CAMPAIGN));
+      window.localStorage.setItem(FIRST_TOUCH_KEY, JSON.stringify(CAMPAIGN));
     } else if (!Object.keys(CAMPAIGN).length && storedCampaign) {
       CAMPAIGN = JSON.parse(storedCampaign) || {};
     }
@@ -78,6 +79,13 @@
 
   if (PAGE_TYPE === 'product_landing') {
     trackEvent('landing_view');
+
+    if (CAMPAIGN.utm_source === 'share_card') {
+      trackEvent('share_card_landing', {
+        share_method: CAMPAIGN.utm_medium || 'unknown',
+        card_template: CAMPAIGN.utm_campaign || 'unknown'
+      });
+    }
   }
 
   // Generic CTA click tracking: any element with data-ga-event="..." gets
@@ -100,7 +108,19 @@
       params.link_text = (el.textContent || '').trim().replace(/\s+/g, ' ');
     }
 
-    trackEvent(el.getAttribute('data-ga-event'), params);
+    var eventName = el.getAttribute('data-ga-event');
+    trackEvent(eventName, params);
+
+    // GA4's recommended lead event makes the primary conversion available
+    // to standard acquisition reporting while retaining our detailed event.
+    if (eventName === 'waitlist_clicked') {
+      trackEvent('generate_lead', {
+        method: el.href && el.href.indexOf('mailto:') === 0 ? 'email' : 'website',
+        cta_location: params.cta_location || 'unknown',
+        link_url: params.link_url,
+        link_text: params.link_text
+      });
+    }
   });
 
   // Language switcher tracking. Supports data-lang-btn (Outshine),
@@ -114,4 +134,39 @@
     var lang = btn.getAttribute('data-lang-btn') || btn.getAttribute('data-lang-switch') || btn.getAttribute('data-lang');
     trackEvent('language_changed', { language: lang, cta_location: 'header' });
   });
+
+  // Measure whether visitors consume the page, without firing repeatedly as
+  // they move up and down. These thresholds are intentionally low-cardinality.
+  var sentDepths = {};
+  function trackScrollDepth() {
+    var root = document.documentElement;
+    var scrollable = root.scrollHeight - window.innerHeight;
+    if (scrollable <= 0) return;
+    var percent = Math.round((window.scrollY / scrollable) * 100);
+    [25, 50, 75, 90].forEach(function (depth) {
+      if (percent >= depth && !sentDepths[depth]) {
+        sentDepths[depth] = true;
+        trackEvent('scroll_depth', { percent_scrolled: depth });
+      }
+    });
+  }
+  window.addEventListener('scroll', trackScrollDepth, { passive: true });
+
+  // FAQ interest is a useful pre-launch intent signal and helps identify the
+  // concerns that prevent visitors from joining early access.
+  document.addEventListener('toggle', function (e) {
+    if (!e.target.matches || !e.target.matches('.faq-list details') || !e.target.open) return;
+    var summary = e.target.querySelector('summary');
+    trackEvent('faq_opened', {
+      faq_question: summary ? summary.textContent.trim().slice(0, 100) : 'unknown'
+    });
+  }, true);
+
+  // Distinguish a meaningful visit from an immediate bounce. The event only
+  // fires while the landing page is visible.
+  window.setTimeout(function () {
+    if (document.visibilityState === 'visible') {
+      trackEvent('engaged_10_seconds');
+    }
+  }, 10000);
 })();
