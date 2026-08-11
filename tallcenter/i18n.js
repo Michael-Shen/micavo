@@ -92,6 +92,20 @@
   const originalTitle = document.title;
   const metaDescription = document.querySelector('meta[name="description"]');
   const originalDescription = metaDescription ? metaDescription.content : '';
+  const localizedScreenshots = {
+    en: {
+      src: './assets/english.png',
+      alt: 'TallCenter adult height prediction share card'
+    },
+    'zh-Hant': {
+      src: './assets/chinese.png',
+      alt: 'TallCenter 成年身高預測分享卡'
+    },
+    ja: {
+      src: './assets/JP.png',
+      alt: 'TallCenter 成人身長予測シェアカード'
+    }
+  };
 
   function normalizedLanguage(value) {
     const lang = String(value || '').toLowerCase();
@@ -114,6 +128,11 @@
     });
     document.documentElement.lang = lang;
     document.documentElement.dataset.lang = lang;
+    const screenshot = localizedScreenshots[lang];
+    document.querySelectorAll('[data-localized-screenshot]').forEach((image) => {
+      image.src = screenshot.src;
+      image.alt = screenshot.alt;
+    });
     document.title = lang === 'en' ? originalTitle : (dictionary[originalTitle] || originalTitle);
     if (metaDescription) {
       metaDescription.content = lang === 'zh-Hant'
