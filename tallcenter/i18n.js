@@ -200,6 +200,36 @@
       alt: 'TallCenter 世界の成人身長比較パスポート'
     }
   };
+  const localizedFeatureScreenshots = {
+    en: [
+      {
+        src: './assets/plan_today.png',
+        alt: 'TallCenter daily plan showing check-ins, streaks, XP, and healthy routine tasks'
+      },
+      {
+        src: './assets/personalized_growth_plan.png',
+        alt: 'TallCenter personalized growth plan with movement and sleep guidance'
+      },
+      {
+        src: './assets/movement_posture.png',
+        alt: 'TallCenter guided movement and posture routines'
+      }
+    ],
+    ja: [
+      {
+        src: './assets/plan_today_ja.png',
+        alt: 'TallCenterの毎日プラン、チェックイン、連続記録、XP、健康習慣タスク'
+      },
+      {
+        src: './assets/personalized_growth_plan_ja.png',
+        alt: 'TallCenterの運動と睡眠ガイダンスを含む個人向け成長プラン'
+      },
+      {
+        src: './assets/movement_posture_ja.png',
+        alt: 'TallCenterのガイド付き運動と姿勢ルーティン'
+      }
+    ]
+  };
 
   function normalizedLanguage(value) {
     const lang = String(value || '').toLowerCase();
@@ -231,6 +261,13 @@
     document.querySelectorAll('[data-localized-compare]').forEach((image) => {
       image.src = compareScreenshot.src;
       image.alt = compareScreenshot.alt;
+    });
+    const featureScreenshots = localizedFeatureScreenshots[lang] || localizedFeatureScreenshots.en;
+    document.querySelectorAll('.story-grid .story-card img').forEach((image, index) => {
+      const featureScreenshot = featureScreenshots[index];
+      if (!featureScreenshot) return;
+      image.src = featureScreenshot.src;
+      image.alt = featureScreenshot.alt;
     });
     document.title = lang === 'en' ? originalTitle : (dictionary[originalTitle] || originalTitle);
     if (metaDescription) {
