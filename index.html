@@ -436,6 +436,73 @@
       padding: 130px 0;
     }
 
+    .section--products {
+      width: min(1240px, calc(100% - 28px));
+      margin-top: 84px;
+      padding: 96px 40px;
+      border: 1px solid rgba(130, 157, 255, 0.25);
+      border-radius: 42px;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(50, 120, 255, 0.52), transparent 31rem),
+        radial-gradient(circle at 96% 42%, rgba(126, 69, 255, 0.38), transparent 30rem),
+        linear-gradient(145deg, #07162f 0%, #0c2857 58%, #171348 100%);
+      box-shadow: 0 32px 80px rgba(18, 42, 91, 0.24);
+    }
+
+    .section--products .section-heading h2,
+    .section--products .section-heading p:not(.eyebrow) {
+      color: #ffffff;
+    }
+
+    .section--products .section-heading p:not(.eyebrow) {
+      color: rgba(224, 234, 255, 0.78);
+    }
+
+    .section--products .eyebrow {
+      color: #7fd7ff;
+    }
+
+    .section--products .product-card {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 22px 55px rgba(0, 7, 30, 0.28);
+    }
+
+    .section--approach {
+      width: min(1240px, calc(100% - 28px));
+      margin-top: 84px;
+      padding: 96px 40px;
+      border: 1px solid rgba(239, 180, 67, 0.28);
+      border-radius: 42px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(255, 132, 100, 0.25), transparent 26rem),
+        linear-gradient(135deg, #fff8df 0%, #ffece6 52%, #f0edff 100%);
+      box-shadow: 0 26px 70px rgba(121, 74, 39, 0.12);
+    }
+
+    .section--approach .eyebrow {
+      color: #d4512b;
+    }
+
+    .section--approach .principle-card:nth-child(1) {
+      background: linear-gradient(155deg, #fffdf5, #fff0b8);
+      border-color: rgba(224, 159, 25, 0.3);
+    }
+
+    .section--approach .principle-card:nth-child(2) {
+      background: linear-gradient(155deg, #fffafa, #ffdcd4);
+      border-color: rgba(229, 100, 74, 0.26);
+    }
+
+    .section--approach .principle-card:nth-child(3) {
+      background: linear-gradient(155deg, #fbfaff, #e4ddff);
+      border-color: rgba(111, 82, 218, 0.25);
+    }
+
+    .section--approach .principle-card:nth-child(1) span { color: #bd7b00; }
+    .section--approach .principle-card:nth-child(2) span { color: #d64e32; }
+    .section--approach .principle-card:nth-child(3) span { color: #6549cc; }
+
     .section-heading {
       max-width: 760px;
       margin-bottom: 48px;
@@ -464,7 +531,7 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
     }
 
@@ -626,8 +693,13 @@
     .follow-section {
       padding: 60px 0;
       text-align: center;
-      border-top: 1px solid rgba(133, 157, 196, 0.22);
-      border-bottom: 1px solid rgba(133, 157, 196, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 16% 0%, rgba(255, 255, 255, 0.26), transparent 18rem),
+        linear-gradient(110deg, #5246d7, #5b68ef 48%, #1f9fc2);
+      color: #ffffff;
+      box-shadow: 0 22px 55px rgba(50, 69, 173, 0.22);
     }
 
     .follow-section h2 {
@@ -649,6 +721,18 @@
       font-weight: 900;
       font-size: 16px;
       transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .follow-section .social-link {
+      border-color: rgba(255, 255, 255, 0.38);
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      backdrop-filter: blur(12px);
+    }
+
+    .follow-section .social-link:hover {
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 12px 28px rgba(18, 30, 102, 0.24);
     }
 
     .social-link:hover {
@@ -676,7 +760,15 @@
     }
 
     .founder-section {
-      padding: 60px 0 90px;
+      margin-top: 84px;
+      padding: 72px 50px;
+      border: 1px solid rgba(100, 216, 196, 0.22);
+      border-radius: 42px;
+      background:
+        radial-gradient(circle at 92% 20%, rgba(55, 214, 191, 0.25), transparent 25rem),
+        linear-gradient(135deg, #061c36, #10365a 58%, #123f4a);
+      color: #ffffff;
+      box-shadow: 0 28px 70px rgba(8, 35, 62, 0.22);
     }
 
     .founder-panel {
@@ -712,6 +804,28 @@
       color: var(--muted);
       font-size: 17px;
       font-weight: 700;
+    }
+
+    .founder-section .eyebrow,
+    .founder-section .founder-building-list li::before {
+      color: #53e3c0;
+    }
+
+    .founder-section .founder-role,
+    .founder-section .founder-content p,
+    .founder-section .founder-building-list {
+      color: rgba(222, 244, 245, 0.76);
+    }
+
+    .founder-section .founder-building-label,
+    .founder-section .founder-follow-label {
+      color: #ffffff;
+    }
+
+    .founder-section .social-link {
+      border-color: rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
     }
 
     .founder-content p {
@@ -847,6 +961,25 @@
 
       .section {
         padding: 62px 0;
+      }
+
+      .section--products,
+      .section--approach {
+        width: min(100% - 16px, 1240px);
+        padding: 54px 18px;
+        border-radius: 28px;
+      }
+
+      .follow-section {
+        width: min(100% - 28px, 1160px);
+        padding: 42px 18px;
+        border-radius: 26px;
+      }
+
+      .founder-section {
+        width: min(100% - 16px, 1160px);
+        padding: 48px 22px;
+        border-radius: 28px;
       }
 
       .section-heading h2 {
@@ -1024,7 +1157,7 @@
       </div>
     </section>
 
-    <section class="section" id="products" aria-labelledby="products-title">
+    <section class="section section--products" id="products" aria-labelledby="products-title">
       <div class="section-heading centered">
         <p class="eyebrow" data-i18n="products_section.eyebrow">Products</p>
         <h2 id="products-title" data-i18n="products_section.title">Built around real decision moments.</h2>
@@ -1126,7 +1259,7 @@
       </div>
     </section>
 
-    <section class="section" id="approach" aria-labelledby="approach-title">
+    <section class="section section--approach" id="approach" aria-labelledby="approach-title">
       <div class="section-heading">
         <p class="eyebrow" data-i18n="approach_section.eyebrow">Approach</p>
         <h2 id="approach-title" data-i18n="approach_section.title">Small products, serious product thinking.</h2>
