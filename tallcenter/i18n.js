@@ -172,33 +172,37 @@
 
   const howSection = document.querySelector('#how');
   if (howSection) {
-    howSection.insertAdjacentHTML('beforebegin', '<section class="section youth-voices soft" aria-labelledby="youth-voices-title"><div class="wrap"><div class="section-heading"><p class="eyebrow">Young perspectives</p><h2 id="youth-voices-title">Built around the questions young people actually ask.</h2><p>These composite scenarios show how TallCenter can fit into a young person\'s day. They are examples—not customer testimonials.</p></div><div class="voice-grid"><article class="voice-card"><div class="voice-avatar" aria-hidden="true">🌏</div><span class="scenario-label">Illustrative user scenario</span><blockquote>“I used to only wonder how tall I might be. Now I can see a range—and understand what that number actually means.”</blockquote><p>Student · 13–15 · Taiwan</p></article><article class="voice-card featured"><div class="voice-avatar" aria-hidden="true">🚀</div><span class="scenario-label">Illustrative user scenario</span><blockquote>“The country comparison is the first thing I’d send to my friends. The same height feels completely different around the world.”</blockquote><p>Student · 16–18 · Japan</p></article><article class="voice-card"><div class="voice-avatar" aria-hidden="true">🌱</div><span class="scenario-label">Illustrative user scenario</span><blockquote>“The daily plan turns sleep, food, and movement into small things I can actually finish today.”</blockquote><p>Student · 13–15 · Singapore</p></article></div></div></section>');
+    howSection.insertAdjacentHTML('beforebegin', '<section class="section youth-voices soft" aria-labelledby="youth-voices-title"><div class="wrap"><div class="section-heading"><p class="eyebrow">Young perspectives</p><h2 id="youth-voices-title">Built around the questions young people actually ask.</h2><p>Three ways TallCenter turns curiosity about height into something clear, social, and actionable.</p></div><div class="voice-grid"><article class="voice-card"><div class="voice-avatar" aria-hidden="true">🌏</div><span class="scenario-label">Understand my range</span><blockquote>“I used to only wonder how tall I might be. Now I can see a range—and understand what that number actually means.”</blockquote><p>See the estimate clearly</p></article><article class="voice-card featured"><div class="voice-avatar" aria-hidden="true">🚀</div><span class="scenario-label">Compare with friends</span><blockquote>“The country comparison is the first thing I’d send to my friends. The same height feels completely different around the world.”</blockquote><p>Make height comparison social</p></article><article class="voice-card"><div class="voice-avatar" aria-hidden="true">🌱</div><span class="scenario-label">Build today’s routine</span><blockquote>“The daily plan turns sleep, food, and movement into small things I can actually finish today.”</blockquote><p>Take one healthy step today</p></article></div></div></section>');
   }
 
   Object.assign(translations['zh-Hant'], {
     'Young perspectives': '年輕人的視角',
     'Built around the questions young people actually ask.': '從年輕人真正會問的問題出發。',
-    "These composite scenarios show how TallCenter can fit into a young person's day. They are examples—not customer testimonials.": '以下為綜合使用情境，呈現 TallCenter 如何融入年輕人的一天；內容是示意，不是真實顧客見證。',
-    'Illustrative user scenario': '示意使用情境',
+    'Three ways TallCenter turns curiosity about height into something clear, social, and actionable.': 'TallCenter 用三種方式，把對身高的好奇變得清楚、好玩，也更容易採取行動。',
+    'Understand my range': '看懂我的預測範圍',
     '“I used to only wonder how tall I might be. Now I can see a range—and understand what that number actually means.”': '「以前我只會一直猜自己能長多高。現在我能看到一個範圍，也更懂這個數字代表什麼。」',
-    'Student · 13–15 · Taiwan': '學生 · 13–15 歲 · 台灣',
+    'See the estimate clearly': '清楚理解預測結果',
+    'Compare with friends': '和朋友一起比較',
     '“The country comparison is the first thing I’d send to my friends. The same height feels completely different around the world.”': '「世界各國比較是我第一個想傳給朋友看的功能。同一個身高，換個國家感覺完全不一樣。」',
-    'Student · 16–18 · Japan': '學生 · 16–18 歲 · 日本',
+    'Make height comparison social': '讓身高比較變得更有趣',
+    'Build today’s routine': '完成今天的小計畫',
     '“The daily plan turns sleep, food, and movement into small things I can actually finish today.”': '「每日計畫把睡眠、飲食和活動變成今天真的做得完的小任務。」',
-    'Student · 13–15 · Singapore': '學生 · 13–15 歲 · 新加坡'
+    'Take one healthy step today': '今天完成一個健康行動'
   });
 
   Object.assign(translations.ja, {
     'Young perspectives': '若い世代の視点',
     'Built around the questions young people actually ask.': '若い人が本当に抱く疑問から設計。',
-    "These composite scenarios show how TallCenter can fit into a young person's day. They are examples—not customer testimonials.": '以下はTallCenterが日常にどう役立つかを示す複合的な利用例です。実際のお客様の声ではありません。',
-    'Illustrative user scenario': '利用イメージ',
+    'Three ways TallCenter turns curiosity about height into something clear, social, and actionable.': '身長への好奇心を、わかりやすく、友達と楽しめて、行動につながる3つの体験へ。',
+    'Understand my range': '予測範囲を理解',
     '“I used to only wonder how tall I might be. Now I can see a range—and understand what that number actually means.”': '「前は将来の身長を想像するだけでした。今は範囲を見て、その数字の意味も理解できます。」',
-    'Student · 13–15 · Taiwan': '学生 · 13〜15歳 · 台湾',
+    'See the estimate clearly': '予測結果をわかりやすく確認',
+    'Compare with friends': '友達と比較',
     '“The country comparison is the first thing I’d send to my friends. The same height feels completely different around the world.”': '「国別比較は最初に友達へ送りたい機能。同じ身長でも国が変わると印象が全然違います。」',
-    'Student · 16–18 · Japan': '学生 · 16〜18歳 · 日本',
+    'Make height comparison social': '身長比較をもっと楽しく',
+    'Build today’s routine': '今日の習慣をつくる',
     '“The daily plan turns sleep, food, and movement into small things I can actually finish today.”': '「毎日のプランなら、睡眠・食事・運動が今日できる小さな行動になります。」',
-    'Student · 13–15 · Singapore': '学生 · 13〜15歳 · シンガポール'
+    'Take one healthy step today': '今日できる健康行動をひとつ'
   });
 
   const textNodes = [];
