@@ -172,7 +172,7 @@
 
   const howSection = document.querySelector('#how');
   if (howSection) {
-    howSection.insertAdjacentHTML('beforebegin', '<section class="section youth-voices soft" aria-labelledby="youth-voices-title"><div class="wrap"><div class="section-heading"><p class="eyebrow">Young perspectives</p><h2 id="youth-voices-title">Built around the questions young people actually ask.</h2><p>These composite scenarios show how TallCenter can fit into a young person\'s day. They are examples—not customer testimonials.</p></div><div class="voice-grid"><article class="voice-card"><div class="voice-avatar" aria-hidden="true">🌏</div><span class="scenario-label">Illustrative user scenario</span><blockquote>“I used to only wonder how tall I might be. Now I can see a range—and understand what that number actually means.”</blockquote><p>Student · 13–15 · Taiwan</p></article><article class="voice-card featured"><div class="voice-avatar" aria-hidden="true">🚀</div><span class="scenario-label">Illustrative user scenario</span><blockquote>“The country comparison is the first thing I’d send to my friends. The same height feels completely different around the world.”</blockquote><p>Student · 16–18 · Japan</p></article><article class="voice-card"><div class="voice-avatar" aria-hidden="true">🌱</div><span class="scenario-label">Illustrative user scenario</span><blockquote>“The daily plan turns sleep, food, and movement into small things I can actually finish today.”</blockquote><p>Student · 13–15 · Singapore</p></article></div><p class="voice-note">Have real beta feedback? These cards can be replaced with verified quotes and optional photos later.</p></div></section>');
+    howSection.insertAdjacentHTML('beforebegin', '<section class="section youth-voices soft" aria-labelledby="youth-voices-title"><div class="wrap"><div class="section-heading"><p class="eyebrow">Young perspectives</p><h2 id="youth-voices-title">Built around the questions young people actually ask.</h2><p>These composite scenarios show how TallCenter can fit into a young person\'s day. They are examples—not customer testimonials.</p></div><div class="voice-grid"><article class="voice-card"><div class="voice-avatar" aria-hidden="true">🌏</div><span class="scenario-label">Illustrative user scenario</span><blockquote>“I used to only wonder how tall I might be. Now I can see a range—and understand what that number actually means.”</blockquote><p>Student · 13–15 · Taiwan</p></article><article class="voice-card featured"><div class="voice-avatar" aria-hidden="true">🚀</div><span class="scenario-label">Illustrative user scenario</span><blockquote>“The country comparison is the first thing I’d send to my friends. The same height feels completely different around the world.”</blockquote><p>Student · 16–18 · Japan</p></article><article class="voice-card"><div class="voice-avatar" aria-hidden="true">🌱</div><span class="scenario-label">Illustrative user scenario</span><blockquote>“The daily plan turns sleep, food, and movement into small things I can actually finish today.”</blockquote><p>Student · 13–15 · Singapore</p></article></div></div></section>');
   }
 
   Object.assign(translations['zh-Hant'], {
@@ -185,8 +185,7 @@
     '“The country comparison is the first thing I’d send to my friends. The same height feels completely different around the world.”': '「世界各國比較是我第一個想傳給朋友看的功能。同一個身高，換個國家感覺完全不一樣。」',
     'Student · 16–18 · Japan': '學生 · 16–18 歲 · 日本',
     '“The daily plan turns sleep, food, and movement into small things I can actually finish today.”': '「每日計畫把睡眠、飲食和活動變成今天真的做得完的小任務。」',
-    'Student · 13–15 · Singapore': '學生 · 13–15 歲 · 新加坡',
-    'Have real beta feedback? These cards can be replaced with verified quotes and optional photos later.': '取得真實 Beta 回饋後，可將這些卡片替換成經確認的引言與自願提供的照片。'
+    'Student · 13–15 · Singapore': '學生 · 13–15 歲 · 新加坡'
   });
 
   Object.assign(translations.ja, {
@@ -199,8 +198,7 @@
     '“The country comparison is the first thing I’d send to my friends. The same height feels completely different around the world.”': '「国別比較は最初に友達へ送りたい機能。同じ身長でも国が変わると印象が全然違います。」',
     'Student · 16–18 · Japan': '学生 · 16〜18歳 · 日本',
     '“The daily plan turns sleep, food, and movement into small things I can actually finish today.”': '「毎日のプランなら、睡眠・食事・運動が今日できる小さな行動になります。」',
-    'Student · 13–15 · Singapore': '学生 · 13〜15歳 · シンガポール',
-    'Have real beta feedback? These cards can be replaced with verified quotes and optional photos later.': '実際のベータ版フィードバックが集まったら、確認済みのコメントや任意の写真に置き換えられます。'
+    'Student · 13–15 · Singapore': '学生 · 13〜15歳 · シンガポール'
   });
 
   const textNodes = [];
