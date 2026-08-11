@@ -447,6 +447,7 @@
         radial-gradient(circle at 96% 42%, rgba(126, 69, 255, 0.38), transparent 30rem),
         linear-gradient(145deg, #07162f 0%, #0c2857 58%, #171348 100%);
       box-shadow: 0 32px 80px rgba(18, 42, 91, 0.24);
+      scroll-margin-top: 96px;
     }
 
     .section--products .section-heading h2,
@@ -530,9 +531,55 @@
     }
 
     .product-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      display: flex;
       gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      overscroll-behavior-inline: contain;
+    }
+
+    .product-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product-carousel {
+      position: relative;
+    }
+
+    .product-grid .product-card {
+      flex: 0 0 calc((100% - 40px) / 3);
+      scroll-snap-align: start;
+    }
+
+    .product-carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 26px;
+    }
+
+    .product-carousel-dot {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: width 160ms ease, background 160ms ease;
+    }
+
+    .product-carousel-dot.is-active {
+      width: 24px;
+      background: #7fd7ff;
+    }
+
+    .product-carousel .carousel-arrow:disabled {
+      opacity: 0.35;
+      cursor: default;
+      box-shadow: none;
     }
 
     .product-card,
@@ -909,6 +956,10 @@
       .principles-grid {
         grid-template-columns: 1fr;
       }
+
+      .product-grid .product-card {
+        flex-basis: calc((100% - 20px) / 2);
+      }
     }
 
     @media (max-width: 700px) {
@@ -940,6 +991,10 @@
 
       .carousel-arrow.next {
         right: 6px;
+      }
+
+      .product-grid .product-card {
+        flex-basis: 100%;
       }
 
       h1 {
@@ -1047,7 +1102,7 @@
         </div>
       </div>
 
-      <div class="hero-board" id="products" aria-label="Micavo product preview">
+      <div class="hero-board" aria-label="Micavo product preview">
         <div class="carousel-track">
           <article class="product-preview featured carousel-slide is-active">
             <div class="preview-image">
@@ -1153,7 +1208,7 @@
       </div>
     </section>
 
-    <section class="section section--products" id="product-details" aria-labelledby="products-title">
+    <section class="section section--products" id="products" aria-labelledby="products-title">
       <div class="section-heading centered">
         <p class="eyebrow" data-i18n="products_section.eyebrow">Products</p>
         <h2 id="products-title" data-i18n="products_section.title">Built around real decision moments.</h2>
@@ -1162,7 +1217,8 @@
         </p>
       </div>
 
-      <div class="product-grid">
+      <div class="product-carousel" aria-roledescription="carousel" aria-label="Micavo products">
+        <div class="product-grid">
         <article class="product-card">
           <div class="product-media tallcenter-shot">
             <img data-tallcenter-share-card src="/tallcenter/assets/english.png" alt="TallCenter share card showing a predicted adult height" />
@@ -1252,6 +1308,14 @@
             </div>
           </div>
         </article>
+        </div>
+        <button type="button" class="carousel-arrow prev product-carousel-prev" aria-label="Previous products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="carousel-arrow next product-carousel-next" aria-label="Next products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+        <div class="product-carousel-dots" role="tablist" aria-label="Choose product page"></div>
       </div>
     </section>
 
@@ -1383,6 +1447,92 @@
 
       if (prevBtn) prevBtn.addEventListener('click', function () { show(current - 1); });
       if (nextBtn) nextBtn.addEventListener('click', function () { show(current + 1); });
+    })();
+
+    (function () {
+      var carousel = document.querySelector('.product-carousel');
+      if (!carousel) return;
+
+      var track = carousel.querySelector('.product-grid');
+      var cards = Array.prototype.slice.call(track.querySelectorAll('.product-card'));
+      var prevBtn = carousel.querySelector('.product-carousel-prev');
+      var nextBtn = carousel.querySelector('.product-carousel-next');
+      var dotsWrap = carousel.querySelector('.product-carousel-dots');
+      var current = 0;
+      var maxStart = 0;
+      var scrollTimer;
+
+      function cardsPerView() {
+        if (window.innerWidth <= 700) return 1;
+        if (window.innerWidth <= 980) return 2;
+        return 3;
+      }
+
+      function renderDots() {
+        maxStart = Math.max(0, cards.length - cardsPerView());
+        current = Math.min(current, maxStart);
+        dotsWrap.innerHTML = '';
+        for (var i = 0; i <= maxStart; i += 1) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'product-carousel-dot' + (i === current ? ' is-active' : '');
+          dot.setAttribute('role', 'tab');
+          dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
+          dot.setAttribute('aria-label', 'Show product ' + (i + 1));
+          (function (index) {
+            dot.addEventListener('click', function () { show(index); });
+          })(i);
+          dotsWrap.appendChild(dot);
+        }
+        updateControls();
+      }
+
+      function updateControls() {
+        var dots = dotsWrap.querySelectorAll('.product-carousel-dot');
+        Array.prototype.forEach.call(dots, function (dot, index) {
+          var active = index === current;
+          dot.classList.toggle('is-active', active);
+          dot.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        prevBtn.disabled = current <= 0;
+        nextBtn.disabled = current >= maxStart;
+      }
+
+      function show(index) {
+        current = Math.max(0, Math.min(index, maxStart));
+        track.scrollTo({ left: cards[current].offsetLeft, behavior: 'smooth' });
+        updateControls();
+      }
+
+      prevBtn.addEventListener('click', function () { show(current - 1); });
+      nextBtn.addEventListener('click', function () { show(current + 1); });
+
+      track.addEventListener('scroll', function () {
+        window.clearTimeout(scrollTimer);
+        scrollTimer = window.setTimeout(function () {
+          var nearest = 0;
+          var distance = Infinity;
+          cards.forEach(function (card, index) {
+            var nextDistance = Math.abs(card.offsetLeft - track.scrollLeft);
+            if (nextDistance < distance) {
+              nearest = index;
+              distance = nextDistance;
+            }
+          });
+          current = Math.min(nearest, maxStart);
+          updateControls();
+        }, 80);
+      }, { passive: true });
+
+      window.addEventListener('resize', function () {
+        window.clearTimeout(scrollTimer);
+        scrollTimer = window.setTimeout(function () {
+          renderDots();
+          track.scrollTo({ left: cards[current].offsetLeft, behavior: 'auto' });
+        }, 120);
+      });
+
+      renderDots();
     })();
   </script>
   <script src="/assets/js/i18n.js"></script>
