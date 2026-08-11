@@ -184,6 +184,39 @@
   const originalTitle = document.title;
   const metaDescription = document.querySelector('meta[name="description"]');
   const originalDescription = metaDescription ? metaDescription.content : '';
+  const storyGrid = document.querySelector('.story-grid');
+  let carouselPreviousButton = null;
+  let carouselNextButton = null;
+
+  if (storyGrid) {
+    const controls = document.createElement('div');
+    controls.className = 'carousel-controls';
+    controls.innerHTML = '<button type="button" class="carousel-arrow previous" aria-label="Previous feature">←</button><button type="button" class="carousel-arrow next" aria-label="Next feature">→</button>';
+    storyGrid.parentNode.insertBefore(controls, storyGrid);
+    carouselPreviousButton = controls.querySelector('.previous');
+    carouselNextButton = controls.querySelector('.next');
+
+    const updateCarouselButtons = () => {
+      const maxScroll = Math.max(0, storyGrid.scrollWidth - storyGrid.clientWidth);
+      carouselPreviousButton.disabled = storyGrid.scrollLeft <= 2;
+      carouselNextButton.disabled = storyGrid.scrollLeft >= maxScroll - 2;
+    };
+    const moveCarousel = (direction) => {
+      const firstCard = storyGrid.querySelector('.story-card');
+      if (!firstCard) return;
+      const gap = parseFloat(getComputedStyle(storyGrid).columnGap) || 0;
+      storyGrid.scrollBy({
+        left: direction * (firstCard.getBoundingClientRect().width + gap),
+        behavior: 'smooth'
+      });
+    };
+
+    carouselPreviousButton.addEventListener('click', () => moveCarousel(-1));
+    carouselNextButton.addEventListener('click', () => moveCarousel(1));
+    storyGrid.addEventListener('scroll', updateCarouselButtons, { passive: true });
+    window.addEventListener('resize', updateCarouselButtons, { passive: true });
+    requestAnimationFrame(updateCarouselButtons);
+  }
   const localizedScreenshots = {
     en: {
       src: './assets/english.png',
@@ -294,6 +327,14 @@
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-pressed', String(active));
     });
+    if (carouselPreviousButton && carouselNextButton) {
+      const previousLabel = lang === 'zh-Hant' ? '上一個功能' : lang === 'ja' ? '前の機能' : 'Previous feature';
+      const nextLabel = lang === 'zh-Hant' ? '下一個功能' : lang === 'ja' ? '次の機能' : 'Next feature';
+      carouselPreviousButton.setAttribute('aria-label', previousLabel);
+      carouselPreviousButton.title = previousLabel;
+      carouselNextButton.setAttribute('aria-label', nextLabel);
+      carouselNextButton.title = nextLabel;
+    }
     localStorage.setItem('tallcenter-language', lang);
     if (updateUrl) {
       const url = new URL(window.location.href);
