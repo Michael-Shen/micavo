@@ -187,35 +187,82 @@
   const storyGrid = document.querySelector('.story-grid');
   let carouselPreviousButton = null;
   let carouselNextButton = null;
+  let carouselIndicators = [];
+  let currentCarouselLanguage = 'en';
 
   if (storyGrid) {
+    const shell = document.createElement('div');
+    shell.className = 'feature-carousel';
+    storyGrid.parentNode.insertBefore(shell, storyGrid);
+    shell.appendChild(storyGrid);
+
     const controls = document.createElement('div');
     controls.className = 'carousel-controls';
     controls.innerHTML = '<button type="button" class="carousel-arrow previous" aria-label="Previous feature">←</button><button type="button" class="carousel-arrow next" aria-label="Next feature">→</button>';
-    storyGrid.parentNode.insertBefore(controls, storyGrid);
+    shell.appendChild(controls);
     carouselPreviousButton = controls.querySelector('.previous');
     carouselNextButton = controls.querySelector('.next');
 
-    const updateCarouselButtons = () => {
-      const maxScroll = Math.max(0, storyGrid.scrollWidth - storyGrid.clientWidth);
-      carouselPreviousButton.disabled = storyGrid.scrollLeft <= 2;
-      carouselNextButton.disabled = storyGrid.scrollLeft >= maxScroll - 2;
-    };
-    const moveCarousel = (direction) => {
-      const firstCard = storyGrid.querySelector('.story-card');
-      if (!firstCard) return;
+    const cards = Array.from(storyGrid.querySelectorAll('.story-card'));
+    const indicators = document.createElement('div');
+    indicators.className = 'carousel-indicators';
+    shell.appendChild(indicators);
+
+    const cardStride = () => {
+      const firstCard = cards[0];
+      if (!firstCard) return storyGrid.clientWidth || 1;
       const gap = parseFloat(getComputedStyle(storyGrid).columnGap) || 0;
-      storyGrid.scrollBy({
-        left: direction * (firstCard.getBoundingClientRect().width + gap),
-        behavior: 'smooth'
+      return firstCard.getBoundingClientRect().width + gap;
+    };
+    const visibleCardCount = () => Math.max(1, Math.round(storyGrid.clientWidth / cardStride()));
+    const carouselPositionCount = () => Math.max(1, cards.length - visibleCardCount() + 1);
+    const activeSlideIndex = () => {
+      const maxIndex = carouselPositionCount() - 1;
+      return Math.max(0, Math.min(maxIndex, Math.round(storyGrid.scrollLeft / cardStride())));
+    };
+    const indicatorLabel = (index) => {
+      if (currentCarouselLanguage === 'zh-Hant') return `第 ${index + 1} 頁`;
+      if (currentCarouselLanguage === 'ja') return `スライド ${index + 1}`;
+      return `Slide ${index + 1}`;
+    };
+    const rebuildIndicators = () => {
+      const count = carouselPositionCount();
+      if (carouselIndicators.length === count) return;
+      indicators.replaceChildren();
+      carouselIndicators = Array.from({ length: count }, (_, index) => {
+        const indicator = document.createElement('button');
+        indicator.type = 'button';
+        indicator.setAttribute('aria-label', indicatorLabel(index));
+        indicator.addEventListener('click', () => goToSlide(index));
+        indicators.appendChild(indicator);
+        return indicator;
       });
     };
+    const updateCarouselState = () => {
+      rebuildIndicators();
+      const activeIndex = activeSlideIndex();
+      carouselIndicators.forEach((indicator, index) => {
+        const active = index === activeIndex;
+        indicator.classList.toggle('active', active);
+        if (active) indicator.setAttribute('aria-current', 'true');
+        else indicator.removeAttribute('aria-current');
+      });
+    };
+    function goToSlide(index) {
+      const count = carouselPositionCount();
+      const normalizedIndex = (index + count) % count;
+      storyGrid.scrollTo({
+        left: normalizedIndex * cardStride(),
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+      });
+    }
+    const moveCarousel = (direction) => goToSlide(activeSlideIndex() + direction);
 
     carouselPreviousButton.addEventListener('click', () => moveCarousel(-1));
     carouselNextButton.addEventListener('click', () => moveCarousel(1));
-    storyGrid.addEventListener('scroll', updateCarouselButtons, { passive: true });
-    window.addEventListener('resize', updateCarouselButtons, { passive: true });
-    requestAnimationFrame(updateCarouselButtons);
+    storyGrid.addEventListener('scroll', updateCarouselState, { passive: true });
+    window.addEventListener('resize', () => requestAnimationFrame(updateCarouselState), { passive: true });
+    requestAnimationFrame(updateCarouselState);
   }
   const localizedScreenshots = {
     en: {
@@ -328,12 +375,20 @@
       button.setAttribute('aria-pressed', String(active));
     });
     if (carouselPreviousButton && carouselNextButton) {
+      currentCarouselLanguage = lang;
       const previousLabel = lang === 'zh-Hant' ? '上一個功能' : lang === 'ja' ? '前の機能' : 'Previous feature';
       const nextLabel = lang === 'zh-Hant' ? '下一個功能' : lang === 'ja' ? '次の機能' : 'Next feature';
       carouselPreviousButton.setAttribute('aria-label', previousLabel);
       carouselPreviousButton.title = previousLabel;
       carouselNextButton.setAttribute('aria-label', nextLabel);
       carouselNextButton.title = nextLabel;
+      carouselIndicators.forEach((indicator, index) => {
+        indicator.setAttribute('aria-label', lang === 'zh-Hant'
+          ? `第 ${index + 1} 頁`
+          : lang === 'ja'
+            ? `スライド ${index + 1}`
+            : `Slide ${index + 1}`);
+      });
     }
     localStorage.setItem('tallcenter-language', lang);
     if (updateUrl) {
