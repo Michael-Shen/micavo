@@ -79,6 +79,12 @@
   };
 
   Object.assign(translations['zh-Hant'], {
+    '01 · Predict': '01 · 預測',
+    'See your estimated adult height.': '查看你的預估成年身高。',
+    'Start with a clear family-height estimate, then turn your result into a polished card that is easy to understand and share.': '先查看清楚的家族身高預估，再把結果製作成容易理解與分享的精美卡片。',
+    '02 · Check in': '02 · 每日打卡',
+    '03 · Follow your plan': '03 · 跟著你的計畫',
+    '04 · Move well': '04 · 好好活動',
     '01 · Check in': '01 · 每日打卡',
     'Make today’s healthy actions obvious.': '讓今天的健康行動一目了然。',
     'Turn sleep, nutrition, and movement guidance into small daily tasks, then build momentum with streaks and XP.': '把睡眠、營養與活動指引轉化成每日小任務，再用連續紀錄與 XP 累積動力。',
@@ -119,6 +125,12 @@
   });
 
   Object.assign(translations.ja, {
+    '01 · Predict': '01 · 予測',
+    'See your estimated adult height.': '推定成人身長を確認。',
+    'Start with a clear family-height estimate, then turn your result into a polished card that is easy to understand and share.': 'わかりやすい家族身長の推定から始め、結果を理解しやすくシェアしやすい美しいカードにします。',
+    '02 · Check in': '02 · 毎日のチェック',
+    '03 · Follow your plan': '03 · プランを実行',
+    '04 · Move well': '04 · 健やかに動く',
     '01 · Check in': '01 · 毎日のチェック',
     'Make today’s healthy actions obvious.': '今日の健康行動をわかりやすく。',
     'Turn sleep, nutrition, and movement guidance into small daily tasks, then build momentum with streaks and XP.': '睡眠・栄養・活動のガイダンスを毎日の小さなタスクにし、連続記録とXPで継続の弾みをつけます。',
@@ -263,7 +275,7 @@
       image.alt = compareScreenshot.alt;
     });
     const featureScreenshots = localizedFeatureScreenshots[lang] || localizedFeatureScreenshots.en;
-    document.querySelectorAll('.story-grid .story-card img').forEach((image, index) => {
+    document.querySelectorAll('.story-grid .story-card img:not([data-localized-screenshot])').forEach((image, index) => {
       const featureScreenshot = featureScreenshots[index];
       if (!featureScreenshot) return;
       image.src = featureScreenshot.src;
