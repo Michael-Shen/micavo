@@ -121,7 +121,10 @@
     'Straight answers about what TallCenter estimates, how country comparisons work, and what healthy routines can realistically do.': '清楚說明 TallCenter 會預估什麼、各國比較如何運作，以及健康習慣實際能做到什麼。',
     'What does my worldwide height rank mean?': '我的世界各地身高排名代表什麼？',
     'TallCenter compares your predicted adult height with published country-level reference distributions and estimates the percentage of people you may be taller than. It is an educational statistical comparison—not a census, live leaderboard, health score, or guarantee.': 'TallCenter 將你的預測成年身高與公開的各國參考分布比較，估算你可能高過多少比例的人。這是教育用途的統計比較，不是人口普查、即時排行榜、健康分數或保證。',
-    'You can compare your predicted adult height across countries, record height measurements, complete daily routine check-ins, follow activity routines, review summaries, enable reminders, and create shareable Height Passport cards. TallCenter also provides general nutrition guidance; it does not record meals or nutrient intake.': '你可以比較預測成年身高在不同國家的相對位置、記錄身高量測、完成每日習慣、跟著活動流程、查看摘要、設定提醒，並建立可分享的身高國際護照。TallCenter 也提供一般營養指引，但不會記錄餐點或營養素攝取。'
+    'You can compare your predicted adult height across countries, record height measurements, complete daily routine check-ins, follow activity routines, review summaries, enable reminders, and create shareable Height Passport cards. TallCenter also provides general nutrition guidance; it does not record meals or nutrient intake.': '你可以比較預測成年身高在不同國家的相對位置、記錄身高量測、完成每日習慣、跟著活動流程、查看摘要、設定提醒，並建立可分享的身高國際護照。TallCenter 也提供一般營養指引，但不會記錄餐點或營養素攝取。',
+    '05 · World Height Map': '05 · 世界身高地圖',
+    'See where your height stands worldwide.': '看看你的身高在世界各地位於什麼位置。',
+    'Compare your predicted adult height across countries and discover where you may rank tallest.': '比較你的預測成年身高在不同國家的相對位置，看看你在哪裡可能排名最高。'
   });
 
   Object.assign(translations.ja, {
@@ -167,7 +170,10 @@
     'Straight answers about what TallCenter estimates, how country comparisons work, and what healthy routines can realistically do.': 'TallCenterが何を推定し、国別比較がどう機能し、健康習慣に現実的に何ができるかを明確に説明します。',
     'What does my worldwide height rank mean?': '世界での身長ランクは何を意味しますか？',
     'TallCenter compares your predicted adult height with published country-level reference distributions and estimates the percentage of people you may be taller than. It is an educational statistical comparison—not a census, live leaderboard, health score, or guarantee.': 'TallCenterは予測成人身長を公開された国別参考分布と比較し、何％の人より高い可能性があるかを推定します。教育目的の統計比較であり、国勢調査、リアルタイムランキング、健康スコア、保証ではありません。',
-    'You can compare your predicted adult height across countries, record height measurements, complete daily routine check-ins, follow activity routines, review summaries, enable reminders, and create shareable Height Passport cards. TallCenter also provides general nutrition guidance; it does not record meals or nutrient intake.': '予測成人身長の国別比較、身長測定の記録、毎日の習慣チェック、活動ルーティン、サマリー、リマインダー、シェアできるハイトパスポートを利用できます。一般的な栄養ガイダンスも提供しますが、食事や栄養摂取量は記録しません。'
+    'You can compare your predicted adult height across countries, record height measurements, complete daily routine check-ins, follow activity routines, review summaries, enable reminders, and create shareable Height Passport cards. TallCenter also provides general nutrition guidance; it does not record meals or nutrient intake.': '予測成人身長の国別比較、身長測定の記録、毎日の習慣チェック、活動ルーティン、サマリー、リマインダー、シェアできるハイトパスポートを利用できます。一般的な栄養ガイダンスも提供しますが、食事や栄養摂取量は記録しません。',
+    '05 · World Height Map': '05 · 世界身長マップ',
+    'See where your height stands worldwide.': '世界で自分の身長がどの位置にあるか確認。',
+    'Compare your predicted adult height across countries and discover where you may rank tallest.': '予測成人身長を国ごとに比較し、どこで最も高くランクされるか見てみましょう。'
   });
 
   const howSection = document.querySelector('#how');
@@ -224,6 +230,7 @@
   let carouselNextButton = null;
   let carouselIndicators = [];
   let currentCarouselLanguage = 'en';
+  let updateCarouselState = () => {};
 
   if (storyGrid) {
     const shell = document.createElement('div');
@@ -250,7 +257,8 @@
       return firstCard.getBoundingClientRect().width + gap;
     };
     const visibleCardCount = () => Math.max(1, Math.round(storyGrid.clientWidth / cardStride()));
-    const carouselPositionCount = () => Math.max(1, cards.length - visibleCardCount() + 1);
+    const visibleCards = () => cards.filter((card) => getComputedStyle(card).display !== 'none');
+    const carouselPositionCount = () => Math.max(1, visibleCards().length - visibleCardCount() + 1);
     const activeSlideIndex = () => {
       const maxIndex = carouselPositionCount() - 1;
       return Math.max(0, Math.min(maxIndex, Math.round(storyGrid.scrollLeft / cardStride())));
@@ -273,7 +281,7 @@
         return indicator;
       });
     };
-    const updateCarouselState = () => {
+    updateCarouselState = () => {
       rebuildIndicators();
       const activeIndex = activeSlideIndex();
       carouselIndicators.forEach((indicator, index) => {
@@ -301,8 +309,10 @@
   }
   const localizedScreenshots = {
     en: {
-      src: './assets/english.png',
-      alt: 'TallCenter adult height prediction share card'
+      src: './assets/english_inch.png',
+      alt: 'TallCenter adult height prediction share card in feet and inches',
+      featureSrc: './assets/english_inch.png',
+      featureAlt: 'TallCenter adult height prediction share card in feet and inches'
     },
     'zh-Hant': {
       src: './assets/chinese.png',
@@ -330,15 +340,15 @@
   const localizedFeatureScreenshots = {
     en: [
       {
-        src: './assets/plan_today.png',
+        src: './assets/plan_today_en.png',
         alt: 'TallCenter daily plan showing check-ins, streaks, XP, and healthy routine tasks'
       },
       {
-        src: './assets/personalized_growth_plan.png',
+        src: './assets/personalized_growth_plan_en.png',
         alt: 'TallCenter personalized growth plan with movement and sleep guidance'
       },
       {
-        src: './assets/movement_posture.png',
+        src: './assets/movement_posture_en.png',
         alt: 'TallCenter guided movement and posture routines'
       }
     ],
@@ -395,8 +405,9 @@
     document.documentElement.dataset.lang = lang;
     const screenshot = localizedScreenshots[lang];
     document.querySelectorAll('[data-localized-screenshot]').forEach((image) => {
-      image.src = screenshot.src;
-      image.alt = screenshot.alt;
+      const isFeature = image.dataset.localizedScreenshot === 'feature';
+      image.src = isFeature && screenshot.featureSrc ? screenshot.featureSrc : screenshot.src;
+      image.alt = isFeature && screenshot.featureAlt ? screenshot.featureAlt : screenshot.alt;
     });
     const compareScreenshot = localizedCompareScreenshots[lang];
     document.querySelectorAll('[data-localized-compare]').forEach((image) => {
@@ -404,7 +415,7 @@
       image.alt = compareScreenshot.alt;
     });
     const featureScreenshots = localizedFeatureScreenshots[lang] || localizedFeatureScreenshots.en;
-    document.querySelectorAll('.story-grid .story-card img:not([data-localized-screenshot])').forEach((image, index) => {
+    document.querySelectorAll('.story-grid .story-card:not([data-world-height-map]) img:not([data-localized-screenshot])').forEach((image, index) => {
       const featureScreenshot = featureScreenshots[index];
       if (!featureScreenshot) return;
       image.src = featureScreenshot.src;
@@ -440,6 +451,7 @@
       });
     }
     localStorage.setItem('tallcenter-language', lang);
+    requestAnimationFrame(updateCarouselState);
     if (updateUrl) {
       const url = new URL(window.location.href);
       if (lang === 'en') url.searchParams.delete('lang');
