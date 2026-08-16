@@ -1,0 +1,287 @@
+(function () {
+  'use strict';
+
+  var CONFIG = {
+    // Paste the deployed Google Apps Script Web App /exec URL here.
+    appsScriptUrl: 'https://script.google.com/macros/s/AKfycbwx7hhQdxgAVL-W4Lk_zdq1DXEvz4HPTosSVOYNEtCp7EBAPrdTMvJRVecqQgw9zOKnvA/exec',
+    pollId: 'w1_ai_control',
+    consentVersion: 'lab_opt_in_v1_2026-08-16'
+  };
+
+  var OPTION_LABELS = {
+    A: 'AI 控制我所有非必要消費 24 小時',
+    B: '免費 AI vs 最貴 AI，到底差在哪？',
+    C: 'AI 幫我安排明天的所有行程',
+    D: 'AI 幫我用 NT$1000 過完台北一天'
+  };
+
+  var STORAGE_PREFIX = 'micavo_lab_' + CONFIG.pollId + '_';
+  var selectedOption = '';
+  var voteId = localStorageSafeGet(STORAGE_PREFIX + 'vote_id') || '';
+  var votedOption = localStorageSafeGet(STORAGE_PREFIX + 'option') || '';
+  var sessionId = getOrCreateId('micavo_lab_session_id', 'session');
+  var campaign = readCampaign();
+
+  var options = Array.prototype.slice.call(document.querySelectorAll('.poll-card'));
+  var openConfirmButton = document.getElementById('open-confirm');
+  var submitVoteButton = document.getElementById('submit-vote');
+  var modal = document.getElementById('confirm-modal');
+  var modalTitle = document.getElementById('modal-title');
+  var modalLetter = document.getElementById('modal-letter');
+  var modalStatus = document.getElementById('modal-status');
+  var voteStatus = document.getElementById('vote-status');
+  var emailSection = document.getElementById('email');
+  var emailForm = document.getElementById('email-form');
+  var emailStatus = document.getElementById('email-status');
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+  track('lab_page_view');
+
+  if (votedOption && OPTION_LABELS[votedOption]) {
+    selectedOption = votedOption;
+    markSelected(votedOption);
+    lockPoll();
+    revealPostVote();
+    loadResults();
+  }
+
+  options.forEach(function (card) {
+    card.addEventListener('click', function () {
+      if (votedOption) return;
+      selectedOption = card.getAttribute('data-option');
+      markSelected(selectedOption);
+      openConfirmButton.disabled = false;
+      setStatus(voteStatus, '已選擇 ' + selectedOption + '，確認後送出。', '');
+      track('poll_option_click', { option_id: selectedOption });
+    });
+  });
+
+  openConfirmButton.addEventListener('click', function () {
+    if (!selectedOption || votedOption) return;
+    modalLetter.textContent = selectedOption;
+    modalTitle.textContent = OPTION_LABELS[selectedOption];
+    setStatus(modalStatus, '', '');
+    modal.hidden = false;
+    document.body.classList.add('modal-open');
+    submitVoteButton.focus();
+  });
+
+  document.querySelectorAll('[data-close-modal]').forEach(function (button) {
+    button.addEventListener('click', closeModal);
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && !modal.hidden) closeModal();
+  });
+
+  submitVoteButton.addEventListener('click', async function () {
+    if (!selectedOption || votedOption) return;
+    if (!CONFIG.appsScriptUrl) {
+      setStatus(modalStatus, '投票系統尚未完成 Google Sheet 連線，請稍後再試。', 'error');
+      return;
+    }
+
+    setButtonLoading(submitVoteButton, true, '正在送出…');
+    setStatus(modalStatus, '', '');
+    var newVoteId = createId('vote');
+    try {
+      var response = await apiPost({
+        action: 'submitVote',
+        poll_id: CONFIG.pollId,
+        option_id: selectedOption,
+        vote_id: newVoteId,
+        session_id: sessionId
+      });
+      if (!response.ok) throw new Error(response.message || '投票送出失敗');
+
+      voteId = response.vote_id || newVoteId;
+      votedOption = response.option_id || selectedOption;
+      selectedOption = votedOption;
+      localStorageSafeSet(STORAGE_PREFIX + 'vote_id', voteId);
+      localStorageSafeSet(STORAGE_PREFIX + 'option', votedOption);
+      track('vote_submitted', { option_id: votedOption, vote_id: voteId });
+      closeModal();
+      lockPoll();
+      revealPostVote();
+      renderResults(response.results || {});
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (error) {
+      setStatus(modalStatus, error.message || '目前無法送出，請稍後再試。', 'error');
+    } finally {
+      setButtonLoading(submitVoteButton, false, '確定，就投它 <span>→</span>');
+    }
+  });
+
+  emailForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    var emailInput = document.getElementById('email-input');
+    var consentInput = document.getElementById('consent-input');
+    var subscribeButton = document.getElementById('subscribe-button');
+    var email = emailInput.value.trim().toLowerCase();
+
+    if (!emailInput.checkValidity()) {
+      setStatus(emailStatus, '請輸入有效的 Email。', 'error');
+      emailInput.focus();
+      return;
+    }
+    if (!consentInput.checked) {
+      setStatus(emailStatus, '請先確認你同意收到麥克實驗室通知。', 'error');
+      consentInput.focus();
+      return;
+    }
+    if (!CONFIG.appsScriptUrl || !voteId) {
+      setStatus(emailStatus, '訂閱系統尚未完成連線，請稍後再試。', 'error');
+      return;
+    }
+
+    setButtonLoading(subscribeButton, true, '正在加入…');
+    try {
+      var response = await apiPost({
+        action: 'subscribeEmail',
+        email: email,
+        consent: 'true',
+        consent_version: CONFIG.consentVersion,
+        vote_id: voteId,
+        session_id: sessionId,
+        poll_id: CONFIG.pollId,
+        option_id: votedOption
+      });
+      if (!response.ok) throw new Error(response.message || '訂閱失敗');
+      emailForm.reset();
+      emailForm.classList.add('subscribed');
+      subscribeButton.disabled = true;
+      subscribeButton.innerHTML = '已加入麥克實驗室 ✓';
+      setStatus(emailStatus, response.already_subscribed ? '你已經在名單中，我們會把結果告訴你。' : '完成！請到信箱查看 Welcome Email。', 'success');
+      track('email_opt_in', { option_id: votedOption, method: 'post_vote' });
+    } catch (error) {
+      setStatus(emailStatus, error.message || '目前無法訂閱，請稍後再試。', 'error');
+      setButtonLoading(subscribeButton, false, '告訴我結果 <span>→</span>');
+    }
+  });
+
+  document.addEventListener('click', function (event) {
+    var tracked = event.target.closest('[data-track]');
+    if (tracked) track(tracked.getAttribute('data-track'));
+  });
+
+  async function loadResults() {
+    if (!CONFIG.appsScriptUrl) return;
+    try {
+      var url = new URL(CONFIG.appsScriptUrl);
+      url.searchParams.set('action', 'getResults');
+      url.searchParams.set('poll_id', CONFIG.pollId);
+      var response = await fetch(url.toString(), { redirect: 'follow' });
+      var data = await response.json();
+      if (data.ok) renderResults(data.results || {});
+    } catch (_) {
+      setStatus(voteStatus, '你的票已送出；即時結果目前暫時無法更新。', 'error');
+    }
+  }
+
+  async function apiPost(payload) {
+    var body = Object.assign({}, payload, campaign, {
+      page_url: window.location.href.slice(0, 500),
+      referrer: document.referrer.slice(0, 500),
+      user_agent: navigator.userAgent.slice(0, 500)
+    });
+    var response = await fetch(CONFIG.appsScriptUrl, {
+      method: 'POST',
+      redirect: 'follow',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(body)
+    });
+    return response.json();
+  }
+
+  function renderResults(results) {
+    var counts = results.counts || results;
+    var total = Number(results.total || 0);
+    if (!total) {
+      total = Object.keys(OPTION_LABELS).reduce(function (sum, key) { return sum + Number(counts[key] || 0); }, 0);
+    }
+    var list = document.getElementById('results-list');
+    list.innerHTML = '';
+    Object.keys(OPTION_LABELS).forEach(function (key) {
+      var count = Number(counts[key] || 0);
+      var percentage = total ? Math.round((count / total) * 100) : 0;
+      var row = document.createElement('div');
+      row.className = 'result-row' + (key === votedOption ? ' chosen' : '');
+      row.innerHTML = '<span class="result-letter">' + key + '</span>' +
+        '<span class="result-name">' + escapeHtml(OPTION_LABELS[key]) + '</span>' +
+        '<span class="result-track"><span class="result-bar" style="width:' + percentage + '%"></span></span>' +
+        '<span class="result-number">' + percentage + '% · ' + count + ' 票</span>';
+      list.appendChild(row);
+    });
+    document.getElementById('result-lock').hidden = true;
+    list.hidden = false;
+    var totalEl = document.getElementById('total-votes');
+    totalEl.textContent = '總投票數：' + total + ' 票';
+    totalEl.hidden = false;
+    document.getElementById('result-updated').textContent = '剛剛更新';
+  }
+
+  function markSelected(optionId) {
+    options.forEach(function (card) {
+      var isSelected = card.getAttribute('data-option') === optionId;
+      card.classList.toggle('selected', isSelected);
+      card.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+    });
+  }
+
+  function lockPoll() {
+    options.forEach(function (card) { card.disabled = true; });
+    openConfirmButton.disabled = true;
+    openConfirmButton.innerHTML = '你的票已送出 ✓';
+    setStatus(voteStatus, '你投給了 ' + votedOption + '：' + OPTION_LABELS[votedOption], 'success');
+  }
+
+  function revealPostVote() {
+    emailSection.hidden = false;
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.classList.remove('modal-open');
+    openConfirmButton.focus();
+  }
+
+  function readCampaign() {
+    var params = new URLSearchParams(window.location.search);
+    var data = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id'].forEach(function (key) {
+      var value = params.get(key);
+      if (value) data[key] = value.slice(0, 100);
+    });
+    var storageKey = 'micavo_lab_first_touch';
+    try {
+      var stored = JSON.parse(localStorage.getItem(storageKey) || '{}');
+      if (Object.keys(data).length && !Object.keys(stored).length) localStorage.setItem(storageKey, JSON.stringify(data));
+      if (!Object.keys(data).length) data = stored;
+    } catch (_) {}
+    return data;
+  }
+
+  function track(eventName, params) {
+    params = Object.assign({ poll_id: CONFIG.pollId }, campaign, params || {});
+    if (typeof window.gtag === 'function') window.gtag('event', eventName, params);
+  }
+
+  function getOrCreateId(key, prefix) {
+    var value = localStorageSafeGet(key);
+    if (!value) {
+      value = createId(prefix);
+      localStorageSafeSet(key, value);
+    }
+    return value;
+  }
+
+  function createId(prefix) {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') return prefix + '_' + window.crypto.randomUUID();
+    return prefix + '_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 12);
+  }
+
+  function localStorageSafeGet(key) { try { return localStorage.getItem(key); } catch (_) { return ''; } }
+  function localStorageSafeSet(key, value) { try { localStorage.setItem(key, value); } catch (_) {} }
+  function escapeHtml(value) { var el = document.createElement('div'); el.textContent = value; return el.innerHTML; }
+  function setStatus(element, message, type) { element.textContent = message; element.className = 'form-status' + (type ? ' ' + type : ''); }
+  function setButtonLoading(button, loading, content) { button.disabled = loading; button.innerHTML = content; }
+})();

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>麥克實驗室｜下一個實驗，你來決定</title>
+  <meta name="description" content="加入麥克實驗室，投票決定 Michael 下一個要實測的 AI、科技與生活實驗。">
+  <meta name="theme-color" content="#f7b916">
+  <meta property="og:title" content="MICAVO 麥克實驗室">
+  <meta property="og:description" content="下一個實驗，你來決定。">
+  <meta property="og:image" content="https://micavo.app/assets/images/founder.jpg">
+  <link rel="canonical" href="https://micavo.app/lab/">
+  <link rel="icon" href="/assets/images/micavo-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-180.png">
+  <link rel="stylesheet" href="/lab/lab.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PF5PE9BXFT');
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="主要導覽">
+      <a class="brand" href="/lab/" aria-label="Micavo LAB 首頁">
+        <span>micavo</span><small>LAB</small>
+      </a>
+      <div class="nav-links">
+        <a class="active" href="#vote">當前投票</a>
+        <a href="#results">即時結果</a>
+        <a href="#about">關於 LAB</a>
+      </div>
+      <a class="youtube-link" href="https://www.youtube.com/@micavoofficial" target="_blank" rel="noopener" data-track="youtube_click">
+        <span class="youtube-icon" aria-hidden="true">▶</span>
+        <span>訂閱 YouTube</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="vote">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> MICHAEL EXPERIMENT LAB</p>
+          <h1>下一個實驗，<br><em>你來決定。</em></h1>
+          <p class="hero-description">我把 AI、科技和生活拿來真的試。<br>這次不只看影片，你來決定下一集。</p>
+          <div class="live-pill"><span class="live-dot"></span> W1 投票進行中</div>
+        </div>
+        <div class="hero-photo-wrap" aria-label="Michael 在工作室準備下一個實驗">
+          <div class="photo-note">Michael<br>Experiment<br>Lab <span>↘</span></div>
+          <img src="/assets/images/founder.jpg" alt="Michael 在電腦前工作" width="1062" height="1548">
+          <div class="photo-label">TESTING IN PROGRESS</div>
+        </div>
+        <div class="hero-poll-panel">
+          <div class="hero-poll-heading">
+            <p class="kicker">CURRENT POLL / W1</p>
+            <h2 id="poll-title">下一個你想看 Michael 測什麼？</h2>
+            <p class="poll-hint">選一個你真的想看的 ↓</p>
+          </div>
+
+          <div class="poll-grid" id="poll-options" role="radiogroup" aria-labelledby="poll-title">
+            <button class="poll-card" type="button" role="radio" aria-checked="false" data-option="A">
+              <span class="option-letter">A</span>
+              <span class="option-copy"><strong>AI 控制我所有非必要消費 24 小時</strong><small>想買什麼，都得先問 AI。</small></span>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button class="poll-card" type="button" role="radio" aria-checked="false" data-option="B">
+              <span class="option-letter">B</span>
+              <span class="option-copy"><strong>免費 AI vs 最貴 AI，到底差在哪？</strong><small>同樣的任務，結果真的值那個價差？</small></span>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button class="poll-card" type="button" role="radio" aria-checked="false" data-option="C">
+              <span class="option-letter">C</span>
+              <span class="option-copy"><strong>AI 幫我安排明天的所有行程</strong><small>從起床到睡覺，全部照表操課。</small></span>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button class="poll-card" type="button" role="radio" aria-checked="false" data-option="D">
+              <span class="option-letter">D</span>
+              <span class="option-copy"><strong>AI 幫我用 NT$1000 過完台北一天</strong><small>吃、玩、交通，一千元能撐多久？</small></span>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <div class="poll-action">
+            <button class="primary-button" id="open-confirm" type="button" disabled>確認投這一票 <span>→</span></button>
+            <p id="vote-status" class="form-status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section section-pad" id="results" aria-labelledby="results-title">
+      <div class="shell narrow-shell">
+        <div class="section-heading result-heading">
+          <div>
+            <p class="kicker">LIVE RESULTS</p>
+            <h2 id="results-title">目前投票結果</h2>
+          </div>
+          <p class="result-updated" id="result-updated">投票後立即更新</p>
+        </div>
+        <div class="result-lock" id="result-lock">
+          <span class="lock-icon">✦</span>
+          <strong>投下你的一票後，就能看到即時結果。</strong>
+          <p>先選出你真的想看的下一個實驗。</p>
+          <a href="#vote">回到投票 ↑</a>
+        </div>
+        <div class="results-list" id="results-list" hidden></div>
+        <p class="total-votes" id="total-votes" hidden></p>
+      </div>
+    </section>
+
+    <section class="email-section section-pad" id="email" hidden aria-labelledby="email-title">
+      <div class="shell email-grid">
+        <div class="email-copy">
+          <p class="kicker light">STAY IN THE LOOP</p>
+          <h2 id="email-title">想知道最後<br>誰贏了？</h2>
+          <p>留下 Email，結果出爐和影片上線時，我會告訴你。</p>
+          <ul>
+            <li>投票結果公布時通知你</li>
+            <li>新影片上線時通知你</li>
+            <li>下一輪實驗，繼續由你決定</li>
+          </ul>
+        </div>
+        <form class="email-card" id="email-form" novalidate>
+          <div class="mail-icon" aria-hidden="true">✉</div>
+          <label for="email-input">你的 Email</label>
+          <input id="email-input" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="254">
+          <label class="consent-row">
+            <input id="consent-input" type="checkbox" required>
+            <span>我同意收到 Micavo LAB 的投票結果、影片上線與下一輪投票通知。</span>
+          </label>
+          <button class="primary-button full" id="subscribe-button" type="submit">告訴我結果 <span>→</span></button>
+          <p class="email-note">每月約 1–2 封，隨時可取消。不會把你的 Email 加入其他產品名單。</p>
+          <p id="email-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="about-section section-pad" id="about" aria-labelledby="about-title">
+      <div class="shell">
+        <div class="about-intro">
+          <div>
+            <p class="kicker">ABOUT THE LAB</p>
+            <h2 id="about-title">這不只是我的頻道，<br>而是我們一起做的實驗。</h2>
+          </div>
+          <p>Micavo LAB 是 Michael 主持的實驗室。每一支影片的主題，都由你的投票開始；我負責真的去做，再把結果完整帶回來。</p>
+        </div>
+        <div class="about-cards">
+          <article><span>01</span><div class="about-icon">⚗</div><h3>你投票</h3><p>從候選題目中選出你最想看的實驗。</p></article>
+          <article><span>02</span><div class="about-icon">●</div><h3>我實驗</h3><p>真的去試、去比較，也承受意外結果。</p></article>
+          <article><span>03</span><div class="about-icon">▶</div><h3>你看結果</h3><p>完整過程和答案，都會出現在影片裡。</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <a class="brand footer-brand" href="/"><span>micavo</span><small>LAB</small></a>
+      <p>以前幫科技公司測產品，現在幫大家測 AI、科技和生活。</p>
+      <p class="copyright">© <span id="year"></span> Micavo</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="confirm-modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" aria-label="關閉" data-close-modal>×</button>
+      <div class="modal-letter" id="modal-letter">A</div>
+      <p class="modal-kicker">你選擇了</p>
+      <h2 id="modal-title"></h2>
+      <p>送出後這一輪就不能更改，確定是它嗎？</p>
+      <button class="primary-button full" id="submit-vote" type="button">確定，就投它 <span>→</span></button>
+      <button class="text-button" type="button" data-close-modal>我再想一下</button>
+      <p id="modal-status" class="form-status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script src="/lab/lab.js" defer></script>
+</body>
+</html>
