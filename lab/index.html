@@ -86,7 +86,7 @@
           </div>
 
           <div class="poll-action">
-            <button class="primary-button" id="open-confirm" type="button" disabled>確認投這一票 <span>→</span></button>
+            <p class="poll-next-hint">選擇題目後，再留下 Email 完成投票</p>
             <p id="vote-status" class="form-status" aria-live="polite"></p>
           </div>
         </div>
@@ -110,33 +110,6 @@
         </div>
         <div class="results-list" id="results-list" hidden></div>
         <p class="total-votes" id="total-votes" hidden></p>
-      </div>
-    </section>
-
-    <section class="email-section section-pad" id="email" hidden aria-labelledby="email-title">
-      <div class="shell email-grid">
-        <div class="email-copy">
-          <p class="kicker light">STAY IN THE LOOP</p>
-          <h2 id="email-title">想知道最後<br>誰贏了？</h2>
-          <p>留下 Email，結果出爐和影片上線時，我會告訴你。</p>
-          <ul>
-            <li>投票結果公布時通知你</li>
-            <li>新影片上線時通知你</li>
-            <li>下一輪實驗，繼續由你決定</li>
-          </ul>
-        </div>
-        <form class="email-card" id="email-form" novalidate>
-          <div class="mail-icon" aria-hidden="true">✉</div>
-          <label for="email-input">你的 Email</label>
-          <input id="email-input" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="254">
-          <label class="consent-row">
-            <input id="consent-input" type="checkbox" required>
-            <span>我同意收到 Micavo LAB 的投票結果、影片上線與下一輪投票通知。</span>
-          </label>
-          <button class="primary-button full" id="subscribe-button" type="submit">告訴我結果 <span>→</span></button>
-          <p class="email-note">每月約 1–2 封，隨時可取消。不會把你的 Email 加入其他產品名單。</p>
-          <p id="email-status" class="form-status" aria-live="polite"></p>
-        </form>
       </div>
     </section>
 
@@ -168,16 +141,25 @@
 
   <div class="modal" id="confirm-modal" hidden>
     <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <form class="modal-dialog vote-email-modal" id="vote-email-form" role="dialog" aria-modal="true" aria-labelledby="modal-title" novalidate>
       <button class="modal-close" type="button" aria-label="關閉" data-close-modal>×</button>
       <div class="modal-letter" id="modal-letter">A</div>
-      <p class="modal-kicker">你選擇了</p>
+      <p class="modal-kicker">你選了</p>
       <h2 id="modal-title"></h2>
-      <p>送出後這一輪就不能更改，確定是它嗎？</p>
-      <button class="primary-button full" id="submit-vote" type="button">確定，就投它 <span>→</span></button>
-      <button class="text-button" type="button" data-close-modal>我再想一下</button>
+      <p class="modal-value">想知道最後哪個題目勝出，還有影片上線時收到通知？</p>
+      <div class="modal-fields">
+        <label for="email-input">Email</label>
+        <input id="email-input" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="254">
+        <label class="consent-row">
+          <input id="consent-input" type="checkbox" required>
+          <span>我同意收到 Micavo LAB 的投票結果、影片上線與下一輪投票通知。</span>
+        </label>
+      </div>
+      <button class="primary-button full" id="submit-vote" type="submit">提交我的投票 <span>→</span></button>
+      <p class="email-note">加入麥克實驗室，每月最多約 1–2 封，隨時可取消。</p>
+      <button class="text-button" type="button" data-close-modal>返回重選</button>
       <p id="modal-status" class="form-status" aria-live="polite"></p>
-    </div>
+    </form>
   </div>
 
   <script src="/lab/lab.js" defer></script>

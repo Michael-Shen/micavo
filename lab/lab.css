@@ -94,6 +94,7 @@ a { color: inherit; text-decoration: none; }
 .poll-action { display: grid; justify-items: stretch; margin-top: 16px; }
 .hero-poll-panel .poll-action .primary-button { width: 100%; }
 .hero-poll-panel .form-status { text-align: center; font-size: 11px; }
+.poll-next-hint { margin: 0; color: #777; text-align: center; font-size: 10px; font-weight: 750; }
 .primary-button { border: 0; border-radius: 8px; padding: 16px 24px; color: white; background: var(--ink); font-weight: 850; cursor: pointer; box-shadow: 0 8px 20px rgba(17,17,17,.15); transition: transform .18s ease, opacity .18s ease; }
 .primary-button:hover:not(:disabled) { transform: translateY(-2px); }
 .primary-button:disabled { opacity: .34; cursor: not-allowed; box-shadow: none; }
@@ -130,8 +131,8 @@ a { color: inherit; text-decoration: none; }
 .email-card { padding: 35px; color: var(--ink); background: white; border-radius: var(--radius); box-shadow: 12px 12px 0 var(--yellow); }
 .mail-icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 24px; border-radius: 50%; background: var(--yellow); font-size: 20px; }
 .email-card > label:first-of-type { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 850; }
-.email-card input[type="email"] { width: 100%; height: 52px; padding: 0 14px; border: 1px solid #cbc9c2; border-radius: 7px; outline: none; }
-.email-card input[type="email"]:focus { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(247,185,22,.26); }
+.email-card input[type="email"], .modal-fields input[type="email"] { width: 100%; height: 52px; padding: 0 14px; border: 1px solid #cbc9c2; border-radius: 7px; outline: none; }
+.email-card input[type="email"]:focus, .modal-fields input[type="email"]:focus { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(247,185,22,.26); }
 .consent-row { display: grid; grid-template-columns: 18px 1fr; gap: 9px; align-items: start; margin: 18px 0; color: #555; font-size: 12px; line-height: 1.55; cursor: pointer; }
 .consent-row input { width: 17px; height: 17px; accent-color: var(--yellow-dark); }
 .email-note { margin: 14px 0 0; color: #888; text-align: center; font-size: 10px; line-height: 1.55; }
@@ -162,6 +163,11 @@ footer { padding: 35px 0; color: #aaa; background: #0d0d0d; }
 .modal-kicker { margin: 0 0 7px; color: var(--muted); font-size: 12px; font-weight: 750; }
 .modal-dialog h2 { margin: 0; font-size: 26px; line-height: 1.35; letter-spacing: -1px; }
 .modal-dialog > p:not(.modal-kicker):not(.form-status) { margin: 14px 0 24px; color: var(--muted); font-size: 13px; }
+.modal-dialog.vote-email-modal { width: min(480px, 100%); }
+.modal-fields { margin: 22px 0 18px; text-align: left; }
+.modal-fields > label:first-child { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 850; }
+.modal-fields .consent-row { margin-bottom: 0; }
+.vote-email-modal .email-note { margin: 12px 0 0; }
 .text-button { margin-top: 14px; border: 0; background: transparent; color: #777; font-size: 12px; cursor: pointer; }
 
 @media (max-width: 900px) {

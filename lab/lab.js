@@ -23,16 +23,13 @@
   var campaign = readCampaign();
 
   var options = Array.prototype.slice.call(document.querySelectorAll('.poll-card'));
-  var openConfirmButton = document.getElementById('open-confirm');
   var submitVoteButton = document.getElementById('submit-vote');
+  var voteEmailForm = document.getElementById('vote-email-form');
   var modal = document.getElementById('confirm-modal');
   var modalTitle = document.getElementById('modal-title');
   var modalLetter = document.getElementById('modal-letter');
   var modalStatus = document.getElementById('modal-status');
   var voteStatus = document.getElementById('vote-status');
-  var emailSection = document.getElementById('email');
-  var emailForm = document.getElementById('email-form');
-  var emailStatus = document.getElementById('email-status');
 
   document.getElementById('year').textContent = new Date().getFullYear();
   track('lab_page_view');
@@ -41,7 +38,6 @@
     selectedOption = votedOption;
     markSelected(votedOption);
     lockPoll();
-    revealPostVote();
     loadResults();
   }
 
@@ -50,21 +46,20 @@
       if (votedOption) return;
       selectedOption = card.getAttribute('data-option');
       markSelected(selectedOption);
-      openConfirmButton.disabled = false;
-      setStatus(voteStatus, '已選擇 ' + selectedOption + '，確認後送出。', '');
       track('poll_option_click', { option_id: selectedOption });
+      openVoteEmailStep();
     });
   });
 
-  openConfirmButton.addEventListener('click', function () {
-    if (!selectedOption || votedOption) return;
+  function openVoteEmailStep() {
     modalLetter.textContent = selectedOption;
     modalTitle.textContent = OPTION_LABELS[selectedOption];
     setStatus(modalStatus, '', '');
     modal.hidden = false;
     document.body.classList.add('modal-open');
-    submitVoteButton.focus();
-  });
+    document.getElementById('email-input').focus();
+    track('email_step_view', { option_id: selectedOption });
+  }
 
   document.querySelectorAll('[data-close-modal]').forEach(function (button) {
     button.addEventListener('click', closeModal);
@@ -73,8 +68,22 @@
     if (event.key === 'Escape' && !modal.hidden) closeModal();
   });
 
-  submitVoteButton.addEventListener('click', async function () {
+  voteEmailForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
     if (!selectedOption || votedOption) return;
+    var emailInput = document.getElementById('email-input');
+    var consentInput = document.getElementById('consent-input');
+
+    if (!emailInput.checkValidity()) {
+      setStatus(modalStatus, '請輸入有效的 Email。', 'error');
+      emailInput.focus();
+      return;
+    }
+    if (!consentInput.checked) {
+      setStatus(modalStatus, '請先確認你同意收到麥克實驗室通知。', 'error');
+      consentInput.focus();
+      return;
+    }
     if (!CONFIG.appsScriptUrl) {
       setStatus(modalStatus, '投票系統尚未完成 Google Sheet 連線，請稍後再試。', 'error');
       return;
@@ -85,11 +94,14 @@
     var newVoteId = createId('vote');
     try {
       var response = await apiPost({
-        action: 'submitVote',
+        action: 'submitVoteAndSubscribe',
         poll_id: CONFIG.pollId,
         option_id: selectedOption,
         vote_id: newVoteId,
-        session_id: sessionId
+        session_id: sessionId,
+        email: emailInput.value.trim().toLowerCase(),
+        consent: 'true',
+        consent_version: CONFIG.consentVersion
       });
       if (!response.ok) throw new Error(response.message || '投票送出失敗');
 
@@ -98,63 +110,17 @@
       selectedOption = votedOption;
       localStorageSafeSet(STORAGE_PREFIX + 'vote_id', voteId);
       localStorageSafeSet(STORAGE_PREFIX + 'option', votedOption);
+      track('vote_and_email_submitted', { option_id: votedOption, vote_id: voteId });
       track('vote_submitted', { option_id: votedOption, vote_id: voteId });
+      track('email_opt_in', { option_id: votedOption, method: 'required_vote_step' });
       closeModal();
       lockPoll();
-      revealPostVote();
       renderResults(response.results || {});
       document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (error) {
       setStatus(modalStatus, error.message || '目前無法送出，請稍後再試。', 'error');
     } finally {
-      setButtonLoading(submitVoteButton, false, '確定，就投它 <span>→</span>');
-    }
-  });
-
-  emailForm.addEventListener('submit', async function (event) {
-    event.preventDefault();
-    var emailInput = document.getElementById('email-input');
-    var consentInput = document.getElementById('consent-input');
-    var subscribeButton = document.getElementById('subscribe-button');
-    var email = emailInput.value.trim().toLowerCase();
-
-    if (!emailInput.checkValidity()) {
-      setStatus(emailStatus, '請輸入有效的 Email。', 'error');
-      emailInput.focus();
-      return;
-    }
-    if (!consentInput.checked) {
-      setStatus(emailStatus, '請先確認你同意收到麥克實驗室通知。', 'error');
-      consentInput.focus();
-      return;
-    }
-    if (!CONFIG.appsScriptUrl || !voteId) {
-      setStatus(emailStatus, '訂閱系統尚未完成連線，請稍後再試。', 'error');
-      return;
-    }
-
-    setButtonLoading(subscribeButton, true, '正在加入…');
-    try {
-      var response = await apiPost({
-        action: 'subscribeEmail',
-        email: email,
-        consent: 'true',
-        consent_version: CONFIG.consentVersion,
-        vote_id: voteId,
-        session_id: sessionId,
-        poll_id: CONFIG.pollId,
-        option_id: votedOption
-      });
-      if (!response.ok) throw new Error(response.message || '訂閱失敗');
-      emailForm.reset();
-      emailForm.classList.add('subscribed');
-      subscribeButton.disabled = true;
-      subscribeButton.innerHTML = '已加入麥克實驗室 ✓';
-      setStatus(emailStatus, response.already_subscribed ? '你已經在名單中，我們會把結果告訴你。' : '完成！請到信箱查看 Welcome Email。', 'success');
-      track('email_opt_in', { option_id: votedOption, method: 'post_vote' });
-    } catch (error) {
-      setStatus(emailStatus, error.message || '目前無法訂閱，請稍後再試。', 'error');
-      setButtonLoading(subscribeButton, false, '告訴我結果 <span>→</span>');
+      setButtonLoading(submitVoteButton, false, '提交我的投票 <span>→</span>');
     }
   });
 
@@ -229,19 +195,14 @@
 
   function lockPoll() {
     options.forEach(function (card) { card.disabled = true; });
-    openConfirmButton.disabled = true;
-    openConfirmButton.innerHTML = '你的票已送出 ✓';
     setStatus(voteStatus, '你投給了 ' + votedOption + '：' + OPTION_LABELS[votedOption], 'success');
-  }
-
-  function revealPostVote() {
-    emailSection.hidden = false;
   }
 
   function closeModal() {
     modal.hidden = true;
     document.body.classList.remove('modal-open');
-    openConfirmButton.focus();
+    var selectedCard = document.querySelector('.poll-card[data-option="' + selectedOption + '"]');
+    if (selectedCard) selectedCard.focus();
   }
 
   function readCampaign() {

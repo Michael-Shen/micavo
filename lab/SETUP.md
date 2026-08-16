@@ -49,9 +49,9 @@ https://micavo.app/lab/?utm_source=youtube&utm_medium=pinned_comment&utm_campaig
 逐項確認：
 
 - [ ] 第一屏看到四個正確選項。
-- [ ] 選項被選取後，確認按鈕才可使用。
-- [ ] 確認 Modal 顯示正確字母與標題。
-- [ ] 投票後 `Votes` 增加一列。
+- [ ] 點選選項後，Email 第二步立即滑出並顯示正確字母與標題。
+- [ ] 沒有有效 Email 或未勾選同意時，不能正式提交投票。
+- [ ] 按「提交我的投票」後，`Votes` 與 `Subscribers` 各增加或更新一列。
 - [ ] 投票後顯示四個選項的即時比例。
 - [ ] 同一瀏覽器重新整理後不能重複投票。
 - [ ] UTM source、medium、campaign 正確寫入。

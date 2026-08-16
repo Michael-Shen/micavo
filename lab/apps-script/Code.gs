@@ -85,6 +85,7 @@ function doGet(e) {
 function doPost(e) {
   try {
     const data = parseBody_(e);
+    if (data.action === 'submitVoteAndSubscribe') return json_(submitVoteAndSubscribe_(data));
     if (data.action === 'submitVote') return json_(submitVote_(data));
     if (data.action === 'subscribeEmail') return json_(subscribeEmail_(data));
     return json_({ ok: false, message: 'Unknown action' });
@@ -92,6 +93,30 @@ function doPost(e) {
     console.error(error && error.stack ? error.stack : error);
     return json_({ ok: false, message: error.message || 'Unexpected error' });
   }
+}
+
+function submitVoteAndSubscribe_(data) {
+  // Validate the gated fields before recording a vote. If a later transient
+  // failure occurs, the same vote/session IDs make the request safely retryable.
+  validatePoll_(data.poll_id);
+  normalizeEmail_(data.email);
+  if (String(data.consent) !== 'true') throw new Error('必須明確同意後才能完成投票。');
+  requireId_(data.vote_id, 'vote_id');
+  requireId_(data.session_id, 'session_id');
+
+  const voteResult = submitVote_(data);
+  data.option_id = voteResult.option_id;
+  data.vote_id = voteResult.vote_id;
+  const subscriptionResult = subscribeEmail_(data);
+  return {
+    ok: true,
+    duplicate: voteResult.duplicate,
+    vote_id: voteResult.vote_id,
+    option_id: voteResult.option_id,
+    results: voteResult.results,
+    already_subscribed: subscriptionResult.already_subscribed,
+    welcome_sent: subscriptionResult.welcome_sent
+  };
 }
 
 function submitVote_(data) {
