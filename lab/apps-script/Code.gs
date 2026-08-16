@@ -35,6 +35,10 @@ const SHEETS = Object.freeze({
   polls: {
     name: 'Polls',
     headers: ['poll_id', 'title', 'status', 'option_a', 'option_b', 'option_c', 'option_d', 'created_at', 'closed_at']
+  },
+  memberTokens: {
+    name: 'MemberTokens',
+    headers: ['token_hash', 'email', 'status', 'created_at', 'expires_at', 'last_seen_at']
   }
 });
 
@@ -86,13 +90,22 @@ function doPost(e) {
   try {
     const data = parseBody_(e);
     if (data.action === 'submitVoteAndSubscribe') return json_(submitVoteAndSubscribe_(data));
+    if (data.action === 'submitReturningVote') return json_(submitReturningVote_(data));
     if (data.action === 'submitVote') return json_(submitVote_(data));
-    if (data.action === 'subscribeEmail') return json_(subscribeEmail_(data));
+    if (data.action === 'subscribeEmail') return json_(subscribeEmailWithMember_(data));
     return json_({ ok: false, message: 'Unknown action' });
   } catch (error) {
     console.error(error && error.stack ? error.stack : error);
     return json_({ ok: false, message: error.message || 'Unexpected error' });
   }
+}
+
+function subscribeEmailWithMember_(data) {
+  const result = subscribeEmail_(data);
+  const member = issueMemberToken_(normalizeEmail_(data.email));
+  result.member_token = member.token;
+  result.member_token_expires_at = member.expiresAt.toISOString();
+  return result;
 }
 
 function submitVoteAndSubscribe_(data) {
@@ -108,6 +121,7 @@ function submitVoteAndSubscribe_(data) {
   data.option_id = voteResult.option_id;
   data.vote_id = voteResult.vote_id;
   const subscriptionResult = subscribeEmail_(data);
+  const member = issueMemberToken_(normalizeEmail_(data.email));
   return {
     ok: true,
     duplicate: voteResult.duplicate,
@@ -115,7 +129,27 @@ function submitVoteAndSubscribe_(data) {
     option_id: voteResult.option_id,
     results: voteResult.results,
     already_subscribed: subscriptionResult.already_subscribed,
-    welcome_sent: subscriptionResult.welcome_sent
+    welcome_sent: subscriptionResult.welcome_sent,
+    member_token: member.token,
+    member_token_expires_at: member.expiresAt.toISOString()
+  };
+}
+
+function submitReturningVote_(data) {
+  validatePoll_(data.poll_id);
+  requireId_(data.vote_id, 'vote_id');
+  requireId_(data.session_id, 'session_id');
+  const member = validateMemberToken_(data.member_token);
+  const voteResult = submitVote_(data);
+  markVoteEmailLinked_(voteResult.vote_id);
+  touchMemberToken_(member.rowIndex);
+  return {
+    ok: true,
+    duplicate: voteResult.duplicate,
+    vote_id: voteResult.vote_id,
+    option_id: voteResult.option_id,
+    results: voteResult.results,
+    returning_member: true
   };
 }
 
@@ -265,6 +299,7 @@ function unsubscribePage_(params) {
       sheet.getRange(i + 1, 2).setValue('unsubscribed');
       sheet.getRange(i + 1, 6).setValue(new Date());
       appendEvent_('unsubscribed', { session_id: rows[i][7], poll_id: rows[i][8], utm_source: rows[i][11], utm_medium: rows[i][12], utm_campaign: rows[i][13] }, rows[i][6], rows[i][9], '');
+      revokeMemberTokens_(email);
       found = true;
       break;
     }
@@ -294,6 +329,80 @@ function appendEvent_(eventName, data, voteId, optionId, metadata) {
     LAB_CONFIG.pollId, clean_(optionId, 1), clean_(data.utm_source, 100), clean_(data.utm_medium, 100),
     clean_(data.utm_campaign, 100), clean_(metadata)
   ]);
+}
+
+function issueMemberToken_(email) {
+  const token = Utilities.getUuid().replace(/-/g, '') + Utilities.getUuid().replace(/-/g, '');
+  const expiresAt = new Date(Date.now() + 180 * 24 * 60 * 60 * 1000);
+  const sheet = getOrCreateMemberTokensSheet_();
+  sheet.appendRow([hashToken_(token), email, 'active', new Date(), expiresAt, new Date()]);
+  return { token: token, expiresAt: expiresAt };
+}
+
+function validateMemberToken_(token) {
+  const rawToken = String(token || '').trim();
+  if (!/^[a-f0-9]{64}$/.test(rawToken)) throw new Error('裝置識別已失效，請重新輸入 Email。');
+  const hash = hashToken_(rawToken);
+  const sheet = getOrCreateMemberTokensSheet_();
+  const rows = sheet.getDataRange().getValues();
+  for (let i = 1; i < rows.length; i += 1) {
+    if (rows[i][0] !== hash) continue;
+    if (rows[i][2] !== 'active' || !(rows[i][4] instanceof Date) || rows[i][4].getTime() <= Date.now()) {
+      throw new Error('裝置識別已失效，請重新輸入 Email。');
+    }
+    if (!isSubscribed_(String(rows[i][1]).toLowerCase())) {
+      sheet.getRange(i + 1, 3).setValue('revoked');
+      throw new Error('訂閱已取消，請重新輸入 Email 並確認同意。');
+    }
+    return { email: String(rows[i][1]).toLowerCase(), rowIndex: i + 1 };
+  }
+  throw new Error('裝置識別已失效，請重新輸入 Email。');
+}
+
+function isSubscribed_(email) {
+  const rows = getSpreadsheet_().getSheetByName(SHEETS.subscribers.name).getDataRange().getValues();
+  return rows.some(function (row, index) {
+    return index > 0 && String(row[0]).toLowerCase() === email && row[1] === 'subscribed';
+  });
+}
+
+function touchMemberToken_(rowIndex) {
+  getOrCreateMemberTokensSheet_().getRange(rowIndex, 6).setValue(new Date());
+}
+
+function markVoteEmailLinked_(voteId) {
+  const sheet = getSpreadsheet_().getSheetByName(SHEETS.votes.name);
+  const rows = sheet.getDataRange().getValues();
+  for (let i = 1; i < rows.length; i += 1) {
+    if (rows[i][1] === voteId) {
+      sheet.getRange(i + 1, 16).setValue(true);
+      return;
+    }
+  }
+}
+
+function revokeMemberTokens_(email) {
+  const sheet = getOrCreateMemberTokensSheet_();
+  const rows = sheet.getDataRange().getValues();
+  for (let i = 1; i < rows.length; i += 1) {
+    if (String(rows[i][1]).toLowerCase() === email && rows[i][2] === 'active') sheet.getRange(i + 1, 3).setValue('revoked');
+  }
+}
+
+function getOrCreateMemberTokensSheet_() {
+  const spreadsheet = getSpreadsheet_();
+  ensureSheet_(spreadsheet, SHEETS.memberTokens);
+  const sheet = spreadsheet.getSheetByName(SHEETS.memberTokens.name);
+  if (sheet.getLastRow() === 1) {
+    sheet.setFrozenRows(1);
+    sheet.getRange(1, 1, 1, SHEETS.memberTokens.headers.length).setBackground('#151515').setFontColor('#ffffff').setFontWeight('bold');
+  }
+  return sheet;
+}
+
+function hashToken_(token) {
+  const digest = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, token, Utilities.Charset.UTF_8);
+  return Utilities.base64EncodeWebSafe(digest).replace(/=+$/, '');
 }
 
 function getSpreadsheet_() {

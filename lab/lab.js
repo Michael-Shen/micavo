@@ -16,11 +16,13 @@
   };
 
   var STORAGE_PREFIX = 'micavo_lab_' + CONFIG.pollId + '_';
+  var MEMBER_STORAGE_KEY = 'micavo_lab_member';
   var selectedOption = '';
   var voteId = localStorageSafeGet(STORAGE_PREFIX + 'vote_id') || '';
   var votedOption = localStorageSafeGet(STORAGE_PREFIX + 'option') || '';
   var sessionId = getOrCreateId('micavo_lab_session_id', 'session');
   var campaign = readCampaign();
+  var memberToken = readMemberToken();
 
   var options = Array.prototype.slice.call(document.querySelectorAll('.poll-card'));
   var submitVoteButton = document.getElementById('submit-vote');
@@ -30,6 +32,7 @@
   var modalLetter = document.getElementById('modal-letter');
   var modalStatus = document.getElementById('modal-status');
   var voteStatus = document.getElementById('vote-status');
+  var subscribeButton = document.getElementById('subscribe-button');
 
   document.getElementById('year').textContent = new Date().getFullYear();
   track('lab_page_view');
@@ -46,20 +49,11 @@
       if (votedOption) return;
       selectedOption = card.getAttribute('data-option');
       markSelected(selectedOption);
+      submitVoteButton.disabled = false;
+      setStatus(voteStatus, '已選擇 ' + selectedOption + '，按下按鈕就會正式計票。', '');
       track('poll_option_click', { option_id: selectedOption });
-      openVoteEmailStep();
     });
   });
-
-  function openVoteEmailStep() {
-    modalLetter.textContent = selectedOption;
-    modalTitle.textContent = OPTION_LABELS[selectedOption];
-    setStatus(modalStatus, '', '');
-    modal.hidden = false;
-    document.body.classList.add('modal-open');
-    document.getElementById('email-input').focus();
-    track('email_step_view', { option_id: selectedOption });
-  }
 
   document.querySelectorAll('[data-close-modal]').forEach(function (button) {
     button.addEventListener('click', closeModal);
@@ -68,12 +62,71 @@
     if (event.key === 'Escape' && !modal.hidden) closeModal();
   });
 
+  submitVoteButton.addEventListener('click', function () {
+    submitSelectedVote(false);
+  });
+
+  async function submitSelectedVote(isRetry) {
+    if (!selectedOption || votedOption) return;
+    if (!CONFIG.appsScriptUrl) {
+      setStatus(voteStatus, '投票系統尚未完成 Google Sheet 連線，請稍後再試。', 'error');
+      return;
+    }
+
+    setButtonLoading(submitVoteButton, true, '正在送出…');
+    setStatus(voteStatus, '', '');
+    var newVoteId = createId('vote');
+    try {
+      var payload = {
+        action: memberToken ? 'submitReturningVote' : 'submitVote',
+        poll_id: CONFIG.pollId,
+        option_id: selectedOption,
+        vote_id: newVoteId,
+        session_id: sessionId,
+        member_token: memberToken || ''
+      };
+      var response = await apiPost(payload);
+      if (!response.ok) throw new Error(response.message || '投票送出失敗');
+
+      voteId = response.vote_id || newVoteId;
+      votedOption = response.option_id || selectedOption;
+      selectedOption = votedOption;
+      localStorageSafeSet(STORAGE_PREFIX + 'vote_id', voteId);
+      localStorageSafeSet(STORAGE_PREFIX + 'option', votedOption);
+      track('vote_submitted', { option_id: votedOption, vote_id: voteId });
+      if (memberToken) track('returning_member_vote', { option_id: votedOption });
+      lockPoll();
+      renderResults(response.results || {});
+      if (memberToken) document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      else openEmailStep();
+    } catch (error) {
+      if (!isRetry && memberToken && /裝置識別|訂閱已取消/.test(error.message || '')) {
+        clearMemberToken();
+        setButtonLoading(submitVoteButton, false, '提交我的投票 <span>→</span>');
+        return submitSelectedVote(true);
+      }
+      setStatus(voteStatus, error.message || '目前無法送出，請稍後再試。', 'error');
+    } finally {
+      if (votedOption) setButtonLoading(submitVoteButton, true, '你的票已送出 ✓');
+      else setButtonLoading(submitVoteButton, false, '提交我的投票 <span>→</span>');
+    }
+  }
+
+  function openEmailStep() {
+    modalLetter.textContent = votedOption;
+    modalTitle.textContent = OPTION_LABELS[votedOption];
+    setStatus(modalStatus, '', '');
+    modal.hidden = false;
+    document.body.classList.add('modal-open');
+    document.getElementById('email-input').focus();
+    track('email_step_view', { option_id: votedOption, vote_id: voteId });
+  }
+
   voteEmailForm.addEventListener('submit', async function (event) {
     event.preventDefault();
-    if (!selectedOption || votedOption) return;
+    if (!voteId || !votedOption) return;
     var emailInput = document.getElementById('email-input');
     var consentInput = document.getElementById('consent-input');
-
     if (!emailInput.checkValidity()) {
       setStatus(modalStatus, '請輸入有效的 Email。', 'error');
       emailInput.focus();
@@ -84,43 +137,28 @@
       consentInput.focus();
       return;
     }
-    if (!CONFIG.appsScriptUrl) {
-      setStatus(modalStatus, '投票系統尚未完成 Google Sheet 連線，請稍後再試。', 'error');
-      return;
-    }
 
-    setButtonLoading(submitVoteButton, true, '正在送出…');
+    setButtonLoading(subscribeButton, true, '正在加入…');
     setStatus(modalStatus, '', '');
-    var newVoteId = createId('vote');
     try {
       var response = await apiPost({
-        action: 'submitVoteAndSubscribe',
-        poll_id: CONFIG.pollId,
-        option_id: selectedOption,
-        vote_id: newVoteId,
-        session_id: sessionId,
+        action: 'subscribeEmail',
         email: emailInput.value.trim().toLowerCase(),
         consent: 'true',
-        consent_version: CONFIG.consentVersion
+        consent_version: CONFIG.consentVersion,
+        vote_id: voteId,
+        session_id: sessionId,
+        poll_id: CONFIG.pollId,
+        option_id: votedOption
       });
-      if (!response.ok) throw new Error(response.message || '投票送出失敗');
-
-      voteId = response.vote_id || newVoteId;
-      votedOption = response.option_id || selectedOption;
-      selectedOption = votedOption;
-      localStorageSafeSet(STORAGE_PREFIX + 'vote_id', voteId);
-      localStorageSafeSet(STORAGE_PREFIX + 'option', votedOption);
-      track('vote_and_email_submitted', { option_id: votedOption, vote_id: voteId });
-      track('vote_submitted', { option_id: votedOption, vote_id: voteId });
-      track('email_opt_in', { option_id: votedOption, method: 'required_vote_step' });
+      if (!response.ok) throw new Error(response.message || '訂閱失敗');
+      if (response.member_token && response.member_token_expires_at) saveMemberToken(response.member_token, response.member_token_expires_at);
+      track('email_opt_in', { option_id: votedOption, method: 'optional_post_vote' });
       closeModal();
-      lockPoll();
-      renderResults(response.results || {});
-      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (error) {
-      setStatus(modalStatus, error.message || '目前無法送出，請稍後再試。', 'error');
+      setStatus(modalStatus, error.message || '目前無法訂閱，請稍後再試。', 'error');
     } finally {
-      setButtonLoading(submitVoteButton, false, '提交我的投票 <span>→</span>');
+      setButtonLoading(subscribeButton, false, '告訴我結果 <span>→</span>');
     }
   });
 
@@ -195,6 +233,8 @@
 
   function lockPoll() {
     options.forEach(function (card) { card.disabled = true; });
+    submitVoteButton.disabled = true;
+    submitVoteButton.innerHTML = '你的票已送出 ✓';
     setStatus(voteStatus, '你投給了 ' + votedOption + '：' + OPTION_LABELS[votedOption], 'success');
   }
 
@@ -203,6 +243,30 @@
     document.body.classList.remove('modal-open');
     var selectedCard = document.querySelector('.poll-card[data-option="' + selectedOption + '"]');
     if (selectedCard) selectedCard.focus();
+    if (votedOption) document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function readMemberToken() {
+    try {
+      var member = JSON.parse(localStorage.getItem(MEMBER_STORAGE_KEY) || '{}');
+      if (!member.token || !member.expires_at || new Date(member.expires_at).getTime() <= Date.now()) {
+        localStorage.removeItem(MEMBER_STORAGE_KEY);
+        return '';
+      }
+      return member.token;
+    } catch (_) {
+      return '';
+    }
+  }
+
+  function saveMemberToken(token, expiresAt) {
+    memberToken = token;
+    try { localStorage.setItem(MEMBER_STORAGE_KEY, JSON.stringify({ token: token, expires_at: expiresAt })); } catch (_) {}
+  }
+
+  function clearMemberToken() {
+    memberToken = '';
+    try { localStorage.removeItem(MEMBER_STORAGE_KEY); } catch (_) {}
   }
 
   function readCampaign() {

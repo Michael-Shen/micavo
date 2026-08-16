@@ -86,7 +86,8 @@
           </div>
 
           <div class="poll-action">
-            <p class="poll-next-hint">選擇題目後，再留下 Email 完成投票</p>
+            <button class="primary-button" id="submit-vote" type="button" disabled>提交我的投票 <span>→</span></button>
+            <p class="poll-next-hint">投票不需要 Email，送出後可選擇是否收到結果通知</p>
             <p id="vote-status" class="form-status" aria-live="polite"></p>
           </div>
         </div>
@@ -142,12 +143,12 @@
   <div class="modal" id="confirm-modal" hidden>
     <div class="modal-backdrop" data-close-modal></div>
     <form class="modal-dialog vote-email-modal" id="vote-email-form" role="dialog" aria-modal="true" aria-labelledby="modal-title" novalidate>
-      <button class="modal-close" type="button" aria-label="關閉" data-close-modal>×</button>
+      <button class="modal-close" type="button" aria-label="關閉並查看結果" data-close-modal>×</button>
       <div class="modal-letter" id="modal-letter">A</div>
-      <p class="modal-kicker">你選了</p>
+      <p class="modal-kicker">你的票已收到</p>
       <h2 id="modal-title"></h2>
       <p class="modal-value">想知道最後哪個題目勝出，還有影片上線時收到通知？</p>
-      <div class="modal-fields">
+      <div class="modal-fields" id="modal-fields">
         <label for="email-input">Email</label>
         <input id="email-input" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="254">
         <label class="consent-row">
@@ -155,9 +156,9 @@
           <span>我同意收到 Micavo LAB 的投票結果、影片上線與下一輪投票通知。</span>
         </label>
       </div>
-      <button class="primary-button full" id="submit-vote" type="submit">提交我的投票 <span>→</span></button>
+      <button class="primary-button full" id="subscribe-button" type="submit">告訴我結果 <span>→</span></button>
       <p class="email-note">加入麥克實驗室，每月最多約 1–2 封，隨時可取消。</p>
-      <button class="text-button" type="button" data-close-modal>返回重選</button>
+      <button class="text-button" type="button" data-close-modal>先不用，查看目前結果</button>
       <p id="modal-status" class="form-status" aria-live="polite"></p>
     </form>
   </div>

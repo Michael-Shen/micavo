@@ -19,6 +19,7 @@
    - `Subscribers`
    - `Events`
    - `Polls`
+   - `MemberTokens`
 4. `Polls` 應已包含 `w1_ai_control`。
 
 不要自行更改第一列表頭；Apps Script 依靠固定欄位順序讀寫資料。
@@ -49,9 +50,9 @@ https://micavo.app/lab/?utm_source=youtube&utm_medium=pinned_comment&utm_campaig
 逐項確認：
 
 - [ ] 第一屏看到四個正確選項。
-- [ ] 點選選項後，Email 第二步立即滑出並顯示正確字母與標題。
-- [ ] 沒有有效 Email 或未勾選同意時，不能正式提交投票。
-- [ ] 按「提交我的投票」後，`Votes` 與 `Subscribers` 各增加或更新一列。
+- [ ] 點選選項後，按「提交我的投票」可在不填 Email 的情況下正式記票。
+- [ ] 投票成功後才顯示可略過的 Email 第二步。
+- [ ] 略過 Email 時只增加 `Votes`；留下 Email 時再增加或更新 `Subscribers`。
 - [ ] 投票後顯示四個選項的即時比例。
 - [ ] 同一瀏覽器重新整理後不能重複投票。
 - [ ] UTM source、medium、campaign 正確寫入。
@@ -60,6 +61,7 @@ https://micavo.app/lab/?utm_source=youtube&utm_medium=pinned_comment&utm_campaig
 - [ ] 收到 Welcome Email，內容顯示正確選項。
 - [ ] 點 Welcome Email 的退訂連結後，狀態變成 `unsubscribed`。
 - [ ] GA4 DebugView 可看到 `lab_page_view`、`poll_option_click`、`vote_submitted`、`email_opt_in`。
+- [ ] 完成第一次投票後，同一瀏覽器下一輪會顯示「歡迎回來」並可直接提交。
 
 若要重測同一瀏覽器，可在 DevTools → Application → Local Storage 刪除以 `micavo_lab_w1_ai_control_` 開頭的兩個值。後端仍會依 session ID 阻擋同一瀏覽器重複灌票；完整重測請改用新的無痕視窗。
 
@@ -69,6 +71,7 @@ https://micavo.app/lab/?utm_source=youtube&utm_medium=pinned_comment&utm_campaig
 - 來源分析：Rows 使用 `utm_source` / `utm_medium` / `utm_campaign`。
 - 寄結果或影片通知前，只選取 `Subscribers.status = subscribed`。
 - 不要把 AsianLaunch、TallCenter 或其他產品帳號 Email 匯入這張表。
+- `MemberTokens` 只保存 token hash；不要手動填入原始 token 或 Email 以外的個資。
 - 一般 Gmail / Apps Script 有每日寄信配額；名單接近 100–500 或開始需要 bounce/click tracking 時，應換成正式 ESP。
 
 ## 更新 Apps Script
