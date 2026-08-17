@@ -1,6 +1,12 @@
 (function () {
   var translations = {
     en: {
+      seo: {
+        title: "Micavo | Michael Puts It to the Test",
+        description: "Michael tests AI, technology, products, and everyday life for real. Watch the latest experiment, vote on what comes next, and explore the products he builds.",
+        og_title: "Micavo — Michael Puts It to the Test",
+        og_description: "AI, technology, products, and everyday life—not just discussed, but tested for real."
+      },
       nav: { watch: "Watch", products: "Things I've Built", about: "About Michael", contact: "Contact" },
       hero: {
         eyebrow: "MICAVO 麥克造",
@@ -112,6 +118,12 @@
       }
     },
     zh: {
+      seo: {
+        title: "Micavo 麥克造｜Michael 幫你實測",
+        description: "Michael 把 AI、科技、產品和生活拿來真的試。觀看最新實驗、投票決定下一集，也看看我親手打造的產品。",
+        og_title: "Micavo 麥克造｜Michael 幫你實測",
+        og_description: "AI、科技和生活，不只聊，我真的拿來試。"
+      },
       nav: { watch: "看實驗", products: "我做的產品", about: "關於 Michael", contact: "聯絡我們" },
       hero: {
         eyebrow: "MICAVO 麥克造",
@@ -223,6 +235,12 @@
       }
     },
     ja: {
+      seo: {
+        title: "Micavo｜Michaelが本気で試します",
+        description: "MichaelがAI、テクノロジー、プロダクト、日常生活を実際にテスト。最新の実験を見て、次の企画に投票できます。",
+        og_title: "Micavo｜Michaelが本気で試します",
+        og_description: "AI、テクノロジー、日常生活。語るだけでなく、実際に試します。"
+      },
       nav: { watch: "実験を見る", products: "作ったもの", about: "Michaelについて", contact: "お問い合わせ" },
       hero: {
         eyebrow: "MICAVO 麥克造",
@@ -357,9 +375,19 @@
     return path.split(".").reduce(function (o, k) { return o && o[k] !== undefined ? o[k] : undefined; }, obj);
   }
 
-  function applyLanguage(lang) {
+  function setMeta(selector, value) {
+    var element = document.querySelector(selector);
+    if (element && value) element.setAttribute("content", value);
+  }
+
+  function applyLanguage(lang, updateUrl) {
     var dict = translations[lang] || translations.en;
-    document.documentElement.lang = lang;
+    var htmlLang = { en: "en", zh: "zh-Hant", ja: "ja" }[lang] || "en";
+    document.documentElement.lang = htmlLang;
+    document.title = dict.seo.title;
+    setMeta('meta[name="description"]', dict.seo.description);
+    setMeta('meta[property="og:title"]', dict.seo.og_title);
+    setMeta('meta[property="og:description"]', dict.seo.og_description);
 
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
@@ -397,13 +425,23 @@
     });
 
     document.querySelectorAll("[data-lang-btn]").forEach(function (btn) {
-      btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === lang);
+      var active = btn.getAttribute("data-lang-btn") === lang;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
 
     try { localStorage.setItem("micavo-lang", lang); } catch (e) {}
+
+    if (updateUrl && window.history && window.history.replaceState) {
+      var url = new URL(window.location.href);
+      url.searchParams.set("lang", lang);
+      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
+    }
   }
 
   function detectLanguage() {
+    var requested = new URLSearchParams(window.location.search).get("lang");
+    if (requested && translations[requested]) return requested;
     try {
       var saved = localStorage.getItem("micavo-lang");
       if (saved && translations[saved]) return saved;
@@ -417,10 +455,20 @@
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[data-lang-btn]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        applyLanguage(btn.getAttribute("data-lang-btn"));
+        applyLanguage(btn.getAttribute("data-lang-btn"), true);
       });
     });
 
-    applyLanguage(detectLanguage());
+    var initialLanguage = detectLanguage();
+    applyLanguage(initialLanguage, false);
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        content_language: document.documentElement.lang,
+        site_language: initialLanguage
+      });
+    }
   });
 })();
