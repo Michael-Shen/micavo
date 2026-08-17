@@ -5,3 +5,37 @@
 # Private Micavo LAB operational documentation
 lab/SETUP.md
 lab/ROUND_RUNBOOK.md
+lab/apps-script/
+
+# Private strategy and operational documentation
+planning/
+docs/website-waitlist-playbook.md
+
+# Local AI and editor settings
+.claude/
+.vscode/
+.idea/
+
+# Environment and credential files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+credentials*.json
+secrets*.json
+service-account*.json
+google-services.json
+GoogleService-Info.plist
+
+# Local data, logs, and temporary files
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+*.tmp
