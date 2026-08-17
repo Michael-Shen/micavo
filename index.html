@@ -1359,6 +1359,18 @@
       box-shadow: none;
     }
 
+    .section--products .eyebrow {
+      color: #8a5b00;
+    }
+
+    .section--products .section-heading h2 {
+      color: var(--ink);
+    }
+
+    .section--products .section-heading p:not(.eyebrow) {
+      color: #5f5b54;
+    }
+
     .section-heading h2,
     .founder-content h2 {
       letter-spacing: -0.04em;
@@ -1385,7 +1397,12 @@
 
     .section--approach .section-heading > p,
     .section--approach .principle-card p {
-      color: rgba(255, 255, 255, 0.66);
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .section--approach .section-heading h2,
+    .section--approach .principle-card h3 {
+      color: #ffffff;
     }
 
     .section--approach .eyebrow {
@@ -1398,11 +1415,42 @@
       box-shadow: none;
     }
 
+    .section--approach .principle-card:nth-child(1),
+    .section--approach .principle-card:nth-child(2),
+    .section--approach .principle-card:nth-child(3) {
+      border-color: rgba(255, 255, 255, 0.14);
+      background: #222222;
+    }
+
     .founder-section {
       border: 1px solid var(--line);
       border-radius: 20px;
       background: #ffffff;
+      color: var(--ink);
       box-shadow: none;
+    }
+
+    .founder-section .eyebrow,
+    .founder-section .founder-building-list li::before {
+      color: #8a5b00;
+    }
+
+    .founder-section .founder-content h2,
+    .founder-section .founder-building-label,
+    .founder-section .founder-follow-label {
+      color: var(--ink);
+    }
+
+    .founder-section .founder-role,
+    .founder-section .founder-content p,
+    .founder-section .founder-building-list {
+      color: #5f5b54;
+    }
+
+    .founder-section .social-link {
+      border-color: var(--line);
+      background: var(--paper);
+      color: var(--ink);
     }
 
     .founder-photo img {
