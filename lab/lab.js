@@ -5,7 +5,14 @@
     // Paste the deployed Google Apps Script Web App /exec URL here.
     appsScriptUrl: 'https://script.google.com/macros/s/AKfycbwx7hhQdxgAVL-W4Lk_zdq1DXEvz4HPTosSVOYNEtCp7EBAPrdTMvJRVecqQgw9zOKnvA/exec',
     pollId: 'w1_ai_control',
-    consentVersion: 'lab_opt_in_v1_2026-08-16'
+    consentVersion: 'lab_opt_in_v1_2026-08-16',
+    // Leave youtubeId empty until the winning video is public. Example ID:
+    // https://www.youtube.com/watch?v=dQw4w9WgXcQ → dQw4w9WgXcQ
+    latestVideo: {
+      youtubeId: '',
+      title: '',
+      description: ''
+    }
   };
 
   var OPTION_LABELS = {
@@ -35,6 +42,7 @@
   var subscribeButton = document.getElementById('subscribe-button');
 
   document.getElementById('year').textContent = new Date().getFullYear();
+  renderLatestVideo();
   track('lab_page_view');
 
   if (votedOption && OPTION_LABELS[votedOption]) {
@@ -221,6 +229,20 @@
     totalEl.textContent = '總投票數：' + total + ' 票';
     totalEl.hidden = false;
     document.getElementById('result-updated').textContent = '剛剛更新';
+  }
+
+  function renderLatestVideo() {
+    var video = CONFIG.latestVideo || {};
+    var youtubeId = String(video.youtubeId || '').trim();
+    if (!/^[a-zA-Z0-9_-]{6,20}$/.test(youtubeId)) return;
+
+    var section = document.getElementById('latest-experiment');
+    var videoUrl = 'https://www.youtube.com/watch?v=' + encodeURIComponent(youtubeId);
+    document.getElementById('latest-video-title').textContent = video.title || '最新完成的 Micavo LAB 實驗';
+    document.getElementById('latest-video-description').textContent = video.description || '這是由大家投票選出的實驗。現在來看最後結果。';
+    document.getElementById('latest-video-image').src = 'https://i.ytimg.com/vi/' + encodeURIComponent(youtubeId) + '/hqdefault.jpg';
+    document.querySelectorAll('[data-latest-video-link]').forEach(function (link) { link.href = videoUrl; });
+    section.hidden = false;
   }
 
   function markSelected(optionId) {

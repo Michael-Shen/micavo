@@ -41,6 +41,21 @@
   </header>
 
   <main>
+    <section class="latest-experiment" id="latest-experiment" aria-labelledby="latest-video-title" hidden>
+      <div class="shell latest-experiment-grid">
+        <a class="latest-video-thumb" href="#" target="_blank" rel="noopener" data-latest-video-link data-track="latest_video_click" aria-label="在 YouTube 觀看最新完成的實驗">
+          <img id="latest-video-image" src="" alt="最新完成的 Micavo LAB 實驗影片縮圖" width="480" height="360">
+          <span class="latest-play" aria-hidden="true">▶</span>
+        </a>
+        <div class="latest-experiment-copy">
+          <p class="kicker">LATEST COMPLETED EXPERIMENT</p>
+          <h2 id="latest-video-title"></h2>
+          <p id="latest-video-description"></p>
+          <a class="primary-button latest-video-button" href="#" target="_blank" rel="noopener" data-latest-video-link data-track="latest_video_click">觀看完整影片 <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="hero" id="vote">
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="shell hero-grid">

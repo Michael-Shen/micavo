@@ -1,13 +1,21 @@
 (function () {
   var translations = {
     en: {
-      nav: { products: "Products", contact: "Contact" },
+      nav: { watch: "Watch", products: "Things I've Built", about: "About Michael", contact: "Contact" },
       hero: {
-        eyebrow: "Decision intelligence product studio",
-        title: "AI products for the choices people make every day.",
-        subtitle: "Micavo builds focused, privacy-conscious software that turns personal context into practical recommendations. Our products help people decide what to eat, what to prioritize, and what to do next.",
-        cta_explore: "Explore Products",
-        cta_work: "Work With Micavo"
+        eyebrow: "MICAVO 麥克造",
+        title: "Michael puts it to the test.",
+        subtitle: "AI, technology, products, and everyday life—not just discussed, but tested for real.",
+        cta_watch: "Watch the latest experiment",
+        cta_vote: "Choose the next experiment 🧪",
+        visual_title: "Build it. Test it. Show what happened.",
+        visual_subtitle: "Former product validator. Now testing AI, technology, and life in public."
+      },
+      lab_preview: {
+        eyebrow: "MICAVO LAB",
+        title: "What should Michael test next?",
+        subtitle: "Your vote genuinely decides the next experiment. Choose one, see the live results, and optionally get the outcome by email.",
+        cta: "Vote in the LAB →"
       },
       status: { live: "Live on App Store" },
       carousel: {
@@ -18,9 +26,9 @@
       },
       common: { view_product: "View product" },
       products_section: {
-        eyebrow: "Products",
-        title: "Built around real decision moments.",
-        subtitle: "Each Micavo product focuses on one high-friction question, then makes the next step clearer through thoughtful UX and AI-assisted reasoning."
+        eyebrow: "Things I've Built",
+        title: "I don't just test other people's products. I build my own.",
+        subtitle: "These are real products built from questions worth testing—across health, work, growth, and everyday decisions."
       },
       product_eatornot: {
         status: "AI nutrition coach",
@@ -77,7 +85,7 @@
         subtitle: "For product questions, support, partnerships, or media inquiries, reach Micavo directly."
       },
       follow: {
-        title: "Follow Micavo",
+        title: "Follow Michael / Micavo",
         facebook: "Facebook",
         youtube: "YouTube",
         linkedin: "LinkedIn",
@@ -85,12 +93,12 @@
         threads: "Threads"
       },
       founder: {
-        title: "Founder",
-        eyebrow: "Founder",
+        title: "About Michael",
+        eyebrow: "About Michael",
         name: "Michael Shen",
-        role: "Founder of Micavo",
-        bio1: "I build AI products in public.",
-        bio2: "I'm building products that help people make better decisions at work and in life.",
+        role: "Builder, tester, and creator",
+        bio1: "I used to test products for technology companies. Now I test AI, technology, and everyday life for everyone.",
+        bio2: "I also build products myself—turning ideas into things people can actually use, then showing what I learn along the way.",
         building_label: "Currently building:",
         building_outshine: "Outshine",
         building_eatornot: "EatOrNot AI",
@@ -104,13 +112,21 @@
       }
     },
     zh: {
-      nav: { products: "產品", contact: "聯絡我們" },
+      nav: { watch: "看實驗", products: "我做的產品", about: "關於 Michael", contact: "聯絡我們" },
       hero: {
-        eyebrow: "決策智慧產品工作室",
-        title: "為日常生活中的每個抉擇打造 AI 產品。",
-        subtitle: "Micavo 打造專注且注重隱私的軟體，將個人情境轉化為實用建議。我們的產品協助使用者決定吃什麼、該優先做什麼、接下來該做什麼。",
-        cta_explore: "探索產品",
-        cta_work: "與 Micavo 合作"
+        eyebrow: "MICAVO 麥克造",
+        title: "Michael 幫你實測。",
+        subtitle: "AI、科技、產品和生活——不只聊，我真的拿來試。",
+        cta_watch: "觀看最新實驗",
+        cta_vote: "決定下一個實驗 🧪",
+        visual_title: "真的做、真的試，再把結果帶回來。",
+        visual_subtitle: "以前替科技公司測產品，現在替大家測 AI、科技和生活。"
+      },
+      lab_preview: {
+        eyebrow: "麥克實驗室",
+        title: "下一個你想看 Michael 測什麼？",
+        subtitle: "你的票真的會決定下一個實驗。選一個、查看即時結果，也可以選擇用 Email 收到最後答案。",
+        cta: "去麥克實驗室投票 →"
       },
       status: { live: "已上架 App Store" },
       carousel: {
@@ -121,9 +137,9 @@
       },
       common: { view_product: "查看產品" },
       products_section: {
-        eyebrow: "產品",
-        title: "圍繞真實抉擇時刻打造。",
-        subtitle: "每個 Micavo 產品都聚焦於一個高摩擦的問題，透過周到的使用者體驗與 AI 輔助推理，讓下一步更清楚。"
+        eyebrow: "我做的產品",
+        title: "我不只測別人的產品，我也自己做。",
+        subtitle: "這些都是真正做出來的產品，從健康、工作、成長到日常決策，把值得驗證的問題變成可以使用的東西。"
       },
       product_eatornot: {
         status: "AI 營養教練",
@@ -180,7 +196,7 @@
         subtitle: "如有產品問題、支援需求、合作機會或媒體詢問，歡迎直接聯絡 Micavo。"
       },
       follow: {
-        title: "追蹤 Micavo",
+        title: "追蹤 Michael / Micavo",
         facebook: "Facebook",
         youtube: "YouTube",
         linkedin: "LinkedIn",
@@ -188,12 +204,12 @@
         threads: "Threads"
       },
       founder: {
-        title: "創辦人",
-        eyebrow: "創辦人",
+        title: "關於 Michael",
+        eyebrow: "關於 Michael",
         name: "Michael Shen",
-        role: "Micavo 創辦人",
-        bio1: "我公開打造 AI 產品。",
-        bio2: "我正在打造能幫助人們在工作與生活中做出更好決策的產品。",
+        role: "Builder、實測者與創作者",
+        bio1: "我以前替科技公司測產品，現在替大家測 AI、科技和生活。",
+        bio2: "我也自己做產品，把想法變成真正能用的東西，再把過程中學到的事完整分享出來。",
         building_label: "目前正在開發：",
         building_outshine: "Outshine",
         building_eatornot: "EatOrNot AI",
@@ -207,13 +223,21 @@
       }
     },
     ja: {
-      nav: { products: "プロダクト", contact: "お問い合わせ" },
+      nav: { watch: "実験を見る", products: "作ったもの", about: "Michaelについて", contact: "お問い合わせ" },
       hero: {
-        eyebrow: "意思決定インテリジェンス・プロダクトスタジオ",
-        title: "日々の選択のためのAIプロダクト。",
-        subtitle: "Micavoは、個人のコンテキストを実用的な提案へと変える、焦点を絞ったプライバシー重視のソフトウェアを開発しています。私たちのプロダクトは、何を食べるか、何を優先するか、次に何をすべきかを決めるお手伝いをします。",
-        cta_explore: "プロダクトを見る",
-        cta_work: "Micavoと仕事をする"
+        eyebrow: "MICAVO 麥克造",
+        title: "Michaelが本気で試します。",
+        subtitle: "AI、テクノロジー、プロダクト、日常生活。語るだけでなく、実際に試します。",
+        cta_watch: "最新の実験を見る",
+        cta_vote: "次の実験を決める 🧪",
+        visual_title: "作る。試す。そして結果を見せる。",
+        visual_subtitle: "元プロダクト検証担当。今はAI、テクノロジー、生活を公開で実験しています。"
+      },
+      lab_preview: {
+        eyebrow: "MICAVO LAB",
+        title: "次にMichaelに何を試してほしい？",
+        subtitle: "あなたの一票が次の実験を本当に決めます。投票して、リアルタイム結果を見て、希望すればメールで最終結果を受け取れます。",
+        cta: "LABで投票する →"
       },
       status: { live: "App Storeで公開中" },
       carousel: {
@@ -224,9 +248,9 @@
       },
       common: { view_product: "プロダクトを見る" },
       products_section: {
-        eyebrow: "プロダクト",
-        title: "リアルな意思決定の瞬間を中心に設計。",
-        subtitle: "Micavoの各プロダクトは、一つの摩擦の大きい問いに焦点を当て、思慮深いUXとAIによる推論で次の一歩を明確にします。"
+        eyebrow: "作ったもの",
+        title: "他人のプロダクトを試すだけでなく、自分でも作ります。",
+        subtitle: "健康、仕事、成長、日々の意思決定。検証する価値のある問いから生まれた、本当に使えるプロダクトです。"
       },
       product_eatornot: {
         status: "AI栄養コーチ",
@@ -283,7 +307,7 @@
         subtitle: "プロダクトに関するご質問、サポート、パートナーシップ、取材のお問い合わせは、Micavoまで直接ご連絡ください。"
       },
       follow: {
-        title: "Micavoをフォローする",
+        title: "Michael / Micavoをフォロー",
         facebook: "Facebook",
         youtube: "YouTube",
         linkedin: "LinkedIn",
@@ -291,12 +315,12 @@
         threads: "Threads"
       },
       founder: {
-        title: "創業者",
-        eyebrow: "創業者",
+        title: "Michaelについて",
+        eyebrow: "Michaelについて",
         name: "Michael Shen",
-        role: "Micavo 創業者",
-        bio1: "私は公開の場でAIプロダクトを作っています。",
-        bio2: "仕事と生活の中でより良い意思決定をする手助けとなるプロダクトを作っています。",
+        role: "ビルダー、テスター、クリエイター",
+        bio1: "以前はテクノロジー企業でプロダクトを検証していました。今はAI、テクノロジー、日常生活をみなさんの代わりに試しています。",
+        bio2: "自分でもプロダクトを作り、アイデアを実際に使えるものへ変え、その過程で学んだことを共有しています。",
         building_label: "現在開発中：",
         building_outshine: "Outshine",
         building_eatornot: "EatOrNot AI",

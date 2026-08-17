@@ -47,6 +47,17 @@ a { color: inherit; text-decoration: none; }
 .youtube-link { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 10px 14px; color: white; background: var(--ink); font-size: 12px; font-weight: 800; }
 .youtube-icon { display: grid; place-items: center; width: 22px; height: 15px; border-radius: 5px; color: white; background: #ff0033; font-size: 8px; }
 
+.latest-experiment[hidden] { display: none; }
+.latest-experiment { padding: 34px 0; border-bottom: 1px solid var(--line); background: white; }
+.latest-experiment-grid { display: grid; grid-template-columns: minmax(260px, 430px) 1fr; gap: 42px; align-items: center; }
+.latest-video-thumb { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 14px; background: #151515; box-shadow: var(--shadow); }
+.latest-video-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.latest-play { position: absolute; left: 50%; top: 50%; display: grid; place-items: center; width: 58px; height: 58px; padding-left: 4px; transform: translate(-50%, -50%); border-radius: 50%; color: white; background: rgba(17,17,17,.9); box-shadow: 0 0 0 7px rgba(255,255,255,.22); }
+.latest-experiment-copy .kicker { margin-bottom: 9px; }
+.latest-experiment-copy h2 { margin: 0; font-size: clamp(28px, 3vw, 42px); line-height: 1.15; letter-spacing: -1.6px; }
+.latest-experiment-copy > p:not(.kicker) { max-width: 630px; margin: 14px 0 23px; color: var(--muted); line-height: 1.7; }
+.latest-video-button { display: inline-block; }
+
 .hero { position: relative; overflow: hidden; background: #151515; color: white; }
 .hero::before { content: ""; position: absolute; inset: 0; opacity: .07; background-image: linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px); background-size: 44px 44px; }
 .hero-glow { position: absolute; width: 520px; height: 520px; left: 11%; top: -55%; border-radius: 50%; background: rgba(247,185,22,.18); filter: blur(90px); }
@@ -186,6 +197,9 @@ footer { padding: 35px 0; color: #aaa; background: #0d0d0d; }
   .nav-links { display: none; }
   .youtube-link { padding: 9px 11px; }
   .youtube-link > span:last-child { display: none; }
+  .latest-experiment { padding: 28px 0 32px; }
+  .latest-experiment-grid { grid-template-columns: 1fr; gap: 24px; }
+  .latest-experiment-copy h2 { font-size: 30px; }
   .hero .shell { width: min(100% - 32px, 620px); }
   .hero-grid { min-height: 0; grid-template-columns: 1fr; grid-template-rows: auto auto; }
   .hero-copy { padding: 54px 0 24px; }

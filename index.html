@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Micavo - Decision Intelligence Products</title>
-  <meta name="description" content="Micavo builds focused products for everyday decisions and healthy routines, including TallCenter, EatOrNot AI, Outshine, and Critical Choice." />
+  <title>Micavo 麥克造｜Michael 幫你實測</title>
+  <meta name="description" content="Michael 把 AI、科技、產品和生活拿來真的試。觀看最新實驗、投票決定下一集，也看看我親手打造的產品。" />
   <meta property="og:title" content="Micavo" />
-  <meta property="og:description" content="Decision intelligence products for nutrition, productivity, and personal operating systems." />
-  <meta property="og:image" content="/eatornot/assets/images/hero-picnic.png" />
+  <meta property="og:description" content="AI、科技和生活，不只聊，我真的拿來試。" />
+  <meta property="og:image" content="https://micavo.app/assets/images/founder.jpg" />
   <link rel="canonical" href="https://micavo.app/" />
   <link rel="icon" href="/assets/images/micavo-icon.svg" type="image/svg+xml" />
   <link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32" type="image/png" />
@@ -248,6 +248,113 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
+    }
+
+    .hero-board[hidden] {
+      display: none;
+    }
+
+    .creator-visual {
+      position: relative;
+      min-height: 590px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 36px;
+      background: #111827;
+      box-shadow: 0 30px 80px rgba(42, 67, 112, 0.2);
+    }
+
+    .creator-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 590px;
+      object-fit: cover;
+      object-position: 52% 30%;
+      filter: saturate(0.86) contrast(1.04);
+    }
+
+    .creator-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 42%, rgba(8, 12, 22, 0.84) 100%);
+      pointer-events: none;
+    }
+
+    .creator-badge {
+      position: absolute;
+      z-index: 2;
+      left: 24px;
+      top: 24px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(12px);
+    }
+
+    .creator-caption {
+      position: absolute;
+      z-index: 2;
+      left: 30px;
+      right: 30px;
+      bottom: 28px;
+      color: #ffffff;
+    }
+
+    .creator-caption strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1.15;
+    }
+
+    .creator-caption span {
+      display: block;
+      margin-top: 9px;
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.5;
+    }
+
+    .lab-preview {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto 32px;
+      padding: 54px 58px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 36px;
+      align-items: center;
+      border-radius: 32px;
+      background: #111827;
+      color: #ffffff;
+      box-shadow: 0 22px 55px rgba(16, 24, 40, 0.16);
+    }
+
+    .lab-preview .eyebrow {
+      color: #f7b916;
+    }
+
+    .lab-preview h2 {
+      margin: 0;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+
+    .lab-preview p:not(.eyebrow) {
+      max-width: 700px;
+      margin: 16px 0 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .lab-preview .button {
+      border-color: #f7b916;
+      background: #f7b916;
+      color: #111111;
     }
 
     .carousel-track {
@@ -944,6 +1051,7 @@
     @media (max-width: 980px) {
       .hero,
       .product-preview.featured,
+      .lab-preview,
       .contact-panel {
         grid-template-columns: 1fr;
       }
@@ -1014,6 +1122,17 @@
         padding-top: 42px;
       }
 
+      .creator-visual,
+      .creator-visual img {
+        min-height: 480px;
+      }
+
+      .lab-preview {
+        width: min(100% - 28px, 1160px);
+        padding: 38px 24px;
+        border-radius: 26px;
+      }
+
       .section {
         padding: 62px 0;
       }
@@ -1075,9 +1194,10 @@
 
       <div class="nav-right">
         <div class="nav-links">
-          <a href="#products" data-i18n="nav.products" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header" data-ga-param-section="products">Products</a>
+          <a href="https://www.youtube.com/@micavoofficial" target="_blank" rel="noopener noreferrer" data-i18n="nav.watch" data-ga-event="social_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header">Watch</a>
           <a href="/lab/" data-ga-event="lab_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header">LAB</a>
-          <a href="mailto:hello@micavo.app" data-i18n="nav.contact" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header">Contact</a>
+          <a href="#products" data-i18n="nav.products" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header" data-ga-param-section="products">Things I've Built</a>
+          <a href="#about-michael" data-i18n="nav.about" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header" data-ga-param-section="about_michael">About Michael</a>
         </div>
         <div class="lang-switch" role="group" aria-label="Language switcher">
           <button type="button" data-lang-btn="en">EN</button>
@@ -1091,19 +1211,28 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow" data-i18n="hero.eyebrow">Decision intelligence product studio</p>
-        <h1 id="hero-title" data-i18n="hero.title">AI products for the choices people make every day.</h1>
+        <p class="eyebrow" data-i18n="hero.eyebrow">MICAVO 麥克造</p>
+        <h1 id="hero-title" data-i18n="hero.title">Michael puts it to the test.</h1>
         <p data-i18n="hero.subtitle">
-          Micavo builds focused, privacy-conscious software that turns personal context into practical recommendations. Our products help people decide what to eat, what to prioritize, and what to do next.
+          AI, technology, products, and everyday life—not just discussed, but tested for real.
         </p>
 
         <div class="cta-row">
-          <a class="button primary" href="#products" data-i18n="hero.cta_explore" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero" data-ga-param-section="products">Explore Products</a>
-          <a class="button" href="mailto:hello@micavo.app" data-i18n="hero.cta_work" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero">Work With Micavo</a>
+          <a class="button primary" href="https://www.youtube.com/@micavoofficial" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta_watch" data-ga-event="social_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero">Watch the latest experiment</a>
+          <a class="button" href="/lab/" data-i18n="hero.cta_vote" data-ga-event="lab_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero">Choose the next experiment 🧪</a>
         </div>
       </div>
 
-      <div class="hero-board" aria-label="Micavo product preview">
+      <div class="creator-visual" aria-label="Michael preparing a Micavo experiment">
+        <img src="/assets/images/founder.jpg" alt="Michael in his workspace preparing an experiment" />
+        <span class="creator-badge">MICAVO EXPERIMENT LAB</span>
+        <div class="creator-caption">
+          <strong data-i18n="hero.visual_title">Build it. Test it. Show what happened.</strong>
+          <span data-i18n="hero.visual_subtitle">Former product validator. Now testing AI, technology, and life in public.</span>
+        </div>
+      </div>
+
+      <div class="hero-board" aria-label="Micavo product preview" hidden>
         <div class="carousel-track">
           <article class="product-preview featured carousel-slide is-active">
             <div class="preview-image">
@@ -1187,8 +1316,17 @@
       </div>
     </section>
 
+    <section class="lab-preview" aria-labelledby="lab-preview-title">
+      <div>
+        <p class="eyebrow" data-i18n="lab_preview.eyebrow">MICAVO LAB</p>
+        <h2 id="lab-preview-title" data-i18n="lab_preview.title">What should Michael test next?</h2>
+        <p data-i18n="lab_preview.subtitle">Your vote genuinely decides the next experiment. Choose one, see the live results, and optionally get the outcome by email.</p>
+      </div>
+      <a class="button" href="/lab/" data-i18n="lab_preview.cta" data-ga-event="lab_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="homepage_lab_preview">Vote in the LAB →</a>
+    </section>
+
     <section class="follow-section" aria-labelledby="follow-title">
-      <h2 id="follow-title" data-i18n="follow.title">Follow Micavo</h2>
+      <h2 id="follow-title" data-i18n="follow.title">Follow Michael / Micavo</h2>
       <div class="social-links">
         <a class="social-link" href="https://www.facebook.com/people/Micavo/61591584159827/" target="_blank" rel="noopener noreferrer" data-ga-event="social_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="follow_hero">
           <span class="icon" aria-hidden="true">📘</span>
@@ -1211,10 +1349,10 @@
 
     <section class="section section--products" id="products" aria-labelledby="products-title">
       <div class="section-heading centered">
-        <p class="eyebrow" data-i18n="products_section.eyebrow">Products</p>
-        <h2 id="products-title" data-i18n="products_section.title">Built around real decision moments.</h2>
+        <p class="eyebrow" data-i18n="products_section.eyebrow">Things I've Built</p>
+        <h2 id="products-title" data-i18n="products_section.title">I don't just test other people's products. I build my own.</h2>
         <p data-i18n="products_section.subtitle">
-          Each Micavo product focuses on one high-friction question, then makes the next step clearer through thoughtful UX and AI-assisted reasoning.
+          These are real products built from questions worth testing—across health, work, growth, and everyday decisions.
         </p>
       </div>
 
@@ -1350,17 +1488,17 @@
       </div>
     </section>
 
-    <section class="founder-section" aria-labelledby="founder-title">
+    <section class="founder-section" id="about-michael" aria-labelledby="founder-title">
       <div class="founder-panel">
         <div class="founder-photo">
           <img src="/assets/images/founder.jpg" alt="Michael Shen, Founder of Micavo" loading="lazy" />
         </div>
         <div class="founder-content">
-          <p class="eyebrow" data-i18n="founder.eyebrow">Founder</p>
+          <p class="eyebrow" data-i18n="founder.eyebrow">About Michael</p>
           <h2 id="founder-title" data-i18n="founder.name">Michael Shen</h2>
-          <p class="founder-role" data-i18n="founder.role">Founder of Micavo</p>
-          <p data-i18n="founder.bio1">I build AI products in public.</p>
-          <p data-i18n="founder.bio2">I'm building products that help people make better decisions at work and in life.</p>
+          <p class="founder-role" data-i18n="founder.role">Builder, tester, and creator</p>
+          <p data-i18n="founder.bio1">I used to test products for technology companies. Now I test AI, technology, and everyday life for everyone.</p>
+          <p data-i18n="founder.bio2">I also build products myself—turning ideas into things people can actually use, then showing what I learn along the way.</p>
 
           <p class="founder-building-label" data-i18n="founder.building_label">Currently building:</p>
           <ul class="founder-building-list">
