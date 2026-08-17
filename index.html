@@ -1469,6 +1469,7 @@
     @media (max-width: 980px) {
       .hero {
         min-height: 0;
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .creator-visual,
@@ -1478,52 +1479,279 @@
     }
 
     @media (max-width: 700px) {
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
       .nav {
+        display: flex;
+        width: calc(100% - 24px);
         min-height: 70px;
+        gap: 8px;
+      }
+
+      .logo {
+        gap: 7px;
+        font-size: 20px;
+        letter-spacing: -0.03em;
+      }
+
+      .logo-mark {
+        width: 29px;
+        height: 29px;
+        font-size: 13px;
+      }
+
+      .nav-right {
+        margin-left: auto;
+        min-width: 0;
+        flex: 0 0 auto;
+        gap: 6px;
+      }
+
+      .lang-switch {
+        flex: 0 0 auto;
+        gap: 2px;
+        padding: 3px;
       }
 
       .lang-switch button {
-        padding: 7px 8px;
+        min-width: 30px;
+        padding: 7px 6px;
+        font-size: 0;
+      }
+
+      .lang-switch button::after {
+        content: attr(data-lang-short);
+        font-size: 11px;
       }
 
       .hero {
-        padding: 52px 0 72px;
+        width: calc(100% - 32px);
+        grid-template-columns: minmax(0, 1fr);
+        padding: 46px 0 64px;
+        gap: 42px;
+      }
+
+      .hero-copy {
+        width: 100%;
+        min-width: 0;
       }
 
       h1 {
-        font-size: clamp(50px, 15vw, 68px);
+        max-width: 100%;
+        font-size: clamp(42px, 12.5vw, 54px);
+        line-height: 0.98;
+        overflow-wrap: anywhere;
+        word-break: normal;
+        line-break: strict;
       }
 
-      .creator-visual,
-      .creator-visual img {
-        min-height: 460px;
+      .hero-copy p:not(.eyebrow) {
+        margin-top: 20px;
+        font-size: 17px;
+        line-height: 1.6;
+      }
+
+      .cta-row {
+        margin-top: 28px;
+        gap: 10px;
+      }
+
+      .button {
+        max-width: 100%;
+        min-height: 50px;
+        padding: 13px 16px;
       }
 
       .creator-visual {
+        width: calc(100% - 7px);
+        min-height: 0;
+        aspect-ratio: 4 / 5;
         box-shadow: 9px 9px 0 var(--accent);
       }
 
+      .creator-visual img {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-position: 52% 28%;
+      }
+
+      .creator-badge {
+        left: 16px;
+        top: 16px;
+        max-width: calc(100% - 32px);
+        padding: 8px 10px;
+        font-size: 10px;
+      }
+
       .creator-caption {
-        left: 22px;
-        right: 22px;
-        bottom: 22px;
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
       }
 
       .creator-caption strong {
-        font-size: 27px;
+        font-size: clamp(24px, 8vw, 30px);
+      }
+
+      .creator-caption span {
+        font-size: 14px;
       }
 
       .lab-preview {
-        padding: 38px 24px;
+        width: calc(100% - 24px);
+        margin: 0 auto 24px;
+        padding: 34px 20px;
+        gap: 24px;
         border-radius: 12px;
       }
 
-      .follow-section,
+      .lab-preview h2 {
+        font-size: clamp(31px, 10vw, 42px);
+      }
+
+      .lab-preview p:not(.eyebrow) {
+        font-size: 16px;
+      }
+
+      .follow-section {
+        width: calc(100% - 24px);
+        padding: 32px 16px;
+      }
+
+      .follow-section h2 {
+        font-size: 24px;
+      }
+
+      .social-links,
+      .founder-social-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        gap: 8px;
+      }
+
+      .social-link,
+      .founder-social-links .social-link {
+        width: 100%;
+        min-width: 0;
+        justify-content: center;
+        padding: 11px 8px;
+        font-size: 13px;
+      }
+
       .section--products,
-      .section--approach,
-      .founder-section,
-      .contact-panel {
+      .section--approach {
+        width: calc(100% - 16px);
+        margin-top: 44px;
+        padding: 46px 12px;
         border-radius: 12px;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(32px, 10vw, 40px);
+      }
+
+      .section-heading p:not(.eyebrow) {
+        font-size: 16px;
+      }
+
+      .product-card {
+        border-radius: 10px;
+      }
+
+      .product-body {
+        padding: 20px 18px;
+      }
+
+      .product-body h3 {
+        font-size: 28px;
+      }
+
+      .principles-grid {
+        gap: 12px;
+      }
+
+      .principle-card {
+        min-height: auto;
+        padding: 22px 18px;
+      }
+
+      .founder-section {
+        width: calc(100% - 16px);
+        margin-top: 44px;
+        padding: 38px 20px;
+        border-radius: 12px;
+      }
+
+      .founder-panel {
+        gap: 28px;
+      }
+
+      .founder-photo {
+        width: min(170px, 55vw);
+        max-width: none;
+      }
+
+      .founder-content h2 {
+        font-size: 30px;
+      }
+
+      .founder-content p,
+      .founder-building-list {
+        font-size: 16px;
+      }
+
+      .contact-panel {
+        gap: 22px;
+        padding: 26px 20px;
+        border-radius: 12px;
+      }
+
+      .contact-panel h2 {
+        font-size: 28px;
+      }
+
+      .footer {
+        width: calc(100% - 32px);
+        padding: 34px 0;
+      }
+
+      .footer-links {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .logo {
+        font-size: 18px;
+      }
+
+      .logo-mark {
+        width: 27px;
+        height: 27px;
+      }
+
+      .lang-switch button {
+        min-width: 27px;
+        padding-inline: 4px;
+      }
+
+      h1 {
+        font-size: 41px;
+      }
+
+      .social-links,
+      .founder-social-links {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -1545,9 +1773,9 @@
           <a href="#about-michael" data-i18n="nav.about" data-ga-event="section_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="header" data-ga-param-section="about_michael">About Michael</a>
         </div>
         <div class="lang-switch" role="group" aria-label="Language switcher">
-          <button type="button" data-lang-btn="en">EN</button>
-          <button type="button" data-lang-btn="zh">中文</button>
-          <button type="button" data-lang-btn="ja">日本語</button>
+          <button type="button" data-lang-btn="en" data-lang-short="EN">EN</button>
+          <button type="button" data-lang-btn="zh" data-lang-short="中">中文</button>
+          <button type="button" data-lang-btn="ja" data-lang-short="日">日本語</button>
         </div>
       </div>
     </nav>
