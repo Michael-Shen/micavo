@@ -67,6 +67,14 @@
         f3: "Premium features for teams, custom tags, assignments, and collaboration.",
         open: "Open Critical Choice"
       },
+      product_asianlaunch: {
+        status: "Asia product discovery",
+        desc: "AsianLaunch helps people discover products built in Asia and global products launching into Asia, while giving founders a focused way to test early market interest.",
+        f1: "Discover products from Asian builders and global teams entering Asian markets.",
+        f2: "Launch or claim a product page for free and collect measurable Try signals.",
+        f3: "Run localized Asia Market Tests to learn which markets and messages show early promise.",
+        open: "Open AsianLaunch"
+      },
       matrix: {
         q1: "Crises, deadlines, emergencies.",
         q2: "Planning, growth, meaningful work.",
@@ -110,6 +118,7 @@
         building_eatornot: "EatOrNot AI",
         building_critical: "Critical Choice",
         building_tallcenter: "TallCenter",
+        building_asianlaunch: "AsianLaunch",
         follow_label: "Follow my journey"
       },
       footer: {
@@ -184,6 +193,14 @@
         f3: "適合團隊的進階功能：自訂標籤、任務指派與協作。",
         open: "開啟 Critical Choice"
       },
+      product_asianlaunch: {
+        status: "亞洲產品探索平台",
+        desc: "AsianLaunch 讓使用者探索亞洲團隊打造的產品，以及準備進入亞洲的全球產品；同時協助創辦人聚焦測試早期市場興趣。",
+        f1: "探索亞洲創作者的產品，以及正要進入亞洲市場的全球產品。",
+        f2: "免費上架或認領產品頁，蒐集可衡量的 Try 使用意圖。",
+        f3: "執行在地化的亞洲市場測試，找出具有早期潛力的市場與訊息。",
+        open: "開啟 AsianLaunch"
+      },
       matrix: {
         q1: "危機、截止期限、緊急事件。",
         q2: "規劃、成長、有意義的工作。",
@@ -227,6 +244,7 @@
         building_eatornot: "EatOrNot AI",
         building_critical: "Critical Choice",
         building_tallcenter: "TallCenter",
+        building_asianlaunch: "AsianLaunch",
         follow_label: "追蹤我的旅程"
       },
       footer: {
@@ -301,6 +319,14 @@
         f3: "チーム向けのPremium機能：カスタムタグ、割り当て、コラボレーション。",
         open: "Critical Choiceを開く"
       },
+      product_asianlaunch: {
+        status: "アジアのプロダクト発見",
+        desc: "AsianLaunchは、アジア発のプロダクトやアジア進出を目指すグローバルプロダクトとの出会いを提供し、創業者が初期の市場関心を集中的に検証できるよう支援します。",
+        f1: "アジアのビルダーと、アジア市場に進出するグローバルチームのプロダクトを発見。",
+        f2: "プロダクトページを無料で掲載・Claimし、測定可能なTryシグナルを収集。",
+        f3: "ローカライズしたAsia Market Testで、有望な市場とメッセージを検証。",
+        open: "AsianLaunchを開く"
+      },
       matrix: {
         q1: "危機、締め切り、緊急事態。",
         q2: "計画、成長、意義のある仕事。",
@@ -344,6 +370,7 @@
         building_eatornot: "EatOrNot AI",
         building_critical: "Critical Choice",
         building_tallcenter: "TallCenter",
+        building_asianlaunch: "AsianLaunch",
         follow_label: "私の歩みをフォローする"
       },
       footer: {
