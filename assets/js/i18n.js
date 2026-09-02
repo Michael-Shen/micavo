@@ -395,6 +395,11 @@
       en: "https://apps.apple.com/tw/app/critical-choice/id6756776644?l=en-GB",
       zh: "https://apps.apple.com/tw/app/%E9%97%9C%E9%8D%B5%E4%BB%BB%E5%8B%99/id6756776644",
       ja: "https://apps.apple.com/jp/app/critical-choice/id6756776644?l=ja"
+    },
+    tallcenter: {
+      en: "https://apps.apple.com/tw/app/id6797482622",
+      zh: "https://apps.apple.com/tw/app/tallcenter-%E8%BA%AB%E9%AB%98%E9%A0%90%E6%B8%AC%E8%88%87%E6%88%90%E9%95%B7%E8%BF%BD%E8%B9%A4/id6797482622?l=zh-Hant-TW",
+      ja: "https://apps.apple.com/tw/app/id6797482622?l=ja"
     }
   };
 
