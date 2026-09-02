@@ -82,9 +82,9 @@
     '01 · Predict': '01 · 預測',
     'See your estimated adult height.': '查看你的預估成年身高。',
     'Start with a clear family-height estimate, then turn your result into a polished card that is easy to understand and share.': '先查看清楚的家族身高預估，再把結果製作成容易理解與分享的精美卡片。',
-    '02 · Check in': '02 · 每日打卡',
-    '03 · Follow your plan': '03 · 跟著你的計畫',
-    '04 · Move well': '04 · 好好活動',
+    '03 · Check in': '03 · 每日打卡',
+    '04 · Follow your plan': '04 · 跟著你的計畫',
+    '05 · Move well': '05 · 好好活動',
     '01 · Check in': '01 · 每日打卡',
     'Make today’s healthy actions obvious.': '讓今天的健康行動一目了然。',
     'Turn sleep, nutrition, and movement guidance into small daily tasks, then build momentum with streaks and XP.': '把睡眠、營養與活動指引轉化成每日小任務，再用連續紀錄與 XP 累積動力。',
@@ -122,7 +122,7 @@
     'What does my worldwide height rank mean?': '我的世界各地身高排名代表什麼？',
     'TallCenter compares your predicted adult height with published country-level reference distributions and estimates the percentage of people you may be taller than. It is an educational statistical comparison—not a census, live leaderboard, health score, or guarantee.': 'TallCenter 將你的預測成年身高與公開的各國參考分布比較，估算你可能高過多少比例的人。這是教育用途的統計比較，不是人口普查、即時排行榜、健康分數或保證。',
     'You can compare your predicted adult height across countries, record height measurements, complete daily routine check-ins, follow activity routines, review summaries, enable reminders, and create shareable Height Passport cards. TallCenter also provides general nutrition guidance; it does not record meals or nutrient intake.': '你可以比較預測成年身高在不同國家的相對位置、記錄身高量測、完成每日習慣、跟著活動流程、查看摘要、設定提醒，並建立可分享的身高國際護照。TallCenter 也提供一般營養指引，但不會記錄餐點或營養素攝取。',
-    '05 · World Height Map': '05 · 世界身高地圖',
+    '02 · World Height Map': '02 · 世界身高地圖',
     'See where your height stands worldwide.': '看看你的身高在世界各地位於什麼位置。',
     'Compare your predicted adult height across countries and discover where you may rank tallest.': '比較你的預測成年身高在不同國家的相對位置，看看你在哪裡可能排名最高。'
   });
@@ -131,9 +131,9 @@
     '01 · Predict': '01 · 予測',
     'See your estimated adult height.': '推定成人身長を確認。',
     'Start with a clear family-height estimate, then turn your result into a polished card that is easy to understand and share.': 'わかりやすい家族身長の推定から始め、結果を理解しやすくシェアしやすい美しいカードにします。',
-    '02 · Check in': '02 · 毎日のチェック',
-    '03 · Follow your plan': '03 · プランを実行',
-    '04 · Move well': '04 · 健やかに動く',
+    '03 · Check in': '03 · 毎日のチェック',
+    '04 · Follow your plan': '04 · プランを実行',
+    '05 · Move well': '05 · 健やかに動く',
     '01 · Check in': '01 · 毎日のチェック',
     'Make today’s healthy actions obvious.': '今日の健康行動をわかりやすく。',
     'Turn sleep, nutrition, and movement guidance into small daily tasks, then build momentum with streaks and XP.': '睡眠・栄養・活動のガイダンスを毎日の小さなタスクにし、連続記録とXPで継続の弾みをつけます。',
@@ -171,7 +171,7 @@
     'What does my worldwide height rank mean?': '世界での身長ランクは何を意味しますか？',
     'TallCenter compares your predicted adult height with published country-level reference distributions and estimates the percentage of people you may be taller than. It is an educational statistical comparison—not a census, live leaderboard, health score, or guarantee.': 'TallCenterは予測成人身長を公開された国別参考分布と比較し、何％の人より高い可能性があるかを推定します。教育目的の統計比較であり、国勢調査、リアルタイムランキング、健康スコア、保証ではありません。',
     'You can compare your predicted adult height across countries, record height measurements, complete daily routine check-ins, follow activity routines, review summaries, enable reminders, and create shareable Height Passport cards. TallCenter also provides general nutrition guidance; it does not record meals or nutrient intake.': '予測成人身長の国別比較、身長測定の記録、毎日の習慣チェック、活動ルーティン、サマリー、リマインダー、シェアできるハイトパスポートを利用できます。一般的な栄養ガイダンスも提供しますが、食事や栄養摂取量は記録しません。',
-    '05 · World Height Map': '05 · 世界身長マップ',
+    '02 · World Height Map': '02 · 世界身長マップ',
     'See where your height stands worldwide.': '世界で自分の身長がどの位置にあるか確認。',
     'Compare your predicted adult height across countries and discover where you may rank tallest.': '予測成人身長を国ごとに比較し、どこで最も高くランクされるか見てみましょう。'
   });
@@ -209,6 +209,36 @@
     'Build today’s routine': '今日の習慣をつくる',
     '“The daily plan turns sleep, food, and movement into small things I can actually finish today.”': '「毎日のプランなら、睡眠・食事・運動が今日できる小さな行動になります。」',
     'Take one healthy step today': '今日できる健康行動をひとつ'
+  });
+
+  const appStoreUrl = 'https://apps.apple.com/tw/app/id6797482622';
+  document.querySelectorAll('[data-ga-param-cta-location="header"], [data-ga-param-cta-location="hero"], [data-ga-param-cta-location="world-compare"], [data-ga-param-cta-location="share"], [data-ga-param-cta-location="final"]').forEach((cta) => {
+    cta.href = appStoreUrl;
+    cta.target = '_blank';
+    cta.rel = 'noopener noreferrer';
+    cta.dataset.gaEvent = 'download_clicked';
+    cta.classList.remove('button', 'primary', 'accent');
+    cta.classList.add('appstore-badge-btn');
+    const badgeSize = cta.dataset.gaParamCtaLocation === 'header' ? 'sm' : 'lg';
+    cta.innerHTML = `<img class="store-badge ${badgeSize}" src="../eatornot/assets/images/app-store-badge.svg" alt="Download TallCenter on the App Store">`;
+  });
+
+  Object.assign(translations['zh-Hant'], {
+    'Download on the App Store': '在 App Store 下載',
+    'Download on the App Store ↗': '在 App Store 下載 ↗',
+    'Explore it on the App Store ↗': '前往 App Store 探索 ↗',
+    'Get TallCenter': '下載 TallCenter',
+    'Available now on the App Store': '現已在 App Store 上架',
+    'Download TallCenter: Height Predictor & Growth Tracker today.': '立即下載 TallCenter：身高預測與成長追蹤。'
+  });
+
+  Object.assign(translations.ja, {
+    'Download on the App Store': 'App Storeでダウンロード',
+    'Download on the App Store ↗': 'App Storeでダウンロード ↗',
+    'Explore it on the App Store ↗': 'App Storeで詳しく見る ↗',
+    'Get TallCenter': 'TallCenterをダウンロード',
+    'Available now on the App Store': 'App Storeで配信中',
+    'Download TallCenter: Height Predictor & Growth Tracker today.': 'TallCenter：身長予測・成長トラッカーを今すぐダウンロード。'
   });
 
   const textNodes = [];
