@@ -211,9 +211,13 @@
     'Take one healthy step today': '今日できる健康行動をひとつ'
   });
 
-  const appStoreUrl = 'https://apps.apple.com/tw/app/id6797482622';
+  const appStoreLinks = {
+    en: 'https://apps.apple.com/tw/app/tallcenter-height-predictor/id6797482622?l=en-GB',
+    'zh-Hant': 'https://apps.apple.com/tw/app/tallcenter-%E8%BA%AB%E9%AB%98%E9%A0%90%E6%B8%AC%E8%88%87%E6%88%90%E9%95%B7%E8%BF%BD%E8%B9%A4/id6797482622?l=zh-Hant-TW',
+    ja: 'https://apps.apple.com/jp/app/tallcenter-%E8%BA%AB%E9%95%B7%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC/id6797482622?l=ja'
+  };
   document.querySelectorAll('[data-ga-param-cta-location="header"], [data-ga-param-cta-location="hero"], [data-ga-param-cta-location="world-compare"], [data-ga-param-cta-location="share"], [data-ga-param-cta-location="final"]').forEach((cta) => {
-    cta.href = appStoreUrl;
+    cta.href = appStoreLinks.en;
     cta.target = '_blank';
     cta.rel = 'noopener noreferrer';
     cta.dataset.gaEvent = 'download_clicked';
@@ -422,6 +426,9 @@
   function applyLanguage(language, updateUrl) {
     const lang = normalizedLanguage(language);
     const dictionary = translations[lang] || {};
+    document.querySelectorAll('.appstore-badge-btn').forEach((link) => {
+      link.href = appStoreLinks[lang] || appStoreLinks.en;
+    });
     textNodes.forEach(({ node, original, key }) => {
       if (lang === 'en' || !dictionary[key]) {
         node.nodeValue = original;
