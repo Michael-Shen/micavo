@@ -223,8 +223,14 @@
     cta.dataset.gaEvent = 'download_clicked';
     cta.classList.remove('button', 'primary', 'accent');
     cta.classList.add('appstore-badge-btn');
-    const badgeSize = cta.dataset.gaParamCtaLocation === 'header' ? 'sm' : 'lg';
-    cta.innerHTML = `<img class="store-badge ${badgeSize}" src="../eatornot/assets/images/app-store-badge.svg" alt="Download TallCenter on the App Store">`;
+    const location = cta.dataset.gaParamCtaLocation;
+    if (location === 'header') {
+      cta.classList.add('header-store-cta');
+      cta.innerHTML = '<span class="apple-mark" aria-hidden="true"></span><span>App Store</span>';
+    } else {
+      cta.classList.add(location === 'hero' ? 'hero-store-cta' : 'section-store-cta');
+      cta.innerHTML = '<img class="store-badge lg" src="../eatornot/assets/images/app-store-badge.svg" alt="Download TallCenter on the App Store">';
+    }
   });
 
   Object.assign(translations['zh-Hant'], {
