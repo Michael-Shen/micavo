@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlipOrDie Privacy Policy</title>
+  <meta name="description" content="FlipOrDie is operated by Micavo. This policy explains what the app collects, why, and the choices you have." />
+  <meta property="og:title" content="FlipOrDie Privacy Policy" />
+  <meta property="og:description" content="FlipOrDie is operated by Micavo. This policy explains what the app collects, why, and the choices you have." />
+  <meta name="theme-color" content="#0b0b0d" />
+  <link rel="canonical" href="https://micavo.app/flipordie/privacy.html" />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PF5PE9BXFT');
+  </script>
+  <script>
+    (function () {
+      var KEY = 'flipordie_lang';
+      var titles = { en: 'FlipOrDie Privacy Policy', zh: 'FlipOrDie 隱私權政策', ja: 'FlipOrDie プライバシーポリシー' };
+      function apply(lang) {
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : lang;
+        document.title = titles[lang];
+      }
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      var nav = navigator.language || '';
+      apply(saved || (/^zh/i.test(nav) ? 'zh' : /^ja/i.test(nav) ? 'ja' : 'en'));
+      document.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-lang-switch]');
+        if (!button) return;
+        var lang = button.getAttribute('data-lang-switch');
+        apply(lang);
+        try { localStorage.setItem(KEY, lang); } catch (e) {}
+      });
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="./" aria-label="FlipOrDie home">
+        <span class="brand-mark" aria-hidden="true">📵</span>
+        FlipOrDie
+      </a>
+      <div class="nav-links">
+        <a href="./#how"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span></a>
+        <a href="./#features"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span></a>
+        <a href="./#pro">Pro</a>
+        <a href="./#faq">FAQ</a>
+        <a href="./privacy.html"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span></a>
+        <a href="./terms.html"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span></a>
+      </div>
+      <div class="lang-switch" aria-label="Language switcher">
+        <button class="lang-button" type="button" data-lang-switch="en">EN</button>
+        <button class="lang-button" type="button" data-lang-switch="zh">繁中</button>
+        <button class="lang-button" type="button" data-lang-switch="ja">日本語</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="legal-hero">
+      <p class="eyebrow">App privacy</p>
+      <h1><span class="en">FlipOrDie Privacy Policy</span><span class="zh">FlipOrDie 隱私權政策</span><span class="ja">FlipOrDie プライバシーポリシー</span></h1>
+      <p><span class="en">Last updated: September 21, 2026. FlipOrDie is operated by Micavo. This policy explains what the app collects, why, and the choices you have.</span><span class="zh">最後更新：2026 年 9 月 21 日。FlipOrDie 由 Micavo 營運。本政策說明 App 蒐集哪些資料、為什麼蒐集，以及你有哪些選擇。</span><span class="ja">最終更新日：2026年9月21日。FlipOrDie は Micavo が運営しています。本ポリシーでは、アプリが収集する情報、その目的、お客様の選択肢について説明します。</span></p>
+    </section>
+
+    <div class="legal-layout">
+      <section class="legal-card">
+        <h2><span class="en">1. Information We Collect</span><span class="zh">1. 我們蒐集的資料</span><span class="ja">1. 収集する情報</span></h2>
+        <div class="en">
+          <p>When you use FlipOrDie, we may collect:</p>
+          <ul>
+            <li>Account information from Sign in with Apple or Google Sign-In: your account identifier, name, and email address (Apple may give us a private relay address instead of your real email) and, for Google, your profile photo URL.</li>
+            <li>App data stored in your account: your discipline points, your current streak, how many sessions you completed today, the pledge you selected, the custom pledge text you write (Pro), whether you finished onboarding, and a flag that shows a notice after you left the app during a session.</li>
+            <li>Sign-in details such as which provider you used and when you last signed in.</li>
+            <li>Purchase and subscription status from Apple and RevenueCat (see Section 6).</li>
+          </ul>
+          <p>We do not collect your location, contacts, photos, advertising identifier, or the contents of other apps.</p>
+        </div>
+        <div class="zh">
+          <p>使用 FlipOrDie 時，我們可能蒐集：</p>
+          <ul>
+            <li>透過「使用 Apple 登入」或 Google 登入取得的帳號資訊：帳號識別碼、姓名與電子郵件（Apple 可能提供隱藏的中繼信箱，而非你的真實信箱），Google 登入另有你的大頭貼網址。</li>
+            <li>儲存在你帳號中的 App 資料：自律點數、目前連勝、今日完成次數、你選擇的宣言、你自訂的宣言文字（Pro）、是否完成引導，以及用來在你專注中離開 App 後顯示提醒的標記。</li>
+            <li>登入相關資訊，例如你使用的登入方式與最近登入時間。</li>
+            <li>來自 Apple 與 RevenueCat 的購買與訂閱狀態（見第 6 節）。</li>
+          </ul>
+          <p>我們不會蒐集你的位置、聯絡人、照片、廣告識別碼，或其他 App 的內容。</p>
+        </div>
+        <div class="ja">
+          <p>FlipOrDie のご利用にあたり、次の情報を収集することがあります。</p>
+          <ul>
+            <li>Apple でサインインまたは Google サインインから取得するアカウント情報：アカウント識別子、氏名、メールアドレス（Apple では実際のメールアドレスの代わりに非公開のリレーアドレスが提供される場合があります）。Google の場合はプロフィール写真の URL も含まれます。</li>
+            <li>アカウントに保存されるアプリのデータ：自制ポイント、現在の連勝、今日完了したセッション数、選択した宣言、自分で書いた宣言のテキスト（Pro）、オンボーディングの完了状況、セッション中にアプリを離れたときに通知を表示するためのフラグ。</li>
+            <li>ログインに使用したプロバイダーや最終ログイン日時などのサインイン情報。</li>
+            <li>Apple と RevenueCat から取得する購入・サブスクリプションの状況（第6項をご覧ください）。</li>
+          </ul>
+          <p>位置情報、連絡先、写真、広告 ID、ほかのアプリの内容は収集しません。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">2. Motion Sensors</span><span class="zh">2. 動作感測器</span><span class="ja">2. モーションセンサー</span></h2>
+        <div class="en">
+          <p>FlipOrDie reads your phone’s accelerometer to tell whether the phone is lying face down. This processing happens only on your device while a focus session is running. The sensor readings are not stored and are not sent to us or to anyone else.</p>
+        </div>
+        <div class="zh">
+          <p>FlipOrDie 會讀取手機的加速度計，判斷手機是否正面朝下。這項處理只會在專注進行中於你的裝置上執行，感測數據不會被儲存，也不會傳送給我們或任何第三方。</p>
+        </div>
+        <div class="ja">
+          <p>FlipOrDie は、スマートフォンが画面を下にして置かれているかを判定するために加速度センサーを読み取ります。この処理は集中セッション中にお使いの端末上でのみ行われ、センサーの値は保存されず、当社やほかの第三者に送信されることもありません。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">3. Microphone and Speech Recognition (Read-aloud Mode)</span><span class="zh">3. 麥克風與語音辨識（朗誦模式）</span><span class="ja">3. マイクと音声認識（音読モード）</span></h2>
+        <div class="en">
+          <p>Read-aloud mode is optional and available with Pro. When it is on and an alarm is triggered, FlipOrDie listens through the microphone and uses Apple’s speech recognition to check that you said your pledge out loud.</p>
+          <p>Your audio is sent to Apple to be converted into text, and is handled under Apple’s privacy terms. FlipOrDie does not save the recording or the text; the recognized words are only compared with your pledge on your device and then discarded.</p>
+          <p>You can deny or revoke microphone and speech recognition access at any time in iOS Settings. Without it, you can still use the other modes.</p>
+        </div>
+        <div class="zh">
+          <p>朗誦模式為選用功能，需要 Pro。開啟後，當警報觸發時，FlipOrDie 會透過麥克風聆聽，並使用 Apple 的語音辨識確認你有大聲唸出宣言。</p>
+          <p>你的錄音會傳送給 Apple 轉成文字，並依 Apple 的隱私條款處理。FlipOrDie 不會儲存錄音或辨識出的文字；辨識結果只會在你的裝置上與宣言比對，之後即丟棄。</p>
+          <p>你可以隨時在 iOS 設定中拒絕或撤銷麥克風與語音辨識權限；沒有授權時，其他模式仍可使用。</p>
+        </div>
+        <div class="ja">
+          <p>音読モードは任意の機能で、Pro で利用できます。オンにしてアラームが作動すると、FlipOrDie はマイクで音声を聞き取り、Apple の音声認識を使って宣言を声に出して読んだかを確認します。</p>
+          <p>音声は Apple に送信されてテキストに変換され、Apple のプライバシー規約に従って扱われます。FlipOrDie は録音もテキストも保存しません。認識された言葉は端末上で宣言と照合された後、破棄されます。</p>
+          <p>マイクと音声認識へのアクセスは、iOS の設定でいつでも拒否・取り消しができます。許可しなくても、ほかのモードは引き続き利用できます。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">4. Leaving the App and Phone Calls</span><span class="zh">4. 離開 App 與來電</span><span class="ja">4. アプリを離れたときと電話</span></h2>
+        <div class="en">
+          <p>To apply the “fleeing” penalty, FlipOrDie notices on your device when the app goes to the background during a session. To avoid penalizing you for an incoming call, the app asks iOS (CallKit) whether a call is ringing or in progress. This is a yes/no check made on your device; we do not see or record who called, call times, or any call content.</p>
+        </div>
+        <div class="zh">
+          <p>為了執行「畏罪潛逃」的扣點，FlipOrDie 會在專注期間於你的裝置上偵測 App 是否被切到背景。為了避免你因來電而被扣點，App 會向 iOS（CallKit）詢問目前是否有來電或通話中；這是在你的裝置上進行的「有／沒有」判斷，我們不會看到或記錄來電者、通話時間或任何通話內容。</p>
+        </div>
+        <div class="ja">
+          <p>「逃走」ペナルティを適用するため、FlipOrDie はセッション中にアプリがバックグラウンドに移ったことを端末上で検知します。着信でペナルティを受けないよう、アプリは iOS（CallKit）に、着信中または通話中かどうかを問い合わせます。これは端末上で行う「はい／いいえ」の確認であり、誰から電話があったか、通話時間、通話内容を当社が見たり記録したりすることはありません。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">5. Notifications</span><span class="zh">5. 通知</span><span class="ja">5. 通知</span></h2>
+        <div class="en">
+          <p>FlipOrDie asks for notification permission so that future focus reminders can be delivered. At the moment the app does not send notifications. You can turn them off at any time in iOS Settings.</p>
+        </div>
+        <div class="zh">
+          <p>FlipOrDie 會請求通知權限，以便日後提供專注提醒。目前 App 尚未發送任何通知，你可以隨時在 iOS 設定中關閉。</p>
+        </div>
+        <div class="ja">
+          <p>FlipOrDie は、将来の集中リマインダーを届けられるよう通知の許可をお願いします。現時点ではアプリから通知を送信していません。通知は iOS の設定でいつでもオフにできます。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">6. Purchases and Subscriptions</span><span class="zh">6. 購買與訂閱</span><span class="ja">6. 購入とサブスクリプション</span></h2>
+        <div class="en">
+          <p>Purchases are made through the Apple App Store. We use RevenueCat to check and manage your Pro status. RevenueCat receives your account ID and purchase and subscription information (for example, which product you bought and when it renews). We never receive your payment card or Apple ID payment details.</p>
+        </div>
+        <div class="zh">
+          <p>購買是透過 Apple App Store 進行。我們使用 RevenueCat 檢查與管理你的 Pro 狀態；RevenueCat 會收到你的帳號 ID 與購買、訂閱資訊（例如你購買的商品與續訂時間）。我們不會取得你的信用卡或 Apple ID 的付款資料。</p>
+        </div>
+        <div class="ja">
+          <p>購入は Apple の App Store を通じて行われます。Pro の状態を確認・管理するために RevenueCat を利用しており、RevenueCat はアカウント ID と購入・サブスクリプション情報（購入した商品や更新日など）を受け取ります。クレジットカードや Apple ID の支払い情報を当社が受け取ることはありません。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">7. Third-Party Services</span><span class="zh">7. 第三方服務</span><span class="ja">7. 第三者サービス</span></h2>
+        <div class="en">
+          <p>FlipOrDie relies on the following services:</p>
+          <ul>
+            <li>Apple: Sign in with Apple, the App Store and in-app purchases, and speech recognition.</li>
+            <li>Google: Google Sign-In, Firebase Authentication, and Cloud Firestore for storing your account data. Our database is hosted in Google Cloud in Taiwan (asia-east1).</li>
+            <li>RevenueCat: purchase and subscription management.</li>
+          </ul>
+          <p>The app currently contains no advertising and no third-party analytics or tracking SDKs. We do not sell your data or share it with data brokers.</p>
+        </div>
+        <div class="zh">
+          <p>FlipOrDie 使用以下服務：</p>
+          <ul>
+            <li>Apple：使用 Apple 登入、App Store 與 App 內購買，以及語音辨識。</li>
+            <li>Google：Google 登入、Firebase Authentication，以及用來儲存帳號資料的 Cloud Firestore。我們的資料庫位於 Google Cloud 台灣機房（asia-east1）。</li>
+            <li>RevenueCat：購買與訂閱管理。</li>
+          </ul>
+          <p>App 目前不含廣告，也沒有第三方分析或追蹤 SDK。我們不會出售你的資料，也不會與資料仲介分享。</p>
+        </div>
+        <div class="ja">
+          <p>FlipOrDie は次のサービスを利用しています。</p>
+          <ul>
+            <li>Apple：Apple でサインイン、App Store とアプリ内課金、音声認識。</li>
+            <li>Google：Google サインイン、Firebase Authentication、アカウントデータを保存する Cloud Firestore。データベースは台湾の Google Cloud（asia-east1）でホストされています。</li>
+            <li>RevenueCat：購入とサブスクリプションの管理。</li>
+          </ul>
+          <p>このアプリには現在、広告や第三者の分析・トラッキング SDK は含まれていません。お客様のデータを販売したり、データブローカーと共有したりすることはありません。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">8. How We Use Information</span><span class="zh">8. 我們如何使用資料</span><span class="ja">8. 情報の利用目的</span></h2>
+        <div class="en">
+          <ul>
+            <li>To sign you in and keep your points, streak, and settings.</li>
+            <li>To run focus sessions, apply rewards and penalties, and show your progress.</li>
+            <li>To unlock Pro features you have purchased.</li>
+            <li>To keep the service secure, prevent abuse, and provide support.</li>
+          </ul>
+        </div>
+        <div class="zh">
+          <ul>
+            <li>讓你登入，並保存你的點數、連勝與設定。</li>
+            <li>執行專注、發放獎勵與扣點，並顯示你的進度。</li>
+            <li>解鎖你已購買的 Pro 功能。</li>
+            <li>維護服務安全、防止濫用並提供客服支援。</li>
+          </ul>
+        </div>
+        <div class="ja">
+          <ul>
+            <li>サインインを行い、ポイント・連勝・設定を保持するため。</li>
+            <li>集中セッションを実行し、報酬とペナルティを適用して、進捗を表示するため。</li>
+            <li>購入された Pro 機能を有効にするため。</li>
+            <li>サービスの安全を保ち、不正利用を防ぎ、サポートを提供するため。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">9. This Website</span><span class="zh">9. 本網站</span><span class="ja">9. 本ウェブサイト</span></h2>
+        <div class="en">
+          <p>This website uses Google Analytics to measure aggregate visits. It is separate from the FlipOrDie app, which does not use Google Analytics.</p>
+        </div>
+        <div class="zh">
+          <p>本網站使用 Google Analytics 統計整體造訪情形，與 FlipOrDie App 無關；App 本身並未使用 Google Analytics。</p>
+        </div>
+        <div class="ja">
+          <p>本ウェブサイトでは、全体の訪問数を把握するために Google アナリティクスを使用しています。これは FlipOrDie アプリとは別のものであり、アプリ自体は Google アナリティクスを使用していません。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">10. Data Retention and Deletion</span><span class="zh">10. 資料保存與刪除</span><span class="ja">10. データの保存と削除</span></h2>
+        <div class="en">
+          <p>We keep your account data while your account is active. You can delete your account and all of its data inside the app: Settings → Delete account and all data. This removes your account and your profile document, and revokes the Sign in with Apple authorization if you signed in with Apple. You will be asked to sign in once more to confirm.</p>
+          <p>Apple and RevenueCat may keep purchase records where required for legal, tax, or fraud-prevention reasons. If you need help, contact <a href="mailto:support@micavo.app">support@micavo.app</a>.</p>
+        </div>
+        <div class="zh">
+          <p>帳號啟用期間，我們會保存你的帳號資料。你可以直接在 App 內刪除帳號與所有資料：設定 → 刪除帳號與所有資料。這會移除你的帳號與個人資料文件；如果你是用 Apple 登入，也會撤銷 Apple 登入授權。為了確認是你本人，需要重新登入一次。</p>
+          <p>基於法律、稅務或防詐需求，Apple 與 RevenueCat 可能會保留購買紀錄。如需協助，請聯絡 <a href="mailto:support@micavo.app">support@micavo.app</a>。</p>
+        </div>
+        <div class="ja">
+          <p>アカウントが有効な間、アカウントデータを保存します。アカウントとすべてのデータは、アプリ内の「設定 → アカウントとすべてのデータを削除」から削除できます。これによりアカウントとプロフィールのドキュメントが削除され、Apple でサインインしている場合は Apple でサインインの認証も取り消されます。本人確認のため、もう一度サインインが必要です。</p>
+          <p>Apple と RevenueCat は、法律・税務・不正防止のために必要な範囲で購入記録を保持することがあります。サポートが必要な場合は <a href="mailto:support@micavo.app">support@micavo.app</a> までご連絡ください。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">11. Your Choices</span><span class="zh">11. 你的選擇</span><span class="ja">11. お客様の選択</span></h2>
+        <div class="en">
+          <ul>
+            <li>Deny or revoke microphone, speech recognition, and notification permissions in iOS Settings.</li>
+            <li>Choose your language in Settings inside the app.</li>
+            <li>Manage or cancel subscriptions in your Apple ID subscription settings.</li>
+            <li>Sign out or delete your account at any time.</li>
+          </ul>
+        </div>
+        <div class="zh">
+          <ul>
+            <li>在 iOS 設定中拒絕或撤銷麥克風、語音辨識與通知權限。</li>
+            <li>在 App 的設定中選擇語言。</li>
+            <li>在 Apple ID 的訂閱設定中管理或取消訂閱。</li>
+            <li>隨時登出或刪除帳號。</li>
+          </ul>
+        </div>
+        <div class="ja">
+          <ul>
+            <li>iOS の設定で、マイク・音声認識・通知の許可を拒否または取り消せます。</li>
+            <li>アプリ内の設定で言語を選べます。</li>
+            <li>Apple ID のサブスクリプション設定で、サブスクリプションを管理・解約できます。</li>
+            <li>いつでもサインアウトやアカウントの削除ができます。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">12. Children</span><span class="zh">12. 兒童</span><span class="ja">12. お子様について</span></h2>
+        <div class="en">
+          <p>FlipOrDie is not directed to children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it.</p>
+        </div>
+        <div class="zh">
+          <p>FlipOrDie 並非針對 13 歲以下兒童設計。如果你認為有兒童向我們提供了個人資料，請與我們聯絡，我們會將其刪除。</p>
+        </div>
+        <div class="ja">
+          <p>FlipOrDie は13歳未満のお子様を対象としていません。お子様が個人情報を提供したと思われる場合はご連絡ください。削除いたします。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">13. Security</span><span class="zh">13. 資料安全</span><span class="ja">13. セキュリティ</span></h2>
+        <div class="en">
+          <p>We use reasonable safeguards, including access rules on our database so that each account can only read and change its own data. No method of transmission or storage is completely secure.</p>
+        </div>
+        <div class="zh">
+          <p>我們採取合理的保護措施，包括資料庫存取規則，使每個帳號只能讀取與修改自己的資料。沒有任何傳輸或儲存方式是絕對安全的。</p>
+        </div>
+        <div class="ja">
+          <p>各アカウントが自分のデータのみ読み取り・変更できるようにするデータベースのアクセスルールなど、合理的な保護措置を講じています。ただし、通信や保存の方法に絶対に安全なものはありません。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">14. Changes to This Policy</span><span class="zh">14. 政策變更</span><span class="ja">14. 本ポリシーの変更</span></h2>
+        <div class="en">
+          <p>We may update this policy from time to time. The updated version will be posted on this page with a new “last updated” date.</p>
+        </div>
+        <div class="zh">
+          <p>我們可能會不時更新本政策；更新後的版本會公布在此頁面，並註明新的「最後更新」日期。</p>
+        </div>
+        <div class="ja">
+          <p>本ポリシーは随時更新されることがあります。更新版は新しい「最終更新日」とともに本ページに掲載します。</p>
+        </div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">15. Contact</span><span class="zh">15. 聯絡我們</span><span class="ja">15. お問い合わせ</span></h2>
+        <div class="en">
+          <p>For privacy questions, support, or deletion requests, contact Micavo at <a href="mailto:support@micavo.app">support@micavo.app</a>.</p>
+        </div>
+        <div class="zh">
+          <p>如有隱私問題、客服需求或刪除資料的請求，請聯絡 Micavo：<a href="mailto:support@micavo.app">support@micavo.app</a>。</p>
+        </div>
+        <div class="ja">
+          <p>プライバシーに関するご質問、サポート、削除のご依頼は、Micavo（<a href="mailto:support@micavo.app">support@micavo.app</a>）までご連絡ください。</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div><span class="en">© 2026 Micavo. FlipOrDie is a product by Micavo.</span><span class="zh">© 2026 Micavo。FlipOrDie 是 Micavo 的產品。</span><span class="ja">© 2026 Micavo. FlipOrDie は Micavo のプロダクトです。</span></div>
+    <div class="footer-links">
+      <a href="/">Micavo</a>
+      <a href="./privacy.html"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span></a>
+      <a href="./terms.html"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span></a>
+      <a href="mailto:support@micavo.app">support@micavo.app</a>
+    </div>
+  </footer>
+</body>
+</html>

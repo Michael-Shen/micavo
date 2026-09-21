@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlipOrDie: Phone Focus Timer</title>
+  <meta name="description" content="FlipOrDie is a focus timer for phone addicts. Put your phone face down to focus. Flip it over and a 15-second alarm starts: say or type your pledge to make it right, or lose points and your streak." />
+  <meta property="og:title" content="FlipOrDie: Phone Focus Timer" />
+  <meta property="og:description" content="FlipOrDie is a focus timer for phone addicts. Put your phone face down to focus. Flip it over and a 15-second alarm starts: say or type your pledge to make it right, or lose points and your streak." />
+  <meta name="theme-color" content="#0b0b0d" />
+  <link rel="canonical" href="https://micavo.app/flipordie/" />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PF5PE9BXFT');
+  </script>
+  <script>
+    (function () {
+      var KEY = 'flipordie_lang';
+      var titles = { en: 'FlipOrDie: Phone Focus Timer', zh: 'FlipOrDie：手機專注計時器', ja: 'FlipOrDie：スマホ集中タイマー' };
+      function apply(lang) {
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : lang;
+        document.title = titles[lang];
+      }
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      var nav = navigator.language || '';
+      apply(saved || (/^zh/i.test(nav) ? 'zh' : /^ja/i.test(nav) ? 'ja' : 'en'));
+      document.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-lang-switch]');
+        if (!button) return;
+        var lang = button.getAttribute('data-lang-switch');
+        apply(lang);
+        try { localStorage.setItem(KEY, lang); } catch (e) {}
+      });
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="./" aria-label="FlipOrDie home">
+        <span class="brand-mark" aria-hidden="true">📵</span>
+        FlipOrDie
+      </a>
+      <div class="nav-links">
+        <a href="./#how"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span></a>
+        <a href="./#features"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span></a>
+        <a href="./#pro">Pro</a>
+        <a href="./#faq">FAQ</a>
+        <a href="./privacy.html"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span></a>
+        <a href="./terms.html"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span></a>
+      </div>
+      <div class="lang-switch" aria-label="Language switcher">
+        <button class="lang-button" type="button" data-lang-switch="en">EN</button>
+        <button class="lang-button" type="button" data-lang-switch="zh">繁中</button>
+        <button class="lang-button" type="button" data-lang-switch="ja">日本語</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow"><span class="en">Focus timer for phone addicts</span><span class="zh">專治手機成癮的專注計時器</span><span class="ja">スマホ依存のための集中タイマー</span></p>
+        <h1 id="hero-title"><span class="en">Flip it over.<br /><span class="accent">Or die.</span></span><span class="zh">翻面專注。<br /><span class="accent">翻開就爆炸。</span></span><span class="ja">裏返して集中。<br /><span class="accent">表に返したらドカン。</span></span></h1>
+        <p class="hero-subtitle"><span class="en">Put your phone face down to focus. Flip it over and a 15-second alarm starts. Type your pledge, or shout it out loud, to make it right. Or lose points and your streak.</span><span class="zh">把手機正面朝下開始專注。一翻開，15 秒警報就開始：打完你的自嘲宣言，或是大聲唸出來，才能回頭是岸，否則扣點、連勝歸零。</span><span class="ja">スマホを画面を下にして置くと集中スタート。表に返すと15秒のアラームが始まります。宣言を入力するか、声に出して読み上げて取り返そう。さもないとポイントも連勝も失います。</span></p>
+        <div class="cta-row">
+          <span class="button primary disabled"><span class="en">Coming soon to the App Store</span><span class="zh">即將在 App Store 上架</span><span class="ja">まもなく App Store で公開</span></span>
+          <a class="button" href="mailto:hello@micavo.app?subject=FlipOrDie%20launch%20updates"><span class="en">Get launch updates</span><span class="zh">收到上架通知</span><span class="ja">公開のお知らせを受け取る</span></a>
+        </div>
+        <p class="small-note"><span class="en">For iPhone (iOS 16 or later).</span><span class="zh">適用於 iPhone（iOS 16 以上）。</span><span class="ja">iPhone（iOS 16 以降）対応。</span></p>
+      </div>
+
+      <div class="phone" aria-hidden="true">
+        <div class="phone-screen">
+          <div class="phone-left"><span class="en">Focus left 12:40</span><span class="zh">專注剩餘 12:40</span><span class="ja">残り 12:40</span></div>
+          <div class="phone-count">12</div>
+          <div class="phone-hint"><span class="en">Type it, or say it out loud</span><span class="zh">打字，或是大聲唸出來</span><span class="ja">入力するか、声に出して</span></div>
+          <div class="phone-pledge"><span class="en">I’m about to get fired</span><span class="zh">我要被老闆 fire 了</span><span class="ja">上司にクビにされそう</span></div>
+          <div class="phone-modes">
+            <div class="phone-mode mode-type">
+              <div class="phone-input"><span><span class="en">I’m about to get fi</span><span class="zh">我要被老闆 fi</span><span class="ja">上司にクビにされそ</span></span><i class="caret"></i></div>
+              <div class="phone-mode-label"><span class="en">⌨️ Standard mode</span><span class="zh">⌨️ 標準模式</span><span class="ja">⌨️ スタンダードモード</span></div>
+            </div>
+            <div class="phone-mode mode-voice">
+              <div class="voice-row"><span class="mic">🎤</span><span class="bars"><i></i><i></i><i></i><i></i><i></i></span></div>
+              <div class="phone-heard"><span class="en">“I’m about to get fired!”</span><span class="zh">「我要被老闆 fire 了！」</span><span class="ja">「上司にクビにされそう！」</span></div>
+              <div class="phone-mode-label"><span class="en">🎙️ Read-aloud mode · Pro</span><span class="zh">🎙️ 朗誦模式 · Pro</span><span class="ja">🎙️ 音読モード · Pro</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="study" aria-labelledby="study-title">
+      <div class="scene">
+        <div class="scene-art">
+          <svg viewBox="0 0 560 340" role="img" aria-label="A student studying at a desk with a phone lying face down beside the book">
+            <defs>
+              <linearGradient id="lampGlow" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffd25a" stop-opacity="0.32"/>
+                <stop offset="1" stop-color="#ffd25a" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1c1c22"/>
+                <stop offset="1" stop-color="#121216"/>
+              </linearGradient>
+            </defs>
+            <rect width="560" height="340" rx="22" fill="url(#wall)"/>
+            <!-- window with night sky -->
+            <rect x="34" y="34" width="110" height="96" rx="10" fill="#0e1424" stroke="#2c2c35" stroke-width="4"/>
+            <line x1="89" y1="34" x2="89" y2="130" stroke="#2c2c35" stroke-width="4"/>
+            <circle cx="112" cy="62" r="11" fill="#f4eccb"/>
+            <circle cx="118" cy="58" r="10" fill="#0e1424"/>
+            <circle cx="56" cy="58" r="1.6" fill="#fff"/><circle cx="66" cy="96" r="1.3" fill="#fff"/><circle cx="124" cy="104" r="1.5" fill="#fff"/>
+            <!-- lamp light -->
+            <path d="M452 86 L540 244 L364 244 Z" fill="url(#lampGlow)"/>
+            <!-- lamp -->
+            <rect x="443" y="232" width="34" height="8" rx="3" fill="#3a3a44"/>
+            <line x1="460" y1="236" x2="460" y2="150" stroke="#3a3a44" stroke-width="5" stroke-linecap="round"/>
+            <line x1="460" y1="150" x2="430" y2="112" stroke="#3a3a44" stroke-width="5" stroke-linecap="round"/>
+            <path d="M408 96 L452 84 L444 124 Z" fill="#ffb93b"/>
+            <!-- chair -->
+            <rect x="150" y="150" width="14" height="150" rx="7" fill="#34343d"/>
+            <rect x="150" y="270" width="112" height="14" rx="7" fill="#34343d"/>
+            <rect x="196" y="284" width="8" height="46" fill="#2a2a32"/>
+            <!-- person: legs -->
+            <path d="M188 268 L292 268 L292 300 L276 300 L276 284 L188 284 Z" fill="#2b3350"/>
+            <rect x="272" y="284" width="14" height="46" rx="5" fill="#2b3350"/>
+            <rect x="266" y="326" width="30" height="8" rx="4" fill="#111"/>
+            <!-- person: torso -->
+            <path d="M184 272 C176 214 190 176 226 160 C250 152 268 166 262 196 C256 226 248 250 244 272 Z" fill="#ff5a4d"/>
+            <!-- head -->
+            <circle cx="238" cy="126" r="30" fill="#f2c9a5"/>
+            <path d="M206 124 C204 92 236 82 258 96 C246 100 238 108 236 118 C226 116 214 118 206 124 Z" fill="#2a1d18"/>
+            <path d="M206 122 C202 140 208 152 216 156 C212 144 212 132 218 122 Z" fill="#2a1d18"/>
+            <circle cx="254" cy="128" r="2.6" fill="#2a1d18"/>
+            <!-- desk -->
+            <rect x="36" y="244" width="490" height="16" rx="5" fill="#2e2e37"/>
+            <rect x="60" y="260" width="12" height="74" rx="3" fill="#24242b"/>
+            <rect x="490" y="260" width="12" height="74" rx="3" fill="#24242b"/>
+            <!-- arm + pen (drawn over the desk edge) -->
+            <path d="M240 190 C262 214 288 226 318 232" stroke="#ff5a4d" stroke-width="20" stroke-linecap="round" fill="none"/>
+            <circle cx="322" cy="234" r="9" fill="#f2c9a5"/>
+            <line x1="326" y1="236" x2="344" y2="226" stroke="#e8e8ee" stroke-width="3" stroke-linecap="round"/>
+            <!-- open book -->
+            <path d="M296 244 L340 238 L384 244 L384 232 L340 224 L296 232 Z" fill="#f4f4f8"/>
+            <line x1="340" y1="226" x2="340" y2="240" stroke="#bdbdc8" stroke-width="2"/>
+            <line x1="306" y1="234" x2="332" y2="232" stroke="#c9c9d4" stroke-width="2"/>
+            <line x1="306" y1="239" x2="332" y2="237" stroke="#c9c9d4" stroke-width="2"/>
+            <line x1="348" y1="232" x2="374" y2="234" stroke="#c9c9d4" stroke-width="2"/>
+            <line x1="348" y1="237" x2="374" y2="239" stroke="#c9c9d4" stroke-width="2"/>
+            <!-- mug -->
+            <rect x="70" y="220" width="26" height="24" rx="5" fill="#f4f4f8"/>
+            <path d="M96 226 C108 226 108 238 96 238" stroke="#f4f4f8" stroke-width="4" fill="none"/>
+            <path class="steam" d="M78 212 C74 204 84 200 80 192" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- phone lying face down (camera bump on top) -->
+            <rect x="404" y="234" width="76" height="10" rx="4" fill="#0a0a0c" stroke="#3b3b45" stroke-width="1.5"/>
+            <rect x="410" y="230" width="16" height="5" rx="2.5" fill="#1c1c22" stroke="#3b3b45" stroke-width="1"/>
+            <ellipse class="ring" cx="442" cy="244" rx="52" ry="8" fill="none" stroke="#ff5a4d" stroke-width="2"/>
+            <!-- timer pill above the phone -->
+            <rect x="398" y="192" width="88" height="28" rx="14" fill="#ffd25a"/>
+            <text x="442" y="211" text-anchor="middle" font-size="14" font-weight="800" fill="#000" font-family="-apple-system, Inter, sans-serif">📵 24:59</text>
+            <line x1="442" y1="220" x2="442" y2="230" stroke="#ffd25a" stroke-width="2" stroke-dasharray="3 3"/>
+            <!-- tempting notifications, fading away -->
+            <g class="notif n1"><circle cx="500" cy="168" r="13" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.25"/><text x="500" y="173" text-anchor="middle" font-size="13">💬</text></g>
+            <g class="notif n2"><circle cx="522" cy="132" r="11" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.25"/><text x="522" y="137" text-anchor="middle" font-size="11">❤️</text></g>
+            <g class="notif n3"><circle cx="478" cy="128" r="10" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.25"/><text x="478" y="132" text-anchor="middle" font-size="10">📩</text></g>
+          </svg>
+        </div>
+        <div class="scene-copy">
+          <p class="eyebrow"><span class="en">Made for studying and deep work</span><span class="zh">為念書與深度工作而生</span><span class="ja">勉強とディープワークのために</span></p>
+          <h2 id="study-title"><span class="en">Phone down. Mind on.</span><span class="zh">手機放下，心才收得回來。</span><span class="ja">スマホは置いて、集中は手元に。</span></h2>
+          <p><span class="en">Keep your phone face down on the desk, right where you can see it and can’t touch it. It is still there. Flipping it is what gets you caught.</span><span class="zh">把手機正面朝下放在桌上，就在你看得到、卻碰不得的地方。它還在那裡，但只要你伸手翻開，就會被抓包。</span><span class="ja">スマホを画面を下にして机に置きます。見えるのに触れない場所に。スマホはそこにありますが、裏返した瞬間に見つかります。</span></p>
+          <ul class="scene-list">
+            <li><span class="en">Study sessions and exam prep</span><span class="zh">念書、準備考試</span><span class="ja">勉強・試験対策</span></li>
+            <li><span class="en">Deep work and writing</span><span class="zh">深度工作與寫作</span><span class="ja">ディープワークと執筆</span></li>
+            <li><span class="en">Late-night deadlines</span><span class="zh">深夜趕稿</span><span class="ja">締切前の夜更かし</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="section-heading">
+        <p class="eyebrow"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span></p>
+        <h2 id="how-title"><span class="en">Three steps. No mercy.</span><span class="zh">三步驟，毫不留情。</span><span class="ja">3ステップ。容赦なし。</span></h2>
+      </div>
+      <div class="steps">
+        <article class="card">
+          <div class="step-number">1</div>
+          <h3><span class="en">Set it face down</span><span class="zh">正面朝下放好</span><span class="ja">画面を下にして置く</span></h3>
+          <p><span class="en">Pick a time, choose a pledge, and place your phone face down. The screen goes black and the timer runs.</span><span class="zh">選好時間與宣言，把手機正面朝下放好。畫面轉黑，計時開始。</span><span class="ja">時間と宣言を選び、スマホを画面を下にして置きます。画面が暗くなり、タイマーが動き出します。</span></p>
+        </article>
+        <article class="card">
+          <div class="step-number">2</div>
+          <h3><span class="en">Flip it and the alarm goes off</span><span class="zh">一翻開，警報就響</span><span class="ja">裏返すとアラームが鳴る</span></h3>
+          <p><span class="en">The screen flashes red, the phone vibrates, and a 15-second bomb timer starts counting down.</span><span class="zh">畫面紅黑閃爍、手機震動，15 秒定時炸彈開始倒數。</span><span class="ja">画面が赤と黒に点滅し、スマホが振動。15秒の時限爆弾のカウントダウンが始まります。</span></p>
+        </article>
+        <article class="card">
+          <div class="step-number">3</div>
+          <h3><span class="en">Own up, or lose it all</span><span class="zh">認罪，不然全部歸零</span><span class="ja">認めるか、すべて失うか</span></h3>
+          <p><span class="en">Type or say your pledge to defuse it, then put the phone back. Fail and you lose points and your streak.</span><span class="zh">打字或唸出宣言拆彈，再把手機放回去；失敗就扣點、連勝歸零。</span><span class="ja">宣言を入力するか声に出して爆弾を解除し、スマホを元に戻します。失敗するとポイントと連勝を失います。</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="section-heading">
+        <p class="eyebrow"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span></p>
+        <h2 id="features-title"><span class="en">Built to make slipping up hurt a little.</span><span class="zh">讓分心有一點痛，才記得住。</span><span class="ja">失敗すると少し痛い。だから覚えている。</span></h2>
+        <p><span class="en">Simple rules, real physical feedback.</span><span class="zh">規則簡單，回饋很有感。</span><span class="ja">ルールはシンプル。フィードバックは体感で。</span></p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">📱</div>
+          <h3><span class="en">Real flip detection</span><span class="zh">真實翻面偵測</span><span class="ja">本物の裏返し検知</span></h3>
+          <p><span class="en">Uses your phone’s motion sensor, right on your device, to know whether it is really face down.</span><span class="zh">直接在你的手機上，用動作感測器判斷是不是真的正面朝下。</span><span class="ja">スマホのモーションセンサーを端末上で使い、本当に画面が下を向いているかを判定します。</span></p>
+        </article>
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">💣</div>
+          <h3><span class="en">15-second alarm</span><span class="zh">15 秒倒數警報</span><span class="ja">15秒アラーム</span></h3>
+          <p><span class="en">Red and black flashing, strong vibration, and a ticking countdown make it impossible to ignore.</span><span class="zh">紅黑閃爍、強烈震動與滴答倒數，讓你想忽略也難。</span><span class="ja">赤と黒の点滅、強い振動、刻むカウントダウン。無視できません。</span></p>
+        </article>
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">🔥</div>
+          <h3><span class="en">Points and streaks</span><span class="zh">點數與連勝</span><span class="ja">ポイントと連勝</span></h3>
+          <p><span class="en">Earn a point for every minute focused. One failure resets your streak: perfect for screenshots.</span><span class="zh">專注一分鐘就賺一點；一次失敗連勝就歸零，很適合截圖哀號。</span><span class="ja">集中1分ごとに1ポイント。一度失敗すれば連勝はゼロ。スクショ向きです。</span></p>
+        </article>
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">✍️</div>
+          <h3><span class="en">Self-roast pledges</span><span class="zh">自嘲宣言</span><span class="ja">自虐の宣言</span></h3>
+          <p><span class="en">Pick a built-in pledge like “I’m about to get fired”, or write your own with Pro.</span><span class="zh">選擇內建宣言，例如「我要被老闆 fire 了」，或用 Pro 自己寫一句。</span><span class="ja">「上司にクビにされそう」などの宣言を選べます。Pro なら自分で書けます。</span></p>
+        </article>
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">🎚️</div>
+          <h3><span class="en">Choose how to make it right</span><span class="zh">選擇解除方式</span><span class="ja">解除方法を選べる</span></h3>
+          <p><span class="en">Type it out, flip back with Easy Mode, or read it aloud with read-aloud mode.</span><span class="zh">可以打字、用 Easy Mode 翻回去，或用朗誦模式大聲唸出來。</span><span class="ja">入力する、イージーモードで裏返す、音読モードで声に出す。</span></p>
+        </article>
+        <article class="card">
+          <div class="feature-icon" aria-hidden="true">🌏</div>
+          <h3><span class="en">Your language</span><span class="zh">你的語言</span><span class="ja">あなたの言語で</span></h3>
+          <p><span class="en">English, 繁體中文, 简体中文, and 日本語.</span><span class="zh">支援 English、繁體中文、简体中文與日本語。</span><span class="ja">English、繁體中文、简体中文、日本語に対応。</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="pro" aria-labelledby="pro-title">
+      <div class="pro-card">
+        <div>
+          <span class="badge">PRO</span>
+          <h2 id="pro-title"><span class="en">Go Pro for the full experience.</span><span class="zh">升級 Pro，體驗完整功能。</span><span class="ja">Pro で、フル体験を。</span></h2>
+          <p><span class="en">FlipOrDie is free to start. Free accounts earn points by focusing and lose them when they slip; at zero points, focus mode locks until you upgrade.</span><span class="zh">FlipOrDie 可免費開始。免費帳號靠專注賺點數、分心會扣點；點數歸零時專注模式會被鎖定，直到升級。</span><span class="ja">FlipOrDie は無料で始められます。無料アカウントは集中でポイントを貯め、失敗すると失います。ポイントがゼロになると、アップグレードするまで集中モードがロックされます。</span></p>
+          <p><span class="en">Pro is available as a subscription or a one-time lifetime purchase. See the App Store for current prices. Eligible new subscribers may get a free trial.</span><span class="zh">Pro 提供訂閱與一次性終身買斷，實際價格請見 App Store；符合資格的新訂閱者可能享有免費試用。</span><span class="ja">Pro はサブスクリプションまたは買い切りで利用できます。最新の価格は App Store をご確認ください。対象の新規登録者は無料体験を利用できる場合があります。</span></p>
+        </div>
+        <ul class="pro-list">
+          <li><span class="en">Unlimited points, never locked out</span><span class="zh">無限點數，再也不會被鎖機</span><span class="ja">ポイント無制限、ロックされない</span></li>
+          <li><span class="en">Easy Mode: flip back down to dismiss the alarm</span><span class="zh">Easy Mode：翻回朝下就解除警報</span><span class="ja">イージーモード：画面を下に戻すだけでアラーム解除</span></li>
+          <li><span class="en">Read-aloud mode: say your pledge out loud</span><span class="zh">朗誦模式：大聲唸出你的宣言</span><span class="ja">音読モード：宣言を声に出して読み上げ</span></li>
+          <li><span class="en">Write your own custom pledge</span><span class="zh">自訂你的專屬宣言</span><span class="ja">自分だけの宣言を作成</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-title"><span class="en">Questions, answered.</span><span class="zh">常見問題</span><span class="ja">よくある質問</span></h2>
+      </div>
+      <details class="faq">
+        <summary><span class="en">Does it block other apps?</span><span class="zh">它會封鎖其他 App 嗎？</span><span class="ja">ほかのアプリをブロックしますか？</span></summary>
+        <p><span class="en">No. FlipOrDie does not block anything. If you leave the app during a session, that counts as fleeing and costs you points.</span><span class="zh">不會。FlipOrDie 不會封鎖任何東西。專注期間離開 App 會被視為畏罪潛逃並扣點。</span><span class="ja">いいえ。FlipOrDie は何もブロックしません。集中中にアプリを離れると、逃げたとみなされてポイントが減ります。</span></p>
+      </details>
+      <details class="faq">
+        <summary><span class="en">What happens if I get a phone call?</span><span class="zh">如果有人來電怎麼辦？</span><span class="ja">電話がかかってきたらどうなりますか？</span></summary>
+        <p><span class="en">A phone call ends the session without any penalty. Start again whenever you are ready.</span><span class="zh">來電會讓本次專注結束，且不會扣點；準備好之後再重新開始就好。</span><span class="ja">電話がかかると、ペナルティなしでセッションが終了します。準備ができたらまた始めてください。</span></p>
+      </details>
+      <details class="faq">
+        <summary><span class="en">Do you record my voice?</span><span class="zh">你們會錄下我的聲音嗎？</span><span class="ja">声は録音されますか？</span></summary>
+        <p><span class="en">No. In read-aloud mode, Apple’s speech recognition turns your speech into text. FlipOrDie does not save recordings or transcripts. See our Privacy Policy for details.</span><span class="zh">不會。朗誦模式使用 Apple 的語音辨識把你的聲音轉成文字，FlipOrDie 不會儲存錄音或文字。詳情請見隱私權政策。</span><span class="ja">いいえ。音読モードでは Apple の音声認識が声をテキストに変換します。FlipOrDie は録音もテキストも保存しません。詳しくはプライバシーポリシーをご覧ください。</span></p>
+      </details>
+      <details class="faq">
+        <summary><span class="en">Which devices does it support?</span><span class="zh">支援哪些裝置？</span><span class="ja">対応機種は？</span></summary>
+        <p><span class="en">iPhone running iOS 16 or later. Android is not available yet.</span><span class="zh">執行 iOS 16 以上的 iPhone；目前尚未提供 Android 版本。</span><span class="ja">iOS 16 以降の iPhone に対応しています。Android 版はまだありません。</span></p>
+      </details>
+      <details class="faq">
+        <summary><span class="en">How do I delete my account?</span><span class="zh">怎麼刪除帳號？</span><span class="ja">アカウントを削除するには？</span></summary>
+        <p><span class="en">Open Settings in the app and choose “Delete account and all data”.</span><span class="zh">在 App 內開啟設定，選擇「刪除帳號與所有資料」即可。</span><span class="ja">アプリの設定を開き、「アカウントとすべてのデータを削除」を選んでください。</span></p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><span class="en">© 2026 Micavo. FlipOrDie is a product by Micavo.</span><span class="zh">© 2026 Micavo。FlipOrDie 是 Micavo 的產品。</span><span class="ja">© 2026 Micavo. FlipOrDie は Micavo のプロダクトです。</span></div>
+    <div class="footer-links">
+      <a href="/">Micavo</a>
+      <a href="./privacy.html"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span></a>
+      <a href="./terms.html"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span></a>
+      <a href="mailto:support@micavo.app">support@micavo.app</a>
+    </div>
+  </footer>
+</body>
+</html>
