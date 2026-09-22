@@ -151,7 +151,7 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 20px 40px; }
 .button.disabled { opacity: 0.85; cursor: default; }
 .small-note { margin-top: 14px; color: var(--muted); font-size: 0.88rem; }
 
-/* CSS phone mock: the face-up alarm */
+/* CSS phone mock: flips between face-down and the face-up alarm */
 .phone {
   justify-self: center;
   width: min(300px, 78vw);
@@ -161,7 +161,55 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 20px 40px; }
   background: #050505;
   border: 2px solid #2a2a30;
   box-shadow: 0 30px 80px rgba(255, 90, 77, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  perspective: 1400px;
 }
+.phone-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  /* Keep this in sync with FLIP_DURATION in the phone-mock script below. */
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.phone.is-down .phone-flip { transform: rotateY(180deg); }
+.phone-front, .phone-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 34px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.phone-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(160deg, #26262d, #101013);
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  padding: 22px;
+}
+.phone-back-icon { font-size: 2.4rem; opacity: 0.7; }
+.phone-back-label { font-size: 0.82rem; font-weight: 700; }
+.phone-success {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #1f9d55;
+  color: #fff;
+  text-align: center;
+  padding: 22px;
+}
+.phone-success-icon { font-size: 3rem; }
+.phone-success-label { font-size: 0.95rem; font-weight: 800; }
+.phone.is-success .phone-success { display: flex; }
 .phone-screen {
   height: 100%;
   border-radius: 34px;
@@ -273,6 +321,7 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 20px 40px; }
   .phone-screen, .mic, .bars i, .caret { animation: none; }
   .phone-modes { height: auto; display: grid; gap: 14px; }
   .phone-mode { position: static; opacity: 1; animation: none; }
+  .phone-flip { transition: none; }
 }
 
 /* ---------- sections ---------- */

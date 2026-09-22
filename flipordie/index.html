@@ -79,22 +79,34 @@
         <p class="small-note"><span class="en">For iPhone (iOS 16 or later).</span><span class="zh">適用於 iPhone（iOS 16 以上）。</span><span class="ja">iPhone（iOS 16 以降）対応。</span></p>
       </div>
 
-      <div class="phone" aria-hidden="true">
-        <div class="phone-screen">
-          <div class="phone-left"><span class="en">Focus left 12:40</span><span class="zh">專注剩餘 12:40</span><span class="ja">残り 12:40</span></div>
-          <div class="phone-count">12</div>
-          <div class="phone-hint"><span class="en">Type it, or say it out loud</span><span class="zh">打字，或是大聲唸出來</span><span class="ja">入力するか、声に出して</span></div>
-          <div class="phone-pledge"><span class="en">I admit I’m a coward</span><span class="zh">我承認我是懦夫</span><span class="ja">臆病者だと認めます</span></div>
-          <div class="phone-modes">
-            <div class="phone-mode mode-type">
-              <div class="phone-input"><span><span class="en">I admit I’m a co</span><span class="zh">我承認我是懦</span><span class="ja">臆病者だと認め</span></span><i class="caret"></i></div>
-              <div class="phone-mode-label"><span class="en">⌨️ Standard mode</span><span class="zh">⌨️ 標準模式</span><span class="ja">⌨️ スタンダードモード</span></div>
+      <div class="phone is-down" aria-hidden="true">
+        <div class="phone-flip">
+          <div class="phone-front">
+            <div class="phone-screen">
+              <div class="phone-left"><span class="en">Focus left 12:40</span><span class="zh">專注剩餘 12:40</span><span class="ja">残り 12:40</span></div>
+              <div class="phone-count">20</div>
+              <div class="phone-hint"><span class="en">Type it, or say it out loud</span><span class="zh">打字，或是大聲唸出來</span><span class="ja">入力するか、声に出して</span></div>
+              <div class="phone-pledge"><span class="en">I admit I’m a coward</span><span class="zh">我承認我是懦夫</span><span class="ja">臆病者だと認めます</span></div>
+              <div class="phone-modes">
+                <div class="phone-mode mode-type">
+                  <div class="phone-input"><span><span class="en">I admit I’m a co</span><span class="zh">我承認我是懦</span><span class="ja">臆病者だと認め</span></span><i class="caret"></i></div>
+                  <div class="phone-mode-label"><span class="en">⌨️ Standard mode</span><span class="zh">⌨️ 標準模式</span><span class="ja">⌨️ スタンダードモード</span></div>
+                </div>
+                <div class="phone-mode mode-voice">
+                  <div class="voice-row"><span class="mic">🎤</span><span class="bars"><i></i><i></i><i></i><i></i><i></i></span></div>
+                  <div class="phone-heard"><span class="en">“I admit I’m a coward!”</span><span class="zh">「我承認我是懦夫！」</span><span class="ja">「臆病者だと認めます！」</span></div>
+                  <div class="phone-mode-label"><span class="en">🎙️ Read-aloud mode · Pro</span><span class="zh">🎙️ 朗誦模式 · Pro</span><span class="ja">🎙️ 音読モード · Pro</span></div>
+                </div>
+              </div>
             </div>
-            <div class="phone-mode mode-voice">
-              <div class="voice-row"><span class="mic">🎤</span><span class="bars"><i></i><i></i><i></i><i></i><i></i></span></div>
-              <div class="phone-heard"><span class="en">“I admit I’m a coward!”</span><span class="zh">「我承認我是懦夫！」</span><span class="ja">「臆病者だと認めます！」</span></div>
-              <div class="phone-mode-label"><span class="en">🎙️ Read-aloud mode · Pro</span><span class="zh">🎙️ 朗誦模式 · Pro</span><span class="ja">🎙️ 音読モード · Pro</span></div>
+            <div class="phone-success">
+              <span class="phone-success-icon">✅</span>
+              <span class="phone-success-label"><span class="en">Defused. Back to focus.</span><span class="zh">拆彈成功，回到專注。</span><span class="ja">解除完了。集中に戻ります。</span></span>
             </div>
+          </div>
+          <div class="phone-back">
+            <span class="phone-back-icon">📵</span>
+            <span class="phone-back-label"><span class="en">Face down. Focusing…</span><span class="zh">正面朝下，專注中…</span><span class="ja">画面を下にして集中中…</span></span>
           </div>
         </div>
       </div>
@@ -312,5 +324,57 @@
       <a href="mailto:support@micavo.app">support@micavo.app</a>
     </div>
   </footer>
+
+  <script>
+    // Drives the hero phone mock: face down -> flip up -> alarm counts down
+    // (mirrors the app's real kAlarmSeconds=20) -> defused -> flip back down.
+    (function () {
+      var phone = document.querySelector('.phone');
+      var countEl = phone ? phone.querySelector('.phone-count') : null;
+      if (!phone || !countEl) return;
+
+      var START_COUNT = 20; // mirrors kAlarmSeconds in the app
+      var MIN_COUNT = 3;
+      var SEC_PER_COUNT = 0.5; // compressed pace, this is a teaser loop
+      var DOWN_HOLD = 1.6;
+      // Keep in sync with the .phone-flip transition duration in styles.css.
+      var FLIP_DURATION = 0.7;
+      var ALARM_START = DOWN_HOLD + FLIP_DURATION;
+      var SUCCESS_AT = ALARM_START + (START_COUNT - (MIN_COUNT - 1)) * SEC_PER_COUNT;
+      var DOWN_AGAIN_AT = SUCCESS_AT + 1.3;
+      var TOTAL = DOWN_AGAIN_AT + FLIP_DURATION + 0.6;
+
+      countEl.textContent = String(START_COUNT);
+
+      var reduceMotion =
+        window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) {
+        // Show the alarm face statically instead of flipping/looping.
+        phone.classList.remove('is-down');
+        countEl.textContent = String(Math.floor((START_COUNT + MIN_COUNT) / 2));
+        return;
+      }
+
+      var start = null;
+      function frame(ts) {
+        if (start === null) start = ts;
+        var t = ((ts - start) / 1000) % TOTAL;
+
+        var isDown = t < DOWN_HOLD || t >= DOWN_AGAIN_AT;
+        var isSuccess = t >= SUCCESS_AT && t < DOWN_AGAIN_AT;
+        phone.classList.toggle('is-down', isDown);
+        phone.classList.toggle('is-success', isSuccess);
+
+        if (!isDown && !isSuccess && t >= ALARM_START) {
+          var elapsed = t - ALARM_START;
+          var count = Math.max(MIN_COUNT, START_COUNT - Math.floor(elapsed / SEC_PER_COUNT));
+          countEl.textContent = String(count);
+        }
+
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    })();
+  </script>
 </body>
 </html>
