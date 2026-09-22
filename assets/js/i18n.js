@@ -75,6 +75,14 @@
         f3: "Run localized Asia Market Tests to learn which markets and messages show early promise.",
         open: "Open AsianLaunch"
       },
+      product_flipordie: {
+        status: "Coming soon to the App Store",
+        desc: "FlipOrDie is a hardcore focus timer: put your phone face down to focus. Flip it over and a 20-second alarm starts—say or type a self-roast pledge to make it right, or lose points and your streak.",
+        f1: "Real on-device flip detection, no blocking or permissions required.",
+        f2: "A 20-second alarm with flashing colors, vibration, and a live countdown.",
+        f3: "Points and streaks that reset on failure—plus Mercy Mode and read-aloud unlocks with Pro.",
+        open: "Open FlipOrDie"
+      },
       matrix: {
         q1: "Crises, deadlines, emergencies.",
         q2: "Planning, growth, meaningful work.",
@@ -119,6 +127,7 @@
         building_critical: "Critical Choice",
         building_tallcenter: "TallCenter",
         building_asianlaunch: "AsianLaunch",
+        building_flipordie: "FlipOrDie",
         follow_label: "Follow my journey"
       },
       footer: {
@@ -201,6 +210,14 @@
         f3: "執行在地化的亞洲市場測試，找出具有早期潛力的市場與訊息。",
         open: "開啟 AsianLaunch"
       },
+      product_flipordie: {
+        status: "即將在 App Store 上架",
+        desc: "FlipOrDie 是硬核專注計時器：把手機正面朝下開始專注。一翻開，20 秒警報就開始——打完或唸出自嘲宣言才能回頭是岸，否則扣點、連勝歸零。",
+        f1: "真實的裝置端翻面偵測，不封鎖任何東西，也不需要額外權限。",
+        f2: "20 秒警報，畫面閃爍、震動，並有即時倒數。",
+        f3: "失敗會扣點、連勝歸零；升級 Pro 可解鎖 Mercy Mode 與朗誦模式。",
+        open: "開啟 FlipOrDie"
+      },
       matrix: {
         q1: "危機、截止期限、緊急事件。",
         q2: "規劃、成長、有意義的工作。",
@@ -245,6 +262,7 @@
         building_critical: "Critical Choice",
         building_tallcenter: "TallCenter",
         building_asianlaunch: "AsianLaunch",
+        building_flipordie: "FlipOrDie",
         follow_label: "追蹤我的旅程"
       },
       footer: {
@@ -327,6 +345,14 @@
         f3: "ローカライズしたAsia Market Testで、有望な市場とメッセージを検証。",
         open: "AsianLaunchを開く"
       },
+      product_flipordie: {
+        status: "まもなく App Store で公開",
+        desc: "FlipOrDieはハードコアな集中タイマーです。スマホを画面を下にして置くと集中スタート。表に返すと20秒のアラームが始まり、自虐の宣言を入力するか声に出して取り返さないと、ポイントと連勝を失います。",
+        f1: "端末上での本物の裏返し検知。何もブロックせず、追加の権限も不要。",
+        f2: "20秒アラーム。画面の点滅、振動、リアルタイムのカウントダウン付き。",
+        f3: "失敗するとポイントを失い連勝もリセット。Pro でマーシーモードと音読モードを解除。",
+        open: "FlipOrDieを開く"
+      },
       matrix: {
         q1: "危機、締め切り、緊急事態。",
         q2: "計画、成長、意義のある仕事。",
@@ -371,6 +397,7 @@
         building_critical: "Critical Choice",
         building_tallcenter: "TallCenter",
         building_asianlaunch: "AsianLaunch",
+        building_flipordie: "FlipOrDie",
         follow_label: "私の歩みをフォローする"
       },
       footer: {
@@ -448,7 +475,7 @@
       image.src = tallcenterShareCards[lang] || tallcenterShareCards.en;
     });
 
-    var internalProductPaths = ["/eatornot/", "/outshine/", "/critical_choice/", "/tallcenter/"];
+    var internalProductPaths = ["/eatornot/", "/outshine/", "/critical_choice/", "/tallcenter/", "/flipordie/"];
     document.querySelectorAll("a[href]").forEach(function (link) {
       var href = link.getAttribute("href");
       var base = internalProductPaths.filter(function (p) { return href && href.indexOf(p) === 0; })[0];

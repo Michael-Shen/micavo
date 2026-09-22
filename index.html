@@ -732,6 +732,17 @@
       filter: drop-shadow(0 18px 28px rgba(1, 10, 40, 0.34));
     }
 
+    .flipordie-shot {
+      background: linear-gradient(145deg, #0b0b0d, #3a0e0b 58%, #d92d20);
+    }
+
+    .flipordie-shot img {
+      object-fit: contain;
+      object-position: center;
+      padding: 32px;
+      filter: drop-shadow(0 18px 28px rgba(1, 1, 2, 0.4));
+    }
+
     .product-body {
       padding: 28px;
       height: 100%;
@@ -2044,6 +2055,27 @@
             </div>
           </div>
         </article>
+
+        <article class="product-card">
+          <div class="product-media flipordie-shot">
+            <img src="/flipordie/assets/app-icon.png" alt="FlipOrDie app icon" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <span class="status" data-i18n="product_flipordie.status">Coming soon to the App Store</span>
+            <h3>FlipOrDie</h3>
+            <p data-i18n="product_flipordie.desc">
+              FlipOrDie is a hardcore focus timer: put your phone face down to focus. Flip it over and a 20-second alarm starts—say or type a self-roast pledge to make it right, or lose points and your streak.
+            </p>
+            <ul class="feature-list">
+              <li data-i18n="product_flipordie.f1">Real on-device flip detection, no blocking or permissions required.</li>
+              <li data-i18n="product_flipordie.f2">A 20-second alarm with flashing colors, vibration, and a live countdown.</li>
+              <li data-i18n="product_flipordie.f3">Points and streaks that reset on failure—plus Mercy Mode and read-aloud unlocks with Pro.</li>
+            </ul>
+            <div class="product-actions">
+              <a class="button primary" href="/flipordie/" data-i18n="product_flipordie.open" data-ga-event="product_link_clicked" data-ga-param-product="FlipOrDie" data-ga-param-cta-location="product_card">Open FlipOrDie</a>
+            </div>
+          </div>
+        </article>
         </div>
         <button type="button" class="carousel-arrow prev product-carousel-prev" aria-label="Previous products">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
@@ -2104,6 +2136,7 @@
             <li data-i18n="founder.building_critical">Critical Choice</li>
             <li data-i18n="founder.building_tallcenter">TallCenter</li>
             <li data-i18n="founder.building_asianlaunch">AsianLaunch</li>
+            <li data-i18n="founder.building_flipordie">FlipOrDie</li>
           </ul>
 
           <p class="founder-follow-label" data-i18n="founder.follow_label">Follow my journey</p>
@@ -2155,6 +2188,7 @@
       <a href="/critical_choice/" data-ga-event="product_link_clicked" data-ga-param-product="Critical Choice" data-ga-param-cta-location="footer">Critical Choice</a>
       <a href="/tallcenter/" data-ga-event="product_link_clicked" data-ga-param-product="TallCenter" data-ga-param-cta-location="footer">TallCenter</a>
       <a href="https://asianlaunch.com/" target="_blank" rel="noopener noreferrer" data-ga-event="product_link_clicked" data-ga-param-product="AsianLaunch" data-ga-param-cta-location="footer">AsianLaunch</a>
+      <a href="/flipordie/" data-ga-event="product_link_clicked" data-ga-param-product="FlipOrDie" data-ga-param-cta-location="footer">FlipOrDie</a>
       <a href="mailto:hello@micavo.app" data-i18n="footer.contact" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Contact</a>
       <a href="https://www.facebook.com/people/Micavo/61591584159827/" target="_blank" rel="noopener noreferrer" data-i18n="follow.facebook" data-ga-event="social_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Facebook</a>
     </div>
