@@ -733,14 +733,26 @@
     }
 
     .flipordie-shot {
-      background: linear-gradient(145deg, #0b0b0d, #3a0e0b 58%, #d92d20);
+      background: #090909;
     }
 
     .flipordie-shot img {
       object-fit: contain;
       object-position: center;
-      padding: 32px;
-      filter: drop-shadow(0 18px 28px rgba(1, 1, 2, 0.4));
+      padding: 0;
+      filter: none;
+    }
+
+    .flipordie-shot .flipordie-poster-zh {
+      display: none;
+    }
+
+    html[lang="zh-Hant"] .flipordie-shot .flipordie-poster-en {
+      display: none;
+    }
+
+    html[lang="zh-Hant"] .flipordie-shot .flipordie-poster-zh {
+      display: block;
     }
 
     .product-body {
@@ -1765,6 +1777,70 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Projects lead the homepage; Michael's portrait and introduction follow. */
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section--products {
+      order: 1;
+      margin-top: 48px;
+    }
+
+    .hero { order: 2; }
+    .lab-preview { order: 3; }
+    .follow-section { order: 4; }
+    .section--approach { order: 5; }
+    .founder-section { order: 6; }
+
+    main > .section:not(.section--products):not(.section--approach) {
+      order: 7;
+    }
+
+    .product-carousel {
+      position: static;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      overflow: visible;
+      scroll-snap-type: none;
+    }
+
+    .product-grid .product-card {
+      min-width: 0;
+      height: 100%;
+    }
+
+    .product-carousel > .carousel-arrow,
+    .product-carousel-dots {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .section--products {
+        margin-top: 20px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+    }
   </style>
 </head>
 
@@ -1947,7 +2023,8 @@
         <div class="product-grid">
         <article class="product-card">
           <div class="product-media flipordie-shot">
-            <img src="/flipordie/assets/app-icon.png" alt="FlipOrDie app icon" loading="lazy" />
+            <img class="flipordie-poster-en" src="/flipordie/assets/flipordie-poster-en.png" alt="FlipOrDie focus timer promotional poster" loading="lazy" />
+            <img class="flipordie-poster-zh" src="/flipordie/assets/flipordie-poster-zh.png" alt="FlipOrDie 專注計時器宣傳圖" loading="lazy" />
           </div>
           <div class="product-body">
             <span class="status" data-i18n="product_flipordie.status">Coming soon to the App Store</span>
