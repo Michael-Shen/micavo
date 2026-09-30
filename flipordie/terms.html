@@ -24,7 +24,7 @@
   <script>
     (function () {
       var KEY = 'flipordie_lang';
-      var titles = { en: 'FlipOrDie Terms of Service', zh: 'FlipOrDie 服務條款', ja: 'FlipOrDie 利用規約' };
+      var titles = { en: 'FlipOrDie Terms of Service', zh: 'FlipOrDie 服務條款', ja: 'FlipOrDie 利用規約', ko: 'FlipOrDie 이용약관' };
       function apply(lang) {
         document.documentElement.setAttribute('data-lang', lang);
         document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : lang;
@@ -34,7 +34,7 @@
       var saved = null;
       try { saved = localStorage.getItem(KEY); } catch (e) {}
       var nav = navigator.language || '';
-      var pick = requested && titles[requested] ? requested : (saved || (/^zh/i.test(nav) ? 'zh' : /^ja/i.test(nav) ? 'ja' : 'en'));
+      var pick = requested && titles[requested] ? requested : (saved || (/^zh/i.test(nav) ? 'zh' : /^ja/i.test(nav) ? 'ja' : /^ko/i.test(nav) ? 'ko' : 'en'));
       apply(pick);
       document.addEventListener('click', function (event) {
         var button = event.target.closest('[data-lang-switch]');
@@ -55,17 +55,18 @@
         FlipOrDie
       </a>
       <div class="nav-links">
-        <a href="./#how"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span></a>
-        <a href="./#features"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span></a>
+        <a href="./#how"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span><span class="ko">사용 방법</span></a>
+        <a href="./#features"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span><span class="ko">기능</span></a>
         <a href="./#pro">Pro</a>
         <a href="./#faq">FAQ</a>
-        <a href="./privacy.html"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span></a>
-        <a href="./terms.html"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span></a>
+        <a href="./privacy.html"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span><span class="ko">개인정보</span></a>
+        <a href="./terms.html"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
       </div>
       <div class="lang-switch" aria-label="Language switcher">
         <button class="lang-button" type="button" data-lang-switch="en">EN</button>
         <button class="lang-button" type="button" data-lang-switch="zh">繁中</button>
         <button class="lang-button" type="button" data-lang-switch="ja">日本語</button>
+        <button class="lang-button" type="button" data-lang-switch="ko">한국어</button>
       </div>
     </nav>
   </header>
@@ -73,13 +74,13 @@
   <main>
     <section class="legal-hero">
       <p class="eyebrow">App terms</p>
-      <h1><span class="en">FlipOrDie Terms of Service</span><span class="zh">FlipOrDie 服務條款</span><span class="ja">FlipOrDie 利用規約</span></h1>
-      <p><span class="en">Last updated: September 21, 2026. These Terms govern your access to and use of FlipOrDie, a focus timer operated by Micavo.</span><span class="zh">最後更新：2026 年 9 月 21 日。本條款規範你對 FlipOrDie（由 Micavo 營運的專注計時器）的存取與使用。</span><span class="ja">最終更新日：2026年9月21日。本規約は、Micavo が運営する集中タイマー「FlipOrDie」のご利用に適用されます。</span></p>
+      <h1><span class="en">FlipOrDie Terms of Service</span><span class="zh">FlipOrDie 服務條款</span><span class="ja">FlipOrDie 利用規約</span><span class="ko">FlipOrDie 이용약관</span></h1>
+      <p><span class="en">Last updated: September 21, 2026. These Terms govern your access to and use of FlipOrDie, a focus timer operated by Micavo.</span><span class="zh">最後更新：2026 年 9 月 21 日。本條款規範你對 FlipOrDie（由 Micavo 營運的專注計時器）的存取與使用。</span><span class="ja">最終更新日：2026年9月21日。本規約は、Micavo が運営する集中タイマー「FlipOrDie」のご利用に適用されます。</span><span class="ko">최종 업데이트: 2026년 9월 21일. 본 약관은 Micavo가 운영하는 집중 타이머 FlipOrDie에 대한 접근과 이용을 규율합니다.</span></p>
     </section>
 
     <div class="legal-layout">
       <section class="legal-card">
-        <h2><span class="en">1. Acceptance of Terms</span><span class="zh">1. 接受條款</span><span class="ja">1. 規約への同意</span></h2>
+        <h2><span class="en">1. Acceptance of Terms</span><span class="zh">1. 接受條款</span><span class="ja">1. 規約への同意</span><span class="ko">1. 약관 동의</span></h2>
         <div class="en">
           <p>By downloading, accessing, or using FlipOrDie, you agree to these Terms. If you do not agree, do not use the app.</p>
         </div>
@@ -89,10 +90,13 @@
         <div class="ja">
           <p>FlipOrDie をダウンロード、アクセス、または利用することで、本規約に同意したものとみなされます。同意しない場合は、アプリを利用しないでください。</p>
         </div>
+        <div class="ko">
+          <p>FlipOrDie를 다운로드, 접근 또는 이용함으로써 본 약관에 동의하는 것으로 간주됩니다. 동의하지 않으시면 앱을 이용하지 마세요.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">2. Eligibility and Accounts</span><span class="zh">2. 使用資格與帳號</span><span class="ja">2. 利用資格とアカウント</span></h2>
+        <h2><span class="en">2. Eligibility and Accounts</span><span class="zh">2. 使用資格與帳號</span><span class="ja">2. 利用資格とアカウント</span><span class="ko">2. 이용 자격 및 계정</span></h2>
         <div class="en">
           <p>You must be at least 13 years old to use FlipOrDie. You sign in with Apple or Google and are responsible for keeping your account secure and for all activity under it. Please provide accurate information.</p>
         </div>
@@ -102,10 +106,13 @@
         <div class="ja">
           <p>FlipOrDie のご利用は13歳以上の方に限ります。Apple または Google でサインインし、アカウントの安全管理およびアカウントで行われるすべての操作についてご自身で責任を負うものとします。正確な情報をご提供ください。</p>
         </div>
+        <div class="ko">
+          <p>FlipOrDie를 이용하려면 만 13세 이상이어야 합니다. Apple 또는 Google로 로그인하며, 계정 보안과 계정 하에서 이루어지는 모든 활동에 대한 책임은 본인에게 있습니다. 정확한 정보를 제공해 주세요.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">3. What FlipOrDie Does</span><span class="zh">3. FlipOrDie 提供的服務</span><span class="ja">3. FlipOrDie の内容</span></h2>
+        <h2><span class="en">3. What FlipOrDie Does</span><span class="zh">3. FlipOrDie 提供的服務</span><span class="ja">3. FlipOrDie の内容</span><span class="ko">3. FlipOrDie가 제공하는 것</span></h2>
         <div class="en">
           <p>FlipOrDie is a focus timer. You put your phone face down to start focusing. If you flip it over or leave the app during a session, an alarm and penalties apply. We may change, add, or remove features at any time.</p>
         </div>
@@ -115,10 +122,13 @@
         <div class="ja">
           <p>FlipOrDie は集中タイマーです。スマートフォンを画面を下にして置くと集中が始まります。セッション中に裏返したりアプリを離れたりすると、アラームとペナルティが適用されます。機能は予告なく変更・追加・削除されることがあります。</p>
         </div>
+        <div class="ko">
+          <p>FlipOrDie는 집중 타이머입니다. 폰을 화면이 아래로 향하게 놓으면 집중이 시작됩니다. 세션 중 뒤집거나 앱을 벗어나면 알람과 벌칙이 적용됩니다. 당사는 언제든지 기능을 변경, 추가 또는 제거할 수 있습니다.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">4. Wellness Disclaimer and Safe Use</span><span class="zh">4. 健康聲明與安全使用</span><span class="ja">4. 健康に関する免責と安全な利用</span></h2>
+        <h2><span class="en">4. Wellness Disclaimer and Safe Use</span><span class="zh">4. 健康聲明與安全使用</span><span class="ja">4. 健康に関する免責と安全な利用</span><span class="ko">4. 건강 관련 고지 및 안전한 사용</span></h2>
         <div class="en">
           <p>FlipOrDie is a productivity and self-discipline tool. It is not a medical device and does not diagnose or treat addiction or any health condition. If you are struggling, please talk to a qualified professional.</p>
           <p>Do not use a focus session when you need your phone, for example while driving, in an emergency, or when you must be reachable. Placing a phone face down on a surface is at your own risk; take care not to damage it.</p>
@@ -131,10 +141,14 @@
           <p>FlipOrDie は生産性と自己管理のためのツールです。医療機器ではなく、依存症やいかなる健康状態の診断・治療も行いません。お困りの場合は、資格のある専門家にご相談ください。</p>
           <p>運転中、緊急時、連絡が取れる状態でなければならないときなど、スマートフォンが必要な場面では集中セッションを使用しないでください。スマートフォンを画面を下にして机などに置くことは自己責任で行い、端末を傷つけないようご注意ください。</p>
         </div>
+        <div class="ko">
+          <p>FlipOrDie는 생산성과 자기관리를 위한 도구입니다. 의료기기가 아니며, 중독이나 어떠한 건강 상태도 진단하거나 치료하지 않습니다. 어려움을 겪고 계시다면 전문가와 상담해 주세요.</p>
+          <p>운전 중이거나 긴급 상황, 연락이 가능해야 하는 경우 등 폰이 필요한 상황에서는 집중 세션을 사용하지 마세요. 폰을 화면이 아래로 향하게 표면에 놓는 것은 본인 책임이며, 손상되지 않도록 주의하세요.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">5. Points, Streaks, and Penalties</span><span class="zh">5. 點數、連勝與扣點</span><span class="ja">5. ポイント・連勝・ペナルティ</span></h2>
+        <h2><span class="en">5. Points, Streaks, and Penalties</span><span class="zh">5. 點數、連勝與扣點</span><span class="ja">5. ポイント・連勝・ペナルティ</span><span class="ko">5. 포인트, 연승, 벌칙</span></h2>
         <div class="en">
           <p>Discipline points, streaks, and success counts are virtual and have no cash value. They cannot be transferred or exchanged. Completing a session earns points, and failing a session (for example when the countdown runs out, or you leave the app) removes points and resets your streak. Points never go below zero. When a free account reaches zero points, focus mode is locked until Pro is purchased.</p>
         </div>
@@ -144,10 +158,13 @@
         <div class="ja">
           <p>自制ポイント、連勝、成功回数は仮想のものであり、現金価値はありません。譲渡や交換はできません。セッションを完了するとポイントを獲得し、失敗（カウントダウンの終了やアプリを離れた場合など）するとポイントを失い連勝がリセットされます。ポイントがゼロを下回ることはありません。無料アカウントのポイントがゼロになると、Pro を購入するまで集中モードがロックされます。</p>
         </div>
+        <div class="ko">
+          <p>자율 포인트, 연승, 성공 횟수는 가상의 수치이며 현금 가치가 없습니다. 양도하거나 교환할 수 없습니다. 세션을 완료하면 포인트를 얻고, 세션에 실패하면(예: 카운트다운 종료 또는 앱 이탈) 포인트를 잃고 연승이 초기화됩니다. 포인트는 0 아래로 내려가지 않습니다. 무료 계정의 포인트가 0이 되면 Pro를 구매할 때까지 집중 모드가 잠깁니다.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">6. Pro Purchases and Subscriptions</span><span class="zh">6. Pro 購買與訂閱</span><span class="ja">6. Pro の購入とサブスクリプション</span></h2>
+        <h2><span class="en">6. Pro Purchases and Subscriptions</span><span class="zh">6. Pro 購買與訂閱</span><span class="ja">6. Pro の購入とサブスクリプション</span><span class="ko">6. Pro 구매 및 구독</span></h2>
         <div class="en">
           <p>FlipOrDie Pro may be offered as auto-renewing subscriptions (monthly or yearly) and as a one-time “Lifetime” purchase. Current prices and options are shown in the app and on the App Store. “Lifetime” means access to Pro for as long as FlipOrDie offers Pro; it does not mean your own lifetime.</p>
           <p>Payment is charged to your Apple ID at confirmation of purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Eligible new subscribers may receive a free trial; if you do not cancel before the trial ends, you will be charged the subscription price. You can manage or cancel subscriptions in your Apple ID account settings.</p>
@@ -163,10 +180,15 @@
           <p>購入確定時にお客様の Apple ID に料金が請求されます。サブスクリプションは、現在の期間が終了する24時間以上前に解約しない限り、自動的に更新されます。対象の新規登録者は無料体験を利用できる場合があり、体験期間の終了前に解約しない場合は、サブスクリプション料金が請求されます。サブスクリプションは Apple ID のアカウント設定で管理・解約できます。</p>
           <p>返金は Apple のポリシーに従って Apple が対応します。購入の復元は、アプリの設定から行えます。</p>
         </div>
+        <div class="ko">
+          <p>FlipOrDie Pro는 자동 갱신 구독(월간 또는 연간) 또는 일회성 '평생 이용권'으로 제공될 수 있습니다. 현재 가격과 옵션은 앱과 App Store에 표시됩니다. '평생'은 FlipOrDie가 Pro를 제공하는 동안 Pro를 이용할 수 있다는 의미이며, 이용자 본인의 생애를 의미하지 않습니다.</p>
+          <p>결제는 구매 확인 시 Apple ID로 청구됩니다. 구독은 현재 기간 종료 최소 24시간 전에 해지하지 않는 한 자동으로 갱신됩니다. 자격이 되는 신규 구독자는 무료 체험을 받을 수 있으며, 체험 종료 전에 해지하지 않으면 구독 요금이 청구됩니다. Apple ID 계정 설정에서 구독을 관리하거나 해지할 수 있습니다.</p>
+          <p>환불은 Apple의 정책에 따라 Apple이 처리합니다. 구매 내역은 앱 내 설정에서 복원할 수 있습니다.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">7. Permissions</span><span class="zh">7. 權限</span><span class="ja">7. 権限</span></h2>
+        <h2><span class="en">7. Permissions</span><span class="zh">7. 權限</span><span class="ja">7. 権限</span><span class="ko">7. 권한</span></h2>
         <div class="en">
           <p>The app may ask for microphone, speech recognition, and notification permissions. They are optional, and you can change them in iOS Settings. Some features, such as read-aloud mode, need the related permission to work.</p>
         </div>
@@ -176,10 +198,13 @@
         <div class="ja">
           <p>アプリはマイク、音声認識、通知の許可をお願いすることがあります。これらは任意であり、iOS の設定でいつでも変更できます。音読モードなど一部の機能は、対応する権限がないと動作しません。</p>
         </div>
+        <div class="ko">
+          <p>앱은 마이크, 음성 인식, 알림 권한을 요청할 수 있습니다. 이는 선택 사항이며 iOS 설정에서 변경할 수 있습니다. 음성 낭독 모드 등 일부 기능은 관련 권한이 있어야 작동합니다.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">8. Acceptable Use</span><span class="zh">8. 使用規範</span><span class="ja">8. 禁止事項</span></h2>
+        <h2><span class="en">8. Acceptable Use</span><span class="zh">8. 使用規範</span><span class="ja">8. 禁止事項</span><span class="ko">8. 허용되는 이용</span></h2>
         <div class="en">
           <p>You agree not to:</p>
           <ul>
@@ -207,10 +232,19 @@
             <li>適用される法令に違反する方法でアプリを利用すること。</li>
           </ul>
         </div>
+        <div class="ko">
+          <p>다음 행위를 하지 않기로 동의합니다:</p>
+          <ul>
+            <li>앱 또는 그 백엔드를 역설계, 방해, 우회하는 행위.</li>
+            <li>포인트, 연승, 구매 내역, Pro 권한을 조작하거나 유료 기능을 회피하기 위해 앱을 이용하는 행위.</li>
+            <li>불법적이거나, 괴롭힘에 해당하거나, 혐오를 담고 있거나, 타인의 권리를 침해하는 맞춤 다짐을 작성하는 행위.</li>
+            <li>관련 법률을 위반하는 방식으로 앱을 이용하는 행위.</li>
+          </ul>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">9. Your Content</span><span class="zh">9. 你的內容</span><span class="ja">9. お客様のコンテンツ</span></h2>
+        <h2><span class="en">9. Your Content</span><span class="zh">9. 你的內容</span><span class="ja">9. お客様のコンテンツ</span><span class="ko">9. 이용자의 콘텐츠</span></h2>
         <div class="en">
           <p>You keep ownership of the custom pledge text and other content you enter. You grant Micavo the limited rights needed to store and display it to you in order to run the app. Your custom pledge is not shared with other users.</p>
         </div>
@@ -220,10 +254,13 @@
         <div class="ja">
           <p>入力した宣言のテキストなどのコンテンツの所有権はお客様に帰属します。お客様は Micavo に対し、アプリの運営のためにそれを保存し表示するために必要な限定的な権利を付与するものとします。お客様の宣言がほかのユーザーと共有されることはありません。</p>
         </div>
+        <div class="ko">
+          <p>직접 입력한 맞춤 다짐 텍스트 및 기타 콘텐츠의 소유권은 이용자에게 있습니다. 이용자는 Micavo에게 앱 운영을 위해 필요한 범위에서 해당 콘텐츠를 저장하고 표시할 수 있는 제한적 권리를 부여합니다. 맞춤 다짐은 다른 이용자와 공유되지 않습니다.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">10. Third-Party Services</span><span class="zh">10. 第三方服務</span><span class="ja">10. 第三者サービス</span></h2>
+        <h2><span class="en">10. Third-Party Services</span><span class="zh">10. 第三方服務</span><span class="ja">10. 第三者サービス</span><span class="ko">10. 제3자 서비스</span></h2>
         <div class="en">
           <p>FlipOrDie relies on services from Apple, Google (Firebase), and RevenueCat. Your use of those services may also be subject to their own terms and policies.</p>
         </div>
@@ -233,10 +270,13 @@
         <div class="ja">
           <p>FlipOrDie は Apple、Google（Firebase）、RevenueCat のサービスを利用しています。これらのサービスのご利用には、それぞれの規約やポリシーが適用される場合があります。</p>
         </div>
+        <div class="ko">
+          <p>FlipOrDie는 Apple, Google(Firebase), RevenueCat의 서비스를 이용합니다. 이러한 서비스를 이용할 경우 각 서비스 자체의 약관과 정책이 적용될 수 있습니다.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">11. Intellectual Property</span><span class="zh">11. 智慧財產權</span><span class="ja">11. 知的財産権</span></h2>
+        <h2><span class="en">11. Intellectual Property</span><span class="zh">11. 智慧財產權</span><span class="ja">11. 知的財産権</span><span class="ko">11. 지적재산권</span></h2>
         <div class="en">
           <p>FlipOrDie, including its design, text, and code, belongs to Micavo and its licensors. We grant you a limited, non-exclusive, non-transferable license to use the app for personal, non-commercial purposes.</p>
         </div>
@@ -246,10 +286,13 @@
         <div class="ja">
           <p>FlipOrDie のデザイン、文章、コードを含むすべては、Micavo およびそのライセンサーに帰属します。当社は、お客様に対し、個人的かつ非商業的な目的でアプリを利用するための、限定的・非独占的・譲渡不能なライセンスを付与します。</p>
         </div>
+        <div class="ko">
+          <p>디자인, 텍스트, 코드를 포함한 FlipOrDie는 Micavo와 그 라이선스 제공자에게 귀속됩니다. 당사는 이용자에게 개인적이고 비상업적인 목적으로 앱을 이용할 수 있는 제한적이고 비독점적이며 양도 불가능한 라이선스를 부여합니다.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">12. Termination</span><span class="zh">12. 終止</span><span class="ja">12. 利用の終了</span></h2>
+        <h2><span class="en">12. Termination</span><span class="zh">12. 終止</span><span class="ja">12. 利用の終了</span><span class="ko">12. 이용 종료</span></h2>
         <div class="en">
           <p>You can stop using FlipOrDie or delete your account at any time in the app. We may suspend or end access if you violate these Terms, misuse the service, or if continued access would be unlawful or impractical.</p>
         </div>
@@ -259,10 +302,13 @@
         <div class="ja">
           <p>お客様はいつでもアプリ内で FlipOrDie の利用をやめたり、アカウントを削除したりできます。本規約に違反した場合、サービスを不正に利用した場合、または利用の継続が違法もしくは実施困難な場合、当社は利用を停止または終了することがあります。</p>
         </div>
+        <div class="ko">
+          <p>이용자는 앱 내에서 언제든지 FlipOrDie 이용을 중단하거나 계정을 삭제할 수 있습니다. 본 약관을 위반하거나 서비스를 오용하는 경우, 또는 이용을 계속하는 것이 위법하거나 실행 불가능한 경우 당사는 접근을 중단하거나 종료할 수 있습니다.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">13. Disclaimers and Limitation of Liability</span><span class="zh">13. 免責聲明與責任限制</span><span class="ja">13. 免責事項と責任の制限</span></h2>
+        <h2><span class="en">13. Disclaimers and Limitation of Liability</span><span class="zh">13. 免責聲明與責任限制</span><span class="ja">13. 免責事項と責任の制限</span><span class="ko">13. 면책 조항 및 책임 제한</span></h2>
         <div class="en">
           <p>FlipOrDie is provided “as is” and “as available” without warranties of any kind. To the fullest extent permitted by law, Micavo is not liable for indirect, incidental, consequential, special, or punitive damages, or for missed calls, messages, or events while you were in a focus session.</p>
         </div>
@@ -272,10 +318,13 @@
         <div class="ja">
           <p>FlipOrDie は「現状のまま」「提供可能な範囲で」提供され、いかなる種類の保証もありません。法令で認められる最大限の範囲で、Micavo は、間接的・付随的・派生的・特別・懲罰的損害、および集中セッション中に不在となった着信・メッセージ・出来事について責任を負いません。</p>
         </div>
+        <div class="ko">
+          <p>FlipOrDie는 어떠한 종류의 보증도 없이 '있는 그대로' 및 '이용 가능한 상태로' 제공됩니다. 법률이 허용하는 최대 범위 내에서, Micavo는 간접적·부수적·결과적·특별 또는 징벌적 손해, 그리고 집중 세션 중 놓친 전화, 메시지, 사건에 대해 책임지지 않습니다.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">14. Changes to These Terms</span><span class="zh">14. 條款變更</span><span class="ja">14. 本規約の変更</span></h2>
+        <h2><span class="en">14. Changes to These Terms</span><span class="zh">14. 條款變更</span><span class="ja">14. 本規約の変更</span><span class="ko">14. 약관 변경</span></h2>
         <div class="en">
           <p>We may update these Terms from time to time. The updated version will be posted on this page with a new “last updated” date. Continued use of FlipOrDie after changes means you accept the updated Terms.</p>
         </div>
@@ -285,10 +334,13 @@
         <div class="ja">
           <p>本規約は随時更新されることがあります。更新版は新しい「最終更新日」とともに本ページに掲載します。変更後も FlipOrDie を使い続けた場合、更新後の規約に同意したものとみなされます。</p>
         </div>
+        <div class="ko">
+          <p>본 약관은 수시로 업데이트될 수 있습니다. 업데이트된 버전은 새로운 '최종 업데이트' 날짜와 함께 이 페이지에 게시됩니다. 변경 이후에도 FlipOrDie를 계속 이용하시면 업데이트된 약관에 동의하는 것으로 간주됩니다.</p>
+        </div>
       </section>
 
       <section class="legal-card">
-        <h2><span class="en">15. Contact</span><span class="zh">15. 聯絡我們</span><span class="ja">15. お問い合わせ</span></h2>
+        <h2><span class="en">15. Contact</span><span class="zh">15. 聯絡我們</span><span class="ja">15. お問い合わせ</span><span class="ko">15. 문의하기</span></h2>
         <div class="en">
           <p>For questions about these Terms, contact Micavo at <a href="mailto:support@micavo.app">support@micavo.app</a>.</p>
         </div>
@@ -298,16 +350,19 @@
         <div class="ja">
           <p>本規約に関するご質問は、Micavo（<a href="mailto:support@micavo.app">support@micavo.app</a>）までご連絡ください。</p>
         </div>
+        <div class="ko">
+          <p>본 약관에 대해 문의사항이 있으시면 <a href="mailto:support@micavo.app">support@micavo.app</a>으로 Micavo에 연락해 주세요.</p>
+        </div>
       </section>
     </div>
   </main>
 
   <footer class="footer">
-    <div><span class="en">© 2026 Micavo. FlipOrDie is a product by Micavo.</span><span class="zh">© 2026 Micavo。FlipOrDie 是 Micavo 的產品。</span><span class="ja">© 2026 Micavo. FlipOrDie は Micavo のプロダクトです。</span></div>
+    <div><span class="en">© 2026 Micavo. FlipOrDie is a product by Micavo.</span><span class="zh">© 2026 Micavo。FlipOrDie 是 Micavo 的產品。</span><span class="ja">© 2026 Micavo. FlipOrDie は Micavo のプロダクトです。</span><span class="ko">© 2026 Micavo. FlipOrDie는 Micavo의 제품입니다.</span></div>
     <div class="footer-links">
       <a href="/">Micavo</a>
-      <a href="./privacy.html"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span></a>
-      <a href="./terms.html"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span></a>
+      <a href="./privacy.html"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span><span class="ko">개인정보처리방침</span></a>
+      <a href="./terms.html"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
       <a href="mailto:support@micavo.app">support@micavo.app</a>
     </div>
   </footer>
