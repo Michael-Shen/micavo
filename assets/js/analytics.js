@@ -5,6 +5,7 @@
     if (path.indexOf('/eatornot') === 0) return 'EatOrNot';
     if (path.indexOf('/outshine') === 0) return 'Outshine';
     if (path.indexOf('/critical_choice') === 0) return 'Critical Choice';
+    if (path.indexOf('/flipordie') === 0) return 'FlipOrDie';
     return 'Micavo';
   }
 
@@ -15,7 +16,8 @@
     if (path === '/eatornot/' || path === '/eatornot/index.html' ||
         path === '/outshine/' || path === '/outshine/index.html' ||
         path === '/critical_choice/' || path === '/critical_choice/index.html' ||
-        path === '/tallcenter/' || path === '/tallcenter/index.html') return 'product_landing';
+        path === '/tallcenter/' || path === '/tallcenter/index.html' ||
+        path === '/flipordie/' || path === '/flipordie/index.html') return 'product_landing';
     return 'unknown';
   }
 
