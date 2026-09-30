@@ -27,9 +27,10 @@ a { color: var(--red); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* language switching: elements carry class "en" or "zh" */
-html[data-lang="en"] .zh, html[data-lang="en"] .ja { display: none !important; }
-html[data-lang="zh"] .en, html[data-lang="zh"] .ja { display: none !important; }
-html[data-lang="ja"] .en, html[data-lang="ja"] .zh { display: none !important; }
+html[data-lang="en"] .zh, html[data-lang="en"] .ja, html[data-lang="en"] .ko { display: none !important; }
+html[data-lang="zh"] .en, html[data-lang="zh"] .ja, html[data-lang="zh"] .ko { display: none !important; }
+html[data-lang="ja"] .en, html[data-lang="ja"] .zh, html[data-lang="ja"] .ko { display: none !important; }
+html[data-lang="ko"] .en, html[data-lang="ko"] .zh, html[data-lang="ko"] .ja { display: none !important; }
 
 .site-header {
   position: sticky;
@@ -101,7 +102,8 @@ html[data-lang="ja"] .en, html[data-lang="ja"] .zh { display: none !important; }
 }
 html[data-lang="en"] .lang-button[data-lang-switch="en"],
 html[data-lang="zh"] .lang-button[data-lang-switch="zh"],
-html[data-lang="ja"] .lang-button[data-lang-switch="ja"] {
+html[data-lang="ja"] .lang-button[data-lang-switch="ja"],
+html[data-lang="ko"] .lang-button[data-lang-switch="ko"] {
   background: var(--red);
   color: #fff;
 }

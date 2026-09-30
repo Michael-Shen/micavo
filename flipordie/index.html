@@ -29,7 +29,7 @@
   <script>
     (function () {
       var KEY = 'flipordie_lang';
-      var titles = { en: 'FlipOrDie: Phone Focus Timer', zh: 'FlipOrDie：手機專注計時器', ja: 'FlipOrDie：スマホ集中タイマー' };
+      var titles = { en: 'FlipOrDie: Phone Focus Timer', zh: 'FlipOrDie：手機專注計時器', ja: 'FlipOrDie：スマホ集中タイマー', ko: 'FlipOrDie: 스마트폰 집중 타이머' };
       function apply(lang) {
         document.documentElement.setAttribute('data-lang', lang);
         document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : lang;
@@ -39,7 +39,7 @@
       var saved = null;
       try { saved = localStorage.getItem(KEY); } catch (e) {}
       var nav = navigator.language || '';
-      var pick = requested && titles[requested] ? requested : (saved || (/^zh/i.test(nav) ? 'zh' : /^ja/i.test(nav) ? 'ja' : 'en'));
+      var pick = requested && titles[requested] ? requested : (saved || (/^zh/i.test(nav) ? 'zh' : /^ja/i.test(nav) ? 'ja' : /^ko/i.test(nav) ? 'ko' : 'en'));
       apply(pick);
       document.addEventListener('click', function (event) {
         var button = event.target.closest('[data-lang-switch]');
@@ -60,17 +60,18 @@
         FlipOrDie
       </a>
       <div class="nav-links">
-        <a href="./#how"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span></a>
-        <a href="./#features"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span></a>
+        <a href="./#how"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span><span class="ko">사용 방법</span></a>
+        <a href="./#features"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span><span class="ko">기능</span></a>
         <a href="./#pro">Pro</a>
         <a href="./#faq">FAQ</a>
-        <a href="./privacy.html"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span></a>
-        <a href="./terms.html"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span></a>
+        <a href="./privacy.html"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span><span class="ko">개인정보</span></a>
+        <a href="./terms.html"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
       </div>
       <div class="lang-switch" aria-label="Language switcher">
         <button class="lang-button" type="button" data-lang-switch="en">EN</button>
         <button class="lang-button" type="button" data-lang-switch="zh">繁中</button>
         <button class="lang-button" type="button" data-lang-switch="ja">日本語</button>
+        <button class="lang-button" type="button" data-lang-switch="ko">한국어</button>
       </div>
     </nav>
   </header>
@@ -78,44 +79,44 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div>
-        <p class="eyebrow"><span class="en">Focus timer for phone addicts</span><span class="zh">專治手機成癮的專注計時器</span><span class="ja">スマホ依存のための集中タイマー</span></p>
-        <h1 id="hero-title"><span class="en">Phone down. Stay focused.<br /><span class="accent">Flip it up. Get punished.</span></span><span class="zh">蓋下手機，保持專注。<br /><span class="accent">翻開就處罰。</span></span><span class="ja">スマホを伏せて、集中。<br /><span class="accent">表に返したら罰。</span></span></h1>
-        <p class="hero-subtitle"><span class="en">Put your phone face down to focus. Flip it over and a 20-second alarm starts. Type your pledge, or shout it out loud, to make it right. Or lose points and your streak.</span><span class="zh">把手機正面朝下開始專注。一翻開，20 秒警報就開始：打完你的自嘲宣言，或是大聲唸出來，才能回頭是岸，否則扣點、連勝歸零。</span><span class="ja">スマホを画面を下にして置くと集中スタート。表に返すと20秒のアラームが始まります。宣言を入力するか、声に出して読み上げて取り返そう。さもないとポイントも連勝も失います。</span></p>
+        <p class="eyebrow"><span class="en">Focus timer for phone addicts</span><span class="zh">專治手機成癮的專注計時器</span><span class="ja">スマホ依存のための集中タイマー</span><span class="ko">스마트폰 중독자를 위한 집중 타이머</span></p>
+        <h1 id="hero-title"><span class="en">Phone down. Stay focused.<br /><span class="accent">Flip it up. Get punished.</span></span><span class="zh">蓋下手機，保持專注。<br /><span class="accent">翻開就處罰。</span></span><span class="ja">スマホを伏せて、集中。<br /><span class="accent">表に返したら罰。</span></span><span class="ko">폰을 뒤집어 놓고 집중하세요.<br /><span class="accent">화면을 켜면 벌칙이 시작됩니다.</span></span></h1>
+        <p class="hero-subtitle"><span class="en">Put your phone face down to focus. Flip it over and a 20-second alarm starts. Type your pledge, or shout it out loud, to make it right. Or lose points and your streak.</span><span class="zh">把手機正面朝下開始專注。一翻開，20 秒警報就開始：打完你的自嘲宣言，或是大聲唸出來，才能回頭是岸，否則扣點、連勝歸零。</span><span class="ja">スマホを画面を下にして置くと集中スタート。表に返すと20秒のアラームが始まります。宣言を入力するか、声に出して読み上げて取り返そう。さもないとポイントも連勝も失います。</span><span class="ko">폰을 화면이 아래로 향하게 놓으면 집중이 시작됩니다. 뒤집으면 20초 알람이 울리기 시작해요. 다짐을 입력하거나 소리 내어 말해서 되돌리세요. 그렇지 않으면 포인트와 연승을 잃습니다.</span></p>
         <div class="cta-row">
-          <span class="button primary disabled"><span class="en">Coming soon to the App Store</span><span class="zh">即將在 App Store 上架</span><span class="ja">まもなく App Store で公開</span></span>
-          <a class="button" href="mailto:hello@micavo.app?subject=FlipOrDie%20launch%20updates"><span class="en">Get launch updates</span><span class="zh">收到上架通知</span><span class="ja">公開のお知らせを受け取る</span></a>
+          <span class="button primary disabled"><span class="en">Coming soon to the App Store</span><span class="zh">即將在 App Store 上架</span><span class="ja">まもなく App Store で公開</span><span class="ko">App Store에 곧 출시됩니다</span></span>
+          <a class="button" href="mailto:hello@micavo.app?subject=FlipOrDie%20launch%20updates"><span class="en">Get launch updates</span><span class="zh">收到上架通知</span><span class="ja">公開のお知らせを受け取る</span><span class="ko">출시 알림 받기</span></a>
         </div>
-        <p class="small-note"><span class="en">For iPhone (iOS 16 or later).</span><span class="zh">適用於 iPhone（iOS 16 以上）。</span><span class="ja">iPhone（iOS 16 以降）対応。</span></p>
+        <p class="small-note"><span class="en">For iPhone (iOS 16 or later).</span><span class="zh">適用於 iPhone（iOS 16 以上）。</span><span class="ja">iPhone（iOS 16 以降）対応。</span><span class="ko">iPhone(iOS 16 이상)에서 사용 가능합니다.</span></p>
       </div>
 
       <div class="phone is-down" aria-hidden="true">
         <div class="phone-flip">
           <div class="phone-front">
             <div class="phone-screen">
-              <div class="phone-left"><span class="en">Focus left 12:40</span><span class="zh">專注剩餘 12:40</span><span class="ja">残り 12:40</span></div>
+              <div class="phone-left"><span class="en">Focus left 12:40</span><span class="zh">專注剩餘 12:40</span><span class="ja">残り 12:40</span><span class="ko">남은 집중 12:40</span></div>
               <div class="phone-count">20</div>
-              <div class="phone-hint"><span class="en">Type it, or say it out loud</span><span class="zh">打字，或是大聲唸出來</span><span class="ja">入力するか、声に出して</span></div>
-              <div class="phone-pledge"><span class="en">I admit I’m a coward</span><span class="zh">我承認我是懦夫</span><span class="ja">臆病者だと認めます</span></div>
+              <div class="phone-hint"><span class="en">Type it, or say it out loud</span><span class="zh">打字，或是大聲唸出來</span><span class="ja">入力するか、声に出して</span><span class="ko">입력하거나 소리 내어 말하세요</span></div>
+              <div class="phone-pledge"><span class="en">I admit I’m a coward</span><span class="zh">我承認我是懦夫</span><span class="ja">臆病者だと認めます</span><span class="ko">나는 겁쟁이임을 인정합니다</span></div>
               <div class="phone-modes">
                 <div class="phone-mode mode-type">
-                  <div class="phone-input"><span><span class="en">I admit I’m a co</span><span class="zh">我承認我是懦</span><span class="ja">臆病者だと認め</span></span><i class="caret"></i></div>
-                  <div class="phone-mode-label"><span class="en">⌨️ Standard mode</span><span class="zh">⌨️ 標準模式</span><span class="ja">⌨️ スタンダードモード</span></div>
+                  <div class="phone-input"><span><span class="en">I admit I’m a co</span><span class="zh">我承認我是懦</span><span class="ja">臆病者だと認め</span><span class="ko">나는 겁쟁이임을 인</span></span><i class="caret"></i></div>
+                  <div class="phone-mode-label"><span class="en">⌨️ Standard mode</span><span class="zh">⌨️ 標準模式</span><span class="ja">⌨️ スタンダードモード</span><span class="ko">⌨️ 표준 모드</span></div>
                 </div>
                 <div class="phone-mode mode-voice">
                   <div class="voice-row"><span class="mic">🎤</span><span class="bars"><i></i><i></i><i></i><i></i><i></i></span></div>
-                  <div class="phone-heard"><span class="en">“I admit I’m a coward!”</span><span class="zh">「我承認我是懦夫！」</span><span class="ja">「臆病者だと認めます！」</span></div>
-                  <div class="phone-mode-label"><span class="en">🎙️ Read-aloud mode · Pro</span><span class="zh">🎙️ 朗誦模式 · Pro</span><span class="ja">🎙️ 音読モード · Pro</span></div>
+                  <div class="phone-heard"><span class="en">“I admit I’m a coward!”</span><span class="zh">「我承認我是懦夫！」</span><span class="ja">「臆病者だと認めます！」</span><span class="ko">“나는 겁쟁이임을 인정합니다!”</span></div>
+                  <div class="phone-mode-label"><span class="en">🎙️ Read-aloud mode · Pro</span><span class="zh">🎙️ 朗誦模式 · Pro</span><span class="ja">🎙️ 音読モード · Pro</span><span class="ko">🎙️ 음성 낭독 모드 · Pro</span></div>
                 </div>
               </div>
             </div>
             <div class="phone-success">
               <span class="phone-success-icon">✅</span>
-              <span class="phone-success-label"><span class="en">Defused. Back to focus.</span><span class="zh">拆彈成功，回到專注。</span><span class="ja">解除完了。集中に戻ります。</span></span>
+              <span class="phone-success-label"><span class="en">Defused. Back to focus.</span><span class="zh">拆彈成功，回到專注。</span><span class="ja">解除完了。集中に戻ります。</span><span class="ko">해제 완료. 다시 집중으로.</span></span>
             </div>
           </div>
           <div class="phone-back">
             <span class="phone-back-icon">📵</span>
-            <span class="phone-back-label"><span class="en">Face down. Focusing…</span><span class="zh">正面朝下，專注中…</span><span class="ja">画面を下にして集中中…</span></span>
+            <span class="phone-back-label"><span class="en">Face down. Focusing…</span><span class="zh">正面朝下，專注中…</span><span class="ja">画面を下にして集中中…</span><span class="ko">화면 아래로. 집중 중…</span></span>
           </div>
         </div>
       </div>
@@ -199,13 +200,13 @@
           </svg>
         </div>
         <div class="scene-copy">
-          <p class="eyebrow"><span class="en">Made for studying and deep work</span><span class="zh">為念書與深度工作而生</span><span class="ja">勉強とディープワークのために</span></p>
-          <h2 id="study-title"><span class="en">Phone down. Mind on.</span><span class="zh">手機放下，心才收得回來。</span><span class="ja">スマホは置いて、集中は手元に。</span></h2>
-          <p><span class="en">Keep your phone face down on the desk, right where you can see it and can’t touch it. It is still there. Flipping it is what gets you caught.</span><span class="zh">把手機正面朝下放在桌上，就在你看得到、卻碰不得的地方。它還在那裡，但只要你伸手翻開，就會被抓包。</span><span class="ja">スマホを画面を下にして机に置きます。見えるのに触れない場所に。スマホはそこにありますが、裏返した瞬間に見つかります。</span></p>
+          <p class="eyebrow"><span class="en">Made for studying and deep work</span><span class="zh">為念書與深度工作而生</span><span class="ja">勉強とディープワークのために</span><span class="ko">공부와 딥 워크를 위해</span></p>
+          <h2 id="study-title"><span class="en">Phone down. Mind on.</span><span class="zh">手機放下，心才收得回來。</span><span class="ja">スマホは置いて、集中は手元に。</span><span class="ko">폰을 내려놓아야 마음이 돌아옵니다.</span></h2>
+          <p><span class="en">Keep your phone face down on the desk, right where you can see it and can’t touch it. It is still there. Flipping it is what gets you caught.</span><span class="zh">把手機正面朝下放在桌上，就在你看得到、卻碰不得的地方。它還在那裡，但只要你伸手翻開，就會被抓包。</span><span class="ja">スマホを画面を下にして机に置きます。見えるのに触れない場所に。スマホはそこにありますが、裏返した瞬間に見つかります。</span><span class="ko">폰을 화면이 아래로 향하게 책상에 두세요. 보이지만 손댈 수 없는 자리에. 폰은 그대로 있지만, 뒤집는 순간 들킵니다.</span></p>
           <ul class="scene-list">
-            <li><span class="en">Study sessions and exam prep</span><span class="zh">念書、準備考試</span><span class="ja">勉強・試験対策</span></li>
-            <li><span class="en">Deep work and writing</span><span class="zh">深度工作與寫作</span><span class="ja">ディープワークと執筆</span></li>
-            <li><span class="en">Late-night deadlines</span><span class="zh">深夜趕稿</span><span class="ja">締切前の夜更かし</span></li>
+            <li><span class="en">Study sessions and exam prep</span><span class="zh">念書、準備考試</span><span class="ja">勉強・試験対策</span><span class="ko">공부, 시험 준비</span></li>
+            <li><span class="en">Deep work and writing</span><span class="zh">深度工作與寫作</span><span class="ja">ディープワークと執筆</span><span class="ko">딥 워크와 글쓰기</span></li>
+            <li><span class="en">Late-night deadlines</span><span class="zh">深夜趕稿</span><span class="ja">締切前の夜更かし</span><span class="ko">마감 앞둔 밤샘</span></li>
           </ul>
         </div>
       </div>
@@ -213,64 +214,64 @@
 
     <section class="section" id="how" aria-labelledby="how-title">
       <div class="section-heading">
-        <p class="eyebrow"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span></p>
-        <h2 id="how-title"><span class="en">Three steps. No mercy.</span><span class="zh">三步驟，毫不留情。</span><span class="ja">3ステップ。容赦なし。</span></h2>
+        <p class="eyebrow"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span><span class="ko">사용 방법</span></p>
+        <h2 id="how-title"><span class="en">Three steps. No mercy.</span><span class="zh">三步驟，毫不留情。</span><span class="ja">3ステップ。容赦なし。</span><span class="ko">3단계. 자비는 없습니다.</span></h2>
       </div>
       <div class="steps">
         <article class="card">
           <div class="step-number">1</div>
-          <h3><span class="en">Set it face down</span><span class="zh">正面朝下放好</span><span class="ja">画面を下にして置く</span></h3>
-          <p><span class="en">Pick a time, choose a pledge, and place your phone face down. The screen goes black and the timer runs.</span><span class="zh">選好時間與宣言，把手機正面朝下放好。畫面轉黑，計時開始。</span><span class="ja">時間と宣言を選び、スマホを画面を下にして置きます。画面が暗くなり、タイマーが動き出します。</span></p>
+          <h3><span class="en">Set it face down</span><span class="zh">正面朝下放好</span><span class="ja">画面を下にして置く</span><span class="ko">화면을 아래로 놓기</span></h3>
+          <p><span class="en">Pick a time, choose a pledge, and place your phone face down. The screen goes black and the timer runs.</span><span class="zh">選好時間與宣言，把手機正面朝下放好。畫面轉黑，計時開始。</span><span class="ja">時間と宣言を選び、スマホを画面を下にして置きます。画面が暗くなり、タイマーが動き出します。</span><span class="ko">시간과 다짐을 선택하고 폰을 화면이 아래로 향하게 놓으세요. 화면이 꺼지고 타이머가 시작됩니다.</span></p>
         </article>
         <article class="card">
           <div class="step-number">2</div>
-          <h3><span class="en">Flip it and the alarm goes off</span><span class="zh">一翻開，警報就響</span><span class="ja">裏返すとアラームが鳴る</span></h3>
-          <p><span class="en">The screen flashes red, the phone vibrates, and a 20-second bomb timer starts counting down.</span><span class="zh">畫面紅黑閃爍、手機震動，20 秒定時炸彈開始倒數。</span><span class="ja">画面が赤と黒に点滅し、スマホが振動。20秒の時限爆弾のカウントダウンが始まります。</span></p>
+          <h3><span class="en">Flip it and the alarm goes off</span><span class="zh">一翻開，警報就響</span><span class="ja">裏返すとアラームが鳴る</span><span class="ko">뒤집으면 알람이 울립니다</span></h3>
+          <p><span class="en">The screen flashes red, the phone vibrates, and a 20-second bomb timer starts counting down.</span><span class="zh">畫面紅黑閃爍、手機震動，20 秒定時炸彈開始倒數。</span><span class="ja">画面が赤と黒に点滅し、スマホが振動。20秒の時限爆弾のカウントダウンが始まります。</span><span class="ko">화면이 빨간색과 검은색으로 번쩍이고 진동이 울리며, 20초짜리 시한폭탄 카운트다운이 시작됩니다.</span></p>
         </article>
         <article class="card">
           <div class="step-number">3</div>
-          <h3><span class="en">Own up, or lose it all</span><span class="zh">認罪，不然全部歸零</span><span class="ja">認めるか、すべて失うか</span></h3>
-          <p><span class="en">Type or say your pledge to defuse it, then put the phone back. Fail and you lose points and your streak.</span><span class="zh">打字或唸出宣言拆彈，再把手機放回去；失敗就扣點、連勝歸零。</span><span class="ja">宣言を入力するか声に出して爆弾を解除し、スマホを元に戻します。失敗するとポイントと連勝を失います。</span></p>
+          <h3><span class="en">Own up, or lose it all</span><span class="zh">認罪，不然全部歸零</span><span class="ja">認めるか、すべて失うか</span><span class="ko">자백하거나, 전부 잃거나</span></h3>
+          <p><span class="en">Type or say your pledge to defuse it, then put the phone back. Fail and you lose points and your streak.</span><span class="zh">打字或唸出宣言拆彈，再把手機放回去；失敗就扣點、連勝歸零。</span><span class="ja">宣言を入力するか声に出して爆弾を解除し、スマホを元に戻します。失敗するとポイントと連勝を失います。</span><span class="ko">다짐을 입력하거나 말해서 해제한 뒤 폰을 다시 내려놓으세요. 실패하면 포인트와 연승을 잃습니다.</span></p>
         </article>
       </div>
     </section>
 
     <section class="section" id="features" aria-labelledby="features-title">
       <div class="section-heading">
-        <p class="eyebrow"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span></p>
-        <h2 id="features-title"><span class="en">Built to make slipping up hurt a little.</span><span class="zh">讓分心有一點痛，才記得住。</span><span class="ja">失敗すると少し痛い。だから覚えている。</span></h2>
-        <p><span class="en">Simple rules, real physical feedback.</span><span class="zh">規則簡單，回饋很有感。</span><span class="ja">ルールはシンプル。フィードバックは体感で。</span></p>
+        <p class="eyebrow"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span><span class="ko">기능</span></p>
+        <h2 id="features-title"><span class="en">Built to make slipping up hurt a little.</span><span class="zh">讓分心有一點痛，才記得住。</span><span class="ja">失敗すると少し痛い。だから覚えている。</span><span class="ko">실패하면 조금 아프게. 그래야 기억에 남으니까요.</span></h2>
+        <p><span class="en">Simple rules, real physical feedback.</span><span class="zh">規則簡單，回饋很有感。</span><span class="ja">ルールはシンプル。フィードバックは体感で。</span><span class="ko">규칙은 간단하지만, 피드백은 확실합니다.</span></p>
       </div>
       <div class="grid-3">
         <article class="card">
           <div class="feature-icon" aria-hidden="true">📱</div>
-          <h3><span class="en">Real flip detection</span><span class="zh">真實翻面偵測</span><span class="ja">本物の裏返し検知</span></h3>
-          <p><span class="en">Uses your phone’s motion sensor, right on your device, to know whether it is really face down.</span><span class="zh">直接在你的手機上，用動作感測器判斷是不是真的正面朝下。</span><span class="ja">スマホのモーションセンサーを端末上で使い、本当に画面が下を向いているかを判定します。</span></p>
+          <h3><span class="en">Real flip detection</span><span class="zh">真實翻面偵測</span><span class="ja">本物の裏返し検知</span><span class="ko">진짜 뒤집기 감지</span></h3>
+          <p><span class="en">Uses your phone’s motion sensor, right on your device, to know whether it is really face down.</span><span class="zh">直接在你的手機上，用動作感測器判斷是不是真的正面朝下。</span><span class="ja">スマホのモーションセンサーを端末上で使い、本当に画面が下を向いているかを判定します。</span><span class="ko">폰의 모션 센서를 기기 안에서 직접 사용해, 정말로 화면이 아래를 향하고 있는지 확인합니다.</span></p>
         </article>
         <article class="card">
           <div class="feature-icon" aria-hidden="true">💣</div>
-          <h3><span class="en">20-second alarm</span><span class="zh">20 秒倒數警報</span><span class="ja">20秒アラーム</span></h3>
-          <p><span class="en">Red and black flashing, strong vibration, and a ticking countdown make it impossible to ignore.</span><span class="zh">紅黑閃爍、強烈震動與滴答倒數，讓你想忽略也難。</span><span class="ja">赤と黒の点滅、強い振動、刻むカウントダウン。無視できません。</span></p>
+          <h3><span class="en">20-second alarm</span><span class="zh">20 秒倒數警報</span><span class="ja">20秒アラーム</span><span class="ko">20초 알람</span></h3>
+          <p><span class="en">Red and black flashing, strong vibration, and a ticking countdown make it impossible to ignore.</span><span class="zh">紅黑閃爍、強烈震動與滴答倒數，讓你想忽略也難。</span><span class="ja">赤と黒の点滅、強い振動、刻むカウントダウン。無視できません。</span><span class="ko">빨간색과 검은색이 번쩍이고, 강한 진동과 째깍거리는 카운트다운까지 — 무시할 수가 없습니다.</span></p>
         </article>
         <article class="card">
           <div class="feature-icon" aria-hidden="true">🔥</div>
-          <h3><span class="en">Points and streaks</span><span class="zh">點數與連勝</span><span class="ja">ポイントと連勝</span></h3>
-          <p><span class="en">Earn a point for every minute focused. One failure resets your streak: perfect for screenshots.</span><span class="zh">專注一分鐘就賺一點；一次失敗連勝就歸零，很適合截圖哀號。</span><span class="ja">集中1分ごとに1ポイント。一度失敗すれば連勝はゼロ。スクショ向きです。</span></p>
+          <h3><span class="en">Points and streaks</span><span class="zh">點數與連勝</span><span class="ja">ポイントと連勝</span><span class="ko">포인트와 연승</span></h3>
+          <p><span class="en">Earn a point for every minute focused. One failure resets your streak: perfect for screenshots.</span><span class="zh">專注一分鐘就賺一點；一次失敗連勝就歸零，很適合截圖哀號。</span><span class="ja">集中1分ごとに1ポイント。一度失敗すれば連勝はゼロ。スクショ向きです。</span><span class="ko">집중 1분마다 1포인트. 한 번 실패하면 연승은 0으로. 캡처해서 자랑하기 딱 좋습니다.</span></p>
         </article>
         <article class="card">
           <div class="feature-icon" aria-hidden="true">✍️</div>
-          <h3><span class="en">Self-roast pledges</span><span class="zh">自嘲宣言</span><span class="ja">自虐の宣言</span></h3>
-          <p><span class="en">Pick a built-in pledge like “I admit I’m a coward”, or write your own with Pro.</span><span class="zh">選擇內建宣言，例如「我承認我是懦夫」，或用 Pro 自己寫一句。</span><span class="ja">「臆病者だと認めます」などの宣言を選べます。Pro なら自分で書けます。</span></p>
+          <h3><span class="en">Self-roast pledges</span><span class="zh">自嘲宣言</span><span class="ja">自虐の宣言</span><span class="ko">자책 다짐</span></h3>
+          <p><span class="en">Pick a built-in pledge like “I admit I’m a coward”, or write your own with Pro.</span><span class="zh">選擇內建宣言，例如「我承認我是懦夫」，或用 Pro 自己寫一句。</span><span class="ja">「臆病者だと認めます」などの宣言を選べます。Pro なら自分で書けます。</span><span class="ko">“나는 겁쟁이임을 인정합니다” 같은 기본 다짐을 고르거나, Pro로 직접 써보세요.</span></p>
         </article>
         <article class="card">
           <div class="feature-icon" aria-hidden="true">🎚️</div>
-          <h3><span class="en">Choose how to make it right</span><span class="zh">選擇解除方式</span><span class="ja">解除方法を選べる</span></h3>
-          <p><span class="en">Type it out, flip back and beg for mercy with Mercy Mode, or read it aloud with read-aloud mode.</span><span class="zh">可以打字、用 Mercy Mode 翻回去求饒，或用朗誦模式大聲唸出來。</span><span class="ja">入力する、マーシーモードで裏返して許しを乞う、または音読モードで声に出す。</span></p>
+          <h3><span class="en">Choose how to make it right</span><span class="zh">選擇解除方式</span><span class="ja">解除方法を選べる</span><span class="ko">해제 방법을 선택하세요</span></h3>
+          <p><span class="en">Type it out, flip back and beg for mercy with Mercy Mode, or read it aloud with read-aloud mode.</span><span class="zh">可以打字、用 Mercy Mode 翻回去求饒，或用朗誦模式大聲唸出來。</span><span class="ja">入力する、マーシーモードで裏返して許しを乞う、または音読モードで声に出す。</span><span class="ko">직접 입력하거나, 마시 모드로 다시 뒤집어 용서를 구하거나, 음성 낭독 모드로 소리 내어 말하세요.</span></p>
         </article>
         <article class="card">
           <div class="feature-icon" aria-hidden="true">🌏</div>
-          <h3><span class="en">Your language</span><span class="zh">你的語言</span><span class="ja">あなたの言語で</span></h3>
-          <p><span class="en">English, 繁體中文, and 日本語.</span><span class="zh">支援 English、繁體中文與日本語。</span><span class="ja">English、繁體中文、日本語に対応。</span></p>
+          <h3><span class="en">Your language</span><span class="zh">你的語言</span><span class="ja">あなたの言語で</span><span class="ko">당신의 언어로</span></h3>
+          <p><span class="en">English, 繁體中文, 日本語, and 한국어.</span><span class="zh">支援 English、繁體中文、日本語與한국어。</span><span class="ja">English、繁體中文、日本語、한국어に対応。</span><span class="ko">English, 繁體中文, 日本語, 한국어를 지원합니다.</span></p>
         </article>
       </div>
     </section>
@@ -279,15 +280,15 @@
       <div class="pro-card">
         <div>
           <span class="badge">PRO</span>
-          <h2 id="pro-title"><span class="en">Go Pro for the full experience.</span><span class="zh">升級 Pro，體驗完整功能。</span><span class="ja">Pro で、フル体験を。</span></h2>
-          <p><span class="en">FlipOrDie is free to start. Free accounts earn points by focusing and lose them when they slip; at zero points, focus mode locks until you upgrade.</span><span class="zh">FlipOrDie 可免費開始。免費帳號靠專注賺點數、分心會扣點；點數歸零時專注模式會被鎖定，直到升級。</span><span class="ja">FlipOrDie は無料で始められます。無料アカウントは集中でポイントを貯め、失敗すると失います。ポイントがゼロになると、アップグレードするまで集中モードがロックされます。</span></p>
-          <p><span class="en">Pro is available as a subscription or a one-time lifetime purchase. See the App Store for current prices. Eligible new subscribers may get a free trial.</span><span class="zh">Pro 提供訂閱與一次性終身買斷，實際價格請見 App Store；符合資格的新訂閱者可能享有免費試用。</span><span class="ja">Pro はサブスクリプションまたは買い切りで利用できます。最新の価格は App Store をご確認ください。対象の新規登録者は無料体験を利用できる場合があります。</span></p>
+          <h2 id="pro-title"><span class="en">Go Pro for the full experience.</span><span class="zh">升級 Pro，體驗完整功能。</span><span class="ja">Pro で、フル体験を。</span><span class="ko">Pro로 업그레이드해서 전체 경험을 즐기세요.</span></h2>
+          <p><span class="en">FlipOrDie is free to start. Free accounts earn points by focusing and lose them when they slip; at zero points, focus mode locks until you upgrade.</span><span class="zh">FlipOrDie 可免費開始。免費帳號靠專注賺點數、分心會扣點；點數歸零時專注模式會被鎖定，直到升級。</span><span class="ja">FlipOrDie は無料で始められます。無料アカウントは集中でポイントを貯め、失敗すると失います。ポイントがゼロになると、アップグレードするまで集中モードがロックされます。</span><span class="ko">FlipOrDie는 무료로 시작할 수 있습니다. 무료 계정은 집중으로 포인트를 얻고 실패하면 잃습니다. 포인트가 0이 되면 업그레이드할 때까지 집중 모드가 잠깁니다.</span></p>
+          <p><span class="en">Pro is available as a subscription or a one-time lifetime purchase. See the App Store for current prices. Eligible new subscribers may get a free trial.</span><span class="zh">Pro 提供訂閱與一次性終身買斷，實際價格請見 App Store；符合資格的新訂閱者可能享有免費試用。</span><span class="ja">Pro はサブスクリプションまたは買い切りで利用できます。最新の価格は App Store をご確認ください。対象の新規登録者は無料体験を利用できる場合があります。</span><span class="ko">Pro는 구독 또는 평생 이용권 형태로 제공됩니다. 최신 가격은 App Store를 확인하세요. 자격이 되는 신규 구독자는 무료 체험을 이용할 수 있습니다.</span></p>
         </div>
         <ul class="pro-list">
-          <li><span class="en">Unlimited points, never locked out</span><span class="zh">無限點數，再也不會被鎖機</span><span class="ja">ポイント無制限、ロックされない</span></li>
-          <li><span class="en">Mercy Mode: flip back down and beg for mercy</span><span class="zh">Mercy Mode：翻回朝下向它求饒</span><span class="ja">マーシーモード：画面を下に戻して許しを乞う</span></li>
-          <li><span class="en">Read-aloud mode: the most humiliating punishment. Confess out loud or stay trapped</span><span class="zh">朗誦模式：最羞辱的處罰，大聲認罪才能脫身</span><span class="ja">音読モード：最も屈辱的な罰。声に出して認めなければ抜け出せない</span></li>
-          <li><span class="en">Write your own custom pledge</span><span class="zh">自訂你的專屬宣言</span><span class="ja">自分だけの宣言を作成</span></li>
+          <li><span class="en">Unlimited points, never locked out</span><span class="zh">無限點數，再也不會被鎖機</span><span class="ja">ポイント無制限、ロックされない</span><span class="ko">무제한 포인트, 다시는 잠기지 않아요</span></li>
+          <li><span class="en">Mercy Mode: flip back down and beg for mercy</span><span class="zh">Mercy Mode：翻回朝下向它求饒</span><span class="ja">マーシーモード：画面を下に戻して許しを乞う</span><span class="ko">마시 모드: 다시 뒤집어 용서를 구하세요</span></li>
+          <li><span class="en">Read-aloud mode: the most humiliating punishment. Confess out loud or stay trapped</span><span class="zh">朗誦模式：最羞辱的處罰，大聲認罪才能脫身</span><span class="ja">音読モード：最も屈辱的な罰。声に出して認めなければ抜け出せない</span><span class="ko">음성 낭독 모드: 가장 굴욕적인 벌칙. 소리 내어 자백해야 벗어날 수 있어요</span></li>
+          <li><span class="en">Write your own custom pledge</span><span class="zh">自訂你的專屬宣言</span><span class="ja">自分だけの宣言を作成</span><span class="ko">나만의 다짐 직접 작성하기</span></li>
         </ul>
       </div>
     </section>
@@ -295,41 +296,41 @@
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="section-heading">
         <p class="eyebrow">FAQ</p>
-        <h2 id="faq-title"><span class="en">Questions, answered.</span><span class="zh">常見問題</span><span class="ja">よくある質問</span></h2>
+        <h2 id="faq-title"><span class="en">Questions, answered.</span><span class="zh">常見問題</span><span class="ja">よくある質問</span><span class="ko">자주 묻는 질문</span></h2>
       </div>
       <details class="faq">
-        <summary><span class="en">Does it block other apps?</span><span class="zh">它會封鎖其他 App 嗎？</span><span class="ja">ほかのアプリをブロックしますか？</span></summary>
-        <p><span class="en">No. FlipOrDie does not block anything. If you leave the app during a session, that counts as fleeing and costs you points.</span><span class="zh">不會。FlipOrDie 不會封鎖任何東西。專注期間離開 App 會被視為畏罪潛逃並扣點。</span><span class="ja">いいえ。FlipOrDie は何もブロックしません。集中中にアプリを離れると、逃げたとみなされてポイントが減ります。</span></p>
+        <summary><span class="en">Does it block other apps?</span><span class="zh">它會封鎖其他 App 嗎？</span><span class="ja">ほかのアプリをブロックしますか？</span><span class="ko">다른 앱을 차단하나요?</span></summary>
+        <p><span class="en">No. FlipOrDie does not block anything. If you leave the app during a session, that counts as fleeing and costs you points.</span><span class="zh">不會。FlipOrDie 不會封鎖任何東西。專注期間離開 App 會被視為畏罪潛逃並扣點。</span><span class="ja">いいえ。FlipOrDie は何もブロックしません。集中中にアプリを離れると、逃げたとみなされてポイントが減ります。</span><span class="ko">아니요. FlipOrDie는 아무것도 차단하지 않습니다. 세션 중 앱을 벗어나면 이탈로 간주되어 포인트가 줄어듭니다.</span></p>
       </details>
       <details class="faq">
-        <summary><span class="en">How do points work?</span><span class="zh">點數是怎麼運作的？</span><span class="ja">ポイントはどう機能しますか？</span></summary>
-        <p><span class="en">Focusing earns 1 point per minute. Letting the countdown run out costs 10 points, and leaving the app mid-session costs 20 — both reset your streak. Points never go below 0 and never reset daily: once a free account hits 0, focus mode locks until you upgrade to Pro.</span><span class="zh">專注一分鐘賺 1 點。放任倒數歸零扣 10 點，專注中離開 App（畏罪潛逃）扣 20 點，兩者都會讓連勝歸零。點數最低為 0，也不會每天恢復——免費帳號點數歸零後，專注模式會被鎖定，直到升級 Pro。</span><span class="ja">集中1分につき1ポイント獲得します。カウントダウンを使い切ると10ポイント、セッション中にアプリを離れると20ポイントを失い、どちらも連勝がリセットされます。ポイントは0を下回らず、毎日リセットされることもありません。無料アカウントが0になると、Pro にアップグレードするまで集中モードがロックされます。</span></p>
+        <summary><span class="en">How do points work?</span><span class="zh">點數是怎麼運作的？</span><span class="ja">ポイントはどう機能しますか？</span><span class="ko">포인트는 어떻게 작동하나요?</span></summary>
+        <p><span class="en">Focusing earns 1 point per minute. Letting the countdown run out costs 10 points, and leaving the app mid-session costs 20 — both reset your streak. Points never go below 0 and never reset daily: once a free account hits 0, focus mode locks until you upgrade to Pro.</span><span class="zh">專注一分鐘賺 1 點。放任倒數歸零扣 10 點，專注中離開 App（畏罪潛逃）扣 20 點，兩者都會讓連勝歸零。點數最低為 0，也不會每天恢復——免費帳號點數歸零後，專注模式會被鎖定，直到升級 Pro。</span><span class="ja">集中1分につき1ポイント獲得します。カウントダウンを使い切ると10ポイント、セッション中にアプリを離れると20ポイントを失い、どちらも連勝がリセットされます。ポイントは0を下回らず、毎日リセットされることもありません。無料アカウントが0になると、Pro にアップグレードするまで集中モードがロックされます。</span><span class="ko">집중 1분마다 1포인트를 얻습니다. 카운트다운을 끝까지 내버려두면 10포인트, 세션 중 앱을 벗어나면 20포인트를 잃으며 둘 다 연승이 초기화됩니다. 포인트는 0 아래로 내려가지 않고 매일 초기화되지도 않습니다. 무료 계정은 포인트가 0이 되면 Pro로 업그레이드할 때까지 집중 모드가 잠깁니다.</span></p>
       </details>
       <details class="faq">
-        <summary><span class="en">What happens if I get a phone call?</span><span class="zh">如果有人來電怎麼辦？</span><span class="ja">電話がかかってきたらどうなりますか？</span></summary>
-        <p><span class="en">A phone call ends the session without any penalty. Start again whenever you are ready.</span><span class="zh">來電會讓本次專注結束，且不會扣點；準備好之後再重新開始就好。</span><span class="ja">電話がかかると、ペナルティなしでセッションが終了します。準備ができたらまた始めてください。</span></p>
+        <summary><span class="en">What happens if I get a phone call?</span><span class="zh">如果有人來電怎麼辦？</span><span class="ja">電話がかかってきたらどうなりますか？</span><span class="ko">전화가 오면 어떻게 되나요?</span></summary>
+        <p><span class="en">A phone call ends the session without any penalty. Start again whenever you are ready.</span><span class="zh">來電會讓本次專注結束，且不會扣點；準備好之後再重新開始就好。</span><span class="ja">電話がかかると、ペナルティなしでセッションが終了します。準備ができたらまた始めてください。</span><span class="ko">전화가 오면 벌칙 없이 세션이 종료됩니다. 준비가 되면 언제든 다시 시작하세요.</span></p>
       </details>
       <details class="faq">
-        <summary><span class="en">Do you record my voice?</span><span class="zh">你們會錄下我的聲音嗎？</span><span class="ja">声は録音されますか？</span></summary>
-        <p><span class="en">No. In read-aloud mode, Apple’s speech recognition turns your speech into text. FlipOrDie does not save recordings or transcripts. See our Privacy Policy for details.</span><span class="zh">不會。朗誦模式使用 Apple 的語音辨識把你的聲音轉成文字，FlipOrDie 不會儲存錄音或文字。詳情請見隱私權政策。</span><span class="ja">いいえ。音読モードでは Apple の音声認識が声をテキストに変換します。FlipOrDie は録音もテキストも保存しません。詳しくはプライバシーポリシーをご覧ください。</span></p>
+        <summary><span class="en">Do you record my voice?</span><span class="zh">你們會錄下我的聲音嗎？</span><span class="ja">声は録音されますか？</span><span class="ko">제 목소리를 녹음하나요?</span></summary>
+        <p><span class="en">No. In read-aloud mode, Apple’s speech recognition turns your speech into text. FlipOrDie does not save recordings or transcripts. See our Privacy Policy for details.</span><span class="zh">不會。朗誦模式使用 Apple 的語音辨識把你的聲音轉成文字，FlipOrDie 不會儲存錄音或文字。詳情請見隱私權政策。</span><span class="ja">いいえ。音読モードでは Apple の音声認識が声をテキストに変換します。FlipOrDie は録音もテキストも保存しません。詳しくはプライバシーポリシーをご覧ください。</span><span class="ko">아니요. 음성 낭독 모드에서는 Apple의 음성 인식이 음성을 텍스트로 변환합니다. FlipOrDie는 녹음이나 텍스트를 저장하지 않습니다. 자세한 내용은 개인정보처리방침을 참고하세요.</span></p>
       </details>
       <details class="faq">
-        <summary><span class="en">Which devices does it support?</span><span class="zh">支援哪些裝置？</span><span class="ja">対応機種は？</span></summary>
-        <p><span class="en">iPhone running iOS 16 or later. Android is not available yet.</span><span class="zh">執行 iOS 16 以上的 iPhone；目前尚未提供 Android 版本。</span><span class="ja">iOS 16 以降の iPhone に対応しています。Android 版はまだありません。</span></p>
+        <summary><span class="en">Which devices does it support?</span><span class="zh">支援哪些裝置？</span><span class="ja">対応機種は？</span><span class="ko">어떤 기기를 지원하나요?</span></summary>
+        <p><span class="en">iPhone running iOS 16 or later. Android is not available yet.</span><span class="zh">執行 iOS 16 以上的 iPhone；目前尚未提供 Android 版本。</span><span class="ja">iOS 16 以降の iPhone に対応しています。Android 版はまだありません。</span><span class="ko">iOS 16 이상을 실행하는 iPhone. Android는 아직 지원하지 않습니다.</span></p>
       </details>
       <details class="faq">
-        <summary><span class="en">How do I delete my account?</span><span class="zh">怎麼刪除帳號？</span><span class="ja">アカウントを削除するには？</span></summary>
-        <p><span class="en">Open Settings in the app and choose “Delete account and all data”.</span><span class="zh">在 App 內開啟設定，選擇「刪除帳號與所有資料」即可。</span><span class="ja">アプリの設定を開き、「アカウントとすべてのデータを削除」を選んでください。</span></p>
+        <summary><span class="en">How do I delete my account?</span><span class="zh">怎麼刪除帳號？</span><span class="ja">アカウントを削除するには？</span><span class="ko">계정을 삭제하려면?</span></summary>
+        <p><span class="en">Open Settings in the app and choose “Delete account and all data”.</span><span class="zh">在 App 內開啟設定，選擇「刪除帳號與所有資料」即可。</span><span class="ja">アプリの設定を開き、「アカウントとすべてのデータを削除」を選んでください。</span><span class="ko">앱 내 설정을 열고 “계정 및 모든 데이터 삭제”를 선택하세요.</span></p>
       </details>
     </section>
   </main>
 
   <footer class="footer">
-    <div><span class="en">© 2026 Micavo. FlipOrDie is a product by Micavo.</span><span class="zh">© 2026 Micavo。FlipOrDie 是 Micavo 的產品。</span><span class="ja">© 2026 Micavo. FlipOrDie は Micavo のプロダクトです。</span></div>
+    <div><span class="en">© 2026 Micavo. FlipOrDie is a product by Micavo.</span><span class="zh">© 2026 Micavo。FlipOrDie 是 Micavo 的產品。</span><span class="ja">© 2026 Micavo. FlipOrDie は Micavo のプロダクトです。</span><span class="ko">© 2026 Micavo. FlipOrDie는 Micavo의 제품입니다.</span></div>
     <div class="footer-links">
       <a href="/">Micavo</a>
-      <a href="./privacy.html"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span></a>
-      <a href="./terms.html"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span></a>
+      <a href="./privacy.html"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span><span class="ko">개인정보처리방침</span></a>
+      <a href="./terms.html"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
       <a href="https://www.instagram.com/flipordie_tw/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.tiktok.com/@flipordie_tw" target="_blank" rel="noopener">TikTok</a>
       <a href="mailto:support@micavo.app">support@micavo.app</a>
