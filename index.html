@@ -755,6 +755,29 @@
       display: block;
     }
 
+    .sleepordie-shot {
+      background: #14142b;
+    }
+
+    .sleepordie-shot img {
+      object-fit: contain;
+      object-position: center;
+      padding: 0;
+      filter: none;
+    }
+
+    .sleepordie-shot .sleepordie-poster-zh {
+      display: none;
+    }
+
+    html[lang="zh-Hant"] .sleepordie-shot .sleepordie-poster-en {
+      display: none;
+    }
+
+    html[lang="zh-Hant"] .sleepordie-shot .sleepordie-poster-zh {
+      display: block;
+    }
+
     .product-body {
       padding: 28px;
       height: 100%;
@@ -2022,6 +2045,27 @@
       <div class="product-carousel" aria-roledescription="carousel" aria-label="Micavo products">
         <div class="product-grid">
         <article class="product-card">
+          <div class="product-media sleepordie-shot">
+            <img class="sleepordie-poster-en" src="/sleepordie/assets/sleepordie-poster-en.png" alt="SleepOrDie Scroll Goblin warning screen: put the phone back before the 20-second countdown ends" loading="lazy" />
+            <img class="sleepordie-poster-zh" src="/sleepordie/assets/sleepordie-poster-zh.png" alt="SleepOrDie 滑手機怪警告畫面：20 秒倒數結束前把手機放回去" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <span class="status" data-i18n="product_sleepordie.status">Coming soon to the App Store</span>
+            <h3>SleepOrDie</h3>
+            <p data-i18n="product_sleepordie.desc">
+              SleepOrDie is a bedtime anti-doomscrolling app: put your phone face down and a Scroll Goblin living in it starves for 30 to 120 minutes. Pick it up and you have 20 seconds to put it back, or it eats tonight&#39;s sleep.
+            </p>
+            <ul class="feature-list">
+              <li data-i18n="product_sleepordie.f1">On-device face-down detection, silent success, and a near-black screen made for bedtime.</li>
+              <li data-i18n="product_sleepordie.f2">Collect goblins in your Vault, keep a night streak, and write tomorrow&#39;s plan before you sleep.</li>
+              <li data-i18n="product_sleepordie.f3">Pro adds the full Vault, weekly stats, share themes, and a read-aloud mode.</li>
+            </ul>
+            <div class="product-actions">
+              <a class="button primary" href="/sleepordie/" data-i18n="product_sleepordie.open" data-ga-event="product_link_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="product_card">Open SleepOrDie</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
           <div class="product-media flipordie-shot">
             <img class="flipordie-poster-en" src="/flipordie/assets/flipordie-poster-en.png" alt="FlipOrDie focus timer promotional poster" loading="lazy" />
             <img class="flipordie-poster-zh" src="/flipordie/assets/flipordie-poster-zh.png" alt="FlipOrDie 專注計時器宣傳圖" loading="lazy" />
@@ -2213,6 +2257,7 @@
             <li data-i18n="founder.building_tallcenter">TallCenter</li>
             <li data-i18n="founder.building_asianlaunch">AsianLaunch</li>
             <li data-i18n="founder.building_flipordie">FlipOrDie</li>
+            <li data-i18n="founder.building_sleepordie">SleepOrDie</li>
           </ul>
 
           <p class="founder-follow-label" data-i18n="founder.follow_label">Follow my journey</p>
@@ -2265,6 +2310,7 @@
       <a href="/tallcenter/" data-ga-event="product_link_clicked" data-ga-param-product="TallCenter" data-ga-param-cta-location="footer">TallCenter</a>
       <a href="https://asianlaunch.com/" target="_blank" rel="noopener noreferrer" data-ga-event="product_link_clicked" data-ga-param-product="AsianLaunch" data-ga-param-cta-location="footer">AsianLaunch</a>
       <a href="/flipordie/" data-ga-event="product_link_clicked" data-ga-param-product="FlipOrDie" data-ga-param-cta-location="footer">FlipOrDie</a>
+      <a href="/sleepordie/" data-ga-event="product_link_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="footer">SleepOrDie</a>
       <a href="mailto:hello@micavo.app" data-i18n="footer.contact" data-ga-event="contact_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Contact</a>
       <a href="https://www.facebook.com/people/Micavo/61591584159827/" target="_blank" rel="noopener noreferrer" data-i18n="follow.facebook" data-ga-event="social_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Facebook</a>
     </div>
@@ -2383,6 +2429,6 @@
       renderDots();
     })();
   </script>
-  <script src="/assets/js/i18n.js?v=20260902-tallcenter-download"></script>
+  <script src="/assets/js/i18n.js?v=20261001-sleepordie"></script>
 </body>
 </html>

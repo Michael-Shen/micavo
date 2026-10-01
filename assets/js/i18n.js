@@ -83,6 +83,14 @@
         f3: "Points and streaks that reset on failure—plus Mercy Mode and read-aloud unlocks with Pro.",
         open: "Open FlipOrDie"
       },
+      product_sleepordie: {
+        status: "Coming soon to the App Store",
+        desc: "SleepOrDie is a bedtime anti-doomscrolling app: put your phone face down and a Scroll Goblin living in it starves for 30 to 120 minutes. Pick it up and you have 20 seconds to put it back, or it eats tonight's sleep.",
+        f1: "On-device face-down detection, silent success, and a near-black screen made for bedtime.",
+        f2: "Collect goblins in your Vault, keep a night streak, and write tomorrow's plan before you sleep.",
+        f3: "Pro adds the full Vault, weekly stats, share themes, and a read-aloud mode.",
+        open: "Open SleepOrDie"
+      },
       matrix: {
         q1: "Crises, deadlines, emergencies.",
         q2: "Planning, growth, meaningful work.",
@@ -128,6 +136,7 @@
         building_tallcenter: "TallCenter",
         building_asianlaunch: "AsianLaunch",
         building_flipordie: "FlipOrDie",
+        building_sleepordie: "SleepOrDie",
         follow_label: "Follow my journey"
       },
       footer: {
@@ -218,6 +227,14 @@
         f3: "失敗會扣點、連勝歸零；升級 Pro 可解鎖 Mercy Mode 與朗誦模式。",
         open: "開啟 FlipOrDie"
       },
+      product_sleepordie: {
+        status: "即將在 App Store 上架",
+        desc: "SleepOrDie 是睡前防滑手機 App：把手機正面朝下，住在裡面的滑手機怪就會餓 30 到 120 分鐘。拿起來你有 20 秒放回去，否則牠就吃掉今晚的睡眠。",
+        f1: "裝置端翻面偵測、成功時完全靜音，並有專為睡前設計的近乎全黑畫面。",
+        f2: "在怪物收藏庫收集怪物、累積連續夜晚，睡前還能寫下明天的計畫。",
+        f3: "升級 Pro 可解鎖完整收藏庫、每週統計、分享卡主題與朗讀模式。",
+        open: "開啟 SleepOrDie"
+      },
       matrix: {
         q1: "危機、截止期限、緊急事件。",
         q2: "規劃、成長、有意義的工作。",
@@ -263,6 +280,7 @@
         building_tallcenter: "TallCenter",
         building_asianlaunch: "AsianLaunch",
         building_flipordie: "FlipOrDie",
+        building_sleepordie: "SleepOrDie",
         follow_label: "追蹤我的旅程"
       },
       footer: {
@@ -353,6 +371,14 @@
         f3: "失敗するとポイントを失い連勝もリセット。Pro でマーシーモードと音読モードを解除。",
         open: "FlipOrDieを開く"
       },
+      product_sleepordie: {
+        status: "まもなく App Store で公開",
+        desc: "SleepOrDie は寝る前のスマホいじり防止アプリです。スマホを画面を下にして置くと、中に住むスクロール怪物が30〜120分の間おなかをすかせます。手に取ると20秒以内に戻さないと、今夜の睡眠を食べられてしまいます。",
+        f1: "端末上での伏せ検知、成功時は完全に無音、就寝前に合わせたほぼ真っ暗な画面。",
+        f2: "ヴォルトで怪物を集め、連続の夜を伸ばし、寝る前に明日の予定も書けます。",
+        f3: "Pro で全履歴のヴォルト、週間統計、シェアカードのテーマ、音読モードが使えます。",
+        open: "SleepOrDieを開く"
+      },
       matrix: {
         q1: "危機、締め切り、緊急事態。",
         q2: "計画、成長、意義のある仕事。",
@@ -398,6 +424,7 @@
         building_tallcenter: "TallCenter",
         building_asianlaunch: "AsianLaunch",
         building_flipordie: "FlipOrDie",
+        building_sleepordie: "SleepOrDie",
         follow_label: "私の歩みをフォローする"
       },
       footer: {
