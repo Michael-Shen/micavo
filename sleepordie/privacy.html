@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SleepOrDie Privacy Policy</title>
+  <meta name="description" content="SleepOrDie is operated by Micavo. This policy explains what the app collects, why, and the choices you have." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Micavo" />
+  <meta property="og:url" content="https://micavo.app/sleepordie/privacy.html" />
+  <meta property="og:title" content="SleepOrDie Privacy Policy" />
+  <meta property="og:description" content="SleepOrDie is operated by Micavo. This policy explains what the app collects, why, and the choices you have." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SleepOrDie Privacy Policy" />
+  <meta name="twitter:description" content="SleepOrDie is operated by Micavo. This policy explains what the app collects, why, and the choices you have." />
+  <meta name="theme-color" content="#14142b" />
+  <link rel="canonical" href="https://micavo.app/sleepordie/privacy.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314142b'/%3E%3Ccircle cx='32' cy='36' r='18' fill='%238fd36b'/%3E%3Cpath d='M18 24 8 10l18 8zM46 24 56 10 38 18z' fill='%235fae48'/%3E%3Ccircle cx='25' cy='33' r='3' fill='%2314142b'/%3E%3Ccircle cx='39' cy='33' r='3' fill='%2314142b'/%3E%3Cpath d='M26 42q6 5 12 0' stroke='%2314142b' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PF5PE9BXFT');
+  </script>
+  <script>
+    (function () {
+      var KEY = 'sleepordie_lang';
+      var titles = {"en": "SleepOrDie Privacy Policy", "zh": "SleepOrDie 隱私權政策", "ja": "SleepOrDie プライバシーポリシー", "ko": "SleepOrDie 개인정보처리방침"};
+      function apply(lang) {
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : lang;
+        document.title = titles[lang];
+      }
+      var requested = new URLSearchParams(location.search).get('lang');
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      var nav = navigator.language || '';
+      var pick = requested && titles[requested] ? requested : (saved || (/^zh/i.test(nav) ? 'zh' : /^ja/i.test(nav) ? 'ja' : /^ko/i.test(nav) ? 'ko' : 'en'));
+      apply(pick);
+      document.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-lang-switch]');
+        if (!button) return;
+        var lang = button.getAttribute('data-lang-switch');
+        apply(lang);
+        try { localStorage.setItem(KEY, lang); } catch (e) {}
+      });
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="./" aria-label="SleepOrDie home">
+        <span class="brand-mark" aria-hidden="true">🌙</span>
+        SleepOrDie
+      </a>
+      <div class="nav-links">
+        <a href="./#how"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span><span class="ko">사용 방법</span></a>
+        <a href="./#features"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span><span class="ko">기능</span></a>
+        <a href="./#pro">Pro</a>
+        <a href="./#faq">FAQ</a>
+        <a href="./privacy.html"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span><span class="ko">개인정보</span></a>
+        <a href="./terms.html"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
+      </div>
+      <div class="lang-switch" aria-label="Language switcher">
+        <button class="lang-button" type="button" data-lang-switch="en">EN</button>
+        <button class="lang-button" type="button" data-lang-switch="zh">繁中</button>
+        <button class="lang-button" type="button" data-lang-switch="ja">日本語</button>
+        <button class="lang-button" type="button" data-lang-switch="ko">한국어</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="legal-hero">
+      <p class="eyebrow">App privacy</p>
+      <h1><span class="en">SleepOrDie Privacy Policy</span><span class="zh">SleepOrDie 隱私權政策</span><span class="ja">SleepOrDie プライバシーポリシー</span><span class="ko">SleepOrDie 개인정보처리방침</span></h1>
+      <p><span class="en">Last updated: October 1, 2026. SleepOrDie is operated by Micavo. This policy explains what the app collects, why, and the choices you have.</span><span class="zh">最後更新：2026 年 10 月 1 日。SleepOrDie 由 Micavo 營運。本政策說明 App 蒐集哪些資料、原因，以及你的選擇。</span><span class="ja">最終更新日：2026年10月1日。SleepOrDie は Micavo が運営しています。本ポリシーでは、アプリが収集する情報、その目的、お客様の選択肢について説明します。</span><span class="ko">최종 업데이트: 2026년 10월 1일. SleepOrDie는 Micavo가 운영합니다. 이 방침은 앱이 수집하는 정보, 그 이유, 그리고 사용자의 선택권을 설명합니다.</span></p>
+    </section>
+
+    <div class="legal-layout">
+      <section class="legal-card">
+        <h2><span class="en">1. Information We Collect</span><span class="zh">1. 我們蒐集的資料</span><span class="ja">1. 収集する情報</span><span class="ko">1. 수집하는 정보</span></h2>
+        <div class="en"><p>When you use SleepOrDie, we may collect:</p><ul><li>Account information from Sign in with Apple or Google Sign-In: your account identifier, name and email address (Apple may give us a private relay address instead of your real email) and, for Google, your profile photo URL.</li><li>App data stored in your account: your points, current and longest night streak, your onboarding status, and a record of each night (whether it succeeded, failed or could not be verified; the date, start and end times; how long you stayed off your phone; points gained or lost; the reason a night failed; how many times the phone was picked up; and the goblin and bedroom you chose).</li><li>Sign-in details such as which provider you used and when you last signed in.</li><li>Purchase and subscription status from Apple and RevenueCat (see Section 8).</li></ul><p>Some information stays only on your device: your bedtime and wake-time preferences, sound and vibration choices, and the state of a night that is currently running.</p><p>We do not collect your location, contacts, photos, advertising identifier, or the contents of other apps.</p></div><div class="zh"><p>使用 SleepOrDie 時，我們可能蒐集：</p><ul><li>透過「使用 Apple 登入」或 Google 登入取得的帳號資訊：帳號識別碼、姓名與電子郵件（Apple 可能提供隱藏的中繼信箱，而非你的真實信箱），Google 登入另有你的大頭貼網址。</li><li>儲存在你帳號中的 App 資料：點數、目前與最長的連續成功夜晚、是否完成引導，以及每一晚的紀錄（成功、失敗或無法驗證；日期、開始與結束時間；你沒碰手機的時間長度；獲得或失去的點數；失敗原因；手機被拿起的次數；以及你選擇的怪物與臥室）。</li><li>登入相關資訊，例如你使用的登入方式與最近登入時間。</li><li>來自 Apple 與 RevenueCat 的購買與訂閱狀態（見第 8 節）。</li></ul><p>部分資料只會留在你的裝置上：你的就寢與起床時間偏好、音效與震動設定，以及正在進行中的夜晚狀態。</p><p>我們不會蒐集你的位置、聯絡人、照片、廣告識別碼，或其他 App 的內容。</p></div><div class="ja"><p>SleepOrDie のご利用にあたり、次の情報を収集することがあります。</p><ul><li>Apple でサインインまたは Google サインインから取得するアカウント情報：アカウント識別子、氏名、メールアドレス（Apple では実際のメールアドレスの代わりに非公開のリレーアドレスが提供される場合があります）。Google の場合はプロフィール写真の URL も含まれます。</li><li>アカウントに保存されるアプリのデータ：ポイント、現在と最長の連続成功の夜、オンボーディングの完了状況、そして各夜の記録（成功・失敗・確認不能の別、日付、開始・終了時刻、スマホに触れなかった時間、増減したポイント、失敗の理由、スマホを手に取った回数、選んだ怪物と寝室）。</li><li>ログインに使用したプロバイダーや最終ログイン日時などのサインイン情報。</li><li>Apple と RevenueCat から取得する購入・サブスクリプションの状況（第8項をご覧ください）。</li></ul><p>一部の情報は端末内にのみ保存されます：就寝・起床時間の設定、音と振動の設定、現在進行中の夜の状態。</p><p>位置情報、連絡先、写真、広告 ID、ほかのアプリの内容は収集しません。</p></div><div class="ko"><p>SleepOrDie를 이용하실 때 다음 정보를 수집할 수 있습니다:</p><ul><li>Apple 로그인 또는 Google 로그인을 통한 계정 정보: 계정 식별자, 이름, 이메일 주소(Apple은 실제 이메일 대신 비공개 릴레이 주소를 제공할 수 있습니다), Google의 경우 프로필 사진 URL도 포함됩니다.</li><li>계정에 저장되는 앱 데이터: 포인트, 현재 및 최장 연속 성공 밤, 온보딩 완료 여부, 그리고 각 밤의 기록(성공·실패·확인 불가 여부, 날짜, 시작·종료 시각, 폰을 만지지 않은 시간, 얻거나 잃은 포인트, 실패 이유, 폰을 집어 든 횟수, 선택한 고블린과 침실).</li><li>사용한 로그인 제공자 및 최근 로그인 시간 등 로그인 관련 정보.</li><li>Apple 및 RevenueCat으로부터 받는 구매 및 구독 상태 정보(8항 참조).</li></ul><p>일부 정보는 기기에만 저장됩니다: 취침·기상 시간 설정, 소리와 진동 설정, 현재 진행 중인 밤의 상태.</p><p>위치, 연락처, 사진, 광고 식별자, 다른 앱의 콘텐츠는 수집하지 않습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">2. Motion Sensors, Screen and Brightness</span><span class="zh">2. 動作感測器、螢幕與亮度</span><span class="ja">2. モーションセンサー、画面、明るさ</span><span class="ko">2. 모션 센서, 화면, 밝기</span></h2>
+        <div class="en"><p>SleepOrDie reads your phone's accelerometer to tell whether the phone is lying face down. This processing happens only on your device while a night is running. The sensor readings are not stored and are not sent to us or to anyone else.</p><p>During a night the app keeps the screen awake and lowers its own brightness, then restores it when the night ends. We do not collect any information about your screen use.</p></div><div class="zh"><p>SleepOrDie 會讀取手機的加速度計，判斷手機是否正面朝下。這項處理只會在夜晚進行中於你的裝置上執行，感測數據不會被儲存，也不會傳送給我們或任何第三方。</p><p>夜晚進行中，App 會讓螢幕保持喚醒並降低自身亮度，夜晚結束後再還原。我們不會蒐集任何關於你螢幕使用的資訊。</p></div><div class="ja"><p>SleepOrDie は、スマートフォンが画面を下にして置かれているかを判定するために加速度センサーを読み取ります。この処理は夜の間にお使いの端末上でのみ行われ、センサーの値は保存されず、当社やほかの第三者に送信されることもありません。</p><p>夜の間、アプリは画面をスリープさせず自身の明るさを下げ、夜が終わると元に戻します。画面の使用状況に関する情報は収集しません。</p></div><div class="ko"><p>SleepOrDie는 폰이 화면을 아래로 향한 채 놓여 있는지 확인하기 위해 가속도계를 읽습니다. 이 처리는 밤이 진행되는 동안 기기 내에서만 이루어지며, 센서 값은 저장되지 않고 당사나 그 누구에게도 전송되지 않습니다.</p><p>밤 동안 앱은 화면을 켜 둔 채 자체 밝기를 낮추고, 밤이 끝나면 원래대로 되돌립니다. 화면 사용에 관한 정보는 수집하지 않습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">3. Leaving the App and Phone Calls</span><span class="zh">3. 離開 App 與來電</span><span class="ja">3. アプリを離れること・着信</span><span class="ko">3. 앱을 벗어남과 전화 수신</span></h2>
+        <div class="en"><p>To apply the 20-second rule, SleepOrDie notices on your device when the app leaves the foreground during a night. To avoid penalizing you for an incoming call, the app asks iOS (CallKit) whether a call is ringing or in progress. This is a yes/no check made on your device; we do not see or record who called, call times, or any call content.</p></div><div class="zh"><p>為了執行 20 秒規則，SleepOrDie 會在夜晚進行中於你的裝置上偵測 App 是否離開前景。為了避免你因來電而被處罰，App 會向 iOS（CallKit）詢問目前是否有來電或通話中；這是在你的裝置上進行的「有／沒有」判斷，我們不會看到或記錄來電者、通話時間或任何通話內容。</p></div><div class="ja"><p>20秒ルールを適用するため、SleepOrDie は夜の間にアプリが前面から離れたことを端末上で検知します。着信でペナルティを受けないよう、アプリは iOS（CallKit）に、着信中または通話中かどうかを問い合わせます。これは端末上で行う「はい／いいえ」の確認であり、誰から電話があったか、通話時間、通話内容を当社が見たり記録したりすることはありません。</p></div><div class="ko"><p>20초 규칙을 적용하기 위해, SleepOrDie는 밤 동안 앱이 화면 앞에서 벗어나는 것을 기기 내에서 감지합니다. 전화 수신으로 인해 불이익을 받지 않도록, 앱은 iOS(CallKit)에 현재 전화가 오고 있거나 통화 중인지를 확인합니다. 이는 기기 내에서 이루어지는 예/아니오 확인이며, 당사는 발신자, 통화 시간, 통화 내용을 확인하거나 기록하지 않습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">4. Notifications</span><span class="zh">4. 通知</span><span class="ja">4. 通知</span><span class="ko">4. 알림</span></h2>
+        <div class="en"><p>SleepOrDie asks for notification permission and may show three kinds of local notifications, all created on your device (no push server is involved): an optional daily bedtime reminder, a warning when you leave the app during a night, and a morning message when your wake time arrives. You can turn them off at any time in iOS Settings or inside the app.</p></div><div class="zh"><p>SleepOrDie 會請求通知權限，並可能顯示三種本機通知，全都在你的裝置上建立（不經過任何推播伺服器）：可選的每日睡前提醒、夜晚中離開 App 時的警告，以及起床時間到了之後的早晨訊息。你可以隨時在 iOS 設定或 App 內關閉。</p></div><div class="ja"><p>SleepOrDie は通知の許可をお願いし、端末内で作成される3種類のローカル通知を表示することがあります（プッシュサーバーは使用しません）：任意の毎日の就寝リマインド、夜の間にアプリを離れたときの警告、起床時間になったときの朝のメッセージ。通知は iOS の設定またはアプリ内でいつでもオフにできます。</p></div><div class="ko"><p>SleepOrDie는 알림 권한을 요청하며, 기기 내에서 생성되는 세 가지 로컬 알림을 표시할 수 있습니다(푸시 서버는 사용하지 않습니다): 선택 사항인 매일 취침 알림, 밤 동안 앱을 벗어났을 때의 경고, 기상 시간이 되었을 때의 아침 메시지. iOS 설정이나 앱에서 언제든지 끌 수 있습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">5. How We Use Information</span><span class="zh">5. 資料的使用方式</span><span class="ja">5. 情報の利用目的</span><span class="ko">5. 정보의 이용 목적</span></h2>
+        <div class="en"><ul><li>To sign you in and keep your points, streak, Vault and settings.</li><li>To run a night, apply rewards and penalties, and show your progress.</li><li>To unlock Pro features you have purchased.</li><li>To understand how the app is used and to improve it (see Section 7).</li><li>To keep the service secure, prevent abuse, and provide support.</li></ul></div><div class="zh"><ul><li>讓你登入，並保存你的點數、連續紀錄、收藏庫與設定。</li><li>執行夜晚、套用獎勵與處罰，並顯示你的進度。</li><li>解鎖你已購買的 Pro 功能。</li><li>了解 App 的使用情形並加以改進（見第 7 節）。</li><li>維護服務安全、防止濫用，並提供支援。</li></ul></div><div class="ja"><ul><li>サインインを行い、ポイント・連続記録・ヴォルト・設定を保存するため。</li><li>夜を実行し、報酬とペナルティを適用して進捗を表示するため。</li><li>購入された Pro 機能を解放するため。</li><li>アプリの利用状況を把握し改善するため（第7項参照）。</li><li>サービスの安全を保ち、不正利用を防ぎ、サポートを提供するため。</li></ul></div><div class="ko"><ul><li>로그인하고 포인트, 연속 기록, 보관함, 설정을 유지하기 위해.</li><li>밤을 진행하고 보상과 벌칙을 적용하며 진행 상황을 보여주기 위해.</li><li>구매하신 Pro 기능을 해제하기 위해.</li><li>앱 사용 현황을 파악하고 개선하기 위해(7항 참조).</li><li>서비스를 안전하게 유지하고 오남용을 방지하며 지원을 제공하기 위해.</li></ul></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">6. Your Data and Where It Is Stored</span><span class="zh">6. 你的資料與儲存位置</span><span class="ja">6. データと保存場所</span><span class="ko">6. 데이터와 저장 위치</span></h2>
+        <div class="en"><p>Your account data and night history are stored in Google Cloud Firestore, protected by access rules so that each account can only read and change its own data. Settings and the state of a running night are stored on your device.</p></div><div class="zh"><p>你的帳號資料與夜晚紀錄儲存在 Google Cloud Firestore，並以存取規則保護，讓每個帳號只能讀取與修改自己的資料。設定與進行中夜晚的狀態則儲存在你的裝置上。</p></div><div class="ja"><p>アカウントデータと夜の履歴は Google Cloud Firestore に保存され、各アカウントが自分のデータだけを読み書きできるようアクセスルールで保護されています。設定と進行中の夜の状態は端末内に保存されます。</p></div><div class="ko"><p>계정 데이터와 밤 기록은 Google Cloud Firestore에 저장되며, 각 계정이 자신의 데이터만 읽고 수정할 수 있도록 접근 규칙으로 보호됩니다. 설정과 진행 중인 밤의 상태는 기기에 저장됩니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">7. Analytics</span><span class="zh">7. 分析</span><span class="ja">7. 分析</span><span class="ko">7. 분석</span></h2>
+        <div class="en"><p>SleepOrDie uses Firebase Analytics (Google) to count how the app is used, for example that a night started, succeeded or failed, a rough length bucket instead of your exact bedtime, how many warnings occurred, the failure reason, which goblin was used, whether the user is Pro, and whether a paywall was viewed. We do not log notification content, your exact sleep schedule, or personally identifying information. Firebase may also collect standard device and app-instance information as described in Google’s privacy policy. The app contains no advertising.</p></div><div class="zh"><p>SleepOrDie 使用 Firebase Analytics（Google）統計 App 的使用方式，例如夜晚已開始、成功或失敗、以粗略的時間長度區間取代你確切的就寢時間、警告次數、失敗原因、使用的怪物、使用者是否為 Pro，以及是否看過付費牆。我們不會記錄通知內容、你確切的睡眠時間表或可識別個人身分的資訊。Firebase 也可能依 Google 隱私權政策所述蒐集標準的裝置與 App 實例資訊。App 不含任何廣告。</p></div><div class="ja"><p>SleepOrDie は Firebase Analytics（Google）を使い、アプリの利用状況を集計します。例えば、夜が始まった・成功した・失敗した、正確な就寝時刻ではなくおおまかな長さの区分、警告の回数、失敗の理由、使用した怪物、Pro かどうか、課金画面を見たかどうか、などです。通知の内容、正確な睡眠スケジュール、個人を特定できる情報は記録しません。Firebase は Google のプライバシーポリシーに記載のとおり、標準的な端末およびアプリインスタンス情報も収集する場合があります。アプリに広告はありません。</p></div><div class="ko"><p>SleepOrDie는 Firebase Analytics(Google)를 사용해 앱 사용 방식을 집계합니다. 예: 밤이 시작·성공·실패했는지, 정확한 취침 시각 대신 대략적인 길이 구간, 경고 횟수, 실패 이유, 사용한 고블린, Pro 여부, 결제 화면 조회 여부. 알림 내용, 정확한 수면 일정, 개인을 식별할 수 있는 정보는 기록하지 않습니다. Firebase는 Google 개인정보처리방침에 설명된 표준 기기 및 앱 인스턴스 정보도 수집할 수 있습니다. 앱에는 광고가 없습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">8. Purchases and Subscriptions</span><span class="zh">8. 購買與訂閱</span><span class="ja">8. 購入とサブスクリプション</span><span class="ko">8. 구매 및 구독</span></h2>
+        <div class="en"><p>Purchases are made through the Apple App Store. We use RevenueCat to check and manage your Pro status. RevenueCat receives your account ID and purchase and subscription information (for example, which product you bought and when it renews). We never receive your payment card or Apple ID payment details.</p></div><div class="zh"><p>購買是透過 Apple App Store 進行。我們使用 RevenueCat 檢查與管理你的 Pro 狀態；RevenueCat 會收到你的帳號 ID 與購買、訂閱資訊（例如你購買的方案與續訂時間）。我們不會收到你的付款卡或 Apple ID 付款資料。</p></div><div class="ja"><p>購入は Apple の App Store を通じて行われます。Pro の状態の確認と管理には RevenueCat を使用します。RevenueCat はアカウント ID と購入・サブスクリプション情報（購入した商品や更新日など）を受け取ります。お支払いカードや Apple ID の支払い情報を当社が受け取ることはありません。</p></div><div class="ko"><p>구매는 Apple App Store를 통해 이루어집니다. Pro 상태를 확인하고 관리하기 위해 RevenueCat을 사용합니다. RevenueCat은 계정 ID와 구매·구독 정보(예: 구매한 상품과 갱신 시기)를 받습니다. 결제 카드나 Apple ID 결제 정보는 당사가 받지 않습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">9. Third-Party Services</span><span class="zh">9. 第三方服務</span><span class="ja">9. 第三者サービス</span><span class="ko">9. 제3자 서비스</span></h2>
+        <div class="en"><p>SleepOrDie relies on the following services:</p><ul><li>Apple: Sign in with Apple, the App Store and in-app purchases, and CallKit call-state checks on your device.</li><li>Google: Google Sign-In, Firebase Authentication, Firebase Analytics and Cloud Firestore.</li><li>RevenueCat: purchase and subscription management.</li></ul><p>We do not sell your data or share it with data brokers.</p></div><div class="zh"><p>SleepOrDie 使用下列服務：</p><ul><li>Apple：使用 Apple 登入、App Store 與 App 內購買，以及在你裝置上進行的 CallKit 通話狀態檢查。</li><li>Google：Google 登入、Firebase Authentication、Firebase Analytics 與 Cloud Firestore。</li><li>RevenueCat：購買與訂閱管理。</li></ul><p>我們不會出售你的資料，也不會與資料掮客分享。</p></div><div class="ja"><p>SleepOrDie は次のサービスを利用しています。</p><ul><li>Apple：Apple でサインイン、App Store とアプリ内課金、端末上での CallKit による通話状態の確認。</li><li>Google：Google サインイン、Firebase Authentication、Firebase Analytics、Cloud Firestore。</li><li>RevenueCat：購入・サブスクリプションの管理。</li></ul><p>お客様のデータを販売したり、データブローカーと共有したりすることはありません。</p></div><div class="ko"><p>SleepOrDie는 다음 서비스를 이용합니다:</p><ul><li>Apple: Apple 로그인, App Store 및 앱 내 구매, 기기에서의 CallKit 통화 상태 확인.</li><li>Google: Google 로그인, Firebase Authentication, Firebase Analytics, Cloud Firestore.</li><li>RevenueCat: 구매 및 구독 관리.</li></ul><p>당사는 사용자의 데이터를 판매하거나 데이터 브로커와 공유하지 않습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">10. This Website</span><span class="zh">10. 本網站</span><span class="ja">10. このウェブサイト</span><span class="ko">10. 이 웹사이트</span></h2>
+        <div class="en"><p>This website uses Google Analytics to measure aggregate visits. It is separate from the SleepOrDie app.</p></div><div class="zh"><p>本網站使用 Google Analytics 衡量整體訪問量，與 SleepOrDie App 各自獨立。</p></div><div class="ja"><p>このウェブサイトでは、全体のアクセス数を測定するために Google Analytics を使用しています。SleepOrDie アプリとは別のものです。</p></div><div class="ko"><p>이 웹사이트는 전체 방문 수를 측정하기 위해 Google Analytics를 사용합니다. SleepOrDie 앱과는 별개입니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">11. Data Retention and Deletion</span><span class="zh">11. 資料保存與刪除</span><span class="ja">11. データの保持と削除</span><span class="ko">11. 데이터 보존 및 삭제</span></h2>
+        <div class="en"><p>We keep your account data while your account is active. You can delete your account and all of its data inside the app: Settings → Delete account and all data. This removes your account, your profile document and your night history, and revokes the Sign in with Apple authorization if you signed in with Apple. You will be asked to sign in once more to confirm.</p><p>Apple and RevenueCat may keep purchase records where required for legal, tax, or fraud-prevention reasons. If you need help, contact support@micavo.app.</p></div><div class="zh"><p>只要你的帳號仍在使用中，我們就會保留你的帳號資料。你可以在 App 內刪除帳號與所有資料：設定 → 刪除帳號與所有資料。這會移除你的帳號、個人資料文件與夜晚紀錄，若你使用 Apple 登入，也會撤銷「使用 Apple 登入」的授權。系統會要求你再登入一次以確認。</p><p>Apple 與 RevenueCat 可能因法律、稅務或防詐騙需要而保留購買紀錄。如需協助，請聯絡 support@micavo.app。</p></div><div class="ja"><p>アカウントが有効な間、アカウントデータを保持します。アプリ内でアカウントとすべてのデータを削除できます：設定 → アカウントとすべてのデータを削除。アカウント、プロフィール、夜の履歴が削除され、Apple でサインインしている場合は「Apple でサインイン」の認可も取り消されます。確認のためにもう一度サインインを求められます。</p><p>Apple と RevenueCat は、法律・税務・不正防止上必要な場合に購入記録を保持することがあります。ご不明な点は support@micavo.app までご連絡ください。</p></div><div class="ko"><p>계정이 활성 상태인 동안 계정 데이터를 보관합니다. 앱에서 계정과 모든 데이터를 삭제할 수 있습니다: 설정 → 계정 및 모든 데이터 삭제. 계정, 프로필 문서, 밤 기록이 삭제되고, Apple로 로그인한 경우 Apple 로그인 권한도 취소됩니다. 확인을 위해 한 번 더 로그인해야 합니다.</p><p>Apple과 RevenueCat은 법률, 세무 또는 사기 방지를 위해 필요한 경우 구매 기록을 보관할 수 있습니다. 도움이 필요하시면 support@micavo.app으로 문의하세요.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">12. Your Choices</span><span class="zh">12. 你的選擇</span><span class="ja">12. お客様の選択肢</span><span class="ko">12. 사용자의 선택</span></h2>
+        <div class="en"><ul><li>Deny or revoke notification permission in iOS Settings.</li><li>Choose your bedtime, wake time, sound, vibration and language in the app.</li><li>Manage or cancel subscriptions in your Apple ID subscription settings.</li><li>Sign out or delete your account at any time.</li></ul></div><div class="zh"><ul><li>在 iOS 設定中拒絕或撤銷通知權限。</li><li>在 App 內設定就寢時間、起床時間、音效、震動與語言。</li><li>在 Apple ID 的訂閱設定中管理或取消訂閱。</li><li>隨時登出或刪除你的帳號。</li></ul></div><div class="ja"><ul><li>iOS の設定で通知の許可を拒否・取り消す。</li><li>アプリ内で就寝時間、起床時間、音、振動、言語を設定する。</li><li>Apple ID のサブスクリプション設定で管理・解約する。</li><li>いつでもサインアウトまたはアカウントを削除する。</li></ul></div><div class="ko"><ul><li>iOS 설정에서 알림 권한을 거부하거나 취소하기.</li><li>앱에서 취침 시간, 기상 시간, 소리, 진동, 언어 설정하기.</li><li>Apple ID 구독 설정에서 구독 관리 또는 취소하기.</li><li>언제든 로그아웃하거나 계정 삭제하기.</li></ul></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">13. Children</span><span class="zh">13. 兒童</span><span class="ja">13. お子様</span><span class="ko">13. 어린이</span></h2>
+        <div class="en"><p>SleepOrDie is not directed to children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it.</p></div><div class="zh"><p>SleepOrDie 並非針對 13 歲以下兒童。如果你認為有兒童向我們提供了個人資料，請聯絡我們，我們會予以刪除。</p></div><div class="ja"><p>SleepOrDie は13歳未満のお子様を対象としていません。お子様が個人情報を提供したと思われる場合は、ご連絡いただければ削除します。</p></div><div class="ko"><p>SleepOrDie는 13세 미만 어린이를 대상으로 하지 않습니다. 어린이가 개인정보를 제공했다고 생각되시면 연락해 주세요. 삭제해 드리겠습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">14. Security</span><span class="zh">14. 安全性</span><span class="ja">14. セキュリティ</span><span class="ko">14. 보안</span></h2>
+        <div class="en"><p>We use reasonable safeguards, including access rules on our database so that each account can only read and change its own data. No method of transmission or storage is completely secure.</p></div><div class="zh"><p>我們採取合理的保護措施，包括資料庫的存取規則，讓每個帳號只能讀取與修改自己的資料。沒有任何傳輸或儲存方式是完全安全的。</p></div><div class="ja"><p>各アカウントが自分のデータだけを読み書きできるようデータベースのアクセスルールを設けるなど、合理的な保護措置を講じています。完全に安全な送信・保存方法はありません。</p></div><div class="ko"><p>각 계정이 자신의 데이터만 읽고 수정할 수 있도록 데이터베이스 접근 규칙을 두는 등 합리적인 보호 조치를 사용합니다. 완벽하게 안전한 전송 또는 저장 방법은 없습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">15. Changes to This Policy</span><span class="zh">15. 政策變更</span><span class="ja">15. ポリシーの変更</span><span class="ko">15. 방침의 변경</span></h2>
+        <div class="en"><p>We may update this policy from time to time. The updated version will be posted on this page with a new “last updated” date.</p></div><div class="zh"><p>我們可能會不定期更新本政策。更新後的版本會張貼在此頁面，並附上新的「最後更新」日期。</p></div><div class="ja"><p>本ポリシーは随時更新されることがあります。更新版は新しい「最終更新日」とともにこのページに掲載されます。</p></div><div class="ko"><p>이 방침은 수시로 업데이트될 수 있습니다. 업데이트된 버전은 새로운 "최종 업데이트" 날짜와 함께 이 페이지에 게시됩니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">16. Contact</span><span class="zh">16. 聯絡我們</span><span class="ja">16. お問い合わせ</span><span class="ko">16. 문의</span></h2>
+        <div class="en"><p>For privacy questions, support, or deletion requests, contact Micavo at support@micavo.app.</p></div><div class="zh"><p>如有隱私問題、支援需求或刪除請求，請聯絡 Micavo：support@micavo.app。</p></div><div class="ja"><p>プライバシーに関するご質問、サポート、削除のご依頼は、Micavo（support@micavo.app）までご連絡ください。</p></div><div class="ko"><p>개인정보 관련 문의, 지원, 삭제 요청은 Micavo(support@micavo.app)로 연락해 주세요.</p></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div>© 2026 Micavo. <span class="en">SleepOrDie is a product by Micavo.</span><span class="zh">SleepOrDie 是 Micavo 的產品。</span><span class="ja">SleepOrDie は Micavo のプロダクトです。</span><span class="ko">SleepOrDie는 Micavo의 제품입니다.</span></div>
+    <div class="footer-links">
+      <a href="https://micavo.app/">Micavo</a>
+      <a href="./privacy.html"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span><span class="ko">개인정보처리방침</span></a>
+      <a href="./terms.html"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
+      <a href="mailto:support@micavo.app">support@micavo.app</a>
+    </div>
+  </footer>
+</body>
+</html>

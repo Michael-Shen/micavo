@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SleepOrDie Terms of Service</title>
+  <meta name="description" content="These Terms govern your access to and use of SleepOrDie, a bedtime anti-doomscrolling app operated by Micavo." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Micavo" />
+  <meta property="og:url" content="https://micavo.app/sleepordie/terms.html" />
+  <meta property="og:title" content="SleepOrDie Terms of Service" />
+  <meta property="og:description" content="These Terms govern your access to and use of SleepOrDie, a bedtime anti-doomscrolling app operated by Micavo." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SleepOrDie Terms of Service" />
+  <meta name="twitter:description" content="These Terms govern your access to and use of SleepOrDie, a bedtime anti-doomscrolling app operated by Micavo." />
+  <meta name="theme-color" content="#14142b" />
+  <link rel="canonical" href="https://micavo.app/sleepordie/terms.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314142b'/%3E%3Ccircle cx='32' cy='36' r='18' fill='%238fd36b'/%3E%3Cpath d='M18 24 8 10l18 8zM46 24 56 10 38 18z' fill='%235fae48'/%3E%3Ccircle cx='25' cy='33' r='3' fill='%2314142b'/%3E%3Ccircle cx='39' cy='33' r='3' fill='%2314142b'/%3E%3Cpath d='M26 42q6 5 12 0' stroke='%2314142b' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PF5PE9BXFT');
+  </script>
+  <script>
+    (function () {
+      var KEY = 'sleepordie_lang';
+      var titles = {"en": "SleepOrDie Terms of Service", "zh": "SleepOrDie 服務條款", "ja": "SleepOrDie 利用規約", "ko": "SleepOrDie 이용약관"};
+      function apply(lang) {
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : lang;
+        document.title = titles[lang];
+      }
+      var requested = new URLSearchParams(location.search).get('lang');
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      var nav = navigator.language || '';
+      var pick = requested && titles[requested] ? requested : (saved || (/^zh/i.test(nav) ? 'zh' : /^ja/i.test(nav) ? 'ja' : /^ko/i.test(nav) ? 'ko' : 'en'));
+      apply(pick);
+      document.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-lang-switch]');
+        if (!button) return;
+        var lang = button.getAttribute('data-lang-switch');
+        apply(lang);
+        try { localStorage.setItem(KEY, lang); } catch (e) {}
+      });
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="./" aria-label="SleepOrDie home">
+        <span class="brand-mark" aria-hidden="true">🌙</span>
+        SleepOrDie
+      </a>
+      <div class="nav-links">
+        <a href="./#how"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span><span class="ko">사용 방법</span></a>
+        <a href="./#features"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span><span class="ko">기능</span></a>
+        <a href="./#pro">Pro</a>
+        <a href="./#faq">FAQ</a>
+        <a href="./privacy.html"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span><span class="ko">개인정보</span></a>
+        <a href="./terms.html"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
+      </div>
+      <div class="lang-switch" aria-label="Language switcher">
+        <button class="lang-button" type="button" data-lang-switch="en">EN</button>
+        <button class="lang-button" type="button" data-lang-switch="zh">繁中</button>
+        <button class="lang-button" type="button" data-lang-switch="ja">日本語</button>
+        <button class="lang-button" type="button" data-lang-switch="ko">한국어</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="legal-hero">
+      <p class="eyebrow">App terms</p>
+      <h1><span class="en">SleepOrDie Terms of Service</span><span class="zh">SleepOrDie 服務條款</span><span class="ja">SleepOrDie 利用規約</span><span class="ko">SleepOrDie 이용약관</span></h1>
+      <p><span class="en">Last updated: October 1, 2026. These Terms govern your access to and use of SleepOrDie, a bedtime anti-doomscrolling app operated by Micavo.</span><span class="zh">最後更新：2026 年 10 月 1 日。本條款規範你存取與使用 SleepOrDie（由 Micavo 營運的睡前防滑手機 App）。</span><span class="ja">最終更新日：2026年10月1日。本規約は、Micavo が運営する就寝前のスマホ断ちアプリ SleepOrDie のご利用に適用されます。</span><span class="ko">최종 업데이트: 2026년 10월 1일. 본 약관은 Micavo가 운영하는 잠들기 전 스크롤 방지 앱 SleepOrDie의 이용에 적용됩니다.</span></p>
+    </section>
+
+    <div class="legal-layout">
+      <section class="legal-card">
+        <h2><span class="en">1. Acceptance of Terms</span><span class="zh">1. 接受條款</span><span class="ja">1. 規約への同意</span><span class="ko">1. 약관 동의</span></h2>
+        <div class="en"><p>By downloading, accessing, or using SleepOrDie, you agree to these Terms. If you do not agree, do not use the app.</p></div><div class="zh"><p>下載、存取或使用 SleepOrDie，即表示你同意本條款。若你不同意，請勿使用本 App。</p></div><div class="ja"><p>SleepOrDie をダウンロード、アクセス、または使用することにより、本規約に同意したものとみなされます。同意しない場合は、アプリを使用しないでください。</p></div><div class="ko"><p>SleepOrDie를 다운로드, 접속 또는 사용하면 본 약관에 동의한 것으로 간주됩니다. 동의하지 않으시면 앱을 사용하지 마세요.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">2. Eligibility and Accounts</span><span class="zh">2. 資格與帳號</span><span class="ja">2. 利用資格とアカウント</span><span class="ko">2. 이용 자격 및 계정</span></h2>
+        <div class="en"><p>You must be at least 13 years old to use SleepOrDie. You sign in with Apple or Google and are responsible for keeping your account secure and for all activity under it. Please provide accurate information.</p></div><div class="zh"><p>你必須年滿 13 歲才能使用 SleepOrDie。你透過 Apple 或 Google 登入，並須負責維護帳號安全及帳號下的所有活動。請提供正確的資訊。</p></div><div class="ja"><p>SleepOrDie のご利用は13歳以上の方に限ります。Apple または Google でサインインし、アカウントの安全管理とアカウントで行われるすべての行為について責任を負うものとします。正確な情報をご提供ください。</p></div><div class="ko"><p>SleepOrDie는 만 13세 이상만 이용할 수 있습니다. Apple 또는 Google로 로그인하며, 계정 보안과 계정에서 이루어지는 모든 활동에 대한 책임은 사용자에게 있습니다. 정확한 정보를 제공해 주세요.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">3. What SleepOrDie Does</span><span class="zh">3. SleepOrDie 的功能</span><span class="ja">3. SleepOrDie の機能</span><span class="ko">3. SleepOrDie의 기능</span></h2>
+        <div class="en"><p>SleepOrDie is a bedtime habit app. You place your phone face down to start a night. If you pick it up or leave the app before your wake time, a 20-second grace period starts; if you do not return in time, the night fails. SleepOrDie does not measure sleep, does not wake you up, and is not an alarm clock. We may change, add, or remove features at any time.</p></div><div class="zh"><p>SleepOrDie 是睡前習慣 App。你把手機正面朝下，夜晚就開始。如果你在起床時間前拿起手機或離開 App，就會開始 20 秒的寬限期；若沒有及時回來，這一晚就會失敗。SleepOrDie 不測量睡眠、不會叫你起床，也不是鬧鐘。我們可能隨時變更、新增或移除功能。</p></div><div class="ja"><p>SleepOrDie は就寝前の習慣づけアプリです。スマホを画面を下にして置くと夜が始まります。起床時間前に手に取ったりアプリを離れたりすると20秒の猶予が始まり、間に合って戻らなければその夜は失敗になります。SleepOrDie は睡眠を測定せず、起こしてもくれず、目覚まし時計でもありません。機能は予告なく変更・追加・削除されることがあります。</p></div><div class="ko"><p>SleepOrDie는 취침 전 습관 앱입니다. 폰을 화면이 아래로 향하게 놓으면 밤이 시작됩니다. 기상 시간 전에 폰을 집어 들거나 앱을 벗어나면 20초의 유예 시간이 시작되며, 제때 돌아오지 않으면 그 밤은 실패로 처리됩니다. SleepOrDie는 수면을 측정하지 않고, 깨워 주지 않으며, 알람 시계가 아닙니다. 기능은 언제든지 변경, 추가 또는 삭제될 수 있습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">4. Important Limits of Detection</span><span class="zh">4. 偵測的重要限制</span><span class="ja">4. 検知の重要な制限</span><span class="ko">4. 감지의 중요한 한계</span></h2>
+        <div class="en"><p>iOS does not let apps read sensors after they are closed, suspended or force-quit. SleepOrDie therefore has to stay open in the foreground all night. It cannot reliably tell every way a phone is handled, and it cannot tell apart every kind of interruption (for example the Home or Power button, Siri or a system alert) from you leaving the app. If the app is closed before your wake time, the night is treated as failed; if it is closed and you return after your wake time, the night may be recorded as “unverified”, with no reward and no penalty. If the device clock is changed during a night, the night may also be recorded as unverified.</p></div><div class="zh"><p>iOS 不允許 App 在被關閉、暫停或強制結束後讀取感測器，因此 SleepOrDie 必須整晚保持在前景開啟。它無法可靠辨識手機被處理的每一種方式，也無法分辨每一種中斷（例如 Home 鍵、電源鍵、Siri 或系統提示）與你離開 App 的差別。如果在起床時間前 App 被關閉，這一晚會被視為失敗；如果 App 被關閉而你在起床時間之後才回來，這一晚可能被記錄為「無法驗證」，沒有獎勵也沒有處罰。若裝置時間在夜晚中被更改，這一晚也可能被記錄為無法驗證。</p></div><div class="ja"><p>iOS では、アプリが閉じられたり一時停止されたり強制終了されたりするとセンサーを読み取れません。そのため SleepOrDie は一晩中前面で開いておく必要があります。スマホの扱われ方すべてを確実に検知することはできず、すべての中断（ホームボタン、電源ボタン、Siri、システムの通知など）とアプリを離れたことを区別することもできません。起床時間前にアプリが閉じられるとその夜は失敗として扱われ、閉じられて起床時間の後に戻った場合は「確認不能」として記録され、報酬もペナルティもないことがあります。夜の間に端末の時計が変更された場合も、確認不能として記録されることがあります。</p></div><div class="ko"><p>iOS는 앱이 종료·일시 중지·강제 종료된 후에는 센서를 읽지 못하게 합니다. 따라서 SleepOrDie는 밤새 화면 앞에서 켜 두어야 합니다. 폰을 다루는 모든 방식을 확실하게 감지할 수 없고, 모든 종류의 중단(예: 홈 버튼, 전원 버튼, Siri, 시스템 알림)과 앱을 벗어난 것을 구분하지도 못합니다. 기상 시간 전에 앱이 종료되면 그 밤은 실패로 처리되며, 종료되었다가 기상 시간 이후에 돌아오면 "확인 불가"로 기록되어 보상도 벌점도 없을 수 있습니다. 밤 동안 기기 시계가 변경되면 그 밤도 확인 불가로 기록될 수 있습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">5. Wellness Disclaimer and Safe Use</span><span class="zh">5. 健康聲明與安全使用</span><span class="ja">5. 健康に関する免責と安全な使用</span><span class="ko">5. 건강 면책 및 안전한 사용</span></h2>
+        <div class="en"><p>SleepOrDie is a habit tool. It is not a medical device and does not diagnose or treat insomnia, sleep disorders, addiction or any health condition. If you are struggling with sleep or your wellbeing, please talk to a qualified professional.</p><p>Do not use SleepOrDie when you need to be reachable, for example if you are on call, expecting an emergency message or caring for someone. You can end a night at any time; ending early counts as a failed night. Placing a phone face down on a surface is at your own risk; take care not to damage it, and keep it where it cannot overheat. Use your own alarm to wake up; do not rely on SleepOrDie for that.</p></div><div class="zh"><p>SleepOrDie 是習慣工具，不是醫療器材，也不診斷或治療失眠、睡眠障礙、成癮或任何健康狀況。若你有睡眠或身心方面的困擾，請諮詢專業人員。</p><p>當你需要保持聯絡時，請不要使用 SleepOrDie，例如你正在待命、等待緊急訊息或照顧他人。你可以隨時結束一個夜晚；提早結束會算作失敗的夜晚。把手機正面朝下放在平面上由你自行承擔風險；請小心避免損壞，並放在不會過熱的地方。請使用你自己的鬧鐘來起床，不要依賴 SleepOrDie。</p></div><div class="ja"><p>SleepOrDie は習慣づけのツールであり、医療機器ではありません。不眠症、睡眠障害、依存症、その他の健康状態の診断や治療は行いません。睡眠や心身の状態に悩みがある場合は、専門家にご相談ください。</p><p>連絡が取れる状態でいる必要があるとき（待機中、緊急連絡を待っているとき、誰かを世話しているときなど）は SleepOrDie を使わないでください。夜はいつでも終了できますが、途中で終了すると失敗した夜として扱われます。スマホを平面に伏せて置くのはご自身の責任で行ってください。破損や過熱に注意してください。起床にはご自身のアラームを使い、SleepOrDie に頼らないでください。</p></div><div class="ko"><p>SleepOrDie는 습관 도구이며 의료기기가 아니고, 불면증, 수면 장애, 중독 또는 어떤 건강 상태도 진단하거나 치료하지 않습니다. 수면이나 심신 건강에 어려움이 있다면 전문가와 상담하세요.</p><p>대기 중이거나 긴급 메시지를 기다리거나 누군가를 돌보는 등 연락이 가능해야 할 때는 SleepOrDie를 사용하지 마세요. 밤은 언제든 종료할 수 있으며, 중간에 종료하면 실패한 밤으로 처리됩니다. 폰을 평평한 곳에 엎어 두는 것은 본인의 책임이며, 파손과 과열에 주의하세요. 기상에는 본인의 알람을 사용하고 SleepOrDie에 의존하지 마세요.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">6. Points, Streaks, and Penalties</span><span class="zh">6. 點數、連續紀錄與處罰</span><span class="ja">6. ポイント・連続記録・ペナルティ</span><span class="ko">6. 포인트, 연속 기록, 벌칙</span></h2>
+        <div class="en"><p>Points, streaks and the Vault are virtual and have no cash value. They cannot be transferred or exchanged. A successful night earns points and extends your night streak (at most once per local night). A failed night discards the points that were pending, deducts a small penalty, and resets your streak. Points never go below zero. Cancelled and unverified nights change neither points nor streak.</p></div><div class="zh"><p>點數、連續紀錄與收藏庫都是虛擬的，沒有現金價值，也無法轉讓或兌換。成功的夜晚會獲得點數並延續連續紀錄（每個本地夜晚最多一次）。失敗的夜晚會作廢待領點數、扣除少量處罰點數，並讓連續紀錄歸零。點數不會低於零。已取消與無法驗證的夜晚不會改變點數或連續紀錄。</p></div><div class="ja"><p>ポイント、連続記録、ヴォルトは仮想のものであり、現金価値はなく、譲渡や交換はできません。成功した夜はポイントを獲得して連続記録が延びます（現地時間の夜ごとに最大1回）。失敗した夜は未確定のポイントが無効になり、少量のペナルティが引かれ、連続記録がリセットされます。ポイントが0を下回ることはありません。キャンセルされた夜や確認不能の夜は、ポイントにも連続記録にも影響しません。</p></div><div class="ko"><p>포인트, 연속 기록, 보관함은 가상의 것이며 현금 가치가 없고 양도하거나 교환할 수 없습니다. 성공한 밤은 포인트를 얻고 연속 기록을 늘립니다(현지 기준 하룻밤에 최대 한 번). 실패한 밤은 대기 중인 포인트가 무효가 되고 소정의 벌점이 차감되며 연속 기록이 초기화됩니다. 포인트는 0 아래로 내려가지 않습니다. 취소된 밤과 확인 불가인 밤은 포인트와 연속 기록에 영향을 주지 않습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">7. Pro Purchases and Subscriptions</span><span class="zh">7. Pro 購買與訂閱</span><span class="ja">7. Pro の購入とサブスクリプション</span><span class="ko">7. Pro 구매 및 구독</span></h2>
+        <div class="en"><p>SleepOrDie Pro may be offered as auto-renewing subscriptions (monthly or yearly) and as a one-time “Lifetime” purchase. Current prices and options are shown in the app and on the App Store. “Lifetime” means access to Pro for as long as SleepOrDie offers Pro; it does not mean your own lifetime.</p><p>Payment is charged to your Apple ID at confirmation of purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Eligible new subscribers may receive a free trial; if you do not cancel before the trial ends, you will be charged the subscription price. You can manage or cancel subscriptions in your Apple ID account settings.</p><p>Refunds are handled by Apple under its policies. You can restore purchases from Settings in the app.</p></div><div class="zh"><p>SleepOrDie Pro 可能以自動續訂的訂閱（月訂閱或年訂閱）以及一次性的「終身」購買方式提供。目前的價格與方案顯示於 App 與 App Store。「終身」是指只要 SleepOrDie 仍提供 Pro，你就能使用 Pro，並非指你本人的一生。</p><p>款項會在你確認購買時向你的 Apple ID 收取。除非在目前期間結束前至少 24 小時取消，否則訂閱會自動續訂。符合資格的新訂閱者可能享有免費試用；若你在試用結束前未取消，將會被收取訂閱費用。你可以在 Apple ID 帳號設定中管理或取消訂閱。</p><p>退款由 Apple 依其政策處理。你可以在 App 的設定中恢復購買。</p></div><div class="ja"><p>SleepOrDie Pro は、自動更新のサブスクリプション（月額または年額）と、買い切りの「ライフタイム」として提供される場合があります。現在の価格とプランはアプリと App Store に表示されます。「ライフタイム」とは、SleepOrDie が Pro を提供している間 Pro を利用できることを意味し、お客様ご自身の生涯を意味するものではありません。</p><p>お支払いは購入確認時に Apple ID に請求されます。現在の期間が終了する少なくとも24時間前に解約しない限り、サブスクリプションは自動的に更新されます。対象となる新規登録者には無料トライアルが提供される場合があり、トライアル終了前に解約しないとサブスクリプション料金が請求されます。サブスクリプションは Apple ID のアカウント設定で管理・解約できます。</p><p>返金は Apple のポリシーに従って Apple が対応します。アプリの設定から購入を復元できます。</p></div><div class="ko"><p>SleepOrDie Pro는 자동 갱신 구독(월간 또는 연간)과 1회 결제 "평생" 구매로 제공될 수 있습니다. 현재 가격과 옵션은 앱과 App Store에 표시됩니다. "평생"은 SleepOrDie가 Pro를 제공하는 동안 Pro를 이용할 수 있다는 의미이며, 사용자 본인의 평생을 의미하지 않습니다.</p><p>결제는 구매 확인 시 Apple ID로 청구됩니다. 현재 기간이 끝나기 최소 24시간 전에 취소하지 않으면 구독은 자동으로 갱신됩니다. 자격이 있는 신규 구독자에게는 무료 체험이 제공될 수 있으며, 체험이 끝나기 전에 취소하지 않으면 구독 요금이 청구됩니다. 구독은 Apple ID 계정 설정에서 관리하거나 취소할 수 있습니다.</p><p>환불은 Apple의 정책에 따라 Apple이 처리합니다. 앱의 설정에서 구매를 복원할 수 있습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">8. Permissions</span><span class="zh">8. 權限</span><span class="ja">8. 権限</span><span class="ko">8. 권한</span></h2>
+        <div class="en"><p>The app may ask for notification permission. It is optional, and you can change it in iOS Settings. The app still works without it, but you will not receive reminders or the warning when you leave the app.</p></div><div class="zh"><p>App 可能會請求通知權限。這是選用的，你可以在 iOS 設定中變更。沒有通知權限時 App 仍可使用，但你不會收到提醒，也不會在離開 App 時收到警告。</p></div><div class="ja"><p>アプリは通知の許可をお願いすることがあります。これは任意で、iOS の設定で変更できます。許可しなくてもアプリは使えますが、リマインドやアプリを離れたときの警告は届きません。</p></div><div class="ko"><p>앱은 알림 권한을 요청할 수 있습니다. 선택 사항이며 iOS 설정에서 변경할 수 있습니다. 권한이 없어도 앱은 작동하지만, 알림과 앱을 벗어났을 때의 경고는 받지 못합니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">9. Acceptable Use</span><span class="zh">9. 可接受的使用方式</span><span class="ja">9. 許容される利用</span><span class="ko">9. 허용되는 사용</span></h2>
+        <div class="en"><p>You agree not to:</p><ul><li>Reverse engineer, disrupt, or bypass the app or its backend.</li><li>Tamper with points, streaks, night history, purchases, or Pro access, or manipulate the device clock or sensors to fake a night.</li><li>Use the app to evade paid features.</li><li>Use the app in any way that violates applicable law.</li></ul></div><div class="zh"><p>你同意不會：</p><ul><li>對 App 或其後端進行逆向工程、干擾或繞過。</li><li>竄改點數、連續紀錄、夜晚紀錄、購買或 Pro 權限，或操縱裝置時間或感測器來偽造一個夜晚。</li><li>利用本 App 規避付費功能。</li><li>以任何違反適用法律的方式使用本 App。</li></ul></div><div class="ja"><p>次の行為を行わないことに同意します。</p><ul><li>アプリまたはそのバックエンドのリバースエンジニアリング、妨害、回避。</li><li>ポイント、連続記録、夜の履歴、購入、Pro の権限の改ざん、または端末の時計やセンサーを操作して夜を偽装すること。</li><li>有料機能を回避するためにアプリを利用すること。</li><li>適用される法令に違反する方法でアプリを利用すること。</li></ul></div><div class="ko"><p>다음 행위를 하지 않을 것에 동의합니다:</p><ul><li>앱 또는 백엔드를 리버스 엔지니어링하거나 방해 또는 우회하는 행위.</li><li>포인트, 연속 기록, 밤 기록, 구매 또는 Pro 권한을 조작하거나, 기기 시계나 센서를 조작하여 밤을 위조하는 행위.</li><li>유료 기능을 회피하기 위해 앱을 사용하는 행위.</li><li>관련 법령을 위반하는 방식으로 앱을 사용하는 행위.</li></ul></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">10. Third-Party Services</span><span class="zh">10. 第三方服務</span><span class="ja">10. 第三者サービス</span><span class="ko">10. 제3자 서비스</span></h2>
+        <div class="en"><p>SleepOrDie relies on services from Apple, Google (Firebase), and RevenueCat. Your use of those services may also be subject to their own terms and policies.</p></div><div class="zh"><p>SleepOrDie 使用 Apple、Google（Firebase）與 RevenueCat 的服務。你使用這些服務時，也可能受其各自的條款與政策約束。</p></div><div class="ja"><p>SleepOrDie は Apple、Google（Firebase）、RevenueCat のサービスを利用しています。これらのサービスの利用には、各社の規約やポリシーが適用される場合があります。</p></div><div class="ko"><p>SleepOrDie는 Apple, Google(Firebase), RevenueCat의 서비스를 이용합니다. 이러한 서비스의 이용에는 각 사의 약관과 정책이 적용될 수 있습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">11. Intellectual Property</span><span class="zh">11. 智慧財產權</span><span class="ja">11. 知的財産権</span><span class="ko">11. 지적 재산권</span></h2>
+        <div class="en"><p>SleepOrDie, including its design, characters, text, and code, belongs to Micavo and its licensors. We grant you a limited, non-exclusive, non-transferable license to use the app for personal, non-commercial purposes.</p></div><div class="zh"><p>SleepOrDie 的設計、角色、文字與程式碼歸 Micavo 及其授權人所有。我們授予你有限的、非專屬的、不可轉讓的授權，供你為個人、非商業目的使用本 App。</p></div><div class="ja"><p>SleepOrDie のデザイン、キャラクター、文章、コードは Micavo およびそのライセンサーに帰属します。お客様には、個人的・非商業的な目的でアプリを使用するための、限定的・非独占的・譲渡不能のライセンスを付与します。</p></div><div class="ko"><p>SleepOrDie의 디자인, 캐릭터, 텍스트, 코드는 Micavo 및 라이선스 제공자에게 귀속됩니다. 당사는 개인적, 비상업적 목적으로 앱을 사용할 수 있는 제한적, 비독점적, 양도 불가능한 라이선스를 부여합니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">12. Termination</span><span class="zh">12. 終止</span><span class="ja">12. 利用の終了</span><span class="ko">12. 이용 종료</span></h2>
+        <div class="en"><p>You can stop using SleepOrDie or delete your account at any time in the app. We may suspend or end access if you violate these Terms, misuse the service, or if continued access would be unlawful or impractical.</p></div><div class="zh"><p>你可以隨時停止使用 SleepOrDie，或在 App 內刪除帳號。如果你違反本條款、濫用服務，或繼續提供存取會違法或不可行，我們可能會暫停或終止你的存取。</p></div><div class="ja"><p>お客様はいつでも SleepOrDie の利用をやめ、アプリ内でアカウントを削除できます。本規約への違反、サービスの不正利用、または継続的なアクセスが違法もしくは困難な場合、当社はアクセスを停止または終了することがあります。</p></div><div class="ko"><p>언제든지 SleepOrDie 사용을 중단하거나 앱에서 계정을 삭제할 수 있습니다. 본 약관을 위반하거나 서비스를 오남용하거나, 계속된 접근이 불법이거나 불가능한 경우 당사는 접근을 중지하거나 종료할 수 있습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">13. Disclaimers and Limitation of Liability</span><span class="zh">13. 免責聲明與責任限制</span><span class="ja">13. 免責事項と責任の制限</span><span class="ko">13. 면책 및 책임의 제한</span></h2>
+        <div class="en"><p>SleepOrDie is provided “as is” and “as available” without warranties of any kind. To the fullest extent permitted by law, Micavo is not liable for indirect, incidental, consequential, special, or punitive damages, or for missed calls, messages, alarms, or events while a night was running, or for a night recorded incorrectly because of the technical limits of iOS.</p></div><div class="zh"><p>SleepOrDie 依「現狀」與「可用」的基礎提供，不附帶任何形式的保證。在法律允許的最大範圍內，Micavo 對間接、附帶、衍生、特殊或懲罰性損害，以及夜晚進行期間錯過的來電、訊息、鬧鐘或活動，或因 iOS 的技術限制而被錯誤記錄的夜晚，均不負責任。</p></div><div class="ja"><p>SleepOrDie は「現状有姿」「提供可能な範囲」で、いかなる保証もなく提供されます。法律で認められる最大限の範囲で、Micavo は、間接的・付随的・派生的・特別・懲罰的損害、夜の間に不在着信、メッセージ、アラーム、予定を逃したこと、または iOS の技術的制限により夜が誤って記録されたことについて責任を負いません。</p></div><div class="ko"><p>SleepOrDie는 어떠한 보증 없이 "있는 그대로", "이용 가능한 상태로" 제공됩니다. 법률이 허용하는 최대 범위에서, Micavo는 간접적, 부수적, 결과적, 특별 또는 징벌적 손해, 밤이 진행되는 동안 놓친 전화, 메시지, 알람 또는 일정, 또는 iOS의 기술적 한계로 인해 잘못 기록된 밤에 대해 책임을 지지 않습니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">14. Changes to These Terms</span><span class="zh">14. 條款變更</span><span class="ja">14. 規約の変更</span><span class="ko">14. 약관의 변경</span></h2>
+        <div class="en"><p>We may update these Terms from time to time. The updated version will be posted on this page with a new “last updated” date. Continued use of SleepOrDie after changes means you accept the updated Terms.</p></div><div class="zh"><p>我們可能會不定期更新本條款。更新後的版本會張貼在此頁面，並附上新的「最後更新」日期。變更後繼續使用 SleepOrDie，即表示你接受更新後的條款。</p></div><div class="ja"><p>本規約は随時更新されることがあります。更新版は新しい「最終更新日」とともにこのページに掲載されます。変更後に SleepOrDie を引き続き利用した場合、更新後の規約に同意したものとみなされます。</p></div><div class="ko"><p>본 약관은 수시로 업데이트될 수 있습니다. 업데이트된 버전은 새로운 "최종 업데이트" 날짜와 함께 이 페이지에 게시됩니다. 변경 후에도 SleepOrDie를 계속 사용하면 업데이트된 약관에 동의한 것으로 간주됩니다.</p></div>
+      </section>
+
+      <section class="legal-card">
+        <h2><span class="en">15. Contact</span><span class="zh">15. 聯絡我們</span><span class="ja">15. お問い合わせ</span><span class="ko">15. 문의</span></h2>
+        <div class="en"><p>For questions about these Terms, contact Micavo at support@micavo.app.</p></div><div class="zh"><p>如對本條款有任何疑問，請聯絡 Micavo：support@micavo.app。</p></div><div class="ja"><p>本規約に関するご質問は、Micavo（support@micavo.app）までご連絡ください。</p></div><div class="ko"><p>본 약관에 관한 문의는 Micavo(support@micavo.app)로 연락해 주세요.</p></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div>© 2026 Micavo. <span class="en">SleepOrDie is a product by Micavo.</span><span class="zh">SleepOrDie 是 Micavo 的產品。</span><span class="ja">SleepOrDie は Micavo のプロダクトです。</span><span class="ko">SleepOrDie는 Micavo의 제품입니다.</span></div>
+    <div class="footer-links">
+      <a href="https://micavo.app/">Micavo</a>
+      <a href="./privacy.html"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span><span class="ko">개인정보처리방침</span></a>
+      <a href="./terms.html"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
+      <a href="mailto:support@micavo.app">support@micavo.app</a>
+    </div>
+  </footer>
+</body>
+</html>
