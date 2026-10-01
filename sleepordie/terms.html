@@ -11,13 +11,20 @@
   <meta property="og:url" content="https://micavo.app/sleepordie/terms.html" />
   <meta property="og:title" content="SleepOrDie Terms of Service" />
   <meta property="og:description" content="These Terms govern your access to and use of SleepOrDie, a bedtime anti-doomscrolling app operated by Micavo." />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://micavo.app/sleepordie/assets/sleepordie-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SleepOrDie: a Scroll Goblin that starves while your phone sleeps face down" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://micavo.app/sleepordie/assets/sleepordie-og.png" />
+  <meta name="twitter:image:alt" content="SleepOrDie: a Scroll Goblin that starves while your phone sleeps face down" />
   <meta name="twitter:title" content="SleepOrDie Terms of Service" />
   <meta name="twitter:description" content="These Terms govern your access to and use of SleepOrDie, a bedtime anti-doomscrolling app operated by Micavo." />
   <meta name="theme-color" content="#14142b" />
   <link rel="canonical" href="https://micavo.app/sleepordie/terms.html" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314142b'/%3E%3Ccircle cx='32' cy='36' r='18' fill='%238fd36b'/%3E%3Cpath d='M18 24 8 10l18 8zM46 24 56 10 38 18z' fill='%235fae48'/%3E%3Ccircle cx='25' cy='33' r='3' fill='%2314142b'/%3E%3Ccircle cx='39' cy='33' r='3' fill='%2314142b'/%3E%3Cpath d='M26 42q6 5 12 0' stroke='%2314142b' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=20261001b" />
+  <link rel="stylesheet" href="./styles.css?v=20261001c" />
 
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
@@ -27,6 +34,7 @@
     gtag('js', new Date());
     gtag('config', 'G-PF5PE9BXFT');
   </script>
+  <script src="/assets/js/analytics.js"></script>
   <script>
     (function () {
       var KEY = 'sleepordie_lang';
@@ -64,8 +72,8 @@
         <a href="./#features"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span><span class="ko">기능</span></a>
         <a href="./#pro">Pro</a>
         <a href="./#faq">FAQ</a>
-        <a href="./privacy.html"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span><span class="ko">개인정보</span></a>
-        <a href="./terms.html"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
+        <a href="./privacy.html" data-ga-event="legal_link_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="nav"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span><span class="ko">개인정보</span></a>
+        <a href="./terms.html" data-ga-event="legal_link_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="nav"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
       </div>
       <div class="lang-switch" aria-label="Language switcher">
         <button class="lang-button" type="button" data-lang-switch="en">EN</button>
@@ -166,9 +174,9 @@
     <div>© 2026 Micavo. <span class="en">SleepOrDie is a product by Micavo.</span><span class="zh">SleepOrDie 是 Micavo 的產品。</span><span class="ja">SleepOrDie は Micavo のプロダクトです。</span><span class="ko">SleepOrDie는 Micavo의 제품입니다.</span></div>
     <div class="footer-links">
       <a href="https://micavo.app/">Micavo</a>
-      <a href="./privacy.html"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span><span class="ko">개인정보처리방침</span></a>
-      <a href="./terms.html"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
-      <a href="mailto:support@micavo.app">support@micavo.app</a>
+      <a href="./privacy.html" data-ga-event="legal_link_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="footer"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span><span class="ko">개인정보처리방침</span></a>
+      <a href="./terms.html" data-ga-event="legal_link_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="footer"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
+      <a href="mailto:support@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="footer">support@micavo.app</a>
     </div>
   </footer>
 </body>

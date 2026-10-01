@@ -11,13 +11,20 @@
   <meta property="og:url" content="https://micavo.app/sleepordie/" />
   <meta property="og:title" content="SleepOrDie: Bedtime Anti-Doomscrolling" />
   <meta property="og:description" content="SleepOrDie is a bedtime anti-doomscrolling app. Put your phone face down and the Scroll Goblin starves. Pick it up and you feed it: 20 seconds to put it back, or it eats tonight's sleep." />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://micavo.app/sleepordie/assets/sleepordie-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SleepOrDie: a Scroll Goblin that starves while your phone sleeps face down" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://micavo.app/sleepordie/assets/sleepordie-og.png" />
+  <meta name="twitter:image:alt" content="SleepOrDie: a Scroll Goblin that starves while your phone sleeps face down" />
   <meta name="twitter:title" content="SleepOrDie: Bedtime Anti-Doomscrolling" />
   <meta name="twitter:description" content="SleepOrDie is a bedtime anti-doomscrolling app. Put your phone face down and the Scroll Goblin starves. Pick it up and you feed it: 20 seconds to put it back, or it eats tonight's sleep." />
   <meta name="theme-color" content="#14142b" />
   <link rel="canonical" href="https://micavo.app/sleepordie/" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314142b'/%3E%3Ccircle cx='32' cy='36' r='18' fill='%238fd36b'/%3E%3Cpath d='M18 24 8 10l18 8zM46 24 56 10 38 18z' fill='%235fae48'/%3E%3Ccircle cx='25' cy='33' r='3' fill='%2314142b'/%3E%3Ccircle cx='39' cy='33' r='3' fill='%2314142b'/%3E%3Cpath d='M26 42q6 5 12 0' stroke='%2314142b' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=20261001b" />
+  <link rel="stylesheet" href="./styles.css?v=20261001c" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"SoftwareApplication","@id":"https://micavo.app/sleepordie/#app","name":"SleepOrDie: Bedtime Anti-Doomscrolling","url":"https://micavo.app/sleepordie/","description":"A bedtime anti-doomscrolling app. Put your phone face down and the Scroll Goblin starves until your timer ends; pick it up and you get 20 seconds to put it back or it eats tonight's sleep.","applicationCategory":"HealthApplication","operatingSystem":"iOS","isAccessibleForFree":true,"featureList":["Real face-down detection using the motion sensor","20-second grace period after a pickup","A Scroll Goblin that starves while you stay off your phone","Points and night streak","Goblin Vault of past nights","Multilingual: English, Traditional Chinese, Japanese, Korean"],"publisher":{"@id":"https://micavo.app/#organization"}},
@@ -33,6 +40,7 @@
     gtag('js', new Date());
     gtag('config', 'G-PF5PE9BXFT');
   </script>
+  <script src="/assets/js/analytics.js"></script>
   <script>
     (function () {
       var KEY = 'sleepordie_lang';
@@ -70,8 +78,8 @@
         <a href="./#features"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span><span class="ko">기능</span></a>
         <a href="./#pro">Pro</a>
         <a href="./#faq">FAQ</a>
-        <a href="./privacy.html"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span><span class="ko">개인정보</span></a>
-        <a href="./terms.html"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
+        <a href="./privacy.html" data-ga-event="legal_link_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="nav"><span class="en">Privacy</span><span class="zh">隱私權</span><span class="ja">プライバシー</span><span class="ko">개인정보</span></a>
+        <a href="./terms.html" data-ga-event="legal_link_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="nav"><span class="en">Terms</span><span class="zh">條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
       </div>
       <div class="lang-switch" aria-label="Language switcher">
         <button class="lang-button" type="button" data-lang-switch="en">EN</button>
@@ -90,7 +98,7 @@
         <p class="hero-subtitle"><span class="en">A Scroll Goblin lives in your phone and eats your sleep. Put the phone face down and it starves until your timer ends. Pick it up early and you feed it: you get 20 seconds to put it back, or it eats tonight's sleep.</span><span class="zh">滑手機怪住在你的手機裡，專吃你的睡眠。把手機蓋下，牠就一路餓到計時結束。提早拿起來就是在餵牠：你有 20 秒把它放回去，否則牠就吃掉今晚的睡眠。</span><span class="ja">スクロール怪物はスマホに住んで、あなたの睡眠を食べます。スマホを伏せれば、タイマーが終わるまで飢えさせられます。早く手に取ればエサをやることに：20秒以内に戻さないと、今夜の睡眠が食べられます。</span><span class="ko">스크롤 고블린은 폰 속에 살면서 당신의 잠을 먹습니다. 폰을 엎어 두면 타이머가 끝날 때까지 굶어요. 일찍 집어 들면 먹이를 주는 셈이에요: 20초 안에 내려놓지 않으면 오늘 밤의 잠을 먹어버립니다.</span></p>
         <div class="cta-row">
           <span class="button primary disabled"><span class="en">Coming soon to the App Store</span><span class="zh">即將在 App Store 上架</span><span class="ja">まもなく App Store で公開</span><span class="ko">App Store에 곧 출시됩니다</span></span>
-          <a class="button" href="mailto:hello@micavo.app?subject=SleepOrDie%20launch%20updates"><span class="en">Get launch updates</span><span class="zh">收到上架通知</span><span class="ja">公開のお知らせを受け取る</span><span class="ko">출시 알림 받기</span></a>
+          <a class="button" href="mailto:hello@micavo.app?subject=SleepOrDie%20launch%20updates" data-ga-event="waitlist_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="hero"><span class="en">Get launch updates</span><span class="zh">收到上架通知</span><span class="ja">公開のお知らせを受け取る</span><span class="ko">출시 알림 받기</span></a>
         </div>
         <p class="small-note"><span class="en">For iPhone (iOS 16 or later).</span><span class="zh">適用於 iPhone（iOS 16 以上）。</span><span class="ja">iPhone（iOS 16 以降）対応。</span><span class="ko">iPhone(iOS 16 이상)에서 사용 가능합니다.</span></p>
         <p class="scroll-hint" aria-hidden="true"><span class="en">Scroll through one evening ↓</span><span class="zh">往下捲，度過一段夜晚 ↓</span><span class="ja">スクロールして夜のひとときを過ごそう ↓</span><span class="ko">스크롤해서 저녁 한때를 보내 보세요 ↓</span></p>
@@ -161,8 +169,8 @@
           <h3><span class="en">What do you do?</span><span class="zh">你要怎麼辦？</span><span class="ja">どうする？</span><span class="ko">어떻게 하시겠어요?</span></h3>
           <p><span class="en">Try it. This is the whole game.</span><span class="zh">試試看，這就是整個遊戲。</span><span class="ja">試してみて。これがゲームのすべてです。</span><span class="ko">직접 해 보세요. 이게 게임의 전부예요.</span></p>
           <div class="choice">
-            <button type="button" data-pick="back"><span class="en">Put it back down</span><span class="zh">放回去</span><span class="ja">伏せて戻す</span><span class="ko">다시 내려놓기</span></button>
-            <button type="button" data-pick="scroll"><span class="en">Keep scrolling</span><span class="zh">繼續滑</span><span class="ja">スクロールを続ける</span><span class="ko">계속 스크롤하기</span></button>
+            <button type="button" data-pick="back" data-ga-event="demo_choice" data-ga-param-product="SleepOrDie" data-ga-param-choice="put_back"><span class="en">Put it back down</span><span class="zh">放回去</span><span class="ja">伏せて戻す</span><span class="ko">다시 내려놓기</span></button>
+            <button type="button" data-pick="scroll" data-ga-event="demo_choice" data-ga-param-product="SleepOrDie" data-ga-param-choice="keep_scrolling"><span class="en">Keep scrolling</span><span class="zh">繼續滑</span><span class="ja">スクロールを続ける</span><span class="ko">계속 스크롤하기</span></button>
           </div>
         </article>
         <article class="chapter" data-state="asleep" data-time="00:30" data-pct="100" data-label="asleep">
@@ -317,9 +325,9 @@
     <div>© 2026 Micavo. <span class="en">SleepOrDie is a product by Micavo.</span><span class="zh">SleepOrDie 是 Micavo 的產品。</span><span class="ja">SleepOrDie は Micavo のプロダクトです。</span><span class="ko">SleepOrDie는 Micavo의 제품입니다.</span></div>
     <div class="footer-links">
       <a href="https://micavo.app/">Micavo</a>
-      <a href="./privacy.html"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span><span class="ko">개인정보처리방침</span></a>
-      <a href="./terms.html"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
-      <a href="mailto:support@micavo.app">support@micavo.app</a>
+      <a href="./privacy.html" data-ga-event="legal_link_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="footer"><span class="en">Privacy Policy</span><span class="zh">隱私權政策</span><span class="ja">プライバシーポリシー</span><span class="ko">개인정보처리방침</span></a>
+      <a href="./terms.html" data-ga-event="legal_link_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="footer"><span class="en">Terms of Service</span><span class="zh">服務條款</span><span class="ja">利用規約</span><span class="ko">이용약관</span></a>
+      <a href="mailto:support@micavo.app" data-ga-event="contact_clicked" data-ga-param-product="SleepOrDie" data-ga-param-cta-location="footer">support@micavo.app</a>
     </div>
   </footer>
 </body>

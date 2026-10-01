@@ -6,6 +6,7 @@
     if (path.indexOf('/outshine') === 0) return 'Outshine';
     if (path.indexOf('/critical_choice') === 0) return 'Critical Choice';
     if (path.indexOf('/flipordie') === 0) return 'FlipOrDie';
+    if (path.indexOf('/sleepordie') === 0) return 'SleepOrDie';
     return 'Micavo';
   }
 
@@ -17,7 +18,8 @@
         path === '/outshine/' || path === '/outshine/index.html' ||
         path === '/critical_choice/' || path === '/critical_choice/index.html' ||
         path === '/tallcenter/' || path === '/tallcenter/index.html' ||
-        path === '/flipordie/' || path === '/flipordie/index.html') return 'product_landing';
+        path === '/flipordie/' || path === '/flipordie/index.html' ||
+        path === '/sleepordie/' || path === '/sleepordie/index.html') return 'product_landing';
     return 'unknown';
   }
 
