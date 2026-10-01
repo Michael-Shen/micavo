@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="./styles.css" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
-    {"@type":"SoftwareApplication","@id":"https://micavo.app/sleepordie/#app","name":"SleepOrDie: Bedtime Anti-Doomscrolling","url":"https://micavo.app/sleepordie/","description":"A bedtime anti-doomscrolling app. Put your phone face down and the Scroll Goblin starves until your wake time; pick it up and you get 20 seconds to put it back or it eats tonight's sleep.","applicationCategory":"HealthApplication","operatingSystem":"iOS","isAccessibleForFree":true,"featureList":["Real face-down detection using the motion sensor","20-second grace period after a pickup","A Scroll Goblin that starves while you stay off your phone","Points and night streak","Goblin Vault of past nights","Multilingual: English, Traditional Chinese, Japanese, Korean"],"publisher":{"@id":"https://micavo.app/#organization"}},
+    {"@type":"SoftwareApplication","@id":"https://micavo.app/sleepordie/#app","name":"SleepOrDie: Bedtime Anti-Doomscrolling","url":"https://micavo.app/sleepordie/","description":"A bedtime anti-doomscrolling app. Put your phone face down and the Scroll Goblin starves until your timer ends; pick it up and you get 20 seconds to put it back or it eats tonight's sleep.","applicationCategory":"HealthApplication","operatingSystem":"iOS","isAccessibleForFree":true,"featureList":["Real face-down detection using the motion sensor","20-second grace period after a pickup","A Scroll Goblin that starves while you stay off your phone","Points and night streak","Goblin Vault of past nights","Multilingual: English, Traditional Chinese, Japanese, Korean"],"publisher":{"@id":"https://micavo.app/#organization"}},
     {"@type":"Organization","@id":"https://micavo.app/#organization","name":"Micavo","url":"https://micavo.app/","email":"support@micavo.app"},
     {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Micavo","item":"https://micavo.app/"},{"@type":"ListItem","position":2,"name":"SleepOrDie","item":"https://micavo.app/sleepordie/"}]}
   ]}
@@ -83,50 +83,93 @@
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div>
+    <section class="sky" aria-labelledby="hero-title">
+      <div class="sky-inner">
         <p class="eyebrow"><span class="en">Bedtime anti-doomscrolling</span><span class="zh">睡前防滑手機</span><span class="ja">就寝前のスマホ断ち</span><span class="ko">잠들기 전 스크롤 방지</span></p>
         <h1 id="hero-title"><span class="en">Don't feed the thing<br /><span class="accent">stealing your sleep.</span></span><span class="zh">別餵那隻<br /><span class="accent">偷走你睡眠的怪物。</span></span><span class="ja">睡眠を盗むやつに、<br /><span class="accent">エサをあげるな。</span></span><span class="ko">잠을 훔치는 녀석에게<br /><span class="accent">먹이를 주지 마세요.</span></span></h1>
-        <p class="hero-subtitle"><span class="en">A Scroll Goblin lives in your phone and eats your sleep. Put the phone face down and it starves until your wake time. Pick it up early and you feed it: you get 20 seconds to put it back, or it eats tonight's sleep.</span><span class="zh">滑手機怪住在你的手機裡，專吃你的睡眠。把手機蓋下，牠就一路餓到你的起床時間。提早拿起來就是在餵牠：你有 20 秒把它放回去，否則牠就吃掉今晚的睡眠。</span><span class="ja">スクロール怪物はスマホに住んで、あなたの睡眠を食べます。スマホを伏せれば、起床時間まで飢えさせられます。早く手に取ればエサをやることに：20秒以内に戻さないと、今夜の睡眠が食べられます。</span><span class="ko">스크롤 고블린은 폰 속에 살면서 당신의 잠을 먹습니다. 폰을 엎어 두면 기상 시간까지 굶어요. 일찍 집어 들면 먹이를 주는 셈이에요: 20초 안에 내려놓지 않으면 오늘 밤의 잠을 먹어버립니다.</span></p>
+        <p class="hero-subtitle"><span class="en">A Scroll Goblin lives in your phone and eats your sleep. Put the phone face down and it starves until your timer ends. Pick it up early and you feed it: you get 20 seconds to put it back, or it eats tonight's sleep.</span><span class="zh">滑手機怪住在你的手機裡，專吃你的睡眠。把手機蓋下，牠就一路餓到計時結束。提早拿起來就是在餵牠：你有 20 秒把它放回去，否則牠就吃掉今晚的睡眠。</span><span class="ja">スクロール怪物はスマホに住んで、あなたの睡眠を食べます。スマホを伏せれば、タイマーが終わるまで飢えさせられます。早く手に取ればエサをやることに：20秒以内に戻さないと、今夜の睡眠が食べられます。</span><span class="ko">스크롤 고블린은 폰 속에 살면서 당신의 잠을 먹습니다. 폰을 엎어 두면 타이머가 끝날 때까지 굶어요. 일찍 집어 들면 먹이를 주는 셈이에요: 20초 안에 내려놓지 않으면 오늘 밤의 잠을 먹어버립니다.</span></p>
         <div class="cta-row">
           <span class="button primary disabled"><span class="en">Coming soon to the App Store</span><span class="zh">即將在 App Store 上架</span><span class="ja">まもなく App Store で公開</span><span class="ko">App Store에 곧 출시됩니다</span></span>
           <a class="button" href="mailto:hello@micavo.app?subject=SleepOrDie%20launch%20updates"><span class="en">Get launch updates</span><span class="zh">收到上架通知</span><span class="ja">公開のお知らせを受け取る</span><span class="ko">출시 알림 받기</span></a>
         </div>
         <p class="small-note"><span class="en">For iPhone (iOS 16 or later).</span><span class="zh">適用於 iPhone（iOS 16 以上）。</span><span class="ja">iPhone（iOS 16 以降）対応。</span><span class="ko">iPhone(iOS 16 이상)에서 사용 가능합니다.</span></p>
+        <p class="scroll-hint" aria-hidden="true"><span class="en">Scroll through one evening ↓</span><span class="zh">往下捲，度過一段夜晚 ↓</span><span class="ja">スクロールして夜のひとときを過ごそう ↓</span><span class="ko">스크롤해서 저녁 한때를 보내 보세요 ↓</span></p>
       </div>
-      <div class="hero-art"><svg viewBox="0 0 400 400" role="img" aria-label="A small green goblin napping next to a phone lying face down">
-  <defs>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd98a" stop-opacity="0.35"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
-  </defs>
-  <circle cx="318" cy="84" r="34" fill="url(#glow)"/>
-  <circle cx="318" cy="84" r="22" fill="#fff3c4"/><circle cx="330" cy="76" r="20" fill="#14142b"/>
-  <g fill="#fff3c4"><path d="M70 70l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/><path d="M120 130l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"/><path d="M250 50l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"/></g>
-  <ellipse cx="200" cy="332" rx="150" ry="22" fill="#2b2a52"/>
-  <g class="goblin-float">
-    <ellipse cx="160" cy="318" rx="34" ry="14" fill="#5fae48"/><ellipse cx="240" cy="318" rx="34" ry="14" fill="#5fae48"/>
-    <path d="M118 200 60 130 138 164z" fill="#5fae48"/><path d="M282 200 340 130 262 164z" fill="#5fae48"/>
-    <ellipse cx="200" cy="236" rx="112" ry="96" fill="#8fd36b"/>
-    <ellipse cx="200" cy="268" rx="66" ry="56" fill="#fff3c4"/>
-    <path d="M150 222q14 12 28 0M222 222q14 12 28 0" stroke="#2b2250" stroke-width="7" fill="none" stroke-linecap="round"/>
-    <path d="M182 262q18 14 36 0" stroke="#2b2250" stroke-width="7" fill="none" stroke-linecap="round"/>
-    <circle cx="130" cy="246" r="12" fill="#ff8a80" fill-opacity="0.4"/><circle cx="270" cy="246" r="12" fill="#ff8a80" fill-opacity="0.4"/>
-    <ellipse cx="96" cy="262" rx="16" ry="26" fill="#5fae48"/><ellipse cx="304" cy="262" rx="16" ry="26" fill="#5fae48"/>
-    <g class="zzz" fill="#fff" font-family="-apple-system,Inter,sans-serif" font-weight="800"><text x="300" y="150" font-size="34">z</text><text x="332" y="118" font-size="26">z</text></g>
-  </g>
-  <rect x="268" y="302" width="100" height="14" rx="6" fill="#0a0a14" stroke="#3b3a70" stroke-width="2"/>
-  <rect x="276" y="296" width="22" height="7" rx="3" fill="#1c1b3a" stroke="#3b3a70" stroke-width="1.5"/>
-</svg></div>
     </section>
 
-    <section class="section" id="how" aria-labelledby="how-title">
-      <div class="section-heading">
-        <p class="eyebrow"><span class="en">How it works</span><span class="zh">怎麼玩</span><span class="ja">使い方</span><span class="ko">사용 방법</span></p>
-        <h2 id="how-title"><span class="en">Three steps. One night.</span><span class="zh">三個步驟，一個夜晚。</span><span class="ja">3ステップ、一晩だけ。</span><span class="ko">세 단계, 하룻밤.</span></h2>
+    <section class="night" id="how" aria-label="The story of one night">
+      <div class="stage-wrap">
+        <div class="stage" id="stage" data-state="hungry">
+          <div class="clock-row"><div class="clock" id="clock">22:30</div><div class="state-label" id="state-label"><span class="en">Hungry</span><span class="zh">好餓</span><span class="ja">おなかペコペコ</span><span class="ko">배고픔</span></div></div>
+          <svg viewBox="0 0 400 400" role="img" aria-label="The Scroll Goblin: it starves while a phone lies face down, wakes up when the phone is picked up, and eats the screen if you feed it.">
+  <defs><radialGradient id="mglow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd447" stop-opacity="0.55"/><stop offset="1" stop-color="#ffd447" stop-opacity="0"/></radialGradient></defs>
+  <ellipse cx="200" cy="338" rx="168" ry="20" fill="#26254d"/>
+  <g class="gob"><g class="breathe">
+    <ellipse cx="160" cy="324" rx="34" ry="14" fill="#5fae48"/><ellipse cx="240" cy="324" rx="34" ry="14" fill="#5fae48"/>
+    <path d="M118 206 58 134 140 168z" fill="#5fae48"/><path d="M282 206 342 134 260 168z" fill="#5fae48"/>
+    <ellipse cx="200" cy="242" rx="112" ry="98" fill="#8fd36b"/>
+    <ellipse cx="200" cy="276" rx="68" ry="56" fill="#fff3c4"/>
+    <ellipse cx="96" cy="270" rx="16" ry="27" fill="#5fae48"/><ellipse cx="304" cy="270" rx="16" ry="27" fill="#5fae48"/>
+    <circle cx="128" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/><circle cx="272" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/>
+    <!-- eyes -->
+    <g class="eyes-open"><circle cx="160" cy="228" r="22" fill="#fff"/><circle cx="240" cy="228" r="22" fill="#fff"/><circle cx="164" cy="232" r="9" fill="#2b2250"/><circle cx="236" cy="232" r="9" fill="#2b2250"/></g>
+    <g class="eyes-sleepy"><circle cx="160" cy="228" r="21" fill="#fff"/><circle cx="240" cy="228" r="21" fill="#fff"/><circle cx="164" cy="236" r="8" fill="#2b2250"/><circle cx="236" cy="236" r="8" fill="#2b2250"/><path d="M137 228a23 23 0 0 1 46 0z" fill="#8fd36b"/><path d="M217 228a23 23 0 0 1 46 0z" fill="#8fd36b"/><path d="M137 228h46M217 228h46" stroke="#2b2250" stroke-width="5" stroke-linecap="round"/></g>
+    <g class="eyes-closed" fill="none" stroke="#2b2250" stroke-width="7" stroke-linecap="round"><path d="M142 228q18 14 36 0M222 228q18 14 36 0"/></g>
+    <g class="eyes-eat" fill="none" stroke="#2b2250" stroke-width="7" stroke-linecap="round"><path d="M142 236q18-14 36 0M222 236q18-14 36 0"/></g>
+    <g class="brows" stroke="#2b2250" stroke-width="7" stroke-linecap="round"><path d="M136 196l46 14M264 196l-46 14"/></g>
+    <!-- mouths -->
+    <path class="m-frown" d="M180 288q20-14 40 0" fill="none" stroke="#2b2250" stroke-width="7" stroke-linecap="round"/>
+    <path class="m-smile" d="M182 278q18 14 36 0" fill="none" stroke="#2b2250" stroke-width="7" stroke-linecap="round"/>
+    <ellipse class="m-o" cx="200" cy="284" rx="12" ry="17" fill="#3b1f3a"/>
+    <path class="drool" d="M212 292q8 16 0 28q-8-12 0-28z" fill="#9ad8ff" fill-opacity="0.8"/>
+    <g class="m-big"><ellipse cx="200" cy="288" rx="52" ry="48" fill="#3b1f3a"/><ellipse cx="200" cy="312" rx="30" ry="18" fill="#ff8fa3"/></g>
+  </g></g>
+  <!-- icons being pulled in (generic shapes, never real logos) -->
+  <g class="orbit">
+    <g class="ic"><g transform="translate(200,160)"><path d="M0 12c-26-18-12-38 0-26 12-12 26 8 0 26z" fill="#ff8a80"/></g></g>
+    <g class="ic"><g transform="translate(312,272)"><path d="M-14 6a14 14 0 0 1 28 0z" fill="#ffd447"/><rect x="-16" y="6" width="32" height="5" fill="#ffd447"/><circle cx="0" cy="16" r="4" fill="#ffd447"/></g></g>
+    <g class="ic"><g transform="translate(200,384)"><rect x="-17" y="-12" width="34" height="24" rx="7" fill="#fff"/><path d="M-5-6 8 0-5 6z" fill="#ff8a80"/></g></g>
+    <g class="ic"><g transform="translate(88,272)"><rect x="-17" y="-12" width="34" height="24" rx="9" fill="#8fd36b"/><path d="M-9 10l-6 8 12-6z" fill="#8fd36b"/></g></g>
+  </g>
+  <g class="zzz" fill="#fff" font-family="-apple-system,Inter,sans-serif" font-weight="800"><text x="226" y="262" font-size="30">z</text><text x="252" y="232" font-size="22">z</text></g>
+  <g class="sparks" fill="#fff3c4"><path d="M100 150l5 11 11 5-11 5-5 11-5-11-11-5 11-5z"/><path d="M300 170l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/><path d="M200 120l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></g>
+  <!-- the phone lying face down; it lifts when you pick it up -->
+  <circle class="phone-glow" cx="318" cy="316" r="46" fill="url(#mglow)"/>
+  <g class="phone-obj"><rect x="270" y="316" width="96" height="12" rx="5" fill="#0a0a14" stroke="#4a4980" stroke-width="2"/><rect x="278" y="310" width="20" height="7" rx="3" fill="#1c1b3a" stroke="#4a4980" stroke-width="1.5"/></g>
+</svg>
+          <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+        </div>
       </div>
-      <div class="grid-3">
-        <div class="card"><span class="badge">1</span><h3><span class="en">Choose your wake time</span><span class="zh">選好起床時間</span><span class="ja">起床時間を決める</span><span class="ko">기상 시간 정하기</span></h3><p><span class="en">Pick when you want to wake up and which goblin to starve tonight.</span><span class="zh">選擇你要幾點起床，以及今晚要餓哪一隻怪物。</span><span class="ja">起きる時間と、今夜飢えさせる怪物を選びます。</span><span class="ko">일어날 시간과 오늘 밤 굶길 고블린을 고르세요.</span></p></div>
-        <div class="card"><span class="badge">2</span><h3><span class="en">Turn the phone face down</span><span class="zh">把手機蓋下</span><span class="ja">スマホを伏せる</span><span class="ko">폰을 엎어 두기</span></h3><p><span class="en">After one second face down, the night starts. The screen goes almost black and the goblin starts to starve.</span><span class="zh">正面朝下一秒後，夜晚就開始。畫面幾乎全黑，怪物開始挨餓。</span><span class="ja">1秒間伏せると夜が始まります。画面はほぼ真っ暗になり、怪物は飢え始めます。</span><span class="ko">화면을 아래로 향하고 1초가 지나면 밤이 시작됩니다. 화면은 거의 꺼지고 고블린은 굶기 시작해요.</span></p></div>
-        <div class="card"><span class="badge">3</span><h3><span class="en">Don't feed it</span><span class="zh">別餵牠</span><span class="ja">エサをやらない</span><span class="ko">먹이 주지 않기</span></h3><p><span class="en">Stay off your phone until morning. Pick it up and a 20-second countdown starts: put it back, or the goblin eats tonight's sleep.</span><span class="zh">整晚別碰手機。一旦拿起來，就會開始 20 秒倒數：放回去，否則怪物就吃掉今晚的睡眠。</span><span class="ja">朝までスマホに触れないこと。手に取ると20秒のカウントダウンが始まります。戻さないと怪物が今夜の睡眠を食べます。</span><span class="ko">아침까지 폰을 만지지 마세요. 집어 들면 20초 카운트다운이 시작됩니다. 내려놓지 않으면 고블린이 오늘 밤의 잠을 먹어요.</span></p></div>
+      <div class="chapters">
+        <article class="chapter" data-state="hungry" data-time="22:30" data-pct="2" data-label="hungry">
+          <div class="when">22:30</div>
+          <h3><span class="en">Phone down. The goblin looks around.</span><span class="zh">手機蓋下，怪物東張西望。</span><span class="ja">スマホを伏せる。怪物はきょろきょろ。</span><span class="ko">폰을 엎으면, 고블린이 두리번거립니다.</span></h3>
+          <p><span class="en">Turn the phone face down. After one second the night starts, the screen goes almost black, and the Scroll Goblin finds nothing to eat.</span><span class="zh">把手機正面朝下。一秒後夜晚就開始，畫面幾乎全黑，滑手機怪找不到東西吃。</span><span class="ja">スマホを画面を下にして置きます。1秒後に夜が始まり、画面はほぼ真っ暗に。スクロール怪物は食べるものを見つけられません。</span><span class="ko">폰을 화면이 아래로 향하게 놓으세요. 1초 뒤 밤이 시작되고 화면은 거의 꺼지며, 스크롤 고블린은 먹을 게 없습니다.</span></p>
+        </article>
+        <article class="chapter" data-state="starving" data-time="23:15" data-pct="45" data-label="starving">
+          <div class="when">23:15</div>
+          <h3><span class="en">Every quiet minute, it gets smaller.</span><span class="zh">安靜的每一分鐘，牠都縮小一點。</span><span class="ja">静かな一分ごとに、小さくなる。</span><span class="ko">조용한 1분마다 작아집니다.</span></h3>
+          <p><span class="en">No scrolling means no food. The goblin droops, yawns and shrinks. Your points and night streak are quietly growing.</span><span class="zh">不滑手機就沒東西吃。怪物垂下眼皮、打哈欠、越縮越小，而你的點數與連續夜晚正悄悄增加。</span><span class="ja">スクロールしなければエサはなし。怪物はまぶたが落ち、あくびをして縮んでいきます。ポイントと連続の夜が静かに増えていきます。</span><span class="ko">스크롤하지 않으면 먹이도 없어요. 고블린은 눈꺼풀이 처지고 하품하며 작아집니다. 그동안 포인트와 연속 밤이 조용히 쌓여요.</span></p>
+        </article>
+        <article class="chapter" data-state="warning" data-time="23:40" data-pct="62" data-label="warning">
+          <div class="when">23:40 · <span class="en">20s</span><span class="zh">20 秒</span><span class="ja">20秒</span><span class="ko">20초</span></div>
+          <h3><span class="en">You pick it up. Don't feed it.</span><span class="zh">你拿起了手機。別餵牠。</span><span class="ja">手に取ってしまった。エサをやるな。</span><span class="ko">폰을 집어 들었어요. 먹이 주지 마세요.</span></h3>
+          <p><span class="en">One notification, one glance. The goblin wakes up, drools and starts to swell as likes, bells and messages swirl into its mouth. A 20-second countdown begins.</span><span class="zh">一則通知、看一眼。怪物醒了、流口水、開始膨脹，愛心、鈴鐺與訊息全被捲進牠嘴裡。20 秒倒數開始。</span><span class="ja">通知が一件、ちらっと見ただけ。怪物は目覚めてよだれを垂らし、ハートやベルやメッセージが口に吸い込まれて膨らみ始めます。20秒のカウントダウンが始まります。</span><span class="ko">알림 하나, 슬쩍 한 번. 고블린이 깨어나 침을 흘리고, 하트와 종과 메시지가 입으로 빨려 들어가며 부풀기 시작합니다. 20초 카운트다운이 시작돼요.</span></p>
+        </article>
+        <article class="chapter" data-state="warning" data-time="23:40" data-pct="62" data-choice="1" data-label="warning">
+          <div class="when"><span class="en">Your move</span><span class="zh">換你了</span><span class="ja">あなたの番</span><span class="ko">당신의 차례</span></div>
+          <h3><span class="en">What do you do?</span><span class="zh">你要怎麼辦？</span><span class="ja">どうする？</span><span class="ko">어떻게 하시겠어요?</span></h3>
+          <p><span class="en">Try it. This is the whole game.</span><span class="zh">試試看，這就是整個遊戲。</span><span class="ja">試してみて。これがゲームのすべてです。</span><span class="ko">직접 해 보세요. 이게 게임의 전부예요.</span></p>
+          <div class="choice">
+            <button type="button" data-pick="back"><span class="en">Put it back down</span><span class="zh">放回去</span><span class="ja">伏せて戻す</span><span class="ko">다시 내려놓기</span></button>
+            <button type="button" data-pick="scroll"><span class="en">Keep scrolling</span><span class="zh">繼續滑</span><span class="ja">スクロールを続ける</span><span class="ko">계속 스크롤하기</span></button>
+          </div>
+        </article>
+        <article class="chapter" data-state="asleep" data-time="00:30" data-pct="100" data-label="asleep">
+          <div class="when">00:30</div>
+          <h3><span class="en">The goblin starved. You made it.</span><span class="zh">怪物餓扁了，你辦到了。</span><span class="ja">怪物は飢えた。やり遂げた！</span><span class="ko">고블린은 굶었고, 당신이 해냈습니다.</span></h3>
+          <p><span class="en">The timer ends and the session counts. The goblin curls up, tiny and asleep, and moves into your Goblin Vault. Points banked, streak extended. No sound, no vibration, so you can drift off.</span><span class="zh">計時一到，這一次就算數。怪物縮成小小一隻睡著了，搬進你的怪物收藏庫。點數入帳、連續紀錄延長。不會有聲響或震動，你可以安心入睡。</span><span class="ja">タイマーが終わると、そのセッションは成功。怪物は小さく丸まって眠り、あなたのヴォルトに仲間入り。ポイントが貯まり、連続記録も延びます。音も振動もないので、そのまま眠れます。</span><span class="ko">타이머가 끝나면 그 세션이 인정됩니다. 고블린은 작게 웅크려 잠들고 당신의 보관함으로 들어가요. 포인트가 쌓이고 연속 기록이 늘어납니다. 소리도 진동도 없으니 그대로 잠드세요.</span></p>
+        </article>
       </div>
     </section>
 
@@ -135,42 +178,114 @@
         <p class="eyebrow"><span class="en">Features</span><span class="zh">功能</span><span class="ja">機能</span><span class="ko">기능</span></p>
         <h2 id="features-title"><span class="en">Made for the minutes before sleep.</span><span class="zh">為睡前那幾分鐘而生。</span><span class="ja">眠る前の数分のために。</span><span class="ko">잠들기 전 그 몇 분을 위해.</span></h2>
       </div>
-      <div class="grid-3">
-        <div class="card"><div class="feature-icon">📱</div><h3><span class="en">Real face-down detection</span><span class="zh">真正的翻面偵測</span><span class="ja">本物の伏せ検知</span><span class="ko">진짜 엎어짐 감지</span></h3><p><span class="en">Uses your phone's motion sensor, with a one-second check so a bumped table never counts.</span><span class="zh">使用手機的動作感測器，並有一秒鐘的確認，桌子被碰到不會誤判。</span><span class="ja">スマホのモーションセンサーを使い、1秒間の確認で机が揺れても誤判定しません。</span><span class="ko">폰의 모션 센서를 사용하고 1초 확인을 거쳐 책상이 흔들려도 오인하지 않습니다.</span></p></div>
-        <div class="card"><div class="feature-icon">⏱️</div><h3><span class="en">A fair 20 seconds</span><span class="zh">公平的 20 秒</span><span class="ja">公平な20秒</span><span class="ko">공정한 20초</span></h3><p><span class="en">A quick check of a notification isn't the end of the night. Put the phone back in time and the night continues.</span><span class="zh">看一眼通知不代表這一晚就結束。及時放回去，夜晚就繼續。</span><span class="ja">通知をちらっと見ても夜は終わりません。間に合って戻せば、そのまま続きます。</span><span class="ko">알림을 잠깐 본다고 밤이 끝나지 않아요. 제때 내려놓으면 밤은 계속됩니다.</span></p></div>
-        <div class="card"><div class="feature-icon">👾</div><h3><span class="en">A goblin that reacts</span><span class="zh">會有反應的怪物</span><span class="ja">反応する怪物</span><span class="ko">반응하는 고블린</span></h3><p><span class="en">It shrinks while you stay away, wakes up and swells when you pick up the phone, and naps with sparkles when you win.</span><span class="zh">你不碰手機時牠會縮小，拿起手機牠就醒來膨脹，你成功時牠會閃著星星睡著。</span><span class="ja">触れない間は小さくなり、手に取ると目覚めて膨らみ、成功すると星の中で眠ります。</span><span class="ko">폰을 안 만지면 작아지고, 집어 들면 깨어나 부풀며, 성공하면 별빛 속에서 잠듭니다.</span></p></div>
-        <div class="card"><div class="feature-icon">🔥</div><h3><span class="en">Points and night streak</span><span class="zh">點數與連續夜晚</span><span class="ja">ポイントと連続の夜</span><span class="ko">포인트와 연속 밤</span></h3><p><span class="en">Earn points for every phone-free night. A failed night resets your streak, so it stings a little.</span><span class="zh">每個沒碰手機的夜晚都能得分。失敗的夜晚會讓連續紀錄歸零，所以會有一點痛。</span><span class="ja">スマホに触れなかった夜ごとにポイントが貯まります。失敗した夜は連続記録がリセットされ、ちょっと痛いです。</span><span class="ko">폰 없는 밤마다 포인트를 얻습니다. 실패한 밤은 연속 기록이 초기화되어 조금 아픕니다.</span></p></div>
-        <div class="card"><div class="feature-icon">🗄️</div><h3><span class="en">Goblin Vault</span><span class="zh">怪物收藏庫</span><span class="ja">怪物ヴォルト</span><span class="ko">고블린 보관함</span></h3><p><span class="en">Every successful night puts a sleeping goblin in your Vault. Failed nights stay as quiet markers, never erasing your history.</span><span class="zh">每個成功的夜晚，都會把一隻睡著的怪物放進你的收藏庫。失敗的夜晚只是安靜的記號，不會抹去你的歷史。</span><span class="ja">成功した夜ごとに、眠る怪物がヴォルトに加わります。失敗した夜は静かな印として残り、履歴は消えません。</span><span class="ko">성공한 밤마다 잠든 고블린이 보관함에 들어옵니다. 실패한 밤은 조용한 표시로 남고 기록은 지워지지 않아요.</span></p></div>
-        <div class="card"><div class="feature-icon">🔒</div><h3><span class="en">Private by design</span><span class="zh">為隱私而設計</span><span class="ja">プライバシー重視</span><span class="ko">프라이버시 우선</span></h3><p><span class="en">Sensor readings stay on your phone. The app never reads your other apps, messages or location.</span><span class="zh">感測數據只留在你的手機上。App 絕不會讀取你的其他 App、訊息或位置。</span><span class="ja">センサーの値は端末内にとどまります。ほかのアプリ、メッセージ、位置情報は一切読み取りません。</span><span class="ko">센서 값은 폰 안에만 남습니다. 다른 앱, 메시지, 위치는 절대 읽지 않습니다.</span></p></div>
+      <div class="bento">
+        <div class="tile t-a"><div class="big-num">20s</div><h3><span class="en">A fair second chance</span><span class="zh">公平的第二次機會</span><span class="ja">公平なやり直し</span><span class="ko">공정한 두 번째 기회</span></h3><p><span class="en">A quick look at a notification isn't the end of the night. Put the phone back in time and the night continues, with your progress intact.</span><span class="zh">看一眼通知不代表這一晚就結束。及時放回去，夜晚就繼續，進度完整保留。</span><span class="ja">通知をちらっと見ても夜は終わりません。間に合って戻せば、進捗はそのまま夜が続きます。</span><span class="ko">알림을 잠깐 본다고 밤이 끝나지 않아요. 제때 내려놓으면 진행 상황은 그대로 밤이 이어집니다.</span></p></div>
+        <div class="tile t-b"><div class="emoji">📱</div><h3><span class="en">Real face-down detection</span><span class="zh">真正的翻面偵測</span><span class="ja">本物の伏せ検知</span><span class="ko">진짜 엎어짐 감지</span></h3><p><span class="en">Uses the motion sensor with a one-second check, so a bumped table never counts.</span><span class="zh">使用動作感測器並有一秒確認，桌子被碰到不會誤判。</span><span class="ja">モーションセンサーと1秒の確認で、机が揺れても誤判定しません。</span><span class="ko">모션 센서와 1초 확인으로 책상이 흔들려도 오인하지 않습니다.</span></p></div>
+        <div class="tile t-c"><div class="emoji">🔥</div><h3><span class="en">Night streak</span><span class="zh">連續夜晚</span><span class="ja">連続の夜</span><span class="ko">연속 밤</span></h3><p><span class="en">Count consecutive successful nights. One failed night resets it, so it stings a little.</span><span class="zh">累積連續成功的夜晚。失敗一晚就歸零，所以會有一點痛。</span><span class="ja">連続して成功した夜を数えます。失敗した夜は0に戻るので、ちょっと痛い。</span><span class="ko">연속으로 성공한 밤을 셉니다. 한 번 실패하면 0으로 돌아가서 조금 아파요.</span></p></div>
+        <div class="tile t-d"><div class="emoji">🌙</div><h3><span class="en">Near-black screen</span><span class="zh">近乎全黑的畫面</span><span class="ja">ほぼ真っ暗な画面</span><span class="ko">거의 꺼진 화면</span></h3><p><span class="en">Dimmed for sleep and your battery, then restored exactly when the night ends.</span><span class="zh">為睡眠與電量調暗，夜晚結束後精準還原。</span><span class="ja">睡眠とバッテリーのために暗くし、夜が終わると元に戻します。</span><span class="ko">수면과 배터리를 위해 어둡게 하고, 밤이 끝나면 그대로 복원합니다.</span></p></div>
+        <div class="tile t-e"><div class="emoji">🔒</div><h3><span class="en">Private by design</span><span class="zh">為隱私而設計</span><span class="ja">プライバシー重視</span><span class="ko">프라이버시 우선</span></h3><p><span class="en">Sensor readings stay on your phone. We never read your other apps, messages or location.</span><span class="zh">感測數據只留在你的手機上。絕不讀取你的其他 App、訊息或位置。</span><span class="ja">センサーの値は端末内にとどまります。ほかのアプリ、メッセージ、位置情報は読み取りません。</span><span class="ko">센서 값은 폰 안에만 남습니다. 다른 앱, 메시지, 위치는 읽지 않습니다.</span></p></div>
+        <div class="tile t-f"><div class="emoji">☎️</div><div><h3><span class="en">Calls never count against you</span><span class="zh">來電不會算你的</span><span class="ja">電話に出てもペナルティなし</span><span class="ko">전화는 절대 불이익이 없어요</span></h3><p><span class="en">If a phone call interrupts the night, nothing is lost. We never shame you for answering your phone.</span><span class="zh">如果來電打斷了這一晚，什麼都不會損失。我們不會因為你接電話而責怪你。</span><span class="ja">通話で夜が中断されても何も失いません。電話に出たことを責めたりしません。</span><span class="ko">전화로 밤이 중단되어도 잃는 것은 없습니다. 전화를 받았다고 탓하지 않아요.</span></p></div></div>
       </div>
     </section>
 
-    <section class="section" id="pro" aria-labelledby="pro-title">
-      <div class="pro-card">
-        <p class="eyebrow">Pro</p>
-        <h2 id="pro-title"><span class="en">Unlock the whole Vault</span><span class="zh">解鎖整個收藏庫</span><span class="ja">ヴォルトのすべてを解放</span><span class="ko">보관함 전체 해제</span></h2>
-        <p><span class="en">The core nightly loop is free. Pro adds the extras:</span><span class="zh">每晚的核心玩法完全免費。Pro 提供更多內容：</span><span class="ja">毎晩のコア体験は無料です。Pro では次が加わります。</span><span class="ko">매일 밤의 핵심 기능은 무료입니다. Pro는 다음을 더해 줍니다.</span></p>
-        <ul class="pro-list">
-          <li><span class="en">Your full night history in the Vault (free shows the latest 7 nights)</span><span class="zh">收藏庫中完整的夜晚歷史（免費版只顯示最近 7 晚）</span><span class="ja">ヴォルトの全履歴（無料版は直近7夜まで）</span><span class="ko">보관함의 전체 기록(무료는 최근 7일 밤)</span></li>
-          <li><span class="en">5 more goblins to choose from</span><span class="zh">另外 5 種怪物可以選</span><span class="ja">選べる怪物が5種類追加</span><span class="ko">고를 수 있는 고블린 5종 추가</span></li>
-          <li><span class="en">3 extra bedrooms for your goblin</span><span class="zh">怪物的 3 間額外臥室</span><span class="ja">怪物の寝室が3つ追加</span><span class="ko">고블린의 침실 3종 추가</span></li>
-        </ul>
-        <p class="small-note"><span class="en">Available as a monthly or yearly subscription, or a one-time Lifetime purchase. Prices and any free trial are shown in the app.</span><span class="zh">提供月訂閱、年訂閱，或一次買斷的終身方案。價格與免費試用以 App 內顯示為準。</span><span class="ja">月額・年額のサブスクリプション、または買い切りのライフタイムがあります。価格や無料試用はアプリ内に表示されます。</span><span class="ko">월간·연간 구독 또는 1회 결제 평생 이용권으로 제공됩니다. 가격과 무료 체험은 앱에 표시됩니다.</span></p>
+    <section class="section vault" id="pro" aria-labelledby="pro-title">
+      <div class="section-heading">
+        <p class="eyebrow">Pro · <span class="en">Goblin Vault</span><span class="zh">怪物收藏庫</span><span class="ja">怪物ヴォルト</span><span class="ko">고블린 보관함</span></p>
+        <h2 id="pro-title"><span class="en">Every night adds a goblin to your Vault.</span><span class="zh">每一晚，都為你的收藏庫添一隻怪物。</span><span class="ja">夜ごとに、ヴォルトに怪物が一匹増える。</span><span class="ko">밤마다 보관함에 고블린이 한 마리씩 늘어납니다.</span></h2>
+        <p><span class="en">Free keeps your latest 7 nights. Pro keeps the whole history and unlocks 5 more goblins and 3 bedrooms to choose from.</span><span class="zh">免費版保留最近 7 晚。Pro 保留完整歷史，並解鎖另外 5 種怪物與 3 間臥室可以選。</span><span class="ja">無料版は直近7夜まで。Pro は全履歴を保存し、怪物5種と寝室3つが追加で選べます。</span><span class="ko">무료는 최근 7일 밤까지. Pro는 전체 기록을 보관하고 고블린 5종과 침실 3종을 추가로 고를 수 있어요.</span></p>
       </div>
+      <div class="vault-strip"><div class="vault-item"><svg viewBox="40 90 320 270" aria-hidden="true"><ellipse cx="200" cy="338" rx="110" ry="14" fill="#26254d"/>
+<ellipse cx="160" cy="324" rx="34" ry="14" fill="#5fae48"/><ellipse cx="240" cy="324" rx="34" ry="14" fill="#5fae48"/>
+<path d="M118 206 58 134 140 168z" fill="#5fae48"/><path d="M282 206 342 134 260 168z" fill="#5fae48"/>
+<ellipse cx="200" cy="242" rx="112" ry="98" fill="#8fd36b"/><ellipse cx="200" cy="276" rx="68" ry="56" fill="#fff3c4"/>
+<ellipse cx="96" cy="270" rx="16" ry="27" fill="#5fae48"/><ellipse cx="304" cy="270" rx="16" ry="27" fill="#5fae48"/>
+<circle cx="128" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/><circle cx="272" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/>
+<path d="M142 228q18 14 36 0M222 228q18 14 36 0M182 278q18 14 36 0" fill="none" stroke="#2b2250" stroke-width="7" stroke-linecap="round"/></svg><b><span class="en">Doomscroll Goblin</span><span class="zh">無限滑動怪</span><span class="ja">ドゥームスクロール怪物</span><span class="ko">둠스크롤 고블린</span></b><small><span class="en">Free</span><span class="zh">免費</span><span class="ja">無料</span><span class="ko">무료</span></small></div><div class="vault-item locked"><svg viewBox="40 90 320 270" aria-hidden="true"><ellipse cx="200" cy="338" rx="110" ry="14" fill="#26254d"/>
+<ellipse cx="160" cy="324" rx="34" ry="14" fill="#7567e0"/><ellipse cx="240" cy="324" rx="34" ry="14" fill="#7567e0"/>
+<path d="M118 206 58 134 140 168z" fill="#7567e0"/><path d="M282 206 342 134 260 168z" fill="#7567e0"/>
+<ellipse cx="200" cy="242" rx="112" ry="98" fill="#9b8cff"/><ellipse cx="200" cy="276" rx="68" ry="56" fill="#ede7ff"/>
+<ellipse cx="96" cy="270" rx="16" ry="27" fill="#7567e0"/><ellipse cx="304" cy="270" rx="16" ry="27" fill="#7567e0"/>
+<circle cx="128" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/><circle cx="272" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/>
+<path d="M142 228q18 14 36 0M222 228q18 14 36 0M182 278q18 14 36 0" fill="none" stroke="#2b2250" stroke-width="7" stroke-linecap="round"/></svg><b><span class="en">Notification Goblin</span><span class="zh">通知怪</span><span class="ja">通知怪物</span><span class="ko">알림 고블린</span></b><small>Pro</small></div><div class="vault-item locked"><svg viewBox="40 90 320 270" aria-hidden="true"><ellipse cx="200" cy="338" rx="110" ry="14" fill="#26254d"/>
+<ellipse cx="160" cy="324" rx="34" ry="14" fill="#e68a3a"/><ellipse cx="240" cy="324" rx="34" ry="14" fill="#e68a3a"/>
+<path d="M118 206 58 134 140 168z" fill="#e68a3a"/><path d="M282 206 342 134 260 168z" fill="#e68a3a"/>
+<ellipse cx="200" cy="242" rx="112" ry="98" fill="#ffb36b"/><ellipse cx="200" cy="276" rx="68" ry="56" fill="#fff1dc"/>
+<ellipse cx="96" cy="270" rx="16" ry="27" fill="#e68a3a"/><ellipse cx="304" cy="270" rx="16" ry="27" fill="#e68a3a"/>
+<circle cx="128" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/><circle cx="272" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/>
+<path d="M142 228q18 14 36 0M222 228q18 14 36 0M182 278q18 14 36 0" fill="none" stroke="#2b2250" stroke-width="7" stroke-linecap="round"/></svg><b><span class="en">Midnight Snack Goblin</span><span class="zh">宵夜怪</span><span class="ja">夜食怪物</span><span class="ko">야식 고블린</span></b><small>Pro</small></div><div class="vault-item locked"><svg viewBox="40 90 320 270" aria-hidden="true"><ellipse cx="200" cy="338" rx="110" ry="14" fill="#26254d"/>
+<ellipse cx="160" cy="324" rx="34" ry="14" fill="#3fa9b3"/><ellipse cx="240" cy="324" rx="34" ry="14" fill="#3fa9b3"/>
+<path d="M118 206 58 134 140 168z" fill="#3fa9b3"/><path d="M282 206 342 134 260 168z" fill="#3fa9b3"/>
+<ellipse cx="200" cy="242" rx="112" ry="98" fill="#6fd0d8"/><ellipse cx="200" cy="276" rx="68" ry="56" fill="#e6fafc"/>
+<ellipse cx="96" cy="270" rx="16" ry="27" fill="#3fa9b3"/><ellipse cx="304" cy="270" rx="16" ry="27" fill="#3fa9b3"/>
+<circle cx="128" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/><circle cx="272" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/>
+<path d="M142 228q18 14 36 0M222 228q18 14 36 0M182 278q18 14 36 0" fill="none" stroke="#2b2250" stroke-width="7" stroke-linecap="round"/></svg><b><span class="en">News Goblin</span><span class="zh">新聞怪</span><span class="ja">ニュース怪物</span><span class="ko">뉴스 고블린</span></b><small>Pro</small></div><div class="vault-item locked"><svg viewBox="40 90 320 270" aria-hidden="true"><ellipse cx="200" cy="338" rx="110" ry="14" fill="#26254d"/>
+<ellipse cx="160" cy="324" rx="34" ry="14" fill="#e0608f"/><ellipse cx="240" cy="324" rx="34" ry="14" fill="#e0608f"/>
+<path d="M118 206 58 134 140 168z" fill="#e0608f"/><path d="M282 206 342 134 260 168z" fill="#e0608f"/>
+<ellipse cx="200" cy="242" rx="112" ry="98" fill="#ff8fb8"/><ellipse cx="200" cy="276" rx="68" ry="56" fill="#ffe6f0"/>
+<ellipse cx="96" cy="270" rx="16" ry="27" fill="#e0608f"/><ellipse cx="304" cy="270" rx="16" ry="27" fill="#e0608f"/>
+<circle cx="128" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/><circle cx="272" cy="254" r="12" fill="#ff8a80" fill-opacity="0.38"/>
+<path d="M142 228q18 14 36 0M222 228q18 14 36 0M182 278q18 14 36 0" fill="none" stroke="#2b2250" stroke-width="7" stroke-linecap="round"/></svg><b><span class="en">Game Goblin</span><span class="zh">手遊怪</span><span class="ja">ゲーム怪物</span><span class="ko">게임 고블린</span></b><small>Pro</small></div><div class="vault-item locked"><svg viewBox="40 60 320 300" aria-hidden="true"><ellipse cx="200" cy="338" rx="110" ry="14" fill="#26254d"/>
+<path d="M290 300c40 0 52-50 20-70" fill="none" stroke="#fff1dc" stroke-width="24" stroke-linecap="round"/>
+<g fill="#9c8cff"><circle cx="120" cy="150" r="42"/><circle cx="84" cy="176" r="32"/><circle cx="140" cy="116" r="30"/><circle cx="280" cy="150" r="42"/><circle cx="316" cy="176" r="32"/><circle cx="260" cy="116" r="30"/></g>
+<ellipse cx="160" cy="324" rx="34" ry="14" fill="#fff1dc"/><ellipse cx="240" cy="324" rx="34" ry="14" fill="#fff1dc"/>
+<ellipse cx="200" cy="242" rx="112" ry="98" fill="#2e2d78"/><ellipse cx="200" cy="276" rx="66" ry="52" fill="#fff1dc"/>
+<circle cx="200" cy="160" r="20" fill="#ffe08a"/><circle cx="210" cy="156" r="18" fill="#2e2d78"/>
+<circle cx="160" cy="232" r="19" fill="#4ea8e8"/><circle cx="240" cy="232" r="19" fill="#4ea8e8"/><circle cx="165" cy="226" r="6" fill="#fff"/><circle cx="245" cy="226" r="6" fill="#fff"/>
+<path d="M182 276q18 14 36 0" fill="none" stroke="#2b2250" stroke-width="7" stroke-linecap="round"/>
+<path d="M124 262l4 9 9 3-9 4-4 9-4-9-9-4 9-3z M276 262l4 9 9 3-9 4-4 9-4-9-9-4 9-3z" fill="#ffc23d"/></svg><b><span class="en">Moon Cat</span><span class="zh">月亮貓怪</span><span class="ja">ムーンキャット怪物</span><span class="ko">달고양이 고블린</span></b><small>Pro</small></div></div>
+      <p class="small-note"><span class="en">Available as a monthly or yearly subscription, or a one-time Lifetime purchase. Prices and any free trial are shown in the app.</span><span class="zh">提供月訂閱、年訂閱，或一次買斷的終身方案。價格與免費試用以 App 內顯示為準。</span><span class="ja">月額・年額のサブスクリプション、または買い切りのライフタイムがあります。価格や無料試用はアプリ内に表示されます。</span><span class="ko">월간·연간 구독 또는 1회 결제 평생 이용권으로 제공됩니다. 가격과 무료 체험은 앱에 표시됩니다.</span></p>
     </section>
-
     <section class="section faq" id="faq" aria-labelledby="faq-title">
       <div class="section-heading">
         <p class="eyebrow">FAQ</p>
         <h2 id="faq-title"><span class="en">Good questions</span><span class="zh">常見問題</span><span class="ja">よくある質問</span><span class="ko">자주 묻는 질문</span></h2>
       </div>
-      <details><summary><span class="en">Does it track my sleep?</span><span class="zh">它會追蹤我的睡眠嗎？</span><span class="ja">睡眠を記録しますか？</span><span class="ko">수면을 측정하나요?</span></summary><p><span class="en">No. SleepOrDie checks one behavior only: did you leave your phone face down and stay out of the app until your wake time. It does not measure sleep stages, and it is not a medical device or a treatment for insomnia.</span><span class="zh">不會。SleepOrDie 只驗證一件事：你有沒有把手機蓋著、並在起床時間前不碰它。它不測量睡眠階段，也不是醫療器材或失眠治療工具。</span><span class="ja">いいえ。SleepOrDie が確認するのは、スマホを伏せたまま起床時間までアプリに触れなかったか、ただそれだけです。睡眠段階は測定せず、医療機器でも不眠症の治療でもありません。</span><span class="ko">아니요. SleepOrDie가 확인하는 건 폰을 엎어 둔 채 기상 시간까지 앱을 만지지 않았는지 하나뿐입니다. 수면 단계를 측정하지 않으며 의료기기나 불면증 치료제가 아닙니다.</span></p></details>
-      <details><summary><span class="en">Does the app have to stay open all night?</span><span class="zh">App 需要整晚開著嗎？</span><span class="ja">アプリは一晩中開いておく必要がありますか？</span><span class="ko">앱을 밤새 켜 두어야 하나요?</span></summary><p><span class="en">Yes. iOS does not let apps watch the sensors once they are closed or suspended, so SleepOrDie must stay open in the foreground with your phone face down. The screen is dimmed to near black to save battery; plugging in on long nights is a good idea. If the app is closed before your wake time, the night counts as failed.</span><span class="zh">需要。iOS 不允許 App 在被關閉或暫停後繼續讀取感測器，所以 SleepOrDie 必須保持在前景開啟、手機蓋著。畫面會調暗到接近全黑以節省電量；夜晚很長時建議接上充電器。如果在起床時間前 App 被關閉，這一晚會算失敗。</span><span class="ja">はい。iOS ではアプリが閉じられたり一時停止されたりするとセンサーを監視できないため、SleepOrDie は前面で開いたままスマホを伏せておく必要があります。バッテリーを節約するため画面はほぼ真っ暗になります。長い夜は充電しておくと安心です。起床時間前にアプリが閉じられると、その夜は失敗になります。</span><span class="ko">네. iOS는 앱이 종료되거나 일시 중지되면 센서를 볼 수 없게 하므로, SleepOrDie는 폰을 엎어 둔 채 화면 앞에서 켜 두어야 합니다. 배터리 절약을 위해 화면은 거의 꺼진 상태로 어두워집니다. 긴 밤에는 충전해 두세요. 기상 시간 전에 앱이 종료되면 그 밤은 실패로 처리됩니다.</span></p></details>
-      <details><summary><span class="en">What if I get a phone call?</span><span class="zh">如果有人打來怎麼辦？</span><span class="ja">電話がかかってきたら？</span><span class="ko">전화가 오면요?</span></summary><p><span class="en">A call interrupts the night without any penalty. We never shame you for answering your phone.</span><span class="zh">來電會中斷這一晚，但不會有任何處罰。我們不會因為你接電話而責怪你。</span><span class="ja">通話でその夜が中断されても、ペナルティはありません。電話に出たことを責めたりしません。</span><span class="ko">전화로 밤이 중단되어도 벌점은 없습니다. 전화를 받았다고 탓하지 않아요.</span></p></details>
+      <details><summary><span class="en">Does it track my sleep?</span><span class="zh">它會追蹤我的睡眠嗎？</span><span class="ja">睡眠を記録しますか？</span><span class="ko">수면을 측정하나요?</span></summary><p><span class="en">No. SleepOrDie checks one behavior only: did you leave your phone face down and stay out of the app until the timer ends. It does not measure sleep stages, and it is not a medical device or a treatment for insomnia.</span><span class="zh">不會。SleepOrDie 只驗證一件事：你有沒有把手機蓋著、並在計時結束前不碰它。它不測量睡眠階段，也不是醫療器材或失眠治療工具。</span><span class="ja">いいえ。SleepOrDie が確認するのは、スマホを伏せたままタイマーが終わるまでアプリに触れなかったか、ただそれだけです。睡眠段階は測定せず、医療機器でも不眠症の治療でもありません。</span><span class="ko">아니요. SleepOrDie가 확인하는 건 폰을 엎어 둔 채 타이머가 끝날 때까지 앱을 만지지 않았는지 하나뿐입니다. 수면 단계를 측정하지 않으며 의료기기나 불면증 치료제가 아닙니다.</span></p></details>
+      <details><summary><span class="en">Does the app have to stay open the whole time?</span><span class="zh">App 需要整段時間都開著嗎？</span><span class="ja">アプリはずっと開いておく必要がありますか？</span><span class="ko">앱을 계속 켜 두어야 하나요?</span></summary><p><span class="en">Yes. iOS does not let apps watch the sensors once they are closed or suspended, so SleepOrDie must stay open in the foreground with your phone face down for the length you chose (30 minutes to 2 hours). The screen is dimmed to near black to save battery. If the app is closed before the timer ends, the session counts as failed.</span><span class="zh">需要。iOS 不允許 App 在被關閉或暫停後繼續讀取感測器，所以 SleepOrDie 必須保持在前景開啟、手機蓋著，時間長度由你選（30 分鐘到 2 小時）。畫面會調暗到接近全黑以節省電量。如果在計時結束前 App 被關閉，這一次會算失敗。</span><span class="ja">はい。iOS ではアプリが閉じられたり一時停止されたりするとセンサーを監視できないため、SleepOrDie は前面で開いたままスマホを伏せておく必要があります。長さは30分〜2時間から選べます。バッテリーを節約するため画面はほぼ真っ暗になります。タイマー終了前にアプリが閉じられると、そのセッションは失敗になります。</span><span class="ko">네. iOS는 앱이 종료되거나 일시 중지되면 센서를 볼 수 없게 하므로, SleepOrDie는 폰을 엎어 둔 채 화면 앞에서 켜 두어야 합니다. 길이는 30분~2시간 중에서 고를 수 있어요. 배터리 절약을 위해 화면은 거의 꺼진 상태로 어두워집니다. 타이머가 끝나기 전에 앱이 종료되면 그 세션은 실패로 처리됩니다.</span></p></details>
+      <details><summary><span class="en">What if I get a phone call?</span><span class="zh">如果有人打來怎麼辦？</span><span class="ja">電話がかかってきたら？</span><span class="ko">전화가 오면요?</span></summary><p><span class="en">A call interrupts the session without any penalty. We never shame you for answering your phone.</span><span class="zh">來電會中斷這一次，但不會有任何處罰。我們不會因為你接電話而責怪你。</span><span class="ja">通話でセッションが中断されても、ペナルティはありません。電話に出たことを責めたりしません。</span><span class="ko">전화로 세션이 중단되어도 벌점은 없습니다. 전화를 받았다고 탓하지 않아요.</span></p></details>
       <details><summary><span class="en">Is it an alarm clock?</span><span class="zh">它是鬧鐘嗎？</span><span class="ja">目覚まし時計ですか？</span><span class="ko">알람 시계인가요?</span></summary><p><span class="en">No. SleepOrDie does not wake you up. Keep using your iPhone's Clock app or another alarm for waking.</span><span class="zh">不是。SleepOrDie 不會叫你起床。請繼續使用 iPhone 的「時鐘」App 或其他鬧鐘來叫醒你。</span><span class="ja">いいえ。SleepOrDie は起こしてくれません。起床には iPhone の「時計」アプリなど別のアラームを使ってください。</span><span class="ko">아니요. SleepOrDie는 깨워 주지 않습니다. 기상에는 iPhone의 시계 앱이나 다른 알람을 계속 사용하세요.</span></p></details>
       <details><summary><span class="en">Do I need an account?</span><span class="zh">需要帳號嗎？</span><span class="ja">アカウントは必要ですか？</span><span class="ko">계정이 필요한가요?</span></summary><p><span class="en">You sign in with Apple or Google so your points, streak and Vault follow you to a new phone. You can delete your account and all of its data inside the app at any time.</span><span class="zh">你用 Apple 或 Google 登入，點數、連續紀錄與收藏庫就能跟著你換手機。你可以隨時在 App 內刪除帳號與所有資料。</span><span class="ja">Apple または Google でサインインすると、ポイント・連続記録・ヴォルトが機種変更後も引き継がれます。アプリ内でいつでもアカウントと全データを削除できます。</span><span class="ko">Apple 또는 Google로 로그인하면 포인트, 연속 기록, 보관함이 새 폰에서도 유지됩니다. 앱에서 언제든 계정과 모든 데이터를 삭제할 수 있습니다.</span></p></details>
     </section>
   </main>
+<template id="lbl-hungry"><span class="en">Hungry</span><span class="zh">好餓</span><span class="ja">おなかペコペコ</span><span class="ko">배고픔</span></template><template id="lbl-starving"><span class="en">Starving</span><span class="zh">餓扁中</span><span class="ja">飢え中</span><span class="ko">굶는 중</span></template><template id="lbl-warning"><span class="en">Don't feed it!</span><span class="zh">別餵牠！</span><span class="ja">エサをやるな！</span><span class="ko">먹이 주지 마!</span></template><template id="lbl-asleep"><span class="en">Asleep</span><span class="zh">熟睡</span><span class="ja">ねんね</span><span class="ko">꿀잠</span></template><template id="lbl-eat"><span class="en">It ate your sleep</span><span class="zh">牠吃掉了睡眠</span><span class="ja">睡眠が食べられた</span><span class="ko">잠을 먹혔어요</span></template>
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var clock = document.getElementById('clock');
+  var label = document.getElementById('state-label');
+  var meter = document.getElementById('meter');
+  var chapters = [].slice.call(document.querySelectorAll('.chapter'));
+  var buttons = [].slice.call(document.querySelectorAll('.choice button'));
+  function lbl(k) { var t = document.getElementById('lbl-' + k); return t ? t.innerHTML : ''; }
+  function set(state, time, pct) {
+    stage.setAttribute('data-state', state);
+    clock.textContent = time;
+    label.innerHTML = lbl(state);
+    meter.style.width = pct + '%';
+  }
+  function clearPick() { buttons.forEach(function (b) { b.classList.remove('on'); }); }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      clearPick(); b.classList.add('on');
+      if (b.getAttribute('data-pick') === 'back') { set('starving', '23:40:14', 63); }
+      else { set('eat', '23:40:20', 62); }
+    });
+  });
+  function activate(el) {
+    chapters.forEach(function (c) { c.classList.remove('active'); });
+    el.classList.add('active');
+    clearPick();
+    set(el.getAttribute('data-state'), el.getAttribute('data-time'), el.getAttribute('data-pct'));
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) activate(e.target); });
+    }, { rootMargin: '-42% 0px -42% 0px' });
+    chapters.forEach(function (c) { io.observe(c); });
+  }
+  activate(chapters[0]);
+})();
+</script>
 
   <footer class="footer">
     <div>© 2026 Micavo. <span class="en">SleepOrDie is a product by Micavo.</span><span class="zh">SleepOrDie 是 Micavo 的產品。</span><span class="ja">SleepOrDie は Micavo のプロダクトです。</span><span class="ko">SleepOrDie는 Micavo의 제품입니다.</span></div>
