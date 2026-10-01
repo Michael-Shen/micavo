@@ -424,3 +424,42 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 20px 40px; }
   .bento { grid-template-columns: 1fr; }
   .t-a, .t-b, .t-c, .t-d, .t-e, .t-f, .t-g { grid-column: auto; }
 }
+
+/* Tomorrow-plan bedtime animation (12s loop) */
+.plan-scene { position: relative; flex: 0 0 280px; max-width: 100%; }
+.plan-scene svg { display: block; width: 100%; height: auto; border-radius: 18px; }
+.ps-bubble { position: absolute; left: 6%; top: 8%; max-width: 62%; padding: 7px 11px 8px; border-radius: 14px 14px 14px 4px;
+  background: #fff; color: #2b2a52; font-size: 12.5px; font-weight: 600; line-height: 1.5; opacity: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35); animation: ps-bubble 12s ease-in-out infinite; }
+.ps-title { font-size: 10.5px; font-weight: 800; color: #7567e0; letter-spacing: .04em; }
+.ps-line { display: flex; gap: 6px; align-items: center; white-space: nowrap; }
+.ps-line i { font-style: normal; color: #7567e0; }
+.ps-type { display: inline-block; overflow: hidden; white-space: nowrap; max-width: 0; }
+.ps-line.l1 .ps-type { animation: ps-type1 12s steps(16, end) infinite; }
+.ps-line.l2 .ps-type { animation: ps-type2 12s steps(10, end) infinite; }
+.ps-head { transform-origin: 52px 112px; animation: ps-head 12s ease-in-out infinite; }
+.ps-open { animation: ps-open 12s step-end infinite; }
+.ps-shut { opacity: 0; animation: ps-shut 12s step-end infinite; }
+.ps-mouth { animation: ps-mouth 12s step-end infinite; }
+.ps-screen { animation: ps-screen 12s step-end infinite; }
+.ps-z text { opacity: 0; }
+.ps-z .z1 { animation: ps-z 12s ease-out infinite; }
+.ps-z .z2 { animation: ps-z 12s ease-out infinite .5s; }
+.ps-z .z3 { animation: ps-z 12s ease-out infinite 1s; }
+.ps-stars circle { animation: ps-twinkle 3s ease-in-out infinite; }
+.ps-stars circle:nth-child(2n) { animation-delay: 1.2s; }
+@keyframes ps-bubble { 0%, 4% { opacity: 0; transform: translateY(6px) scale(.9); } 8%, 66% { opacity: 1; transform: none; } 74%, 100% { opacity: 0; transform: translateY(-4px); } }
+@keyframes ps-type1 { 0%, 10% { max-width: 0; } 24%, 100% { max-width: 12em; } }
+@keyframes ps-type2 { 0%, 28% { max-width: 0; } 38%, 100% { max-width: 12em; } }
+@keyframes ps-head { 0%, 4% { transform: rotate(0); } 8%, 60% { transform: translateY(-4px) rotate(-6deg); } 66%, 100% { transform: rotate(0); } }
+@keyframes ps-open { 0%, 62% { opacity: 1; } 63%, 100% { opacity: 0; } }
+@keyframes ps-shut { 0%, 62% { opacity: 0; } 63%, 96% { opacity: 1; } 97%, 100% { opacity: 0; } }
+@keyframes ps-mouth { 0%, 9% { ry: 1.2px; } 10%, 14% { ry: 3px; } 15%, 19% { ry: 1.2px; } 20%, 24% { ry: 3px; } 25%, 30% { ry: 1.2px; } 31%, 36% { ry: 3px; } 37%, 100% { ry: 1.5px; } }
+@keyframes ps-screen { 0%, 56% { opacity: 1; } 57%, 100% { opacity: 0; } }
+@keyframes ps-z { 0%, 64% { opacity: 0; transform: translate(0, 6px); } 72% { opacity: 1; } 96%, 100% { opacity: 0; transform: translate(10px, -14px); } }
+@keyframes ps-twinkle { 0%, 100% { opacity: .9; } 50% { opacity: .25; } }
+@media (max-width: 760px) { .plan-scene { flex-basis: auto; width: 100%; } .t-g { flex-direction: column; align-items: stretch; } }
+@media (prefers-reduced-motion: reduce) {
+  .ps-bubble, .ps-head, .ps-open, .ps-shut, .ps-mouth, .ps-screen, .ps-z text, .ps-stars circle, .ps-type { animation: none !important; }
+  .ps-bubble { opacity: 1; } .ps-type { max-width: 12em; } .ps-open { opacity: 0; } .ps-shut { opacity: 1; } .ps-z text { opacity: 1; } .ps-screen { opacity: 0; }
+}
