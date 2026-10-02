@@ -46,7 +46,15 @@
     (function () {
       var KEY = 'flipordie_lang';
       var titles = { en: 'FlipOrDie: Phone Focus Timer', zh: 'FlipOrDie：手機專注計時器', ja: 'FlipOrDie：スマホ集中タイマー', ko: 'FlipOrDie: 스마트폰 집중 타이머' };
+      var STORE = {
+        en: 'https://apps.apple.com/us/app/flipordie-phone-focus-timer/id6814387401',
+        zh: 'https://apps.apple.com/us/app/flipordie-%E6%88%92%E6%89%8B%E6%A9%9F%E8%87%AA%E5%BE%8B%E6%8C%91%E6%88%B0/id6814387401?l=zh-Hant-TW',
+        ja: 'https://apps.apple.com/jp/app/flipordie-%E7%BF%92%E6%85%A3%E5%8C%96-%E5%85%88%E5%BB%B6%E3%81%B0%E3%81%97%E9%98%B2%E6%AD%A2/id6814387401',
+        ko: 'https://apps.apple.com/kr/app/flipordie-phone-focus-timer/id6814387401'
+      };
       function apply(lang) {
+        var store = document.getElementById('app-store-link');
+        if (store) store.href = STORE[lang] || STORE.en;
         document.documentElement.setAttribute('data-lang', lang);
         document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : lang;
         document.title = titles[lang];
@@ -99,8 +107,7 @@
         <h1 id="hero-title"><span class="en">Phone down. Stay focused.<br /><span class="accent">Flip it up. Get punished.</span></span><span class="zh">蓋下手機，保持專注。<br /><span class="accent">翻開就處罰。</span></span><span class="ja">スマホを伏せて、集中。<br /><span class="accent">表に返したら罰。</span></span><span class="ko">폰을 뒤집어 놓고 집중하세요.<br /><span class="accent">화면을 켜면 벌칙이 시작됩니다.</span></span></h1>
         <p class="hero-subtitle"><span class="en">Put your phone face down to focus. Flip it over and a 20-second alarm starts. Type your pledge, or shout it out loud, to make it right. Or lose points and your streak.</span><span class="zh">把手機正面朝下開始專注。一翻開，20 秒警報就開始：打完你的自嘲宣言，或是大聲唸出來，才能回頭是岸，否則扣點、連勝歸零。</span><span class="ja">スマホを画面を下にして置くと集中スタート。表に返すと20秒のアラームが始まります。宣言を入力するか、声に出して読み上げて取り返そう。さもないとポイントも連勝も失います。</span><span class="ko">폰을 화면이 아래로 향하게 놓으면 집중이 시작됩니다. 뒤집으면 20초 알람이 울리기 시작해요. 다짐을 입력하거나 소리 내어 말해서 되돌리세요. 그렇지 않으면 포인트와 연승을 잃습니다.</span></p>
         <div class="cta-row">
-          <span class="button primary disabled"><span class="en">Coming soon to the App Store</span><span class="zh">即將在 App Store 上架</span><span class="ja">まもなく App Store で公開</span><span class="ko">App Store에 곧 출시됩니다</span></span>
-          <a class="button" href="mailto:hello@micavo.app?subject=FlipOrDie%20launch%20updates" data-ga-event="waitlist_clicked" data-ga-param-product="FlipOrDie" data-ga-param-cta-location="hero"><span class="en">Get launch updates</span><span class="zh">收到上架通知</span><span class="ja">公開のお知らせを受け取る</span><span class="ko">출시 알림 받기</span></a>
+          <a class="button primary" id="app-store-link" href="https://apps.apple.com/us/app/flipordie-phone-focus-timer/id6814387401" target="_blank" rel="noopener" data-ga-event="app_store_clicked" data-ga-param-product="FlipOrDie" data-ga-param-cta-location="hero"><span class="en">Download on the App Store</span><span class="zh">在 App Store 下載</span><span class="ja">App Store でダウンロード</span><span class="ko">App Store에서 다운로드</span></a>
         </div>
         <p class="small-note"><span class="en">For iPhone (iOS 16 or later).</span><span class="zh">適用於 iPhone（iOS 16 以上）。</span><span class="ja">iPhone（iOS 16 以降）対応。</span><span class="ko">iPhone(iOS 16 이상)에서 사용 가능합니다.</span></p>
       </div>

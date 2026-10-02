@@ -454,6 +454,11 @@
       en: "https://apps.apple.com/tw/app/id6797482622",
       zh: "https://apps.apple.com/tw/app/tallcenter-%E8%BA%AB%E9%AB%98%E9%A0%90%E6%B8%AC%E8%88%87%E6%88%90%E9%95%B7%E8%BF%BD%E8%B9%A4/id6797482622?l=zh-Hant-TW",
       ja: "https://apps.apple.com/tw/app/id6797482622?l=ja"
+    },
+    flipordie: {
+      en: "https://apps.apple.com/us/app/flipordie-phone-focus-timer/id6814387401",
+      zh: "https://apps.apple.com/us/app/flipordie-%E6%88%92%E6%89%8B%E6%A9%9F%E8%87%AA%E5%BE%8B%E6%8C%91%E6%88%B0/id6814387401?l=zh-Hant-TW",
+      ja: "https://apps.apple.com/jp/app/flipordie-%E7%BF%92%E6%85%A3%E5%8C%96-%E5%85%88%E5%BB%B6%E3%81%B0%E3%81%97%E9%98%B2%E6%AD%A2/id6814387401"
     }
   };
 
