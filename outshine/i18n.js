@@ -98,6 +98,7 @@
         l2: "Nothing is recorded or uploaded",
         l3: "Build a streak, then share the card",
         mock_unit: "minutes present",
+        mock_focusing: "Phone down. Stay present.",
         mock_tag: "Phone down",
         mock_streak: "5-day streak"
       },
@@ -267,6 +268,7 @@
         l2: "不錄音、也不上傳任何內容",
         l3: "累積連續天數，再做成分享卡",
         mock_unit: "分鐘專心在場",
+        mock_focusing: "放下手機，專心在場",
         mock_tag: "放下手機",
         mock_streak: "連續 5 天"
       },
@@ -436,6 +438,7 @@
         l2: "録音もアップロードもしません",
         l3: "連続日数を伸ばして、カードでシェア",
         mock_unit: "分、集中",
+        mock_focusing: "スマホを置いて、集中",
         mock_tag: "スマホを置く",
         mock_streak: "5日連続"
       },

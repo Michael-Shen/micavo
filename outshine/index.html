@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" href="./assets/AppIcon@3x.png" />
   <link rel="apple-touch-icon" href="./assets/AppIcon@3x.png" />
   <link rel="canonical" href="https://micavo.app/outshine/" />
-  <link rel="stylesheet" href="./styles.css?v=11" />
+  <link rel="stylesheet" href="./styles.css?v=12" />
 
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
@@ -273,11 +273,12 @@
       </div>
       <div class="phone-wrap">
         <div class="phone">
-          <div class="phone-screen lock-screen">
+          <div class="phone-screen lock-screen is-running" data-lock-demo>
             <div class="status-bar"><span>9:41</span><div class="dynamic-island"></div><div class="status-icons"><span></span><span></span><span></span></div></div>
             <div class="lock-body">
-              <span class="lock-tag" data-i18n="lock.mock_tag">Phone down</span>
-              <strong class="lock-num">45</strong>
+              <span class="lock-tag"><span class="lock-tag-run" data-i18n="lock.mock_focusing">Phone down. Stay present.</span><span class="lock-tag-done" data-i18n="lock.mock_tag">Phone down</span></span>
+              <strong class="lock-num" data-lock-num>45:00</strong>
+              <span class="lock-bar" aria-hidden="true"><i data-lock-bar></i></span>
               <span class="lock-unit" data-i18n="lock.mock_unit">minutes present</span>
               <span class="streak-pill">🔥 <span data-i18n="lock.mock_streak">5-day streak</span></span>
             </div>
@@ -464,6 +465,48 @@
     </div>
   </footer>
 
-  <script src="./i18n.js?v=5"></script>
+  <script src="./i18n.js?v=6"></script>
+  <script>
+    // Lock-mode phone mock: the timer counts down (compressed, it is a
+    // teaser loop), then the "minutes present" result and streak pop in.
+    (function () {
+      var screen = document.querySelector('[data-lock-demo]');
+      var num = screen && screen.querySelector('[data-lock-num]');
+      var bar = screen && screen.querySelector('[data-lock-bar]');
+      if (!screen || !num) return;
+      var MINUTES = 45;
+      var RUN = 6;    // seconds the countdown takes
+      var DONE = 3.2; // seconds the result stays up
+      var TOTAL = RUN + DONE;
+      function mmss(sec) {
+        var m = Math.floor(sec / 60), s = sec % 60;
+        return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+      }
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) {
+        screen.classList.remove('is-running'); screen.classList.add('is-done');
+        num.textContent = String(MINUTES);
+        return;
+      }
+      var start = null;
+      function frame(ts) {
+        if (start === null) start = ts;
+        var t = ((ts - start) / 1000) % TOTAL;
+        var running = t < RUN;
+        screen.classList.toggle('is-running', running);
+        screen.classList.toggle('is-done', !running);
+        if (running) {
+          var left = 1 - t / RUN;
+          num.textContent = mmss(Math.ceil(left * MINUTES * 60));
+          if (bar) bar.style.width = ((1 - left) * 100).toFixed(1) + '%';
+        } else {
+          num.textContent = String(MINUTES);
+          if (bar) bar.style.width = '100%';
+        }
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    })();
+  </script>
 </body>
 </html>
