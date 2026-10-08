@@ -1097,3 +1097,56 @@ h1 {
 .lock-screen.is-done .lock-num { font-size: 110px; animation: lock-pop 0.5s ease; }
 .lock-screen.is-done .streak-pill { animation: lock-pop 0.6s ease 0.2s backwards; }
 @keyframes lock-pop { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+
+/* Design pass: one dark language, full-bleed bands, tighter rhythm */
+body { overflow-x: clip; }
+.section { padding: 68px 0; }
+.split-section { align-items: center; gap: 48px; }
+
+.section.section-tinted,
+.section.section-light {
+  border: 0;
+  clip-path: inset(0 -100vmax);
+}
+.section.section-tinted { box-shadow: 0 0 0 100vmax #151932; background: #151932; }
+.section.section-light {
+  color: var(--ink);
+  box-shadow: 0 0 0 100vmax #1a1f48;
+  background: #1a1f48;
+}
+.section-light .eyebrow { color: #b79cff; }
+.section-light h2 { color: var(--ink); }
+.section-light .section-copy p,
+.section-light .section-heading p:not(.eyebrow) { color: var(--muted); }
+
+/* Soft glow behind every phone so the dark sections do not feel empty */
+.phone-wrap { position: relative; }
+.phone-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 8% -6%;
+  background: radial-gradient(closest-side, rgba(99, 102, 241, 0.32), transparent 72%);
+  filter: blur(18px);
+  z-index: 0;
+  pointer-events: none;
+}
+.phone-wrap > * { position: relative; z-index: 1; }
+
+.final-cta.section-light {
+  background:
+    radial-gradient(800px 500px at 15% 0%, rgba(139, 92, 246, 0.28), transparent 60%),
+    radial-gradient(700px 480px at 100% 100%, rgba(79, 140, 255, 0.22), transparent 60%),
+    var(--bg-panel);
+  color: var(--ink);
+  border: 0;
+}
+.final-cta.section-light p,
+.final-cta.section-light .feature-trio p { color: var(--muted); }
+.final-cta.section-light .feature-trio h3 { color: var(--ink); }
+.final-cta.section-light h2 { color: var(--ink); }
+.final-cta .section { padding: 72px 0; }
+.pillars-wrap .pillars { padding: 22px 0; }
+
+@media (max-width: 700px) {
+  .section { padding: 48px 0; }
+}
