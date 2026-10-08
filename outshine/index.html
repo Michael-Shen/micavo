@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" href="./assets/AppIcon@3x.png" />
   <link rel="apple-touch-icon" href="./assets/AppIcon@3x.png" />
   <link rel="canonical" href="https://micavo.app/outshine/" />
-  <link rel="stylesheet" href="./styles.css?v=10" />
+  <link rel="stylesheet" href="./styles.css?v=11" />
 
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
@@ -33,8 +33,9 @@
       </a>
       <div class="nav-right">
         <div class="nav-links">
-          <a href="#live-coaching" data-i18n="nav.features" data-ga-event="section_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header" data-ga-param-section="live-coaching">Live Coaching</a>
+          <a href="#live-coaching" data-i18n="nav.features" data-ga-event="section_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header" data-ga-param-section="live-coaching">AI Coach</a>
           <a href="#personas" data-i18n="nav.personas" data-ga-event="section_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header" data-ga-param-section="personas">Personas</a>
+          <a href="#lock" data-i18n="nav.lock" data-ga-event="section_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header" data-ga-param-section="lock">Lock Mode</a>
           <a href="#summary" data-i18n="nav.summary" data-ga-event="section_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header" data-ga-param-section="summary">Summary</a>
           <a href="#pricing" data-i18n="nav.pricing" data-ga-event="section_link_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header" data-ga-param-section="pricing">Pricing</a>
           <a href="mailto:support@micavo.app" data-i18n="nav.contact" data-ga-event="contact_clicked" data-ga-param-product="Outshine" data-ga-param-cta-location="header">Contact</a>
@@ -80,6 +81,27 @@
       </div>
     </section>
 
+    <!-- Three pillars -->
+    <section class="pillars-wrap" aria-label="Outshine features">
+      <div class="section pillars">
+        <article class="pillar">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></span>
+          <h3 data-i18n="pillars.p1_title">Smart AI coaching questions</h3>
+          <p data-i18n="pillars.p1_body">Good questions, hidden insights, and what to say next — quietly, while the meeting is still happening.</p>
+        </article>
+        <article class="pillar">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
+          <h3 data-i18n="pillars.p2_title">Smart post-meeting summary</h3>
+          <p data-i18n="pillars.p2_body">Decisions, action items, open questions and risks, plus suggestions written for your role.</p>
+        </article>
+        <article class="pillar">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+          <h3 data-i18n="pillars.p3_title">Lock mode</h3>
+          <p data-i18n="pillars.p3_body">Phone down, fully present. Runs on your device, no recording, no AI — and it's free.</p>
+        </article>
+      </div>
+    </section>
+
     <!-- Live coaching -->
     <section class="section split-section reverse section-light" id="live-coaching" aria-labelledby="live-title">
       <div class="phone-wrap">
@@ -119,9 +141,9 @@
         </div>
       </div>
       <div class="section-copy">
-        <p class="eyebrow" data-i18n="live.eyebrow">Context-Aware Coaching</p>
-        <h2 id="live-title" data-i18n="live.title_html" data-i18n-html>Live AI <span class="accent">coaching</span> during meetings.</h2>
-        <p data-i18n="live.subtitle">Get context-aware suggestions tailored to the conversation, every step of the way.</p>
+        <p class="eyebrow" data-i18n="live.eyebrow">Smart AI Coaching</p>
+        <h2 id="live-title" data-i18n="live.title_html" data-i18n-html>In the meeting, your AI coach slips you the <span class="accent">next line</span>.</h2>
+        <p data-i18n="live.subtitle">Every few minutes, three cards arrive: a good question to ask, a hidden insight, and exactly what to say next.</p>
       </div>
     </section>
 
@@ -237,6 +259,59 @@
       </div>
     </section>
 
+    <!-- Lock mode -->
+    <section class="section split-section section-tinted" id="lock" aria-labelledby="lock-title">
+      <div class="section-copy">
+        <p class="eyebrow" data-i18n="lock.eyebrow">Lock Mode</p>
+        <h2 id="lock-title" data-i18n="lock.title_html" data-i18n-html>The most impressive thing in the room? <span class="accent">Your full attention.</span></h2>
+        <p data-i18n="lock.subtitle">Start a phone-down session, put your phone away, and stay present until the timer ends. No recording, no AI — everything happens on your device, and it's free.</p>
+        <ul class="check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="lock.l1">Pick 15 to 90 minutes</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="lock.l2">Nothing is recorded or uploaded</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="lock.l3">Build a streak, then share the card</span></li>
+        </ul>
+      </div>
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-screen lock-screen">
+            <div class="status-bar"><span>9:41</span><div class="dynamic-island"></div><div class="status-icons"><span></span><span></span><span></span></div></div>
+            <div class="lock-body">
+              <span class="lock-tag" data-i18n="lock.mock_tag">Phone down</span>
+              <strong class="lock-num">45</strong>
+              <span class="lock-unit" data-i18n="lock.mock_unit">minutes present</span>
+              <span class="streak-pill">🔥 <span data-i18n="lock.mock_streak">5-day streak</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Career Gym + share card -->
+    <section class="section split-section reverse section-light" id="gym" aria-labelledby="gym-title">
+      <div class="phone-wrap">
+        <div class="share-card-demo" role="img" aria-label="Outshine share card">
+          <div class="sc-top"><span class="sc-brand">Outshine</span><span class="sc-label" data-i18n="gym.card_label">Today's career practice</span></div>
+          <div class="sc-mid">
+            <span class="sc-cat" data-i18n="gym.card_cat">Visibility</span>
+            <strong class="sc-title" data-i18n="gym.card_title">Make results visible</strong>
+            <p class="sc-body" data-i18n="gym.card_body">Once a week, write two sentences in your team channel: what you solved and what changed.</p>
+            <span class="streak-pill">🔥 <span data-i18n="gym.card_streak">5-day streak</span></span>
+          </div>
+          <div class="sc-foot"><span>AI Career Copilot</span><span>micavo.app/outshine</span></div>
+        </div>
+      </div>
+      <div class="section-copy">
+        <p class="eyebrow" data-i18n="gym.eyebrow">Career Gym</p>
+        <h2 id="gym-title" data-i18n="gym.title_html" data-i18n-html>Small daily reps. A career that <span class="accent">shows</span>.</h2>
+        <p data-i18n="gym.subtitle">Every day: one practice picked for your role, three smart questions you can borrow in your next meeting, and one line worth remembering. Mark it done, grow your streak, and share it.</p>
+        <ul class="check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="gym.g1">A practice for your role</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="gym.g2">Three questions to borrow</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="gym.g3">A streak that's easy to post</span></li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Beyond live coaching -->
     <section class="section section-tinted" id="more" aria-labelledby="more-title">
       <div class="section-heading">
@@ -262,8 +337,8 @@
         </article>
         <article class="step-card">
           <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
-          <h3 data-i18n="more.m4_title">Lock mode</h3>
-          <p data-i18n="more.m4_body">Put your phone down and stay present. Lock mode runs on your device with no recording and no AI — and it's free.</p>
+          <h3 data-i18n="more.m4_title">Made to share</h3>
+          <p data-i18n="more.m4_body">Turn a practice streak or a focus session into a card worth posting. Only Career Gym and Lock mode content — never your meeting.</p>
         </article>
       </div>
     </section>
@@ -389,6 +464,6 @@
     </div>
   </footer>
 
-  <script src="./i18n.js?v=3"></script>
+  <script src="./i18n.js?v=4"></script>
 </body>
 </html>

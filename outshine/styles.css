@@ -1044,3 +1044,42 @@ h1 {
   line-height: 1.6;
   text-align: center;
 }
+
+/* Three pillars */
+.pillars-wrap { background: var(--bg-soft); border-bottom: 1px solid var(--line); }
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 28px 0; }
+.pillar { border: 1px solid var(--line); border-radius: 14px; background: var(--card); padding: 20px 22px; }
+.pillar .ico { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px; background: rgba(139, 92, 246, 0.16); color: var(--purple); }
+.pillar .ico svg { width: 20px; height: 20px; }
+.pillar h3 { margin: 14px 0 0; font-size: 17px; line-height: 1.25; }
+.pillar p { margin: 8px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.55; }
+
+.check-list { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 12px; }
+.check-list li { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 16px; }
+.check-list svg { flex: none; width: 22px; height: 22px; padding: 4px; border-radius: 50%; background: rgba(52, 211, 153, 0.2); color: var(--green); }
+
+.streak-pill { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 99px; background: rgba(255, 167, 38, 0.16); border: 1px solid rgba(255, 201, 74, 0.5); color: #ffc94a; font-weight: 800; font-size: 14px; }
+
+/* Lock mode phone */
+.phone-screen.lock-screen { background: #000; color: #fff; }
+.lock-body { height: 78%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; }
+.lock-tag { color: #b8c7e6; font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+.lock-num { font-size: 110px; line-height: 1; font-weight: 900; letter-spacing: -3px; background: linear-gradient(180deg, #fff, #ffd166 55%, #ff8a1f); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lock-unit { font-size: 17px; font-weight: 800; margin-bottom: 14px; }
+
+/* Share card demo (mirrors the in-app card) */
+.share-card-demo { width: min(320px, 100%); aspect-ratio: 4 / 5; margin: 0 auto; border-radius: 28px; padding: 24px 24px 20px; display: flex; flex-direction: column; color: #fff; background: radial-gradient(260px 220px at 20% 0%, rgba(56, 189, 248, 0.28), transparent 70%), linear-gradient(180deg, #071124, #0a1b3b 55%, #081126); box-shadow: 0 0 60px rgba(56, 189, 248, 0.28), 0 30px 70px rgba(0, 0, 0, 0.35); transform: rotate(-2deg); }
+.sc-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.sc-brand { font-weight: 900; font-size: 24px; letter-spacing: -0.5px; }
+.sc-label { color: #b8c7e6; font-size: 12px; font-weight: 700; text-align: right; }
+.sc-mid { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; }
+.sc-cat { padding: 4px 10px; border-radius: 99px; background: rgba(56, 189, 248, 0.18); color: #7dd3fc; font-size: 12px; font-weight: 800; }
+.sc-title { font-size: 30px; line-height: 1.2; font-weight: 900; letter-spacing: -0.4px; }
+.sc-body { margin: 0; color: #d7e1f5; font-size: 16px; line-height: 1.5; }
+.sc-foot { display: flex; flex-direction: column; gap: 2px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.12); color: #d7e1f5; font-size: 12.5px; font-weight: 700; }
+.sc-foot span:last-child { color: #7dd3fc; font-weight: 500; font-size: 11.5px; }
+
+@media (max-width: 700px) {
+  .pillars { grid-template-columns: 1fr; }
+  .share-card-demo { transform: none; }
+}

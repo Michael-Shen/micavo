@@ -1,7 +1,7 @@
 (function () {
   var translations = {
     en: {
-      nav: { features: "Live Coaching", personas: "Personas", summary: "Summary", pricing: "Pricing", contact: "Contact" },
+      nav: { features: "AI Coach", lock: "Lock Mode", personas: "Personas", summary: "Summary", pricing: "Pricing", contact: "Contact" },
       hero: {
         eyebrow: "AI Career Copilot",
         title_html: "Get seen. <span class=\"accent\">Outshine</span> every meeting.",
@@ -11,10 +11,18 @@
         status: "AI Coach Listening",
         building: "Building context… 3/5 min"
       },
+      pillars: {
+        p1_title: "Smart AI coaching questions",
+        p1_body: "Good questions, hidden insights, and what to say next — quietly, while the meeting is still happening.",
+        p2_title: "Smart post-meeting summary",
+        p2_body: "Decisions, action items, open questions and risks, plus suggestions written for your role.",
+        p3_title: "Lock mode",
+        p3_body: "Phone down, fully present. Runs on your device, no recording, no AI — and it's free."
+      },
       live: {
-        eyebrow: "Context-Aware Coaching",
-        title_html: "Live AI <span class=\"accent\">coaching</span> during meetings.",
-        subtitle: "Get context-aware suggestions tailored to the conversation, every step of the way.",
+        eyebrow: "Smart AI Coaching",
+        title_html: "In the meeting, your AI coach slips you the <span class=\"accent\">next line</span>.",
+        subtitle: "Every few minutes, three cards arrive: a good question to ask, a hidden insight, and exactly what to say next.",
         updated: "With you for the whole meeting",
         c1_label: "Good Question",
         c1_title: "How will we measure success?",
@@ -82,6 +90,30 @@
         privacy_title: "Your conversations stay private and secure.",
         privacy_body: "We never share your data."
       },
+      lock: {
+        eyebrow: "Lock Mode",
+        title_html: "The most impressive thing in the room? <span class=\"accent\">Your full attention.</span>",
+        subtitle: "Start a phone-down session, put your phone away, and stay present until the timer ends. No recording, no AI — everything happens on your device, and it's free.",
+        l1: "Pick 15 to 90 minutes",
+        l2: "Nothing is recorded or uploaded",
+        l3: "Build a streak, then share the card",
+        mock_unit: "minutes present",
+        mock_tag: "Phone down",
+        mock_streak: "5-day streak"
+      },
+      gym: {
+        eyebrow: "Career Gym",
+        title_html: "Small daily reps. A career that <span class=\"accent\">shows</span>.",
+        subtitle: "Every day: one practice picked for your role, three smart questions you can borrow in your next meeting, and one line worth remembering. Mark it done, grow your streak, and share it.",
+        g1: "A practice for your role",
+        g2: "Three questions to borrow",
+        g3: "A streak that's easy to post",
+        card_label: "Today's career practice",
+        card_cat: "Visibility",
+        card_title: "Make results visible",
+        card_body: "Once a week, write two sentences in your team channel: what you solved and what changed.",
+        card_streak: "5-day streak"
+      },
       more: {
         eyebrow: "Beyond Live Coaching",
         title_html: "Built for how you <span class=\"accent\">actually work</span>.",
@@ -92,8 +124,8 @@
         m2_body: "Pick from 16 meeting types — 1:1s, project reviews, interviews, lectures and more — and the coaching listens for what matters in that kind of meeting.",
         m3_title: "Career Gym",
         m3_body: "One small practice a day for your role, three smart questions to borrow, and a quote worth keeping. Mark it done to build a streak, and share it as a card.",
-        m4_title: "Lock mode",
-        m4_body: "Put your phone down and stay present. Lock mode runs on your device with no recording and no AI — and it's free."
+        m4_title: "Made to share",
+        m4_body: "Turn a practice streak or a focus session into a card worth posting. Only Career Gym and Lock mode content — never your meeting."
       },
       demo: {
         eyebrow: "See It In Action",
@@ -138,7 +170,7 @@
     },
 
     zh: {
-      nav: { features: "即時教練", personas: "角色模式", summary: "會議摘要", pricing: "訂價", contact: "聯絡我們" },
+      nav: { features: "AI 教練", lock: "專注模式", personas: "角色模式", summary: "會議摘要", pricing: "訂價", contact: "聯絡我們" },
       hero: {
         eyebrow: "AI 職場副駕駛",
         title_html: "讓自己被看見，在職場<span class=\"accent\">發光發熱</span>。",
@@ -148,10 +180,18 @@
         status: "AI 教練聆聽中",
         building: "正在建立脈絡… 3/5 分鐘"
       },
+      pillars: {
+        p1_title: "智慧 AI 教練提問",
+        p1_body: "好問題、隱藏洞察、下一句怎麼說——會議還在進行時，悄悄送到你手上。",
+        p2_title: "智慧會後總結",
+        p2_body: "決策、待辦、待釐清問題與風險一次整理好，還附上為你的角色寫的行動建議。",
+        p3_title: "專注模式",
+        p3_body: "手機放下，專心在場。完全在你的裝置上運作，不錄音、不用 AI，而且免費。"
+      },
       live: {
-        eyebrow: "情境感知教練",
-        title_html: "會議中的即時 AI <span class=\"accent\">教練</span>。",
-        subtitle: "根據對話內容，全程提供有脈絡的建議。",
+        eyebrow: "智慧 AI 教練提問",
+        title_html: "開會時，AI 教練悄悄遞上你的<span class=\"accent\">下一句</span>。",
+        subtitle: "每隔幾分鐘，三張卡片送到你手上：一個好問題、一個隱藏洞察，還有下一句該怎麼說。",
         updated: "全程都在你身邊",
         c1_label: "好問題",
         c1_title: "我們要如何衡量成功？",
@@ -219,6 +259,30 @@
         privacy_title: "你的對話內容保持私密與安全。",
         privacy_body: "我們絕不分享你的資料。"
       },
+      lock: {
+        eyebrow: "專注模式",
+        title_html: "會議室裡最讓人印象深刻的，是<span class=\"accent\">你全心投入的樣子</span>。",
+        subtitle: "開始一段放下手機的專注時段，把手機收起來，專心到倒數結束。不錄音、不用 AI，一切都在你的裝置上完成，而且免費。",
+        l1: "15 到 90 分鐘任你選",
+        l2: "不錄音、也不上傳任何內容",
+        l3: "累積連續天數，再做成分享卡",
+        mock_unit: "分鐘專心在場",
+        mock_tag: "放下手機",
+        mock_streak: "連續 5 天"
+      },
+      gym: {
+        eyebrow: "職涯健身房",
+        title_html: "每天一小步，讓職涯<span class=\"accent\">被看見</span>。",
+        subtitle: "每天：一個依你角色挑選的小練習、三個下一場會議就能借用的好問題，還有一句值得記住的話。完成後累積連續天數，也能一鍵分享。",
+        g1: "符合你角色的練習",
+        g2: "三個可以直接借用的好問題",
+        g3: "好分享的連續天數",
+        card_label: "今日職涯小練習",
+        card_cat: "能見度",
+        card_title: "讓成果看得見",
+        card_body: "每週在團隊頻道用兩句話寫下你解決了什麼、帶來什麼改變。",
+        card_streak: "連續 5 天"
+      },
       more: {
         eyebrow: "不只是即時教練",
         title_html: "貼近你<span class=\"accent\">實際工作</span>的方式。",
@@ -229,8 +293,8 @@
         m2_body: "從一對一、專案審查、面試、課程講座等 16 種會議類型中選擇，教練會聽出該類型會議真正重要的事。",
         m3_title: "職涯健身房",
         m3_body: "每天一個符合你角色的小練習、三個可以直接借用的好問題，還有一句值得記住的話。完成後累積連續天數，也能做成分享卡。",
-        m4_title: "專注模式",
-        m4_body: "把手機放下，專心在當下。專注模式完全在你的裝置上運作，不錄音、不用 AI，而且免費。"
+        m4_title: "值得分享",
+        m4_body: "把練習連續天數或專注時段做成一張值得發的卡片。只會有職涯健身房與專注模式的內容，絕不會出現你的會議。"
       },
       demo: {
         eyebrow: "實際操作",
@@ -275,7 +339,7 @@
     },
 
     ja: {
-      nav: { features: "ライブコーチング", personas: "ペルソナ", summary: "会議の要約", pricing: "料金", contact: "お問い合わせ" },
+      nav: { features: "AIコーチ", lock: "集中モード", personas: "ペルソナ", summary: "会議の要約", pricing: "料金", contact: "お問い合わせ" },
       hero: {
         eyebrow: "AIキャリアコパイロット",
         title_html: "見られる存在になり、職場で<span class=\"accent\">輝く</span>。",
@@ -285,10 +349,18 @@
         status: "AIコーチが聞いています",
         building: "コンテキストを構築中… 3/5分"
       },
+      pillars: {
+        p1_title: "賢いAIコーチの質問",
+        p1_body: "良い質問、隠れたインサイト、次のひと言を、会議が進んでいる最中にそっと届けます。",
+        p2_title: "賢い会議後の要約",
+        p2_body: "決定事項、アクション、未解決の問い、リスクに加え、あなたの役割に合わせた提案も。",
+        p3_title: "集中モード",
+        p3_body: "スマホを置いて、その場に集中。端末上で動作し、録音もAIも使わず、無料です。"
+      },
       live: {
-        eyebrow: "コンテキストに応じたコーチング",
-        title_html: "会議中のライブAI<span class=\"accent\">コーチング</span>。",
-        subtitle: "会話の文脈に合わせて、会議の間ずっと提案を取得。",
+        eyebrow: "賢いAIコーチの質問",
+        title_html: "会議中、AIコーチがそっと<span class=\"accent\">次のひと言</span>を届けます。",
+        subtitle: "数分ごとに3枚のカードが届きます：投げかけたい良い質問、隠れたインサイト、そして次に言うべきひと言。",
         updated: "会議中はずっとあなたのそばに",
         c1_label: "良い質問",
         c1_title: "成功をどう測りますか？",
@@ -356,6 +428,30 @@
         privacy_title: "あなたの会話は常にプライベートかつ安全です。",
         privacy_body: "データを共有することはありません。"
       },
+      lock: {
+        eyebrow: "集中モード",
+        title_html: "会議室で一番印象に残るのは、<span class=\"accent\">あなたの集中</span>。",
+        subtitle: "スマホを置く集中セッションを始めて、タイマーが終わるまでその場に集中。録音もAIも使わず、すべて端末上で完結し、無料です。",
+        l1: "15〜90分から選べます",
+        l2: "録音もアップロードもしません",
+        l3: "連続日数を伸ばして、カードでシェア",
+        mock_unit: "分、集中",
+        mock_tag: "スマホを置く",
+        mock_streak: "5日連続"
+      },
+      gym: {
+        eyebrow: "キャリアジム",
+        title_html: "毎日ちょっとずつ、キャリアが<span class=\"accent\">見える</span>ように。",
+        subtitle: "毎日、あなたの役割に合わせた練習をひとつ、次の会議で使える質問を3つ、心に残る一言をお届け。完了して連続日数を伸ばし、シェアもできます。",
+        g1: "あなたの役割に合った練習",
+        g2: "使える質問が3つ",
+        g3: "シェアしたくなる連続日数",
+        card_label: "今日のキャリア練習",
+        card_cat: "可視性",
+        card_title: "成果を見える形に",
+        card_body: "週に一度、チームのチャンネルに「何を解決し、何が変わったか」を2文で書きましょう。",
+        card_streak: "5日連続"
+      },
       more: {
         eyebrow: "ライブコーチングの先へ",
         title_html: "あなたの<span class=\"accent\">働き方</span>に合わせて。",
@@ -366,8 +462,8 @@
         m2_body: "1on1、プロジェクトレビュー、面接、講義など16種類の会議タイプから選ぶと、その会議で大事なポイントに合わせてコーチングします。",
         m3_title: "キャリアジム",
         m3_body: "あなたの役割に合わせた毎日ひとつの小さな練習、使える質問を3つ、心に残る一言。完了して連続日数を伸ばし、カードとしてシェアもできます。",
-        m4_title: "集中モード",
-        m4_body: "スマホを置いて、その場に集中。集中モードは端末上で動作し、録音もAIも使わず、無料です。"
+        m4_title: "シェアしたくなる",
+        m4_body: "練習の連続日数や集中セッションを、投稿したくなるカードに。キャリアジムと集中モードの内容だけで、会議の内容は載りません。"
       },
       demo: {
         eyebrow: "実際の動作",
