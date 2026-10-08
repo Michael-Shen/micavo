@@ -1035,3 +1035,12 @@ h1 {
     padding: 64px 0;
   }
 }
+
+.pricing-note {
+  max-width: 1080px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}

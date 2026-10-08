@@ -16,15 +16,15 @@
         title_html: "Live AI <span class=\"accent\">coaching</span> during meetings.",
         subtitle: "Get context-aware suggestions tailored to the conversation, every step of the way.",
         updated: "With you for the whole meeting",
-        c1_label: "Strategic Question",
+        c1_label: "Good Question",
         c1_title: "How will we measure success?",
         c1_body: "Ask the question that moves the discussion forward.",
-        c2_label: "Risk Alert",
-        c2_title: "What could be the biggest risk?",
-        c2_body: "Surface potential risks before they become problems.",
+        c2_label: "Hidden Insight",
+        c2_title: "The real blocker is ownership, not timing.",
+        c2_body: "Spot what's underneath before it becomes a problem.",
         c3_label: "What to Say Next",
-        c3_title: "Should we clarify who owns this decision?",
-        c3_body: "Drive clarity and accountability."
+        c3_title: "Let's confirm who owns this decision.",
+        c3_body: "Say it plainly to drive clarity and accountability."
       },
       personas: {
         eyebrow: "Persona Coach",
@@ -43,7 +43,7 @@
       summary: {
         eyebrow: "After The Meeting",
         title_html: "Leave every meeting with <span class=\"accent\">total clarity</span>.",
-        subtitle: "AI summaries, key decisions, action items, open questions, and risks — automatically.",
+        subtitle: "AI summaries, key decisions, action items, open questions and risks — plus suggestions just for you, automatically.",
         heading: "Meeting Summary",
         meeting_title: "Product Roadmap Review",
         meeting_meta: "May 15, 2024 · 45:32 · 8 participants",
@@ -62,7 +62,10 @@
         q2: "Do we have customer data for use case #3?",
         risks_label: "Risks",
         r1: "Launch delay due to backend dependencies",
-        r2: "Limited bandwidth from design team in June"
+        r2: "Limited bandwidth from design team in June",
+        foryou_label: "For You",
+        fy1: "Ask who owns the launch checklist before the next sync.",
+        fy2: "Say the Q3 trade-off in one sentence at the next review."
       },
       how: {
         eyebrow: "How It Works",
@@ -78,6 +81,19 @@
         s4_body: "Use AI-suggested questions and insights to guide the conversation.",
         privacy_title: "Your conversations stay private and secure.",
         privacy_body: "We never share your data."
+      },
+      more: {
+        eyebrow: "Beyond Live Coaching",
+        title_html: "Built for how you <span class=\"accent\">actually work</span>.",
+        subtitle: "Choose how Outshine helps, tune it to the meeting, and keep growing between meetings.",
+        m1_title: "Two ways to use it",
+        m1_body: "Coach mode shows live cards as you go. Summary mode just listens, then hands you a clear summary — ideal when you only need the takeaways.",
+        m2_title: "Tuned to the meeting",
+        m2_body: "Pick from 16 meeting types — 1:1s, project reviews, interviews, lectures and more — and the coaching listens for what matters in that kind of meeting.",
+        m3_title: "Career Gym",
+        m3_body: "One small practice a day for your role, three smart questions to borrow, and a quote worth keeping. Mark it done to build a streak, and share it as a card.",
+        m4_title: "Lock mode",
+        m4_body: "Put your phone down and stay present. Lock mode runs on your device with no recording and no AI — and it's free."
       },
       demo: {
         eyebrow: "See It In Action",
@@ -97,17 +113,21 @@
       },
       pricing: {
         eyebrow: "Pricing",
-        title: "Start free. Upgrade when you're ready.",
-        subtitle: "Outshine starts by helping you answer the question that matters in the moment: what should I say next?",
-        free_badge: "One-time free credit",
-        free_title: "Free",
-        free_body: "60 minutes, once — experience a full recording, live coaching, and summary cycle before you pay anything.",
-        pro_badge: "Most popular",
-        pro_title: "Pro",
-        pro_body: "400 meeting minutes a month with live coaching, smart suggestion cards, strategic prompts, meeting summaries, and persona modes.",
-        premium_badge: "New",
-        premium_title: "Premium",
-        premium_body: "800 meeting minutes a month, plus AI Memory that carries context across meetings and an after-meeting AI conversation for deeper, more personalized coaching over time."
+        title: "Start with Lock mode. Go Pro when you want a coach.",
+        subtitle: "Lock mode is free. Pro adds live coaching and meeting summaries.",
+        free_badge: "Free",
+        free_title: "Lock mode",
+        free_price: "$0",
+        free_body: "Phone-down focus sessions that run on your device — no recording, no AI. Recorded coaching and summaries need Pro.",
+        monthly_badge: "Flexible",
+        monthly_title: "Pro Monthly",
+        monthly_price: "$19.99<span>/month</span>",
+        monthly_body: "500 meeting minutes a month with live coaching, meeting summaries, meeting types, persona modes and Career Gym.",
+        yearly_badge: "Best value",
+        yearly_title: "Pro Yearly",
+        yearly_price: "$159.99<span>/year</span>",
+        yearly_body: "Everything in Pro, billed yearly. New subscribers who qualify get a 3-day free trial (up to 30 minutes of meeting time) — the app only shows it when the App Store confirms you're eligible.",
+        note: "Prices in US dollars. The price in your App Store may differ by region. Manage or cancel any time in your Apple ID settings."
       },
       footer: {
         copy: "© 2026 Micavo",
@@ -133,15 +153,15 @@
         title_html: "會議中的即時 AI <span class=\"accent\">教練</span>。",
         subtitle: "根據對話內容，全程提供有脈絡的建議。",
         updated: "全程都在你身邊",
-        c1_label: "策略性問題",
+        c1_label: "好問題",
         c1_title: "我們要如何衡量成功？",
         c1_body: "問出能推動討論前進的問題。",
-        c2_label: "風險提醒",
-        c2_title: "最大的風險可能是什麼？",
-        c2_body: "在風險變成問題之前先提出來。",
-        c3_label: "接下來該說什麼",
-        c3_title: "我們是否該釐清這個決定由誰負責？",
-        c3_body: "釐清責任歸屬，推動共識。"
+        c2_label: "隱藏洞察",
+        c2_title: "真正的卡點是誰負責，不是時程。",
+        c2_body: "在問題浮現之前，先看見底下的癥結。",
+        c3_label: "下一句怎麼說",
+        c3_title: "我們先確認這個決定由誰負責。",
+        c3_body: "直接說出來，釐清責任、推動共識。"
       },
       personas: {
         eyebrow: "角色教練",
@@ -160,7 +180,7 @@
       summary: {
         eyebrow: "會議結束後",
         title_html: "讓每場會議都<span class=\"accent\">清晰明確</span>地結束。",
-        subtitle: "自動產生 AI 摘要、關鍵決策、待辦事項、待解問題與風險。",
+        subtitle: "自動產生 AI 摘要、關鍵決策、待辦事項、待解問題與風險，還有專屬於你的行動建議。",
         heading: "會議摘要",
         meeting_title: "產品路線圖回顧",
         meeting_meta: "2024 年 5 月 15 日 · 45:32 · 8 位參與者",
@@ -179,7 +199,10 @@
         q2: "我們有第 3 個使用案例的客戶資料嗎？",
         risks_label: "風險",
         r1: "後端相依性可能導致上線延遲",
-        r2: "六月設計團隊人力有限"
+        r2: "六月設計團隊人力有限",
+        foryou_label: "給你的建議",
+        fy1: "下次同步前，先問清楚上線檢查清單由誰負責。",
+        fy2: "下次檢討時，用一句話說明第三季的取捨。"
       },
       how: {
         eyebrow: "運作方式",
@@ -195,6 +218,19 @@
         s4_body: "運用 AI 建議的問題與觀點，引導對話方向。",
         privacy_title: "你的對話內容保持私密與安全。",
         privacy_body: "我們絕不分享你的資料。"
+      },
+      more: {
+        eyebrow: "不只是即時教練",
+        title_html: "貼近你<span class=\"accent\">實際工作</span>的方式。",
+        subtitle: "選擇 Outshine 幫你的方式，依會議調整，會議之間也持續成長。",
+        m1_title: "兩種使用方式",
+        m1_body: "教練模式會在會議中即時給你建議卡；會後總結模式只在背景聆聽，結束後給你一份清楚的摘要，只想要重點時最適合。",
+        m2_title: "依會議類型調整",
+        m2_body: "從一對一、專案審查、面試、課程講座等 16 種會議類型中選擇，教練會聽出該類型會議真正重要的事。",
+        m3_title: "職涯健身房",
+        m3_body: "每天一個符合你角色的小練習、三個可以直接借用的好問題，還有一句值得記住的話。完成後累積連續天數，也能做成分享卡。",
+        m4_title: "專注模式",
+        m4_body: "把手機放下，專心在當下。專注模式完全在你的裝置上運作，不錄音、不用 AI，而且免費。"
       },
       demo: {
         eyebrow: "實際操作",
@@ -214,17 +250,21 @@
       },
       pricing: {
         eyebrow: "訂價",
-        title: "免費開始，準備好再升級。",
-        subtitle: "Outshine 從解決你當下最關心的問題開始：接下來該說什麼？",
-        free_badge: "一次性免費額度",
-        free_title: "免費版",
-        free_body: "一次性 60 分鐘，免費體驗完整的錄音、即時教練與會議摘要流程，無需先付費。",
-        pro_badge: "最受歡迎",
-        pro_title: "專業版",
-        pro_body: "每月 400 分鐘會議時間，含即時教練、智慧建議卡、策略提示、會議摘要與角色模式。",
-        premium_badge: "新功能",
-        premium_title: "進階版",
-        premium_body: "每月 800 分鐘會議時間，外加跨會議的 AI 記憶與會後 AI 對話，讓教練建議隨著時間更貼合你。"
+        title: "從專注模式免費開始，需要教練時再升級專業版。",
+        subtitle: "專注模式免費。專業版加上即時教練與會議摘要。",
+        free_badge: "免費",
+        free_title: "專注模式",
+        free_price: "$0",
+        free_body: "在你的裝置上運作的放下手機專注時段，不錄音、不用 AI。錄音教練與會議摘要需要專業版。",
+        monthly_badge: "彈性選擇",
+        monthly_title: "專業版 月繳",
+        monthly_price: "$19.99<span>/月</span>",
+        monthly_body: "每月 500 分鐘會議時間，含即時教練、會議摘要、會議類型、角色模式與職涯健身房。",
+        yearly_badge: "最划算",
+        yearly_title: "專業版 年繳",
+        yearly_price: "$159.99<span>/年</span>",
+        yearly_body: "專業版的所有功能，以年費計算。符合資格的新訂閱者可享 3 天免費試用（最多 30 分鐘會議時間）；只有在 App Store 確認你符合資格時，App 才會顯示。",
+        note: "價格以美元顯示，你在 App Store 看到的價格可能因地區而異。可隨時在 Apple ID 設定中管理或取消訂閱。"
       },
       footer: {
         copy: "© 2026 Micavo",
@@ -250,15 +290,15 @@
         title_html: "会議中のライブAI<span class=\"accent\">コーチング</span>。",
         subtitle: "会話の文脈に合わせて、会議の間ずっと提案を取得。",
         updated: "会議中はずっとあなたのそばに",
-        c1_label: "戦略的な質問",
-        c1_title: "成功をどう測定しますか？",
-        c1_body: "議論を前進させる質問をしましょう。",
-        c2_label: "リスクアラート",
-        c2_title: "最大のリスクは何でしょうか？",
-        c2_body: "リスクが問題になる前に表面化しましょう。",
-        c3_label: "次に言うべきこと",
-        c3_title: "この決定の責任者を明確にすべきでしょうか？",
-        c3_body: "明確さと責任を促進します。"
+        c1_label: "良い質問",
+        c1_title: "成功をどう測りますか？",
+        c1_body: "議論を前に進める質問を投げかけましょう。",
+        c2_label: "隠れたインサイト",
+        c2_title: "本当の障害はスケジュールではなく担当の曖昧さです。",
+        c2_body: "問題になる前に、根っこにあるものを見つけます。",
+        c3_label: "次に言うこと",
+        c3_title: "この決定の担当者を確認しましょう。",
+        c3_body: "はっきり言葉にして、責任と合意を進めます。"
       },
       personas: {
         eyebrow: "ペルソナコーチ",
@@ -277,7 +317,7 @@
       summary: {
         eyebrow: "会議後",
         title_html: "すべての会議を<span class=\"accent\">完全な明確さ</span>で終える。",
-        subtitle: "AIによる要約、重要な決定、アクションアイテム、未解決の質問、リスクを自動的に。",
+        subtitle: "AI要約、重要な決定事項、アクション項目、未解決の問い、リスクに加えて、あなた向けの提案も自動で。",
         heading: "会議の要約",
         meeting_title: "プロダクトロードマップレビュー",
         meeting_meta: "2024年5月15日 · 45:32 · 参加者8名",
@@ -296,7 +336,10 @@
         q2: "ユースケース#3の顧客データはありますか？",
         risks_label: "リスク",
         r1: "バックエンドの依存関係によるローンチ延期",
-        r2: "6月のデザインチームのリソース不足"
+        r2: "6月のデザインチームのリソース不足",
+        foryou_label: "あなたへの提案",
+        fy1: "次の定例の前に、リリースのチェックリストの担当者を確認しましょう。",
+        fy2: "次のレビューで、第3四半期のトレードオフを一言で伝えましょう。"
       },
       how: {
         eyebrow: "仕組み",
@@ -312,6 +355,19 @@
         s4_body: "AIが提案する質問や視点を活用して議論を導きます。",
         privacy_title: "あなたの会話は常にプライベートかつ安全です。",
         privacy_body: "データを共有することはありません。"
+      },
+      more: {
+        eyebrow: "ライブコーチングの先へ",
+        title_html: "あなたの<span class=\"accent\">働き方</span>に合わせて。",
+        subtitle: "使い方を選び、会議に合わせて調整し、会議の合間も成長し続けられます。",
+        m1_title: "2つの使い方",
+        m1_body: "コーチモードは会議中にライブカードを表示。要約モードはバックグラウンドで聞くだけで、終了後に分かりやすい要約を届けます。要点だけ欲しいときに最適です。",
+        m2_title: "会議に合わせて調整",
+        m2_body: "1on1、プロジェクトレビュー、面接、講義など16種類の会議タイプから選ぶと、その会議で大事なポイントに合わせてコーチングします。",
+        m3_title: "キャリアジム",
+        m3_body: "あなたの役割に合わせた毎日ひとつの小さな練習、使える質問を3つ、心に残る一言。完了して連続日数を伸ばし、カードとしてシェアもできます。",
+        m4_title: "集中モード",
+        m4_body: "スマホを置いて、その場に集中。集中モードは端末上で動作し、録音もAIも使わず、無料です。"
       },
       demo: {
         eyebrow: "実際の動作",
@@ -331,17 +387,21 @@
       },
       pricing: {
         eyebrow: "料金",
-        title: "無料で始めて、準備ができたらアップグレード。",
-        subtitle: "Outshineは、今この瞬間に大事な問いに応えることから始まります：次に何を言うべきか？",
-        free_badge: "一度限りの無料クレジット",
-        free_title: "Free",
-        free_body: "一度だけ60分間、録音・ライブコーチング・要約までの全体験を無料で。お支払いの前にお試しいただけます。",
-        pro_badge: "人気No.1",
-        pro_title: "Pro",
-        pro_body: "月400分の会議時間、ライブコーチング、スマート提案カード、戦略的プロンプト、会議の要約、ペルソナモード付き。",
-        premium_badge: "New",
-        premium_title: "Premium",
-        premium_body: "月800分の会議時間に加え、会議をまたいで記憶するAIメモリーと会議後のAI対話で、コーチングが時間とともにより個人に最適化されます。"
+        title: "集中モードは無料。コーチが欲しくなったらPro。",
+        subtitle: "集中モードは無料です。Proでライブコーチングと会議の要約が使えます。",
+        free_badge: "無料",
+        free_title: "集中モード",
+        free_price: "$0",
+        free_body: "端末上で動作する、スマホを置く集中セッション。録音もAIも使いません。録音コーチングと要約にはProが必要です。",
+        monthly_badge: "柔軟に",
+        monthly_title: "Pro 月額",
+        monthly_price: "$19.99<span>/月</span>",
+        monthly_body: "月500分の会議時間。ライブコーチング、会議の要約、会議タイプ、ペルソナモード、キャリアジム付き。",
+        yearly_badge: "お得",
+        yearly_title: "Pro 年額",
+        yearly_price: "$159.99<span>/年</span>",
+        yearly_body: "Proのすべての機能を年額で。対象となる新規登録の方は3日間の無料トライアル（会議時間は最大30分）をご利用いただけます。App Storeが対象と確認した場合のみ、アプリに表示されます。",
+        note: "料金は米ドル表示です。App Storeでの価格は地域により異なる場合があります。管理・解約はいつでもApple IDの設定から行えます。"
       },
       footer: {
         copy: "© 2026 Micavo",
