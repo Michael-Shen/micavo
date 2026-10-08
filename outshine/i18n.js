@@ -5,7 +5,7 @@
       hero: {
         eyebrow: "AI Career Copilot",
         title_html: "Get seen. <span class=\"accent\">Outshine</span> every meeting.",
-        subtitle: "Your AI Career Copilot for every meeting — live coaching, persona-aware suggestions, and instant summaries.",
+        subtitle: "Your AI Career Copilot for meetings — smart AI coaching questions, clear post-meeting summaries, and a Lock mode that keeps you present.",
         cta1: "Download on the App Store",
         cta2: "See How It Works",
         status: "AI Coach Listening",
@@ -142,7 +142,7 @@
       hero: {
         eyebrow: "AI 職場副駕駛",
         title_html: "讓自己被看見，在職場<span class=\"accent\">發光發熱</span>。",
-        subtitle: "Outshine 是你的 AI 職場副駕駛，陪你度過每一場會議——即時教練、角色化建議與即時摘要。",
+        subtitle: "Outshine 是你的 AI 職場副駕駛——智慧 AI 教練提問、清楚的會後總結，以及讓你專心開會的專注模式。",
         cta1: "前往 App Store 下載",
         cta2: "看看怎麼運作",
         status: "AI 教練聆聽中",
@@ -279,7 +279,7 @@
       hero: {
         eyebrow: "AIキャリアコパイロット",
         title_html: "見られる存在になり、職場で<span class=\"accent\">輝く</span>。",
-        subtitle: "Outshineは、あらゆる会議に対応するあなたのAIキャリアコパイロットです。ライブコーチング、ペルソナに応じた提案、即座の要約を提供します。",
+        subtitle: "会議のためのAIキャリアコパイロット——賢いAIコーチの質問、わかりやすい会議後の要約、そして会議に集中できる集中モード。",
         cta1: "App Storeでダウンロード",
         cta2: "仕組みを見る",
         status: "AIコーチが聞いています",
