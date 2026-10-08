@@ -1150,3 +1150,51 @@ body { overflow-x: clip; }
 @media (max-width: 700px) {
   .section { padding: 48px 0; }
 }
+
+/* Option A: dark throughout, each band has its own colour glow + a hairline divider, closing CTA is a bright card */
+.section.split-section,
+.section.section-tinted { position: relative; }
+.section[id]:not(.pricing-section):not(.demo-section)::before,
+.section[id]:not(.pricing-section):not(.demo-section)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.section[id]:not(.pricing-section):not(.demo-section)::before {
+  top: 0; bottom: 0;
+  background: var(--band-glow, none);
+  z-index: 0;
+}
+.section[id]:not(.pricing-section):not(.demo-section)::after {
+  bottom: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.55), rgba(79, 140, 255, 0.55), transparent);
+}
+.section[id] > * { position: relative; z-index: 1; }
+
+#live-coaching { --band-glow: radial-gradient(640px 420px at 20% 50%, rgba(79, 140, 255, 0.24), transparent 70%); }
+#personas      { --band-glow: radial-gradient(640px 420px at 82% 50%, rgba(139, 92, 246, 0.24), transparent 70%); }
+#summary       { --band-glow: radial-gradient(640px 420px at 18% 50%, rgba(45, 212, 191, 0.18), transparent 70%); }
+#lock          { --band-glow: radial-gradient(640px 420px at 80% 50%, rgba(255, 138, 31, 0.2), transparent 70%); }
+#gym           { --band-glow: radial-gradient(640px 420px at 20% 50%, rgba(56, 189, 248, 0.22), transparent 70%); }
+#more          { --band-glow: radial-gradient(900px 360px at 50% 0%, rgba(139, 92, 246, 0.2), transparent 70%); }
+
+/* Bright closing card */
+.final-cta.section-light { background: var(--bg); }
+.final-cta.section-light .section {
+  padding: 64px 48px;
+  margin: 72px auto;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #f6f3ff 0%, #e6edff 100%);
+  box-shadow: 0 30px 80px rgba(79, 70, 229, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+}
+.final-cta.section-light .section h2 { color: #1b1d2b; }
+.final-cta.section-light .section p,
+.final-cta.section-light .section .feature-trio p { color: #5b5f78; }
+.final-cta.section-light .section .feature-trio h3 { color: #1b1d2b; }
+.final-cta.section-light .section .accent { background: linear-gradient(90deg, #6d28d9, #3b7bff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@media (max-width: 700px) {
+  .final-cta.section-light .section { padding: 44px 22px; margin: 40px auto; }
+}
