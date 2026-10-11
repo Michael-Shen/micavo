@@ -241,7 +241,7 @@
       <p class="eyebrow">App privacy</p>
       <h1 id="privacy-title">Outshine Privacy Policy</h1>
       <p>
-        Last updated: October 8, 2026. Outshine is operated by Micavo. This policy explains how the app
+        Last updated: October 11, 2026. Outshine is operated by Micavo. This policy explains how the app
         handles account, meeting recording, AI analysis, career-signal, and subscription data.
       </p>
     </section>
@@ -278,12 +278,31 @@
       </section>
 
       <section class="legal-card">
-        <h2>3. AI Meeting Analysis</h2>
+        <h2>3. AI Meeting Analysis and Third-Party AI Service (Google Gemini)</h2>
         <p>
-          While you record, audio is uploaded in short segments and sent to Google's Gemini AI to generate a
-          transcript, a rolling summary, and coaching suggestions (such as a strategic question to ask, a
-          potential blind spot, or a suggested next step). At the end of a meeting, Gemini also generates a
-          short meeting summary from the full transcript.
+          Outshine uses a third-party AI service, <strong>Google's Gemini AI</strong>, to turn your meetings into
+          a transcript, coaching suggestions (such as a strategic question to ask, a potential blind spot, or a
+          suggested next step), and a meeting summary. To do this the app sends the following data to Google
+          through the Gemini API:
+        </p>
+        <ul>
+          <li>Your meeting audio, recorded on your device after you tap start and uploaded in short segments.</li>
+          <li>The transcript made from that audio, including the full transcript at the end of a meeting to write the summary.</li>
+          <li>Your role, career goal, and meeting type, used to tailor the coaching and summary to you.</li>
+          <li>If you have Pro: the messages you type in the post-meeting AI conversation, and the short memory summary made from those messages.</li>
+        </ul>
+        <p>
+          This data is used only to produce your transcript, coaching cards, summary, and AI conversation. It is
+          not sold, and it is not used for advertising. Audio is deleted from our storage once a meeting has been
+          processed. We use Google's paid Gemini API; under Google's terms for paid API services, content sent
+          through the API is not used to train Google's models, and Google's own data-protection commitments
+          apply to it.
+        </p>
+        <p>
+          <strong>Your permission.</strong> Before your first recording, the app shows what is sent and to whom, and
+          asks you to agree. Nothing is recorded or sent until you do. You can read the same explanation, and
+          withdraw your consent at any time, in Settings &rarr; AI data processing. Focus mode and the Career Gym
+          do not send any data.
         </p>
         <p>
           AI-generated coaching, summaries, and any career-signal interpretation are informational estimates
@@ -357,7 +376,7 @@
         <ul>
           <li>Apple Sign In and Google Sign-In for account access.</li>
           <li>Firebase (Authentication, Firestore, Cloud Storage, Cloud Functions, Cloud Messaging) for backend services, data storage, and notifications.</li>
-          <li>Google Gemini for meeting transcription, coaching generation, and meeting summaries.</li>
+          <li>Google Gemini (a third-party AI service) for meeting transcription, coaching generation, and meeting summaries. See Section 3 for exactly what is sent and how you give or withdraw permission.</li>
           <li>RevenueCat and Apple App Store systems for subscription status and purchase validation.</li>
         </ul>
       </section>
