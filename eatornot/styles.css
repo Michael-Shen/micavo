@@ -1717,3 +1717,27 @@ h1 {
 :root[data-lang="ja"] .plan-copy h3 {
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
 }
+
+
+/* AI badge under the hero eyebrow */
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 16px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(34, 107, 255, 0.1);
+  border: 1px solid rgba(34, 107, 255, 0.28);
+  color: var(--blue-deep);
+  font-size: 13.5px;
+  font-weight: 800;
+}
+
+.footer-disclaimer {
+  flex-basis: 100%;
+  width: 100%;
+  margin: 10px 0 0;
+  font-size: 12px;
+  opacity: 0.65;
+}
