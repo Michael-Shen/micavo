@@ -949,6 +949,14 @@ h1 {
   line-height: 1.6;
 }
 
+.footer-disclaimer {
+  flex-basis: 100%;
+  margin: -4px 0 18px;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
 .footer {
   min-height: 86px;
   display: flex;

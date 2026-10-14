@@ -3,7 +3,7 @@
     en: {
       nav: { features: "AI Coach", lock: "Lock Mode", personas: "Personas", summary: "Summary", pricing: "Pricing", contact: "Contact" },
       hero: {
-        eyebrow: "AI Career Copilot",
+        eyebrow: "AI built in · Built with Google Gemini",
         title_html: "Get seen. <span class=\"accent\">Outshine</span> every meeting.",
         subtitle: "Your AI Career Copilot for meetings — smart AI coaching questions, clear post-meeting summaries, and a Lock mode that keeps you present.",
         cta1: "Download on the App Store",
@@ -164,6 +164,7 @@
       },
       footer: {
         copy: "© 2026 Micavo",
+        disclaimer: "Gemini is a trademark of Google LLC. Outshine is not affiliated with or endorsed by Google.",
         home: "Micavo",
         privacy: "Privacy Policy",
         terms: "Terms of Service"
@@ -173,7 +174,7 @@
     zh: {
       nav: { features: "AI 教練", lock: "專注模式", personas: "角色模式", summary: "會議摘要", pricing: "訂價", contact: "聯絡我們" },
       hero: {
-        eyebrow: "AI 職場副駕駛",
+        eyebrow: "內建 AI · 採用 Google Gemini 打造",
         title_html: "讓自己被看見，在職場<span class=\"accent\">發光發熱</span>。",
         subtitle: "Outshine 是你的 AI 職場副駕駛——智慧 AI 教練提問、清楚的會後總結，以及讓你專心開會的專注模式。",
         cta1: "前往 App Store 下載",
@@ -334,6 +335,7 @@
       },
       footer: {
         copy: "© 2026 Micavo",
+        disclaimer: "Gemini 為 Google LLC 的商標。Outshine 與 Google 無關聯，亦未獲 Google 背書。",
         home: "Micavo",
         privacy: "隱私權政策",
         terms: "服務條款"
@@ -343,7 +345,7 @@
     ja: {
       nav: { features: "AIコーチ", lock: "集中モード", personas: "ペルソナ", summary: "会議の要約", pricing: "料金", contact: "お問い合わせ" },
       hero: {
-        eyebrow: "AIキャリアコパイロット",
+        eyebrow: "AI 搭載 · Google Gemini で構築",
         title_html: "見られる存在になり、職場で<span class=\"accent\">輝く</span>。",
         subtitle: "会議のためのAIキャリアコパイロット——賢いAIコーチの質問、わかりやすい会議後の要約、そして会議に集中できる集中モード。",
         cta1: "App Storeでダウンロード",
@@ -504,6 +506,7 @@
       },
       footer: {
         copy: "© 2026 Micavo",
+        disclaimer: "Gemini は Google LLC の商標です。Outshine は Google と提携しておらず、Google の承認を受けたものではありません。",
         home: "Micavo",
         privacy: "プライバシーポリシー",
         terms: "利用規約"
