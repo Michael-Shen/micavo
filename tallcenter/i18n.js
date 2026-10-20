@@ -236,6 +236,7 @@
   Object.assign(translations['zh-Hant'], {
     'Download on the App Store': '在 App Store 下載',
     'Download on the App Store ↗': '在 App Store 下載 ↗',
+    'How tall will I be?': '我會長多高？',
     'Explore it on the App Store ↗': '前往 App Store 探索 ↗',
     'Get TallCenter': '下載 TallCenter',
     'Available now on the App Store': '現已在 App Store 上架',
@@ -245,6 +246,7 @@
   Object.assign(translations.ja, {
     'Download on the App Store': 'App Storeでダウンロード',
     'Download on the App Store ↗': 'App Storeでダウンロード ↗',
+    'How tall will I be?': '身長はどれくらい伸びる？',
     'Explore it on the App Store ↗': 'App Storeで詳しく見る ↗',
     'Get TallCenter': 'TallCenterをダウンロード',
     'Available now on the App Store': 'App Storeで配信中',

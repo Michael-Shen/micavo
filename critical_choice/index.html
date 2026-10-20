@@ -761,7 +761,10 @@
         .sticky-cta { display: none; }
 
         @media (max-width: 900px) {
-            .nav-download { display: none; }
+            .nav-download { padding: 7px 12px; font-size: 13px; }
+            .nav-container > div { gap: 8px !important; }
+            .nav-container .logo { font-size: 15px; gap: 8px; white-space: nowrap; }
+            .nav-container .lang-btn { white-space: nowrap; padding: 6px 7px; font-size: 12px; }
             .hero-cta { flex-direction: column; gap: 18px; }
             .btn-store { width: auto !important; }
             .sticky-cta {
@@ -774,10 +777,7 @@
                 backdrop-filter: blur(16px);
                 -webkit-backdrop-filter: blur(16px);
                 border-top: 1px solid rgba(20, 20, 60, 0.08);
-                transform: translateY(110%);
-                transition: transform 0.3s ease;
             }
-            .sticky-cta.show { transform: translateY(0); }
             .sticky-cta a {
                 display: flex;
                 align-items: center;
@@ -2437,16 +2437,6 @@
             slider.addEventListener('mouseleave', restart);
             show(0);
             restart();
-        })();
-
-        // Mobile: show the sticky download bar once the hero is out of view
-        (function () {
-            const bar = document.getElementById('stickyCta');
-            const hero = document.querySelector('.hero');
-            if (!bar || !hero || !('IntersectionObserver' in window)) return;
-            new IntersectionObserver(function (entries) {
-                bar.classList.toggle('show', !entries[0].isIntersecting);
-            }, { threshold: 0 }).observe(hero);
         })();
 </script>
     <div class="sticky-cta" id="stickyCta">
