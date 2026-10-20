@@ -13,6 +13,9 @@
   <link rel="icon" type="image/png" href="./assets/images/app_icon_final.png" />
   <link rel="apple-touch-icon" href="./assets/images/app_icon_final.png" />
   <link rel="canonical" href="https://micavo.app/eatornot/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" />
   <link rel="stylesheet" href="./styles.css" />
 
   <!-- Google Analytics (GA4) -->
@@ -59,7 +62,7 @@
         </div>
 
         <div class="phone-preview" aria-hidden="true">
-          <img src="./assets/images/6.png" alt="" />
+          <img src="./assets/images/hero_today.png" data-src-zh-Hant="./assets/images/hero_today_zh.png" data-src-ja="./assets/images/hero_today_ja.png" alt="" />
         </div>
 
         <div class="decision-card" aria-hidden="true">
@@ -105,6 +108,42 @@
         <p class="small-note" data-i18n="hero.note">
           Built for eating out, snacks, bubble tea, and real busy days.
         </p>
+      </div>
+    </section>
+
+    <section class="section key-section" id="key-features" aria-labelledby="key-title">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="key.eyebrow">Three things it does best</p>
+        <h2 id="key-title" data-i18n="key.title">Next meal. Green light. Real data.</h2>
+      </div>
+
+      <div class="key-grid">
+        <article class="key-card key-card-meal">
+          <span class="key-num" aria-hidden="true">1</span>
+          <img src="./assets/images/next_meal_planner.png" data-src-zh-Hant="./assets/images/next_meal_planner_zh.png" data-src-ja="./assets/images/next_meal_planner_ja.png" alt="EatOrNot AI Next Meal Planner showing meal picks that fit remaining calories and protein" />
+          <div>
+            <h3 data-i18n="key1.title">What should I eat next?</h3>
+            <p data-i18n="key1.text">Tell it where you're eating and get picks that fit your remaining calories and protein gap.</p>
+          </div>
+        </article>
+
+        <article class="key-card key-card-light">
+          <span class="key-num" aria-hidden="true">2</span>
+          <img src="./assets/images/analysis_result.png" data-src-zh-Hant="./assets/images/analysis_result_zh.png" data-src-ja="./assets/images/analysis_result_ja.png" alt="EatOrNot AI analysis result showing a Good to eat traffic-light verdict" />
+          <div>
+            <h3 data-i18n="key2.title">Can I eat this right now?</h3>
+            <p data-i18n="key2.text">Snap, speak, or type. Get a red, yellow, or green answer before you take a bite.</p>
+          </div>
+        </article>
+
+        <article class="key-card key-card-health">
+          <span class="key-num" aria-hidden="true">3</span>
+          <img src="./assets/images/screenshot3_english.png" alt="EatOrNot AI Apple Health integration showing synced activity, workouts, steps, and sleep" />
+          <div>
+            <h3 data-i18n="key3.title">Powered by Apple Health</h3>
+            <p data-i18n="key3.text">Your activity and health data set today's real budget, so every answer fits your actual day.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -181,11 +220,47 @@
         </article>
 
         <article class="screenshot-card">
-          <img src="./assets/images/weight_track.png" alt="EatOrNot AI screenshot showing weight tracking over time" />
+          <img src="./assets/images/weight_track.png" data-src-zh-Hant="./assets/images/weight_track_zh.png" data-src-ja="./assets/images/weight_track_ja.png" alt="EatOrNot AI screenshot showing weight tracking over time" />
           <div>
             <span class="story-tag orange" data-i18n="screen6.tag">Weight tracking</span>
             <h3 data-i18n="screen6.title">Track your weight alongside your meals.</h3>
             <p data-i18n="screen6.text">Log your weight over time and see it next to your nutrition trends for the full picture.</p>
+          </div>
+        </article>
+
+        <article class="screenshot-card">
+          <img src="./assets/images/next_meal_planner.png" data-src-zh-Hant="./assets/images/next_meal_planner_zh.png" data-src-ja="./assets/images/next_meal_planner_ja.png" alt="EatOrNot AI Next Meal Planner screenshot showing meal picks based on remaining calories and protein" />
+          <div>
+            <span class="story-tag blue" data-i18n="screen7.tag">Next Meal Planner</span>
+            <h3 data-i18n="screen7.title">Know what to eat next.</h3>
+            <p data-i18n="screen7.text">Get picks that fit your remaining calories, protein gap, and where you're eating, from home to McDonald's.</p>
+          </div>
+        </article>
+
+        <article class="screenshot-card">
+          <img src="./assets/images/challenge.png" alt="EatOrNot AI 7-Day Fat Loss Challenge screenshot showing daily calorie target and day-by-day progress" />
+          <div>
+            <span class="story-tag orange" data-i18n="screen8.tag">7-Day Challenge</span>
+            <h3 data-i18n="screen8.title">Seven days to feel lighter.</h3>
+            <p data-i18n="screen8.text">A daily calorie target and streak keep a one-week challenge simple to stick with.</p>
+          </div>
+        </article>
+
+        <article class="screenshot-card">
+          <img src="./assets/images/nutrition_coach.png" data-src-zh-Hant="./assets/images/nutrition_coach_zh.png" data-src-ja="./assets/images/nutrition_coach_ja.png" alt="EatOrNot AI 7-Day Nutrition Coach screenshot showing protein, fiber, and carb tips" />
+          <div>
+            <span class="story-tag blue" data-i18n="screen9.tag">7-Day Nutrition Coach</span>
+            <h3 data-i18n="screen9.title">Coach tips from your last 7 days.</h3>
+            <p data-i18n="screen9.text">Protein, fiber, and carb trends turn into clear next steps for your following meals.</p>
+          </div>
+        </article>
+
+        <article class="screenshot-card">
+          <img src="./assets/images/analysis_result.png" data-src-zh-Hant="./assets/images/analysis_result_zh.png" data-src-ja="./assets/images/analysis_result_ja.png" alt="EatOrNot AI analysis result screenshot showing a Good to eat verdict with calories, macros, and coach advice" />
+          <div>
+            <span class="story-tag blue" data-i18n="screen10.tag">Analysis result</span>
+            <h3 data-i18n="screen10.title">Verdict, macros, and advice in one view.</h3>
+            <p data-i18n="screen10.text">Adjust the portion, see what a meal does to your day, then confirm before it's logged.</p>
           </div>
         </article>
       </div>
@@ -352,12 +427,14 @@
   </main>
 
   <footer class="footer">
-    <div data-i18n="footer.copy">© 2026 Micavo. EatOrNot AI is a product by Micavo.</div>
-    <div class="footer-links">
-      <a href="/" data-ga-event="product_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Micavo</a>
+    <div class="footer-brand">
+      <div data-i18n="footer.copy">© 2026 Micavo. EatOrNot AI is a product by Micavo.</div>
       <a class="appstore-badge-btn" href="https://apps.apple.com/us/app/eatornot-ai/id6771192711" target="_blank" rel="noopener noreferrer" data-ga-event="appstore_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="footer">
         <img class="store-badge sm" src="./assets/images/app-store-badge.svg" alt="Download on the App Store" />
       </a>
+    </div>
+    <div class="footer-links">
+      <a href="/" data-ga-event="product_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="footer">Micavo</a>
       <a href="https://www.threads.com/@eatornotai" target="_blank" rel="noopener noreferrer" data-ga-event="social_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="footer">Threads</a>
       <a href="./privacy.html" data-i18n="footer.privacy" data-ga-event="legal_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="footer">Privacy Policy</a>
       <a href="./terms.html" data-i18n="footer.terms" data-ga-event="legal_link_clicked" data-ga-param-product="EatOrNot" data-ga-param-cta-location="footer">Terms of Service</a>
@@ -422,6 +499,26 @@
         "screen6.tag": "Weight tracking",
         "screen6.title": "Track your weight alongside your meals.",
         "screen6.text": "Log your weight over time and see it next to your nutrition trends for the full picture.",
+        "screen7.tag": "Next Meal Planner",
+        "screen7.title": "Know what to eat next.",
+        "screen7.text": "Get picks that fit your remaining calories, protein gap, and where you're eating, from home to McDonald's.",
+        "screen8.tag": "7-Day Challenge",
+        "screen8.title": "Seven days to feel lighter.",
+        "screen8.text": "A daily calorie target and streak keep a one-week challenge simple to stick with.",
+        "screen9.tag": "7-Day Nutrition Coach",
+        "screen9.title": "Coach tips from your last 7 days.",
+        "screen9.text": "Protein, fiber, and carb trends turn into clear next steps for your following meals.",
+        "screen10.tag": "Analysis result",
+        "screen10.title": "Verdict, macros, and advice in one view.",
+        "screen10.text": "Adjust the portion, see what a meal does to your day, then confirm before it's logged.",
+        "key.eyebrow": "Three things it does best",
+        "key.title": "Next meal. Green light. Real data.",
+        "key1.title": "What should I eat next?",
+        "key1.text": "Tell it where you're eating and get picks that fit your remaining calories and protein gap.",
+        "key2.title": "Can I eat this right now?",
+        "key2.text": "Snap, speak, or type. Get a red, yellow, or green answer before you take a bite.",
+        "key3.title": "Powered by Apple Health",
+        "key3.text": "Your activity and health data set today's real budget, so every answer fits your actual day.",
         "lifestyle.eyebrow": "A little more human",
         "lifestyle.title": "Real meals are not perfect entries.",
         "lifestyle.subtitle": "Use it for restaurant meals, quick snacks, post-workout bowls, or whatever is actually in front of you.",
@@ -524,6 +621,26 @@
         "screen6.tag": "體重紀錄",
         "screen6.title": "體重也能一起追蹤。",
         "screen6.text": "記錄體重變化，和飲食趨勢放在一起看，掌握完整全貌。",
+        "screen7.tag": "下一餐規劃",
+        "screen7.title": "下一餐吃什麼，不再煩惱。",
+        "screen7.text": "依照剩餘熱量、蛋白質缺口與用餐地點，推薦最適合你現在的選擇。",
+        "screen8.tag": "7 天挑戰",
+        "screen8.title": "7 天，輕盈起步。",
+        "screen8.text": "每日熱量目標加上連續天數，讓一週挑戰輕鬆堅持下去。",
+        "screen9.tag": "7 日營養教練",
+        "screen9.title": "根據過去 7 天給你的教練提示。",
+        "screen9.text": "從蛋白質、纖維與碳水的趨勢，告訴你下一步該調整什麼。",
+        "screen10.tag": "分析結果",
+        "screen10.title": "判斷、營養與建議，一頁看完。",
+        "screen10.text": "調整份量，看這餐對今天的影響，確認後才會記錄。",
+        "key.eyebrow": "三個最核心的功能",
+        "key.title": "下一餐、紅綠燈、Apple Health。",
+        "key1.title": "下一餐吃什麼？",
+        "key1.text": "告訴它你在哪裡用餐，依剩餘熱量與蛋白質缺口，推薦最適合你的選擇。",
+        "key2.title": "現在這個可以吃嗎？",
+        "key2.text": "拍照、語音或打字，吃之前就得到紅、黃、綠燈的明確答案。",
+        "key3.title": "結合 Apple Health",
+        "key3.text": "用你的活動量與健康數據算出今天真正的預算，讓每個答案都貼合你的一天。",
         "lifestyle.eyebrow": "多一點人味",
         "lifestyle.title": "真實餐點不會像完美資料表。",
         "lifestyle.subtitle": "外食、點心、運動後的一碗餐，或任何眼前真正出現的食物，都可以快速檢查。",
@@ -626,6 +743,26 @@
         "screen6.tag": "体重記録",
         "screen6.title": "体重も一緒に記録。",
         "screen6.text": "体重の変化を栄養トレンドと並べて確認し、全体像を把握できます。",
+        "screen7.tag": "次の食事プランナー",
+        "screen7.title": "次に何を食べるか、迷わない。",
+        "screen7.text": "残りカロリーとタンパク質、食べる場所に合わせて、今の自分に合うメニューを提案します。",
+        "screen8.tag": "7日間チャレンジ",
+        "screen8.title": "7日間で、軽い自分へ。",
+        "screen8.text": "毎日のカロリー目標とストリークで、1週間のチャレンジを無理なく続けられます。",
+        "screen9.tag": "7日間栄養コーチ",
+        "screen9.title": "直近7日間をもとにしたコーチのヒント。",
+        "screen9.text": "タンパク質、食物繊維、炭水化物の傾向から、次に取り組むことをわかりやすく伝えます。",
+        "screen10.tag": "分析結果",
+        "screen10.title": "判定・栄養・アドバイスを1画面で。",
+        "screen10.text": "量を調整して一日への影響を確認し、納得してから記録できます。",
+        "key.eyebrow": "いちばんの3つの強み",
+        "key.title": "次の一食、信号判定、Apple Health。",
+        "key1.title": "次に何を食べる？",
+        "key1.text": "食べる場所を選ぶだけで、残りカロリーとタンパク質に合うメニューを提案します。",
+        "key2.title": "今これ、食べていい？",
+        "key2.text": "撮影・音声・入力のどれでも、食べる前に赤・黄・緑でわかりやすく判定します。",
+        "key3.title": "Apple Health と連携",
+        "key3.text": "活動量や健康データから今日の本当の予算を算出し、あなたの一日に合った答えを返します。",
         "lifestyle.eyebrow": "少し人間らしく",
         "lifestyle.title": "実際の食事は、完璧な入力欄ではありません。",
         "lifestyle.subtitle": "外食、間食、運動後の一皿など、目の前にあるリアルな食事をすばやく確認できます。",
@@ -713,6 +850,11 @@
         if (value) {
           element.textContent = value;
         }
+      });
+
+      document.querySelectorAll("img[data-src-zh-Hant], img[data-src-ja]").forEach((image) => {
+        image.dataset.srcEn = image.dataset.srcEn || image.getAttribute("src");
+        image.src = image.dataset[activeLanguage === "zh-Hant" ? "srcZhHant" : activeLanguage === "ja" ? "srcJa" : "srcEn"] || image.dataset.srcEn;
       });
 
       const appStoreUrl = appStoreLinks[activeLanguage] || appStoreLinks.en;
