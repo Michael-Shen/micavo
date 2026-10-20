@@ -540,7 +540,7 @@
     }
 
     .product-actions .store-badge {
-      height: 50px;
+      height: 44px;
     }
 
     .section {
@@ -721,6 +721,14 @@
       object-position: top center;
     }
 
+    .eatornot-shot {
+      background: linear-gradient(180deg, #fff1d8, #ffe3b8);
+    }
+
+    .eatornot-shot img {
+      object-position: top center;
+    }
+
     .tallcenter-shot {
       background: linear-gradient(145deg, #05143d, #143f94 58%, #4b35af);
     }
@@ -760,8 +768,8 @@
     }
 
     .sleepordie-shot img {
-      object-fit: contain;
-      object-position: center;
+      object-fit: cover;
+      object-position: top center;
       padding: 0;
       filter: none;
     }
@@ -779,7 +787,7 @@
     }
 
     .product-body {
-      padding: 28px;
+      padding: 24px;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -823,9 +831,275 @@
       background: var(--blue);
     }
 
+    /* Product detail pop-up: opens from any product card */
+    .product-card {
+      cursor: pointer;
+    }
+
+    .product-more {
+      align-self: flex-start;
+      margin-top: 12px;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: var(--blue);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .product-more:hover {
+      text-decoration: underline;
+    }
+
+    .product-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(10, 12, 20, 0.62);
+      backdrop-filter: blur(6px);
+    }
+
+    .product-modal.is-open {
+      display: flex;
+    }
+
+    .product-modal-dialog {
+      position: relative;
+      width: min(980px, 100%);
+      max-height: calc(100vh - 48px);
+      overflow: auto;
+      border-radius: 22px;
+      background: #ffffff;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4);
+    }
+
+    .product-modal-dialog .product-card {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      height: auto;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      cursor: default;
+    }
+
+    .product-modal-dialog .product-media {
+      height: 100%;
+      min-height: 520px;
+    }
+
+    .product-modal-dialog .product-body {
+      padding: 40px 36px;
+    }
+
+    .product-modal-dialog .product-body h3 {
+      font-size: 40px;
+    }
+
+    .product-modal-dialog .product-body > p {
+      display: block;
+      overflow: visible;
+      font-size: 17px;
+    }
+
+    .product-modal-dialog .product-card .feature-list {
+      display: grid;
+      margin-top: 24px;
+      gap: 14px;
+    }
+
+    .product-modal-dialog .product-more {
+      display: none;
+    }
+
+    .product-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      color: #111111;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @media (max-width: 760px) {
+      .product-modal {
+        padding: 12px;
+      }
+
+      .product-modal-dialog .product-card {
+        grid-template-columns: 1fr;
+      }
+
+      .product-modal-dialog .product-media {
+        min-height: 0;
+        height: 300px;
+      }
+
+      .product-modal-dialog .product-body {
+        padding: 24px 22px 28px;
+      }
+    }
+
+    /* Rich product pop-up */
+    .pm {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      min-height: 560px;
+    }
+
+    .pm-gallery {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      background: var(--pm-bg, #1b1b3a);
+    }
+
+    .pm-shots {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      padding: 36px 28px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+    }
+
+    .pm-shots img {
+      flex: none;
+      height: 470px;
+      width: auto;
+      max-width: none;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      scroll-snap-align: center;
+    }
+
+    .pm-body {
+      display: flex;
+      flex-direction: column;
+      padding: 44px 40px 36px;
+      min-width: 0;
+    }
+
+    .pm-body .status {
+      margin-bottom: 14px;
+    }
+
+    .pm-body h3 {
+      margin: 0;
+      font-size: 40px;
+      line-height: 1.05;
+    }
+
+    .pm-tag {
+      margin: 14px 0 0;
+      color: var(--ink);
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.32;
+    }
+
+    .pm-points {
+      margin: 26px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 18px;
+      list-style: none;
+    }
+
+    .pm-points li {
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .pm-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--pm-accent, #7fd7ff) 22%, #ffffff);
+      font-size: 22px;
+    }
+
+    .pm-points li > div > strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .pm-points li > div > span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .pm-body .product-actions {
+      margin-top: auto;
+      padding-top: 28px;
+    }
+
+    @media (max-width: 760px) {
+      .pm {
+        grid-template-columns: 1fr;
+        min-height: 0;
+      }
+
+      .pm-shots {
+        padding: 24px 18px;
+      }
+
+      .pm-shots img {
+        height: 330px;
+      }
+
+      .pm-body {
+        padding: 26px 22px 28px;
+      }
+
+      .pm-body h3 {
+        font-size: 32px;
+      }
+    }
+
+    /* Keep product cards compact: summary only, details live on each product page */
+    .product-card .feature-list {
+      display: none;
+    }
+
+    .product-body > p {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .product-media {
+      height: 260px;
+    }
+
     .product-actions {
       margin-top: auto;
-      padding-top: 24px;
+      padding-top: 20px;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -1918,8 +2192,8 @@
       <div class="hero-board" aria-label="Micavo product preview" hidden>
         <div class="carousel-track">
           <article class="product-preview featured carousel-slide is-active">
-            <div class="preview-image">
-              <img src="/eatornot/assets/images/s1_english.png" alt="EatOrNot AI App Store preview showing food photo analysis and an AI verdict" />
+            <div class="preview-image eatornot-shot">
+              <img src="/eatornot/assets/images/hero_today.png" alt="EatOrNot AI Today screen showing remaining calories, protein progress, and the meal timeline" />
             </div>
             <div class="preview-body">
               <span class="status green" data-i18n="status.live">Live on App Store</span>
@@ -1970,7 +2244,7 @@
 
           <article class="product-preview featured carousel-slide">
             <div class="preview-image">
-              <img src="/critical_choice/assets/critical-choice-screenshot.png" alt="Critical Choice quadrant view showing tasks organized by the Eisenhower Matrix" />
+              <img src="/critical_choice/assets/images/v12-quadrants.png" alt="Critical Choice quadrant view showing tasks organized by the Eisenhower Matrix" />
             </div>
             <div class="preview-body">
               <span class="status green" data-i18n="status.live">Live on App Store</span>
@@ -2046,8 +2320,8 @@
         <div class="product-grid">
         <article class="product-card">
           <div class="product-media sleepordie-shot">
-            <img class="sleepordie-poster-en" src="/sleepordie/assets/sleepordie-poster-en.png" alt="SleepOrDie Scroll Goblin warning screen: put the phone back before the 20-second countdown ends" loading="lazy" />
-            <img class="sleepordie-poster-zh" src="/sleepordie/assets/sleepordie-poster-zh.png" alt="SleepOrDie 滑手機怪警告畫面：20 秒倒數結束前把手機放回去" loading="lazy" />
+            <img class="sleepordie-poster-en" src="/sleepordie/assets/sleepordie-card-en.jpg" alt="SleepOrDie Scroll Goblin warning screen: put the phone back before the 20-second countdown ends" loading="lazy" />
+            <img class="sleepordie-poster-zh" src="/sleepordie/assets/sleepordie-card-zh.jpg" alt="SleepOrDie 滑手機怪警告畫面：20 秒倒數結束前把手機放回去" loading="lazy" />
           </div>
           <div class="product-body">
             <span class="status" data-i18n="product_sleepordie.status">Coming soon to the App Store</span>
@@ -2129,8 +2403,8 @@
           </div>
         </article>
         <article class="product-card">
-          <div class="product-media">
-            <img src="/eatornot/assets/images/hero-picnic.png" alt="EatOrNot AI brand image with picnic food and blue sky" />
+          <div class="product-media eatornot-shot">
+            <img src="/eatornot/assets/images/hero_today.png" alt="EatOrNot AI Today screen showing remaining calories, protein progress, and the meal timeline" />
           </div>
           <div class="product-body">
             <span class="status" data-i18n="product_eatornot.status">AI nutrition coach</span>
@@ -2178,7 +2452,7 @@
 
         <article class="product-card">
           <div class="product-media">
-            <img src="/critical_choice/assets/images/quadrant-crop.png" alt="Critical Choice quadrant view showing tasks organized by the Eisenhower Matrix" />
+            <img src="/critical_choice/assets/images/v12-quadrants.png" alt="Critical Choice quadrant view showing tasks organized by the Eisenhower Matrix" />
           </div>
           <div class="product-body">
             <span class="status green" data-i18n="product_critical.status">Productivity system</span>
@@ -2432,6 +2706,238 @@
       renderDots();
     })();
   </script>
-  <script src="/assets/js/i18n.js?v=20261002-flipordie"></script>
+  <script>
+    (function () {
+      var grid = document.querySelector('.product-grid');
+      if (!grid) return;
+
+      var cards = grid.querySelectorAll('.product-card');
+      Array.prototype.forEach.call(cards, function (card) {
+        var actions = card.querySelector('.product-actions');
+        if (!actions) return;
+        var more = document.createElement('button');
+        more.type = 'button';
+        more.className = 'product-more';
+        more.setAttribute('data-i18n', 'common.more_details');
+        more.textContent = 'More details';
+        actions.parentNode.insertBefore(more, actions);
+        card.setAttribute('tabindex', '0');
+      });
+
+      var modal = document.createElement('div');
+      modal.className = 'product-modal';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.innerHTML = '<div class="product-modal-dialog"><button type="button" class="product-modal-close" aria-label="Close">&times;</button><div class="product-modal-content"></div></div>';
+      document.body.appendChild(modal);
+
+      var content = modal.querySelector('.product-modal-content');
+      var closeBtn = modal.querySelector('.product-modal-close');
+      var opener = null;
+
+      var LANG_KEY = { 'zh-Hant': 'zh', ja: 'ja' };
+      function eon(name, lang) {
+        var suffix = lang === 'zh' ? '_zh' : lang === 'ja' ? '_ja' : '';
+        return '/eatornot/assets/images/m-' + name + suffix + '.png';
+      }
+
+      var DETAILS = {
+        'EatOrNot AI': {
+          bg: 'linear-gradient(160deg,#ff8a6b,#ff6b4a)', accent: '#ff6b4a',
+          shots: function (l) { return ['hero_today', 'next_meal_planner', 'analysis_result', 'nutrition_coach'].map(function (n) { return eon(n, l); }); },
+          en: { tag: 'Can I eat this right now? Get a red, yellow, or green answer.', pts: [
+            ['🍽️', 'Next meal, decided', 'Pick where you\'re eating and get meals that fit your remaining calories and protein.'],
+            ['🚦', 'Traffic-light verdict', 'Snap, speak, or type a meal and see SAFE, WARNING, or OVER BUDGET before you eat.'],
+            ['❤️', 'Apple Health connected', 'Your activity data sets today\'s real calorie budget.']] },
+          zh: { tag: '現在這個可以吃嗎？紅黃綠燈直接告訴你。', pts: [
+            ['🍽️', '下一餐，幫你決定', '選好用餐地點，依剩餘熱量與蛋白質推薦適合的餐點。'],
+            ['🚦', '紅黃綠燈判斷', '拍照、語音或打字，吃之前就知道安全、注意還是超標。'],
+            ['❤️', '結合 Apple Health', '用你的活動量算出今天真正的熱量預算。']] },
+          ja: { tag: '今これ食べていい？赤・黄・緑でひと目で判定。', pts: [
+            ['🍽️', '次の一食を提案', '食べる場所を選ぶだけで、残りカロリーとタンパク質に合うメニューを提案。'],
+            ['🚦', '信号で判定', '写真・音声・入力で、食べる前に SAFE / WARNING / OVER BUDGET がわかる。'],
+            ['❤️', 'Apple Health 連携', '活動量から今日の本当のカロリー予算を算出。']] }
+        },
+        'TallCenter': {
+          bg: 'linear-gradient(160deg,#05143d,#143f94)', accent: '#ffe45b',
+          shots: function (l) {
+            var t = '/tallcenter/assets/m-';
+            if (l === 'zh') return [t + 'chinese.jpg', t + 'world_height_map_en.jpg', t + 'today_check_chinese.jpg', t + 'today_myPlan_chinese.jpg'];
+            if (l === 'ja') return [t + 'JP.jpg', t + 'world_height_map_en.jpg', t + 'plan_today_ja.jpg', t + 'personalized_growth_plan_ja.jpg'];
+            return [t + 'english.jpg', t + 'world_height_map_en.jpg', t + 'plan_today_en.jpg', t + 'personalized_growth_plan_en.jpg'];
+          },
+          en: { tag: 'How tall will you be? See a transparent estimated range.', pts: [
+            ['📏', 'An estimate, not a promise', 'Family-height inputs give a likely range, with assumptions and uncertainty shown.'],
+            ['🌍', 'Rank worldwide', 'Compare your predicted height across 12+ countries and share a Height Passport.'],
+            ['🌙', 'Daily healthy routines', 'Sleep, nutrition, and activity plans with measurement history and reminders.']] },
+          zh: { tag: '你會長多高？看透明的預估範圍。', pts: [
+            ['📏', '是範圍，不是保證', '用家族身高算出可能範圍，並清楚標示假設與不確定性。'],
+            ['🌍', '全球排名比較', '比較 12+ 個國家與地區的相對排名，產生可分享的身高護照。'],
+            ['🌙', '每日健康習慣', '睡眠、營養與活動計畫，附量測紀錄與提醒。']] },
+          ja: { tag: '身長はどこまで伸びる？根拠のある予測レンジを表示。', pts: [
+            ['📏', '約束ではなく目安', '家族の身長から可能性の範囲を算出し、前提と不確実性も表示。'],
+            ['🌍', '世界での位置', '12か国以上と比較して、シェアできる Height Passport を作成。'],
+            ['🌙', '毎日の習慣づくり', '睡眠・栄養・運動のプランと、測定履歴・リマインダー。']] }
+        },
+        'Critical Choice': {
+          bg: 'linear-gradient(160deg,#667eea,#764ba2)', accent: '#667eea',
+          shots: function () { return ['v12-quadrants', 'v12-all-tasks-today', 'v12-task-calendar', 'v12-ai-suggestion'].map(function (n) { return '/critical_choice/assets/images/m-' + n + '.png'; }); },
+          en: { tag: 'Stop reacting. Focus on what truly matters.', pts: [
+            ['🧭', 'Eisenhower Matrix', 'Sort every task by urgency and importance into four clear quadrants, with AI to help place them.'],
+            ['📅', 'Daily view & calendar sync', 'See today\'s tasks, earn achievements, and sync with your calendar.'],
+            ['👥', 'Cloud projects for teams', 'Premium adds teams, custom tags, assignments, and collaboration.']] },
+          zh: { tag: '別被瑣事牽著走，專注真正重要的事。', pts: [
+            ['🧭', '艾森豪矩陣', '依緊急與重要程度把任務分進四個象限，還有 AI 幫你歸類。'],
+            ['📅', '每日檢視與行事曆同步', '一眼看今天的任務、累積成就，並同步行事曆。'],
+            ['👥', '雲端專案協作', 'Premium 支援團隊、自訂標籤、指派與協作。']] },
+          ja: { tag: '反応するのをやめて、本当に大事なことに集中。', pts: [
+            ['🧭', 'アイゼンハワー・マトリクス', '緊急度と重要度でタスクを4象限に整理。AI が振り分けも手伝います。'],
+            ['📅', '今日のタスクとカレンダー同期', '今日のタスクを確認し、実績を積み、カレンダーと同期。'],
+            ['👥', 'チームでクラウド共有', 'Premium でチーム、カスタムタグ、担当割り当て、共同作業に対応。']] }
+        },
+        'SleepOrDie': {
+          bg: 'linear-gradient(160deg,#1b1b3a,#3b2f7a)', accent: '#ffd27d',
+          shots: function (l) { var p = '/sleepordie/assets/modal-' + (l === 'zh' ? 'zh' : 'en') + '-'; return [1, 2, 3, 4].map(function (i) { return p + i + '.jpg'; }); },
+          en: { tag: 'Don\'t feed the goblin that steals your sleep.', pts: [
+            ['📵', 'Phone face down', 'Put it down for 30–120 minutes and the Scroll Goblin starves.'],
+            ['⏱️', '20 seconds to put it back', 'Pick it up and the countdown starts. Miss it, and it eats tonight\'s sleep.'],
+            ['🏆', 'Collect goblins, keep the streak', 'Build a night streak and write tomorrow\'s plan before you sleep.']] },
+          zh: { tag: '別再滑了，餓死偷走你睡眠的小怪物。', pts: [
+            ['📵', '手機螢幕朝下', '放下 30–120 分鐘，滑手機小怪物就會挨餓。'],
+            ['⏱️', '20 秒內放回去', '拿起來就開始倒數，來不及就吃掉你今晚的睡眠。'],
+            ['🏆', '收集怪物、累積連勝', '累積夜晚連勝，睡前寫下明天的計畫。']] },
+          ja: { tag: '睡眠を奪うモンスターにエサをやるな。', pts: [
+            ['📵', 'スマホを伏せる', '30〜120分伏せておくと、スクロールモンスターが飢えていく。'],
+            ['⏱️', '20秒で戻せ', '持ち上げるとカウントダウン開始。間に合わなければ今夜の睡眠が食べられる。'],
+            ['🏆', 'モンスター収集と連続記録', '夜の連続記録を伸ばし、寝る前に明日の計画を書く。']] }
+        },
+        'FlipOrDie': {
+          bg: 'linear-gradient(160deg,#151515,#4a3500)', accent: '#f7b916',
+          shots: function (l) { var p = '/flipordie/assets/modal-' + (l === 'zh' ? 'zh' : l === 'ja' ? 'ja' : 'en') + '-'; return [1, 2, 3, 4].map(function (i) { return p + i + '.jpg'; }); },
+          en: { tag: 'The focus timer that punishes you.', pts: [
+            ['📱', 'Flip down to focus', 'Real on-device flip detection. No blocking, no extra permissions.'],
+            ['🚨', '20-second alarm', 'Flip it over and flashing colors, vibration, and a live countdown kick in.'],
+            ['🔥', 'Own it or lose it', 'Say or type a self-roast pledge, or lose your points and streak.']] },
+          zh: { tag: '分心就處罰的專注計時器。', pts: [
+            ['📱', '手機蓋下就專注', '裝置端真實翻面偵測，不封鎖任何東西、不需額外權限。'],
+            ['🚨', '20 秒警報', '一翻開就閃爍、震動並即時倒數。'],
+            ['🔥', '認錯，否則全失去', '說出或輸入自嘲宣言，否則扣點、連勝歸零。']] },
+          ja: { tag: '気を抜けば罰を受ける集中タイマー。', pts: [
+            ['📱', '伏せて集中スタート', '端末上で実際の反転を検知。アプリのブロックや追加の許可は不要。'],
+            ['🚨', '20秒アラーム', '裏返すと点滅・振動・カウントダウンが作動。'],
+            ['🔥', '認めるか、全部失うか', '自虐の誓いを言う・入力するか、ポイントと連続記録をゼロに。']] }
+        },
+        'Outshine': {
+          bg: 'linear-gradient(160deg,#0f172a,#1e3a8a)', accent: '#7fd7ff',
+          shots: function () { return ['/outshine/assets/modal-1.jpg', '/outshine/assets/modal-2.jpg']; },
+          en: { tag: 'Know what to say next, live in your meeting.', pts: [
+            ['💡', 'Live coaching cards', 'A strategic question, a career signal, and what to say next.'],
+            ['📝', 'After-meeting summary', 'Decisions, action items, open questions, and risks, automatically.'],
+            ['🎁', 'Try it free', 'A one-time free 60-minute credit, then Pro (400 min/month) or Premium (800 min/month).']] },
+          zh: { tag: '會議中，即時知道下一句該說什麼。', pts: [
+            ['💡', '即時教練卡片', '策略性問題、職涯訊號，以及接下來該說什麼。'],
+            ['📝', '會後自動摘要', '自動整理決策、行動項目、待解問題與風險。'],
+            ['🎁', '先免費試用', '首次免費 60 分鐘，之後可選 Pro（每月 400 分鐘）或 Premium（每月 800 分鐘）。']] },
+          ja: { tag: '会議中に、次に言うべきことがリアルタイムでわかる。', pts: [
+            ['💡', 'ライブ・コーチングカード', '戦略的な質問、キャリアのシグナル、次の一言。'],
+            ['📝', '会議後のサマリー', '決定事項・アクション・未解決の質問・リスクを自動で整理。'],
+            ['🎁', 'まず無料で', '初回60分無料。その後は Pro（月400分）か Premium（月800分）。']] }
+        },
+        'AsianLaunch': {
+          bg: 'linear-gradient(160deg,#fff1d6,#ffc98a)', accent: '#e8590c',
+          shots: function () { return ['https://asianlaunch.com/static/images/why-asianlaunch/explorer.webp']; },
+          en: { tag: 'Where Asian products and global founders meet.', pts: [
+            ['🔍', 'Discover', 'Products from Asian builders and global teams entering Asian markets.'],
+            ['🚀', 'Launch free', 'Launch or claim a product page and collect measurable Try signals.'],
+            ['🧪', 'Asia Market Tests', 'Learn which markets and messages show early promise.']] },
+          zh: { tag: '亞洲產品與全球創辦人的交會點。', pts: [
+            ['🔍', '探索', '亞洲創作者的產品，以及正要進入亞洲市場的全球產品。'],
+            ['🚀', '免費上架', '上架或認領產品頁，蒐集可衡量的 Try 使用意圖。'],
+            ['🧪', '亞洲市場測試', '找出哪些市場與訊息有早期潛力。']] },
+          ja: { tag: 'アジアのプロダクトと世界のファウンダーが出会う場所。', pts: [
+            ['🔍', '発見する', 'アジアの開発者や、アジア進出を狙う海外チームのプロダクト。'],
+            ['🚀', '無料でローンチ', 'プロダクトページを公開・申請し、測定可能な Try シグナルを集める。'],
+            ['🧪', 'アジア市場テスト', 'どの市場・メッセージに初期の手応えがあるかを検証。']] }
+        }
+      };
+
+      function esc(text) {
+        var div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
+      function richContent(card) {
+        var name = (card.querySelector('h3') || {}).textContent;
+        var detail = DETAILS[name && name.trim()];
+        if (!detail) return null;
+        var lang = LANG_KEY[document.documentElement.lang] || 'en';
+        var copy = detail[lang] || detail.en;
+        var status = card.querySelector('.status');
+        var actions = card.querySelector('.product-actions');
+        var shots = detail.shots(lang).map(function (src) {
+          return '<img src="' + src + '" alt="' + esc(name) + '" loading="lazy" />';
+        }).join('');
+        var points = copy.pts.map(function (pt) {
+          return '<li><span class="pm-icon" aria-hidden="true">' + pt[0] + '</span><div><strong>' + esc(pt[1]) + '</strong><span>' + esc(pt[2]) + '</span></div></li>';
+        }).join('');
+        return '<div class="pm" style="--pm-bg:' + detail.bg + ';--pm-accent:' + detail.accent + '">' +
+          '<div class="pm-gallery"><div class="pm-shots">' + shots + '</div></div>' +
+          '<div class="pm-body">' +
+          (status ? '<span class="status">' + esc(status.textContent) + '</span>' : '') +
+          '<h3>' + esc(name) + '</h3>' +
+          '<p class="pm-tag">' + esc(copy.tag) + '</p>' +
+          '<ul class="pm-points">' + points + '</ul>' +
+          '<div class="product-actions">' + (actions ? actions.innerHTML : '') + '</div>' +
+          '</div></div>';
+      }
+
+      function open(card) {
+        opener = document.activeElement;
+        content.innerHTML = '';
+        var rich = richContent(card);
+        if (rich) {
+          content.innerHTML = rich;
+        } else {
+          var clone = card.cloneNode(true);
+          clone.removeAttribute('tabindex');
+          content.appendChild(clone);
+        }
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        var title = card.querySelector('h3');
+        if (title) modal.setAttribute('aria-label', title.textContent);
+        closeBtn.focus();
+      }
+
+      function close() {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+        content.innerHTML = '';
+        if (opener && opener.focus) opener.focus();
+      }
+
+      grid.addEventListener('click', function (event) {
+        if (event.target.closest('a')) return;
+        var card = event.target.closest('.product-card');
+        if (card) open(card);
+      });
+
+      grid.addEventListener('keydown', function (event) {
+        if (event.key !== 'Enter' || event.target.closest('a, button')) return;
+        var card = event.target.closest('.product-card');
+        if (card) open(card);
+      });
+
+      closeBtn.addEventListener('click', close);
+      modal.addEventListener('click', function (event) {
+        if (event.target === modal) close();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && modal.classList.contains('is-open')) close();
+      });
+    })();
+  </script>
+  <script src="/assets/js/i18n.js?v=20261020-details"></script>
 </body>
 </html>

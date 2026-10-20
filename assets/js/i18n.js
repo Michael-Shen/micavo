@@ -30,7 +30,7 @@
         tallcenter: { desc: "Estimate an adult-height range, compare the result across countries, and turn it into a polished Height Passport worth sharing." },
         critical_choice: { desc: "A productivity app built around the Eisenhower Matrix, helping users separate urgent noise from important work." }
       },
-      common: { view_product: "View product" },
+      common: { view_product: "View product", more_details: "More details →" },
       products_section: {
         eyebrow: "Things I've Built",
         title: "I don't just test other people's products. I build my own.",
@@ -174,7 +174,7 @@
         tallcenter: { desc: "預估成年身高範圍、比較在世界各國的相對排名，再產生值得分享的身高國際護照。" },
         critical_choice: { desc: "以艾森豪矩陣為核心的生產力應用，協助使用者從緊急雜訊中分辨出真正重要的工作。" }
       },
-      common: { view_product: "查看產品" },
+      common: { view_product: "查看產品", more_details: "更多介紹 →" },
       products_section: {
         eyebrow: "我做的產品",
         title: "我不只測別人的產品，我也自己做。",
@@ -318,7 +318,7 @@
         tallcenter: { desc: "成人身長の推定範囲を確認し、国ごとの相対順位を比較して、共有できるHeight Passportを作成します。" },
         critical_choice: { desc: "アイゼンハワー・マトリクスを軸にした生産性アプリ。緊急な雑音と本当に重要な仕事を見分けるお手伝いをします。" }
       },
-      common: { view_product: "プロダクトを見る" },
+      common: { view_product: "プロダクトを見る", more_details: "詳しく見る →" },
       products_section: {
         eyebrow: "作ったもの",
         title: "他人のプロダクトを試すだけでなく、自分でも作ります。",
