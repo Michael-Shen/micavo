@@ -7,13 +7,14 @@
         og_title: "Micavo — Michael Puts It to the Test",
         og_description: "AI, technology, products, and everyday life—not just discussed, but tested for real."
       },
-      nav: { watch: "Watch", products: "Things I've Built", about: "About Michael", contact: "Contact" },
+      nav: { watch: "Watch", products: "Things I've Built", about: "About Michael", work: "Work with me", contact: "Contact" },
       hero: {
         eyebrow: "MICAVO 麥克造",
         title: "Michael puts it to the test.",
         subtitle: "AI, technology, products, and everyday life—not just discussed, but tested for real.",
         cta_watch: "Watch the latest experiment",
         cta_vote: "Choose the next experiment 🧪",
+        cta_work: "Work with me →",
         visual_title: "Build it. Test it. Show what happened.",
         visual_subtitle: "Former product validator. Now testing AI, technology, and life in public."
       },
@@ -151,13 +152,14 @@
         og_title: "Micavo 麥克造｜Michael 幫你實測",
         og_description: "AI、科技和生活，不只聊，我真的拿來試。"
       },
-      nav: { watch: "看實驗", products: "我做的產品", about: "關於 Michael", contact: "聯絡我們" },
+      nav: { watch: "看實驗", products: "我做的產品", about: "關於 Michael", work: "合作", contact: "聯絡我們" },
       hero: {
         eyebrow: "MICAVO 麥克造",
         title: "Michael 幫你實測。",
         subtitle: "AI、科技、產品和生活——不只聊，我真的拿來試。",
         cta_watch: "觀看最新實驗",
         cta_vote: "決定下一個實驗 🧪",
+        cta_work: "合作 →",
         visual_title: "真的做、真的試，再把結果帶回來。",
         visual_subtitle: "以前替科技公司測產品，現在替大家測 AI、科技和生活。"
       },
@@ -295,13 +297,14 @@
         og_title: "Micavo｜Michaelが本気で試します",
         og_description: "AI、テクノロジー、日常生活。語るだけでなく、実際に試します。"
       },
-      nav: { watch: "実験を見る", products: "作ったもの", about: "Michaelについて", contact: "お問い合わせ" },
+      nav: { watch: "実験を見る", products: "作ったもの", about: "Michaelについて", work: "ご依頼", contact: "お問い合わせ" },
       hero: {
         eyebrow: "MICAVO 麥克造",
         title: "Michaelが本気で試します。",
         subtitle: "AI、テクノロジー、プロダクト、日常生活。語るだけでなく、実際に試します。",
         cta_watch: "最新の実験を見る",
         cta_vote: "次の実験を決める 🧪",
+        cta_work: "ご依頼はこちら →",
         visual_title: "作る。試す。そして結果を見せる。",
         visual_subtitle: "元プロダクト検証担当。今はAI、テクノロジー、生活を公開で実験しています。"
       },

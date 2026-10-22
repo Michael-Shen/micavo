@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work with Michael | Build your app with Micavo</title>
+  <meta name="description" content="Have an app idea? Michael has built 6+ apps from idea to App Store, with AI features, subscriptions and multi-language support. Tell him what you need and get a straight answer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Micavo" />
+  <meta property="og:url" content="https://micavo.app/work/" />
+  <meta property="og:title" content="Work with Michael | Build your app with Micavo" />
+  <meta property="og:description" content="Have an app idea? I've built 6+ apps from idea to App Store. Tell me what you need." />
+  <meta property="og:image" content="https://micavo.app/assets/images/founder.jpg" />
+  <link rel="canonical" href="https://micavo.app/work/" />
+  <link rel="icon" href="/assets/images/micavo-icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-180.png" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF5PE9BXFT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PF5PE9BXFT');
+  </script>
+  <script src="/assets/js/analytics.js"></script>
+  <script>
+    (function () {
+      var titles = { en: 'Work with Michael | Build your app with Micavo', zh: '合作｜讓 Michael 幫你把 App 做出來', ja: 'ご依頼・コラボ｜Michael があなたのアプリを形にします' };
+      function apply(lang) {
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : lang;
+        document.title = titles[lang];
+        document.querySelectorAll('[data-lang-btn]').forEach(function (b) {
+          var on = b.getAttribute('data-lang-btn') === lang;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+      }
+      var q = new URLSearchParams(location.search).get('lang');
+      var saved = null;
+      try { saved = localStorage.getItem('micavo-lang'); } catch (e) {}
+      var nav = (navigator.language || '').toLowerCase();
+      var pick = q && titles[q] ? q : (saved && titles[saved] ? saved : (nav.indexOf('zh') === 0 ? 'zh' : nav.indexOf('ja') === 0 ? 'ja' : 'en'));
+      apply(pick);
+      document.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-lang-btn]');
+        if (!b) return;
+        var l = b.getAttribute('data-lang-btn');
+        apply(l);
+        try { localStorage.setItem('micavo-lang', l); } catch (err) {}
+      });
+    })();
+  </script>
+  <style>
+    :root { --ink:#151515; --muted:#68645d; --line:#d8d3c9; --paper:#f3f0e8; --panel:#fff; --accent:#f5b800; --accent-soft:#f4e6ac; --green:#157347; --shadow:0 18px 55px rgba(30,28,24,.08); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI","Noto Sans TC","Noto Sans JP",sans-serif; color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; }
+    html[data-lang="en"] .zh, html[data-lang="en"] .ja { display:none !important; }
+    html[data-lang="zh"] .en, html[data-lang="zh"] .ja { display:none !important; }
+    html[data-lang="ja"] .en, html[data-lang="ja"] .zh { display:none !important; }
+    .site-header { position:sticky; top:0; z-index:20; border-bottom:1px solid rgba(21,21,21,.1); background:rgba(243,240,232,.92); backdrop-filter:blur(14px); }
+    .nav { max-width:1120px; margin:0 auto; padding:0 24px; min-height:82px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    .logo { display:flex; align-items:center; gap:10px; font-weight:900; font-size:26px; letter-spacing:-.04em; text-decoration:none; }
+    .logo-mark { width:42px; height:42px; border-radius:5px; background:var(--accent); display:grid; place-items:center; font-size:22px; }
+    .nav-right { display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+    .nav-links { display:flex; gap:22px; font-weight:700; color:#4d4a45; }
+    .nav-links a { text-decoration:none; }
+    .nav-links a:hover, .nav-links a.current { color:var(--ink); text-decoration:underline; text-decoration-color:var(--accent); text-decoration-thickness:3px; text-underline-offset:6px; }
+    .lang-switch { display:flex; border:1px solid rgba(21,21,21,.14); border-radius:7px; background:rgba(255,255,255,.54); padding:3px; }
+    .lang-switch button { border:0; background:transparent; font:inherit; font-weight:700; font-size:14px; padding:7px 12px; border-radius:4px; cursor:pointer; color:#4d4a45; }
+    .lang-switch button.active { background:var(--ink); color:#fff; }
+    main { max-width:1120px; margin:0 auto; padding:0 24px; }
+    .hero { padding:84px 0 56px; max-width:860px; }
+    .eyebrow { margin:0 0 14px; color:#a76f00; font-weight:800; letter-spacing:.12em; font-size:13px; text-transform:uppercase; }
+    h1 { margin:0 0 20px; font-size:clamp(40px,6.4vw,76px); font-weight:900; line-height:1; letter-spacing:-.05em; }
+    h1 .mark { background:linear-gradient(transparent 62%, var(--accent) 62%); }
+    .lead { margin:0 0 28px; font-size:clamp(18px,2.2vw,22px); color:#5f5b54; max-width:700px; }
+    .cta { display:flex; gap:12px; flex-wrap:wrap; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 26px; border-radius:7px; border:1px solid var(--ink); font:inherit; font-weight:800; font-size:16px; text-decoration:none; cursor:pointer; background:transparent; color:var(--ink); transition:transform .15s ease, box-shadow .15s ease; }
+    .button.primary { background:var(--ink); color:#fff; }
+    .button:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(21,21,21,.12); }
+    .slot { display:inline-flex; align-items:center; gap:8px; margin:0 0 20px; padding:7px 14px; border-radius:999px; background:var(--ink); color:#fff; font-weight:800; font-size:14px; }
+    .slot::before { content:""; width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px rgba(245,184,0,.28); }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:8px 0 12px; }
+    .stat { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 18px 16px; }
+    .stat b { display:block; font-size:24px; line-height:1.15; letter-spacing:-.03em; margin-bottom:2px; }
+    .stat b.big { font-size:38px; }
+    .stat > span { color:var(--muted); font-size:14px; }
+    section { padding:64px 0 8px; }
+    h2 { margin:0 0 10px; font-size:clamp(28px,4vw,42px); line-height:1.1; letter-spacing:-.04em; }
+    .sub { margin:0 0 28px; color:var(--muted); max-width:44em; font-size:18px; }
+    .cards { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:26px; box-shadow:var(--shadow); }
+    .card .ico { font-size:28px; }
+    .card h3 { margin:10px 0 6px; font-size:21px; letter-spacing:-.02em; }
+    .card p { margin:0; color:#5f5b54; }
+    .work { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .work a { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; text-decoration:none; transition:transform .15s ease; }
+    .work a:hover { transform:translateY(-3px); border-color:var(--ink); }
+    .work b { display:block; font-size:18px; }
+    .work small { color:var(--muted); }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; counter-reset:s; }
+    .step { background:var(--accent-soft); border-radius:16px; padding:24px; }
+    .step::before { counter-increment:s; content:counter(s); display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:var(--ink); color:#fff; font-weight:800; margin-bottom:12px; }
+    .step h3 { margin:0 0 6px; font-size:20px; }
+    .step p { margin:0; color:#4d4a45; }
+    .about { display:grid; grid-template-columns:240px 1fr; gap:36px; align-items:start; background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:clamp(22px,4vw,38px); box-shadow:var(--shadow); }
+    .about img { width:100%; aspect-ratio:4/5; object-fit:cover; object-position:50% 20%; border-radius:14px; display:block; background:#e6e1d5; }
+    .about h3 { margin:0 0 4px; font-size:26px; letter-spacing:-.03em; }
+    .about .role { margin:0 0 16px; color:var(--muted); font-weight:700; }
+    .about p { margin:0 0 14px; color:#4d4a45; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 20px; padding:0; list-style:none; }
+    .chips li { padding:6px 12px; border-radius:999px; background:var(--accent-soft); font-size:13.5px; font-weight:700; }
+    .fit { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .fit > div { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:24px 26px; }
+    .fit h3 { margin:0 0 12px; font-size:19px; }
+    .fit ul { margin:0; padding:0; list-style:none; display:grid; gap:9px; color:#4d4a45; }
+    .fit li { padding-left:24px; position:relative; }
+    .fit .yes li::before { content:"✓"; position:absolute; left:0; color:var(--green); font-weight:900; }
+    .fit .no li::before { content:"✕"; position:absolute; left:0; color:#b3261e; font-weight:900; }
+    .about .stack { margin:18px 0 0; color:var(--muted); font-size:14px; }
+    .formwrap { background:var(--panel); border:2px solid var(--ink); border-radius:20px; padding:clamp(22px,4vw,40px); box-shadow:12px 12px 0 var(--accent); display:grid; grid-template-columns:.9fr 1.1fr; gap:36px; }
+    .formwrap h2 { font-size:clamp(26px,3.4vw,38px); }
+    .formwrap ul { margin:16px 0 0; padding:0; list-style:none; display:grid; gap:8px; color:#4d4a45; }
+    .formwrap li::before { content:"✓ "; color:var(--green); font-weight:900; }
+    form { display:grid; gap:14px; }
+    label { display:grid; gap:6px; font-weight:700; font-size:15px; }
+    label small { font-weight:500; color:var(--muted); }
+    input, select, textarea { font:inherit; font-weight:500; padding:12px 14px; border:1px solid #bdb8ac; border-radius:8px; background:#fff; color:var(--ink); width:100%; }
+    textarea { min-height:140px; resize:vertical; }
+    input:focus, select:focus, textarea:focus { outline:3px solid var(--accent); border-color:var(--ink); }
+    .row2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .hp { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+    .fine { margin:0; color:var(--muted); font-size:13px; }
+    .status { margin:0; font-weight:700; min-height:1.4em; }
+    .status.ok { color:var(--green); } .status.err { color:#b3261e; }
+    .courses { margin-top:64px; background:var(--ink); color:#fff; border-radius:20px; padding:clamp(26px,4vw,44px); display:grid; grid-template-columns:1.2fr .8fr; gap:30px; align-items:center; }
+    .courses h2 { color:#fff; } .courses p { margin:0; color:#cfcbc2; }
+    .courses .tag { display:inline-block; margin-bottom:12px; padding:4px 12px; border-radius:999px; background:var(--accent); color:var(--ink); font-weight:800; font-size:13px; }
+    .courses form { gap:10px; }
+    .courses input { background:#fff; }
+    .courses .button { background:var(--accent); border-color:var(--accent); color:var(--ink); }
+    .courses .status { color:#cfcbc2; } .courses .status.ok { color:#9be3b6; } .courses .status.err { color:#ffb4ab; }
+    .footer { max-width:1120px; margin:72px auto 0; padding:26px 24px 40px; border-top:1px solid rgba(21,21,21,.1); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:14px; }
+    .footer a { margin-left:16px; text-decoration:none; } .footer a:hover { color:var(--ink); text-decoration:underline; }
+    @media (max-width: 860px) {
+      .stats { grid-template-columns:repeat(2,1fr); } .cards, .steps, .formwrap, .courses { grid-template-columns:1fr; } .work { grid-template-columns:repeat(2,1fr); }
+      .about, .fit { grid-template-columns:1fr; } .about img { max-width:240px; aspect-ratio:1/1; }
+      .row2 { grid-template-columns:1fr; } .hero { padding-top:56px; } .nav-links { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="logo" href="/" aria-label="Micavo home"><span class="logo-mark" aria-hidden="true">M</span>Micavo</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/#products"><span class="en">Things I've Built</span><span class="zh">我做的產品</span><span class="ja">作ったもの</span></a>
+          <a href="/#about-michael"><span class="en">About Michael</span><span class="zh">關於 Michael</span><span class="ja">Michaelについて</span></a>
+          <a class="current" href="/work/" aria-current="page"><span class="en">Work with me</span><span class="zh">合作</span><span class="ja">ご依頼</span></a>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button type="button" data-lang-btn="en">EN</button>
+          <button type="button" data-lang-btn="zh">中文</button>
+          <button type="button" data-lang-btn="ja">日本語</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-top:84px">
+      <p class="eyebrow"><span class="en">Work with me</span><span class="zh">合作</span><span class="ja">ご依頼・コラボ</span></p>
+      <h1>
+        <span class="en">Have an app idea?<br /><span class="mark">I can ship it.</span></span>
+        <span class="zh">有 App 的點子？<br /><span class="mark">我幫你做出來。</span></span>
+        <span class="ja">アプリのアイデア、<br /><span class="mark">形にします。</span></span>
+      </h1>
+      <p class="lead">
+        <span class="en">I've built 6+ apps myself, from idea to App Store, with AI features, subscriptions and four languages. Tell me what you need. I'll tell you honestly what to build first, how long it takes, and what it costs.</span>
+        <span class="zh">我自己做過 6 款以上的 App，從點子一路做到 App Store，包含 AI 功能、訂閱制與多國語言。告訴我你需要什麼，我會誠實告訴你：先做什麼、要多久、要多少預算。</span>
+        <span class="ja">アイデアから App Store まで、自分で 6 本以上のアプリを作ってきました。AI 機能、サブスクリプション、多言語対応も経験済み。必要なことを教えてください。何から作るべきか、期間、費用を正直にお伝えします。</span>
+      </p>
+      <p class="slot"><span class="en">Taking 1 new project per month</span><span class="zh">每月只接 1 個專案</span><span class="ja">新規のご依頼は月1件のみ</span></p>
+      <div class="cta">
+        <a class="button primary" href="#consult" data-ga-event="work_cta_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero"><span class="en">Tell me what you need ↓</span><span class="zh">告訴我你的需求 ↓</span><span class="ja">ご相談はこちら ↓</span></a>
+        <a class="button" href="/#products"><span class="en">See what I've built</span><span class="zh">看我做過的產品</span><span class="ja">作ったものを見る</span></a>
+      </div>
+    </section>
+
+    <div class="stats" aria-label="Experience">
+      <div class="stat"><b class="big">6+</b><span><span class="en">apps built by me</span><span class="zh">款我親手做的 App</span><span class="ja">本、自分で開発</span></span></div>
+      <div class="stat"><b><span class="en">Idea → App Store</span><span class="zh">點子 → 上架</span><span class="ja">企画 → 公開</span></b><span><span class="en">end to end, including review</span><span class="zh">全流程，含審核</span><span class="ja">審査対応まで一貫</span></span></div>
+      <div class="stat"><b><span class="en">Subscriptions</span><span class="zh">訂閱制</span><span class="ja">サブスク</span></b><span><span class="en">paywalls, free trials, RevenueCat</span><span class="zh">付費牆、免費試用、RevenueCat</span><span class="ja">課金画面・無料体験・RevenueCat</span></span></div>
+      <div class="stat"><b><span class="en">AI + 4 languages</span><span class="zh">AI + 四種語言</span><span class="ja">AI + 4言語</span></b><span><span class="en">photo, voice, live coaching</span><span class="zh">照片、語音、即時教練</span><span class="ja">写真・音声・リアルタイム支援</span></span></div>
+    </div>
+
+    <section id="services">
+      <h2><span class="en">What I can do for you</span><span class="zh">我可以幫你做什麼</span><span class="ja">できること</span></h2>
+      <p class="sub"><span class="en">Whether you have a napkin sketch or a live app that needs help, I work with you directly. No agency layers.</span><span class="zh">不論你只有一張草圖，還是已經有 App 需要幫忙，都是我直接跟你合作，沒有層層外包。</span><span class="ja">ラフなメモだけでも、すでに動いているアプリの改善でも、私が直接対応します。中間業者はいません。</span></p>
+      <div class="cards">
+        <div class="card"><div class="ico">⚡</div><h3><span class="en">Build your app, fast</span><span class="zh">快速把 App 做出來</span><span class="ja">アプリを素早く開発</span></h3><p><span class="en">A working first version in weeks, not months. Flutter apps for iPhone first, with sign-in, cloud data and a clean design.</span><span class="zh">幾週內做出可以用的第一版，不是幾個月。以 Flutter 開發，優先 iPhone，含登入、雲端資料與乾淨的設計。</span><span class="ja">数か月ではなく数週間で動く初版を。Flutter で iPhone を優先し、ログイン、クラウドデータ、洗練されたデザインまで対応します。</span></p></div>
+        <div class="card"><div class="ico">🧭</div><h3><span class="en">Turn your idea into a plan</span><span class="zh">把點子變成清楚的計畫</span><span class="ja">アイデアを計画に</span></h3><p><span class="en">What to build first, what to cut, and how to test it before you spend real money. A consult can be the whole job.</span><span class="zh">先做什麼、砍掉什麼，以及怎麼在花大錢之前先驗證。只做諮詢也可以。</span><span class="ja">何から作り、何を削り、大きな投資の前にどう検証するか。相談だけのご依頼も歓迎です。</span></p></div>
+        <div class="card"><div class="ico">🤖</div><h3><span class="en">Add AI to your product</span><span class="zh">幫你的產品加入 AI</span><span class="ja">プロダクトに AI を追加</span></h3><p><span class="en">Photo and voice analysis, live coaching, summaries. I've shipped these in my own apps, so I know what is worth building and what is a gimmick.</span><span class="zh">照片與語音分析、即時教練、自動摘要。我自己的 App 都做過，所以我知道哪些值得做、哪些只是噱頭。</span><span class="ja">写真・音声の分析、リアルタイムの支援、要約。自分のアプリで実装してきたので、価値のある使い方と見せかけだけの使い方を見分けられます。</span></p></div>
+        <div class="card"><div class="ico">🚀</div><h3><span class="en">Launch and monetize</span><span class="zh">上架與變現</span><span class="ja">公開と収益化</span></h3><p><span class="en">Paywalls and free trials that pass App Store review, localization, privacy policy and terms pages, and the launch checklist most people learn the hard way.</span><span class="zh">能通過 App Store 審核的付費牆與免費試用、多語系、隱私權政策與條款頁，以及多數人踩過坑才學到的上架清單。</span><span class="ja">App Store 審査に通る課金画面と無料体験、多言語化、プライバシーポリシーと利用規約ページ、公開前のチェックリストまで。</span></p></div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <h2><span class="en">Proof, not promises</span><span class="zh">用作品說話</span><span class="ja">実績で示します</span></h2>
+      <p class="sub"><span class="en">Every one of these is a product I designed, built and shipped myself.</span><span class="zh">每一個都是我自己設計、開發、上架的產品。</span><span class="ja">どれも、企画から開発、公開まで自分で行ったプロダクトです。</span></p>
+      <div class="work">
+        <a href="/sleepordie/"><b>SleepOrDie</b><small><span class="en">Bedtime anti-doomscrolling</span><span class="zh">睡前戒手機</span><span class="ja">就寝前スマホ断ち</span></small></a>
+        <a href="/flipordie/"><b>FlipOrDie</b><small><span class="en">Hardcore focus timer</span><span class="zh">硬派專注計時器</span><span class="ja">集中タイマー</span></small></a>
+        <a href="/eatornot/"><b>EatOrNot AI</b><small><span class="en">AI meal decisions</span><span class="zh">AI 飲食判斷</span><span class="ja">AI 食事判断</span></small></a>
+        <a href="/outshine/"><b>Outshine</b><small><span class="en">AI career copilot</span><span class="zh">AI 職涯副駕駛</span><span class="ja">AI キャリア支援</span></small></a>
+        <a href="/critical_choice/"><b>Critical Choice</b><small><span class="en">Eisenhower task manager</span><span class="zh">艾森豪矩陣任務管理</span><span class="ja">アイゼンハワー式タスク管理</span></small></a>
+        <a href="/tallcenter/"><b>TallCenter</b><small><span class="en">Height range estimate</span><span class="zh">身高範圍預測</span><span class="ja">身長予測</span></small></a>
+        <a href="https://asianlaunch.com/" target="_blank" rel="noopener noreferrer"><b>AsianLaunch</b><small><span class="en">Asia product discovery</span><span class="zh">亞洲產品探索</span><span class="ja">アジア発プロダクト</span></small></a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2><span class="en">Who you'd be working with</span><span class="zh">你會跟誰合作</span><span class="ja">担当するのは</span></h2>
+      <p class="sub"><span class="en">A program manager's discipline, a validator's skepticism and a builder's hands.</span><span class="zh">專案經理的紀律、驗證工程師的懷疑精神，以及開發者的動手能力。</span><span class="ja">プログラムマネージャーの規律、検証エンジニアの懐疑心、開発者の実行力。</span></p>
+      <div class="about">
+        <img src="/assets/images/founder.jpg" alt="Michael Shen" width="240" height="300" loading="lazy" />
+        <div>
+          <h3>Michael Shen</h3>
+          <p class="role"><span class="en">PMP-certified program manager · app builder</span><span class="zh">PMP 認證專案經理 · App 開發者</span><span class="ja">PMP 認定プログラムマネージャー · アプリ開発者</span></p>
+          <p><span class="en">For 15+ years my job was to make sure complex hardware and software actually work: leading a 5-person test engineering team, running validation programs and launch readiness with global manufacturing partners, and building the automation around them. Alongside that, I design, build and ship my own apps.</span><span class="zh">15 年以上，我的工作就是確保複雜的軟硬體真的能用：帶領 5 人的測試工程團隊、與全球製造夥伴一起執行驗證與量產準備，並建立相關的自動化流程。同時，我也自己設計、開發並上架 App。</span><span class="ja">15 年以上、複雑なハードウェアとソフトウェアが確実に動くことを保証する仕事をしてきました。5 名のテストエンジニアリングチームを率い、世界の製造パートナーと検証・量産準備を進め、その自動化も構築。並行して、自分のアプリも企画・開発・公開しています。</span></p>
+          <p><span class="en">That is why I am useful to you: I plan like a program manager, test like a validator and ship like a builder. I will tell you what is worth building before you pay to build it.</span><span class="zh">這就是我能幫到你的原因：我用專案經理的方式規劃、用驗證工程師的方式測試、用開發者的方式把東西做出來。在你花錢開發之前，我會先告訴你什麼值得做。</span><span class="ja">だからこそお役に立てます。プログラムマネージャーとして計画し、検証エンジニアとしてテストし、開発者として形にします。費用をかける前に、何が作る価値のあるものかをお伝えします。</span></p>
+          <ul class="chips">
+            <li>PMP®</li>
+            <li><span class="en">15+ years in test &amp; validation</span><span class="zh">15 年以上測試與驗證</span><span class="ja">テスト・検証 15 年以上</span></li>
+            <li>Google AI Professional Certificate (2026)</li>
+            <li>Stanford ML Specialization (2025)</li>
+          </ul>
+          <p class="stack"><span class="en">Tools I work with: Flutter &amp; Dart, Firebase, RevenueCat, App Store Connect, Git/GitHub CI/CD, and LLM APIs.</span><span class="zh">我使用的工具：Flutter 與 Dart、Firebase、RevenueCat、App Store Connect、Git/GitHub CI/CD，以及大型語言模型 API。</span><span class="ja">使用ツール：Flutter / Dart、Firebase、RevenueCat、App Store Connect、Git/GitHub CI/CD、LLM API。</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="fit">
+      <h2><span class="en">Is this a fit?</span><span class="zh">適不適合合作？</span><span class="ja">ご依頼の目安</span></h2>
+      <p class="sub"><span class="en">I would rather say no early than disappoint you later.</span><span class="zh">我寧願一開始就說不適合，也不想之後讓你失望。</span><span class="ja">後でがっかりさせるより、最初にお断りするほうがよいと考えています。</span></p>
+      <div class="fit">
+        <div class="yes"><h3><span class="en">Good fit</span><span class="zh">適合</span><span class="ja">向いている</span></h3><ul>
+          <li><span class="en">You have a real problem to solve and a budget to match.</span><span class="zh">你有明確要解決的問題，也有對應的預算。</span><span class="ja">解決したい課題と、見合う予算がある。</span></li>
+          <li><span class="en">You want an iPhone app, with AI features or subscriptions if needed.</span><span class="zh">你想做 iPhone App，需要時加入 AI 功能或訂閱制。</span><span class="ja">iPhone アプリを作りたい。必要なら AI 機能や課金も。</span></li>
+          <li><span class="en">You value a straight answer over a flattering one.</span><span class="zh">你重視直接的答案，勝過好聽的話。</span><span class="ja">耳触りのよい話より、率直な答えを求める。</span></li>
+        </ul></div>
+        <div class="no"><h3><span class="en">Not a fit</span><span class="zh">不太適合</span><span class="ja">向いていない</span></h3><ul>
+          <li><span class="en">You need a large team or a heavy 3D game.</span><span class="zh">你需要大型團隊，或是大型 3D 遊戲。</span><span class="ja">大規模チームや本格的な 3D ゲームが必要。</span></li>
+          <li><span class="en">You want the cheapest quote above all else.</span><span class="zh">你最在意的是最便宜的報價。</span><span class="ja">とにかく最安の見積もりを求める。</span></li>
+          <li><span class="en">You want to build before checking anyone needs it.</span><span class="zh">你想在確認有人需要之前就先開發。</span><span class="ja">需要を確かめる前に作り始めたい。</span></li>
+        </ul></div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2><span class="en">How it works</span><span class="zh">合作流程</span><span class="ja">進め方</span></h2>
+      <p class="sub"><span class="en">Simple, and you know where you stand at every step.</span><span class="zh">很簡單，而且每一步你都知道進度。</span><span class="ja">シンプルで、各ステップで状況がわかります。</span></p>
+      <div class="steps">
+        <div class="step"><h3><span class="en">Tell me what you need</span><span class="zh">告訴我你的需求</span><span class="ja">ご要望を送る</span></h3><p><span class="en">Fill in the form below. A few sentences is enough.</span><span class="zh">填寫下方表單，簡單幾句話就夠了。</span><span class="ja">下のフォームに記入するだけ。数行で十分です。</span></p></div>
+        <div class="step"><h3><span class="en">We talk, I scope it</span><span class="zh">我們聊聊，我幫你估</span><span class="ja">相談して見積もり</span></h3><p><span class="en">I reply by email, ask the right questions, and send a clear scope, timeline and quote. I take 1 new project per month, so if this month is taken I'll tell you the next open month. If it isn't a fit, I'll say so.</span><span class="zh">我會用 Email 回覆、問對的問題，並給你清楚的範圍、時程與報價。我每月只接 1 個專案，如果這個月已經滿了，我會告訴你下一個有空的月份。如果不適合，我也會直說。</span><span class="ja">メールで返信し、必要な質問をしたうえで、範囲・期間・見積もりをお出しします。新規のご依頼は月1件のため、今月が埋まっている場合は次に空く月をお伝えします。合わない場合は正直にお伝えします。</span></p></div>
+        <div class="step"><h3><span class="en">Build and ship</span><span class="zh">開發並上線</span><span class="ja">開発して公開</span></h3><p><span class="en">You see working builds along the way, and I handle the App Store launch with you.</span><span class="zh">過程中你會看到可以操作的版本，上架也由我陪你一起處理。</span><span class="ja">途中で動くビルドを確認でき、App Store での公開も一緒に進めます。</span></p></div>
+      </div>
+    </section>
+
+    <section id="consult">
+      <div class="formwrap">
+        <div>
+          <p class="eyebrow"><span class="en">Free first conversation</span><span class="zh">第一次聊聊免費</span><span class="ja">最初の相談は無料</span></p>
+          <h2><span class="en">Tell me what you want to build.</span><span class="zh">告訴我你想做什麼。</span><span class="ja">作りたいものを教えてください。</span></h2>
+          <ul>
+            <li><span class="en">I read every message myself.</span><span class="zh">每一則訊息都是我本人在看。</span><span class="ja">すべてのメッセージに私自身が目を通します。</span></li>
+            <li><span class="en">You get a straight answer, even if it is "don't build this yet".</span><span class="zh">你會得到直接的答案，就算答案是「先別做」。</span><span class="ja">たとえ「まだ作らないほうがいい」でも、率直にお答えします。</span></li>
+            <li><span class="en">I take 1 new project per month, so you get my full attention.</span><span class="zh">我每月只接 1 個專案，所以你會得到我完整的專注。</span><span class="ja">新規のご依頼は月1件なので、じっくり向き合えます。</span></li>
+            <li><span class="en">Your idea stays between us.</span><span class="zh">你的點子只會留在我們之間。</span><span class="ja">アイデアは外部に漏らしません。</span></li>
+          </ul>
+        </div>
+        <form id="consult-form" novalidate>
+          <div class="row2">
+            <label><span><span class="en">Name</span><span class="zh">你的名字</span><span class="ja">お名前</span></span><input name="name" type="text" autocomplete="name" required maxlength="120" /></label>
+            <label><span><span class="en">Email</span><span class="zh">電子郵件</span><span class="ja">メールアドレス</span></span><input name="email" type="email" autocomplete="email" required maxlength="200" /></label>
+          </div>
+          <label><span><span class="en">What do you need?</span><span class="zh">你需要什麼？</span><span class="ja">ご相談内容</span></span>
+            <select name="need" required>
+              <option value="idea" data-en="I have an idea and want to build it" data-zh="我有點子，想做成 App" data-ja="アイデアをアプリにしたい"></option>
+              <option value="existing" data-en="My app needs help (fixes, redesign, launch)" data-zh="我的 App 需要幫忙（修正、改版、上架）" data-ja="既存アプリの改善・公開を手伝ってほしい"></option>
+              <option value="ai" data-en="Add AI to my product" data-zh="想加入 AI 功能" data-ja="AI 機能を追加したい"></option>
+              <option value="launch" data-en="Subscriptions and App Store launch" data-zh="訂閱制與 App Store 上架" data-ja="課金と App Store 公開"></option>
+              <option value="consult" data-en="Just a consult" data-zh="只想先聊聊" data-ja="まずは相談したい"></option>
+            </select></label>
+          <label><span><span class="en">Tell me about it</span><span class="zh">說說你的想法</span><span class="ja">内容を教えてください</span></span><textarea name="message" required maxlength="4000"></textarea></label>
+          <div class="row2">
+            <label><span><span class="en">Budget</span><span class="zh">預算</span><span class="ja">ご予算</span> <small>(<span class="en">optional</span><span class="zh">選填</span><span class="ja">任意</span>)</small></span>
+              <select name="budget"><option value="">—</option><option value="Not sure yet" data-en="Not sure yet" data-zh="還不確定" data-ja="未定"></option><option value="Under US$2,000" data-en="Under US$2,000" data-zh="US$2,000 以下" data-ja="US$2,000 未満"></option><option value="US$2,000–5,000" data-en="US$2,000–5,000" data-zh="US$2,000–5,000" data-ja="US$2,000–5,000"></option><option value="US$5,000–15,000" data-en="US$5,000–15,000" data-zh="US$5,000–15,000" data-ja="US$5,000–15,000"></option><option value="US$15,000+" data-en="US$15,000+" data-zh="US$15,000 以上" data-ja="US$15,000 以上"></option></select></label>
+            <label><span><span class="en">Timeline</span><span class="zh">時程</span><span class="ja">時期</span> <small>(<span class="en">optional</span><span class="zh">選填</span><span class="ja">任意</span>)</small></span>
+              <select name="timeline"><option value="">—</option><option value="As soon as possible" data-en="As soon as possible" data-zh="越快越好" data-ja="できるだけ早く"></option><option value="In 1–3 months" data-en="In 1–3 months" data-zh="1–3 個月內" data-ja="1〜3か月以内"></option><option value="Just exploring" data-en="Just exploring" data-zh="先了解看看" data-ja="まずは情報収集"></option></select></label>
+          </div>
+          <div class="hp" aria-hidden="true"><label>Website<input name="website" type="text" tabindex="-1" autocomplete="off" /></label></div>
+          <button class="button primary" type="submit" data-ga-event="consult_submit_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="work_form"><span class="en">Send my request</span><span class="zh">送出需求</span><span class="ja">送信する</span></button>
+          <p class="status" id="consult-status" role="status" aria-live="polite"></p>
+          <p class="fine"><span class="en">I only use this to reply to you.</span><span class="zh">這些資料只用來回覆你。</span><span class="ja">お返事のためにのみ使用します。</span></p>
+        </form>
+      </div>
+    </section>
+
+    <div class="courses" id="courses">
+      <div>
+        <span class="tag"><span class="en">Coming soon</span><span class="zh">準備中</span><span class="ja">準備中</span></span>
+        <h2 data-course-title><span class="en">Courses: build and launch your first app with AI</span><span class="zh">課程：用 AI 做出並上架你的第一個 App</span><span class="ja">講座：AI で初めてのアプリを作って公開</span></h2>
+        <p data-course-blurb><span class="en">I'm turning what I learned from shipping 6+ apps into a course. Leave your email and you'll hear from me first.</span><span class="zh">我正在把做 6 款以上 App 學到的東西整理成課程。留下 Email，開課時你會最先收到通知。</span><span class="ja">6 本以上のアプリ開発で学んだことを講座にまとめています。メールアドレスを残していただければ、最初にお知らせします。</span></p>
+      </div>
+      <form id="course-form" novalidate>
+        <input name="email" type="email" placeholder="you@email.com" autocomplete="email" required maxlength="200" aria-label="Email" />
+        <div class="hp" aria-hidden="true"><input name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+        <button class="button" type="submit" data-ga-event="course_waitlist_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="work_courses"><span class="en">Notify me</span><span class="zh">通知我</span><span class="ja">通知を受け取る</span></button>
+        <p class="status" id="course-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div>© 2026 Micavo</div>
+    <div><a href="/">Micavo</a><a href="/sleepordie/">SleepOrDie</a><a href="mailto:hello@micavo.app">hello@micavo.app</a></div>
+  </footer>
+
+  <script>
+  (function () {
+    // Paste the deployed Google Apps Script Web App /exec URL here (see work/apps-script/README.md).
+    // While it is empty, the forms open the visitor's email app addressed to hello@micavo.app instead.
+    var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxkYQteWgo0dtyrzImQ1k7MQPEGJVcyeJyHLN29ZbxOvG6PIC3DAorCCWGk4oVaUwWh/exec';
+    var MAIL = 'hello@micavo.app';
+    var MSG = {
+      en: { sending: 'Sending…', ok: 'Got it. I will reply by email.', err: 'Something went wrong. Please email ' + MAIL + '.', need: 'Please fill in your name, email and message.', mail: 'Opening your email app…', okCourse: 'Thanks, you are on the list.', badEmail: 'Please enter a valid email.' },
+      zh: { sending: '送出中…', ok: '收到了，我會用 Email 回覆你。', err: '出了點問題，請直接寄信到 ' + MAIL + '。', need: '請填寫名字、Email 與內容。', mail: '正在開啟你的郵件 App…', okCourse: '謝謝，你已加入名單。', badEmail: '請輸入有效的 Email。' },
+      ja: { sending: '送信中…', ok: '受け取りました。メールでご返信します。', err: 'エラーが発生しました。' + MAIL + ' までメールをお送りください。', need: 'お名前、メール、内容をご記入ください。', mail: 'メールアプリを開いています…', okCourse: 'ありがとうございます。登録しました。', badEmail: '有効なメールアドレスを入力してください。' }
+    };
+    // ---- The course shown in the "Coming soon" band. Change the text here (or set the id), nothing else. ----
+    var COURSE = {
+      id: 'first-app-with-ai',
+      title: {
+        en: 'Courses: build and launch your first app with AI',
+        zh: '課程：用 AI 做出並上架你的第一個 App',
+        ja: '講座：AI で初めてのアプリを作って公開'
+      },
+      blurb: {
+        en: "I'm turning what I learned from shipping 6+ apps into a course. Leave your email and you'll hear from me first.",
+        zh: '我正在把做 6 款以上 App 學到的東西整理成課程。留下 Email，開課時你會最先收到通知。',
+        ja: '6 本以上のアプリ開発で学んだことを講座にまとめています。メールアドレスを残していただければ、最初にお知らせします。'
+      }
+    };
+    function renderCourse() {
+      var l = document.documentElement.getAttribute('data-lang') || 'en';
+      var h = document.querySelector('[data-course-title]'), b = document.querySelector('[data-course-blurb]');
+      if (h) h.textContent = COURSE.title[l] || COURSE.title.en;
+      if (b) b.textContent = COURSE.blurb[l] || COURSE.blurb.en;
+    }
+    var NEED = { idea: 'I have an idea and want to build it', existing: 'My app needs help (fixes, redesign, launch)', ai: 'Add AI to my product', launch: 'Subscriptions and App Store launch', consult: 'Just a consult' };
+    function lang() { return document.documentElement.getAttribute('data-lang') || 'en'; }
+    function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+    function setStatus(el, text, cls) { el.textContent = text; el.className = 'status' + (cls ? ' ' + cls : ''); }
+    function collect(form, type) {
+      var d = {}; new FormData(form).forEach(function (v, k) { d[k] = String(v).trim().slice(0, 4000); });
+      d.type = type; d.lang = lang();
+      if (type === 'course_waitlist') d.course = COURSE.id + ' | ' + COURSE.title.en; d.page_url = location.href.slice(0, 500); d.referrer = document.referrer.slice(0, 500);
+      return d;
+    }
+    function post(data) {
+      return fetch(ENDPOINT, { method: 'POST', redirect: 'follow', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) }).then(function (r) { return r.json(); });
+    }
+    function mailto(subject, body) { location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body); }
+    function wire(form, statusId, type) {
+      var status = document.getElementById(statusId);
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var m = MSG[lang()], d = collect(form, type);
+        if (d.website) return; // honeypot
+        if (type === 'consult' && (!d.name || !d.email || !d.message)) return setStatus(status, m.need, 'err');
+        if (!validEmail(d.email || '')) return setStatus(status, m.badEmail, 'err');
+        if (!ENDPOINT) {
+          setStatus(status, m.mail, '');
+          if (type === 'consult') mailto('Consult request from ' + d.name, 'Name: ' + d.name + '\nEmail: ' + d.email + '\nNeed: ' + (NEED[d.need] || d.need) + '\nBudget: ' + (d.budget || '-') + '\nTimeline: ' + (d.timeline || '-') + '\n\n' + d.message);
+          else mailto('Course waitlist', 'Please add me to the course waitlist: ' + d.email);
+          return;
+        }
+        setStatus(status, m.sending, '');
+        post(d).then(function (res) {
+          if (res && res.ok) { form.reset(); setStatus(status, type === 'consult' ? m.ok : m.okCourse, 'ok'); }
+          else setStatus(status, m.err, 'err');
+        }).catch(function () { setStatus(status, m.err, 'err'); });
+      });
+    }
+    var PH = { en: 'What are you building, who is it for, and what is the hardest part?', zh: '你想做什麼、給誰用、最困難的地方是什麼？', ja: '何を作りたいか、誰向けか、いちばん難しい点は何か。' };
+    function localize() {
+      renderCourse();
+      var l = lang();
+      document.querySelectorAll('option[data-en]').forEach(function (o) { o.textContent = o.getAttribute('data-' + l) || o.getAttribute('data-en'); });
+      var ta = document.querySelector('#consult-form textarea'); if (ta) ta.placeholder = PH[l];
+    }
+    localize();
+    new MutationObserver(localize).observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang'] });
+    wire(document.getElementById('consult-form'), 'consult-status', 'consult');
+    wire(document.getElementById('course-form'), 'course-status', 'course_waitlist');
+  })();
+  </script>
+</body>
+</html>
