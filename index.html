@@ -2138,6 +2138,14 @@
         padding-top: 54px;
       }
     }
+  
+    #products-title { text-wrap: balance; }
+    /* Compact "work with me" block in place of the old hero */
+    .hero.work-cta { min-height: 0; grid-template-columns: minmax(0, 1fr); gap: 0; padding: 40px 0 52px; }
+    .hero.work-cta h1 { max-width: 940px; text-wrap: balance; font-size: clamp(36px, 5vw, 62px); line-height: 1.02; }
+    .hero.work-cta .hero-copy p:not(.eyebrow) { max-width: 640px; font-size: 19px; }
+    .hero.work-cta .cta-row { margin-top: 0; }
+    .hero.work-cta .hero-copy p.work-slot { display: inline-block; margin: 16px 0 18px; padding: 6px 14px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 14px; font-weight: 800; }
   </style>
 </head>
 
@@ -2165,26 +2173,14 @@
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero work-cta" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow" data-i18n="hero.eyebrow">MICAVO 麥克造</p>
-        <h1 id="hero-title" data-i18n="hero.title">Michael puts it to the test.</h1>
-        <p data-i18n="hero.subtitle">
-          AI, technology, products, and everyday life—not just discussed, but tested for real.
-        </p>
-
+        <p class="eyebrow" data-i18n="hero.eyebrow">WORK WITH ME</p>
+        <h1 id="hero-title" data-i18n="hero.title">Have an app idea? Let's build it.</h1>
+        <p data-i18n="hero.subtitle">I've built 6+ apps from idea to App Store. Tell me what you need and I'll tell you honestly what to build first, how long it takes and what it costs.</p>
+        <p class="work-slot" data-i18n="hero.slots">Taking 1 new project per month</p>
         <div class="cta-row">
-          <a class="button primary" href="https://www.youtube.com/@micavoofficial" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta_watch" data-ga-event="social_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero">Watch the latest experiment</a>
-          <a class="button" href="/work/" data-i18n="hero.cta_work" data-ga-event="work_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero">Work with me →</a>
-        </div>
-      </div>
-
-      <div class="creator-visual" aria-label="Michael preparing a Micavo experiment">
-        <img src="/assets/images/founder.jpg" alt="Michael in his workspace preparing an experiment" />
-        <span class="creator-badge">MICAVO 麥克造</span>
-        <div class="creator-caption">
-          <strong data-i18n="hero.visual_title">Build it. Test it. Show what happened.</strong>
-          <span data-i18n="hero.visual_subtitle">Former product validator. Now testing AI, technology, and life in public.</span>
+          <a class="button primary" href="/work/" data-i18n="hero.cta_work" data-ga-event="work_link_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero">Work with me →</a>
         </div>
       </div>
 
@@ -2301,9 +2297,9 @@
     <section class="section section--products" id="products" aria-labelledby="products-title">
       <div class="section-heading centered">
         <p class="eyebrow" data-i18n="products_section.eyebrow">Things I've Built</p>
-        <h2 id="products-title" data-i18n="products_section.title">I don't just test other people's products. I build my own.</h2>
+        <h2 id="products-title" data-i18n="products_section.title">I build products. I test what's new.</h2>
         <p data-i18n="products_section.subtitle">
-          These are real products built from questions worth testing—across health, work, growth, and everyday decisions.
+          I ship my own apps, and I try new tools, new AI and interesting new uses for real, to find out what is actually worth using. Here is what I have built.
         </p>
       </div>
 

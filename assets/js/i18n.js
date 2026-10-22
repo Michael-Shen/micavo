@@ -9,9 +9,10 @@
       },
       nav: { watch: "Watch", products: "Things I've Built", about: "About Michael", work: "Work with me", contact: "Contact" },
       hero: {
-        eyebrow: "MICAVO 麥克造",
-        title: "Michael puts it to the test.",
-        subtitle: "AI, technology, products, and everyday life—not just discussed, but tested for real.",
+        eyebrow: "WORK WITH ME",
+        title: "Have an app idea? Let's build it.",
+        subtitle: "I've built 6+ apps from idea to App Store. Tell me what you need and I'll tell you honestly what to build first, how long it takes and what it costs.",
+        slots: "Taking 1 new project per month",
         cta_watch: "Watch the latest experiment",
         cta_vote: "Choose the next experiment 🧪",
         cta_work: "Work with me →",
@@ -34,8 +35,8 @@
       common: { view_product: "View product", more_details: "More details →" },
       products_section: {
         eyebrow: "Things I've Built",
-        title: "I don't just test other people's products. I build my own.",
-        subtitle: "These are real products built from questions worth testing—across health, work, growth, and everyday decisions."
+        title: "I build products. I test what's new.",
+        subtitle: "I ship my own apps, and I try new tools, new AI and interesting new uses for real, to find out what is actually worth using. Here is what I have built."
       },
       product_eatornot: {
         status: "AI nutrition coach",
@@ -154,9 +155,10 @@
       },
       nav: { watch: "看實驗", products: "我做的產品", about: "關於 Michael", work: "合作", contact: "聯絡我們" },
       hero: {
-        eyebrow: "MICAVO 麥克造",
-        title: "Michael 幫你實測。",
-        subtitle: "AI、科技、產品和生活——不只聊，我真的拿來試。",
+        eyebrow: "合作",
+        title: "有 App 的點子？一起做出來。",
+        subtitle: "我自己做過 6 款以上的 App，從點子一路做到 App Store。告訴我你的需求，我會誠實告訴你先做什麼、要多久、要多少預算。",
+        slots: "每月只接 1 個專案",
         cta_watch: "觀看最新實驗",
         cta_vote: "決定下一個實驗 🧪",
         cta_work: "合作 →",
@@ -179,8 +181,8 @@
       common: { view_product: "查看產品", more_details: "更多介紹 →" },
       products_section: {
         eyebrow: "我做的產品",
-        title: "我不只測別人的產品，我也自己做。",
-        subtitle: "這些都是真正做出來的產品，從健康、工作、成長到日常決策，把值得驗證的問題變成可以使用的東西。"
+        title: "我做產品，也實測新東西。",
+        subtitle: "我自己開發並上架 App，也把新工具、新 AI、有趣的新應用拿來真的試，看看什麼才值得用。以下是我做過的產品。"
       },
       product_eatornot: {
         status: "AI 營養教練",
@@ -299,9 +301,10 @@
       },
       nav: { watch: "実験を見る", products: "作ったもの", about: "Michaelについて", work: "ご依頼", contact: "お問い合わせ" },
       hero: {
-        eyebrow: "MICAVO 麥克造",
-        title: "Michaelが本気で試します。",
-        subtitle: "AI、テクノロジー、プロダクト、日常生活。語るだけでなく、実際に試します。",
+        eyebrow: "ご依頼・コラボ",
+        title: "アプリのアイデア、一緒に形にしましょう。",
+        subtitle: "アイデアから App Store まで、6 本以上のアプリを自分で作ってきました。必要なことを教えてください。何から作るべきか、期間、費用を正直にお伝えします。",
+        slots: "新規のご依頼は月1件のみ",
         cta_watch: "最新の実験を見る",
         cta_vote: "次の実験を決める 🧪",
         cta_work: "ご依頼はこちら →",
@@ -324,8 +327,8 @@
       common: { view_product: "プロダクトを見る", more_details: "詳しく見る →" },
       products_section: {
         eyebrow: "作ったもの",
-        title: "他人のプロダクトを試すだけでなく、自分でも作ります。",
-        subtitle: "健康、仕事、成長、日々の意思決定。検証する価値のある問いから生まれた、本当に使えるプロダクトです。"
+        title: "作る。そして、新しいものを試す。",
+        subtitle: "自分でアプリを開発・公開し、新しいツールや AI、おもしろい活用法も実際に試して、本当に使う価値があるかを確かめます。これまでに作ったプロダクトです。"
       },
       product_eatornot: {
         status: "AI栄養コーチ",
