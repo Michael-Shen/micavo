@@ -2083,7 +2083,7 @@
 
     .section--products {
       order: 1;
-      margin-top: 48px;
+      margin-top: 56px;
     }
 
     .hero { order: 2; }
@@ -2146,6 +2146,21 @@
     .hero.work-cta .hero-copy p:not(.eyebrow) { max-width: 640px; font-size: 19px; }
     .hero.work-cta .cta-row { margin-top: 0; }
     .hero.work-cta .hero-copy p.work-slot { display: inline-block; margin: 16px 0 18px; padding: 6px 14px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 14px; font-weight: 800; }
+  
+    /* Intro: what Micavo is and its mission, first on the page */
+    .intro { order: 0; max-width: 1120px; margin: 0 auto; padding: 72px 24px 28px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: clamp(36px, 6vw, 84px); align-items: center; }
+    .intro .eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 20px; color: #a76f00; letter-spacing: 0.14em; }
+    .intro .eyebrow::before { content: ""; width: 34px; height: 4px; border-radius: 2px; background: var(--accent); }
+    .intro h1 { margin: 0 0 22px; font-size: clamp(38px, 5.2vw, 70px); font-weight: 900; line-height: 1.02; letter-spacing: -0.045em; text-wrap: balance; }
+    .intro h1 mark { background: linear-gradient(transparent 64%, var(--accent) 64%); color: inherit; padding: 0 2px; }
+    .intro .intro-lead { margin: 0; max-width: 560px; color: #5f5b54; font-size: clamp(17px, 1.7vw, 20px); line-height: 1.7; }
+    .mission-card { position: relative; padding: 30px 30px 26px; border-radius: 20px; background: var(--ink); color: #fff; box-shadow: 14px 14px 0 var(--accent); }
+    .mission-label { display: block; margin-bottom: 12px; color: var(--accent); font-size: 12px; font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; }
+    .mission-text { margin: 0 0 26px; font-size: clamp(20px, 2.2vw, 26px); font-weight: 800; line-height: 1.3; letter-spacing: -0.02em; }
+    .mission-stats { margin: 0; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.18); display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .mission-stats dt { font-size: 30px; font-weight: 900; line-height: 1; letter-spacing: -0.03em; color: var(--accent); }
+    .mission-stats dd { margin: 6px 0 0; font-size: 13px; line-height: 1.35; color: #cfcbc2; }
+    @media (max-width: 860px) { .intro { grid-template-columns: 1fr; padding-top: 44px; } .mission-card { box-shadow: 8px 8px 0 var(--accent); margin-right: 8px; } }
   </style>
 </head>
 
@@ -2173,10 +2188,27 @@
   </header>
 
   <main>
+    <section class="intro" id="about-micavo" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="eyebrow" data-i18n="intro.eyebrow">ABOUT MICAVO 麥克造</p>
+        <h1 id="intro-title" data-i18n="intro.head" data-i18n-html>Micavo is a product studio founded by <mark>Michael</mark>.</h1>
+        <p class="intro-lead" data-i18n="intro.lead">Aimed at building real products, from idea to App Store or web service, and testing new tools and AI to find out what is actually worth using.</p>
+      </div>
+      <aside class="mission-card" aria-label="Mission">
+        <span class="mission-label" data-i18n="intro.mission_label">Our mission</span>
+        <p class="mission-text" data-i18n="intro.mission">Turn good ideas into products people actually use, and show honestly what is worth your time.</p>
+        <dl class="mission-stats">
+          <div><dt data-i18n="intro.s1n">7</dt><dd data-i18n="intro.s1l">products built</dd></div>
+          <div><dt data-i18n="intro.s2n">3</dt><dd data-i18n="intro.s2l">languages</dd></div>
+          <div><dt data-i18n="intro.s3n">AI</dt><dd data-i18n="intro.s3l">in the toolbox</dd></div>
+        </dl>
+      </aside>
+    </section>
+
     <section class="hero work-cta" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow" data-i18n="hero.eyebrow">WORK WITH ME</p>
-        <h1 id="hero-title" data-i18n="hero.title">Have an app idea? Let's build it.</h1>
+        <h2 id="hero-title" data-i18n="hero.title">Have an app idea? Let's build it.</h2>
         <p data-i18n="hero.subtitle">I've built 6+ apps from idea to App Store. Tell me what you need and I'll tell you honestly what to build first, how long it takes and what it costs.</p>
         <p class="work-slot" data-i18n="hero.slots">Taking 1 new project per month</p>
         <div class="cta-row">
@@ -2297,9 +2329,9 @@
     <section class="section section--products" id="products" aria-labelledby="products-title">
       <div class="section-heading centered">
         <p class="eyebrow" data-i18n="products_section.eyebrow">Things I've Built</p>
-        <h2 id="products-title" data-i18n="products_section.title">I build products. I test what's new.</h2>
+        <h2 id="products-title" data-i18n="products_section.title">What I've built so far.</h2>
         <p data-i18n="products_section.subtitle">
-          I ship my own apps, and I try new tools, new AI and interesting new uses for real, to find out what is actually worth using. Here is what I have built.
+          Real products, each one shipped or on its way to the App Store, across health, work, growth and everyday decisions.
         </p>
       </div>
 

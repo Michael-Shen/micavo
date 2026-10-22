@@ -8,6 +8,27 @@
         og_description: "AI, technology, products, and everyday life—not just discussed, but tested for real."
       },
       nav: { watch: "Watch", products: "Things I've Built", about: "About Michael", work: "Work with me", contact: "Contact" },
+      intro: {
+        head: "Micavo is a product studio founded by <mark>Michael</mark>.",
+        lead: "Aimed at building real products, from idea to App Store or web service, and testing new tools and AI to find out what is actually worth using.",
+        s1n: "7",
+        s1l: "products built",
+        s2n: "3",
+        s2l: "languages",
+        s3n: "AI",
+        s3l: "in the toolbox",
+        eyebrow: "ABOUT MICAVO 麥克造",
+        title: "Micavo is where I build products and test what's new.",
+        body: "Micavo is a product studio founded by Michael, aimed at building real products, from idea to App Store or web service, and testing new tools and AI to find out what is actually worth using.",
+        mission_label: "Our mission",
+        mission: "Turn good ideas into products people actually use, and show honestly what is worth your time.",
+        p1t: "Build",
+        p1: "Real apps, shipped to the App Store.",
+        p2t: "Test",
+        p2: "New tools and AI, tried for real.",
+        p3t: "Share",
+        p3: "What I learn, so you can skip the guesswork.",
+      },
       hero: {
         eyebrow: "WORK WITH ME",
         title: "Have an app idea? Let's build it.",
@@ -35,8 +56,8 @@
       common: { view_product: "View product", more_details: "More details →" },
       products_section: {
         eyebrow: "Things I've Built",
-        title: "I build products. I test what's new.",
-        subtitle: "I ship my own apps, and I try new tools, new AI and interesting new uses for real, to find out what is actually worth using. Here is what I have built."
+        title: "What I've built so far.",
+        subtitle: "Real products, each one shipped or on its way to the App Store, across health, work, growth and everyday decisions."
       },
       product_eatornot: {
         status: "AI nutrition coach",
@@ -154,6 +175,27 @@
         og_description: "AI、科技和生活，不只聊，我真的拿來試。"
       },
       nav: { watch: "看實驗", products: "我做的產品", about: "關於 Michael", work: "合作", contact: "聯絡我們" },
+      intro: {
+        head: "Micavo 是由 <mark>Michael</mark> 創立的產品工作室。",
+        lead: "目標是把點子做成真正的產品，從點子一路做到 App Store 或網路服務，同時實測新工具與新 AI，找出什麼才真正值得用。",
+        s1n: "7",
+        s1l: "款自己做的產品",
+        s2n: "3",
+        s2l: "種語言",
+        s3n: "AI",
+        s3l: "納入工具箱",
+        eyebrow: "關於 MICAVO 麥克造",
+        title: "Micavo 是我做產品、也實測新東西的地方。",
+        body: "Micavo 是由 Michael 創立的產品工作室，目標是把點子做成真正的產品，從點子一路做到 App Store 或網路服務，同時實測新工具與新 AI，找出什麼才真正值得用。",
+        mission_label: "我們的使命",
+        mission: "把好點子做成真正有人用的產品，並誠實告訴你什麼值得花時間。",
+        p1t: "做",
+        p1: "真的做出來，並上架 App Store。",
+        p2t: "測",
+        p2: "新工具、新 AI，真的拿來試。",
+        p3t: "分享",
+        p3: "把學到的整理給你，少走冤枉路。",
+      },
       hero: {
         eyebrow: "合作",
         title: "有 App 的點子？一起做出來。",
@@ -181,8 +223,8 @@
       common: { view_product: "查看產品", more_details: "更多介紹 →" },
       products_section: {
         eyebrow: "我做的產品",
-        title: "我做產品，也實測新東西。",
-        subtitle: "我自己開發並上架 App，也把新工具、新 AI、有趣的新應用拿來真的試，看看什麼才值得用。以下是我做過的產品。"
+        title: "目前做過的產品。",
+        subtitle: "真正做出來的產品，已上架或即將上架 App Store，涵蓋健康、工作、成長與日常決策。"
       },
       product_eatornot: {
         status: "AI 營養教練",
@@ -300,6 +342,27 @@
         og_description: "AI、テクノロジー、日常生活。語るだけでなく、実際に試します。"
       },
       nav: { watch: "実験を見る", products: "作ったもの", about: "Michaelについて", work: "ご依頼", contact: "お問い合わせ" },
+      intro: {
+        head: "Micavo は <mark>Michael</mark> が立ち上げたプロダクトスタジオです。",
+        lead: "アイデアから App Store や Web サービスまで本物のプロダクトを作り、新しいツールや AI を実際に試して、本当に使う価値のあるものを見極めることを目指しています。",
+        s1n: "7",
+        s1l: "つの自作プロダクト",
+        s2n: "3",
+        s2l: "言語に対応",
+        s3n: "AI",
+        s3l: "を活用",
+        eyebrow: "MICAVO 麥克造について",
+        title: "Micavo は、プロダクトを作り、新しいものを試す場所です。",
+        body: "Micavo は Michael が立ち上げたプロダクトスタジオです。アイデアから App Store や Web サービスまで本物のプロダクトを作り、新しいツールや AI を実際に試して、本当に使う価値のあるものを見極めることを目指しています。",
+        mission_label: "ミッション",
+        mission: "良いアイデアを、本当に使われるプロダクトにする。そして何が時間をかける価値のあるものか、正直に伝える。",
+        p1t: "作る",
+        p1: "App Store で公開できる、本物のアプリを。",
+        p2t: "試す",
+        p2: "新しいツールや AI を、実際に。",
+        p3t: "共有する",
+        p3: "学んだことを共有し、遠回りを減らします。",
+      },
       hero: {
         eyebrow: "ご依頼・コラボ",
         title: "アプリのアイデア、一緒に形にしましょう。",
@@ -327,8 +390,8 @@
       common: { view_product: "プロダクトを見る", more_details: "詳しく見る →" },
       products_section: {
         eyebrow: "作ったもの",
-        title: "作る。そして、新しいものを試す。",
-        subtitle: "自分でアプリを開発・公開し、新しいツールや AI、おもしろい活用法も実際に試して、本当に使う価値があるかを確かめます。これまでに作ったプロダクトです。"
+        title: "これまでに作ったもの。",
+        subtitle: "App Store で公開済み、または公開間近の本物のプロダクト。健康、仕事、成長、日々の意思決定を扱います。"
       },
       product_eatornot: {
         status: "AI栄養コーチ",
