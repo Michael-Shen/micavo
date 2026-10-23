@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Work with Michael | Build your app with Micavo</title>
-  <meta name="description" content="Have an app idea? Michael has built 6+ apps from idea to App Store, with AI features, subscriptions and multi-language support. Tell him what you need and get a straight answer." />
+  <meta name="description" content="Have an app idea? Michael has shipped 5 apps to the App Store, with AI features, subscriptions and multi-language support. Tell him what you need and get a straight answer." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Micavo" />
   <meta property="og:url" content="https://micavo.app/work/" />
   <meta property="og:title" content="Work with Michael | Build your app with Micavo" />
-  <meta property="og:description" content="Have an app idea? I've built 6+ apps from idea to App Store. Tell me what you need." />
+  <meta property="og:description" content="Have an app idea? I've shipped 5 apps to the App Store. Tell me what you need." />
   <meta property="og:image" content="https://micavo.app/assets/images/founder.jpg" />
   <link rel="canonical" href="https://micavo.app/work/" />
   <link rel="icon" href="/assets/images/micavo-icon.svg" type="image/svg+xml" />
@@ -20,7 +20,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-PF5PE9BXFT');
+    gtag('config', 'G-PF5PE9BXFT', { send_page_view: false });
   </script>
   <script src="/assets/js/analytics.js"></script>
   <script>
@@ -144,11 +144,11 @@
     .courses .button { background:var(--accent); border-color:var(--accent); color:var(--ink); }
     .courses .status { color:#cfcbc2; } .courses .status.ok { color:#9be3b6; } .courses .status.err { color:#ffb4ab; }
     .footer { max-width:1120px; margin:72px auto 0; padding:26px 24px 40px; border-top:1px solid rgba(21,21,21,.1); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:14px; }
-    .footer a { margin-left:16px; text-decoration:none; } .footer a:hover { color:var(--ink); text-decoration:underline; }
+    .footer > div:last-child { display:flex; flex-wrap:wrap; gap:4px 16px; } .footer a { margin-left:0; text-decoration:none; } .footer a:hover { color:var(--ink); text-decoration:underline; }
     @media (max-width: 860px) {
       .stats { grid-template-columns:repeat(2,1fr); } .cards, .steps, .formwrap, .courses { grid-template-columns:1fr; } .work { grid-template-columns:repeat(2,1fr); }
       .about, .fit { grid-template-columns:1fr; } .about img { max-width:240px; aspect-ratio:1/1; }
-      .row2 { grid-template-columns:1fr; } .hero { padding-top:56px; } .nav-links { display:none; }
+      .row2 { grid-template-columns:1fr; } .hero { padding-top:56px; } .nav-right { display:contents; } .nav { padding:0 16px; } main { padding:0 16px; } .nav-links { order:3; width:100%; justify-content:space-between; gap:6px; font-size:14px; flex-wrap:wrap; } .nav-links a { min-height:44px; display:inline-flex; align-items:center; }
     }
   </style>
 </head>
@@ -158,9 +158,10 @@
       <a class="logo" href="/" aria-label="Micavo home"><span class="logo-mark" aria-hidden="true">M</span>Micavo</a>
       <div class="nav-right">
         <div class="nav-links">
-          <a href="/#products"><span class="en">Things I've Built</span><span class="zh">我做的產品</span><span class="ja">作ったもの</span></a>
-          <a href="/#about-michael"><span class="en">About Michael</span><span class="zh">關於 Michael</span><span class="ja">Michaelについて</span></a>
-          <a class="current" href="/work/" aria-current="page"><span class="en">Work with me</span><span class="zh">合作</span><span class="ja">ご依頼</span></a>
+          <a href="/apps/" data-ga-event="navigation_click" data-ga-param-destination="apps" data-ga-param-location="header"><span class="en">Apps</span><span class="zh">App</span><span class="ja">アプリ</span></a>
+          <a href="/media/" data-ga-event="navigation_click" data-ga-param-destination="media" data-ga-param-location="header"><span class="en">Media</span><span class="zh">影片實測</span><span class="ja">メディア</span></a>
+          <a href="/about/" data-ga-event="navigation_click" data-ga-param-destination="about" data-ga-param-location="header"><span class="en">About</span><span class="zh">關於</span><span class="ja">紹介</span></a>
+          <a class="current" href="/work/" aria-current="page" data-ga-event="navigation_click" data-ga-param-destination="work" data-ga-param-location="header"><span class="en">Work With Me</span><span class="zh">合作</span><span class="ja">ご依頼</span></a>
         </div>
         <div class="lang-switch" role="group" aria-label="Language switcher">
           <button type="button" data-lang-btn="en">EN</button>
@@ -180,19 +181,19 @@
         <span class="ja">アプリのアイデア、<br /><span class="mark">形にします。</span></span>
       </h1>
       <p class="lead">
-        <span class="en">I've built 6+ apps myself, from idea to App Store, with AI features, subscriptions and four languages. Tell me what you need. I'll tell you honestly what to build first, how long it takes, and what it costs.</span>
-        <span class="zh">我自己做過 6 款以上的 App，從點子一路做到 App Store，包含 AI 功能、訂閱制與多國語言。告訴我你需要什麼，我會誠實告訴你：先做什麼、要多久、要多少預算。</span>
-        <span class="ja">アイデアから App Store まで、自分で 6 本以上のアプリを作ってきました。AI 機能、サブスクリプション、多言語対応も経験済み。必要なことを教えてください。何から作るべきか、期間、費用を正直にお伝えします。</span>
+        <span class="en">I've shipped 5 apps to the App Store myself, with AI features, subscriptions and four languages. Tell me what you need. I'll tell you honestly what to build first, how long it takes, and what it costs.</span>
+        <span class="zh">我自己做並上架了 5 款 App，從點子一路做到 App Store，包含 AI 功能、訂閱制與多國語言。告訴我你需要什麼，我會誠實告訴你：先做什麼、要多久、要多少預算。</span>
+        <span class="ja">アイデアから App Store まで、自分で 5 本のアプリを公開してきました。AI 機能、サブスクリプション、多言語対応も経験済み。必要なことを教えてください。何から作るべきか、期間、費用を正直にお伝えします。</span>
       </p>
       <p class="slot"><span class="en">Taking 1 new project per month</span><span class="zh">每月只接 1 個專案</span><span class="ja">新規のご依頼は月1件のみ</span></p>
       <div class="cta">
         <a class="button primary" href="#consult" data-ga-event="work_cta_clicked" data-ga-param-product="Micavo" data-ga-param-cta-location="hero"><span class="en">Tell me what you need ↓</span><span class="zh">告訴我你的需求 ↓</span><span class="ja">ご相談はこちら ↓</span></a>
-        <a class="button" href="/#products"><span class="en">See what I've built</span><span class="zh">看我做過的產品</span><span class="ja">作ったものを見る</span></a>
+        <a class="button" href="/apps/"><span class="en">See what I've built</span><span class="zh">看我做過的產品</span><span class="ja">作ったものを見る</span></a>
       </div>
     </section>
 
     <div class="stats" aria-label="Experience">
-      <div class="stat"><b class="big">6+</b><span><span class="en">apps built by me</span><span class="zh">款我親手做的 App</span><span class="ja">本、自分で開発</span></span></div>
+      <div class="stat"><b class="big">5</b><span><span class="en">apps on the App Store, built by me</span><span class="zh">款我親手做、已上架的 App</span><span class="ja">本、自分で開発して公開</span></span></div>
       <div class="stat"><b><span class="en">Idea → App Store</span><span class="zh">點子 → 上架</span><span class="ja">企画 → 公開</span></b><span><span class="en">end to end, including review</span><span class="zh">全流程，含審核</span><span class="ja">審査対応まで一貫</span></span></div>
       <div class="stat"><b><span class="en">Subscriptions</span><span class="zh">訂閱制</span><span class="ja">サブスク</span></b><span><span class="en">paywalls, free trials, RevenueCat</span><span class="zh">付費牆、免費試用、RevenueCat</span><span class="ja">課金画面・無料体験・RevenueCat</span></span></div>
       <div class="stat"><b><span class="en">AI + 4 languages</span><span class="zh">AI + 四種語言</span><span class="ja">AI + 4言語</span></b><span><span class="en">photo, voice, live coaching</span><span class="zh">照片、語音、即時教練</span><span class="ja">写真・音声・リアルタイム支援</span></span></div>
@@ -315,7 +316,7 @@
       <div>
         <span class="tag"><span class="en">Coming soon</span><span class="zh">準備中</span><span class="ja">準備中</span></span>
         <h2 data-course-title><span class="en">Courses: build and launch your first app with AI</span><span class="zh">課程：用 AI 做出並上架你的第一個 App</span><span class="ja">講座：AI で初めてのアプリを作って公開</span></h2>
-        <p data-course-blurb><span class="en">I'm turning what I learned from shipping 6+ apps into a course. Leave your email and you'll hear from me first.</span><span class="zh">我正在把做 6 款以上 App 學到的東西整理成課程。留下 Email，開課時你會最先收到通知。</span><span class="ja">6 本以上のアプリ開発で学んだことを講座にまとめています。メールアドレスを残していただければ、最初にお知らせします。</span></p>
+        <p data-course-blurb><span class="en">I'm turning what I learned from shipping 5 apps into a course. Leave your email and you'll hear from me first.</span><span class="zh">我正在把做 5 款 App 學到的東西整理成課程。留下 Email，開課時你會最先收到通知。</span><span class="ja">5 本のアプリ開発で学んだことを講座にまとめています。メールアドレスを残していただければ、最初にお知らせします。</span></p>
       </div>
       <form id="course-form" novalidate>
         <input name="email" type="email" placeholder="you@email.com" autocomplete="email" required maxlength="200" aria-label="Email" />
@@ -328,7 +329,7 @@
 
   <footer class="footer">
     <div>© 2026 Micavo</div>
-    <div><a href="/">Micavo</a><a href="/sleepordie/">SleepOrDie</a><a href="mailto:hello@micavo.app">hello@micavo.app</a></div>
+    <div><a href="/">Micavo</a><a href="/apps/">Apps</a><a href="/media/">Media</a><a href="/about/">About</a><a href="mailto:hello@micavo.app">hello@micavo.app</a></div>
   </footer>
 
   <script>
@@ -351,9 +352,9 @@
         ja: '講座：AI で初めてのアプリを作って公開'
       },
       blurb: {
-        en: "I'm turning what I learned from shipping 6+ apps into a course. Leave your email and you'll hear from me first.",
-        zh: '我正在把做 6 款以上 App 學到的東西整理成課程。留下 Email，開課時你會最先收到通知。',
-        ja: '6 本以上のアプリ開発で学んだことを講座にまとめています。メールアドレスを残していただければ、最初にお知らせします。'
+        en: "I'm turning what I learned from shipping 5 apps into a course. Leave your email and you'll hear from me first.",
+        zh: '我正在把做 5 款 App 學到的東西整理成課程。留下 Email，開課時你會最先收到通知。',
+        ja: '5 本のアプリ開発で学んだことを講座にまとめています。メールアドレスを残していただければ、最初にお知らせします。'
       }
     };
     function renderCourse() {
@@ -392,7 +393,7 @@
         }
         setStatus(status, m.sending, '');
         post(d).then(function (res) {
-          if (res && res.ok) { form.reset(); setStatus(status, type === 'consult' ? m.ok : m.okCourse, 'ok'); }
+          if (res && res.ok) { if (type === 'consult' && window.trackEvent) window.trackEvent('service_inquiry_submit', { source_page: location.pathname }); form.reset(); setStatus(status, type === 'consult' ? m.ok : m.okCourse, 'ok'); }
           else setStatus(status, m.err, 'err');
         }).catch(function () { setStatus(status, m.err, 'err'); });
       });

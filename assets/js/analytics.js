@@ -13,6 +13,7 @@
   function detectPageType() {
     var path = window.location.pathname;
     if (path === '/' || path === '/index.html') return 'home';
+    if (/^\/(apps|media|about|work)\//.test(path)) return path.split('/')[1];
     if (/\/(privacy|terms|support|privacy-policy)\.html$/.test(path)) return 'legal';
     if (path === '/eatornot/' || path === '/eatornot/index.html' ||
         path === '/outshine/' || path === '/outshine/index.html' ||
@@ -66,7 +67,8 @@
       product: PRODUCT,
       page_type: PAGE_TYPE,
       page_path: window.location.pathname,
-      page_title: document.title
+      page_title: document.title,
+      language: document.documentElement.getAttribute('data-lang') || document.documentElement.lang || 'en'
     };
     Object.keys(CAMPAIGN).forEach(function (key) {
       params[key] = CAMPAIGN[key];
@@ -80,6 +82,21 @@
   }
 
   window.trackEvent = trackEvent;
+
+  // Span-based pages (home, apps, media, about, work) have no i18n.js, so send the page view here.
+  // Product pages send their own.
+  if (/^\/(apps|media|about|work)\//.test(window.location.pathname) || PAGE_TYPE === 'home') {
+    window.addEventListener('load', function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: window.location.pathname,
+          site_language: document.documentElement.getAttribute('data-lang') || 'en'
+        });
+      }
+    });
+  }
 
   if (PAGE_TYPE === 'product_landing') {
     trackEvent('landing_view');
