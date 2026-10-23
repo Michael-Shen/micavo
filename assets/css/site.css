@@ -142,3 +142,7 @@ a.card:hover { transform:translateY(-3px); border-color:var(--ink); }
 .actions { margin-top:auto; display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
 .meta { display:flex; flex-wrap:wrap; gap:6px; }
 .band { margin-top:0; }
+.feats { margin:0 0 16px; padding:0; list-style:none; display:grid; gap:6px; font-size:15px; color:#3d3a35; }
+.feats li { padding-left:20px; position:relative; }
+.feats li::before { content:""; position:absolute; left:0; top:.65em; width:8px; height:8px; border-radius:50%; background:var(--accent); }
+.pills.dark li { background:var(--ink); color:#fff; }
